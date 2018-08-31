@@ -2854,7 +2854,7 @@ sub parse_courses()
 		  my ($axes, $inst_wildcard)			      		               = ($21, $22);
 		  my $coursefile = $codcour;
 
-		  #if( $codcour eq "CS211" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
+		  #if( $codcour eq "CS221" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
 		  $inst_wildcard =~ s/\n//g; 	$inst_wildcard =~ s/\r//g;
 # 		  Util::print_message("$axes");
 # 		  Util::print_message("Labtype: $labtype");
@@ -2873,12 +2873,13 @@ sub parse_courses()
 		  {
 			  if( defined($config{valid_institutions}{$inst}) )
 			  {
-				$count++;
+				$count++;	
+				#if( $codcour eq "CS221" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour - $count ");	}
 				if($config{filter_priority}{$inst} > $priority)
 				{		$priority = $config{filter_priority}{$inst};		}
 				#Util::print_message("$inst matches ...");
 			  }
-			  #else{	#Util::print_message("$inst does not match ...");	}
+			  #else{	Util::print_message("$inst does not match ...");	}
 		  }
 		  if( $count == 0 ){	 #Util::print_warning("$codcour ignored $inst_wildcard");
 			#Util::print_warning("\\course$course_params ignored! (filter:$inst_list{$institution}{filter})");
@@ -2904,12 +2905,16 @@ sub parse_courses()
  			  Util::print_message("course_info{$codcour}{priority} = $course_info{$codcour}{priority}");
 			  #if( defined($course_info{$codcour}{priority}) )
 			  #{
-			      if( $priority < $course_info{$codcour}{priority} )
+			      if( $priority <= $course_info{$codcour}{priority} )
 			      {
 				      print "\n";
+					  if($course_info{$codcour}{semester} != $semester){
+						  Util::print_error("Course $codcour (Sem #$course_info{$codcour}{semester},\"$course_info{$codcour}{inst_list}\"), has different semester than $codcour (Sem #$semester, \"$inst_wildcard\")  ... this cant happen... ERROR!!!");
+					  }
 				      Util::print_warning("Course $codcour (Sem #$course_info{$codcour}{semester},\"$course_info{$codcour}{inst_list}\"), has higher priority than $codcour (Sem #$semester, \"$inst_wildcard\")  ... ignoring the last one !!!");
+					  
 				      next;
-			      }
+				  }
 			  #}
 		  }
 		  $config{n_semesters} = $semester if($semester > $config{n_semesters});
