@@ -705,7 +705,8 @@ sub set_initial_paths()
 	$path_map{"in-all-outcomes-by-course-poster"}	= $path_map{OutputTexDir}."/all-outcomes-by-course-poster-<LANG>.tex";
 	$path_map{"out-list-of-outcomes"}			= $path_map{OutputTexDir}."/list-of-outcomes.tex";
 	$path_map{"list-of-courses-by-outcome"}		= $path_map{OutputTexDir}."/courses-by-outcome-<LANG>.tex";
-	$path_map{"list-of-courses-by-specific-outcome"}	= $path_map{OutputTexDir}."/courses-by-specific-outcome-<LANG>.tex";
+	$path_map{"list-of-courses-by-specific-outcome"}= $path_map{OutputTexDir}."/list-of-courses-by-specific-outcome-<LANG>.tex";
+	$path_map{"table-of-courses-by-specific-outcome"}= $path_map{OutputTexDir}."/table-of-courses-by-specific-outcome-<LANG>.tex";
 
 	$path_map{"out-list-of-syllabi-include-file"}   = $path_map{OutputTexDir}."/list-of-syllabi.tex";
 	$path_map{"out-laboratories-by-course-file"}	= $path_map{OutputTexDir}."/laboratories-by-course.tex";

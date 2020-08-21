@@ -135,6 +135,7 @@ GeneralGoals	    = Objetivos Generales
 Competences	        = Competencias
 SpecificCompetences	= Competencias Específicas
 ContributionToOutcomes=Contribución a los resultados ({\it Outcomes})
+Outcomes            = Competencias
 ContributionToSkills=Contribución a las habilidades de Ciencia de la Computación (IEEE)
 Skills		        = Habilidades
 EducationalObjectives=Objetivos Educacionales ({\it Educational Objectives})
