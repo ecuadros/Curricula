@@ -1,15 +1,3 @@
-Course=CS2H01
-	English (User Experience (UX))
-		competences=I did not find competences{V1}
-		file=../Curricula.in/lang/English/cycle/2021-I/Syllabi/Computing/CS/CS2H1.tex
-		outcomes=I did not find outcomes{V1}
-		specificoutcomes=I did not find specificoutcomes{V1}
-	Espanol (Experiencia de Usuario)
-		competences=I did not find competences{V1}
-		file=../Curricula.in/lang/Espanol/cycle/2021-I/Syllabi/Computing/CS/CS2H1.tex
-		outcomes=I did not find outcomes{V1}
-		specificoutcomes=I did not find specificoutcomes{V1}
-
 Dictionaries (Missing keys)
 Espanol
 	This language is complete !
