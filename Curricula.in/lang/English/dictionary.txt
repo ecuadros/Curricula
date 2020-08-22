@@ -136,6 +136,7 @@ GeneralGoals	    = Generales Goals
 Competences	        = Competences
 SpecificCompetences	= Specific Competences
 ContributionToOutcomes  =Contribution to Outcomes
+Outcomes            = Competencias
 ContributionToSkills    =Contribution to Computer Science Skills (IEEE)
 Skills		            = Skills
 EducationalObjectives=Educational Objectives

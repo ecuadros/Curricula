@@ -50,7 +50,7 @@ Dictionaries (Missing keys)
 Espanol
 	This language is complete !
 English
-	Outcomes       
+	This language is complete !
 
 Outcomes (Missing keys)
 Espanol (../Curricula.in/lang/Espanol/CS.tex/outcomes-macros.tex)
