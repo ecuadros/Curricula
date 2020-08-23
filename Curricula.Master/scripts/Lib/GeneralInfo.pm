@@ -1276,10 +1276,12 @@ sub generate_table_of_courses_by_specific_outcome($)
 								);
 			$map{SpecificOutcomeLabel}  = "\\textbf{$label)}";
 			$map{SpecificOutcome}  		= "\\begin{minipage}{$halfpage}\n";
+			$map{SpecificOutcome} 	   .= "\\vspace{0.1cm}\n";
 			#Util::print_message("label: $label, length:". (length($txt)));
 			my $nlines_SpecificOutcome = int((length($txt)+$nchars_by_row-1)/$nchars_by_row);
-			$map{SpecificOutcome} .= "$txt\n";
-			$map{SpecificOutcome} .= "\\end{minipage}\n";
+			$map{SpecificOutcome} 		.= "$txt\n";
+			$map{SpecificOutcome} 	   	.= "\\vspace{0.1cm}\n";
+			$map{SpecificOutcome} 		.= "\\end{minipage}\n";
 			$map{SpecificOutcome}  =~ s/\\xspace//g;
 			my $courses_counter = keys %{ $Common::config{course_by_specificoutcome}{$outcome}{$number} };
 			my $nlines = max($nlines_SpecificOutcome, $courses_counter);
@@ -1294,19 +1296,21 @@ sub generate_table_of_courses_by_specific_outcome($)
 			if($courses_counter > 0)
 			{
 				$map{Courses}  = "\\begin{minipage}{$halfpage}\n";
+				$map{Courses} .= "\\vspace{0.1cm}\n";
 				$map{Courses} .= "\\setlist{nolistsep,leftmargin=*}\n";
             	$map{Courses} .= "\\begin{itemize}\n";
 				$map{Courses} .= $list_of_courses;
 				$map{Courses} .= "\\end{itemize}\n";
+				$map{Courses} .= "\\vspace{0.1cm}\n";
         		$map{Courses} .= "\\end{minipage}";
 			}
 			my $this_line = $one_line_template;
 			if( $first_time == 1 )
 			{	$header = "\\multicolumn{3}{|l|}{\n";
 				$header .= "\\begin{minipage}{$firstrowsize}\n";
-				$header .= "\\textbf{$Common::config{dictionaries}{$lang}{Outcomes}: } <<Outcome>>\n";
-				$header .= "\\end{minipage}\n";
+				$header .= "\\cellcolor{black!25} \\color{black}{\\textbf{$Common::config{dictionaries}{$lang}{Outcome}: } <<Outcome>>}\n";
 				$header .= "\\vspace{0.1cm}\n";
+				$header .= "\\end{minipage}\n";
 				$header .= "} \\\\ \\hline\n";
 				$this_line = $header . $this_line;
 				$first_time = 0; 
