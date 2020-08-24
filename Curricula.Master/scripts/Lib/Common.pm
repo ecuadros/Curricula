@@ -179,12 +179,23 @@ sub GetInstitutionInfo($$)
 	return GetInCountryBaseDir($country)."/institutions/$inst.tex";
 }
 
+sub save_courses_by_competence($$$)
+{
+	my ($text, $competence, $lang)  = (@_);
+	my $OutputCompetencesDir = get_expanded_template("OutputCompetencesDir");
+	my $filename 	= "course-by-outcome-$competence";
+	my $fullname	= "$OutputCompetencesDir/$filename.tex";
+	Util::print_message("save_courses_by_competence is Generating $fullname");
+	Util::write_file($fullname, $text);
+	return "\\OutputCompetencesDir/$filename";
+}
+
 sub filter_non_valid_chars($)
 {
-        my ($text) = (@_);
-        $text = no_accents($text);
-        $text =~ s/ //g;
-        return $text;
+	my ($text) = (@_);
+	$text = no_accents($text);
+	$text =~ s/ //g;
+	return $text;
 }
 
 # ok
@@ -576,6 +587,9 @@ sub set_global_variables()
 	$config{OutputScriptsDir}	= "$config{OutputInstDir}/scripts";
 	system("mkdir -p $config{OutputScriptsDir}");
 
+	$config{OutputCompetencesDir}	= "$config{OutputTexDir}/competences";
+	system("mkdir -p $config{OutputCompetencesDir}");
+
 	$config{InLangBaseDir}	 	= "$config{in}/lang";
 	$config{InLangDefaultDir}	= "$config{InLangBaseDir}/$config{language_without_accents}";
 	$config{InLangCommonDir}	= "$config{InLangBaseDir}/Common";
@@ -657,6 +671,7 @@ sub set_initial_paths()
 	$path_map{OutputSyllabiDir}			= $config{OutputInstDir}."/syllabi";
 	$path_map{OutputFullSyllabiDir}		= $config{OutputInstDir}."/full-syllabi";
 	$path_map{OutputFacultyDir}			= $config{OutputInstDir}."/faculty";
+	$path_map{OutputCompetencesDir}		= $config{OutputCompetencesDir};
 	$path_map{OutputFacultyFigDir}		= $path_map{OutputFacultyDir}."/fig";			system("mkdir -p $path_map{OutputFacultyFigDir}");
 	$path_map{OutputFacultyIconDir}		= $path_map{OutputFacultyDir}."/icon";			system("mkdir -p $path_map{OutputFacultyIconDir}");
 	$path_map{LinkToCurriculaBase}		= $config{LinkToCurriculaBase};
@@ -847,7 +862,7 @@ sub set_initial_paths()
 	$path_map{SpiderChartInfoDir}					= $path_map{InDisciplineDir}."/SpiderChartInfo";
 
 	$path_map{"OutputDisciplinesList-file"}			= $path_map{OutHtmlBase}."/disciplines.html";
-	$path_map{"output-errors-file"}					= $path_map{OutputLogDir}."/$config{area}-$config{institution} $config{Plan}.txt";
+	$path_map{"output-errors-file"}					= $path_map{OutputLogDir}."/$config{country_without_accents}-$config{area}-$config{institution} $config{Plan}.txt";
 	Util::check_point("set_initial_paths");
 }
 
