@@ -1308,6 +1308,7 @@ sub generate_table_of_courses_by_specific_outcome($)
 			if( $first_time == 1 )
 			{	$header = "\\multicolumn{3}{|l|}{\n";
 				$header .= "\\begin{minipage}{$firstrowsize}\n";
+				$header .= "\\vspace{0.1cm}\n";
 				$header .= "\\cellcolor{black!25} \\color{black}{\\textbf{$Common::config{dictionaries}{$lang}{Outcome}: } <<Outcome>>}\n";
 				$header .= "\\vspace{0.1cm}\n";
 				$header .= "\\end{minipage}\n";
