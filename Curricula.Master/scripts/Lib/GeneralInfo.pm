@@ -34,13 +34,16 @@ sub generate_course_tables($)
 		$this_sem_text .= "\\multicolumn{$n_columns}{|l|}{\\textbf{$caption}} \\\\ \\hline \n";
 
 # 		$this_sem_text .= "Code & Course & Area & HT & HP & HL & Cr & T & Prerequisites             \\\\ \\hline\n";
- 		my $course_headers= $Common::config{course_fields};
+ 		my $course_headers = $Common::config{course_fields};
 		#Util::print_color("GeneralInfo:course_fields=$course_headers");
 		#exit;
-		$course_headers =~ s/$begin_tag/\\textbf\{$begin_tag/g;    # aqui
-		$course_headers =~ s/$end_tag/$end_tag\}/g;
- 		$this_sem_text .= Common::replace_tags_from_hash($course_headers, $begin_tag, $end_tag, %{$Common::config{dictionary}});
-		$this_sem_text .= "\n";
+		if(defined($course_headers) and defined($course_headers))
+		{
+			$course_headers =~ s/$begin_tag/\\textbf\{$begin_tag/g;
+			$course_headers =~ s/$end_tag/$end_tag\}/g;
+			$this_sem_text .= Common::replace_tags_from_hash($course_headers, $begin_tag, $end_tag, %{$Common::config{dictionary}});
+			$this_sem_text .= "\n";
+		}
 
 		# 2nd Write the info for this course
 		my $ncourses = 0;

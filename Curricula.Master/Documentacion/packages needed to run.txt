@@ -23,7 +23,6 @@ sudo apt-get install latex2html; ok
 sudo apt-get install ps2pdf; (ya viene); xxxxxx *** unable to locate *** 
 
 sudo apt-get install graphviz; ok;
-sudo apt-get install xpdf ; ok;
 sudo apt-get install gv; ok;
 sudo apt-get install inkscape; ***completed
 brew install imagemagick;
@@ -85,7 +84,6 @@ brew install ps2eps;
 brew install graphviz;
 brew install latex2html; brew upgrade latex2html
 apt-get install ps2pdf; (ya viene); xxxxxx
-brew install xpdf; brew upgrade xpdf
 brew install gv;
 brew install Caskroom/cask/inkscape
 brew install Caskroom/cask/mactex;
