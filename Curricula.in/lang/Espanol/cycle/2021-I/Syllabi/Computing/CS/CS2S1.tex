@@ -1,45 +1,22 @@
 \begin{syllabus}
 
-\course{CS2S01. Sistemas Operativos}{Obligatorio}{CS2S01}
+\course{CS2S1. Sistemas Operativos}{Obligatorio}{CS2S1}
 % Source file: ../Curricula.in/lang/Espanol/cycle/2021-I/Syllabi/Computing/CS/CS2S1.tex
 
 \begin{justification}
-Un Sistema Operativo es un programa que actúa como intermediario entre el usuario y la máquina.
-
-El propósito de un sistema operativo es proveer un ambiente en que el usuario pueda ejecutar sus aplicaciones.
-
-En este curso se estudiará el diseño del núcleo de los sistemas operativos.
-Además el curso contempla actividades prácticas en donde se resolverán problemas de
-concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
+  Un sistema operativo (SO) gestiona los recursos computaciones para completar la ejecución de múltiples aplicaciones y sus procesos asociados.
+  Este curso enseña el diseño de sistemas operativos modernos; e introduce sus conceptos fundamentales que cubren la ejecución multi-programa, \emph{scheduling}, gerencia de memoria, sistemas de archivos y seguridad.
+  Además, el curso incluye actividades de programación en un \emph{sistema operativo mínimo} para resolver problemas y ampliar su funcionalidad. Tenga en cuenta que estas actividades requieren mucho tiempo para completarse. Sin embargo, trabajar en ellos proporciona un valioso aprendizaje sobre los sistemas operativos.
 \end{justification}
 
 \begin{goals}
-	\item Conocer los elementos básicos del diseño de los sistemas operativos.
+\item Estudiar el diseño de sistemas operativos modernos.
+\item Proveer una experiencia práctica al diseñar e implementar un sistema operativo mínimo.
 \end{goals}
 
-\begin{outcomes}{V1}
-    \item \ShowOutcome{b}{3}
-\end{outcomes}
+--COMMON-CONTENT--
 
-\begin{outcomes}{V2}
-    \item \ShowOutcome{1}{2}
-    \item \ShowOutcome{2}{2}
-    \item \ShowOutcome{6}{2}
-\end{outcomes}
-
-\begin{competences}{V1}
-    \item \ShowCompetence{C1}{b}
-    \item \ShowCompetence{C6}{b}
-    \item \ShowCompetence{CS8}{b}
-\end{competences}
-
-\begin{competences}{V2}
-    \item \ShowCompetence{C1}{1}
-    \item \ShowCompetence{C6}{2}
-    \item \ShowCompetence{CS8}{6}
-\end{competences}
-
-\begin{unit}{\OSOverviewofOperatingSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{C1}
+\begin{unit}{\OSOverviewofOperatingSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{b}
 \begin{topics}%
       \item \OSOverviewofOperatingSystemsTopicRole
       \item \OSOverviewofOperatingSystemsTopicFunctionality
@@ -56,7 +33,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSOperatingSystemPrinciples}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{C1}
+\begin{unit}{\OSOperatingSystemPrinciples}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSOperatingSystemPrinciplesTopicStructuring
       \item \OSOperatingSystemPrinciplesTopicAbstractions
@@ -77,7 +54,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSConcurrency}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{9}{C6}
+\begin{unit}{\OSConcurrency}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{9}{b}
 \begin{topics}
       \item \OSConcurrencyTopicStates
       \item \OSConcurrencyTopicStructures
@@ -98,7 +75,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSSchedulingandDispatch}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{CS8}
+\begin{unit}{\OSSchedulingandDispatch}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}%
       \item \OSSchedulingandDispatchTopicPreemptive
       \item \OSSchedulingandDispatchTopicSchedulers
@@ -116,7 +93,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSMemoryManagement}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{C1}
+\begin{unit}{\OSMemoryManagement}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}%
 	\item \OSMemoryManagementTopicReview
 	\item \OSMemoryManagementTopicWorking
@@ -132,7 +109,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSSecurityandProtection}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{C1}
+\begin{unit}{\OSSecurityandProtection}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSSecurityandProtectionTopicOverview
       \item \OSSecurityandProtectionTopicPolicy
@@ -148,7 +125,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSVirtualMachines}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{CS8}
+\begin{unit}{\OSVirtualMachines}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSVirtualMachinesTopicTypes
       \item \OSVirtualMachinesTopicPaging
@@ -165,7 +142,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSDeviceManagement}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{C6}
+\begin{unit}{\OSDeviceManagement}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSDeviceManagementTopicCharacteristics
       \item \OSDeviceManagementTopicAbstracting
@@ -184,7 +161,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSFileSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{CS8}
+\begin{unit}{\OSFileSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSFileSystemsTopicFiles
       \item \OSFileSystemsTopicDirectories
@@ -203,7 +180,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSRealTimeandEmbeddedSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{C1}
+\begin{unit}{\OSRealTimeandEmbeddedSystems}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{6}{b}
 \begin{topics}
       \item \OSRealTimeandEmbeddedSystemsTopicProcess
       \item \OSRealTimeandEmbeddedSystemsTopicMemoryDisk
@@ -217,7 +194,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSFaultTolerance}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{C1}
+\begin{unit}{\OSFaultTolerance}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{b}
 \begin{topics}
       \item \OSFaultToleranceTopicFundamental
       \item \OSFaultToleranceTopicSpatial
@@ -231,7 +208,7 @@ concurrencia y se modificará el funcionamiento de un pseudo Sistema Operativo.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\OSSystemPerformanceEvaluation}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{C1}
+\begin{unit}{\OSSystemPerformanceEvaluation}{}{silberschatz2012, stallings2005, tanenbaum2006, tanenbaum2001, TAnderson14}{3}{b}
 \begin{topics}
       \item \OSSystemPerformanceEvaluationTopicWhy
       \item \OSSystemPerformanceEvaluationTopicWhat

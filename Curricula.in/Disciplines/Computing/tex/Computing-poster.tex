@@ -3,7 +3,8 @@
 \usepackage[utf8]{inputenc}
 \input{preamble0}
 \input{current-institution}
-\input{\InInstDir/institution-info}
+\input{\InCountryDir/institutions/\currentinstitution}
+\input{\InProgramTexDir/program-info}
 \input{\InDir/copyrights}
 
 \usepackage{array}
@@ -46,7 +47,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \newcommand{\logoheight}{<LOGO_WIDTH>}
 \newcommand{\titlesize}{0.70\textwidth}
-\newrgbcolor{royalblue}{0.25 0.41 0.88}
+\newcommand{\posterbackground}{<POSTER_RIGHT_BG>}
+
+%\newcommand{\posterbackground}{0.25,0.41,0.88}
 \newcommand{\captionsize}{\footnotesize}
 \newcommand{\OnlyMainDoc}[1]{}
 \newcommand{\OnlyPoster}[1]{#1\xspace}  
@@ -66,60 +69,52 @@
 %       \input{\OutputTexDir/all-topics-by-course}
 % \end{landscape}
 % }
-% \newpage
-
-% \vspace{-10cm}                                     
+% \newpage                                    
 \poster
 {
 	~\\
-	\begin{tabular}{m{<LOGO_WIDTH>}m{1cm}m{<TITLE_WIDTH>}}
- 		\includegraphics[width=<LOGO_WIDTH>,height=7cm]{\InCountryDir/logos/\siglas.eps} & &
- 		\begin{tabular}{m{<TITLE_WIDTH>}}
-		      \begin{tabular}{m{<DEF_WIDTH>}m{2cm}m{<DEF_WIDTH>}}
-			    \begin{minipage}{<DEF_WIDTH>}
-				    {\bf\Large \SchoolFullName<LANG>} \\
-				    {\bf \large \SchoolURL}\\
-				    \vspace{0.2cm}
-				    \Cblur{
-					    \begin{minipage}{\textwidth}
-						    {\bf \large <<Mission>>: } {\footnotesize \mission<LANG>}
-					    \end{minipage}
-				    }
-			    \end{minipage} & & 
-			    \vspace{1cm}
-			    \begin{minipage}{<DEF_WIDTH>}
-				    \Cblur{
-					    \begin{minipage}{\textwidth}
-						    {\bf \large <<Definition>>:} {\footnotesize \profile<LANG>}
-					    \end{minipage}%
-					  }
-			    \end{minipage}
-		      \end{tabular}
+	\begin{tabular}{m{<LOGO_WIDTH>}m{0.5cm}m{<TITLE_WIDTH>}}
+ 		\includegraphics[width=<LOGO_WIDTH>]{\InCountryDir/logos/\siglas.eps} & &
+		\begin{tabular}{m{<TITLE_WIDTH>}}
+			\textbf{\Large \SchoolFullName<LANG_PREFIX>} \textbf{\large \SchoolURL} \\
+			\begin{tabular}{m{<COL2>}m{1.5cm}m{<COL3>}}
+				\begin{minipage}{<COL2>}
+					\Cblur{
+						\begin{minipage}{\textwidth}
+							\textbf{\large <<Mission>>: } {\footnotesize \mission<LANG_PREFIX>}
+						\end{minipage}
+					}
+				\end{minipage} & & 
+				\begin{minipage}{<COL3>}
+					\Cblur{
+						\begin{minipage}{\textwidth}
+							\textbf{\large <<Definition>>:} {\footnotesize \profile<LANG_PREFIX>}
+						\end{minipage}%
+						}
+				\end{minipage}
+			\end{tabular}
  		\end{tabular}
-	\end{tabular}\\
-	\vspace*{0.7cm}
-		\Cblur{\includegraphics[width=0.975\textwidth,height=0.63\textheight]{../fig/big-graph-curricula-<LANG>.ps}} \\
+	\end{tabular}
+	
+	\Cblur{\includegraphics[width=0.975\textwidth,height=0.63\textheight]{../figs/big-graph-curricula-<LANG_PREFIX>.ps}} \\
 	%\vspace{0.5cm}	
 	\newcommand{\SkillsTableWidth}{0.6\textwidth}
-	%\hspace{0.05cm}
-	%\tiny
-	%\input{\OutputTexDir/all-outcomes-by-course-poster}
-	%\input{\OutputTexDir/outcomes-by-course-1}
 	\newcommand{\EducationalObjectivesWidth}{29cm}
 	\begin{tabularx}{0.975\textwidth}{Xm{.1cm}m{\EducationalObjectivesWidth}}
-			{\tiny \Cblur{\input{\OutputTexDir/all-outcomes-by-course-poster-<LANG>}} } & &
-			\Cblur{ 
-				\begin{tabularx}{\EducationalObjectivesWidth}{X}%
-				{\captionsize \bf Objetivos Educacionales ({\it Educational Objectives})} 				\\ \hline
-				{\scriptsize \vspace{0.1cm}
-				\input{\InTexDir/educational-objectives-list} 
-				}\\ 
-				\end{tabularx}%
-			}
-			%\Cblur{\includegraphics[height=10cm]{../fig/Bloom-sequence}}
-			%\Cblur{\includegraphics[height=10cm]{../fig/Bloom}}
-			%{\captionsize Competencias por disciplina} &
-			%{\captionsize Pirámide del Aprendizaje} \\
+	{	\tiny \Cblur{\input{\OutputTexDir/all-outcomes-by-course-poster-<LANG_PREFIX>}} } & &
+		\Cblur{ 
+			\begin{tabularx}{\EducationalObjectivesWidth}{X}%
+			{\captionsize \textbf{<<EducationalObjectives>>}} \\ \hline
+			{\scriptsize \vspace{0.1cm}
+			\input{\basedir/<IN_TEX_DIR>/educational-objectives-list} 
+				%\InTexDir/educational-objectives-list ...
+			}\\ 
+			\end{tabularx}%
+		}
+		%\Cblur{\includegraphics[height=10cm]{../figs/Bloom-sequence}}
+		%\Cblur{\includegraphics[height=10cm]{../figs/Bloom}}
+		%{\captionsize Competencias por disciplina} &
+		%{\captionsize Pirámide del Aprendizaje} \\
 	\end{tabularx}
 }
 {	
@@ -128,74 +123,74 @@
 	\centering
 	\newcommand{\bigstandard}{0.8\textwidth}
 	\newcommand{\smallstandard}{0.4\textwidth}
-	%\Cblur{\includegraphics[width=\bigstandard]{../fig/curves-\currentarea-with-CS.eps}} \\
-	\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\bigstandard}]{../fig/curves-\currentarea-with-CS-<LANG>.eps}} \\
+	%\Cblur{\includegraphics[width=\bigstandard]{../figs/curves-\currentarea-with-CS.eps}} \\
+	\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\bigstandard}]{../figs/curves-\currentarea-with-CS-<LANG_PREFIX>.eps}} \\
 	\vspace{0.2cm} 
 	\color{white}{\captionsize \bf CS (\siglas) vs CS (ACM/IEEE-CS)}\vspace*{0.2cm}   \\
 	\hrule \vspace{0.2cm} 	
 
 	\begin{tabular}{cc}
-		\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../fig/curves-\currentarea-with-CE-<LANG>.eps}} &
-        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../fig/curves-\currentarea-with-IS-<LANG>.eps}} \\
+		\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../figs/curves-\currentarea-with-CE-<LANG_PREFIX>.eps}} &
+        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../figs/curves-\currentarea-with-IS-<LANG_PREFIX>.eps}} \\
 		\color{white}{\captionsize \bf CS (\siglas) vs CE (ACM/IEEE-CS)} & 
 		\color{white}{\captionsize \bf CS (\siglas) vs IS (ACM/IEEE-CS)} 
 	\end{tabular}
 	\hrule \vspace{0.2cm}
 	
 	\begin{tabular}{cc}
-        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../fig/curves-\currentarea-with-SE-<LANG>.eps}} &
-        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../fig/curves-\currentarea-with-IT-<LANG>.eps}} \\
+        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../figs/curves-\currentarea-with-SE-<LANG_PREFIX>.eps}} &
+        \Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={width=\smallstandard}]{../figs/curves-\currentarea-with-IT-<LANG_PREFIX>.eps}} \\
 		\color{white}{\captionsize \bf CS (\siglas) vs SE (ACM/IEEE-CS)} & 
 		\color{white}{\captionsize \bf CS (\siglas) vs IT (ACM/IEEE-CS)} 
  	\end{tabular}
 	\hrule \vspace{0.2cm}
 	
-    \Cblur{\includegraphics[width=0.965\textwidth]{../fig/course-coding.eps}} \\
+    \Cblur{\includegraphics[width=0.965\textwidth]{../figs/course-coding.eps}} \\
 	\vspace*{0.1cm}
 	\color{white}{\captionsize \bf Codificación de cursos del área de Ciencia de la Computación} \vspace*{0.2cm}\\ \hrule
 	\vspace{0.1cm}
-% 	\Cblur{\includegraphics[width=0.965\textwidth]{../fig/IS-course-number.eps}} \\
+% 	\Cblur{\includegraphics[width=0.965\textwidth]{../figs/IS-course-number.eps}} \\
 % 		\vspace*{0.2cm}
 % 	\color{white}{\captionsize Codificación de cursos del área de Sistemas de Información} \vspace*{0.2cm}\\ \hrule
 % 	\hrule
 %         \vspace{0.4cm}
 
-	\Cblur{\includegraphics[width=0.965\textwidth]{../fig/\currentarea.eps}} \\
+	\Cblur{\includegraphics[width=0.965\textwidth]{../figs/\currentarea.eps}} \\
 	\vspace*{0.1cm}\color{white}{\captionsize \bf Perfil internacional de CS} \vspace*{0.2cm}\\ \hrule
 	\hrule \vspace{0.4cm}
 
 	\begin{tabularx}{0.95\textwidth}{m{.5cm}cm{.5cm}Xm{.5cm}}
-		% 		\Cblur{\includegraphics[heigth=6.55cm]{../fig/pie-credits.eps}} &
-		% 		\Cblur{\includegraphics[heigth=6.55cm]{../fig/pie-by-levels.eps}} \\
-		%		\Cblur{\includegraphics[height=6.55cm]{../fig/pie-credits.eps}} & & \Cblur{\includegraphics[height=6.55cm]{../fig/pie-by-levels.eps}} \\
+		% 		\Cblur{\includegraphics[heigth=6.55cm]{../figs/pie-credits.eps}} &
+		% 		\Cblur{\includegraphics[heigth=6.55cm]{../figs/pie-by-levels.eps}} \\
+		%		\Cblur{\includegraphics[height=6.55cm]{../figs/pie-credits.eps}} & & \Cblur{\includegraphics[height=6.55cm]{../figs/pie-by-levels.eps}} \\
 		%		\color{white}{\captionsize \bf Créditos por área} 				& & \color{white}{\captionsize \bf Créditos por nivel}
-				&
-				\begin{minipage}{0.4\textwidth}
-					\centering
-					\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={height=6.1cm}]{../fig/pie-credits.eps}}
-					\color{white}{\captionsize \bf Créditos por área}
-				\end{minipage}
-				& &
-				\begin{minipage}{0.6\textwidth}
-					\centering 
-					% colback=olive
-					\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={height=6.1cm}]{../fig/pie-by-levels.eps}} \\
-					\color{white}{\captionsize \bf Créditos por nivel}
-				\end{minipage}
-				&
-			 \end{tabularx}
+		&
+		\begin{minipage}{0.4\textwidth}
+			\centering
+			\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={height=6.1cm}]{../figs/pie-credits.eps}}
+			\color{white}{\captionsize \bf Créditos por área}
+		\end{minipage}
+		& &
+		\begin{minipage}{0.6\textwidth}
+			\centering 
+			% colback=olive
+			\Cblur{\tcbincludegraphics[hbox,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,colback=white,graphics options={height=6.1cm}]{../figs/pie-by-levels.eps}} \\
+			\color{white}{\captionsize \bf Créditos por nivel}
+		\end{minipage}
+		&
+	\end{tabularx}
 }
 
 \Cblur{ 
 	\begin{tabularx}{\textwidth}{X}%
-	{\bf Definición de Objetivos de Aprendizaje ({\it Learning Outcomes})} 				\\ \hline
+	\textbf{Definición de Objetivos de Aprendizaje ({\it Learning Outcomes})} 				\\ \hline
 		%\vspace{0.01cm}
-		{{\bf Nivel 1 \Familiarity\xspace({\it Familiarity})}: \LearningOutcomesTxtEsFamiliarity} 	\\
-		{{\bf Nivel 2 \Usage\xspace({\it Usage})}: \LearningOutcomesTxtEsUsage} 						\\
-		{{\bf Nivel 3 \Assessment\xspace({\it Assessment})}: \LearningOutcomesTxtEsAssessment} \\ %
+		{\textbf{Nivel 1 \Familiarity\xspace({\it Familiarity})}: \LearningOutcomesTxtEsFamiliarity} 	\\
+		{\textbf{Nivel 2 \Usage\xspace({\it Usage})}: \LearningOutcomesTxtEsUsage} 						\\
+		{\textbf{Nivel 3 \Assessment\xspace({\it Assessment})}: \LearningOutcomesTxtEsAssessment} \\ %
 	\end{tabularx}%
 }
 
-\Cblur{\begin{minipage}{\textwidth}{\bf \large \Copyrights}\end{minipage}}
+\Cblur{\begin{minipage}{\textwidth}\textbf{\large \Copyrights}\end{minipage}}
 
 \end{document}

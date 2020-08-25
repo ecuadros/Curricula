@@ -2,10 +2,12 @@
 
 rm -rf html/CS-ANR CS-ANR-big-main.*
 rm -rf html/CS-CLEI CS-CLEI-big-main.*
+rm -rf html/CS-MINEDU CS-MINEDU-big-main.*
 rm -rf html/CS-SBC CS-SBC-big-main.*
 rm -rf html/CS-SPC CS-SPC-big-main.*
 rm -rf html/CS-UCR CS-UCR-big-main.*
 rm -rf html/CS-UCSP CS-UCSP-big-main.*
+rm -rf html/CS-UDEP CS-UDEP-big-main.*
 rm -rf html/CS-UNAM CS-UNAM-big-main.*
 rm -rf html/CS-UNMSM CS-UNMSM-big-main.*
 rm -rf html/CS-UNSA CS-UNSA-big-main.*
@@ -19,6 +21,10 @@ rm -rf html/CS-UTEC CS-UTEC-big-main.*
 ./scripts/updatelog.pl "CLEI: Starting compilation ..."
 ./compile  CS-CLEI 
 ./gen-html CS-CLEI
+
+./scripts/updatelog.pl "MINEDU: Starting compilation ..."
+./compile  CS-MINEDU 
+./gen-html CS-MINEDU
 
 ./scripts/updatelog.pl "SBC: Starting compilation ..."
 ./compile  CS-SBC 
@@ -35,6 +41,10 @@ rm -rf html/CS-UTEC CS-UTEC-big-main.*
 ./scripts/updatelog.pl "UCSP: Starting compilation ..."
 ./compile  CS-UCSP 
 ./gen-html CS-UCSP
+
+./scripts/updatelog.pl "UDEP: Starting compilation ..."
+./compile  CS-UDEP 
+./gen-html CS-UDEP
 
 ./scripts/updatelog.pl "UNAM: Starting compilation ..."
 ./compile  CS-UNAM 

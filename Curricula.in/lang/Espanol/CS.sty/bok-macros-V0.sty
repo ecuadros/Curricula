@@ -10,7 +10,7 @@ Al igual que con todas las áreas de conocimiento, el orden de los temas y sus a
 \KUDescription{AL}{BasicAnalysis}{<<~>>}	
 \KUItem{AL}{BasicAnalysis}{Core-Tier1}{Differences}{}{<<Diferencias entre el mejor, el esperado y el peor caso de un algoritmo.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Familiarity}{Explain}{<<Explique a que se refiere con ``mejor", ``esperado" y ``peor" caso de comportamiento de un algoritmo.>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier1}{Asymptotic}{}{<<Análisis asintótico de complejidad de cotas superior y esperada.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Assessment}{In}{<<En el contexto de a algoritmos específicos, identifique las características de data y/o otras condiciones o suposiciones que lleven a diferentes comportamientos.>>}
-\KUItem{AL}{BasicAnalysis}{Core-Tier1}{Big}{}{<<Definición formal de la Notación Big O.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Usage}{Determine}{<<Determine informalmente el tiempo y el espacio de complejidad de simples algoritmos.>>}
+\KUItem{AL}{BasicAnalysis}{Core-Tier1}{Big}{}{<<Definición formal de la Notación Big O.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Usage}{Determine}{<<Determine informalmente el tiempo y el espacio de complejidad de diferentes algoritmos.>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier1}{Complexity}{}{<<Clases de complejidad como constante, logarítmica, lineal, cuadrática y exponencial.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Familiarity}{State}{<<Indique la definición formal de Big O.>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier1}{Empirical}{}{<<Medidas empíricas de desempeño.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Familiarity}{List}{<<Lista y contraste de clases estándares de complejidad.>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier1}{Time}{}{<<Compensación entre espacio y tiempo en los algoritmos.>>}	\LO{AL}{BasicAnalysis}{Core-Tier1}{Assessment}{Perform}{<<Realizar estúdios empíricos para validar una hipótesis sobre runtime stemming desde un análisis matemático Ejecute algoritmos con entrada de varios tamaños y compare el desempeño.>>}
@@ -18,7 +18,7 @@ Al igual que con todas las áreas de conocimiento, el orden de los temas y sus a
 \KUItem{AL}{BasicAnalysis}{Core-Tier2}{Little}{}{<<Notación Little o, Big omega y Big theta.>>}	\LO{AL}{BasicAnalysis}{Core-Tier2}{Usage}{Use}{<<Use la notación formal de la Big O para dar límites superiores asintóticos en la complejidad de tiempo y espacio de los algoritmos.>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier2}{Recurrence}{}{<<Relaciones recurrentes.>>}	\LO{AL}{BasicAnalysis}{Core-Tier2}{Usage}{UseBig}{<<Usar la notación formal Big O para dar límites de casos esperados en el tiempo de complejidad de los algoritmos>>}
 \KUItem{AL}{BasicAnalysis}{Core-Tier2}{Analysis}{}{<<Análisis de algoritmos iterativos y recursivos.>>}	\LO{AL}{BasicAnalysis}{Core-Tier2}{Familiarity}{ExplainThe}{<<Explicar el uso de la notación theta grande, omega grande y o pequeña para describir la cantidad de trabajo hecho por un algoritmo.>>}
-\KUItem{AL}{BasicAnalysis}{Core-Tier2}{Some}{}{<<Algunas versiones del Teorema Maestro.>>}	\LO{AL}{BasicAnalysis}{Core-Tier2}{Usage}{UseRecurrence}{<<Usar relaciones recurrentes para determinar el tiempo de complejidad de algoritmos recursivamente definidos.>>}
+\KUItem{AL}{BasicAnalysis}{Core-Tier2}{Some}{}{<<Teorema Maestro y Árboles Recursivos.>>}	\LO{AL}{BasicAnalysis}{Core-Tier2}{Usage}{UseRecurrence}{<<Usar relaciones recurrentes para determinar el tiempo de complejidad de algoritmos recursivamente definidos.>>}
 	\LO{AL}{BasicAnalysis}{Core-Tier2}{Usage}{Solve}{<<Resuelve relaciones de recurrencia básicas, por ejemplo. usando alguna forma del Teorema Maestro.>>}
 	
 \KU{AL}{AlgorithmicStrategies}{<<Estrategias Algorítmicas>>}{}{5}{1}	
@@ -53,8 +53,8 @@ Al igual que con todas las áreas de conocimiento, el orden de los temas y sus a
 \KUItem{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier2}{Heaps}{}{<<Montículos (Heaps)>>}	\LO{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier1}{Usage}{SolveProblems}{<<Resolver problemas usando algoritmos básicos de grafos, incluyendo busqueda por profundidad y busqueda por amplitud.>>}
 "\KUItem{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier2}{GraphsAnd}{}{<<Grafos y algoritmos en grafos:
 \begin{subtopics} 
-\item Algoritmos de la ruta más corta (algoritmos de Dijkstra y Floyd)
-\item Árbol de expansión mínima (algoritmos de Prim y Kruskal) 
+\item Problema de corte máximo y mínimo
+\item Busqueda local
 \end{subtopics}>>}"	\LO{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier1}{Assessment}{Demonstrate}{<<Demostrar habilidad para evaluar algoritmos, para seleccionar de un rango de posibles opciones, para proveer una  justificación por esa selección,y para implementar el algoritmo en un contexto en específico.>>}
 \KUItem{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier2}{Pattern}{}{<<Búsqueda de patrones y algoritmos de cadenas/texto (ej. búsqueda de subcadena, búsqueda de expresiones regulares, algoritmos de subsecuencia común más larga)>>}	\LO{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier2}{Familiarity}{DescribeTheAnd}{<<Describir la propiedad del heap y el uso de heaps como una implementación de colas de prioridad.>>}
 	\LO{AL}{FundamentalDataStructuresandAlgorithms}{Core-Tier2}{Usage}{SolveProblemsAlgorithms}{<<Resolver problemas usando algoritmos de grafos, incluyendo camino más corto de una sola fuente y camino más corto de todos los pares, y como mínimo un algoritmo de arbol de expansion minima.>>}
@@ -129,12 +129,12 @@ Los resultados del aprendizaje especificados para estos temas corresponden princ
 	
 \KU{AR}{Digitallogicanddigitalsystems}{<<Lógica digital y sistemas digitales.>>}{}{0}{3}	
 \KUDescription{AR}{Digitallogicanddigitalsystems}{<<~>>}	
-\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Overview}{}{<<Revisión e historia de la Arquitectura de Computadores.>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{DescribeTheComputer}{<<Describir el avance paulatino de los componentes de la tecnología de computación, desde los tubos de vacío hasta VLSI, desde las arquitecturas mainframe a las arquitecturas en escala warehouse>>}
-\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Combinational}{}{<<Lógica combinacional vs. secuencial/Arreglos de puertas de campo programables como bloque fundamental de construcción lógico combinacional-secuencial.>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{Comprehend}{<<Comprender que la tendencia de las arquitecturas modernas de computadores es hacia núcleos múltiples y que el paraleliso es inherente en todos los sistemas de hardware>>}
-\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Multiple}{}{<<Multiples representaciones / Capas de interpretación (El hardware es solo otra capa)>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{ExplainTheThe}{<<Explicar las implicancias de los límites de potencia para mejoras adicionales en el rendimiento de los procesadores y también en el aprovechamiento del paralelismo.>>}
+\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Overview}{}{<<Revisión e historia de la Arquitectura de Computadores.>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{DescribeTheComputer}{<<Describir el avance de la tecnología de dispositivos, desde los tubos de vacío hasta VLSI, desde las arquitecturas mainframe a las arquitecturas en escala warehouse>>}
+\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Combinational}{}{<<Lógica combinacional y secuencial/\emph{field programmable gate arrays} como bloque fundamental de construcción lógico combinacional secuencial.>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{Comprehend}{<<Comprender que la tendencia de las arquitecturas modernas de computadores es hacia núcleos múltiples y que el paraleliso es inherente en todos los sistemas de hardware>>}
+\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Multiple}{}{<<Modelos de representación(abstracción)>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{ExplainTheThe}{<<Explicar las implicancias de los límites de potencia para mejoras adicionales en el rendimiento de los procesadores y también en el aprovechamiento del paralelismo.>>}
 \KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Computer}{}{<<Herramientas de diseño asistidas por computadora que procesan hardware y representaciones arquitecturales.>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Familiarity}{Articulate}{<<Relacionar las varias representaciones equivalentes de la funcionalidad de un computador, incluyendo expresiones y puertas lógicas, y ser capces de utilizar expresiones matemáticas para describir las funciones de circuitos combinacionales y secuenciales sencillos.>>}
 \KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Register}{}{<<Registrar transferencia notación / Hardware lenguage descriptivo (Verilog/VHDL)>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Usage}{DesignThe}{<<Diseñar los componentes básicos de construcción de un computador: unidad aritmético lógica (a nivel de puertas lógicas), unidad central de procesamiento (a nivel de registros de transferencia), memoria (a nivel de registros de transferencia).>>}
-\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Physical}{}{<<Restriccion física (Retrasos de Entrada, fan-in, fan-out, energia/poder)>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Usage}{UseCad}{<<Usar herramientas CAD para capturar, sistetizar, y simular bloques de construcción (como ALUs, registros, movimiento entre registros) de un computador simple.>>}
+\KUItem{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Physical}{}{<<Restriccion física (Retrasos de Entrada, fan-in, fan-out, energia/potencia)>>}	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Usage}{UseCad}{<<Usar herramientas CAD para capturar, sistetizar, y simular bloques de construcción (como ALUs, registros, movimiento entre registros) de un computador simple.>>}
 	\LO{AR}{Digitallogicanddigitalsystems}{Core-Tier2}{Assessment}{Evaluate}{<<Evaluar el comportamiento de un diagrama de tiempos y funcional de un procesador simple implementado a nivel de circuitos lógicos.>>}
 	
 \KU{AR}{Machinelevelrepresentationofdata}{<<Representación de datos a nivel máquina.>>}{}{0}{3}	
@@ -151,8 +151,8 @@ Los resultados del aprendizaje especificados para estos temas corresponden princ
 \KUDescription{AR}{Assemblylevelmachineorganization}{<<~>>}	
 \KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Basic}{}{<<Organización Básica de la Máquina de Von Neumann.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{ExplainTheTheNeumann}{<<Explicar la organización de la maquina clásica de von Neumann y sus principales unidades funcionales>>}
 \KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Control}{}{<<Unidad de Control.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{DescribeHowIs}{<<Describir cómo se ejecuta una instrucción en una máquina de von Neumann con extensión para hebras, sincronización multiproceso y ejecucion SIMD (máquina vectorial)>>}
-\KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Instruction}{}{<<Paquetes de instrucciones y tipos (manipulación de información, control, I/O)>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{DescribeInstruction}{<<Describir el paralelismo a nivel de instrucciones y sus peligros, y cómo es esto tratado en pipelines de proceso típicos.>>}
-\KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Assembly}{}{<<Assembler / Programación en Lenguaje de Máquina.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{Summarize}{<<Resumir cómo se representan las instrucciones, tanto a nivel de máquina bajo el contexto de un ensamblador simbólico.>>}
+\KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Instruction}{}{<<\emph{Instruction sets} y tipos (manipulación de información, control, I/O)>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{DescribeInstruction}{<<Describir el paralelismo a nivel de instrucciones y sus peligros, y cómo es esto tratado en pipelines de proceso típicos.>>}
+\KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Assembly}{}{<<Assembler y Programación en Lenguaje de Máquina.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{Summarize}{<<Resumir cómo se representan las instrucciones, tanto a nivel de máquina bajo el contexto de un ensamblador simbólico.>>}
 \KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{InstructionFormats}{}{<<Formato de instrucciones.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{DemonstrateHow}{<<Demostrar cómo se mapean los patrones de lenguajes de alto nivel en notaciones en lenguaje ensamblador o en código máquina>>}
 \KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Addressing}{}{<<Modos de direccionamiento.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{ExplainDifferent}{<<Explicar los diferentes formatos de instrucciones, así como el direccionamiento por instrucción, y comparar formatos de tamaño fijo y variable>>}
 \KUItem{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Subroutine}{PLLanguageTranslationandExecution}{<<Llamada a subrutinas y mecanismos de retorno.>>}	\LO{AR}{Assemblylevelmachineorganization}{Core-Tier2}{Familiarity}{ExplainHowAre}{<<Explicar como las llamadas a subrutinas son manejadas a nivel de ensamblador>>}
@@ -163,10 +163,10 @@ Los resultados del aprendizaje especificados para estos temas corresponden princ
 	
 \KU{AR}{Memorysystemorganizationandarchitecture}{<<Organización y Arquitectura del Sistema de Memoria.>>}{OSMemoryManagement,OSVirtualMachines}{0}{3}	
 \KUDescription{AR}{Memorysystemorganizationandarchitecture}{<<~>>}	
-\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Storage}{}{<<Sistemas de Almacenamiento y su Tecnología.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{Identify}{<<Identifique las principales tecnologías de memoria (Por ejemplo: SRAM, DRAM, Flash,Disco Magnetico) y su  relación costo beneficio>>}
-\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Memory}{}{<<Jerarquía de Memoria: importancia de la localización temporal y espacial.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{ExplainTheMemory}{<<Explique el efecto del retardo de la memoria en tiempo de ejecución>>}
-\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Main}{}{<<Organización y Operaciones de la Memoria Principal.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{DescribeHowOf}{<<Describa como el uso de jerarquía de memoria (caché, memoria virtual) es aplicado para reducir el retardo efectivo en la memoria>>}
-\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Latency}{}{<<Latencia, ciclos de tiempo, ancho de banda e intercalación.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{DescribeTheMemory}{<<Describa los principios de la administración de memoria>>}
+\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Storage}{}{<<Sistemas de Almacenamiento y su Tecnología.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{Identify}{<<Identificar las principales tecnologías de memoria (Por ejemplo: SRAM, DRAM, Flash,Disco Magnetico) y su  relación costo beneficio>>}
+\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Memory}{}{<<Jerarquía de Memoria: importancia de la localización temporal y espacial.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{ExplainTheMemory}{<<Explique el efecto de latencia de memoria en tiempo de ejecución>>}
+\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Main}{}{<<Organización y Operaciones de la Memoria Principal.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{DescribeHowOf}{<<Describir como el uso de jerarquía de memoria (caché, memoria virtual) es aplicado para reducir el atraso efectivo en la memoria>>}
+\KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Latency}{}{<<Latencia, ciclos de tiempo, ancho de banda e \emph{interleading}.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{DescribeTheMemory}{<<Describir los principios de la administración de memoria>>}
 \KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Cache}{}{<<Memorias caché (Mapeo de direcciones, Tamaño de bloques, Reemplazo y Politicas de almacenamiento)>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Familiarity}{ExplainTheA}{<<Explique el funcionamiento de un sistema con gestión de memoria virtual>>}
 \KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Multiprocessor}{}{<<Multiprocesador coherencia cache / Usando el sistema de memoria para las operaciones de sincronización de memoria / atómica inter-core.>>}	\LO{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Usage}{Compute}{<<Calcule el tiempo de acceso promedio a memoria bajo varias configuraciones de caché y memoria y para diversas combinaciones de instrucciones y referencias a datos>>}
 \KUItem{AR}{Memorysystemorganizationandarchitecture}{Core-Tier2}{Virtual}{}{<<Memoria virtual (tabla de página,  TLB)>>}	
@@ -185,16 +185,16 @@ Los resultados del aprendizaje especificados para estos temas corresponden princ
 	
 \KU{AR}{Functionalorganization}{<<Organización funcional.>>}{}{0}{0}	
 \KUDescription{AR}{Functionalorganization}{<<Nota: Electiva para Ciencia de la Computación; Es fundamental para el currículo de Ingeniería de la Computación.>>}	
-\KUItem{AR}{Functionalorganization}{Elective}{Implementation}{}{<<Implementación de rutas de datos simples, incluyendo la canalización de instrucciones, detección de riesgos y la resolución.>>}	\LO{AR}{Functionalorganization}{Elective}{Familiarity}{CompareAlternative}{<<Comparar implementaciones alternativas de ruta de datos.>>}
-\KUItem{AR}{Functionalorganization}{Elective}{Control}{}{<<Control de unidades: Realización Cableada vs Realización Microprogramada.>>}	\LO{AR}{Functionalorganization}{Elective}{Familiarity}{DiscussTheControl}{<<Discutir el concepto de puntos de control y la generación de señales de control usando implementaciones a nivel de circuito o microprogramadas.>>}
+\KUItem{AR}{Functionalorganization}{Elective}{Implementation}{}{<<Implementación de \emph{datapath}, incluyendo un \emph{pipeline} de instrucciones, detección de \emph{hazards} y la resolución.>>}	\LO{AR}{Functionalorganization}{Elective}{Familiarity}{CompareAlternative}{<<Comparar implementaciones alternativas de ruta de datos.>>}
+\KUItem{AR}{Functionalorganization}{Elective}{Control}{}{<<Control de unidades: Microprogramada.>>}	\LO{AR}{Functionalorganization}{Elective}{Familiarity}{DiscussTheControl}{<<Discutir el concepto de puntos de control y la generación de señales de control usando implementaciones a nivel de circuito o microprogramadas.>>}
 \KUItem{AR}{Functionalorganization}{Elective}{Instruction}{}{<<Instruccion (Pipelining)>>}	\LO{AR}{Functionalorganization}{Elective}{Familiarity}{ExplainBasic}{<<Explicar el paralelismo a nivel de instrucciones básicas usando pipelining y los mayores riesgos que pueden ocurrir.>>}
 \KUItem{AR}{Functionalorganization}{Elective}{IntroductionTo}{}{<<Introducción al paralelismo al nivel de instrucción (PNI)>>}	\LO{AR}{Functionalorganization}{Elective}{Usage}{DesignAnd}{<<Diseñar e implementar un procesador completo, incluyendo ruta de datos y control.>>}
 	\LO{AR}{Functionalorganization}{Elective}{Assessment}{DetermineFor}{<<Calcular la cantidad promedio de ciclos por instrucción de una implementación con procesador y sistema de memoria determinados>>}
 	
 \KU{AR}{Multiprocessingandalternativearchitectures}{<<Multiprocesamiento y arquitecturas alternativas.>>}{}{0}{0}	
 \KUDescription{AR}{Multiprocessingandalternativearchitectures}{<<La vista aquí es sobre la implementación de hardware de SIMD y MIMD arquitecturas.>>}	
-\KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Power}{}{<<Ley potencial.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DiscussTheParallel}{<<Discutir el concepto de procesamiento paralelo mas allá del clásico modelo de von Neumann>>}
-\KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Example}{}{<<Ejemplos de juego de instrucciones y arquitecturas SIMD y MIMD.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DescribeAlternative}{<<Describir diferentes arquitecturas paralelas como SIMD y MIMD>>}
+\KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Power}{}{<<\emph{Power Law}.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DiscussTheParallel}{<<Discutir el concepto de procesamiento paralelo mas allá del clásico modelo de von Neumann>>}
+\KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Example}{}{<<Ejemplos de \emph{sets} de instrucciones y arquitecturas SIMD y MIMD.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DescribeAlternative}{<<Describir diferentes arquitecturas paralelas como SIMD y MIMD>>}
 \KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Interconnection}{}{<<Redes de interconexión (Hypercube, Shuffle-exchange, Mesh, Crossbar)>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{ExplainTheInterconnection}{<<Explicar el concepto de redes de interconexión y mostrar diferentes enfoques>>}
 \KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Shared}{}{<<Sistemas de memoria de multiprocesador compartido y consistencia de memoria.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DiscussTheThat}{<<Discutir los principales cuidados en los sistemas de multiprocesamiento presentes con respecto a la gestión de memoria y describir como son tratados>>}
 \KUItem{AR}{Multiprocessingandalternativearchitectures}{Elective}{Multiprocessor}{}{<<Coherencia de cache multiprocesador.>>}	\LO{AR}{Multiprocessingandalternativearchitectures}{Elective}{Familiarity}{DescribeTheMemoryMemory}{<<Describir las diferencias entre conectores electricos en paralelo backplane,  interconexión memoria procesador y memoria remota via red, sus implicaciones para la latencia de acceso y el impacto en el  rendimiento de un programa>>}
@@ -259,7 +259,7 @@ Modelado y simulación de sistemas del mundo real representan los conocimientos 
 \item El concepto de un algoritmo que consiste en un número finito de pasos bien definidos, cada uno de los cuales 
 se completa en una cantidad finita de tiempo, al igual que todo el proceso. \item Ejemplos de algoritmos bien conocidos como ordenamiento y busqueda. 
 \item El concepto de análisis como entendimiento de lo que el problema realmente pregunta, cómo un problema puede ser abordado utilizando un algoritmo, y cómo se representa la información de manera que una máquina pueda procesarla.
-\item El desarrollo o la identificación de un flujo de trabajo ({\it workflow}).
+\item El desarrollo o la identificación de un flujo de trabajo (\textit{workflow}).
 \item El proceso de convertir un algoritmo en código máquina ejecutable.
 \item Procesos de Software incluyendo modelos de ciclo de vida, requerimientos, diseño, implementación, verificación y mantenimiento.
 \item Representación máquina de datos de aritmética para computación. \end{subtopics}>>}"	\LO{CN}{Processing}{Elective}{Familiarity}{ExplainTheDefining}{<<Explicar las características y definir las propiedades de los algoritmos y como se relacionan con el procesamiento de la maquina.>>}
@@ -277,7 +277,7 @@ se completa en una cantidad finita de tiempo, al igual que todo el proceso. \ite
 \item Paralelismo, incluyendo parelelismo de tareas, datos y eventos.
 \item Arquitecturas Paralelas incluyendo arquitecturas de procesador, memoria y caching. 
 \item Paradigmas de Programación Paralela incluyendo hilos, paso de mensajes, técnicas orientadas a eventos,
-Arquitecturas de Software Paralelo y {\it Map / Reduce}.
+Arquitecturas de Software Paralelo y \textit{Map / Reduce}.
 \item Computación en Grid.
 \item El impacto de la arquitectura en tiempo computacional.
 \item Tiempo total de la curva de la ciencia para el paralelismo: continuidad de las cosas.
@@ -433,7 +433,7 @@ Dado que las estructuras discretas sirve como base para muchas otras áreas de l
 \KUItem{DS}{DiscreteProbability}{Core-Tier2}{ConditionalIndependence}{}{<<Independencia Condicional.>>}	
 	
 \KA{GV}{<<Gráficos y Visualización.>>}{}	
-"\KADescription{GV}{<<{\it Computer Graphics} es el término comúnmente utilizado para describir la generación y la manipulación de imagenes por medio de la computadora. Es la ciencia de la que permite la comunicación visual a través de la computación. Sus usos incluyen dibujos animados, efectos especiales de cine, videojuegos, imágenes médicas, de ingeniería, así como científicos, información y visualización de conocimiento. Tradicionalmente, los gráficos a nivel de pregrado se ha centrado en la representación, el álgebra lineal, y los enfoques fenomenológicos. Más recientemente, la atención se ha comenzado a incluir la física, integración numérica, escalabilidad y hardware de propósito específico. Para que los estudiantes se conviertan en expertos en el uso y generación de gráficos por ordenador, muchos temas específicos de la implementación deben ser abordados, tales como formatos de archivos, interfaces de hardware y las interfaces de programa de aplicación. Estos temas cambian rápidamente, y la descripción que sigue a los intentos para evitar que sean excesivamente prescriptivos sobre ellos. El área abarcada por Gráficos y visualización se divide en varios campos relacionados entre sí: 
+"\KADescription{GV}{<<\textit{Computer Graphics} es el término comúnmente utilizado para describir la generación y la manipulación de imagenes por medio de la computadora. Es la ciencia de la que permite la comunicación visual a través de la computación. Sus usos incluyen dibujos animados, efectos especiales de cine, videojuegos, imágenes médicas, de ingeniería, así como científicos, información y visualización de conocimiento. Tradicionalmente, los gráficos a nivel de pregrado se ha centrado en la representación, el álgebra lineal, y los enfoques fenomenológicos. Más recientemente, la atención se ha comenzado a incluir la física, integración numérica, escalabilidad y hardware de propósito específico. Para que los estudiantes se conviertan en expertos en el uso y generación de gráficos por ordenador, muchos temas específicos de la implementación deben ser abordados, tales como formatos de archivos, interfaces de hardware y las interfaces de programa de aplicación. Estos temas cambian rápidamente, y la descripción que sigue a los intentos para evitar que sean excesivamente prescriptivos sobre ellos. El área abarcada por Gráficos y visualización se divide en varios campos relacionados entre sí: 
 \begin{subtopics} 
 \item Fundamentos: La infografía depende de una comprensión de cómo los seres humanos utilizan la visión para percibir la información y cómo la información se puede representar en un dispositivo de visualización. Cada científico de la computación debe tener cierta comprensión de dónde y cómo los gráficos se pueden aplicarse según corresponda, así asthe procesos fundamentales involucrados en la prestación de visualización. 
 \item Modelado artículo: Información que se muestra debe ser codificada en la memoria del ordenador en alguna forma, a menudo en forma de una especificación matemática de la forma y la forma. 
@@ -463,16 +463,16 @@ Hay un objeto botón o existe sólo la visualización de un botón en la pantall
 \KU{GV}{BasicRendering}{<<Rendering Básico>>}{}{0}{0}	
 \KUDescription{GV}{BasicRendering}{<<En esta sección se describe la prestación básica y las técnicas gráficas fundamentales que casi todos los cursos de pregrado en los gráficos se cubre y que son esenciales para el estudio adicional en gráficos. Muestreo y anti-aliasing están relacionados con el efecto de la digitalización y aparecen en otras áreas de la computación, por ejemplo, en el muestreo de audio.>>}	
 \KUItem{GV}{BasicRendering}{Elective}{Rendering}{}{<<Renderizado en la naturaleza, por ejemplo, la emisión y dispersión de la luz y su relación con la integración numérica.>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{DiscussTheProblem}{<<Discutir el problema de transporte de la luz y su relación con la integración numérica, es decir, se emite luz, dispersa alrededor de la escena, y es medida por el ojo.>>}
-\KUItem{GV}{BasicRendering}{Elective}{Forward}{}{<<Renderizado Fordward and Backward (i.e., {\it ray-casting} y rasterización)>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{DescribeThePipeline}{<<Describir la tubería básica gráficos y cómo el factor de representación va hacia adelante y atrás en esta.>>}
+\KUItem{GV}{BasicRendering}{Elective}{Forward}{}{<<Renderizado Fordward and Backward (i.e., \textit{ray-casting} y rasterización)>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{DescribeThePipeline}{<<Describir la tubería básica gráficos y cómo el factor de representación va hacia adelante y atrás en esta.>>}
 \KUItem{GV}{BasicRendering}{Elective}{Polygonal}{}{<<Representación poligonal>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{CreateADisplay}{<<Crear un programa para visualizar modelos 3D de imagenes gráficas simples.>>}
 \KUItem{GV}{BasicRendering}{Elective}{Basic}{}{<<Radiometría básica, triángulos similares y modelos de proyecciones>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{Derive}{<<Derivar la perspectiva lineal de triángulos semejantes por conversión de puntos (x,y,z) a puntos (x/z, y/z, 1).>>}
 \KUItem{GV}{BasicRendering}{Elective}{Affine}{}{<<Afinamiento y Transformaciones de Sistemas de coordenadas>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{Obtain}{<<Obtener puntos en 2-dimensiones y 3-dimensiones por aplicación de transformaciones afín.>>}
-\KUItem{GV}{BasicRendering}{Elective}{Ray}{}{<<{\it Ray tracing}>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{ApplyDimensional}{<<Aplicar sistema de coordenadas de 3-dimensiones y los cambios necesarios para extender las operaciones de transformación 2D para manejar las transformaciones en 3D.>>}
-\KUItem{GV}{BasicRendering}{Elective}{Visibility}{}{<<Visibilidad y oclusión, incluyendo soluciones a este problema, como el almacenamiento en búfer de profundidad, algoritmo del pintor, y el trazado de rayos.>>}	\LO{GV}{BasicRendering}{Elective}{Assessment}{Contrast}{<<Contrastar la renderización hacia adelanate {\it forward} y hacia atras {\it backward}.>>}
-\KUItem{GV}{BasicRendering}{Elective}{The}{}{<<Representación de la ecuación de adelante hacia atrás.>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{ExplainTheApplications}{<<Explicar el concepto y las aplicaciones de mapeo de texturas, muestreo y el {\it anti-aliasing}.>>}
+\KUItem{GV}{BasicRendering}{Elective}{Ray}{}{<<\textit{Ray tracing}>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{ApplyDimensional}{<<Aplicar sistema de coordenadas de 3-dimensiones y los cambios necesarios para extender las operaciones de transformación 2D para manejar las transformaciones en 3D.>>}
+\KUItem{GV}{BasicRendering}{Elective}{Visibility}{}{<<Visibilidad y oclusión, incluyendo soluciones a este problema, como el almacenamiento en búfer de profundidad, algoritmo del pintor, y el trazado de rayos.>>}	\LO{GV}{BasicRendering}{Elective}{Assessment}{Contrast}{<<Contrastar la renderización hacia adelanate \textit{forward} y hacia atras \textit{backward}.>>}
+\KUItem{GV}{BasicRendering}{Elective}{The}{}{<<Representación de la ecuación de adelante hacia atrás.>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{ExplainTheApplications}{<<Explicar el concepto y las aplicaciones de mapeo de texturas, muestreo y el \textit{anti-aliasing}.>>}
 \KUItem{GV}{BasicRendering}{Elective}{Simple}{}{<<Rasterización triangular simple.>>}	\LO{GV}{BasicRendering}{Elective}{Familiarity}{ExplainTheRasterization}{<<Explicar la dualidad de rastreo de rayos/rasterización para el problema de visibilidad.>>}
 \KUItem{GV}{BasicRendering}{Elective}{RenderingWith}{}{<<Renderización con una API basada en shader.>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{ImplementSimplePerform}{<<Implementar simples procedimientos que realicen la transformación y las operaciones de recorte de imágenes simples en 2 dimensiones.>>}
-\KUItem{GV}{BasicRendering}{Elective}{Texture}{}{<<Mapeo de texturas, incluyendo minificación y magnificación (e.g., MIP-mapping trilineal)>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{ImplementA}{<<Implementar un sencillo renderizador en tiempo real utilizando una API de rasterización (por ejemplo, OpenGL) utilizando buffers de vértices y {\it shaders}>>}
+\KUItem{GV}{BasicRendering}{Elective}{Texture}{}{<<Mapeo de texturas, incluyendo minificación y magnificación (e.g., MIP-mapping trilineal)>>}	\LO{GV}{BasicRendering}{Elective}{Usage}{ImplementA}{<<Implementar un sencillo renderizador en tiempo real utilizando una API de rasterización (por ejemplo, OpenGL) utilizando buffers de vértices y \textit{shaders}>>}
 \KUItem{GV}{BasicRendering}{Elective}{Application}{}{<<Aplicación de la representación de estructuras de datos espaciales.>>}	\LO{GV}{BasicRendering}{Elective}{Assessment}{CompareAndDifferent}{<<Comparar y contrastar las diferentes técnicas de renderización.>>}
 \KUItem{GV}{BasicRendering}{Elective}{Sampling}{}{<<Muestreo y anti-aliasing.>>}	\LO{GV}{BasicRendering}{Elective}{Assessment}{ComputeSpace}{<<Calcular las necesidades de espacio en base a la resolución y codificación de color>>}
 \KUItem{GV}{BasicRendering}{Elective}{Scene}{}{<<Gráficos en escena y la canalización de gráficos.>>}	\LO{GV}{BasicRendering}{Elective}{Assessment}{ComputeTime}{<<Calcular los requisitos de tiempo sobre la base de las frecuencias de actualización, técnicas de rasterización.>>}
@@ -498,19 +498,19 @@ Hay un objeto botón o existe sólo la visualización de un botón en la pantall
 \KUDescription{GV}{AdvancedRendering}{<<~>>}	
 "\KUItem{GV}{AdvancedRendering}{Elective}{Solutions}{}{<<Soluciones y aproximaciones hacia la ecuación de renderizado, por ejemplo:
 \begin{subtopics} 
-\item Distribución de {\it ray tracing} y {\it path tracing} 
+\item Distribución de \textit{ray tracing} y \textit{path tracing} 
 \item Mapeo de fotones
-\item {\it Path tracing} bidireccional
-\item {\it Reyes rendering} (micropoligono) 
-\item {\it Metropolis light transport} 
+\item \textit{Path tracing} bidireccional
+\item \textit{Reyes rendering} (micropoligono) 
+\item \textit{Metropolis light transport} 
 \end{subtopics}>>}"	\LO{GV}{AdvancedRendering}{Elective}{Assessment}{DemonstrateHowEstimates}{<<Demostrar como un algoritmo calcula una solución a la ecuación de renderización.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{Time}{}{<<Tiempo (desenfoque de movimiento), la posición del objetivo (enfoque), y la frecuencia continua (color) y su impacto en la representación.>>}	\LO{GV}{AdvancedRendering}{Elective}{Assessment}{ProveThe}{<<Demostrar las propiedades de un algoritmo de renderización, por ejemplo, completo, consistente, e imparcial.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{Shadow}{}{<<Mapeo de Sombras.>>}	\LO{GV}{AdvancedRendering}{Elective}{Assessment}{AnalyzeThe}{<<Analizar las demandas de ancho de banda y cálculo de un simple algoritmo.>>}
-\KUItem{GV}{AdvancedRendering}{Elective}{Occlusion}{}{<<Selectiva de oclusión.>>}	\LO{GV}{AdvancedRendering}{Elective}{Usage}{ImplementAShading}{<<Implementar un algoritmo no trivial de sombreado(por ejemplo, sombreado caricaturizado({\it toon shading}), mapas de sombras en cascada({\it cascaded shadow maps}) ) bajo una APi de rasterización.>>}
+\KUItem{GV}{AdvancedRendering}{Elective}{Occlusion}{}{<<Selectiva de oclusión.>>}	\LO{GV}{AdvancedRendering}{Elective}{Usage}{ImplementAShading}{<<Implementar un algoritmo no trivial de sombreado(por ejemplo, sombreado caricaturizado(\textit{toon shading}), mapas de sombras en cascada(\textit{cascaded shadow maps}) ) bajo una APi de rasterización.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{Bidirectional}{}{<<Distribución función de dispersión bidireccional (BSDF) teoría y microfacets.>>}	\LO{GV}{AdvancedRendering}{Elective}{Familiarity}{DiscussHow}{<<Discutir como una técnica artística particular puede ser implementada en un renderizador.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{Subsurface}{}{<<Disperción de la Superficie.>>}	\LO{GV}{AdvancedRendering}{Elective}{Familiarity}{ExplainHowThe}{<<Explicar como reconocer las técnicas gráficas usadas para crear una imagen en particular.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{Area}{}{<<Recursos de luz de Área.>>}	\LO{GV}{AdvancedRendering}{Elective}{Usage}{ImplementAny}{<<Implementar cualquiera de las técnicas gráficas especificadas utilizando un sistema gráfico primitivo a nivel de píxel individual.>>}
-\KUItem{GV}{AdvancedRendering}{Elective}{Hierarchical}{}{<<Almacenamiento jerárquico por profundidad.>>}	\LO{GV}{AdvancedRendering}{Elective}{Usage}{ImplementAFor}{<<Implementar un trazado de rayos({\it ray tracer}) para escenas una simple Función de Distribución de Reflectancia Bidireccional({\it BRDF}) por ejemplo Phong's, además de la reflexión y la refracción.>>}
+\KUItem{GV}{AdvancedRendering}{Elective}{Hierarchical}{}{<<Almacenamiento jerárquico por profundidad.>>}	\LO{GV}{AdvancedRendering}{Elective}{Usage}{ImplementAFor}{<<Implementar un trazado de rayos(\textit{ray tracer}) para escenas una simple Función de Distribución de Reflectancia Bidireccional(\textit{BRDF}) por ejemplo Phong's, además de la reflexión y la refracción.>>}
 \KUItem{GV}{AdvancedRendering}{Elective}{The}{}{<<El campo de luz, representación de imágenes.>>}	
 \KUItem{GV}{AdvancedRendering}{Elective}{Non}{}{<<Renderizado no fotorealistico.>>}	
 \KUItem{GV}{AdvancedRendering}{Elective}{Gpu}{}{<<Arquitectura del GPU.>>}	
@@ -521,10 +521,10 @@ Hay un objeto botón o existe sólo la visualización de un botón en la pantall
 \KUItem{GV}{ComputerAnimation}{Elective}{Forward}{}{<<Cinématica directa e inversa.>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{ComputeTheOrientation}{<<Calcular la localización y orientación de partes de un modelo usando un enfoque de cinemática hacia delante.>>}
 \KUItem{GV}{ComputerAnimation}{Elective}{Collision}{}{<<Detección de colisiones y respuesta.>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{ComputeTheArticulated}{<<Calcular la orientación de partes articuladas de un modelo de una localizacion y orientación usando un enfoque de cinemática inversa.>>}
 \KUItem{GV}{ComputerAnimation}{Elective}{Procedural}{}{<<Animación procedimental empleando ruido, reglas (boids/crowds) y sistemas de partículas.>>}	\LO{GV}{ComputerAnimation}{Elective}{Assessment}{DescribeTheDifferent}{<<Describir las ventajas y desventajas de diferentes representaciones de rotación.>>}
-\KUItem{GV}{ComputerAnimation}{Elective}{Skinning}{}{<<Algoritmos Skinning.>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{ImplementThe}{<<Implementar el método de interpolación {\it spline} para producir las posiciones y orientaciones en medio.>>}
+\KUItem{GV}{ComputerAnimation}{Elective}{Skinning}{}{<<Algoritmos Skinning.>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{ImplementThe}{<<Implementar el método de interpolación \textit{spline} para producir las posiciones y orientaciones en medio.>>}
 \KUItem{GV}{ComputerAnimation}{Elective}{Physics}{}{<<Movimientos basado en la física, incluyendo la dinámica del cuerpo rígido, sistemas de partículas físicas, redes de masa-muelle de tela y la carne y el pelo.>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{ImplementAlgorithmsModeling}{<<Implementar algoritmos para el modelamiento físico de partículas dinámicas usando simplemente la mecánica de Newton, por ejemplo Witkin \& Kass , serpientes y gusanos, Euler simpléctica, Stormer/Verlet, o métodos de punto medio de Euler.>>}
 \KUItem{GV}{ComputerAnimation}{Elective}{Key}{}{<<Animación de Cuadros Principales>>}	\LO{GV}{ComputerAnimation}{Elective}{Familiarity}{DiscussTheBehind}{<<Discutir las ideas básicas detrás de algunos métodos para dinámica de fluidos para el modelamiento de trayectorias balísticas, por ejemplo salpicaduras, polvo, fuego, o humo.>>}
-\KUItem{GV}{ComputerAnimation}{Elective}{Splines}{}{<<Splines>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{UseCommon}{<<Usar el software de animación común para construir formas orgánicas simples usando {\it metaball} y el esqueleto.>>}
+\KUItem{GV}{ComputerAnimation}{Elective}{Splines}{}{<<Splines>>}	\LO{GV}{ComputerAnimation}{Elective}{Usage}{UseCommon}{<<Usar el software de animación común para construir formas orgánicas simples usando \textit{metaball} y el esqueleto.>>}
 \KUItem{GV}{ComputerAnimation}{Elective}{Data}{}{<<Estructuras de datos para rotaciones, como cuaterniones.>>}	
 \KUItem{GV}{ComputerAnimation}{Elective}{Camera}{}{<<Animación de Cámara.>>}	
 \KUItem{GV}{ComputerAnimation}{Elective}{Motion}{}{<<Captura de Movimiento.>>}	
@@ -580,7 +580,7 @@ Debido a que se trata de personas, así como los sistemas computacionales, como 
 \KUDescription{HCI}{ProgrammingInteractiveSystems}{<<Motivación: Para tener una visión centrada en la experiencia de usuario de desarrollo de software y luego cubrir enfoques y tecnologías para hacer que eso suceda.>>}	
 \KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Software}{PLEventDrivenandReactiveProgramming}{<<Patrones de arquitectura de software. Ej Modelo Vista Controlador, Objetos de comando, online, offline.>>}	\LO{HCI}{ProgrammingInteractiveSystems}{Elective}{Familiarity}{ExplainTheModel}{<<Explicar la importancia del controlador Modelo-Vista para la programación de la interfaz.>>}
 \KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Interaction}{}{<<Patrones de diseño de Interacción: jerarquía visual, distancia navegacional.>>}	\LO{HCI}{ProgrammingInteractiveSystems}{Elective}{Usage}{CreateAn}{<<Crear una aplicación con una moderna interfaz gráfica de usuario.>>}
-\KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Event}{}{<<Manejo de eventos e interacción de usuario.>>}	\LO{HCI}{ProgrammingInteractiveSystems}{Elective}{Familiarity}{IdentifyCommonalities}{<<Identificar puntos comunes y las diferencias en las {\it UIs} a través de diferentes plataformas.>>}
+\KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Event}{}{<<Manejo de eventos e interacción de usuario.>>}	\LO{HCI}{ProgrammingInteractiveSystems}{Elective}{Familiarity}{IdentifyCommonalities}{<<Identificar puntos comunes y las diferencias en las \textit{UIs} a través de diferentes plataformas.>>}
 \KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Geometry}{GVGeometricModeling}{<<Manejo de geometría.>>}	\LO{HCI}{ProgrammingInteractiveSystems}{Elective}{Familiarity}{ExplainAndProgramming}{<<Explicar y utilizar los conceptos de programación de GUI: la gestión de eventos, gestión de distribución basado en restricciones, etc.>>}
 \KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Choosing}{}{<<Elección de estilos de interacción y técnicas de interacción.>>}	
 \KUItem{HCI}{ProgrammingInteractiveSystems}{Elective}{Presenting}{}{<<Presentación de información: navegación, representación, manipulación.>>}	
@@ -595,10 +595,10 @@ Debido a que se trata de personas, así como los sistemas computacionales, como 
 \KU{HCI}{Usercentereddesignandtesting}{<<Diseño y Testing centrados en el usuario.>>}{}{0}{0}	
 \KUDescription{HCI}{Usercentereddesignandtesting}{<<Motivación: Una exploración de técnicas para garantizar que los usuarios finales sean totalmente en cuenta en todas las etapas del proceso de diseño, desde su creación hasta su implementación.>>}	
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Approaches}{}{<<Enfoque y características del proceso de diseño.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Familiarity}{ExplainHowDesign}{<<Explicar cómo el diseño centrado en el usuario complementa a otros modelos de proceso software.>>}
-\KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Functionality}{SERequirementsEngineering}{<<Requerimientos de funcionalidad y usabilidad.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Usage}{UseLo}{<<Utilizar {\it lo-fi} (baja fidelidad) técnicas de prototipado para recopilar y reportar, las respuestas del usuario.>>}
+\KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Functionality}{SERequirementsEngineering}{<<Requerimientos de funcionalidad y usabilidad.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Usage}{UseLo}{<<Utilizar \textit{lo-fi} (baja fidelidad) técnicas de prototipado para recopilar y reportar, las respuestas del usuario.>>}
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Techniques}{}{<<Técnicas de recolección de requerimientos, ej. entrevistas, encuentas, etnografía e investigación contextual.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Assessment}{ChooseAppropriate}{<<Elegir los métodos adecuados para apoyar el desarrollo de una específica interfaz de usuario.>>}
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{TechniquesAnd}{}{<<Técnicas y herramientas para el análisis y presentación de requerimientos ej. reportes,  personas.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Assessment}{UseATechniques}{<<Utilizar una variedad de técnicas para evaluar una interfaz de usuario dada.>>}
-\KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Prototyping}{}{<<Técnicas de creación de prototipos y herramientas, ej.bosquejos, {\it storyboards}, prototipos de baja fidelidad, esquemas de página.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Assessment}{CompareThe}{<<Comparar las limitaciones y beneficios de los diferentes métodos de evaluación.>>}
+\KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Prototyping}{}{<<Técnicas de creación de prototipos y herramientas, ej.bosquejos, \textit{storyboards}, prototipos de baja fidelidad, esquemas de página.>>}	\LO{HCI}{Usercentereddesignandtesting}{Elective}{Assessment}{CompareThe}{<<Comparar las limitaciones y beneficios de los diferentes métodos de evaluación.>>}
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Evaluation}{}{<<Evaluación sin usuarios, usando ambas técnicas cualitativas y cuantitativas. Ej. Revisión estructurada, GOMS, análisis basado en expertos, heurísticas, lineamientos y estándar.>>}	
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{EvaluationWith}{}{<<Evaluación con usuarios. Ej. Observación, Método de pensamiento en voz alta, entrevistas,  encuentas, experimentación.>>}	
 \KUItem{HCI}{Usercentereddesignandtesting}{Elective}{Challenges}{}{<<Desafíos para la evaluación efectiva, por ejemplo, toma de muestras, la generalización.>>}	
@@ -645,7 +645,7 @@ Debido a que se trata de personas, así como los sistemas computacionales, como 
 	
 \KU{HCI}{Humanfactorsandsecurity}{<<Factores Humanos y seguridad.>>}{}{0}{0}	
 \KUDescription{HCI}{Humanfactorsandsecurity}{<<Motivación: Diseño eficaz interfaz requiere un conocimiento básico de la psicología de la seguridad. Muchos de los ataques no tienen una base tecnológica, pero explotan propensiones humanas y vulnerabilidades. "Sólo los aficionados atacan máquinas; profesionales se dirigen las personas" (Bruce Schneier, https://www.schneier.com/blog/archives/2013/03/phishing_has_go.h.)>>}	
-\KUItem{HCI}{Humanfactorsandsecurity}{Elective}{Applied}{}{<<Psicologia aplicada y politicas de seguridad>>}	\LO{HCI}{Humanfactorsandsecurity}{Elective}{Familiarity}{ExplainThePhishing}{<<Explicar los conceptos de {\it phishing} y {\it spear phishing} y cómo reconocerlos.>>}
+\KUItem{HCI}{Humanfactorsandsecurity}{Elective}{Applied}{}{<<Psicologia aplicada y politicas de seguridad>>}	\LO{HCI}{Humanfactorsandsecurity}{Elective}{Familiarity}{ExplainThePhishing}{<<Explicar los conceptos de \textit{phishing} y \textit{spear phishing} y cómo reconocerlos.>>}
 \KUItem{HCI}{Humanfactorsandsecurity}{Elective}{Security}{}{<<Seguridad de economía.>>}	\LO{HCI}{Humanfactorsandsecurity}{Elective}{Assessment}{DescribeTheTrust}{<<Describir los problemas de confianza en el diseño de interfaz con un ejemplo de un sistema de confianza alto y bajo.>>}
 \KUItem{HCI}{Humanfactorsandsecurity}{Elective}{Regulatory}{}{<<Entornos regulatorios, responsabilidad, riesgo y autodeterminación.>>}	\LO{HCI}{Humanfactorsandsecurity}{Elective}{Assessment}{DesignAForMechanism}{<<Diseñar una interfaz de usuario para un mecanismo de seguridad.>>}
 \KUItem{HCI}{Humanfactorsandsecurity}{Elective}{Organizational}{}{<<Organización de vulnerabilidades y amenazas.>>}	\LO{HCI}{Humanfactorsandsecurity}{Elective}{Familiarity}{ExplainTheIdentity}{<<Explicar el concepto de gestión de la identidad y su importancia.>>}
@@ -673,7 +673,7 @@ Debido a que se trata de personas, así como los sistemas computacionales, como 
 "\KUItem{HCI}{DesignorientedHCI}{Elective}{Indicative}{}{<<Dominios indicativos de aplicación:
 \begin{subtopics}
 \item Sostenibilidad
-\item {\it Arts-informed computing}
+\item \textit{Arts-informed computing}
 \end{subtopics}>>}"	
 	
 \KU{HCI}{MixedAugmentedandVirtualReality}{<<Realidad virtual y aumentada mezcladas.>>}{}{0}{0}	
@@ -695,7 +695,7 @@ Debido a que se trata de personas, así como los sistemas computacionales, como 
 "\KUItem{HCI}{MixedAugmentedandVirtualReality}{Elective}{Physical}{}{<<Modelamiento y representación física:
 \begin{subtopics}
 \item Simulación física: detección de colisiones y respuesta, animación
-\item {\it Visibility computation}
+\item \textit{Visibility computation}
 \item Representación sensitiva al tiempo, múltiples niveles de detalle (LOD)
 \end{subtopics}>>}"	\LO{HCI}{MixedAugmentedandVirtualReality}{Elective}{Familiarity}{DescribeTheGeometry}{<<Describir las diferencias entre geometria y realidad virtual basada en imágenes.>>}
 "\KUItem{HCI}{MixedAugmentedandVirtualReality}{Elective}{System}{}{<<Arquitectura de Sistemas:
@@ -841,7 +841,7 @@ El área  de IAS se muestra en dos grupos: (1) conceptos donde la profundidad es
 \begin{subtopics}
 \item Single Sign-On 
 \item HTTPS y certificados
-\end{subtopics}>>}"	\LO{IAS}{WebSecurity}{Elective}{Familiarity}{DiscussTheWeb}{<<Discutir los conceptos de sesiones web, canales de comunicación seguros tales como Seguridad en la Capa de Transporte({\it TLS}) y la importancia de certificados de seguridad, autenticación incluyendo inicio de sesión único, como OAuth y Lenguaje de Marcado para Confirmaciones de Seguridad({\it SAML}).>>}
+\end{subtopics}>>}"	\LO{IAS}{WebSecurity}{Elective}{Familiarity}{DiscussTheWeb}{<<Discutir los conceptos de sesiones web, canales de comunicación seguros tales como Seguridad en la Capa de Transporte(\textit{TLS}) y la importancia de certificados de seguridad, autenticación incluyendo inicio de sesión único, como OAuth y Lenguaje de Marcado para Confirmaciones de Seguridad(\textit{SAML}).>>}
 "\KUItem{IAS}{WebSecurity}{Elective}{Application}{}{<<Vulnerabilidades de las aplicaciones y defensas :
 \begin{subtopics}
 \item Inyección SQL 
@@ -993,7 +993,7 @@ También observamos que el área de IM está relacionada con conceptos fundament
 \KUItem{IM}{TransactionProcessing}{Elective}{Transactions}{}{<<Transacciones.>>}	\LO{IM}{TransactionProcessing}{Elective}{Usage}{CreateAEmbedding}{<<Crear una transacción mediante la incorporación de SQL en un programa de aplicación.>>}
 \KUItem{IM}{TransactionProcessing}{Elective}{Failure}{}{<<Fallo y recuperación.>>}	\LO{IM}{TransactionProcessing}{Elective}{Familiarity}{ExplainTheImplicit}{<<Explicar el concepto de confimaciones implicitas.>>}
 \KUItem{IM}{TransactionProcessing}{Elective}{Concurrency}{}{<<Control concurente.>>}	\LO{IM}{TransactionProcessing}{Elective}{Familiarity}{DescribeTheTo}{<<Describir los problemas especificos para la ejecución  de una transacción eficiente.>>}
-\KUItem{IM}{TransactionProcessing}{Elective}{Interaction}{}{<<Interacción de gestión de transacciones con el almacenamiento, especialmente en almacenamiento.>>}	\LO{IM}{TransactionProcessing}{Elective}{Assessment}{ExplainWhen}{<<Explicar cuando y porqué se necesita un {\it rollback}, y cómo registrar todo asegura un {\it rollback} adecuado.>>}
+\KUItem{IM}{TransactionProcessing}{Elective}{Interaction}{}{<<Interacción de gestión de transacciones con el almacenamiento, especialmente en almacenamiento.>>}	\LO{IM}{TransactionProcessing}{Elective}{Assessment}{ExplainWhen}{<<Explicar cuando y porqué se necesita un \textit{rollback}, y cómo registrar todo asegura un \textit{rollback} adecuado.>>}
 	\LO{IM}{TransactionProcessing}{Elective}{Assessment}{ExplainTheDifferent}{<<Explicar el efecto de diferentes niveles de aislamiento sobre los mecanismos de control de concurrencia.>>}
 	\LO{IM}{TransactionProcessing}{Elective}{Assessment}{ChooseThe}{<<Elejir el nivel de aislamiento adecuado para la aplicación de un protocolo de transacción especificado.>>}
 	\LO{IM}{TransactionProcessing}{Elective}{Assessment}{IdentifyAppropriateIn}{<<Identificar los límites apropiados de la transacción en programas de aplicación.>>}
@@ -1014,7 +1014,7 @@ También observamos que el área de IM está relacionada con conceptos fundament
 \item Aceleracion y ampliación, por ejemplo, el uso del modelo de procesamiento MapReduce
 \item Replicacion de informacion y modelos de consistencia debil
 \end{subtopics}>>}"	\LO{IM}{DistributedDatabases}{Elective}{Assessment}{EvaluateSimple}{<<Evaluar estrategias simples para la ejecución de una consulta distribuida para seleccionar una estrategia que minimise la cantidad de transferencia de datos>>}
-	\LO{IM}{DistributedDatabases}{Elective}{Familiarity}{ExplainHowPhase}{<<Explicar como el protocolo de dos fases de {\it commit} es usado para resolver problemas de transacciones que acceden a bases de datos almacenadas en múltiples nodos.>>}
+	\LO{IM}{DistributedDatabases}{Elective}{Familiarity}{ExplainHowPhase}{<<Explicar como el protocolo de dos fases de \textit{commit} es usado para resolver problemas de transacciones que acceden a bases de datos almacenadas en múltiples nodos.>>}
 	\LO{IM}{DistributedDatabases}{Elective}{Familiarity}{DescribeDistributed}{<<Describir el control concurrente distribuido basados en técnicas de copia distinguidos y el método de votación. >>}
 	\LO{IM}{DistributedDatabases}{Elective}{Familiarity}{DescribeTheOfThe}{<<Describir los tres niveles del software en el modelo cliente servidor.>>}
 	
@@ -1083,7 +1083,7 @@ Las soluciones se basan en un amplio conjunto de esquemas de representación de 
 	
 \KU{IS}{FundamentalIssues}{<<Cuestiones fundamentales>>}{}{0}{1}	
 \KUDescription{IS}{FundamentalIssues}{<<~>>}	
-\KUItem{IS}{FundamentalIssues}{Core-Tier2}{Overview}{}{<<Descripción general de los problemas de Inteligencia Artificial, ejemplos recientes de aplicaciones de Inteligencia artificial.>>}	\LO{IS}{FundamentalIssues}{Core-Tier2}{Familiarity}{DescribeTuring}{<<Describir el test de Turing  y el experimento pensado cuarto chino" ({\it Chinese Room}).>>}
+\KUItem{IS}{FundamentalIssues}{Core-Tier2}{Overview}{}{<<Descripción general de los problemas de Inteligencia Artificial, ejemplos recientes de aplicaciones de Inteligencia artificial.>>}	\LO{IS}{FundamentalIssues}{Core-Tier2}{Familiarity}{DescribeTuring}{<<Describir el test de Turing  y el experimento pensado cuarto chino" (\textit{Chinese Room}).>>}
 "\KUItem{IS}{FundamentalIssues}{Core-Tier2}{What}{}{<<?`Qué es comportamiento inteligente?
 \begin{subtopics}
 \item El Test de Turing 
@@ -1128,7 +1128,7 @@ Las soluciones se basan en un amplio conjunto de esquemas de representación de 
 \KUItem{IS}{BasicMachineLearning}{Core-Tier2}{Definition}{}{<<Definición y ejemplos de la extensa variedad de tareas de aprendizaje de máquina, incluida la clasificación.>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Familiarity}{ListThe}{<<Listar las diferencias entre los tres principales tipos de aprendizaje: supervisado, no supervisado y por refuerzo>>}
 \KUItem{IS}{BasicMachineLearning}{Core-Tier2}{Inductive}{}{<<Aprendizaje inductivo>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Familiarity}{IdentifyExamples}{<<Identificar ejemplos de tareas de clasificación, considerando las características de entrada disponibles y las salidas a ser predecidas.>>}
 \KUItem{IS}{BasicMachineLearning}{Core-Tier2}{Simple}{}{<<Aprendizaje simple basado en estadísticas, como el clasificador ingenuo de Bayes, árboles de decisión.>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Familiarity}{ExplainTheInductive}{<<Explicar la diferencia entre aprendizaje inductivo y deductivo>>}
-\KUItem{IS}{BasicMachineLearning}{Core-Tier2}{The}{}{<<El problema exceso de ajuste.>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Familiarity}{DescribeOver}{<<Describir el sobre ajuste ({\it overfitting}) en el contexto de un problema>>}
+\KUItem{IS}{BasicMachineLearning}{Core-Tier2}{The}{}{<<El problema exceso de ajuste.>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Familiarity}{DescribeOver}{<<Describir el sobre ajuste (\textit{overfitting}) en el contexto de un problema>>}
 \KUItem{IS}{BasicMachineLearning}{Core-Tier2}{Measuring}{}{<<Medicion clasificada con exactitud.>>}	\LO{IS}{BasicMachineLearning}{Core-Tier2}{Usage}{ApplyTheLearning}{<<Aplicar un algoritmo de aprendizaje estadístico simple como el Clasificador Naive Bayesiano  e un problema de clasificacion y medirla precisión del clasificador>>}
 	
 \KU{IS}{AdvancedSearch}{<<Búsqueda Avanzada>>}{}{0}{0}	
@@ -1139,8 +1139,8 @@ Las soluciones se basan en un amplio conjunto de esquemas de representación de 
 \item Simulated annealing
 \item Algoritmos genéticos
 \item Búsqueda de árbol Monte-Carlo 
-\end{subtopics}>>}"	\LO{IS}{AdvancedSearch}{Elective}{Usage}{DesignAndSimulated}{<<Diseñar e implementar un esquema de recocido simulado ({\it simulated annealing}) para evitar mínimos locales en un problema>>}
-\KUItem{IS}{AdvancedSearch}{Elective}{Implementation}{}{<<Implementación de búsqueda A *, búsqueda en haz.>>}	\LO{IS}{AdvancedSearch}{Elective}{Usage}{DesignAndBeam}{<<Diseñar e implementar una búsqueda A* y búsqueda en haz ({\it beam search}) para solucionar un problema>>}
+\end{subtopics}>>}"	\LO{IS}{AdvancedSearch}{Elective}{Usage}{DesignAndSimulated}{<<Diseñar e implementar un esquema de recocido simulado (\textit{simulated annealing}) para evitar mínimos locales en un problema>>}
+\KUItem{IS}{AdvancedSearch}{Elective}{Implementation}{}{<<Implementación de búsqueda A *, búsqueda en haz.>>}	\LO{IS}{AdvancedSearch}{Elective}{Usage}{DesignAndBeam}{<<Diseñar e implementar una búsqueda A* y búsqueda en haz (\textit{beam search}) para solucionar un problema>>}
 \KUItem{IS}{AdvancedSearch}{Elective}{Minimax}{}{<<Búsqueda Minimax, poda alfa-beta.>>}	\LO{IS}{AdvancedSearch}{Elective}{Usage}{ApplyMinimax}{<<Aplicar búsqueda minimax con poda alfa-beta para simplifiar el espacio de búsqueda en un juego con dos jugadores>>}
 \KUItem{IS}{AdvancedSearch}{Elective}{Expectimax}{}{<<Búsqueda Expectimax (MDP-Solving) y los nodos de azar.>>}	\LO{IS}{AdvancedSearch}{Elective}{Assessment}{CompareAndAlgorithms}{<<Comparar y contrastar los algoritmos genéticos con técnicas clásicas de búsqueda>>}
 	\LO{IS}{AdvancedSearch}{Elective}{Assessment}{CompareAndHeuristic}{<<Comparar y contrastar la aplicabilidad de varias heurísticas de búsqueda, para un determinado problema>>}
@@ -1162,7 +1162,7 @@ Las soluciones se basan en un amplio conjunto de esquemas de representación de 
 "\KUItem{IS}{AdvancedRepresentationandReasoning}{Elective}{Planning}{}{<<Planeamiento:
 \begin{subtopics}
 \item Planeamiento Parcial y Totalmente ordenado
-\item {\it Plan graphs}
+\item \textit{Plan graphs}
 \item Planeamiento Jerárquico
 \item Planeamiento y Ejecución incluyendo planeamiento condicional y planeamiento continuo
 \item Planeamiento Agente móvil/Multiagente
@@ -1262,16 +1262,16 @@ Las soluciones se basan en un amplio conjunto de esquemas de representación de 
 \KUDescription{IS}{AdvancedMachineLearning}{<<~>>}	
 \KUItem{IS}{AdvancedMachineLearning}{Elective}{Definition}{}{<<Definición y ejemplos de una amplia variedad de tareas de aprendizaje de máquina>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Familiarity}{ExplainTheTheStyles}{<<Explica las diferencias entre los tres estilos de aprendizaje: supervisado, por refuerzo y no supervisado.>>}
 \KUItem{IS}{AdvancedMachineLearning}{Elective}{General}{}{<<Aprendizaje general basado en estadística, estimación de parámetros (máxima probabilidad)>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Usage}{ImplementSimpleSupervised}{<<Implementa algoritmos simples para el aprendizaje supervisado, aprendizaje por refuerzo, y aprendizaje no supervisado.>>}
-\KUItem{IS}{AdvancedMachineLearning}{Elective}{Inductive}{}{<<Programación lógica inductiva ({\it Inductive logic programming ILP})>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Usage}{DetermineWhichThree}{<<Determina cuál de los tres estilos de aprendizaje es el apropiado para el dominio de un problema en particular.>>}
+\KUItem{IS}{AdvancedMachineLearning}{Elective}{Inductive}{}{<<Programación lógica inductiva (\textit{Inductive logic programming ILP})>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Usage}{DetermineWhichThree}{<<Determina cuál de los tres estilos de aprendizaje es el apropiado para el dominio de un problema en particular.>>}
 "\KUItem{IS}{AdvancedMachineLearning}{Elective}{Supervised}{}{<<Aprendizaje supervisado
 \begin{subtopics}
 \item Aprendizaje basado en árboles de decisión
 \item Aprendizaje basado en redes neuronales
-\item Aprendizaje basado en máquinas de soporte vectorial ({\it Support vector machines SVMs})
+\item Aprendizaje basado en máquinas de soporte vectorial (\textit{Support vector machines SVMs})
 \end{subtopics}>>}"	\LO{IS}{AdvancedMachineLearning}{Elective}{Assessment}{CompareAndOf}{<<Compara y contrasta cada una de las siguientes técnicas, dando ejemplo de cuando una estrategia es la mejor: árboles de decisión, redes neuronales, y redes bayesianas.>>}
-\KUItem{IS}{AdvancedMachineLearning}{Elective}{Ensembles}{}{<<Comité de Máquinas ({\it Emsembles methods})>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Assessment}{EvaluateThe}{<<Evalúa el rendimiento de un sistema de aprendizaje simple en un conjunto de datos reales.>>}
+\KUItem{IS}{AdvancedMachineLearning}{Elective}{Ensembles}{}{<<Comité de Máquinas (\textit{Emsembles methods})>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Assessment}{EvaluateThe}{<<Evalúa el rendimiento de un sistema de aprendizaje simple en un conjunto de datos reales.>>}
 \KUItem{IS}{AdvancedMachineLearning}{Elective}{Nearest}{}{<<Algoritmos del vecino mas próximo>>}	\LO{IS}{AdvancedMachineLearning}{Elective}{Familiarity}{CharacterizeTheThe}{<<Describe el estado del arte en la teoría del aprendizaje, incluyendo sus logros y limitantes.>>}
-"\KUItem{IS}{AdvancedMachineLearning}{Elective}{Unsupervised}{}{<<Aprendizaje y {\it clustering} no supervisado
+"\KUItem{IS}{AdvancedMachineLearning}{Elective}{Unsupervised}{}{<<Aprendizaje y \textit{clustering} no supervisado
 \begin{subtopics}
 \item EM
 \item K-means
@@ -1353,7 +1353,7 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUDescription{NC}{NetworkedApplications}{<<~>>}	
 \KUItem{NC}{NetworkedApplications}{Core-Tier1}{Naming}{}{<<Esquemas de denominación y dirección (DNS, direcciones IP, identificadores de recursos uniformes, etc) >>}	\LO{NC}{NetworkedApplications}{Core-Tier1}{Familiarity}{ListTheThe}{<<Listar las diferencias y las relaciones entre los nombres y direcciones en una red.>>}
 \KUItem{NC}{NetworkedApplications}{Core-Tier1}{Distributed}{}{<<Las aplicaciones distribuidas (cliente / servidor, peer-to-peer, nube, etc) >>}	\LO{NC}{NetworkedApplications}{Core-Tier1}{Familiarity}{DefineTheNaming}{<<Definir los principios detrás de esquemas de denominación y ubicación del recurso.>>}
-\KUItem{NC}{NetworkedApplications}{Core-Tier1}{Http}{}{<<HTTP como protocolo de capa de aplicación .>>}	\LO{NC}{NetworkedApplications}{Core-Tier1}{Usage}{ImplementAServer}{<<Implementar una aplicación simple cliente-servidor basada en {\it sockets} .>>}
+\KUItem{NC}{NetworkedApplications}{Core-Tier1}{Http}{}{<<HTTP como protocolo de capa de aplicación .>>}	\LO{NC}{NetworkedApplications}{Core-Tier1}{Usage}{ImplementAServer}{<<Implementar una aplicación simple cliente-servidor basada en \textit{sockets} .>>}
 \KUItem{NC}{NetworkedApplications}{Core-Tier1}{Multiplexing}{}{<<Multiplexación con TCP y UDP >>}	
 \KUItem{NC}{NetworkedApplications}{Core-Tier1}{Socket}{}{<<API de Socket>>}	
 	
@@ -1409,52 +1409,52 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUDescription{OS}{OverviewofOperatingSystems}{<<~>>}	
 \KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Role}{}{<<Papel y el propósito del sistema operativo.>>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Familiarity}{ExplainTheFunctions}{<<Explicar los objetivos y funciones de un sistema operativo moderno.>>}
 \KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Functionality}{}{<<Funcionalidad de un sistema operativo típico.>>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Usage}{AnalyzeTheIn}{<<Analizar las ventajas y desventajas inherentes en el diseño de un sistema operativo.>>}
-\KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Mechanisms}{}{<<Los mecanismos de apoyo modelos cliente-servidor, dispositivos de mano.>>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Familiarity}{DescribeTheASystem}{<<Describir las funciones de un sistema operativo contemporaneo respecto a conveniencia, eficiencia, y su habilidad para evolucionar.>>}
+\KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Mechanisms}{}{<<Los mecanismos de apoyo modelos cliente-servidor.>>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Familiarity}{DescribeTheASystem}{<<Describir las funciones de un sistema operativo contemporaneo respecto a conveniencia, eficiencia, y su habilidad para evolucionar.>>}
 \KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Design}{}{<<Cuestiones de diseño (eficiencia, robustez, flexibilidad, portabilidad, seguridad, compatibilidad) >>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Familiarity}{DiscussNetworked}{<<Discutir acerca de sistemas operativos cliente-servidor, en red, distribuidos y cómo se diferencian de los sistemas operativos de un solo usuario.>>}
 \KUItem{OS}{OverviewofOperatingSystems}{Core-Tier1}{Influences}{}{<<Influencias de seguridad, creación de redes, multimedia, sistemas de ventanas.>>}	\LO{OS}{OverviewofOperatingSystems}{Core-Tier1}{Familiarity}{IdentifyPotential}{<<Identificar amenazas potenciales a sistemas operativos y las características del diseño de seguridad para protegerse de ellos.>>}
 	
 \KU{OS}{OperatingSystemPrinciples}{<<Principios de Sistemas Operativos>>}{}{2}{0}	
 \KUDescription{OS}{OperatingSystemPrinciples}{<<~>>}	
-\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Structuring}{}{<<Métodos de estructuración (monolítico, capas, modular, los modelos micro-kernel) >>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{ExplainTheA}{<<Explicar el concepto de una capa lógica.>>}
+\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Structuring}{}{<<Estructuración de Sistemas Operativos (monolítico, capas, modular, los modelos micro-kernel) >>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{ExplainTheA}{<<Explicar el concepto de una capa lógica.>>}
 \KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Abstractions}{}{<<Abstracciones, procesos y recursos.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{ExplainTheBuilding}{<<Explicar los beneficios de construir capas abstractas en forma jerárquica.>>}
-\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Concepts}{}{<<Los conceptos de interfaces de programa de aplicación (API) >>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Assessment}{DescribeTheApis}{<<Describir el valor de la API y {\it middleware}.>>}
+\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Concepts}{}{<<Los conceptos de interfaces de programa de aplicación (API) >>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Assessment}{DescribeTheApis}{<<Describir el valor de la API y \textit{middleware}.>>}
 \KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{The}{}{<<La evolución de las técnicas de hardware / software y las necesidades de aplicación >>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{DescribeHowAreApplication}{<<Describir como los recursos computacionales son usados por aplicaciones de software y administradas por el software del sistema.>>}
-\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Device}{}{<<Organización de dispositivos.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Usage}{ContrastKernel}{<<Contrastar el modo {\it kernel} y modo usuario en un sistema operativo.>>}
-\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Interrupts}{}{<<Interrupciones: métodos e implementaciones.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{DiscussTheDisadvantagesInterrupt}{<<Discutir las ventajas y desventajas del uso de procesamiento interrumpido.>>}
-\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Concept}{}{<<Concepto de usuario de estado / sistema y la protección, la transición al modo kernel.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{ExplainTheAAnd}{<<Explicar el uso de una lista de dispositivos y el controlador de colas de entrada y salida.>>}
+\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Device}{}{<<Organización de dispositivos.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Usage}{ContrastKernel}{<<Contrastar el modo \textit{kernel} y modo usuario en un sistema operativo.>>}
+\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Interrupts}{}{<<Interrupciones: métodos e implementaciones.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{DiscussTheDisadvantagesInterrupt}{<<Discutir las ventajas y desventajas del uso de procesamiento con interrupciones.>>}
+\KUItem{OS}{OperatingSystemPrinciples}{Core-Tier1}{Concept}{}{<<Concepto de estado de usuario / sistema y la protección, la transición al modo kernel.>>}	\LO{OS}{OperatingSystemPrinciples}{Core-Tier1}{Familiarity}{ExplainTheAAnd}{<<Explicar el uso de una lista de dispositivos y el controlador de colas de entrada y salida.>>}
 	
 \KU{OS}{Concurrency}{<<Concurrencia>>}{}{0}{3}	
 \KUDescription{OS}{Concurrency}{<<~>>}	
 \KUItem{OS}{Concurrency}{Core-Tier2}{States}{SFStateandStateMachines}{<<Diagramas de estado.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{DescribeTheConcurrency}{<<Describir la necesidad de concurrencia en el marco de un sistema operativo.>>}
 \KUItem{OS}{Concurrency}{Core-Tier2}{Structures}{}{<<Estructuras (lista preparada, bloques de control de procesos, y así sucesivamente) >>}	\LO{OS}{Concurrency}{Core-Tier2}{Usage}{DemonstrateTheTime}{<<Demostrar los potenciales problemas de tiempo de ejecución derivados de la operación simultánea de muchas tareas diferentes.>>}
-\KUItem{OS}{Concurrency}{Core-Tier2}{Dispatching}{}{<<Despacho y cambio de contexto.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{SummarizeTheMechanisms}{<<Resumir el rango de mecanismos que pueden ser usados a nivel del sistema operativo para realizar sistemas concurrentes y describir los beneficios de cada uno.>>}
+\KUItem{OS}{Concurrency}{Core-Tier2}{Dispatching}{}{<<\emph{Dispatching} y cambio de contexto.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{SummarizeTheMechanisms}{<<Resumir el rango de mecanismos que pueden ser usados a nivel del sistema operativo para realizar sistemas concurrentes y describir los beneficios de cada uno.>>}
 \KUItem{OS}{Concurrency}{Core-Tier2}{TheRole}{}{<<El papel de las interrupciones.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{ExplainTheThat}{<<Explicar los diferentes estados por los que una tarea debe pasar y las estructuras de datos necesarias para el manejo de varias tareas.>>}
-\KUItem{OS}{Concurrency}{Core-Tier2}{Managing}{}{<<Gestionar el acceso a los objetos del sistema operativo atómica.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{SummarizeTechniques}{<<Resumir las técnicas para lograr sicronización en un sistema operativo(por ejemplo, describir como implementar semáforos usando primitivas del sistema operativo.)>>}
-\KUItem{OS}{Concurrency}{Core-Tier2}{Implementing}{}{<<La implementación de primitivas de sincronización.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{DescribeReasons}{<<Describir las razones para usar interruptores, despacho, y cambio de contexto para soportar concurrencia en un sistema operativo.>>}
-\KUItem{OS}{Concurrency}{Core-Tier2}{Multiprocessor}{SFParallelism}{<<Cuestiones multiprocesador (spin-locks, reentrada) >>}	\LO{OS}{Concurrency}{Core-Tier2}{Usage}{CreateState}{<<Crear diagramas de estado y transición para los dominios de problemas simples.>>}
+\KUItem{OS}{Concurrency}{Core-Tier2}{Managing}{}{<<Gestionar el acceso a los objetos del sistema operativo de forma atómica.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{SummarizeTechniques}{<<Resumir las técnicas para lograr sicronización en un sistema operativo(por ejemplo, describir como implementar semáforos usando primitivas del sistema operativo.)>>}
+\KUItem{OS}{Concurrency}{Core-Tier2}{Implementing}{}{<<La implementación de primitivas de sincronización.>>}	\LO{OS}{Concurrency}{Core-Tier2}{Familiarity}{DescribeReasons}{<<Describir las razones para usar interrupciones, \emph{dispatching}, y cambio de contexto para soportar concurrencia en un sistema operativo.>>}
+\KUItem{OS}{Concurrency}{Core-Tier2}{Multiprocessor}{SFParallelism}{<<Problemas de multiprocesador (spin-locks, reentrada) >>}	\LO{OS}{Concurrency}{Core-Tier2}{Usage}{CreateState}{<<Crear diagramas de estado y transición para los problemas de dominios simples.>>}
 	
 \KU{OS}{SchedulingandDispatch}{<<Planificación y despacho.>>}{}{0}{3}	
 \KUDescription{OS}{SchedulingandDispatch}{<<~>>}	
-\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Preemptive}{SFResourceAllocationandScheduling,PDParallelPerformance}{<<Planificación preventiva y no preferente.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{CompareAndCommon}{<<Comparar y contrastar los algoritmos comunes que se utilizan tanto para un programa preferente y no preferente de las tareas en los sistemas operativos, como la comparación de prioridad, el rendimiento, y los esquemas de distribución equitativa.>>}
-\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Schedulers}{SFResourceAllocationandScheduling,PDParallelPerformance}{<<Planificadores y políticas.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DescribeRelationships}{<<Describir las relaciones entre los algoritmos de planificación y dominios de aplicación.>>}
-\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Processes}{SFComputationalParadigms}{<<Procesos y subprocesos.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DiscussTheProcessor}{<<Discutir los tipos de planeamiento de procesos {\it scheduling} de corto, a mediano, a largo plazo y I/O>>}
-\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Deadlines}{}{<<Plazos y cuestiones en tiempo real.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{DescribeTheProcesses}{<<Describir las diferencias entre procesos y hebras.>>}
-	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{CompareAndAndTo}{<<Comparar y contrastar enfoques estáticos y dinámicos para {\it scheduling} en tiempo real.>>}
-	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DiscussThePreemption}{<<Hablar sobre la necesidad de tiempos límites de {\it scheduling}.>>}
+\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Preemptive}{SFResourceAllocationandScheduling,PDParallelPerformance}{<<\emph{Scheduling preemptive} y \emph{non-preemptive}.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{CompareAndCommon}{<<Comparar y contrastar los algoritmos comunes que se utilizan tanto para \emph{scheduling preemptive} y \emph{preemptive} de tareas en los sistemas operativos, como la comparación de prioridad, el rendimiento, y los esquemas de distribución equitativa.>>}
+\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Schedulers}{SFResourceAllocationandScheduling,PDParallelPerformance}{<<\emph{Scheduling} y políticas.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DescribeRelationships}{<<Describir las relaciones entre los algoritmos de \emph{scheduling} y dominios de aplicación.>>}
+\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Processes}{SFComputationalParadigms}{<<Procesos y subprocesos.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DiscussTheProcessor}{<<Discutir los tipos de \emph{scheduling} en procesadores en de corto, mediano, largo plazo y I/O>>}
+\KUItem{OS}{SchedulingandDispatch}{Core-Tier2}{Deadlines}{}{<<Plazos y cuestiones en tiempo real.>>}	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{DescribeTheProcesses}{<<Describir las diferencias entre procesos y \emph{threads}.>>}
+	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{CompareAndAndTo}{<<Comparar y contrastar enfoques estáticos y dinámicos para \textit{scheduling} en tiempo real.>>}
+	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Familiarity}{DiscussThePreemption}{<<Discutir sobre la necesidad de \emph{preemption} y \emph{deadline} \textit{scheduling}.>>}
 	\LO{OS}{SchedulingandDispatch}{Core-Tier2}{Usage}{IdentifyWays}{<<Identificar formas en que la lógica expresada en algoritmos de planificación son de aplicación a otros ámbitos, tales como I/O del disco, la programación de disco de red, programación de proyectos y problemas más allá de la computación.>>}
 	
 \KU{OS}{MemoryManagement}{<<Manejo de memoria.>>}{}{0}{3}	
 \KUDescription{OS}{MemoryManagement}{<<~>>}	
-\KUItem{OS}{MemoryManagement}{Core-Tier2}{Review}{}{<<Revisión de la memoria física y hardware de gestión de memoria.>>}	\LO{OS}{MemoryManagement}{Core-Tier2}{Familiarity}{ExplainMemory}{<<Explicar la jerarquía de la memoria y costo-rendimiento de intercambio.>>}
+\KUItem{OS}{MemoryManagement}{Core-Tier2}{Review}{}{<<Revisión de la memoria física y hardware de gestión de memoria.>>}	\LO{OS}{MemoryManagement}{Core-Tier2}{Familiarity}{ExplainMemory}{<<Explicar la jerarquía de la memoria y \emph{tradeoffs} de costo-rendimiento.>>}
 \KUItem{OS}{MemoryManagement}{Core-Tier2}{Working}{}{<<Conjuntos de trabajo y thrashing.>>}	\LO{OS}{MemoryManagement}{Core-Tier2}{Familiarity}{SummarizeTheVirtual}{<<Resumir los principios de memoria virtual tal como se aplica para el almacenamiento en cache y paginación.>>}
 \KUItem{OS}{MemoryManagement}{Core-Tier2}{Caching}{ARMemorysystemorganizationandarchitecture}{<<El almacenamiento en caché>>}	\LO{OS}{MemoryManagement}{Core-Tier2}{Assessment}{EvaluateTheIn}{<<Evaluar las ventajas y desventajas en términos del tamaño de memoria (memoria principal, memoria caché, memoria axiliar) y la velocidad del procesador.>>}
-	\LO{OS}{MemoryManagement}{Core-Tier2}{Assessment}{Defend}{<<Defiende las diferentes formas de asignar memoria a las tareas, citando las ventajas relativas de cada uno.>>}
+	\LO{OS}{MemoryManagement}{Core-Tier2}{Assessment}{Defend}{<<Describir las diferentes formas de asignar memoria a las tareas, citando las ventajas relativas de cada uno.>>}
 	\LO{OS}{MemoryManagement}{Core-Tier2}{Familiarity}{DescribeTheAndCache}{<<Describir el motivo y el uso de memoria caché (rendimiento y proximidad, dimensión diferente de como los caches complican el aislamiento y abstracción en VM).>>}
 	\LO{OS}{MemoryManagement}{Core-Tier2}{Familiarity}{DiscussTheThrashing}{<<Estudiar los conceptos de \textit{thrashing}, tanto en términos de las razones por las que se produce y las técnicas usadas para el reconocimiento y manejo del problema.>>}
 	
 \KU{OS}{SecurityandProtection}{<<Seguridad y protección.>>}{}{0}{2}	
 \KUDescription{OS}{SecurityandProtection}{<<~>>}	
-\KUItem{OS}{SecurityandProtection}{Core-Tier2}{Overview}{}{<<Visión general de la seguridad del sistema .>>}	\LO{OS}{SecurityandProtection}{Core-Tier2}{Assessment}{ArticulateTheProtection}{<<Articular la necesidad para la protección y seguridad en un sistema operativo.>>}
+\KUItem{OS}{SecurityandProtection}{Core-Tier2}{Overview}{}{<<Visión general de la seguridad del sistema .>>}	\LO{OS}{SecurityandProtection}{Core-Tier2}{Assessment}{ArticulateTheProtection}{<<Explicar la necesidad para la protección y seguridad en un sistema operativo.>>}
 \KUItem{OS}{SecurityandProtection}{Core-Tier2}{Policy}{}{<<Política / mecanismo de separación.>>}	\LO{OS}{SecurityandProtection}{Core-Tier2}{Familiarity}{SummarizeTheLimitations}{<<Resumir las caracteristicas y limitaciones de un sistema operativo usado para proporcionar protección y seguridad.>>}
 \KUItem{OS}{SecurityandProtection}{Core-Tier2}{Security}{}{<<Métodos de seguridad y dispositivos.>>}	\LO{OS}{SecurityandProtection}{Core-Tier2}{Familiarity}{ExplainTheIn}{<<Explicar el mecanismo disponible en un OS para controlar los accesos a los recursos.>>}
 \KUItem{OS}{SecurityandProtection}{Core-Tier2}{Protection}{}{<<Protección, control de acceso y autenticación.>>}	\LO{OS}{SecurityandProtection}{Core-Tier2}{Usage}{Carry}{<<Realizar tareas de administración de sistemas sencillas de acuerdo a una política de seguridad, por ejemplo la creación de cuentas, el establecimiento de permisos, aplicación de parches y organización de backups regulares.>>}
@@ -1465,7 +1465,7 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUItem{OS}{VirtualMachines}{Elective}{Types}{}{<<Tipos de virtualización (incluyendo Hardware / Software, OS, Servidor, Servicio, Red) >>}	\LO{OS}{VirtualMachines}{Elective}{Familiarity}{ExplainTheVirtual}{<<Explicar el concepto de memoria virtual y la forma cómo se realiza en hadware y software.>>}
 \KUItem{OS}{VirtualMachines}{Elective}{Paging}{}{<<Paginación y la memoria virtual.>>}	\LO{OS}{VirtualMachines}{Elective}{Familiarity}{DifferentiateEmulation}{<<Diferenciar emulacion y el aislamiento.>>}
 \KUItem{OS}{VirtualMachines}{Elective}{Virtual}{}{<<Sistemas de archivos virtuales.>>}	\LO{OS}{VirtualMachines}{Elective}{Assessment}{EvaluateVirtualization}{<<Evaluar virtualización de compensaciones.>>}
-\KUItem{OS}{VirtualMachines}{Elective}{Hypervisors}{}{<<Los Hypervisor.>>}	\LO{OS}{VirtualMachines}{Elective}{Usage}{DiscussHypervisors}{<<Discutir sobre hipervisores y la necesidad para ellos en conjunto con diferentes tipos de hipervisores.>>}
+\KUItem{OS}{VirtualMachines}{Elective}{Hypervisors}{}{<<Los Hypervisores.>>}	\LO{OS}{VirtualMachines}{Elective}{Usage}{DiscussHypervisors}{<<Discutir sobre hipervisores y la necesidad para ellos en conjunto con diferentes tipos de hipervisores.>>}
 \KUItem{OS}{VirtualMachines}{Elective}{Portable}{}{<<Virtualización portátil; emulación vs aislamiento.>>}	
 \KUItem{OS}{VirtualMachines}{Elective}{Cost}{}{<<Costo de la virtualización.>>}	
 	
@@ -1473,7 +1473,7 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUDescription{OS}{DeviceManagement}{<<~>>}	
 \KUItem{OS}{DeviceManagement}{Elective}{Characteristics}{}{<<Características de los dispositivos serie y paralelo.>>}	\LO{OS}{DeviceManagement}{Elective}{Familiarity}{ExplainTheBetween}{<<Explique la diferencia clave entre dispositivos seriales y paralelos e identificar las condiciones en las cuales cada uno es apropiado.>>}
 \KUItem{OS}{DeviceManagement}{Elective}{Abstracting}{}{<<Haciendo de abstracción de dispositivos.>>}	\LO{OS}{DeviceManagement}{Elective}{Usage}{IdentifyTheThe}{<<Identificar la relación entre el hardware físico y los dispositivos virtuales mantenidos por el sistema operativo.>>}
-\KUItem{OS}{DeviceManagement}{Elective}{Buffering}{}{<<Estrategias de buffering. >>}	\LO{OS}{DeviceManagement}{Elective}{Familiarity}{ExplainBuffering}{<<Explique {\it buffering} y describir las estrategias para su aplicación.>>}
+\KUItem{OS}{DeviceManagement}{Elective}{Buffering}{}{<<Estrategias de buffering. >>}	\LO{OS}{DeviceManagement}{Elective}{Familiarity}{ExplainBuffering}{<<Explicar \textit{buffering} y describir las estrategias para su aplicación.>>}
 \KUItem{OS}{DeviceManagement}{Elective}{Direct}{}{<<Acceso directo a memoria.>>}	\LO{OS}{DeviceManagement}{Elective}{Usage}{DifferentiateThe}{<<Diferenciar los mecanismos utilizados en la interconexión de un rango de dispositivos (incluyendo dispositivos portátiles, redes, multimedia) a un ordenador y explicar las implicaciones de éstas para el diseño de un sistema operativo.>>}
 \KUItem{OS}{DeviceManagement}{Elective}{Recovery}{}{<<La recuperación de fallos.>>}	\LO{OS}{DeviceManagement}{Elective}{Usage}{DescribeTheDisadvantagesMemory}{<<Describir las ventajas y desventajas de acceso directo a memoria y discutir las cirscunstancias en cuales se justifica su uso.>>}
 	\LO{OS}{DeviceManagement}{Elective}{Familiarity}{IdentifyTheFailure}{<<Identificar los requerimientos para recuperación de errores.>>}
@@ -1483,14 +1483,14 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUDescription{OS}{FileSystems}{<<~>>}	
 \KUItem{OS}{FileSystems}{Elective}{Files}{}{<<Archivos: los datos, metadatos, operaciones, organización, amortiguadores, secuenciales, no secuencial. >>}	\LO{OS}{FileSystems}{Elective}{Familiarity}{DescribeTheBe}{<<Describir las decisiones que deben tomarse en el diseño de sistemas de archivos.>>}
 \KUItem{OS}{FileSystems}{Elective}{Directories}{}{<<Directorios: contenido y estructura. >>}	\LO{OS}{FileSystems}{Elective}{Usage}{CompareAndApproachesOrganization}{<<Comparar y contrastar los diferentes enfoques para la organización de archivos, el reconocimiento de las fortalezas y debilidades de cada uno. >>}
-\KUItem{OS}{FileSystems}{Elective}{File}{}{<<Los sistemas de archivos: partición, montar sistemas de archivos / desmontar, virtuales. >>}	\LO{OS}{FileSystems}{Elective}{Familiarity}{SummarizeHow}{<<Resumir cómo el desarrollo de hadware ha dado lugar a cambios en las prioridades para el diseño y la gestión de sistemas de archivos.>>}
+\KUItem{OS}{FileSystems}{Elective}{File}{}{<<Los sistemas de archivos: partición, montar / desmontar sistemas de archivos virtuales. >>}	\LO{OS}{FileSystems}{Elective}{Familiarity}{SummarizeHow}{<<Resumir cómo el desarrollo de hadware ha dado lugar a cambios en las prioridades para el diseño y la gestión de sistemas de archivos.>>}
 \KUItem{OS}{FileSystems}{Elective}{Standard}{}{<<Técnicas estándar de implementación .>>}	\LO{OS}{FileSystems}{Elective}{Familiarity}{SummarizeTheJournaling}{<<Resumir el uso de diarios y como los sistemas de archivos de registro estructurado mejora la tolerancia a fallos.>>}
 \KUItem{OS}{FileSystems}{Elective}{Memory}{}{<<Archivos asignados en memoria.>>}	
 \KUItem{OS}{FileSystems}{Elective}{Special}{}{<<Sistemas de archivos de propósito especial. >>}	
 \KUItem{OS}{FileSystems}{Elective}{Naming}{}{<<Naming, búsqueda, acceso, copias de seguridad.>>}	
 \KUItem{OS}{FileSystems}{Elective}{Journaling}{}{<<La bitacora y los sistemas de archivos estructurados (log)>>}	
 	
-\KU{OS}{RealTimeandEmbeddedSystems}{<<Sistemas empotrados y de tiempo real.>>}{}{0}{0}	
+\KU{OS}{RealTimeandEmbeddedSystems}{<<Sistemas \emph{embedded} y de tiempo real.>>}{}{0}{0}	
 \KUDescription{OS}{RealTimeandEmbeddedSystems}{<<~>>}	
 \KUItem{OS}{RealTimeandEmbeddedSystems}{Elective}{Process}{}{<<Proceso y programación de tareas.>>}	\LO{OS}{RealTimeandEmbeddedSystems}{Elective}{Familiarity}{DescribeWhatSystem}{<<Describir que hace a un sistema un sistema en tiempo real.>>}
 \KUItem{OS}{RealTimeandEmbeddedSystems}{Elective}{MemoryDisk}{}{<<Los requisitos de gestión de memoria / disco en un entorno en tiempo real.>>}	\LO{OS}{RealTimeandEmbeddedSystems}{Elective}{Familiarity}{ExplainTheAnd}{<<Explicar la presencia y describir las características de latencia en sistemas de tiempo real>>}
@@ -1502,7 +1502,7 @@ Hay diferentes maneras de organizar un curso de creación de redes. Algunos educ
 \KUItem{OS}{FaultTolerance}{Elective}{Fundamental}{SFReliabilitythroughRedundancy}{<<Conceptos fundamentales: sistemas fiables y disponibles.>>}	\LO{OS}{FaultTolerance}{Elective}{Familiarity}{ExplainTheTheTolerance}{<<Explicar la importancia de los términos tolerancia a fallos, fiabilidad y disponibilidad.>>}
 \KUItem{OS}{FaultTolerance}{Elective}{Spatial}{SFReliabilitythroughRedundancy}{<<Redundancia espacial y temporal.>>}	\LO{OS}{FaultTolerance}{Elective}{Familiarity}{OutlineThe}{<<Explicar en términos generales la gama de métodos para implementar la tolerancia a fallos en un sistema operativo.>>}
 \KUItem{OS}{FaultTolerance}{Elective}{Methods}{}{<<Los métodos utilizados para implementar la tolerancia a fallos.>>}	\LO{OS}{FaultTolerance}{Elective}{Familiarity}{ExplainHowSystem}{<<Explicar cómo un sistema operativo puede continar funcionando después de que ocurra una falla.>>}
-\KUItem{OS}{FaultTolerance}{Elective}{Examples}{}{<<Los ejemplos de los mecanismos del sistema operativo para la detección, recuperación, reinicie para implementar la tolerancia a fallos, el uso de estas técnicas para los servicios propios del sistema operativo. >>}	
+\KUItem{OS}{FaultTolerance}{Elective}{Examples}{}{<<Los ejemplos de los mecanismos del sistema operativo para la detección, recuperación, reinicio para implementar la tolerancia a fallos, el uso de estas técnicas para los servicios propios del sistema operativo. >>}	
 	
 \KU{OS}{SystemPerformanceEvaluation}{<<Evaluación del desempeño de sistemas.>>}{}{0}{0}	
 \KUDescription{OS}{SystemPerformanceEvaluation}{<<~>>}	
@@ -1544,7 +1544,7 @@ Si bien reconocemos que algunas plataformas (por ejemplo, desarrollo web) son pr
 	
 \KU{PBD}{IndustrialPlatforms}{<<Plataformas industriales.>>}{ISRobotics}{0}{0}	
 \KUDescription{PBD}{IndustrialPlatforms}{<<~>>}	
-\KUItem{PBD}{IndustrialPlatforms}{Elective}{Types}{}{<<Tipos de Plataformas Industriales (Matemática, Robótica, Control Industrial)>>}	\LO{PBD}{IndustrialPlatforms}{Elective}{Usage}{DesignAndIndustrial}{<<Diseñar e implementar una aplicación industrial en una plataforma dada (por ejemplo, usando {\it Lego Mindstorms} o {\it Matlab})>>}
+\KUItem{PBD}{IndustrialPlatforms}{Elective}{Types}{}{<<Tipos de Plataformas Industriales (Matemática, Robótica, Control Industrial)>>}	\LO{PBD}{IndustrialPlatforms}{Elective}{Usage}{DesignAndIndustrial}{<<Diseñar e implementar una aplicación industrial en una plataforma dada (por ejemplo, usando \textit{Lego Mindstorms} o \textit{Matlab})>>}
 \KUItem{PBD}{IndustrialPlatforms}{Elective}{Robotic}{}{<<Software para Robótica y su Arquitectura.>>}	\LO{PBD}{IndustrialPlatforms}{Elective}{Assessment}{CompareAndSpecific}{<<Comparar y contrastar lenguajes específicos de dominio con los lenguajes de programación de porposito general.>>}
 \KUItem{PBD}{IndustrialPlatforms}{Elective}{Domain}{}{<<Lenguajes de Dominio Específico.>>}	\LO{PBD}{IndustrialPlatforms}{Elective}{Familiarity}{DiscussTheA}{<<Discutir las limitaciones que una dada plataforma industrial impone a los desarrolladores.>>}
 \KUItem{PBD}{IndustrialPlatforms}{Elective}{Industrial}{}{<<Restricciones de las Plataformas Industiales.>>}	
@@ -1581,14 +1581,14 @@ La introducción al paralelismo en SF complementa el uno aquí y no hay restricc
 y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas, las horas asignadas a cada uno no son redundantes: ver los sistemas de capas y los conceptos computacionales de alto nivel se contabilizan por separado en termsof las horas centrales.>>}"	
 	
 \KU{PD}{ParallelismFundamentals}{<<Fundamentos de paralelismo.>>}{}{2}{0}	
-\KUDescription{PD}{ParallelismFundamentals}{<<Hacer que los estudiantes estén familiarizados con las nociones básicas de una ejecución paralela, un concepto de observado en  Fundamentos de Sistemas, para resolver problemas de compilación que derivan de estas nociones, al  igual que las condiciones de carrera ({\it Race Conditions}) y vida >>}	
+\KUDescription{PD}{ParallelismFundamentals}{<<Hacer que los estudiantes estén familiarizados con las nociones básicas de una ejecución paralela, un concepto de observado en  Fundamentos de Sistemas, para resolver problemas de compilación que derivan de estas nociones, al  igual que las condiciones de carrera (\textit{Race Conditions}) y vida >>}	
 \KUItem{PD}{ParallelismFundamentals}{Core-Tier1}{Multiple}{}{<<Procesamiento Simultáneo Múltiple.>>}	\LO{PD}{ParallelismFundamentals}{Core-Tier1}{Familiarity}{DistinguishUsing}{<<Distinguir el uso de recursos computacionales para una respuesta mas rápida para administrar el acceso eficiente a un recurso compartido.>>}
 \KUItem{PD}{ParallelismFundamentals}{Core-Tier1}{Goals}{}{<<Metas del Paralelismo (ej. rendimineto) frente a Concurrencia (ej. control de acceso a recursos compartidos)>>}	\LO{PD}{ParallelismFundamentals}{Core-Tier1}{Familiarity}{DistinguishMultiple}{<<Distinguir múltiples estructuras de programación suficientes para la sincronización que pueden ser inter-implementables pero tienen ventajas complementarias.>>}
 "\KUItem{PD}{ParallelismFundamentals}{Core-Tier1}{Parallelism}{}{<<Paralelismo, comunicación, y  coordinación:
 \begin{subtopics}
 \item Paralelismo, comunicación, y  coordinación
 \item Necedidad de Sincronización
-\end{subtopics}>>}"	\LO{PD}{ParallelismFundamentals}{Core-Tier1}{Familiarity}{DistinguishData}{<<Distinguir datos de carrera ({\it data races}) a partir de carreras de mas alto nivel.>>}
+\end{subtopics}>>}"	\LO{PD}{ParallelismFundamentals}{Core-Tier1}{Familiarity}{DistinguishData}{<<Distinguir datos de carrera (\textit{data races}) a partir de carreras de mas alto nivel.>>}
 "\KUItem{PD}{ParallelismFundamentals}{Core-Tier1}{Programming}{}{<<Errores de Programación ausentes en programación secuencial:
 \begin{subtopics}
 \item Tipos de Datos ( lectura/escritura simultánea o escritura/escritura compartida)
@@ -1620,21 +1620,21 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Mensajes Punto a Punto versus multicast (o basados en eventos)
 \item Estilos para enviar y recibir mensajes Blocking vs non-blocking
 \item Buffering de mensajes
-\end{subtopics}>>}"	\LO{PD}{CommunicationandCoordination}{Core-Tier2}{Usage}{GiveAnA}{<<Dar un ejemplo de un escenario en el que el bloqueo de mensajes enviados pueden dar {\it deadlock}.>>}
+\end{subtopics}>>}"	\LO{PD}{CommunicationandCoordination}{Core-Tier2}{Usage}{GiveAnA}{<<Dar un ejemplo de un escenario en el que el bloqueo de mensajes enviados pueden dar \textit{deadlock}.>>}
 "\KUItem{PD}{CommunicationandCoordination}{Core-Tier2}{Atomicity}{}{<<Atomicidad:
 \begin{subtopics}
 \item Especificar y probar atomicidad y requerimientos de seguridad
 \item Granularidad de accesos atómicos y actualizaciones, y uso de estructuras como secciones críticas o transacciones para describirlas
 \item Exclusión mutua usando bloques, semáforos, monitores o estructuras relacionadas
 \begin{subtopics}
-\item Potencial para fallas y bloqueos ({\it deadlock}) (causas, condiciones, prevención)
+\item Potencial para fallas y bloqueos (\textit{deadlock}) (causas, condiciones, prevención)
 \end{subtopics}
 \item Composición
 \begin{subtopics}
 \item Componiendo acciones atómicas granulares más grandes usando sincronización
 \item Transacciones, incluyendo enfoques optimistas y conservadores
 \end{subtopics}
-\end{subtopics}>>}"	\LO{PD}{CommunicationandCoordination}{Core-Tier2}{Familiarity}{ExplainWhenMulticast}{<<Explicar cuándo y por qué mensajes de multidifusión ({\it multicast}) o basado en eventos puede ser preferible a otras alternativas.>>}
+\end{subtopics}>>}"	\LO{PD}{CommunicationandCoordination}{Core-Tier2}{Familiarity}{ExplainWhenMulticast}{<<Explicar cuándo y por qué mensajes de multidifusión (\textit{multicast}) o basado en eventos puede ser preferible a otras alternativas.>>}
 "\KUItem{PD}{CommunicationandCoordination}{Elective}{Consensus}{}{<<Consensos:
 \begin{subtopics}
 \item (Ciclicos) barerras, contadores y estructuras relacionadas
@@ -1652,18 +1652,18 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 	
 \KU{PD}{ParallelAlgorithmsAnalysisandProgramming}{<<Análisis y programación de algoritmos paralelos.>>}{}{0}{3}	
 \KUDescription{PD}{ParallelAlgorithmsAnalysisandProgramming}{<<~>>}	
-\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Critical}{PDParallelPerformance,SDFPerformance}{<<Caminos críticos, el trabajo y la duración y la relación con la ley de Amdahl.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Familiarity}{DefineCritical}{<<Definir: camino crítico, trabajo y {\it span}.>>}
-\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Speed}{}{<<Aceleración y escalabilidad.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{ComputeTheSpan}{<<Calcular el trabajo y el {\it span} y determinar el camino crítico con respecto a un diagrama de ejecución paralela. >>}
-\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Naturally}{}{<<Naturalmente (vergonzosamente) algoritmos paralelos.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Familiarity}{DefineSpeed}{<<Definir {\it speed-up} y explicar la noción de escalabilidad de un algoritmo en este sentido.>>}
+\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Critical}{PDParallelPerformance,SDFPerformance}{<<Caminos críticos, el trabajo y la duración y la relación con la ley de Amdahl.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Familiarity}{DefineCritical}{<<Definir: camino crítico, trabajo y \textit{span}.>>}
+\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Speed}{}{<<Aceleración y escalabilidad.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{ComputeTheSpan}{<<Calcular el trabajo y el \textit{span} y determinar el camino crítico con respecto a un diagrama de ejecución paralela. >>}
+\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Naturally}{}{<<Naturalmente (vergonzosamente) algoritmos paralelos.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Familiarity}{DefineSpeed}{<<Definir \textit{speed-up} y explicar la noción de escalabilidad de un algoritmo en este sentido.>>}
 "\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Parallel}{}{<<Patrones Algoritmicos paralelos (divide-y-conquista, map/reduce, amos-trabajadores, otros)
 \begin{subtopics}
 \item Algortimos específicos (p.e., MergeSort paralelo)
 \end{subtopics}>>}"	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{IdentifyIndependent}{<<Identificar tareas independientes en un programa que debe ser paralelizado.>>}
 \KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{ParallelGraph}{ALAlgorithmicStrategies}{<<Algoritmos de grafos paralelo (por ejemplo, la ruta más corta en paralelo, árbol de expansión paralela)>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Familiarity}{CharacterizeFeatures}{<<Representar características de una carga de trabajo que permita o evite que sea naturalmente paralelizable.>>}
 \KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{ParallelMatrix}{}{<<Cálculos de matriz paralelas.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{ImplementAAnd}{<<Implementar un algoritmo dividir y conquistar paralelo (y/o algoritmo de un grafo) y medir empiricamente su desempeño relativo a su analogo secuencial.>>}
-\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Producer}{}{<<Productor-consumidor y algoritmos paralelos segmentados.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{Decompose}{<<Descomponer un problema (por ejemplo, contar el número de ocurrencias de una palabra en un documento) via operaciones {\it map} y {\it reduce}.>>}
+\KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Producer}{}{<<Productor-consumidor y algoritmos paralelos segmentados.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Core-Tier2}{Usage}{Decompose}{<<Descomponer un problema (por ejemplo, contar el número de ocurrencias de una palabra en un documento) via operaciones \textit{map} y \textit{reduce}.>>}
 \KUItem{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Examples}{}{<<Ejemplos de algoritmos paralelos no-escalables.>>}	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Familiarity}{ProvideAn}{<<Proporcionar un ejemplo de un problema que se corresponda con el paradigma productor-consumidor.>>}
-	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Familiarity}{GiveExamplesWhere}{<<Dar ejemplos de problemas donde el uso de {\it pipelining} sería un medio eficaz para la paralelización.>>}
+	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Familiarity}{GiveExamplesWhere}{<<Dar ejemplos de problemas donde el uso de \textit{pipelining} sería un medio eficaz para la paralelización.>>}
 	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Usage}{ImplementAAlgorithm}{<<Implementar un algoritmo de matriz paralela.>>}
 	\LO{PD}{ParallelAlgorithmsAnalysisandProgramming}{Elective}{Familiarity}{IdentifyIssuesIn}{<<Identificar los problemas que surgen en los algoritmos del tipo productor-consumidor y los mecanismos que pueden utilizarse para superar dichos problemas.>>}
 	
@@ -1696,7 +1696,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \KUItem{PD}{ParallelPerformance}{Elective}{Load}{}{<<Equilibrio de carga.>>}	\LO{PD}{ParallelPerformance}{Elective}{Usage}{Detect}{<<Detectar y corregir un desbalanceo de carga.>>}
 \KUItem{PD}{ParallelPerformance}{Elective}{Performance}{}{<<La medición del desempeño.>>}	\LO{PD}{ParallelPerformance}{Elective}{Usage}{CalculateThe}{<<Calcular las implicaciones de la ley de Amdahl para un algoritmo paralelo particular.>>}
 \KUItem{PD}{ParallelPerformance}{Elective}{Scheduling}{OSSchedulingandDispatch}{<<Programación y contención.>>}	\LO{PD}{ParallelPerformance}{Elective}{Familiarity}{DescribeHowLayout}{<<Describir como la distribuición/disposición de datos puede afectar a los costos de comunicación de un algoritmo.>>}
-\KUItem{PD}{ParallelPerformance}{Elective}{Evaluating}{}{<<Evaluación de la comunicación de arriba.>>}	\LO{PD}{ParallelPerformance}{Elective}{Usage}{DetectAnd}{<<Detectar y corregir una instancia de uso compartido falso ({\it false sharing}).>>}
+\KUItem{PD}{ParallelPerformance}{Elective}{Evaluating}{}{<<Evaluación de la comunicación de arriba.>>}	\LO{PD}{ParallelPerformance}{Elective}{Usage}{DetectAnd}{<<Detectar y corregir una instancia de uso compartido falso (\textit{false sharing}).>>}
 "\KUItem{PD}{ParallelPerformance}{Elective}{Data}{SFProximity}{<<Gestión de datos:
 \begin{subtopics}
 \item Costos de comunicación no uniforme debidos a proximidad 
@@ -1718,25 +1718,25 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Conversión y transmisión de datos
 \item Sockets
 \item Secuenciamiento de mensajes
-\item Almacenando {\it Buffering}, renviando y desechando mensajes
-\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainWhySuch}{<<Explicar por qué estructuras de sincronización como cerraduras simples ({\it locks}) no son útiles en la presencia de fallas distribuidas.>>}
+\item Almacenando \textit{Buffering}, renviando y desechando mensajes
+\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainWhySuch}{<<Explicar por qué estructuras de sincronización como cerraduras simples (\textit{locks}) no son útiles en la presencia de fallas distribuidas.>>}
 "\KUItem{PD}{DistributedSystems}{Elective}{DistributedSystem}{}{<<Compensaciones de diseño para Sistemas Distribuidos:
 \begin{subtopics}
 \item Latencia versus rendimiento
 \item Consistencia, disponibilidad, tolerancia de particiones
-\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Usage}{WriteAPerforms}{<<Escribir un programa que realiza cualquier proceso de {\it marshalling} requerido y la conversión en unidades de mensajes, tales como paquetes, para comunicar datos importantes entre dos {\it hosts}.>>}
+\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Usage}{WriteAPerforms}{<<Escribir un programa que realiza cualquier proceso de \textit{marshalling} requerido y la conversión en unidades de mensajes, tales como paquetes, para comunicar datos importantes entre dos \textit{hosts}.>>}
 "\KUItem{PD}{DistributedSystems}{Elective}{DistributedService}{}{<<Diseño de Servicio Distribuido:
 \begin{subtopics}
 \item Protocolos y servicios Stateful versus stateless
 \item Diseños de Sesión (basados en la conexión)
 \item Diseños reactivos (provocados por E/S) y diseños de múltiples hilos
-\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Usage}{Measure}{<<Medir el rendimiento observado y la latencia de la respuesta a través de los {\it hosts} en una red dada.>>}
+\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Usage}{Measure}{<<Medir el rendimiento observado y la latencia de la respuesta a través de los \textit{hosts} en una red dada.>>}
 "\KUItem{PD}{DistributedSystems}{Elective}{Core}{}{<<Algoritmos de Distribución de Núcleos:
 \begin{subtopics}
 \item Elección, descubrimiento
-\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainWhySystem}{<<Explicar por qué un sistema distribuido no puede ser simultaneamente Consistente ({\it Consistent}), Disponible ({\it Available}) y Tolerante a fallas ({\it Partition tolerant}). >>}
+\end{subtopics}>>}"	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainWhySystem}{<<Explicar por qué un sistema distribuido no puede ser simultaneamente Consistente (\textit{Consistent}), Disponible (\textit{Available}) y Tolerante a fallas (\textit{Partition tolerant}). >>}
 	\LO{PD}{DistributedSystems}{Elective}{Usage}{ImplementAForSpell}{<<Implementar un servidor sencillo - por ejemplo, un servicio de corrección ortográfica.>>}
-	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainTheOverhead}{<<Explicar las ventajas y desventajas entre: {\it overhead}, escalabilidad y tolerancia a fallas entre escojer un diseño sin estado ({\it stateless}) y un diseño con estado ({\it stateful}) para un determinado servicio.>>}
+	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{ExplainTheOverhead}{<<Explicar las ventajas y desventajas entre: \textit{overhead}, escalabilidad y tolerancia a fallas entre escojer un diseño sin estado (\textit{stateless}) y un diseño con estado (\textit{stateful}) para un determinado servicio.>>}
 	\LO{PD}{DistributedSystems}{Elective}{Familiarity}{DescribeTheAssociated}{<<Describir los desafios en la escalabilidad, asociados con un servicio cresciente para soportar muchos clientes, así como los asociados con un servicio que tendrá transitoriamente muchos clientes.>>}
 	\LO{PD}{DistributedSystems}{Elective}{Usage}{GiveExamplesFor}{<<Dar ejemplos de problemas donde algoritmos de consenso son requeridos, por ejemplo, la elección de líder.>>}
 	
@@ -1747,7 +1747,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Particionamiento de Tareas
 \item Acceso a datos
 \item Clusters, grids y mallas
-\end{subtopics}>>}"	\LO{PD}{CloudComputing}{Elective}{Familiarity}{DiscussTheElasticity}{<<Discutir la importancia de la elasticidad y administración de recursos en la Computación en la Nube ({\it Cloud Computing}).>>}
+\end{subtopics}>>}"	\LO{PD}{CloudComputing}{Elective}{Familiarity}{DiscussTheElasticity}{<<Discutir la importancia de la elasticidad y administración de recursos en la Computación en la Nube (\textit{Cloud Computing}).>>}
 "\KUItem{PD}{CloudComputing}{Elective}{Cloud}{}{<<Servicios en la nube.
 \begin{subtopics}
 \item Infraestructura como servicio
@@ -1780,7 +1780,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \KUItem{PD}{FormalModelsandSemantics}{Elective}{FormalModels}{}{<<Modelos formales de computación paralela, incluyendo la Máquina de Acesso Aleatorio Paralelo (PRAM) y alternativas como Bulk Synchronous Parallel (BSP)>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Familiarity}{ExplainTheAParallel}{<<Explicar las caracteristicas de un particular modelo paralelo formal.>>}
 \KUItem{PD}{FormalModelsandSemantics}{Elective}{FormalModelsOf}{}{<<Modelos formales de dependencias computacionales.>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Usage}{Formally}{<<Formalmente modelar un sistema de memoria compartida para mostrar y éste es consistente.>>}
 \KUItem{PD}{FormalModelsandSemantics}{Elective}{Models}{}{<<Modelos de consistencia (relajado) de memoria compartida y su relación con las especificaciones del lenguaje de programación.>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Usage}{UseAShow}{<<Usar un modelo para mostrar las garantias de progreso en un algoritmo paralelo.>>}
-\KUItem{PD}{FormalModelsandSemantics}{Elective}{Algorithmic}{}{<<Criterios de corrección de algoritmos incluyendo (linearizability).>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Usage}{UseFormal}{<<Usar técnicas formales para mostrar que un algoritmo paralelo es correcto con respecto a la seguridad o la propiedad {\it liveness}.>>}
+\KUItem{PD}{FormalModelsandSemantics}{Elective}{Algorithmic}{}{<<Criterios de corrección de algoritmos incluyendo (linearizability).>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Usage}{UseFormal}{<<Usar técnicas formales para mostrar que un algoritmo paralelo es correcto con respecto a la seguridad o la propiedad \textit{liveness}.>>}
 \KUItem{PD}{FormalModelsandSemantics}{Elective}{ModelsOf}{}{<<Modelos de progreso algorítmic, incluyendo garantias de no bloqueo y equidad.>>}	\LO{PD}{FormalModelsandSemantics}{Elective}{Usage}{Decide}{<<Decidir si una ejecución específica es linealizable o no.>>}
 \KUItem{PD}{FormalModelsandSemantics}{Elective}{Techniques}{}{<<Técnicas para especificar y comprobar las propiedades de corrección tales como atomicidad y la libertad de las carreras de datos.>>}	
 	
@@ -1802,7 +1802,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Polimorfismo artículo Subtipo; upcasts implícitos en lenguajes con tipos.
 \item Noción de reemplazo de comportamiento: los subtipos de actuar como supertipos.
 \item Relación entre subtipos y la herencia.
-\end{subtopics}>>}"	\LO{PL}{ObjectOrientedProgramming}{Core-Tier2}{Familiarity}{ExplainTheObject}{<<Explicar la relación entre la herencia orientada a objetos (codigo compartido y {\it overriding}) y subtipificación (la idea de un subtipo es ser utilizable en un contexto en el que espera al supertipo).>>}
+\end{subtopics}>>}"	\LO{PL}{ObjectOrientedProgramming}{Core-Tier2}{Familiarity}{ExplainTheObject}{<<Explicar la relación entre la herencia orientada a objetos (codigo compartido y \textit{overriding}) y subtipificación (la idea de un subtipo es ser utilizable en un contexto en el que espera al supertipo).>>}
 "\KUItem{PL}{ObjectOrientedProgramming}{Core-Tier2}{ObjectOriented}{}{<<Lenguajes orientados a objetos para la encapsulación:
 \begin{subtopics} 
 \item privacidad y la visibilidad de miembros de la clase 
@@ -1831,8 +1831,8 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Idiomas canónicos: llamadas de retorno, argumentos de iteradores, código reusable mediante  argumentos de función
 \item Uso del cierre para encapsular datos en su entorno
 \item Evaluación y aplicación parcial
-\end{subtopics}>>}"	\LO{PL}{FunctionalProgramming}{Core-Tier2}{Usage}{CorrectlyReason}{<<Razonar correctamente sobre variables y el ámbito léxico en un programa usando funciones de cierre ({\it function closures}).>>}
-\KUItem{PL}{FunctionalProgramming}{Core-Tier2}{Defining}{}{<<Definición de las operaciones de orden superior en los agregados, especialmente en mapa, reducir / doblar, y el filtro.>>}	\LO{PL}{FunctionalProgramming}{Core-Tier2}{Usage}{UseFunctional}{<<Usar mecanismos de encapsulamiento funcional, tal como {\it closures} e interfaces modulares.>>}
+\end{subtopics}>>}"	\LO{PL}{FunctionalProgramming}{Core-Tier2}{Usage}{CorrectlyReason}{<<Razonar correctamente sobre variables y el ámbito léxico en un programa usando funciones de cierre (\textit{function closures}).>>}
+\KUItem{PL}{FunctionalProgramming}{Core-Tier2}{Defining}{}{<<Definición de las operaciones de orden superior en los agregados, especialmente en mapa, reducir / doblar, y el filtro.>>}	\LO{PL}{FunctionalProgramming}{Core-Tier2}{Usage}{UseFunctional}{<<Usar mecanismos de encapsulamiento funcional, tal como \textit{closures} e interfaces modulares.>>}
 	\LO{PL}{FunctionalProgramming}{Core-Tier2}{Usage}{DefineAndAndOn}{<<Definir y usar iteradores y otras operaciones sobre agregaciones, incluyendo operaciones que tienen funciones como argumentos, en múltiples lenguajes de programación, seleccionar la forma mas natural por cada lenguaje.>>}
 	
 \KU{PL}{EventDrivenandReactiveProgramming}{<<Programación reactiva y dirigida por eventos.>>}{}{0}{2}	
@@ -1878,7 +1878,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Usage}{WriteDown}{<<Escribir las reglas de tipo que rigen el uso de un particular tipo compuesto.>>}
 	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Familiarity}{ExplainWhyType}{<<Explicar por qué indecidibilidad requiere sistemas de tipo para conservadoramente aproximar el comportamiento de un programa.>>}
 	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Usage}{DefineAndPieces}{<<Definir y usar piezas de programas (tales como, funciones, clases, métodos) que usan tipos genéricos, incluyendo para colecciones.>>}
-	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Familiarity}{DiscussTheGenerics}{<<Discutir las diferencias entre, genéricos ({\it generics}), subtipo y sobrecarga.>>}
+	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Familiarity}{DiscussTheGenerics}{<<Discutir las diferencias entre, genéricos (\textit{generics}), subtipo y sobrecarga.>>}
 	\LO{PL}{BasicTypeSystems}{Core-Tier2}{Familiarity}{ExplainMultiple}{<<Explicar múltiples beneficios y limitaciones de tipificación estática en escritura, mantenimiento y depuración de un software.>>}
 	
 \KU{PL}{ProgramRepresentation}{<<Representación de programas.>>}{}{0}{1}	
@@ -1896,17 +1896,17 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \item Ejecución como código nativo o con una máquina virtual
 \item Alternativas como carga dinámica y codificación dinámica de código (o ``just-in-time"")
 \end{subtopics}>>}"	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{DistinguishSyntax}{<<Distinguir sintaxis y parseo de la semantica y la evaluación.>>}
-\KUItem{PL}{LanguageTranslationandExecution}{Core-Tier2}{Run}{}{<<Representación en tiempo de ejecución de construcción del lenguaje núcleo tales como objetos (tablas de métodos) y funciones de primera clase (cerradas)>>}	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{Sketch}{<<Bosqueje una representación de bajo nivel de tiempo de ejecución de construcciones del lenguaje base, tales como objetos o cierres ({\it closures}).>>}
+\KUItem{PL}{LanguageTranslationandExecution}{Core-Tier2}{Run}{}{<<Representación en tiempo de ejecución de construcción del lenguaje núcleo tales como objetos (tablas de métodos) y funciones de primera clase (cerradas)>>}	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{Sketch}{<<Bosqueje una representación de bajo nivel de tiempo de ejecución de construcciones del lenguaje base, tales como objetos o cierres (\textit{closures}).>>}
 "\KUItem{PL}{LanguageTranslationandExecution}{Core-Tier2}{RunTime}{}{<<Ejecución en tiempo real de asignación de memoria: pila de llamdas, montículo, datos estáticos:
 \begin{subtopics}
 \item Implementación de bucles, recursividad y llamadas de cola
-\end{subtopics}>>}"	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{ExplainHowImplementations}{<<Explicar cómo las implementaciones de los lenguajes de programación tipicamente organizan la memoria en datos globales, texto, {\it heap}, y secciones de pila y cómo las características tales como recursión y administración de memoria son mapeados a esté modelo de memoria.>>}
+\end{subtopics}>>}"	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{ExplainHowImplementations}{<<Explicar cómo las implementaciones de los lenguajes de programación tipicamente organizan la memoria en datos globales, texto, \textit{heap}, y secciones de pila y cómo las características tales como recursión y administración de memoria son mapeados a esté modelo de memoria.>>}
 "\KUItem{PL}{LanguageTranslationandExecution}{Core-Tier2}{Memory}{}{<<Gestión de memoria:
 \begin{subtopics}
 \item Gestión manual de memoria: asignación, limpieza y reuso de la pila de memoria
-\item Gestión automática de memoria: recolección de datos no utilizados ({\it garbage colletion}) como una técnica automática usando la noción de accesibilidad
+\item Gestión automática de memoria: recolección de datos no utilizados (\textit{garbage colletion}) como una técnica automática usando la noción de accesibilidad
 \end{subtopics}>>}"	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Usage}{IdentifyAndLeaks}{<<Identificar y corregir las pérdidas de memoria y punteros desreferenciados.>>}
-	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{DiscussTheLimitations}{<<Discutir los beneficios y limitaciones de la recolección de basura ({\it garbage collection}), incluyendo la noción de accesibilidad.>>}
+	\LO{PL}{LanguageTranslationandExecution}{Core-Tier2}{Familiarity}{DiscussTheLimitations}{<<Discutir los beneficios y limitaciones de la recolección de basura (\textit{garbage collection}), incluyendo la noción de accesibilidad.>>}
 	
 \KU{PL}{SyntaxAnalysis}{<<Análisis de sintaxis.>>}{}{0}{0}	
 \KUDescription{PL}{SyntaxAnalysis}{<<~>>}	
@@ -1927,24 +1927,24 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \KUItem{PL}{CodeGeneration}{Elective}{Separate}{}{<<Compilación separada; vinculación.>>}	\LO{PL}{CodeGeneration}{Elective}{Usage}{GenerateThe}{<<Generar código de bajo nivel para llamadas a funciones en lenguajes modernos.>>}
 \KUItem{PL}{CodeGeneration}{Elective}{Instruction}{}{<<Selección de instrucciones.>>}	\LO{PL}{CodeGeneration}{Elective}{Familiarity}{DiscussWhyRequires}{<<Discutir por qué la compilación separada requiere convenciones de llamadas uniformes.>>}
 \KUItem{PL}{CodeGeneration}{Elective}{InstructionScheduling}{}{<<Calendarización de instrucciones.>>}	\LO{PL}{CodeGeneration}{Elective}{Familiarity}{DiscussWhyLimits}{<<Discutir por qué la compilación separada limita la optimización debido a efectos de llamadas desconocidas.>>}
-\KUItem{PL}{CodeGeneration}{Elective}{Register}{}{<<Asignación de registros.>>}	\LO{PL}{CodeGeneration}{Elective}{Familiarity}{DiscussOpportunities}{<<Discutir oportunidades para optimización introducida por la traducción y enfoques para alcanzar la optimización, tales como la selección de la instrucción, planificación de instruccion, asignación de registros y optimización de tipo mirilla ({\it peephole optimization}).>>}
+\KUItem{PL}{CodeGeneration}{Elective}{Register}{}{<<Asignación de registros.>>}	\LO{PL}{CodeGeneration}{Elective}{Familiarity}{DiscussOpportunities}{<<Discutir oportunidades para optimización introducida por la traducción y enfoques para alcanzar la optimización, tales como la selección de la instrucción, planificación de instruccion, asignación de registros y optimización de tipo mirilla (\textit{peephole optimization}).>>}
 \KUItem{PL}{CodeGeneration}{Elective}{Peephole}{}{<<Optimización por rendija (peephole)>>}	
 	
 \KU{PL}{RuntimeSystems}{<<Sistemas de tiempo de ejecución.>>}{}{0}{0}	
 \KUDescription{PL}{RuntimeSystems}{<<~>>}	
 \KUItem{PL}{RuntimeSystems}{Elective}{Dynamic}{}{<<Gestión dinámica de memoria, aproximaciones y técnicas: malloc/free, garbage collection (mark-sweep. copia, referencia), regiones (también conocidas como arenas o zonas)>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{CompareTheDifferent}{<<Comparar los beneficios de diferentes esquemas de administración de memoria, usando conceptos tales como, fragmentación, localidad, y sobrecarga de memoria.>>}
 \KUItem{PL}{RuntimeSystems}{Elective}{Data}{}{<<Disposición de datos para objetos y activación de registro.>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{DiscussBenefits}{<<Discutir beneficios y limitaciones de la gestión automática de la memoria.>>}
-\KUItem{PL}{RuntimeSystems}{Elective}{Just}{}{<<Compilación en tiempo just-in time y re-compilación dinámica.>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{ExplainTheMetadata}{<<Explicar el uso de metadatos en las representaciones de tiempo de ejecución de objetos y registros de activación, tales como los punteros de la clase, las longitudes de arreglos, direcciones de retorno, y punteros de {\it frame}.>>}
-\KUItem{PL}{RuntimeSystems}{Elective}{Other}{}{<<Otras características comunes de las máquinas virtuales, tales como carga de clases, hilos y seguridad.>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{DiscussAdvantages}{<<Discutir las ventajas, desventajas y dificultades del término ({\it just-in-time}) y recompilación automática.>>}
+\KUItem{PL}{RuntimeSystems}{Elective}{Just}{}{<<Compilación en tiempo just-in time y re-compilación dinámica.>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{ExplainTheMetadata}{<<Explicar el uso de metadatos en las representaciones de tiempo de ejecución de objetos y registros de activación, tales como los punteros de la clase, las longitudes de arreglos, direcciones de retorno, y punteros de \textit{frame}.>>}
+\KUItem{PL}{RuntimeSystems}{Elective}{Other}{}{<<Otras características comunes de las máquinas virtuales, tales como carga de clases, hilos y seguridad.>>}	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{DiscussAdvantages}{<<Discutir las ventajas, desventajas y dificultades del término (\textit{just-in-time}) y recompilación automática.>>}
 	\LO{PL}{RuntimeSystems}{Elective}{Familiarity}{IdentifyTheBy}{<<Identificar los servicios proporcionados por los sistemas de tiempo de ejecución en lenguajes modernos.>>}
 	
 \KU{PL}{StaticAnalysis}{<<Análisis estático.>>}{}{0}{0}	
 \KUDescription{PL}{StaticAnalysis}{<<~>>}	
 \KUItem{PL}{StaticAnalysis}{Elective}{Relevant}{}{<<Representaciones relevantes de programas, tales como bloques básicos, grafos de control de flujos, cadenas de definiciones y asignación estática simple.>>}	\LO{PL}{StaticAnalysis}{Elective}{Usage}{DefineUseful}{<<Definir análisis estáticos útiles en términos de un marco conceptual, como el análisis de flujo de datos.>>}
-\KUItem{PL}{StaticAnalysis}{Elective}{Undecidability}{}{<<Indecisión y consecuencias en el analisis de programas.>>}	\LO{PL}{StaticAnalysis}{Elective}{Familiarity}{ExplainWhySound}{<<Explicar por qué los análisis estáticos de tipos no triviales ({\it non-trivial sound static analyses}) deben ser aproximados.>>}
-\KUItem{PL}{StaticAnalysis}{Elective}{Flow}{}{<<Análisis y minúsculas de flujo, tales como la comprobación de tipos y puntero escalable y análisis de alias.>>}	\LO{PL}{StaticAnalysis}{Elective}{Usage}{Communicate}{<<Comunicar por qué un análisis es correcto ({\it sound and terminating}).>>}
+\KUItem{PL}{StaticAnalysis}{Elective}{Undecidability}{}{<<Indecisión y consecuencias en el analisis de programas.>>}	\LO{PL}{StaticAnalysis}{Elective}{Familiarity}{ExplainWhySound}{<<Explicar por qué los análisis estáticos de tipos no triviales (\textit{non-trivial sound static analyses}) deben ser aproximados.>>}
+\KUItem{PL}{StaticAnalysis}{Elective}{Flow}{}{<<Análisis y minúsculas de flujo, tales como la comprobación de tipos y puntero escalable y análisis de alias.>>}	\LO{PL}{StaticAnalysis}{Elective}{Usage}{Communicate}{<<Comunicar por qué un análisis es correcto (\textit{sound and terminating}).>>}
 \KUItem{PL}{StaticAnalysis}{Elective}{FlowSensitive}{}{<<Análisis sensibles al flujo, como hacia delante y hacia atrás de flujo de datos de análisis.>>}	\LO{PL}{StaticAnalysis}{Elective}{Familiarity}{DistinguishMay}{<<Distinguir análisis de tipo: ``puede" y ``debe".>>}
-\KUItem{PL}{StaticAnalysis}{Elective}{Path}{}{<<Análisis sensibles de camino, como modelo de software de cheques.>>}	\LO{PL}{StaticAnalysis}{Elective}{Familiarity}{ExplainWhyLimits}{<<Explicar por qué el {\it aliasing} potencial limita el análisis de tipos en los programas y como el análisis de alias puede ayudar.>>}
+\KUItem{PL}{StaticAnalysis}{Elective}{Path}{}{<<Análisis sensibles de camino, como modelo de software de cheques.>>}	\LO{PL}{StaticAnalysis}{Elective}{Familiarity}{ExplainWhyLimits}{<<Explicar por qué el \textit{aliasing} potencial limita el análisis de tipos en los programas y como el análisis de alias puede ayudar.>>}
 \KUItem{PL}{StaticAnalysis}{Elective}{Tools}{}{<<Herramientas y frameworks para definir análisis. >>}	\LO{PL}{StaticAnalysis}{Elective}{Usage}{UseTheA}{<<Usar los resultados de un análisis estático para una optimización de un programa y/o la correctitud parcial de dicho programa.>>}
 \KUItem{PL}{StaticAnalysis}{Elective}{Role}{}{<<Rol del análisis estático en la optimización de programas.>>}	
 \KUItem{PL}{StaticAnalysis}{Elective}{RoleOf}{}{<<Rol del análisis estático en la verificación parcial y busqueda de errores.>>}	
@@ -1962,9 +1962,9 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 	
 \KU{PL}{ConcurrencyandParallelism}{<<Concurrencia y Paralelismo.>>}{PDDistributedSystems,PDParallelismFundamentals}{0}{0}	
 \KUDescription{PL}{ConcurrencyandParallelism}{<<Apoyo a la concurrencia es una cuestión de programación-idiomas fundamental con material rico en diseño de lenguajes de programación, implementación del lenguaje y la teoría del lenguaje. Debido a la cobertura en otras áreas de conocimiento, esta unidad de conocimiento electiva tiene como único objetivo complementar el material incluido en el Cuerpo de Conocimientos de otros lugares. Cursos sobre lenguajes de programación son un excelente lugar para incluir un tratamiento general de concurrencia incluyendo este otro material PDParallelandDistributedComputing, SFParallelism>>}	
-\KUItem{PL}{ConcurrencyandParallelism}{Elective}{Constructs}{}{<<Construye para las variables de rosca-compartida y la sincronización de memoria compartida.>>}	\LO{PL}{ConcurrencyandParallelism}{Elective}{Usage}{WriteCorrect}{<<Escribir programas concurrentes correctos usando múltiples modelos de programación, tales como memoria compartida, actores, {\it futures} y primitivas de paralelismo de datos.>>}
+\KUItem{PL}{ConcurrencyandParallelism}{Elective}{Constructs}{}{<<Construye para las variables de rosca-compartida y la sincronización de memoria compartida.>>}	\LO{PL}{ConcurrencyandParallelism}{Elective}{Usage}{WriteCorrect}{<<Escribir programas concurrentes correctos usando múltiples modelos de programación, tales como memoria compartida, actores, \textit{futures} y primitivas de paralelismo de datos.>>}
 \KUItem{PL}{ConcurrencyandParallelism}{Elective}{Actor}{}{<<Modelos de Actor.>>}	\LO{PL}{ConcurrencyandParallelism}{Elective}{Usage}{UseAModel}{<<Usar un modelo de paso de mensajes para analizar un protocolo de comunicación.>>}
-\KUItem{PL}{ConcurrencyandParallelism}{Elective}{Futures}{}{<<Futuros.>>}	\LO{PL}{ConcurrencyandParallelism}{Elective}{Familiarity}{ExplainWhyDo}{<<Explicar porqué los lenguajes de programación no garantizan consistencia secuencial en la presencia de la carrera de datos ({\it data race}) y qué es lo que los programadores deben hacer como resultado de esto.>>}
+\KUItem{PL}{ConcurrencyandParallelism}{Elective}{Futures}{}{<<Futuros.>>}	\LO{PL}{ConcurrencyandParallelism}{Elective}{Familiarity}{ExplainWhyDo}{<<Explicar porqué los lenguajes de programación no garantizan consistencia secuencial en la presencia de la carrera de datos (\textit{data race}) y qué es lo que los programadores deben hacer como resultado de esto.>>}
 \KUItem{PL}{ConcurrencyandParallelism}{Elective}{LanguageSupport}{}{<<Soporte de lenguaje para paralelismo de datos.>>}	
 \KUItem{PL}{ConcurrencyandParallelism}{Elective}{Models}{}{<<Modelos para pasar mensajes entre procesos secuenciales.>>}	
 \KUItem{PL}{ConcurrencyandParallelism}{Elective}{Effect}{}{<<Efecto de modelos de consistenicia de memoria en la semántica del lenguaje y la correcta generación de código.>>}	
@@ -1973,7 +1973,7 @@ y la programación concurrente. Teniendo en cuenta estas diferentes perspectivas
 \KUDescription{PL}{TypeSystems}{<<~>>}	
 \KUItem{PL}{TypeSystems}{Elective}{Compositional}{}{<<Constructores de tipo composicional, como tipos de producto (para agregados), tipos de suma (para uniones), tipos de función, tipos cuantificados y tipos recursivos.>>}	\LO{PL}{TypeSystems}{Elective}{Usage}{DefineAPrecisely}{<<Definir un sistema de tipo de forma precisa y en su composición.>>}
 \KUItem{PL}{TypeSystems}{Elective}{Type}{}{<<Comprobación de tipos.>>}	\LO{PL}{TypeSystems}{Elective}{Familiarity}{ForVarious}{<<Para varias construcciones de tipo fundamental, identificar los valores que describen y las invariantes que hacen que se cumplan.>>}
-\KUItem{PL}{TypeSystems}{Elective}{TypeSafety}{}{<<Seguridad de tipos como preservación más progreso.>>}	\LO{PL}{TypeSystems}{Elective}{Familiarity}{Precisely}{<<Precisar las invariantes preservadas por un sistema de tipos seguro ({\it sound type system}).>>}
+\KUItem{PL}{TypeSystems}{Elective}{TypeSafety}{}{<<Seguridad de tipos como preservación más progreso.>>}	\LO{PL}{TypeSystems}{Elective}{Familiarity}{Precisely}{<<Precisar las invariantes preservadas por un sistema de tipos seguro (\textit{sound type system}).>>}
 \KUItem{PL}{TypeSystems}{Elective}{TypeInference}{}{<<Inferencia de tipos.>>}	\LO{PL}{TypeSystems}{Elective}{Usage}{ProveType}{<<Demostrar la seguridad de tipos para un lenguaje simple en términos de conservación y progreso teoremas.>>}
 \KUItem{PL}{TypeSystems}{Elective}{Static}{}{<<Sobrecarga estática.>>}	\LO{PL}{TypeSystems}{Elective}{Usage}{ImplementAType}{<<Implementar un algoritmo de inferencia de tipos basado en la unificación para un lenguaje básico.>>}
 	\LO{PL}{TypeSystems}{Elective}{Familiarity}{ExplainHowAndAlgorithms}{<<Explicar cómo la sobrecarga estática y algoritmos de resolución asociados influyen el comportamiento dinámico de los programas.>>}
@@ -2078,7 +2078,7 @@ Al considerar las horas asignadas a cada unidad de conocimiento, cabe señalar q
 \item El concepto de la especificacion
 \item Programacion defensiva (ejem., codificacion segura, manejo de excepciones)
 \item Revision de codigo
-\item Fundamentos de {\it testing} y generacion de casos de prueba
+\item Fundamentos de \textit{testing} y generacion de casos de prueba
 \item El rol y el uso de contratos, incluyendo pre- y post- condiciones
 \item Pruebas unitarias
 \end{subtopics}>>}"	\LO{SDF}{DevelopmentMethods}{Core-Tier1}{Familiarity}{ExplainWhyOf}{<<Explique por qué la creación de componentes de programa correctos es importante en la producción de software de alta calidad.>>}
@@ -2146,7 +2146,7 @@ Nota: La unidad de conocimiento \xref{SDFDevelopmentMethods} incluye 9 horas Cor
 \KUItem{SE}{SoftwareProcesses}{Elective}{SoftwareProcess}{}{<<Modelos de madurez de procesos de software.>>}	\LO{SE}{SoftwareProcesses}{Core-Tier2}{Usage}{CompareSeveral}{<<Comparar varios modelos comunes de procesos con respecto a su valor para el desarrollo de las clases particulares de sistemas de software, teniendo en cuenta diferentes aspectos tales como, estabilidad de los requisitos, tamaño y características no funcionales.>>}
 \KUItem{SE}{SoftwareProcesses}{Elective}{SoftwareProcessMeasurements}{}{<<Mediciones del proceso de software.>>}	\LO{SE}{SoftwareProcesses}{Elective}{Familiarity}{DefineSoftware}{<<Definir la calidad del software y describir el papel de las actividades de aseguramiento de la calidad en el proceso de software.>>}
 	\LO{SE}{SoftwareProcesses}{Elective}{Familiarity}{DescribeTheFundamental}{<<Describir el objetivo y similitudes fundamentales entre los enfoques de mejora de procesos.>>}
-	\LO{SE}{SoftwareProcesses}{Elective}{Assessment}{CompareSeveralModels}{<<Comparar varios modelos de mejora de procesos, tales como CMM, CMMI, CQI, {\it Plan-Do-Check-Act}, o ISO9000.>>}
+	\LO{SE}{SoftwareProcesses}{Elective}{Assessment}{CompareSeveralModels}{<<Comparar varios modelos de mejora de procesos, tales como CMM, CMMI, CQI, \textit{Plan-Do-Check-Act}, o ISO9000.>>}
 	\LO{SE}{SoftwareProcesses}{Elective}{Usage}{Assess}{<<Evaluar un esfuerzo de desarrollo y recomendar cambios potenciales al participar en la mejora de procesos (usando un modelo como PSP) o involucración en una retrospectiva de un proyecto.>>}
 	\LO{SE}{SoftwareProcesses}{Elective}{Familiarity}{ExplainTheProcess}{<<Explicar el papel de los modelos de madurez de procesos en la mejora de procesos.>>}
 	\LO{SE}{SoftwareProcesses}{Elective}{Familiarity}{DescribeSeveralForControlling}{<<Describir varias métricas de procesos para la evaluación y el control de un proyecto.>>}
@@ -2211,7 +2211,7 @@ Nota: La unidad de conocimiento \xref{SDFDevelopmentMethods} incluye 9 horas Cor
 \KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Software}{}{<<Administración de configuración de software  y control de versiones.>>}	\LO{SE}{ToolsandEnvironments}{Core-Tier2}{Familiarity}{DescribeTheCentralized}{<<Describir la diferencia entre el manejo de configuración de software centralizado y distribuido.>>}
 \KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Release}{}{<<Administración de despliegues.>>}	\LO{SE}{ToolsandEnvironments}{Core-Tier2}{Familiarity}{DescribeHowCanToSoftware}{<<Describir como el control de versión puede ser usado para ayudar a manejar la administración de versiones del software.>>}
 \KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Requierements}{}{<<Análisis de requerimientos y herramientas para modelado del diseño.>>}	\LO{SE}{ToolsandEnvironments}{Core-Tier2}{Usage}{IdentifyConfiguration}{<<Identificar elementos de configuración y usar herramientas de control de código fuente en un equipo de un proyecto pequeño.>>}
-\KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Testing}{}{<<Herramientas de {\it testing} incluyendo herramientas de análisis estático y dinámico.>>}	\LO{SE}{ToolsandEnvironments}{Core-Tier2}{Familiarity}{DescribeHowAnd}{<<Describir cómo la disponibilidad de herramientas de pruebas estática y dinámica se puede integrar en el entorno de desarrollo de software.>>}
+\KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Testing}{}{<<Herramientas de \textit{testing} incluyendo herramientas de análisis estático y dinámico.>>}	\LO{SE}{ToolsandEnvironments}{Core-Tier2}{Familiarity}{DescribeHowAnd}{<<Describir cómo la disponibilidad de herramientas de pruebas estática y dinámica se puede integrar en el entorno de desarrollo de software.>>}
 "\KUItem{SE}{ToolsandEnvironments}{Core-Tier2}{Programming}{}{<<Entornos de programación que automatizan el proceso de construcción de partes de programa (ejem., construcciones automatizadas)
 \begin{subtopics}
 \item Integración continua.
@@ -2234,7 +2234,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \KUItem{SE}{RequirementsEngineering}{Elective}{Basic}{}{<<Conceptos básicos de la especificación formal de requisitos.>>}	\LO{SE}{RequirementsEngineering}{Elective}{Usage}{UseAFormal}{<<Usar un método común, no formal para modelar y especificar los requisitos para un sistema de software de tamaño medio.>>}
 \KUItem{SE}{RequirementsEngineering}{Elective}{RequirementsSpecification}{}{<<Especificación de requisitos.>>}	\LO{SE}{RequirementsEngineering}{Elective}{Usage}{TranslateInto}{<<Traducir al lenguaje natural una especificación de requisitos de software (por ejemplo, un contrato de componentes de software) escrito en un lenguaje de especificación formal.>>}
 \KUItem{SE}{RequirementsEngineering}{Elective}{RequirementsValidation}{}{<<Validación de requisitos.>>}	\LO{SE}{RequirementsEngineering}{Elective}{Usage}{CreateAA}{<<Crear un prototipo de un sistema de software para reducir el riesgo en los requisitos.>>}
-\KUItem{SE}{RequirementsEngineering}{Elective}{RequirementsTracing}{}{<<Rastreo de requisitos.>>}	\LO{SE}{RequirementsEngineering}{Elective}{Familiarity}{DifferentiateBetweenBackward}{<<Diferenciar entre el rastreo ({\it tracing}) hacia adelante y hacia atrás y explicar su papel en el proceso de validación de requisitos.>>}
+\KUItem{SE}{RequirementsEngineering}{Elective}{RequirementsTracing}{}{<<Rastreo de requisitos.>>}	\LO{SE}{RequirementsEngineering}{Elective}{Familiarity}{DifferentiateBetweenBackward}{<<Diferenciar entre el rastreo (\textit{tracing}) hacia adelante y hacia atrás y explicar su papel en el proceso de validación de requisitos.>>}
 	
 \KU{SE}{SoftwareDesign}{<<Diseño de Software>>}{}{3}{5}	
 \KUDescription{SE}{SoftwareDesign}{<<~>>}	
@@ -2246,7 +2246,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \KUItem{SE}{SoftwareDesign}{Core-Tier2}{Software}{}{<<Conceptos de arquitectura de software y arquitecturas estándar (por ejemplo, cliente-servidor, n-capas, transforman centrados, tubos y filtros).>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Usage}{CreateAppropriate}{<<Crear modelos apropiados para la estructura y el comportamiento de los productos de software desde la especificaciones de requisitos.>>}
 \KUItem{SE}{SoftwareDesign}{Core-Tier2}{The}{}{<<El uso de componentes de diseño: seleccion de componentes,diseño,adaptacion y componentes de ensamblaje, componentes y patrones, componentes y objetos(por ejemplo,construir una GUI usando un standar widget set)>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Assessment}{ExplainTheTheA}{<<Explicar las relaciones entre los requisitos para un producto de software y su diseño, utilizando los modelos apropiados.>>}
 \KUItem{SE}{SoftwareDesign}{Core-Tier2}{Internal}{}{<<Diseños de refactorización utilizando patrones de diseño>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Familiarity}{ForThe}{<<Para el diseño de un sistema de software simple dentro del contexto de un único paradigma de diseño, describir la arquitectura de software de ese sistema.>>}
-\KUItem{SE}{SoftwareDesign}{Elective}{InternalDesign}{}{<<Calidad del diseño interno, y modelos para:  eficiencia y desempeño, redundancia  y  tolerancia  a fallos, trazavilidad de los requerimientos.>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Familiarity}{Given}{<<Dado un diseño de alto nivel, identificar la arquitectura de software mediante la diferenciación entre las arquitecturas comunes de software, tales como 3 capas ({\it 3-tier}), {\it pipe-and-filter}, y cliente-servidor.>>}
+\KUItem{SE}{SoftwareDesign}{Elective}{InternalDesign}{}{<<Calidad del diseño interno, y modelos para:  eficiencia y desempeño, redundancia  y  tolerancia  a fallos, trazavilidad de los requerimientos.>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Familiarity}{Given}{<<Dado un diseño de alto nivel, identificar la arquitectura de software mediante la diferenciación entre las arquitecturas comunes de software, tales como 3 capas (\textit{3-tier}), \textit{pipe-and-filter}, y cliente-servidor.>>}
 \KUItem{SE}{SoftwareDesign}{Elective}{Measurement}{}{<<Medición y análisis de la calidad de un diseño.>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Assessment}{InvestigateThe}{<<Investigar el impacto de la selección arquitecturas de software en el diseño de un sistema simple.>>}
 \KUItem{SE}{SoftwareDesign}{Elective}{Tradeoffs}{}{<<Compensasiones entre diferentes aspectos de la calidad.>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Usage}{ApplySimple}{<<Aplicar ejemplos simples de patrones en un diseño de software.>>}
 \KUItem{SE}{SoftwareDesign}{Elective}{Application}{}{<<Aaplicaciones en frameworks.>>}	\LO{SE}{SoftwareDesign}{Core-Tier2}{Familiarity}{DescribeARefactoring}{<<Describir una manera de refactorar y discutir cuando esto debe ser aplicado.>>}
@@ -2290,7 +2290,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \item Entrada Comprobación 
 \item Suponiendo éxito y corrección 
 \item La validación de las hipótesis 
-\end{subtopics}>>}"	\LO{SE}{SoftwareConstruction}{Core-Tier2}{Familiarity}{CompareAndStrategies}{<<Comparar y contrastar las estrategias de integración incluyendo: de arriba hacia abajo ({\it top-down}), de abajo hacia arriba ({\it bottom-up}), y la integración Sándwich.>>}
+\end{subtopics}>>}"	\LO{SE}{SoftwareConstruction}{Core-Tier2}{Familiarity}{CompareAndStrategies}{<<Comparar y contrastar las estrategias de integración incluyendo: de arriba hacia abajo (\textit{top-down}), de abajo hacia arriba (\textit{bottom-up}), y la integración Sándwich.>>}
 	\LO{SE}{SoftwareConstruction}{Core-Tier2}{Familiarity}{DescribeTheAnalyzing}{<<Describir el proceso de analizar e implementar los cambios a la base de código desarrollado para un proyecto específico.>>}
 	\LO{SE}{SoftwareConstruction}{Core-Tier2}{Familiarity}{DescribeTheAnalyzingChanges}{<<Describir el proceso de analizar e implementar los cambios a una gran base de código existente.>>}
 	\LO{SE}{SoftwareConstruction}{Elective}{Usage}{Rewrite}{<<Reescribir un programa sencillo para eliminar vulnerabilidades comunes, tales como desbordamientos de búffer, desbordamientos de enteros y condiciones de carrera.>>}
@@ -2313,7 +2313,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Static}{}{<<Enfoques estáticos y enfoques dinámicos para la  verificación.>>}	\LO{SE}{SoftwareVerificationandValidation}{Core-Tier2}{Familiarity}{DescribeHowGood}{<<Describir cómo seleccionar buenas pruebas de regresión y automatizarlas.>>}
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Test}{}{<<Desarrollo basado en pruebas.>>}	\LO{SE}{SoftwareVerificationandValidation}{Core-Tier2}{Usage}{UseAToolSoftware}{<<Utilizar una herramienta de seguimiento de defectos para manejar defectos de software en un pequeño proyecto de software.>>}
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Validation}{}{<<Plan de Validación, documentación para validación.>>}	\LO{SE}{SoftwareVerificationandValidation}{Core-Tier2}{Familiarity}{DiscussTheTesting}{<<Discutir las limitaciones de las pruebas en un dominio particular.>>}
-\KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Object}{}{<<Pruebas Orientadas a Objetos, Sistema de Pruebas.>>}	\LO{SE}{SoftwareVerificationandValidation}{Elective}{Usage}{EvaluateAFor}{<<Evaluar un banco de pruebas ({\it a test suite}) para un segmento de código de tamaño medio.>>}
+\KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Object}{}{<<Pruebas Orientadas a Objetos, Sistema de Pruebas.>>}	\LO{SE}{SoftwareVerificationandValidation}{Elective}{Usage}{EvaluateAFor}{<<Evaluar un banco de pruebas (\textit{a test suite}) para un segmento de código de tamaño medio.>>}
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{VerificationAnd}{}{<<Verificación y validación de artefactos no codificados (documentación, archivos de ayuda, materiales de entrenamiento)>>}	\LO{SE}{SoftwareVerificationandValidation}{Elective}{Familiarity}{CompareStatic}{<<Comparar los enfoques estáticos y dinámicos para la verificación.>>}
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{Fault}{}{<<Logeo fallido, error crítico y apoyo técnico para dichas actividades.>>}	\LO{SE}{SoftwareVerificationandValidation}{Elective}{Familiarity}{IdentifyTheOfDevelopment}{<<Identificar los principios fundamentales de los métodos de desarrollo basado en pruebas y explicar el papel de las pruebas automatizadas en estos métodos.>>}
 \KUItem{SE}{SoftwareVerificationandValidation}{Elective}{FaultEstimation}{}{<<Estimación fallida y terminación de las pruebas que incluye la envios por defecto.>>}	\LO{SE}{SoftwareVerificationandValidation}{Elective}{Usage}{DiscussTheThe}{<<Discutir los temas relacionados con las pruebas de software orientado a objetos.>>}
@@ -2328,7 +2328,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \begin{subtopics}
 \item Cambios de software
 \item Preocupaciones y ubicación de preocupaciones
-\item {\it Refactoring}
+\item \textit{Refactoring}
 \end{subtopics}>>}"	\LO{SE}{SoftwareEvolution}{Core-Tier2}{Familiarity}{IdentifyTheAssociatedEvolution}{<<Identificar los problemas principales asociados con la evolución del software y explicar su impacto en el ciclo de vida del software.>>}
 \KUItem{SE}{SoftwareEvolution}{Core-Tier2}{SoftwareEvolution}{}{<<Evolución de Software.>>}	\LO{SE}{SoftwareEvolution}{Core-Tier2}{Usage}{EstimateTheA}{<<Estimar el impacto del cambio de requerimientos en productos existentes de tamaño medio.>>}
 \KUItem{SE}{SoftwareEvolution}{Core-Tier2}{Characteristics}{}{<<Características de Software mantenible.>>}	\LO{SE}{SoftwareEvolution}{Core-Tier2}{Usage}{UseRefactoring}{<<Usar refactorización en el proceso de modificación de un componente de sosftware.>>}
@@ -2336,7 +2336,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 "\KUItem{SE}{SoftwareEvolution}{Core-Tier2}{SoftwareReuse}{}{<<Reuso de Software.
 \begin{subtopics}
 \item Segmentos de código
-\item Bibliotecas y {\it frameworks}
+\item Bibliotecas y \textit{frameworks}
 \item Componentes
 \item Líneas de Producto
 \end{subtopics}>>}"	\LO{SE}{SoftwareEvolution}{Core-Tier2}{Familiarity}{OutlineTheRegression}{<<Perfilar los procesos de pruebas de regresión y su rol en el manejo de versiones.>>}
@@ -2359,8 +2359,8 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \KUItem{SE}{FormalMethods}{Elective}{Program}{}{<<Lenguajes controlar (assert) en un programa y abordajes de análisis (incluyendo lenguajes para escribir y analizar pre y post condiciones tales como OCL, JML)>>}	\LO{SE}{FormalMethods}{Elective}{Usage}{ApplyFormalAnalysis}{<<Aplicar especificación formal y técnicas de análisis para diseños de software y programas con baja complejidad.>>}
 "\KUItem{SE}{FormalMethods}{Elective}{Formal}{}{<<Abordajes formales para modelamiento y análisis de software.
 \begin{subtopics}
-\item Verificadores de modelos  {\it Model checkers}
-\item Buscadores de Modelo {\it Model finders}
+\item Verificadores de modelos  \textit{Model checkers}
+\item Buscadores de Modelo \textit{Model finders}
 \end{subtopics}>>}"	\LO{SE}{FormalMethods}{Elective}{Familiarity}{ExplainTheAndUsing}{<<Explicar los beneficios potenciales y desventajas de usar lenguajes de especificación formal.>>}
 \KUItem{SE}{FormalMethods}{Elective}{Tools}{}{<<Herramientas para el soporte de métodos formales.>>}	\LO{SE}{FormalMethods}{Elective}{Usage}{CreateAndAssertions}{<<Crear y evaluar validaciones de programa para una variedad de comportamientos que van desde lo simple hasta lo complejo.>>}
 	\LO{SE}{FormalMethods}{Elective}{Usage}{UsingA}{<<Usando un lenguaje de especificación formal, formular la especificación de un sistema de software simple y derivar ejemplos de casos de prueba a partir de la especificación.>>}
@@ -2385,7 +2385,7 @@ Especificaciones de los requisitos varían en trámite desde completamente infor
 \KUItem{SF}{CrossLayerCommunications}{Core-Tier1}{Distinction}{}{<<Distinción entre Aplicaciones y Servicios del SO, Llamadas a procedimientos remotos.>>}	\LO{SF}{CrossLayerCommunications}{Core-Tier1}{Familiarity}{DescribeThat}{<<Describir que el hardware, VM, OS, aplicación son capas adicional interpretación/procesamiento>>}
 \KUItem{SF}{CrossLayerCommunications}{Core-Tier1}{ApplicationVirtual}{}{<<Interacción entre la aplicación y la máquina virtual.>>}	\LO{SF}{CrossLayerCommunications}{Core-Tier1}{Familiarity}{DescribeTheHow}{<<Describir los mecanismos de como los errores se detectan, nos notificados hacia atrás y se manejan a través de capas>>}
 \KUItem{SF}{CrossLayerCommunications}{Core-Tier1}{Reliability}{}{<<Confiabilidad.>>}	\LO{SF}{CrossLayerCommunications}{Core-Tier1}{Usage}{ConstructAUsing}{<<Construir un programa simple utilizando métodos de capas, la detección y recuperación de errores, y reflexión de la condición de error a través de capas.>>}
-	\LO{SF}{CrossLayerCommunications}{Core-Tier1}{Usage}{Find}{<<Encontrar {\it bugs} en un programa multi capas a través de la utilización de programas de rastreo, paso a paso y depuración {\it debugging}>>}
+	\LO{SF}{CrossLayerCommunications}{Core-Tier1}{Usage}{Find}{<<Encontrar \textit{bugs} en un programa multi capas a través de la utilización de programas de rastreo, paso a paso y depuración \textit{debugging}>>}
 	
 \KU{SF}{StateandStateMachines}{<<Estados y máquinas de estados.>>}{ALBasicComputability,ALComplexity,OSStateandStateDiagrams,NCProtocols}{6}{0}	
 \KUDescription{SF}{StateandStateMachines}{<<~>>}	
@@ -2403,20 +2403,20 @@ máquina de estados y que pueden existir representaciones alternativas para el m
 \KUItem{SF}{Parallelism}{Core-Tier1}{Parallel}{}{<<Programación paralela vs concurrente.>>}	\LO{SF}{Parallelism}{Core-Tier1}{Familiarity}{DemonstrateOn}{<<Demostrar sobre una linea de tiempo de ejecución que los eventos y operaciones paralelas pueden tomar lugar simultaneamente (al mismo tiempo). Explicar como la carga de trabajo puede ser realizada en menos tiempo si se explora el paralelismo.>>}
 \KUItem{SF}{Parallelism}{Core-Tier1}{Request}{}{<<Paralelismo de solicitudes vs Paralelismo de tareas.>>}	\LO{SF}{Parallelism}{Core-Tier1}{Familiarity}{ExplainOther}{<<Explicar otros usos del paralelismo, tales como la confiabilidad/redundancia de la ejecución.>>}
 \KUItem{SF}{Parallelism}{Core-Tier1}{Client}{}{<<Cliente-Servidor/Web Services, Hilos (Fork-join), Pipelining.>>}	\LO{SF}{Parallelism}{Core-Tier1}{Familiarity}{DefineTheThe}{<<Definir las diferencias entre los conceptos de Paralelismo a nivel de Instrucción, Paralelismo a nivel de datos, Paralelimos/Multitareas a nivel de hebras, Paralelimos a nivel de Procesos/Peticiones.>>}
-\KUItem{SF}{Parallelism}{Core-Tier1}{Multicore}{}{<<Arquitecturas multinúcleo y soporte de hardware para sincronización.>>}	\LO{SF}{Parallelism}{Core-Tier1}{Usage}{WriteMore}{<<Escribir mas de un programa en paralelo (por ejemplo, un programa paralelo en mas de un paradigma de programación paralela; un programa paralelo que administre recursos compartidos a través de primitivas de sincronización; un programa paralelo que realiza operaciones simultaneas sobre datos particionados a través de paralelización de tareas/procesos (por ejemplo, busqueda de términos en paralelo; un programa que realiza paso a paso un procesamiento {\it pipeline} a través de paso de mensajes)).>>}
-	\LO{SF}{Parallelism}{Core-Tier1}{Assessment}{UsePerformance}{<<Usar herramientas de desempeño para medir el {\it speed-up} alcanzado por un programa paralelo en términos de tamaño de los datos y número de recursos.>>}
+\KUItem{SF}{Parallelism}{Core-Tier1}{Multicore}{}{<<Arquitecturas multinúcleo y soporte de hardware para sincronización.>>}	\LO{SF}{Parallelism}{Core-Tier1}{Usage}{WriteMore}{<<Escribir mas de un programa en paralelo (por ejemplo, un programa paralelo en mas de un paradigma de programación paralela; un programa paralelo que administre recursos compartidos a través de primitivas de sincronización; un programa paralelo que realiza operaciones simultaneas sobre datos particionados a través de paralelización de tareas/procesos (por ejemplo, busqueda de términos en paralelo; un programa que realiza paso a paso un procesamiento \textit{pipeline} a través de paso de mensajes)).>>}
+	\LO{SF}{Parallelism}{Core-Tier1}{Assessment}{UsePerformance}{<<Usar herramientas de desempeño para medir el \textit{speed-up} alcanzado por un programa paralelo en términos de tamaño de los datos y número de recursos.>>}
 	
 \KU{SF}{Evaluation}{<<Evaluación.>>}{PDParallelPerformance}{3}{0}	
 \KUDescription{SF}{Evaluation}{<<~>>}	
 \KUItem{SF}{Evaluation}{Core-Tier1}{Performance}{}{<<Cifras de desempeño de mérito.>>}	\LO{SF}{Evaluation}{Core-Tier1}{Familiarity}{ExplainHowOfContribute}{<<Explique cómo los componentes de la arquitectura del sistema contribuyen a la mejora del rendimiento.>>}
 \KUItem{SF}{Evaluation}{Core-Tier1}{Workloads}{}{<<Las cargas de trabajo y puntos de referencia representativos y los métodos de recolección y análisis de las cifras de desempeño.>>}	\LO{SF}{Evaluation}{Core-Tier1}{Familiarity}{DescribeAmdahls}{<<Describir la ley de Amdahl y discutir sus limitaciones.>>}
-\KUItem{SF}{Evaluation}{Core-Tier1}{Cpi}{}{<<La ecuación  CPI ({\it Cycles per Instruction})  como una herramienta para entender puntos de equilibrio en el diseño de un conjunto de instrucciones, secuencia de ejecución en un procesador y organización de un sistema de memoria.>>}	\LO{SF}{Evaluation}{Core-Tier1}{Usage}{DesignAndPerformance}{<<Diseñar e implementar un experimento orientado al desempeño.>>}
+\KUItem{SF}{Evaluation}{Core-Tier1}{Cpi}{}{<<La ecuación  CPI (\textit{Cycles per Instruction})  como una herramienta para entender puntos de equilibrio en el diseño de un conjunto de instrucciones, secuencia de ejecución en un procesador y organización de un sistema de memoria.>>}	\LO{SF}{Evaluation}{Core-Tier1}{Usage}{DesignAndPerformance}{<<Diseñar e implementar un experimento orientado al desempeño.>>}
 \KUItem{SF}{Evaluation}{Core-Tier1}{Amdahls}{}{<<La ley de Amdahl: la parte de la computación que no se puede acelerar limita el efecto de las partes que si pueden.>>}	\LO{SF}{Evaluation}{Core-Tier1}{Assessment}{UseSoftware}{<<Usar herramientas de software para perfilar y medir el desempeño de un programa.>>}
 	
 \KU{SF}{ResourceAllocationandScheduling}{<<Asignación de recursos y planeamiento.>>}{}{0}{2}	
 \KUDescription{SF}{ResourceAllocationandScheduling}{<<~>>}	
 \KUItem{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Kinds}{}{<<Clases de recursos (p.e., unidad de procesador, memoria, disco, ancho de banda neto)>>}	\LO{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Familiarity}{DefineHow}{<<Definir como recursos computacionales limitados (por ejemplo, participación de procesador, memoria, almacenamiento y ancho de banda) son gestionadas por una cuidadosa asignación para entidades existentes.>>}
-\KUItem{SF}{ResourceAllocationandScheduling}{Core-Tier2}{KindsOf}{}{<<Clases de programación (p.e., FIFO, prioridad)>>}	\LO{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Familiarity}{DescribeTheBy}{<<Describir los algoritmos de planificación mediante el cual, recursos son asignados a entidades competentes, y los factores de calidad por el cual se evaluan estos algoritmos, tal como equidad ({\it fairness}).>>}
+\KUItem{SF}{ResourceAllocationandScheduling}{Core-Tier2}{KindsOf}{}{<<Clases de programación (p.e., FIFO, prioridad)>>}	\LO{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Familiarity}{DescribeTheBy}{<<Describir los algoritmos de planificación mediante el cual, recursos son asignados a entidades competentes, y los factores de calidad por el cual se evaluan estos algoritmos, tal como equidad (\textit{fairness}).>>}
 \KUItem{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Advantages}{}{<<Ventajas de la planificación equitativa, la programación preventiva.>>}	\LO{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Usage}{ImplementSimple}{<<Implementar un algoritmo básico de planificación.>>}
 	\LO{SF}{ResourceAllocationandScheduling}{Core-Tier2}{Assessment}{UseFigures}{<<Usar factores de calidad de implementaciones de planificadores alternativos.>>}
 	
@@ -2424,8 +2424,8 @@ máquina de estados y que pueden existir representaciones alternativas para el m
 \KUDescription{SF}{Proximity}{<<~>>}	
 \KUItem{SF}{Proximity}{Core-Tier2}{Speed}{}{<<La velocidad de la luz y los computadores (un pie por nano segundo vs reloj de 1 GHz)>>}	\LO{SF}{Proximity}{Core-Tier2}{Familiarity}{ExplainTheLocality}{<<Explicar la importancia de localidad en la determinación de desempeño.>>}
 \KUItem{SF}{Proximity}{Core-Tier2}{Latencies}{}{<<Latencia en sistemas de computadores: memoria vs latencia de disco vs memoria a lo largo de la red.>>}	\LO{SF}{Proximity}{Core-Tier2}{Familiarity}{DescribeWhyAre}{<<Describir por qué las cosas que están cerca en espacio toman menos tiempo para su acceso.>>}
-\KUItem{SF}{Proximity}{Core-Tier2}{Caches}{}{<<Memoria {\it cache} y el efecto de localidad espacial y temporal en el desempeño en el procesador y sistemas>>}	\LO{SF}{Proximity}{Core-Tier2}{Assessment}{CalculateAverage}{<<Calcular el tiempo promedio de acceso a la memoria y describir los {\t tradeoffs} en el desempeño jerarquico de la memoria en términos de capacidad, tasa de fallos/éxitos y el tiempo de acceso.>>}
-\KUItem{SF}{Proximity}{Core-Tier2}{CachesAnd}{}{<<Memoria {\it cache} y coherencia de memoria {\it cache} en bases de datos, sistemas operativos, sistemas distribuídos y arquitectura de computadores.>>}	
+\KUItem{SF}{Proximity}{Core-Tier2}{Caches}{}{<<Memoria \textit{cache} y el efecto de localidad espacial y temporal en el desempeño en el procesador y sistemas>>}	\LO{SF}{Proximity}{Core-Tier2}{Assessment}{CalculateAverage}{<<Calcular el tiempo promedio de acceso a la memoria y describir los {\t tradeoffs} en el desempeño jerarquico de la memoria en términos de capacidad, tasa de fallos/éxitos y el tiempo de acceso.>>}
+\KUItem{SF}{Proximity}{Core-Tier2}{CachesAnd}{}{<<Memoria \textit{cache} y coherencia de memoria \textit{cache} en bases de datos, sistemas operativos, sistemas distribuídos y arquitectura de computadores.>>}	
 \KUItem{SF}{Proximity}{Core-Tier2}{Introduction}{}{<<Introducción a la jerarquía de memorias de procesador y la fórmula para el promedio de acceso a memoria.>>}	
 	
 \KU{SF}{VirtualizationandIsolation}{<<Virtualización y aislamiento.>>}{}{0}{2}	
@@ -2452,7 +2452,7 @@ máquina de estados y que pueden existir representaciones alternativas para el m
 \KUItem{SF}{QuantitativeEvaluation}{Elective}{Microbenchmarking}{}{<<Trampas de micro puntos de referencia.>>}	
 	
 \KA{SP}{<<Asuntos sociales y práctica profesional.>>}{}	
-"\KADescription{SP}{<<Si bien las cuestiones técnicas son fundamentales para el plan de estudios de computación, no constituyen un programa educativo completo en el campo. Los estudiantes también deben estar expuestos al contexto social más amplio de la computación para desarrollar una comprensión de las cuestiones sociales, éticas, legales y profesionales pertinentes. Esta necesidad de incorporar el estudio de estos problemas no técnicos en el plan de estudios ACM fue reconocido formalmente en el año 1991, como puede verse en el siguiente extracto: 
+\KADescription{SP}{<<Si bien las cuestiones técnicas son fundamentales para el plan de estudios de computación, no constituyen un programa educativo completo en el campo. Los estudiantes también deben estar expuestos al contexto social más amplio de la computación para desarrollar una comprensión de las cuestiones sociales, éticas, legales y profesionales pertinentes. Esta necesidad de incorporar el estudio de estos problemas no técnicos en el plan de estudios ACM fue reconocido formalmente en el año 1991, como puede verse en el siguiente extracto: 
 
 \begin{quotation}
 Estudiantes universitarios también deben comprender los aspectos culturales, sociales, legales y éticos básicos inherentes a la disciplina de la computación. Ellos deben entender donde la disciplina ha estado, dónde está y hacia dónde se dirige. También deben entender su papel individual en este proceso, así como apreciar las cuestiones filosóficas, problemas técnicos y los valores estéticos que desempeñan un papel importante en el desarrollo de la disciplina.
@@ -2469,12 +2469,12 @@ Los educadores de ciencia de la computación pueden optar por enseñar este núc
 Debido a esta amplia relevancia, es importante que varios cursos tradicionales incluyan módulos con estudios de casos que analizan los aspectos éticos, legales, sociales y profesionales en el contexto de la materia técnica del curso. Los cursos en áreas como la ingeniería de software, bases de datos, redes de computadores, y seguridad aseguramiento de la información y la introducción a la computación proporcionan un contexto obvio para el análisis de cuestiones éticas. Sin embargo, un módulo relacionado con la ética podría desarrollarse para casi cualquier curso en el currículo. Sería explícitamente en contra del espíritu de la recomendaciones tener  sólo un curso independiente. A lo largo de todos los asuntos en esta área existe la necesidad de hablar con el profesional para que siempre enfrente estos problemas desde la perspectiva moral y técnica. Las cuestiones éticas discutidas en cualquier clase deben  surgen naturalmente de la materia objeto de esa clase. 
 Los ejemplos incluyen una discusión en el curso de base de datos de la agregación de datos o minería de datos, o una discusión en el curso de ingeniería de software de los posibles conflictos entre las obligaciones para con el cliente y las obligaciones para el usuario y otras personas afectadas por su trabajo. Asignaciones de programación construidas alrededor de aplicaciones tales controlar el movimiento de un láser durante la cirugía de los ojos puede ayudar a hacer frente a los impactos profesionales, éticos y sociales de la computación. El cuerpo docente que no esté familiarizados con el contenido y/o la pedagogía de la ética aplicada debe  aprovechar los recursos considerables de ACM, IEEE-CS, SIGCAS (grupo de interés especial en las computadoras y la sociedad), y otras organizaciones. 
 
-Cabe señalar que la aplicación de un análisis ético subyace en cada sección de esta área de conocimiento. El Código ACM de Ética y Conducta Profesional (http://www.acm.org/about/code-of-ethics) proporciona directrices que sirven como base para la realización de nuestro trabajo profesional. Los imperativos morales generales proporcionan un mejor entendimiento de nuestro compromiso con la responsabilidad personal, la conducta profesional y nuestros roles de liderazgo.>>}"	
+Cabe señalar que la aplicación de un análisis ético subyace en cada sección de esta área de conocimiento. El Código ACM de Ética y Conducta Profesional (http://www.acm.org/about/code-of-ethics) proporciona directrices que sirven como base para la realización de nuestro trabajo profesional. Los imperativos morales generales proporcionan un mejor entendimiento de nuestro compromiso con la responsabilidad personal, la conducta profesional y nuestros roles de liderazgo.>>}
 	
 \KU{SP}{SocialContext}{<<Contexto Social>>}{}{1}{2}	
 "\KUDescription{SP}{SocialContext}{<<Las computadoras y el Internet, quizás más que cualquier otra tecnología, han transformado la sociedad durante los últimos 75 años, con un aumento espectacular en la productividad humana; una explosión de opciones para las noticias, el entretenimiento y la comunicación; y los avances fundamentales en casi todas las ramas de la ciencia e ingeniería.
 Social Contexto proporciona la base para todas las demás unidades de conocimiento de esta área (SP), especialmente la ética profesional.>>}"	
-\KUItem{SP}{SocialContext}{Core-Tier1}{Social}{HCIFoundations,IASFoundationalConceptsinSecurity}{<<Implicancias sociales de la computación en un mundo conectado en red.>>}	\LO{SP}{SocialContext}{Core-Tier1}{Familiarity}{DescribePositive}{<<Describir las formas positivas y negativas en las que la tecnología computacional (redes, computación móvil, {\it cloud computing}) altera los modos de interacción social en el plano personal.>>}
+\KUItem{SP}{SocialContext}{Core-Tier1}{Social}{HCIFoundations,IASFoundationalConceptsinSecurity}{<<Implicancias sociales de la computación en un mundo conectado en red.>>}	\LO{SP}{SocialContext}{Core-Tier1}{Familiarity}{DescribePositive}{<<Describir las formas positivas y negativas en las que la tecnología computacional (redes, computación móvil, \textit{cloud computing}) altera los modos de interacción social en el plano personal.>>}
 \KUItem{SP}{SocialContext}{Core-Tier1}{Impact}{}{<<Impacto de los medios sociales en el individualismo, colectivismo y en la cultura.>>}	\LO{SP}{SocialContext}{Core-Tier1}{Familiarity}{IdentifyDevelopers}{<<Identificar los supuestos y valores incorporados en el hardware y el software de diseño de los desarrolladores, especialmente lo que se refiere a la facilidad de uso para diversas poblaciones incluyendo minorías poblaciones y los discapacitados>>}
 \KUItem{SP}{SocialContext}{Core-Tier2}{Growth}{NCIntroduction}{<<Crecimiento y control de la Internet>>}	\LO{SP}{SocialContext}{Core-Tier1}{Familiarity}{InterpretThe}{<<Interpretar el contexto social de un determinado diseño y su aplicación>>}
 \KUItem{SP}{SocialContext}{Core-Tier2}{Often}{}{<<A menudo se refiere como la brecha digital, las diferencias en el acceso a los recursos de la tecnología digital y sus ramificaciones resultantes para el género, la clase, la etnia, la geografía, y/o los países subdesarrollados.>>}	\LO{SP}{SocialContext}{Core-Tier1}{Assessment}{EvaluateTheA}{<<Evaluar la eficacia de un diseño y aplicación dada a partir de datos empíricos>>}
@@ -2575,7 +2575,7 @@ Comunicación profesional efectiva de información técnica es rara vez un don h
 \KUItem{SP}{EconomiesofComputing}{Elective}{Monopolies}{}{<<Monopolio y sus implicaciones económicas.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{SummarizeTheAntimonopoly}{<<Resumir los fundamentos para los esfuerzos antimonopolio.>>}
 \KUItem{SP}{EconomiesofComputing}{Elective}{Effect}{}{<<Efecto del suministro de mano de obra calificada y la demanda sober la calidad de los productos de computación.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{IdentifySeveral}{<<Identificar diversas maneras en que la industria de la tecnología de la información está afectada por la escasez de la oferta de trabajo.>>}
 \KUItem{SP}{EconomiesofComputing}{Elective}{Pricing}{}{<<Estrategias de precio en el dominio de la computación.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{IdentifyThePricing}{<<Identificar la evolución de la estrategía de precios para el cálculo de los bienes y servicios.>>}
-\KUItem{SP}{EconomiesofComputing}{Elective}{ThePhenomenon}{}{<<El fenomeno del desarrollo de software outsourcing y off-shoring; impactos en el empleo y la economia.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{DiscussTheDrawbacks}{<<Discutir los beneficios, los inconvenientes y las implicaciones de {\it off-shoring} y {\it outsourcing}.>>}
+\KUItem{SP}{EconomiesofComputing}{Elective}{ThePhenomenon}{}{<<El fenomeno del desarrollo de software outsourcing y off-shoring; impactos en el empleo y la economia.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{DiscussTheDrawbacks}{<<Discutir los beneficios, los inconvenientes y las implicaciones de \textit{off-shoring} y \textit{outsourcing}.>>}
 \KUItem{SP}{EconomiesofComputing}{Elective}{Consequences}{}{<<Consecuencias de la globalización para la profesión de Ciencias de la Computación.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Usage}{InvestigateAnd}{<<Investigar y defender maneras de tratar las limitaciones en el acceso a la computación. >>}
 \KUItem{SP}{EconomiesofComputing}{Elective}{Differences}{}{<<Diferencias en acceso a recursos de computación y el posible efecto de los mismos.>>}	\LO{SP}{EconomiesofComputing}{Elective}{Familiarity}{DescribeTheOf}{<<Describir los beneficios económicos de efectos de la red.>>}
 \KUItem{SP}{EconomiesofComputing}{Elective}{Cost}{}{<<Analisis costo/beneficio de trabajos con consideraciones para manufactura, hardware, software e implicaciones de ingeniería.>>}	
@@ -2593,3 +2593,4 @@ Comunicación profesional efectiva de información técnica es rara vez un don h
 \KUItem{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Effects}{}{<<Efectos de malware, como virus, worms y Trojan horses.>>}	\LO{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Familiarity}{DiscussTheRole}{<<Discutir el rol del profesional en seguridad y los problemas que están envueltos.>>}
 \KUItem{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Crime}{}{<<Estrategias de prevención de Crimen.>>}	\LO{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Usage}{InvestigateMeasures}{<<Investigar medidas que puedan ser consideradas por personas y organizaciones incluyendo al gobierno para prevenir o mitigar efectos indeseables de los delitos informáticos y robo de identidad.>>}
 \KUItem{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Security}{IASSecurityPolicyandGovernance}{<<Políticas de Seguridad.>>}	\LO{SP}{SecurityPoliciesLawsandComputerCrimes}{Elective}{Usage}{WriteASecurity}{<<Escribir una politica de seguridad de una empresa, la cual incluye procedimientos para administrar contraseñas y monitorizar a los empleados.>>}
+

@@ -1,5 +1,0 @@
-rm -rf html/IS-SPC/Silabos
-mkdir -p html/IS-SPC/Silabos
-rm -rf gen-tex/IS-SPC/PDFSilabos
-mkdir -p gen-tex/IS-SPC/PDFSilabos
-

@@ -1,3 +1,4 @@
+\usepackage{amsmath}
 \usepackage{tabularx}
 \usepackage{xspace}
 \usepackage{paralist}
@@ -9,19 +10,21 @@
 \usepackage[top=15mm,bottom=2cm,left=15mm,right=15mm]{geometry}
 \usepackage{xcolor}
 
+%%%%%%%%%%%%%%% For colors add these 3 commands %%%%%%%%%%%%%%%%%%
+\usepackage{pstricks} 
+\input{\InDir/colors/custom-colors}
+\input{\InDir/colors/custom-define-colors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{\OutputTexDir/macros-only}
-\input{\InInstDir/institution-info}
 
-
+\input{\InCountryDir/institutions/\currentinstitution}
+\input{\InProgramDir/program-info}
 
 \newcounter{SyllabiUnitCount}
 \addtocounter{SyllabiUnitCount}{0}
 \newcounter{SyllabiSectionCount}
 \setcounter{SyllabiSectionCount}{0}
-
-\newenvironment{unitgoals}%
-{ \begin{itemize} }%
-{ \end{itemize}   }
 
 \newenvironment{learningoutcomes}%
 { \begin{itemize} }%

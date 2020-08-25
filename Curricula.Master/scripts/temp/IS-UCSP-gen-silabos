@@ -1,5 +1,0 @@
-rm -rf html/IS-UCSP/Silabos
-mkdir -p html/IS-UCSP/Silabos
-rm -rf gen-tex/IS-UCSP/PDFSilabos
-mkdir -p gen-tex/IS-UCSP/PDFSilabos
-

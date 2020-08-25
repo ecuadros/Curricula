@@ -1,5 +1,0 @@
-rm -rf html/CS-UNU/Silabos
-mkdir -p html/CS-UNU/Silabos
-rm -rf gen-tex/CS-UNU/PDFSilabos
-mkdir -p gen-tex/CS-UNU/PDFSilabos
-

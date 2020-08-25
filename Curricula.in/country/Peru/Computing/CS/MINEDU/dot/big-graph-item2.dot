@@ -1,0 +1,1 @@
+	"<CODE>" [shape=<SHAPE>,width=2.3,fontsize=14,height=<HEIGHT>,fixedsize=true,fontcolor=<FONTCOLOR>,color=<BORDERCOLOR>,style=filled,fillcolor=<FILLCOLOR>,label="{<FULLNAME>|{{<Theory>:<NumberOfTH>|<Practice>:<NumberOfPH>|<Laboratory>:<NumberOfLH>}|{<TYPE>|<NumberOfCr> <CR>|<Pag> <PAGE>}}}", URL="URL<CODE>", tooltip="<CODE>"];

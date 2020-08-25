@@ -25,3 +25,6 @@ rm $course.ps $course.log $course.dvi $course.aux $course.bbl $course.blg $cours
 cd $current_dir
 cp $OutputTexDir/../syllabi/$course.pdf $OutputHtmlDir/syllabi/$course.pdf
 echo "Generated: $OutputHtmlDir/syllabi/$course.pdf ..."
+
+rm *.ps *.pdf *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.out *.xref *.lof *.log *.lot *.brf *~ *.tmp
+

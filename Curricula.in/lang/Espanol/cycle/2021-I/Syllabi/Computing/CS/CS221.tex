@@ -1,45 +1,23 @@
 \begin{syllabus}
 
-\course{CS2201. Arquitectura de Sistemas Computacionales}{Obligatorio}{CS2201}
+\course{CS221. Arquitectura de Computadores}{Obligatorio}{CS221}
 % Source file: ../Curricula.in/lang/Espanol/cycle/2021-I/Syllabi/Computing/CS/CS221.tex
 
 \begin{justification}
-Es necesario que el profesional en Ciencia de la Computación tenga sólido  conocimiento de la organización y funcionamiento de los diversos sistema de cómputo actuales en los cuales gira se instala el entorno de programación. Con ello también sabrá establecer los alcances y límites de las aplicaciones que se desarrollen de acuerdo a la plataforma siendo usada.
-
-Se tratarán los siguientes temas: componentes de lógica digital básicos en un sistema de computación, diseño de conjuntos de instrucciones, microarquitectura del procesador y ejecución en \textit{pipelining}, organización de la memoria: caché y memoria virtual, protección y compartición, sistema I/O e interrupciones, arquitecturas super escalares y ejecución fuera de orden, computadoras vectoriales, arquitecturas para \textit{multithreading}, multiprocesadores simétricos, modelo de memoria y sincronización, sistemas integrados y computadores en paralelo.
-
+  Un profesional en Ciencia de la Computación debe tener un conocimiento sólido de la organización y los principios de diseño de diversos sistemas de computación, al comprender las limitaciones de los sistemas modernos serán capaces de proponer nuevos paradigmas en la próxima generación.
+  Este curso enseña los fundamentos y principios de la arquitectura de computadoras. Esta clase incluye diseño de lógica digital, conceptos básicos de arquitectura de computadora y diseño de procesador (\emph{Instruction Set Architecture}, microarquitectura, ejecución fuera de orden, predicción de \emph{branches}), paradigmas de ejecución (superescalar, flujo de datos, VLIW, SIMD, GPU, sistólica, multiproceso) y organización del sistema de memoria.
 \end{justification}
 
 \begin{goals}
-\item Este curso tiene como propósito ofrecer al estudiante una base sólida de la evolución de las arquitecturas de computadores y los factores que influenciaron en el diseño de los elementos de \textit{hardware} y \textit{software} en sistemas de computación actuales. 
-\item Garantizar la comprensión de cómo es el \textit{hardware} en sí­ y cómo interactuan \textit{hardware} y \textit{software} en un sistema de cómputo actual.
-\item Tratar los siguientes temas: componentes de lógica digital básicos en un sistema de computación, diseño de conjuntos de instrucciones, microarquitectura del procesador y ejecución en \textit{pipelining}, organización de la memoria: caché y memoria virtual, protección y compartición, sistema I/O e interrupciones, arquitecturas super escalares y ejecución fuera de orden, computadoras vectoriales, arquitecturas para \textit{multithreading}, multiprocesadores simétricos, modelo de memoria y sincronización, sistemas integrados y computadores en paralelo.
+  \item Proporcionar un primer enfoque en Arquitectura de Computadoras.
+  \item Estudiar el diseño y la evolución de las arquitecturas de computador, que llevaron a las implementaciones de los sistemas modernos.
+  \item Proporcionar un estudio profundo del hardware y su relación con la ejecución del software.
+  \item Implementar un microprocesador simple usando el lenguaje Verilog.
 \end{goals}
 
-\begin{outcomes}{V1}
-    \item \ShowOutcome{b}{2}
-    \item \ShowOutcome{g}{2}
-    \item \ShowOutcome{i}{3}
-\end{outcomes}
+--COMMON-CONTENT--
 
-\begin{outcomes}{V2}
-    \item \ShowOutcome{1}{2}
-    \item \ShowOutcome{2}{2}
-\end{outcomes}
-
-\begin{competences}{V1}
-    \item \ShowCompetence{C4}{i} 
-    \item \ShowCompetence{C8}{b,i,g}
-    \item \ShowCompetence{C9}{b,g}
-\end{competences}
-
-\begin{competences}{V2}
-    \item \ShowCompetence{C4}{1} 
-    \item \ShowCompetence{C8}{2,1}
-    \item \ShowCompetence{C9}{2}
-\end{competences}
-
-\begin{unit}{\ARDigitallogicanddigitalsystems}{}{Parhami2005,Patterson2004,Sanjay05,Harris12}{18}{C8}
+\begin{unit}{\ARDigitallogicanddigitalsystems}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{18}{b}
 \begin{topics}%
     \item \ARDigitallogicanddigitalsystemsTopicOverview
     \item \ARDigitallogicanddigitalsystemsTopicCombinational
@@ -59,7 +37,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ARMachinelevelrepresentationofdata}{}{Parhami2005,Stallings2010,Pong06}{8}{C9}
+\begin{unit}{\ARMachinelevelrepresentationofdata}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{g}
 \begin{topics}
     \item \ARMachinelevelrepresentationofdataTopicBits
     \item \ARMachinelevelrepresentationofdataTopicNumeric
@@ -79,7 +57,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ARAssemblylevelmachineorganization}{}{Parhami2005,Patterson2004,Hennessy2006,Ashenden07}{8}{C4,CS3}
+\begin{unit}{\ARAssemblylevelmachineorganization}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{b,g}
 \begin{topics}
   \item \ARAssemblylevelmachineorganizationTopicBasic
   \item \ARAssemblylevelmachineorganizationTopicControl
@@ -107,7 +85,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{unit}
 
 %% Unidad Organización Funcional para ejecución de instrucciones  
-\begin{unit}{\ARFunctionalorganization}{}{Parhami2005,Hennessy2006}{8}{C9}
+\begin{unit}{\ARFunctionalorganization}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{b,g}
 \begin{topics}
       \item \ARFunctionalorganizationTopicImplementation
       \item \ARFunctionalorganizationTopicControl
@@ -125,7 +103,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{unit}
 
 %% Organización y Arquitectura de la Memoria
-\begin{unit}{\ARMemorysystemorganizationandarchitecture}{}{Parhami2005,Patterson2004,Denning2005}{8}{CS3}
+\begin{unit}{\ARMemorysystemorganizationandarchitecture}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{b,g}
 \begin{topics}
   \item \ARMemorysystemorganizationandarchitectureTopicStorage
   \item \ARMemorysystemorganizationandarchitectureTopicMemory
@@ -149,7 +127,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{unit}
 
 %% Unidad I/O: Interfacing and Communications
-\begin{unit}{\ARInterfacingandcommunication}{}{Parhami2005,Stallings2010}{8}{C4,C9,CS3}
+\begin{unit}{\ARInterfacingandcommunication}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{b,g,i}
 \begin{topics}
 	\item \ARInterfacingandcommunicationTopicI
 	\item \ARInterfacingandcommunicationTopicInterrupt
@@ -171,7 +149,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{unit}
 
 %% Unidad Arquitecturas Alternativas y en Paralelo
-\begin{unit}{\ARMultiprocessingandalternativearchitectures}{}{Parhami2005,Parhami2002,ElRewini2005}{8}{C9}
+\begin{unit}{\ARMultiprocessingandalternativearchitectures}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{i}
 \begin{topics}
 	\item \ARMultiprocessingandalternativearchitecturesTopicPower
 	\item \ARMultiprocessingandalternativearchitecturesTopicExample
@@ -190,7 +168,7 @@ Se tratarán los siguientes temas: componentes de lógica digital básicos en un
 \end{unit}
 
 %% Unidad Mejoras en Desempeño
-\begin{unit}{\ARPerformanceenhancements}{}{Parhami2005,Parhami2002,Patterson2004,Dongarra2006,Johnson1991}{8}{C8,C9}
+\begin{unit}{\ARPerformanceenhancements}{}{Harris12,Sanjay05,Patterson2004,Ashenden07,Hennessy2006,Parhami2005,Stallings2010,Pong06}{8}{g,i}
 \begin{topics}
 	\item \ARPerformanceenhancementsTopicSuperscalar
 	\item \ARPerformanceenhancementsTopicBranch

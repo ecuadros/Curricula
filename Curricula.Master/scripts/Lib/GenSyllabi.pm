@@ -6,8 +6,10 @@ use Scalar::Util qw(blessed dualvar isdual readonly refaddr reftype
                         tainted weaken isweak isvstring looks_like_number
                         set_prototype);
                         # and other useful utils appearing below
+use Switch;
 use Lib::Common;
 use strict;
+my @versioned_environments = ("outcomes", "specificoutcomes", "competences");
 
 sub get_environment($$$)
 {
@@ -65,14 +67,6 @@ sub process_syllabus_units($$$$)
 	my $all_units_txt     = "";
 	my $unit_captions = "";
 	$unit_count       = 0;
-	$Common::course_info{$codcour}{allbibitems}             = "";
-	$Common::course_info{$codcour}{n_units}			= 0;
-	$Common::course_info{$codcour}{units}{unit_caption}	= [];
-	$Common::course_info{$codcour}{units}{bib_items}	= [];
-	$Common::course_info{$codcour}{units}{hours}		= [];
-	$Common::course_info{$codcour}{units}{bloom_level}	= [];
-	$Common::course_info{$codcour}{units}{topics}    	= [];
-	$Common::course_info{$codcour}{units}{unitgoals}	= [];
 
 	my $sep = "";
 	while($syllabus_in =~ m/\\begin\{unit\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\s*((?:.|\n)*?)\\end\{unit\}/g)
@@ -98,7 +92,7 @@ sub process_syllabus_units($$$$)
 		if($unit_caption =~ m/^\\(.*)/)
 		{
 			$unit_caption = $1;
-			#Util::print_message("Course: $codcour: \\$unit_caption found ...");
+			#Util::print_message("TODO Course: $codcour: \\$unit_caption found ...");
 			#print Dumper (\%$Common::config{topics_priority}); exit;
 
 			#if( not defined($Common::config{topics_priority}{$unit_caption}) )
@@ -148,11 +142,214 @@ sub process_syllabus_units($$$$)
 		foreach my $bibitem (split(",", $unit_bibitems))
 		{	$bib_citations .= "$sep\\cite{$bibitem}";	$sep = ", ";		}
 		$map{CITATIONS} = $bib_citations;
-		$thisunit = Common::replace_tags($thisunit, "--", "--", %map);
+		$thisunit = Common::replace_tags_from_hash($thisunit, "--", "--", %map);
 		$all_units_txt .= $thisunit;
 	}
 	Util::check_point("process_syllabus_units");
 	return ($all_units_txt, $unit_captions, $syllabus_in );
+}
+
+sub get_common_file($$$)
+{
+	my ($fullname, $codcour, $lang)   = (@_);
+	my $InLangCommonDir = Common::get_template("InLangCommonDir");
+	#Util::print_message("InLangCommonDir=$InLangCommonDir ...");
+	my $InLangDir 		= Common::replace_special_chars(Common::get_expanded_template("InLangDir", $lang));
+
+	my $PostfixDir = "";
+	my $CommonTexFile	= "";
+	if($fullname =~ m/$InLangDir\/(.*)\/.*\.tex/)
+	{	$PostfixDir 	= $1;
+		#Util::print_message("PostfixDir=$PostfixDir");
+		$CommonTexFile	= "$InLangCommonDir/$PostfixDir/$codcour.tex";
+		return $CommonTexFile;
+	}
+	Util::print_message("InLangCommonDir=$InLangCommonDir ...");
+	Util::print_message("InLangDir=$InLangDir ...");
+	Util::print_message("PostfixDir=$PostfixDir ...");
+	Util::print_error("Something wrong with: get_common_file($fullname, $codcour, $lang)");
+}
+
+my %macro_for_env = ("outcomes"           => "ShowOutcome", 
+					"competences"         => "ShowCompetence",
+					"specificoutcomes"	  => "ShowSpecificOutcome",
+					);
+
+sub parse_environments_in_header($$$$)
+{
+	my ($codcour, $lang, $syllabus_in, $fullname)   = (@_);
+	#$syllabus_in =~ s/\\ExpandOutcome\{/\\ShowOutcome\{/g;
+	#$syllabus_in =~ s/\\Competence\{/\\ShowCompetence\{/g;
+	#$syllabus_in =~ s/\{unitgoals\}/\{learningoutcomes\}/g;
+	my $version = $Common::config{OutcomesVersion};
+	#Util::print_message("parse_environments_in_header($fullname ...) !");
+	foreach my $env (@versioned_environments)
+	{
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} 	= $1;
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{count} = 0;
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}	= "";
+		#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{txt}=\n$body");
+		#print Dumper(\%{$Common::course_info{$codcour}{outcomes}});
+		#my $copy_syllabus_in = $syllabus_in;
+		if( $syllabus_in =~ m/\\begin\{$env\}\{$version\}\s*\n((?:.|\n)*?)\\end\{$env\}/g) # legacy version of this environment
+		{
+			#Util::print_message("\\begin{$env}{$version} detected !");
+			$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} = $1;
+			foreach my $one_line ( split("\n", $Common::course_info{$codcour}{$lang}{$env}{$version}{txt}) )
+			{
+				my ($key, $tail)     = ("", "");
+				my $reg_exp =  "\\\\".$macro_for_env{$env}."(.*)";
+				if( $one_line =~ m/$reg_exp/g )
+				{
+					($tail) = ($1);
+					my @params = $tail =~ m/\{(.*?)\}/g;
+					switch($env)
+					{	case ["outcomes", "competences"]
+						{ 	#print $env;
+							$Common::course_info{$codcour}{$lang}{$env}{$version}{$params[0]} = $params[1];
+							$Common::config{course_by_outcome}{$params[0]}{$codcour} = "";
+							#Util::print_message("Common::config{course_by_outcome}{$params[0]}{$codcour}=$Common::config{course_by_outcome}{$params[0]}{$codcour}");
+							#exit;
+						}	#\% ($codcour, $semester, $lang)
+						case "specificoutcomes"  
+						{	# Save the specific outcome
+							my $specificoutcome = "$params[0]$params[1]";
+							$Common::course_info{$codcour}{$lang}{$env}{$version}{$specificoutcome} = $params[2];
+							$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$specificoutcome} = $params[2];
+							$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
+							#$config{specificoutcome}{$code}{$number}{label}    = $2;
+							#$config{specificoutcome}{$code}{$number}{priority} 
+						}
+					}
+					$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}  	.= "\\item \\".$macro_for_env{$env};
+					foreach my $param (@params)
+					{	$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized} .= "{$param}";		}
+					$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}		.= "\n";
+					$Common::course_info{$codcour}{$lang}{$env}{$version}{count}++;
+					my $prefix	        = "";
+					if(defined($Common::config{$env."_map"}) and defined($Common::config{$env."_map"}{$key}) ) # outcome: a), b), c) ... Competence
+					{	$prefix = $Common::config{$env."_map"}{$key};	}
+					if( $env eq "outcomes")
+					{	$Common::config{course_by_outcome}{$key}{$codcour} = "";	}
+				}
+			}
+		}
+		else
+		{
+			$Common::error{$codcour}{$lang}{file} = $fullname;
+			$Common::error{$codcour}{$lang}{$env} = "I did not find $env"."{$version}";
+		}
+	}
+}
+
+sub get_professors_info($$)
+{
+	my ($codcour, $lang) 	= (@_);
+	my %map 		= ("PROFESSOR_NAMES" => "", "PROFESSOR_SHORT_CVS" => "", "PROFESSOR_JUST_GRADE_AND_FULLNAME" => "");
+	my $sep    		= "";
+	if(defined($Common::config{distribution}{$codcour}))
+	{
+		my $first = 1;
+		#print Dumper(\%Common::professor_role_order); exit;
+		foreach my $role  ( sort {$Common::professor_role_order{$a} <=> $Common::professor_role_order{$b}}
+							keys %Common::professor_role_order)
+		{
+			#print Dumper(\%{$Common::config{distribution}{$codcour}{$role}});
+			my $count 				= 0;
+			my $PROFESSOR_SHORT_CVS = "";
+			foreach my $email (sort {$Common::config{faculty}{$b}{fields}{degreelevel} <=> $Common::config{faculty}{$a}{fields}{degreelevel} ||
+									 $Common::config{faculty}{$a}{fields}{dedication}  cmp $Common::config{faculty}{$b}{fields}{dedication} ||
+									 $Common::config{faculty}{$a}{fields}{name}        cmp $Common::config{faculty}{$b}{fields}{name}}
+								keys %{$Common::config{distribution}{$codcour}{$role}}
+							  )
+			{
+					if( $Common::config{faculty}{$email}{fields}{degreelevel} >= $Common::config{degrees}{MasterPT} )
+					{
+						my $coordinator = "";
+						#if( $role eq "C" )
+						#{	$coordinator = "~(\\textbf{$Common::config{dictionaries}{$lang}{Coordinator}})";	$first = 0;		}
+						$map{PROFESSOR_NAMES} 	.= "$Common::config{faculty}{$email}{fields}{name} ";
+						$PROFESSOR_SHORT_CVS	.= "\\item $Common::config{faculty}{$email}{fields}{name} <$email>$coordinator\n";
+						$PROFESSOR_SHORT_CVS 	.= "\\vspace{-0.2cm}\n";
+						$PROFESSOR_SHORT_CVS 	.= "\\begin{itemize}[noitemsep]\n";
+						$PROFESSOR_SHORT_CVS 	.= "$Common::config{faculty}{$email}{fields}{shortcv}{$lang}";
+						$PROFESSOR_SHORT_CVS 	.= "\\end{itemize}\n\n";
+						$count++;
+						#$map{PROFESSOR_JUST_GRADE_AND_FULLNAME} .= "$sep$Common::config{faculty}{$email}{fields}{title} $Common::config{faculty}{$email}{fields}{name}";
+					}
+					$sep = ", ";
+			}
+			if( $count > 0 )
+			{	$map{PROFESSOR_SHORT_CVS} .= "\\noindent \\textbf{$Common::config{dictionaries}{$lang}{professor_role_label}{$role}}\n";
+				$map{PROFESSOR_SHORT_CVS} .= "\\begin{itemize}[noitemsep]\n";
+				$map{PROFESSOR_SHORT_CVS} .= $PROFESSOR_SHORT_CVS;
+				$map{PROFESSOR_SHORT_CVS} .= "\\end{itemize}\n";
+				#print Dumper (\%{$Common::config{dictionaries}{$lang}{professor_role_label}});
+				#exit;
+			}
+		}
+		#exit; #role
+	}
+	else
+	{
+ 		Util::print_soft_error("There is no professor assigned to $codcour (Sem #$Common::course_info{$codcour}{semester})");
+	}
+	return ($map{PROFESSOR_NAMES}, $map{PROFESSOR_SHORT_CVS});
+}
+
+sub get_prerrequisites_info($$)
+{
+	my ($codcour, $lang) = (@_);
+	my %map 		= ();
+	if($Common::course_info{$codcour}{n_prereq} == 0)
+	{	$map{PREREQUISITES_JUST_CODES}	= $Common::config{dictionaries}{$lang}{None};
+        $map{PREREQUISITES}             = $Common::config{dictionaries}{$lang}{None};
+	}
+	else
+	{
+        $map{PREREQUISITES_JUST_CODES}	= $Common::course_info{$codcour}{prerequisites_just_codes};
+        my $output = "";
+        if( scalar(@{$Common::course_info{$codcour}{$lang}{code_name_and_sem_prerequisites}}) == 1 )
+        {   $output = $Common::course_info{$codcour}{$lang}{code_name_and_sem_prerequisites}[0];    }
+        else
+        {   foreach my $txt ( @{$Common::course_info{$codcour}{$lang}{code_name_and_sem_prerequisites}} )
+            {   $output .= "\t\t \\item $txt\n";        }
+            $output = "\\begin{itemize}\n$output\\end{itemize}";
+        }
+        $map{PREREQUISITES} 			= $output;
+	}
+	return ($map{PREREQUISITES_JUST_CODES}, $map{PREREQUISITES});
+}
+
+sub get_formatted_skills($$$$$)
+{
+	my ($codcour, $env, $version, $lang, $fullname) = (@_);
+	my %map = ("FULL_SPECIFIC" => "", "SPECIFIC_ITEMS" => "");
+	my $EnvforOutcomes = $Common::config{EnvforOutcomes};
+	$map{FULL_SPECIFIC}	= "";
+	if($Common::course_info{$codcour}{$lang}{$env}{$version}{count} == 0)
+	{	Util::print_warning("Course $codcour ... no {$env}{$version} detected ... assuming an empty one!"); 
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized} = "\\item \\colorbox{red}{No$env}\n";
+	}
+	#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{count}=$Common::course_info{$codcour}{$lang}{$env}{$version}{count}"); exit;
+	if( defined($Common::course_info{$codcour}{$lang}{$env}{$version}) )
+	{	$map{FULL_SPECIFIC}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}\\end{$EnvforOutcomes}";	}
+	else{	Util::print_warning("There is no $env ($version) defined for $codcour ($fullname)"); 	}
+	$map{SPECIFIC_ITEMS}	= $Common::course_info{$codcour}{$lang}{$env}{$version}{itemized};
+	return ($map{FULL_SPECIFIC}, $map{SPECIFIC_ITEMS});
+}
+
+sub init_course_units_vars($)
+{
+	my ($codcour) = (@_);
+	$Common::course_info{$codcour}{allbibitems}         = "";
+	$Common::course_info{$codcour}{n_units}				= 0;
+	$Common::course_info{$codcour}{units}{unit_caption}	= [];
+	$Common::course_info{$codcour}{units}{bib_items}	= [];
+	$Common::course_info{$codcour}{units}{hours}		= [];
+	$Common::course_info{$codcour}{units}{bloom_level}	= [];
+	$Common::course_info{$codcour}{units}{topics}    	= [];
+	$Common::course_info{$codcour}{units}{unitgoals}	= [];
 }
 
 # ok
@@ -161,7 +358,148 @@ sub read_syllabus_info($$$)
 	my ($codcour, $semester, $lang)   = (@_);
 	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
 	my $syllabus_in	= Util::read_file($fullname);
-# 	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");
+	init_course_units_vars($codcour);
+	my $version = $Common::config{OutcomesVersion};
+ 	#if($codcour =~ m/CS2H/g)
+	#{	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");  }
+
+	my $CommonTexFile = get_common_file($fullname, $codcour, $lang);
+	if( -e $CommonTexFile )
+	{
+		my $CommonTxt = Util::read_file($CommonTexFile);
+		$syllabus_in =~ s/--COMMON-CONTENT--/$CommonTxt/g;
+		#Util::print_color($syllabus_in);
+		#exit;
+	}
+	#Util::print_message("CommonTexFile=$CommonTexFile ..."); exit;
+	$syllabus_in = Common::replace_accents($syllabus_in);
+	while($syllabus_in =~ m/\n\n\n/)
+	{	$syllabus_in =~ s/\n\n\n/\n\n/g;	}
+ 	#my $codcour     = Common::get_alias($codcour);
+	my $course_name = $Common::course_info{$codcour}{$lang}{course_name};
+	#my $course_type = $Common::config{dictionary}{$Common::course_info{$codcour}{course_type}};
+	#my $header      = "\n\\course{$codcour. $course_name}{$course_type}{$codcour}\n";
+	#$header        .= "% Source file: $fullname\n";
+	#my $newhead 	= "\\begin{syllabus}\n$header\n\\begin{justification}";
+	#$syllabus_in 	=~ s/\\begin\{syllabus\}\s*((?:.|\n)*?)\\begin\{justification\}/$newhead/g;
+# 	Common::read_outcomes_involved($codcour, $fulltxt);
+
+	my %map = ();
+	$map{SOURCE_FILE_NAME} = $fullname;
+	$Common::course_info{$codcour}{unitcount}	= 0;
+	my $syllabus_template = $Common::config{syllabus_template};
+	my $unit_struct = "";
+	if($syllabus_template =~ m/--BEGINUNIT--\s*\n((?:.|\n)*)--ENDUNIT--/)
+	{	$unit_struct = $1;	}
+		my $syllabus_adjusted = "";
+	# Aqui
+	($map{UNITS_SYLLABUS}, $map{SHORT_DESCRIPTION}, $syllabus_adjusted) = process_syllabus_units($codcour, $lang, $syllabus_in, $unit_struct);
+
+	if( not $syllabus_adjusted eq $syllabus_in )
+	{
+		system("cp $fullname $fullname.bak");
+		$syllabus_in = $syllabus_adjusted;
+		Util::print_color("Syllabus adjusted (new units format)... see old file at: $fullname.bak");
+		#Util::write_file($fullname, $syllabus_in);
+	}
+	else
+	{	#Util::write_file($fullname, $syllabus_in);		
+	}
+
+	foreach my $env ("justification", "goals")
+	{
+	    $Common::course_info{$codcour}{$lang}{$env}{txt} 	= get_environment($codcour, $syllabus_in, $env);
+	}
+
+	# 1st: Get general information from this syllabus
+	#Util::print_soft_error("Syllabus before ($fullname)");
+	#Util::print_warning($syllabus_in);
+	parse_environments_in_header($codcour, $lang, $syllabus_in, $fullname);
+	#exit;
+	#Aqui begin
+	$map{COURSE_CODE} 	= $codcour;
+	$map{COURSE_NAME} 	= $course_name;
+	$map{COURSE_TYPE}	= $Common::config{dictionaries}{$lang}{$Common::course_info{$codcour}{course_type}};
+
+	$semester 			= $Common::course_info{$codcour}{semester};
+	$map{SEMESTER}    	= $semester;
+	$map{SEMESTER}     .= "\$^{$Common::config{dictionary}{ordinal_postfix}{$semester}}\$ ";
+	$map{SEMESTER}     .= "$Common::config{dictionary}{Semester}.";
+	$map{CREDITS}		= $Common::course_info{$codcour}{cr};
+	$map{JUSTIFICATION}	= $Common::course_info{$codcour}{$lang}{justification}{txt};
+
+	$map{FULL_GOALS}	= "\\begin{itemize}\n$Common::course_info{$codcour}{$lang}{goals}{txt}\n\\end{itemize}";
+	$map{GOALS_ITEMS}	= $Common::course_info{$codcour}{$lang}{goals}{txt};
+
+	($map{FULL_OUTCOMES},          $map{OUTCOMES_ITEMS}) 		  = get_formatted_skills($codcour, "outcomes", $version, $lang, $fullname);
+	($map{FULL_SPECIFIC_OUTCOMES}, $map{SPECIFIC_OUTCOMES_ITEMS}) = get_formatted_skills($codcour, "specificoutcomes", $version, $lang, $fullname);
+	($map{FULL_COMPETENCES},       $map{COMPETENCES_ITEMS})		  = get_formatted_skills($codcour, "competences", $version, $lang, $fullname);
+	
+	$map{EVALUATION} 	= $Common::config{general_evaluation};
+	#Util::print_message("map{EVALUATION} =\n$map{EVALUATION}");
+	if( defined($Common::course_info{$codcour}{$lang}{specific_evaluation}) )
+	{	$map{EVALUATION} = $Common::course_info{$codcour}{$lang}{specific_evaluation};	}
+
+	($map{PROFESSOR_NAMES}, $map{PROFESSOR_SHORT_CVS}, $map{PROFESSOR_JUST_GRADE_AND_FULLNAME}) = get_professors_info($codcour, $lang);
+	$Common::course_info{$codcour}{docentes_names}  	= $map{PROFESSOR_NAMES};
+	$Common::course_info{$codcour}{docentes_titles}  	= $map{PROFESSOR_TITLES};
+	$Common::course_info{$codcour}{docentes_shortcv} 	= $map{PROFESSOR_SHORT_CVS};
+
+	my $horastxt = "";
+	$horastxt 			.= "$Common::course_info{$codcour}{th} HT; " if($Common::course_info{$codcour}{th} > 0);
+	$horastxt 			.= "$Common::course_info{$codcour}{ph} HP; " if($Common::course_info{$codcour}{ph} > 0);
+	$horastxt 			.= "$Common::course_info{$codcour}{lh} HL; " if($Common::course_info{$codcour}{lh} > 0);
+	$map{HOURS}			 = $horastxt;
+	($map{THEORY_HOURS}, $map{PRACTICE_HOURS}, $map{LAB_HOURS})	= ("-", "-", "-");
+
+	if($Common::course_info{$codcour}{th} > 0)
+	{   $map{THEORY_HOURS} = "$Common::course_info{$codcour}{th} (<<Weekly>>)";	}
+
+	if($Common::course_info{$codcour}{ph} > 0)
+	{   $map{PRACTICE_HOURS} = "$Common::course_info{$codcour}{ph} (<<Weekly>>)";	}
+
+	if($Common::course_info{$codcour}{lh} > 0)
+	{   $map{LAB_HOURS} = "$Common::course_info{$codcour}{lh} (<<Weekly>>)";	}
+
+	($map{PREREQUISITES_JUST_CODES}, $map{PREREQUISITES}) = get_prerrequisites_info($codcour, $lang);
+	
+	$map{LIST_OF_TOPICS} = $map{SHORT_DESCRIPTION};
+	$map{SHORT_DESCRIPTION} = "\\begin{inparaenum}\n$map{SHORT_DESCRIPTION}\\end{inparaenum}";
+
+	my ($bibfile_in, $bibfile_out) = ("", "");
+	if($syllabus_in =~ m/\\bibfile\{(.*?)\}/g)
+	{	$bibfile_in = $1;	$bibfile_in     =~ s/ //g;	}
+
+	$map{BIBSTYLE}	= $Common::config{bibstyle};
+	if( $bibfile_in =~ m/.*\/(.*)/)
+	{	$bibfile_out 	= $1;
+		$Common::course_info{$codcour}{short_bibfiles} = $1;
+	}
+	$map{IN_BIBFILE} 	= $bibfile_in;
+	$map{BIBFILE} 		= $bibfile_out.".bib";
+	$Common::course_info{$codcour}{bibfiles} = $bibfile_in;
+
+	foreach (keys %{$Common::course_info{$codcour}{extra_tags}})
+	{	$map{$_} = $Common::course_info{$codcour}{extra_tags}{$_};		}
+
+	return %map;
+}
+
+sub read_syllabus_info_old($$$)
+{
+	my ($codcour, $semester, $lang)   = (@_);
+	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
+	my $syllabus_in	= Util::read_file($fullname);
+ 	#Util::print_message("GenSyllabi::read_syllabus_info $codcour ..."); exit;
+	my $CommonTexFile = get_common_file($fullname, $codcour, $lang);
+	if( -e $CommonTexFile )
+	{
+		my $CommonTxt = Util::read_file($CommonTexFile);
+		$syllabus_in =~ s/--COMMON-CONTENT--/$CommonTxt/g;
+		#Util::print_color($syllabus_in);
+		#exit;
+	}
+	#Util::print_message("CommonTexFile=$CommonTexFile ..."); exit;
 
 	$syllabus_in =~ s/\\ExpandOutcome\{/\\ShowOutcome\{/g;
 	$syllabus_in =~ s/\\Competence\{/\\ShowCompetence\{/g;
@@ -179,24 +517,19 @@ sub read_syllabus_info($$$)
 	$syllabus_in 	=~ s/\\begin\{syllabus\}\s*((?:.|\n)*?)\\begin\{justification\}/$newhead/g;
 # 	Common::read_outcomes_involved($codcour, $fulltxt);
 
-# 	my $count_old_macros = 0;
-# 	($syllabus_in, $count_old_macros) = Common::replace_old_macros($syllabus_in);
-# 	Util::write_file($fullname, $syllabus_in);
-# 	Util::print_message("Replaced $count_old_macros old macros in file: \"$fullname\"") if($count_old_macros > 0);
-
 	my %map = ();
 	$map{SOURCE_FILE_NAME} = $fullname;
 	$Common::course_info{$codcour}{unitcount}	= 0;
 	foreach my $env ("justification", "goals")
 	{
-	      $Common::course_info{$codcour}{$lang}{$env}{txt} 	= get_environment($codcour, $syllabus_in, $env);
+	    $Common::course_info{$codcour}{$lang}{$env}{txt} 	= get_environment($codcour, $syllabus_in, $env);
 	}
 
 	# 1st: Get general information from this syllabus
 	#Util::print_soft_error("Syllabus before ($fullname)");
 	#Util::print_warning($syllabus_in);
-	my %macro_for_env = ("outcomes" => "ShowOutcome", "competences"=>"ShowCompetence");
-	foreach my $env ("outcomes", "competences")
+	
+	foreach my $env (@versioned_environments)
 	{
 		my $version = $Common::config{OutcomesVersionDefault};
 		my $body = "";
@@ -204,7 +537,7 @@ sub read_syllabus_info($$$)
 		while( $syllabus_in_copy =~ m/\\begin\{$env\}(.*?)\n((?:.|\n)*?)\\end\{$env\}/g) # legacy version of this environment
 		{	my $version_brute = $1;
 			$body = $2;
-# 			Util::print_message("Version detected ($env) \"$version_brute\"");
+ 			#Util::print_message("Version detected $codcour ($env) \"$version_brute\"");
 			$version = $version_brute;
 			$version =~ s/ //g;
 			if( $version =~ m/\{(.*?)\}/g ) # We have already an existing version
@@ -214,44 +547,63 @@ sub read_syllabus_info($$$)
 			{	$version = $Common::config{OutcomesVersionDefault};
 				$syllabus_in_copy =~ s/\\begin\{$env\}\s*.*?\s*\n((?:.|\n)*?)\\end\{$env\}/\\begin\{$env\}\{$version\}\n$body\\end\{$env\}/g;
 			}
-			$Common::course_info{$codcour}{$env}{$version}{txt} 	= $body;
+			$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} 	= $body;
+			#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{txt}=\n$body");
 		}
+		if( not defined($Common::course_info{$codcour}{$lang}{$env}{$version}{txt}) )
+		{	$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} = "";	}
+
 		$syllabus_in = $syllabus_in_copy;
-		$Common::course_info{$codcour}{$env}{$version}{itemized}	= "";
-		#$Common::course_info{$codcour}{$env}{$version}{array}	= [];
-		$Common::course_info{$codcour}{$env}{$version}{count}     	= 0;
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}	= "";
+		#$Common::course_info{$codcour}{$lang}{$env}{$version}{array}	= [];
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{count}     	= 0;
 	}
-
 	my $version = $Common::config{OutcomesVersion};
-	foreach my $env ("outcomes", "competences")
+	foreach my $env (@versioned_environments)
 	{
-	      #print Dumper(\%{$Common::course_info{$codcour}{outcomes}});
-	      if( not defined($Common::course_info{$codcour}{$env}{$version}) )
-	      {		Util::print_message("read_syllabus_info($codcour, $semester, $lang): Not defined Common::course_info{$codcour}{$env}{$version}");	
-			  	next;		
-		  }
-
-	      foreach my $one_line ( split("\n", $Common::course_info{$codcour}{$env}{$version}{txt}) )
-	      {
-		      my ($key, $level)     = ("", "");
-		      my $reg_exp =  "\\\\".$macro_for_env{$env}."\\{(.*?)\\}\\{(.*?)\\}";
-		      if( $one_line =~ m/$reg_exp/g )
-		      {
-			      ($key, $level) = ($1, $2);
-			      $Common::course_info{$codcour}{$env}{$version}{$key} = $2; # Instead of "" we must put the level of this outcome/LO
-			      #push(@{$Common::course_info{$codcour}{$env}{$version}{array}}, $key); # Sequential to list later
-			      $Common::course_info{$codcour}{$env}{$version}{count}++;
-			      my $prefix	        = "";
- 			      if(defined($Common::config{$env."_map"}) and defined($Common::config{$env."_map"}{$key}) ) # outcome: a), b), c) ... Competence
-			      {	$prefix = $Common::config{$env."_map"}{$key};	}
-			      $Common::course_info{$codcour}{$env}{$version}{itemized} .= "\\item \\".$macro_for_env{$env}."{$key}{$level}\n";
-			      if(not defined($Common::config{course_by_outcome}{$key}) )
-			      {		$Common::config{course_by_outcome}{$key} = [];		}
-			      push(@{$Common::config{course_by_outcome}{$key}}, $codcour);
-		      }
-	      }
+		#print Dumper(\%{$Common::course_info{$codcour}{outcomes}});
+		$Common::course_info{$codcour}{$lang}{$env}{$version}{count} = 0;
+		foreach my $one_line ( split("\n", $Common::course_info{$codcour}{$lang}{$env}{$version}{txt}) )
+		{
+			my ($key, $tail)     = ("", "");
+			my $reg_exp =  "\\\\".$macro_for_env{$env}."(.*)";
+			if( $one_line =~ m/$reg_exp/g )
+			{
+				($tail) = ($1);
+				my @params = $tail =~ m/\{(.*?)\}/g;
+				switch($env)
+				{	case ["outcomes", "competences"]
+					{ 	#print $env;
+					   	$Common::course_info{$codcour}{$lang}{$env}{$version}{$params[0]} = $params[1];
+						$Common::config{course_by_outcome}{$params[0]}{$codcour} = "";
+						Util::print_message("Common::config{course_by_outcome}{$params[0]}{$codcour}=$Common::config{course_by_outcome}{$params[0]}{$codcour}");
+						exit;
+					}	#\% ($codcour, $semester, $lang)
+					case "specificoutcomes"  
+					{	# Save the specific outcome
+						my $specificoutcome = "$params[0]$params[1]";
+						$Common::course_info{$codcour}{$lang}{$env}{$version}{$specificoutcome} = $params[2];
+						$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$specificoutcome} = $params[2];
+					}
+				}
+				$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}  	.= "\\item \\".$macro_for_env{$env}."\n";
+				foreach my $param (@params)
+				{	$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized} .= "{$param}";		}
+				$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}		.= "\n";
+				$Common::course_info{$codcour}{$lang}{$env}{$version}{count}++;
+				my $prefix	        = "";
+				if(defined($Common::config{$env."_map"}) and defined($Common::config{$env."_map"}{$key}) ) # outcome: a), b), c) ... Competence
+				{	$prefix = $Common::config{$env."_map"}{$key};	}
+			}
+		}
+		if( $Common::course_info{$codcour}{$lang}{$env}{$version}{count} == 0 )
+		{
+			$Common::error{$codcour}{$lang}{file} = $fullname;
+			$Common::error{$codcour}{$lang}{$env} = "I did not find $env"."{$version}";
+		}
 	}
-
+	#exit;
+	#Aqui begin
 	$map{COURSE_CODE} 	= $codcour;
 	$map{COURSE_NAME} 	= $course_name;
 	$map{COURSE_TYPE}	= $Common::config{dictionaries}{$lang}{$Common::course_info{$codcour}{course_type}};
@@ -267,20 +619,31 @@ sub read_syllabus_info($$$)
 	$map{GOALS_ITEMS}	= $Common::course_info{$codcour}{$lang}{goals}{txt};
 
 	# Outcomes
-	$map{FULL_OUTCOMES}	= "";
 	my $EnvforOutcomes = $Common::config{EnvforOutcomes};
-	if( defined($Common::course_info{$codcour}{outcomes}{$version})	)
-	{	$map{FULL_OUTCOMES}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{outcomes}{$version}{itemized}\\end{$EnvforOutcomes}";	}
+	$map{FULL_OUTCOMES}	= "";
+	if( defined($Common::course_info{$codcour}{$lang}{outcomes}{$version})	)
+	{	$map{FULL_OUTCOMES}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{outcomes}{$version}{itemized}\\end{$EnvforOutcomes}";	}
 	else{	Util::print_warning("There is no outcomes ($version) defined for $codcour ($fullname)"); 	}
-	$map{OUTCOMES_ITEMS}	= $Common::course_info{$codcour}{outcomes}{$version}{itemized};
+	$map{OUTCOMES_ITEMS}	= $Common::course_info{$codcour}{$lang}{outcomes}{$version}{itemized};
+
+	# Specific outcomes
+	$EnvforOutcomes = $Common::config{EnvforOutcomes};
+	$map{FULL_SPECIFIC_OUTCOMES}	= "";
+	if($Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{count} == 0)
+	{	Util::print_warning("Course $codcour ... no {specificoutcomes}{$version} detected ... assuming an empty one!"); 
+		$Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized} = "\\item \\colorbox{red}{<<NoSpecificOutcomes>>}\n";
+	}
+	if( defined($Common::course_info{$codcour}{$lang}{specificoutcomes}{$version})	)
+	{	$map{FULL_SPECIFIC_OUTCOMES}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized}\\end{$EnvforOutcomes}";	}
+	else{	Util::print_warning("There is no specific outcomes ($version) defined for $codcour ($fullname)"); 	}
+	$map{SPECIFIC_OUTCOMES_ITEMS}	= $Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized};
 
 	# Competences
 	$map{FULL_COMPETENCES}	= "";
-	if( defined($Common::course_info{$codcour}{competences}{$version}) )
-	{	$map{FULL_COMPETENCES}	= "\\begin{description}\n$Common::course_info{$codcour}{competences}{$version}{itemized}\\end{description}";	}
+	if( defined($Common::course_info{$codcour}{$lang}{competences}{$version}) )
+	{	$map{FULL_COMPETENCES}	= "\\begin{description}\n$Common::course_info{$codcour}{$lang}{competences}{$version}{itemized}\\end{description}";	}
 	else{	Util::print_warning("There is no competences ($version) defined for $codcour ($fullname)"); 	}
-	$map{COMPETENCES_ITEMS}	= $Common::course_info{$codcour}{competences}{$version}{itemized};
-
+	$map{COMPETENCES_ITEMS}	= $Common::course_info{$codcour}{$lang}{competences}{$version}{itemized};
 
 	$map{EVALUATION} 	= $Common::config{general_evaluation};
 	#Util::print_message("map{EVALUATION} =\n$map{EVALUATION}");
@@ -298,8 +661,6 @@ sub read_syllabus_info($$$)
 		foreach my $role  ( sort {$Common::professor_role_order{$a} <=> $Common::professor_role_order{$b}}
 							keys %Common::professor_role_order)
 		{
-			#Util::print_error($role);
-			#exit;
 			#print Dumper(\%{$Common::config{distribution}{$codcour}{$role}});
 			my $count 				= 0;
 			my $PROFESSOR_SHORT_CVS = "";
@@ -309,42 +670,24 @@ sub read_syllabus_info($$$)
 								keys %{$Common::config{distribution}{$codcour}{$role}}
 							  )
 			{
-			#$config{distribution}{$codcour}{$professor_role}{$professor_email} = $sequence;
-			#$config{distribution}{$codcour}{list_of_professors}{$professor_email} = "";
-			#$config{faculty}{$professor_email}{$codcour}{role} = $professor_role;
-			#$config{faculty}{$professor_email}{$codcour}{sequence} = $sequence;
-			
-			#foreach my $role (sort {$Common::professor_role_order{$a} <=> $Common::professor_role_order{$b} }
-			#                   keys %{$Common::config{distribution}{$codcour}})
-			#{
-				
-				#foreach my $email ( split(",", $Common::config{faculty_list_of_emails}{$codcour}) )
-				#{
-				#foreach my $email (sort {$Common::config{faculty}{$b}{fields}{degreelevel} <=> $Common::config{faculty}{$a}{fields}{degreelevel} ||
-					#			$Common::config{faculty}{$a}{fields}{dedication} cmp $Common::config{faculty}{$b}{fields}{dedication} ||
-					#			$Common::config{faculty}{$a}{fields}{name} cmp $Common::config{faculty}{$b}{fields}{name}
-					#		      }
-					#		keys %{$Common::config{distribution}{$codcour}{$role}})
-					# {
-						if( $Common::config{faculty}{$email}{fields}{degreelevel} >= $Common::config{degrees}{MasterPT} )
-						{
-							my $coordinator = "";
-							#if( $role eq "C" )
-							#{	$coordinator = "~({\\bf $Common::config{dictionaries}{$lang}{Coordinator}})";	$first = 0;		}
-							$map{PROFESSOR_NAMES} 	.= "$Common::config{faculty}{$email}{fields}{name} ";
-							$PROFESSOR_SHORT_CVS	.= "\\item $Common::config{faculty}{$email}{fields}{name} <$email>$coordinator\n";
-							$PROFESSOR_SHORT_CVS 	.= "\\vspace{-0.2cm}\n";
-							$PROFESSOR_SHORT_CVS 	.= "\\begin{itemize}[noitemsep]\n";
-							$PROFESSOR_SHORT_CVS 	.= "$Common::config{faculty}{$email}{fields}{shortcv}{$lang}";
-							$PROFESSOR_SHORT_CVS 	.= "\\end{itemize}\n\n";
-							$count++;
-							#$map{PROFESSOR_JUST_GRADE_AND_FULLNAME} .= "$sep$Common::config{faculty}{$email}{fields}{title} $Common::config{faculty}{$email}{fields}{name}";
-						}
-					#}
+					if( $Common::config{faculty}{$email}{fields}{degreelevel} >= $Common::config{degrees}{MasterPT} )
+					{
+						my $coordinator = "";
+						#if( $role eq "C" )
+						#{	$coordinator = "~(\\textbf{$Common::config{dictionaries}{$lang}{Coordinator}})";	$first = 0;		}
+						$map{PROFESSOR_NAMES} 	.= "$Common::config{faculty}{$email}{fields}{name} ";
+						$PROFESSOR_SHORT_CVS	.= "\\item $Common::config{faculty}{$email}{fields}{name} <$email>$coordinator\n";
+						$PROFESSOR_SHORT_CVS 	.= "\\vspace{-0.2cm}\n";
+						$PROFESSOR_SHORT_CVS 	.= "\\begin{itemize}[noitemsep]\n";
+						$PROFESSOR_SHORT_CVS 	.= "$Common::config{faculty}{$email}{fields}{shortcv}{$lang}";
+						$PROFESSOR_SHORT_CVS 	.= "\\end{itemize}\n\n";
+						$count++;
+						#$map{PROFESSOR_JUST_GRADE_AND_FULLNAME} .= "$sep$Common::config{faculty}{$email}{fields}{title} $Common::config{faculty}{$email}{fields}{name}";
+					}
 					$sep = ", ";
 			}
 			if( $count > 0 )
-			{	$map{PROFESSOR_SHORT_CVS} .= "\\noindent {\\bf $Common::config{dictionaries}{$lang}{professor_role_label}{$role}}\n";
+			{	$map{PROFESSOR_SHORT_CVS} .= "\\noindent \\textbf{$Common::config{dictionaries}{$lang}{professor_role_label}{$role}}\n";
 				$map{PROFESSOR_SHORT_CVS} .= "\\begin{itemize}[noitemsep]\n";
 				$map{PROFESSOR_SHORT_CVS} .= $PROFESSOR_SHORT_CVS;
 				$map{PROFESSOR_SHORT_CVS} .= "\\end{itemize}\n";
@@ -368,16 +711,16 @@ sub read_syllabus_info($$$)
 	$horastxt 			.= "$Common::course_info{$codcour}{ph} HP; " if($Common::course_info{$codcour}{ph} > 0);
 	$horastxt 			.= "$Common::course_info{$codcour}{lh} HL; " if($Common::course_info{$codcour}{lh} > 0);
 	$map{HOURS}			 = $horastxt;
-	($map{THEORY_HOURS}, $map{PRACTICE_HOURS}, $map{LAB_HOURS})	= ("", "", "");
+	($map{THEORY_HOURS}, $map{PRACTICE_HOURS}, $map{LAB_HOURS})	= ("-", "-", "-");
 
 	if($Common::course_info{$codcour}{th} > 0)
-	{   $map{THEORY_HOURS} = "$Common::course_info{$codcour}{th} $Common::config{dictionary}{THEORY}";	}
+	{   $map{THEORY_HOURS} = "$Common::course_info{$codcour}{th} (<<Weekly>>)";	}
 
 	if($Common::course_info{$codcour}{ph} > 0)
-	{   $map{PRACTICE_HOURS} = "$Common::course_info{$codcour}{ph} $Common::config{dictionary}{PRACTICE}";	}
+	{   $map{PRACTICE_HOURS} = "$Common::course_info{$codcour}{ph} (<<Weekly>>)";	}
 
 	if($Common::course_info{$codcour}{lh} > 0)
-	{   $map{LAB_HOURS} = "$Common::course_info{$codcour}{lh} $Common::config{dictionary}{LABORATORY}";	}
+	{   $map{LAB_HOURS} = "$Common::course_info{$codcour}{lh} (<<Weekly>>)";	}
 
 	if($Common::course_info{$codcour}{n_prereq} == 0)
 	{	$map{PREREQUISITES_JUST_CODES}	= $Common::config{dictionaries}{$lang}{None};
@@ -397,14 +740,6 @@ sub read_syllabus_info($$$)
         }
         $map{PREREQUISITES} 			= $output;
 	}
-#     if( $codcour eq "FG601" )
-#     {
-#             print Dumper( \%{$Common::course_info{$codcour}} );
-#             Util::print_message("Common::course_info{$codcour}{n_prereq} = $Common::course_info{$codcour}{n_prereq}");
-#
-#             print Dumper( \%map );
-# #             print Dumper( \%{$Common::config{map_file_to_course}} );
-#     }
 
 	my $syllabus_template = $Common::config{syllabus_template};
 	my $unit_struct = "";
@@ -412,16 +747,6 @@ sub read_syllabus_info($$$)
 	{	$unit_struct = $1;	}
 	my $syllabus_adjusted = "";
 	($map{UNITS_SYLLABUS}, $map{SHORT_DESCRIPTION}, $syllabus_adjusted) = process_syllabus_units($codcour, $lang, $syllabus_in, $unit_struct);
-# 	if($codcour eq "CS1D1")
-#  	{	print Dumper (\%Common::map_hours_unit_by_course{$lang}{DSSetsRelationsandFunctions});
-#  	}
-
-# 	my $sumilla_template = $Common::config{sumilla_template};
-# 	$unit_struct = "";
-# 	if($sumilla_template =~ m/--BEGINUNIT--\s*\n((?:.|\n)*)--ENDUNIT--/)
-# 	{	$unit_struct = $1;	}
-# 	($map{UNITS_SUMILLA}, $_)                       = process_syllabus_units($codcour, $lang, $syllabus_in, $unit_struct);
-
 	$map{LIST_OF_TOPICS} = $map{SHORT_DESCRIPTION};
 	$map{SHORT_DESCRIPTION} = "\\begin{inparaenum}\n$map{SHORT_DESCRIPTION}\\end{inparaenum}";
 
@@ -472,7 +797,7 @@ sub genenerate_tex_syllabus_file($$$$$%)
 		{	Util::print_message("$output_file extra tags detected ok!");
 			#print Dumper (\%{$Common::course_info{$codcour}{extra_tags}});	
 			$file_template =~ s/<<Competences>>/<<CompetencesForCS>>/g;
-			my $extra_txt = "\\item {\\bf <<CompetencesForEngineering>>} \n";
+			my $extra_txt = "\\item \\textbf{<<CompetencesForEngineering>>} \n";
 			#Util::print_message("OutcomesForOtherContent$lang=".$Common::course_info{$codcour}{extra_tags}{"OutcomesForOtherContent$lang"});
 			my $EnvforOutcomes = $Common::config{EnvforOutcomes};
 			$extra_txt .= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{extra_tags}{OutcomesForOtherContent}\\end{$EnvforOutcomes}\n";
@@ -485,7 +810,7 @@ sub genenerate_tex_syllabus_file($$$$$%)
 	$file_template = Common::ExpandTags($file_template, $lang);
 	for(my $i = 0 ; $i < 2; $i++ )
 	{
-	    $file_template = Common::replace_tags($file_template, "--", "--", %map);
+	    $file_template = Common::replace_tags_from_hash($file_template, "--", "--", %map);
 	    $file_template = Common::translate($file_template, $lang);
 	}
     #file_template =~ s/--.*?--//g;
@@ -498,28 +823,49 @@ sub genenerate_tex_syllabus_file($$$$$%)
 
 sub read_sumilla_template()
 {
+	return;
 	my $syllabus_file = Common::get_template("in-syllabus-template-file");
-	if(not -e $syllabus_file)
-	{
-	    Util::print_error("It seems that you forgot the template sumilla file ... \"$syllabus_file\"");
-	    #my $InProgramDir = Common::get_template("InProgramDir");
-	    #system("mkdir -p \"$InProgramDir\"");
-	    #my $UCSPDir = Common::get_template("InInstUCSPDir");
-	    #my $command = "cp \"$UCSPDir/syllabus-template.tex\" \"$InProgramDir/.\"";
-	    #Util::print_warning("Executing command: $command");
-	    #system($command);
-	    #Util::halt("I just created template sumilla file \"$syllabus_file\" based on CS-UCSP");
-
+	$Common::config{sumilla_template} = "";
+	if(-e $syllabus_file)
+	{	Util::print_message("Reading ... \"$syllabus_file\"");
+	    $Common::config{sumilla_template} = Util::read_file($syllabus_file);
 	}
-	$Common::config{sumilla_template} = Util::read_file($syllabus_file);
+	else
+	{	Util::print_warning("It seems that you forgot the syllabus program template file ... \"$syllabus_file\"");}
+
+	$syllabus_file = Common::get_template("in-syllabus-program-template-file");
+	if(-e $syllabus_file)
+	{	Util::print_message("Reading ... \"$syllabus_file\"");
+		$Common::config{sumilla_template} = Util::read_file($syllabus_file);
+	}
+	else
+	{	Util::print_warning("It seems that you forgot the syllabus program template for this cycle ... \"$syllabus_file\"");}
+
+	if($Common::config{sumilla_template} eq "")
+	{		Util::print_error("It seems that you forgot the template sumilla file ... \"$syllabus_file\"");   }
 }
 
 sub read_syllabus_template()
 {
-	my $template_file = Common::get_template("in-syllabus-template-file");
-	if(not -e $template_file)
-	{	Util::halt("It seems that you forgot the syllabus template file ... verify \"$template_file\"");		}
-	$Common::config{syllabus_template} = Util::read_file($template_file);
+	my $syllabus_file = Common::get_template("in-syllabus-template-file");
+	$Common::config{syllabus_template} = "";
+	if(-e $syllabus_file)
+	{	Util::print_message("Reading ... \"$syllabus_file\"");
+	    $Common::config{syllabus_template} = Util::read_file($syllabus_file);
+	}
+	else
+	{	Util::print_warning("It seems that you forgot the syllabus program template file ... \"$syllabus_file\"");}
+
+	$syllabus_file = Common::get_template("in-syllabus-program-template-file");
+	if(-e $syllabus_file)
+	{	Util::print_message("Reading ... \"$syllabus_file\"");
+		$Common::config{syllabus_template} = Util::read_file($syllabus_file);
+	}
+	else
+	{	Util::print_warning("It seems that you forgot the syllabus program template for this cycle ... \"$syllabus_file\"");}
+
+	if($Common::config{syllabus_template} eq "")
+	{		Util::print_error("It seems that you forgot the template sumilla file ... \"$syllabus_file\"");   }
 
 	if( $Common::config{syllabus_template} =~ m/\\begin\{evaluation\}\s*\n((?:.|\n)*?)\n\\end\{evaluation\}/g )
 	{
@@ -529,7 +875,7 @@ sub read_syllabus_template()
 	}
 	else
 	{
-	      Util::print_error("It seems you did not write General Evaluation Criteria on your Syllabus template (See file: $template_file) ...");
+	      Util::print_error("It seems you did not write General Evaluation Criteria on your Syllabus template (See file: $syllabus_file) ...");
 	}
 }
 
@@ -545,12 +891,13 @@ sub process_syllabi()
 	read_sumilla_template();   # 1st Read template for sumilla
 	read_syllabus_template();  # 2nd Read the syllabus template
 	gen_course_general_info($Common::config{language_without_accents}); # 3th Generate files containing Prerequisites, etc
-	gen_prerequisites_map_in_dot($Common::config{language_without_accents});   # 4th Generate dot files
+	generate_dot_maps_for_all_courses($Common::config{language_without_accents});   # 4th Generate dot files
 
 	# 4th: Read evaluation info for this institution
-	Common::read_specific_evaluacion_info(); # It loads the field: $Common::course_info{$codcour}{specific_evaluation} for each course with specific evaluation
+	Common::read_specific_evaluacion_info(); # It loads the field: $Common::course_info{$codcour}{specific_evaluation} for each course with specific evaluation  	
 	generate_tex_syllabi_files();
-  	generate_syllabi_include();
+	generate_syllabi_include();
+	
  	gen_batch_to_compile_syllabi();
 	foreach my $lang (@{$Common::config{SyllabusLangsList}})
 	{
@@ -577,25 +924,29 @@ sub generate_tex_syllabi_files()
 			my $codcour_label = Common::get_label($codcour);
 			foreach my $lang (@{$Common::config{SyllabusLangsList}})
 			{
-			      my %map = read_syllabus_info($codcour, $semester, $lang);
-			      $map{AREA}			= $Common::config{area};
+				my %map = read_syllabus_info($codcour, $semester, $lang);
+				$map{AREA}			= $Common::config{area};
 
-			      my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
-			      #Util::print_message("Generating Syllabus: $output_file");
-			      genenerate_tex_syllabus_file($codcour_label, $Common::config{syllabus_template}, "UNITS_SYLLABUS", $output_file, $lang, %map);
+				my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
+				#Util::print_message("Generating Syllabus: $output_file");
+				genenerate_tex_syllabus_file($codcour_label, $Common::config{syllabus_template}, "UNITS_SYLLABUS", $output_file, $lang, %map);
+				
+				# Copy bib files
+				my $syllabus_bib = Common::get_template("InSyllabiContainerDir")."/$map{IN_BIBFILE}.bib";
+				#Util::print_message("cp $syllabus_bib $OutputTexDir");
+				eval { system("cp $syllabus_bib $OutputTexDir"); }
 
-			      # Copy bib files
-			      my $syllabus_bib = Common::get_template("InSyllabiContainerDir")."/$map{IN_BIBFILE}.bib";
-			      #Util::print_message("cp $syllabus_bib $OutputTexDir");
-			      eval { system("cp $syllabus_bib $OutputTexDir"); }
-
-			      #eval { system("cp $syllabus_bib $OutputTexDir"); }
-			      #warn $@ if $@;
+				#eval { system("cp $syllabus_bib $OutputTexDir"); }
+				#warn $@ if $@;
 			}
 # 			genenerate_tex_syllabus_file($codcour, $Common::config{sumilla_template} , "UNITS_SUMILLA" , "$OutputTexDir/$codcour-sumilla.tex", %map);
 		}
 	}
 	#system("chgrp curricula $OutputTexDir/*");
+	my $firstpage_file = Common::get_template("in-syllabus-first-page-file");
+	my $command = "cp $firstpage_file $OutputTexDir/.";
+	Util::print_message($command);
+	system($command);
 	Util::check_point("generate_tex_syllabi_files");
 }
 
@@ -668,7 +1019,9 @@ sub gen_batch_to_compile_syllabi()
 				$output .= "$scripts_dir/gen-syllabus.sh $codcour-$lang_prefix $OutputInstDir$parallel_sep\n";
 				if(defined($Common::config{distribution}{$codcour}))
 				{
-					my $fullname = "$OutputFullSyllabiDir/$codcour-$lang_prefix - $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name} ($Common::config{Semester}).pdf";
+					                                    #2020-1-QI0027-química general.doc
+					my $fullname = "$OutputFullSyllabiDir/$Common::config{Semester} $codcour-$lang_prefix - $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}.pdf";
+					#my $fullname = "$OutputFullSyllabiDir/$codcour-$lang_prefix - $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name} ($Common::config{Semester}).pdf";
 					$output .= "cp \"$OutputSyllabiDir/$codcour-$lang_prefix.pdf\" \"$fullname\"\n";
 				}
 			}
@@ -895,13 +1248,20 @@ sub generate_team_file($)
 # 	Util::print_message("gen_list_of_units_by_course $file_name ($count courses) OK!");
 # }
 
-sub generate_formatted_syllabus($$$)
+sub generate_formatted_syllabus($$$$)
 {
-	my ($codcour, $source, $target) = (@_);
+	my ($codcour, $source, $target, $lang) = (@_);
 	my $active_version = $Common::config{OutcomesVersion};
 	my $source_txt = Util::read_file($source);
 
-	foreach my $env ("outcomes", "competences")
+	my $course_name = $Common::course_info{$codcour}{$lang}{course_name};
+	my $course_type = $Common::config{dictionary}{$Common::course_info{$codcour}{course_type}};
+	my $header      = "\n\\course{$codcour. $course_name}{$course_type}{$codcour}\n";
+	$header        .= "% Source file: $source\n";
+	my $newhead 	= "\\begin{syllabus}\n$header\n\\begin{justification}";
+	$source_txt 	=~ s/\\begin\{syllabus\}\s*((?:.|\n)*?)\\begin\{justification\}/$newhead/g;
+
+	foreach my $env (@versioned_environments)
 	{
 		my $syllabus_in_copy = $source_txt;
 		while( $syllabus_in_copy =~ m/\\begin\{$env\}\{(.*?)\}\s*\n((?:.|\n)*?)\\end\{$env\}/g)
@@ -921,7 +1281,7 @@ sub generate_formatted_syllabus($$$)
 	Util::print_message("$source -> $target (OK)");
 	Util::write_file($target, $source_txt);
 	#if($codcour eq "IN0054")
-	#{	Util::print_message("generate_formatted_syllabus($codcour, $source, $target)");
+	#{	Util::print_message("generate_formatted_syllabus($codcour, $source, $target, $lang)");
 	#	exit;	
 	#}
 }
@@ -948,11 +1308,16 @@ sub generate_syllabi_include()
 			my $lang 		= Common::get_template("language_without_accents");
 			my $lang_prefix	= $Common::config{dictionaries}{$lang}{lang_prefix};
 			my $course_fullpath = Common::get_syllabus_full_path($codcour, $semester, $lang);
-			generate_formatted_syllabus($codcour, $course_fullpath, "$OutputTexDir/$codcour-orig-$lang_prefix.tex");
+			generate_formatted_syllabus($codcour, $course_fullpath, "$OutputTexDir/$codcour-orig-$lang_prefix.tex", $lang);
+			#if($codcour =~ m/CS2H/g)
+			#	{	Util::print_message("GenSyllabi::generate_formatted_syllabus $codcour ...");  exit; }
 
 			$course_fullpath =~ s/(.*)\.tex/$1/g;
 			$output_tex .= "$newpage\\input{$OutputTexDir/$codcour-orig-$lang_prefix}";
 			$output_tex .= "% $codcour $Common::course_info{$codcour}{$lang}{course_name}\n";
+			#if($codcour =~ m/CS2H/g)
+			#	{	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");  exit; }
+
 			$ncourses++;
 			$newpage = "\\newpage";
 		}
@@ -966,44 +1331,42 @@ sub gen_course_general_info($)
 {
     my ($lang) = (@_);
 	my $OutputPrereqDir = Common::get_template("OutputPrereqDir");
-	my $OutputFigDir = Common::get_template("OutputFigDir");
-
+	my $OutputFigsDir = Common::get_template("OutputFigsDir");
 
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
 	{
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
 			my $normal_header   = "\\begin{itemize}\n";
-
 			my $codcour_label = Common::get_label($codcour);
 			# Semester: 5th Sem.
-			$normal_header .= "\\item {\\bf $Common::config{dictionary}{Semester}}: ";
+			$normal_header .= "\\item \\textbf{$Common::config{dictionary}{Semester}}: ";
 			$normal_header .= "$semester\$^{$Common::config{dictionary}{ordinal_postfix}{$semester}}\$ ";
 			$normal_header .= "$Common::config{dictionary}{Sem}. ";
 
 			# Credits
-			$normal_header .= "{\\bf $Common::config{dictionary}{Credits}}: $Common::course_info{$codcour}{cr}\n";
+			$normal_header .= "\\textbf{$Common::config{dictionary}{Credits}}: $Common::course_info{$codcour}{cr}\n";
 
 			# Hours of this course
-			$normal_header .= "\\item {\\bf $Common::config{dictionary}{HoursOfThisCourse}}: ";
+			$normal_header .= "\\item \\textbf{$Common::config{dictionary}{HoursOfThisCourse}}: ";
 			if($Common::course_info{$codcour}{th} > 0)
-			{	$normal_header .= "{\\bf $Common::config{dictionary}{Theory}}: $Common::course_info{$codcour}{th} $Common::config{dictionary}{hours}; ";	}
+			{	$normal_header .= "\\textbf{$Common::config{dictionary}{Theory}}: $Common::course_info{$codcour}{th} $Common::config{dictionary}{hours}; ";	}
 			if($Common::course_info{$codcour}{ph} > 0)
-			{	$normal_header .= "{\\bf $Common::config{dictionary}{Practice}}: $Common::course_info{$codcour}{ph} $Common::config{dictionary}{hours}; ";	}
+			{	$normal_header .= "\\textbf{$Common::config{dictionary}{Practice}}: $Common::course_info{$codcour}{ph} $Common::config{dictionary}{hours}; ";	}
 			if($Common::course_info{$codcour}{lh} > 0)
-			{	$normal_header .= "{\\bf $Common::config{dictionary}{Laboratory}}: $Common::course_info{$codcour}{lh} $Common::config{dictionary}{hours}; ";	}
+			{	$normal_header .= "\\textbf{$Common::config{dictionary}{Laboratory}}: $Common::course_info{$codcour}{lh} $Common::config{dictionary}{hours}; ";	}
 			$normal_header .= "\n";
 
 			my $syllabus_link = "";
 			$syllabus_link .= "\t\\begin{htmlonly}\n";
-			$syllabus_link .= "\t\\item {\\bf $Common::config{dictionary}{Syllabus}}:\n";
-			$syllabus_link .= "\t\t\\begin{rawhtml}\n";
-			$syllabus_link .= Common::get_syllabi_language_icons("\t\t\t", $codcour_label)."-";
+			$syllabus_link .= "\t\\item \\textbf{$Common::config{dictionary}{Syllabus}}:\n";
+			$syllabus_link .= "\t\t\\begin{rawhtml}";
+			$syllabus_link .= Common::get_syllabi_language_links("\t\t", $codcour_label)."-";
 			$syllabus_link .=  "\t\t\\end{rawhtml}\n";
 			$syllabus_link .=  "\t\\end{htmlonly}\n";
 			$normal_header .= $syllabus_link;
 
-			my $prereq_txt = "\\item {\\bf $Common::config{dictionary}{Prerequisites}}: ";
+			my $prereq_txt = "\\item \\textbf{$Common::config{dictionary}{Prerequisites}}: ";
 			if($Common::course_info{$codcour}{n_prereq} == 0)
 			{	$prereq_txt .= "$Common::config{dictionary}{None}\n";	}
 			else
@@ -1024,168 +1387,148 @@ sub gen_course_general_info($)
 
 			my $output_tex  = "";
 			$output_tex    .= "\\input{$output_file}\n\n";
-			$output_tex    .= "\\begin{figure}\n";
-			$output_tex    .= "\\centering\n";
-			$output_tex    .= "\\includegraphics[scale=0.66]{\\OutputFigDir/$codcour_label}\n";
-			$output_tex    .= "\\caption{Cursos relacionados con \\htmlref{$codcour_label}{sec:$codcour_label}}\n";
-			$output_tex    .= "\\label{fig:prereq:$codcour_label}\n";
-			$output_tex    .= "\\end{figure}\n";
+			my $map_for_course = <<'MAP';
+\begin{htmlonly}
+	\begin{rawhtml}
+		<div class="center">
+            <iframe scrolling="no" frameborder="0" src="./figs/<codcour>.svg" width="<WIDTH>" height="<HEIGHT>">
+                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
+            </iframe>
+        </div>
+	\end{rawhtml}
+\end{htmlonly}
+MAP
+			#$map_for_course =~ s/<OutputFigsDir>/$OutputFigsDir/g;
+			$map_for_course =~ s/<codcour>/$codcour_label/g;
+			$output_tex    .= $map_for_course;
+			#$output_tex    .= "\\begin{figure}\n";
+			#$output_tex    .= "\\centering\n";
+			#$output_tex    .= "\\includegraphics[scale=0.66]{\\OutputFigsDir/$codcour_label}\n";
+			#$output_tex    .= "\\caption{Cursos relacionados con xyz \\htmlref{$codcour_label}{sec:$codcour_label}}\n";
+			#$output_tex    .= "\\label{fig:prereq:$codcour_label}\n";
+			#$output_tex    .= "\\end{figure}\n";
 
 			Util::write_file("$output_file-html.tex", $output_tex);
-# 			Util::print_message("$output_file-html.tex ok!");
-
+ 			Util::print_message("$output_file-html.tex ok!");
+			#exit;
 		}
 	 }
 	 #Util::print_error("TODO: XYZ Aqui falta poner varios silabos en idiomas !");
 }
 
-sub generate_link($$$$)
+sub get_course_dot_map($$$)
 {
-	my ($source, $target, $course_tpl, $lang) = (@_);
-	my $output_txt = "";
-	if($source =~ m/(.*?)=(.*)/)
-	{
-		my ($inst, $prereq) = ($1, $2);
-		assert( $inst eq $Common::institution);
-		$output_txt .= "\t\"$prereq\"->\"$target\" [lhead=cluster$target];\n";
-		return ($output_txt, 0);
+	my ($codcour, $lang, $course_tpl) = (@_);
+	my $min_sem_to_show = $Common::course_info{$codcour}{semester};
+	my $max_sem_to_show = $Common::course_info{$codcour}{semester};
+
+	my %local_list_of_courses_by_semester = ();
+	push(@{$local_list_of_courses_by_semester{$Common::course_info{$codcour}{semester}}}, $codcour);
+	my $prev_courses_dot = "";
+	# Map PREVIOUS courses
+	foreach my $codprev (@{$Common::course_info{$codcour}{prerequisites_for_this_course}})
+	{	$prev_courses_dot .= Common::generate_course_info_in_dot_with_sem($codprev, $course_tpl, $lang)."\n";
+		my ($output_txt, $regular_course) = Common::generate_connection_between_two_courses($codprev, $codcour, $lang);
+		$prev_courses_dot .= $output_txt;
+		if($regular_course == 1 )
+		{	if(	$Common::course_info{$codprev}{semester} < $min_sem_to_show )
+			{	$min_sem_to_show = $Common::course_info{$codprev}{semester} ;	}
+			push(@{$local_list_of_courses_by_semester{$Common::course_info{$codprev}{semester}}}, $codprev);
+		}
 	}
-	my ($critical_path_style, $width) = ("", 4);
-	if( defined($Common::course_info{$source}{critical_path}{$target}))
-	{			$critical_path_style = ",penwidth=$width,label=\"$Common::config{dictionaries}{$lang}{CriticalPath}\"";	}
-	$output_txt .= "\t\"$source\"->\"$target\" [lhead=cluster$target$critical_path_style];\n";
-	return ($output_txt, 1);
+	my $this_course_dot = $course_tpl;
+	my %map = ("FONTCOLOR"	  => "black",
+				"FILLCOLOR"	  => "yellow",
+				"BORDERCOLOR" => "black");
+	$this_course_dot = Common::replace_tags_from_hash($this_course_dot, "<", ">", %map);
+	$this_course_dot = Common::generate_course_info_in_dot_with_sem($codcour, $this_course_dot, $lang)."\n";
+	$this_course_dot =~ s/\s*URL="URL.*?",\s*/ /g;
+
+	# Map courses AFTER this course
+	my $post_courses_dot = "";
+	foreach my $codpost (@{$Common::course_info{$codcour}{courses_after_this_course}})
+	{
+		$post_courses_dot .= Common::generate_course_info_in_dot_with_sem($codpost, $course_tpl, $lang)."\n";
+		my ($output_txt, $regular_course) = Common::generate_connection_between_two_courses($codcour, $codpost, $lang);
+		$post_courses_dot .= $output_txt;
+		if($regular_course == 1 )
+		{	if(	$Common::course_info{$codpost}{semester} > $max_sem_to_show )
+			{	$max_sem_to_show = $Common::course_info{$codpost}{semester} ;	}
+			push(@{$local_list_of_courses_by_semester{$Common::course_info{$codpost}{semester}}}, $codpost);
+		}
+	}
+	my $sem_col 		= "";
+	my $sem_definitions = "";
+	my $same_rank 		= "";
+	my $sep 			= "";
+	for( my $sem_count = $min_sem_to_show; $sem_count <= $max_sem_to_show; $sem_count++)
+	{
+		my $sem_label = Common::sem_label($sem_count, $lang);
+		my $this_sem = "\t{ rank = same; $sem_label; ";
+		foreach my $one_cour (@{$local_list_of_courses_by_semester{$sem_count}})
+		{	$this_sem .= "\"".Common::get_label($one_cour)."\"; ";		}
+		$same_rank .= "$this_sem }\n";
+		$sem_col .= "$sep$sem_label";
+# 				,fillcolor=black,style=filled,fontcolor=white
+		$sem_definitions .= "\t$sem_label [shape=box];\n";
+		$sep = "->";
+	}
+	my $output_tex  = "";
+	$output_tex .= "digraph $codcour\n";
+	$output_tex .= "{\n";
+	$output_tex .= "\tbgcolor=white;\n";
+	$output_tex .= "\tcompound=true;\n";
+	$output_tex .= "\t$sem_col;\n";
+	$output_tex .= "\n";
+	$output_tex .= $sem_definitions;
+	if(not $prev_courses_dot eq "")
+	{	$output_tex .= "$prev_courses_dot\n";	}
+
+	$output_tex .= "$this_course_dot\n";
+
+	if(not $post_courses_dot eq "")
+	{	$output_tex .= "$post_courses_dot\n";	}
+	$output_tex .= "$same_rank\n";
+
+	$output_tex .= "}\n";
+	return $output_tex;
 }
 
-sub gen_prerequisites_map_in_dot($)
+
+sub generate_course_dot_map($$$$)
+{
+	my ($codcour, $lang, $course_tpl, $output_file) = (@_);
+	my $output_tex 	= get_course_dot_map($codcour, $lang, $course_tpl);
+	Util::write_file($output_file, $output_tex);
+	Util::print_message("Generating $output_file ok! ..."); 
+}
+
+sub generate_dot_maps_for_all_courses($)
 {
     my ($lang) = (@_);
+	Util::check_point("detect_critical_path");
 	my $size = "big";
-	my $template_file = Common::get_template("in-$size-graph-item.dot");
-	my $course_tpl 	= Util::read_file($template_file);
-# 	$course_tpl =~ s/<FULLNAME>/<FULLNAME> \(<SEM>\)/g;
-	#Util::print_message("course_tpl = $course_tpl ... ");
-
-	Util::print_message("Reading $template_file ... (gen_prerequisites_map_in_dot)");
-
-	my $OutputDotDir  		= Common::get_template("OutputDotDir");
-	my $OutputFigDir 		= Common::get_template("OutputFigDir");
-	my $update_page_numbers_file 	= Common::get_template("update-page-numbers");
-
-	my $batch_replace_pages = "";
-	my $batch_txt 		= "#!/bin/csh\n\n";
-
+	my $template_file	= Common::read_dot_template($size, $lang);
+	my $course_tpl 		= Util::read_file($template_file);
+	Util::print_message("Reading $template_file ... (generate_dot_maps_for_all_courses)");
+	my $OutputDotDir  				= Common::get_template("OutputDotDir");
+	my $OutputFigsDir 				= Common::get_template("OutputFigsDir");
+	my $batch_txt 					= "#!/bin/csh\n\n";
+	
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
-	{
-		$batch_txt .= "# Semester #$semester\n";
+	{	$batch_txt .= "# Semester #$semester\n";
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
-		{
-			my $codcour_label = Common::get_label($codcour);
-			my $min_sem_to_show 	= $Common::course_info{$codcour}{semester};
-			my $max_sem_to_show 	= $Common::course_info{$codcour}{semester};
-			my %local_list_of_courses_by_semester = ();
-
-			push(@{$local_list_of_courses_by_semester{$Common::course_info{$codcour}{semester}}}, $codcour);
-
-			my $output_file = "$OutputDotDir/$codcour_label.dot";
-			my $prev_courses_dot = "";
-			# Map PREVIOUS courses
-			foreach my $codprev (@{$Common::course_info{$codcour}{prerequisites_for_this_course}})
-			{	$prev_courses_dot .= Common::generate_course_info_in_dot_with_sem($codprev, $course_tpl, $lang)."\n";
-				my ($output_txt, $regular_course) = generate_link($codprev, $codcour, $course_tpl, $lang);
-				$prev_courses_dot .= $output_txt;
-				if($regular_course == 1 )
-				{	if(	$Common::course_info{$codprev}{semester} < $min_sem_to_show )
-					{	$min_sem_to_show = $Common::course_info{$codprev}{semester} ;	}
-					push(@{$local_list_of_courses_by_semester{$Common::course_info{$codprev}{semester}}}, $codprev);
-				}
-			}
-			
- 			my $this_course_dot = $course_tpl;
- 			my %map = ("FONTCOLOR"	=> "black",
-                "FILLCOLOR"	=> "yellow",
-                "BORDERCOLOR" => "black");
- 			$this_course_dot = Common::replace_tags($this_course_dot, "<", ">", %map);
- 			$this_course_dot = Common::generate_course_info_in_dot_with_sem($codcour, $this_course_dot, $lang)."\n";
-
- 			# Map courses AFTER this course
-			my $post_courses_dot = "";
-			foreach my $codpost (@{$Common::course_info{$codcour}{courses_after_this_course}})
-			{
-				$post_courses_dot .= Common::generate_course_info_in_dot_with_sem($codpost, $course_tpl, $lang)."\n";
-				my ($output_txt, $regular_course) = generate_link($codcour, $codpost, $course_tpl, $lang);
-				$post_courses_dot .= $output_txt;
-				if($regular_course == 1 )
-				{	if(	$Common::course_info{$codpost}{semester} > $max_sem_to_show )
-					{	$max_sem_to_show = $Common::course_info{$codpost}{semester} ;	}
-					push(@{$local_list_of_courses_by_semester{$Common::course_info{$codpost}{semester}}}, $codpost);
-				}
-
-  				#my $codpost_label = Common::get_label($codpost);
-  				#$post_courses_dot .= Common::generate_course_info_in_dot_with_sem($codpost, $course_tpl, $lang)."\n";
-
-				#my ($source, $target) = ($codcour, $codpost);
-				#my ($critical_path_style, $width) = ("", 4);
-				#if( defined($Common::course_info{$source}{critical_path}{$target}))
-				#{			$critical_path_style = ",penwidth=$width,label=\"$Common::config{dictionaries}{$lang}{CriticalPath}\"";	}
-
-  				#$post_courses_dot .= "\t\"$codcour_label\"->\"$codpost_label\" [ltail=cluster$codcour_label$critical_path_style];\n";
-  				#$max_sem_to_show = $Common::course_info{$codpost}{semester} if($Common::course_info{$codpost}{semester} > $max_sem_to_show);
-  				#push(@{$local_list_of_courses_by_semester{$Common::course_info{$codpost}{semester}}}, $codpost);
-			}
-
-			my $sem_col 		= "";
-			my $sem_definitions 	= "";
-			my $same_rank 		= "";
-			my $sep 		= "";
-			for( my $sem_count = $min_sem_to_show; $sem_count <= $max_sem_to_show; $sem_count++)
-			{
-  				my $sem_label = Common::sem_label($sem_count, $lang);
-  				my $this_sem = "\t{ rank = same; $sem_label; ";
-  				foreach my $one_cour (@{$local_list_of_courses_by_semester{$sem_count}})
-  				{	$this_sem .= "\"".Common::get_label($one_cour)."\"; ";		}
-  				$same_rank .= "$this_sem }\n";
-  				$sem_col .= "$sep$sem_label";
-  # 				,fillcolor=black,style=filled,fontcolor=white
-  				$sem_definitions .= "\t$sem_label [shape=box];\n";
-  				$sep = "->";
-			}
-			my $output_tex  = "";
-			# Semester: Ej. 5th Sem.
-			$output_tex .= "digraph $codcour_label\n";
-			$output_tex .= "{\n";
-			$output_tex .= "\tbgcolor=white;\n";
-			$output_tex .= "\tcompound=true;\n";
- 			$output_tex .= "\t$sem_col;\n";
- 			$output_tex .= "\n";
-			$output_tex .= $sem_definitions;
-			if(not $prev_courses_dot eq "")
-			{	$output_tex .= "$prev_courses_dot\n";	}
-
-			$output_tex .= "\tsubgraph cluster$codcour_label\n";
-			$output_tex .= "\t{\n";
-# 			$output_tex .= "\t\tbgcolor=yellow;\n";
-# 			$output_tex .= "\t\tcolor=yellow;\n";
-			$output_tex .= "\t$this_course_dot\n";
-			$output_tex .= "\t}\n";
-
-			if(not $post_courses_dot eq "")
-			{	$output_tex .= "$post_courses_dot\n";	}
-			$output_tex .= "$same_rank\n";
-
-			$output_tex .= "}\n";
-
-			Util::write_file($output_file, $output_tex);
-			Util::print_message("Generating $output_file ok! ..."); 
-			#$batch_txt	.= "dot -Gcharset=$Common::config{encoding} -Tps $output_file -o $OutputFigDir/$codcour_label.ps; \n";
-			$batch_txt	.= "dot -Tps  $output_file -o $OutputFigDir/$codcour_label.ps; \n";
-      		$batch_txt	.= "dot -Tpng $output_file -o $OutputFigDir/$codcour_label.png; \n";
-			# $batch_txt	.= "convert $OutputFigDir/$codcour_label.ps $OutputFigDir/$codcour_label.png&\n\n";
+		{	my $output_file = "$OutputDotDir/$codcour.dot";
+			generate_course_dot_map($codcour, $lang, $course_tpl, $output_file);
+			$batch_txt	.= "echo \"Generating $OutputFigsDir/$codcour.svg ...\"\n";
+			$batch_txt	.= "dot -Tps  $output_file -o $OutputFigsDir/$codcour.ps; \n";
+      		$batch_txt	.= "dot -Tsvg $output_file -o $OutputFigsDir/$codcour.svg; \n\n";
 		}
 	 }
 	 my $batch_map_for_course_file = Common::get_template("out-gen-map-for-course");
 	 Util::write_file($batch_map_for_course_file, $batch_txt);
 	 system("chmod 774 $batch_map_for_course_file");
+	 Util::print_message("generate_dot_maps_for_all_courses ok!");
 }
 
 1;

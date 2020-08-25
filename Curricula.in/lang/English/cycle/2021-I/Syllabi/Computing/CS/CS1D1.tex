@@ -1,6 +1,6 @@
 \begin{syllabus}
 
-\course{CS1D01. Discrete Structures I}{Obligatorio}{CS1D01}
+\course{CS1D1. Discrete Structures I}{Obligatorio}{CS1D1}
 % Source file: ../Curricula.in/lang/English/cycle/2021-I/Syllabi/Computing/CS/CS1D1.tex
 
 \begin{justification}
@@ -12,87 +12,69 @@ cryptography, formal methods, etc.
 \end{justification}
 
 \begin{goals}
-\item Apply Properly concepts of finite mathematics (sets, relations, functions) to represent data of real problems.
-\item Model real situations described in natural language, using propositional logic and predicate logic.
-\item Determine the abstract properties of binary relations.
-\item Choose the most appropriate demonstration method to determine the veracity of a proposal and construct correct mathematical arguments.
-\item Interpret mathematical solutions to a problem and determine their reliability, advantages and disadvantages.
-\item Express the operation of a simple electronic circuit using Boolean algebra.
+    \item Apply Properly concepts of finite mathematics (sets, relations, functions) to represent data of real problems.
+    \item Model real situations described in natural language, using propositional logic and predicate logic.
+    \item Determine the abstract properties of binary relations.
+    \item Choose the most appropriate demonstration method to determine the veracity of a proposal and construct correct mathematical arguments.
+    \item Interpret mathematical solutions to a problem and determine their reliability, advantages and disadvantages.
+    \item Express the operation of a simple electronic circuit using Boolean algebra.
 \end{goals}
 
-\begin{outcomes}{V1}
-    \item \ShowOutcome{a}{2}
-    \item \ShowOutcome{j}{2}
-\end{outcomes}
+--COMMON-CONTENT--
 
-\begin{outcomes}{V2}
-    \item \ShowOutcome{1}{2}
-    \item \ShowOutcome{6}{2}
-\end{outcomes}
-
-\begin{competences}{V1}
-    \item \ShowCompetence{C1}{a}
-    \item \ShowCompetence{C20}{j}
-\end{competences}
-
-\begin{competences}{V2}
-    \item \ShowCompetence{C1}{1}
-    \item \ShowCompetence{C20}{6}
-\end{competences}
-
-    \begin{unit}{\DSSetsRelationsandFunctions}{}{Grimaldi03,Rosen2007}{22}{C1,C20}
-    \begin{topics}
-        \item \DSSetsRelationsandFunctionsTopicSets
-        %\item \DSSetsRelationsandFunctionsTopicRelations
-        \item Relations:
-            \begin{subtopics}
-                \item Reflexivity, simmetry, transitivity
-                \item Equivalence relations
-                \item Partial order relations and sets
-                \item Extremal elements of a partially ordered sets
-            \end{subtopics}
-        \item \DSSetsRelationsandFunctionsTopicFunctions
-    \end{topics}
-    \begin{learningoutcomes}
+\begin{unit}{\DSSetsRelationsandFunctions}{}{Grimaldi03,Rosen2007,howToProve}{22}{a,j}
+\begin{topics}
+    \item \DSSetsRelationsandFunctionsTopicSets
+    %\item \DSSetsRelationsandFunctionsTopicRelations
+    \item Relations:
+        \begin{subtopics}
+            \item Reflexivity, simmetry, transitivity
+            \item Equivalence relations
+            \item Partial order relations and sets
+            \item Extremal elements of a partially ordered sets
+        \end{subtopics}
+    \item \DSSetsRelationsandFunctionsTopicFunctions
+\end{topics}
+\begin{learningoutcomes}
     \item \DSSetsRelationsandFunctionsLOExplainWith [\Assessment]
     \item \DSSetsRelationsandFunctionsLOPerformThe [\Assessment]
     \item \DSSetsRelationsandFunctionsLORelate [\Assessment]
-    \end{learningoutcomes}
-    \end{unit}
+\end{learningoutcomes}
+\end{unit}
 
-    \begin{unit}{\DSBasicLogic}{}{Rosen2007,Grimaldi03}{14}{C1,C20}
-    \begin{topics}
-        \item \DSBasicLogicTopicPropositional%
-        \item \DSBasicLogicTopicLogical%
-        \item \DSBasicLogicTopicTruth%
-        \item \DSBasicLogicTopicNormal%
-        \item \DSBasicLogicTopicValidity%
-        \item \DSBasicLogicTopicPropositionalInference%
-        \item \DSBasicLogicTopicPredicate%
-        \item \DSBasicLogicTopicLimitations%
-    \end{topics}
-    \begin{learningoutcomes}
+\begin{unit}{\DSBasicLogic}{}{Rosen2007,Grimaldi03,howToProve}{14}{a,j}
+\begin{topics}
+    \item \DSBasicLogicTopicPropositional%
+    \item \DSBasicLogicTopicLogical%
+    \item \DSBasicLogicTopicTruth%
+    \item \DSBasicLogicTopicNormal%
+    \item \DSBasicLogicTopicValidity%
+    \item \DSBasicLogicTopicPropositionalInference%
+    \item \DSBasicLogicTopicPredicate%
+    \item \DSBasicLogicTopicLimitations%
+\end{topics}
+\begin{learningoutcomes}
     \item \DSBasicLogicLOConvertLogical [\Usage ]
     \item \DSBasicLogicLOApplyFormal [\Usage ]
     \item \DSBasicLogicLOUseThe [\Usage]
     \item \DSBasicLogicLODescribeHowCan [\Familiarity]
     \item \DSBasicLogicLOApplyFormalAnd [\Usage ]
     \item \DSBasicLogicLODescribeTheLimitationsAnd [\Usage]
-    \end{learningoutcomes}
-    \end{unit}
+\end{learningoutcomes}
+\end{unit}
 
-\begin{unit}{\DSProofTechniques}{}{Rosen2007,Vel06, Scheinerman12}{14}{C1,C20}
+\begin{unit}{\DSProofTechniques}{}{Rosen2007, Scheinerman12,howToProve}{14}{a,j}
 \begin{topics}
-        \item \DSProofTechniquesTopicNotions%
-        \item \DSProofTechniquesTopicThe%
-        \item \DSProofTechniquesTopicDirect%
-        \item \DSProofTechniquesTopicDisproving%
-        \item \DSProofTechniquesTopicProof%s
-        \item \DSProofTechniquesTopicInduction%
-        \item \DSProofTechniquesTopicStructural%
-        \item \DSProofTechniquesTopicWeak%
-        \item \DSProofTechniquesTopicRecursive%
-        \item \DSProofTechniquesTopicWell%
+    \item \DSProofTechniquesTopicNotions%
+    \item \DSProofTechniquesTopicThe%
+    \item \DSProofTechniquesTopicDirect%
+    \item \DSProofTechniquesTopicDisproving%
+    \item \DSProofTechniquesTopicProof%s
+    \item \DSProofTechniquesTopicInduction%
+    \item \DSProofTechniquesTopicStructural%
+    \item \DSProofTechniquesTopicWeak%
+    \item \DSProofTechniquesTopicRecursive%
+    \item \DSProofTechniquesTopicWell%
 \end{topics}
 
 \begin{learningoutcomes}
@@ -107,17 +89,17 @@ cryptography, formal methods, etc.
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Data Representation}{}{Rosen2007,Grimaldi03}{10}{C1,C20}
-    \begin{topics}
-        \item Numerical representation: sign-magnitude, floating point.
-        \item Representation of other objects: sets, relations, functions.
-    \end{topics}
+\begin{unit}{Data Representation}{}{Rosen2007,Grimaldi03,howToProve}{10}{a,j}
+\begin{topics}
+    \item Numerical representation: sign-magnitude, floating point.
+    \item Representation of other objects: sets, relations, functions.
+\end{topics}
 
-    \begin{learningoutcomes}
-        \item Explain numerical representations such as sign-magnitude and floating point. [\Assessment].
-        \item Carry out arithmetic operations using different kinds of representations. [\Assessment].
-        \item Explain the floating point standard IEEE-754 [\Familiarity].   
-    \end{learningoutcomes}
+\begin{learningoutcomes}
+    \item Explain numerical representations such as sign-magnitude and floating point. [\Assessment].
+    \item Carry out arithmetic operations using different kinds of representations. [\Assessment].
+    \item Explain the floating point standard IEEE-754 [\Familiarity].   
+\end{learningoutcomes}
 \end{unit}
 
 \begin{coursebibliography}

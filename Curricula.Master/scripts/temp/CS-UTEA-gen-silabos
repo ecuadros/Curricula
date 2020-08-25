@@ -1,5 +1,0 @@
-rm -rf html/UTEA/Silabos
-mkdir -p html/UTEA/Silabos
-rm -rf gen-tex/CS-UTEA/PDFSilabos
-mkdir -p gen-tex/CS-UTEA/PDFSilabos
-

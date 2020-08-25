@@ -1,0 +1,5 @@
+Semester=periodo académico
+Sem=PA
+Course=Unidad didáctica
+COURSENAME=Unidad didáctica
+TypeOfCourse=Tipo de unidad didáctica

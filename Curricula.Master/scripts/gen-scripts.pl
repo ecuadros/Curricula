@@ -58,7 +58,7 @@ sub generate_institution($)
 	$output_txt .= "\\newcommand{\\basedir}{".getcwd()."}\n";
 	$output_txt .= "\\newcommand{\\InDir}{\\basedir/".Common::get_template("InDir")."}\n";
 	$output_txt .= "\\newcommand{\\InLangBaseDir}{\\basedir/".Common::get_template("InLangBaseDir")."}\n";
-	$output_txt .= "\\newcommand{\\InLangDir}{\\basedir/".Common::get_template("InLangDir")."}\n";
+	$output_txt .= "\\newcommand{\\InLangDefaultDir}{\\basedir/".Common::get_template("InLangDefaultDir")."}\n";
 	$output_txt .= "\\newcommand{\\InAllTexDir}{\\basedir/".Common::get_template("InAllTexDir")."}\n";
 	$output_txt .= "\\newcommand{\\InTexDir}{\\basedir/".Common::get_expanded_template("InTexDir", $lang)."}\n";
 	$output_txt .= "\\newcommand{\\InStyDir}{\\basedir/".Common::get_template("InStyDir")."}\n";
@@ -67,13 +67,18 @@ sub generate_institution($)
 
 	$output_txt .= "\\newcommand{\\InCountryDir}{\\basedir/".Common::get_template("InCountryDir")."}\n";
 	$output_txt .= "\\newcommand{\\InInstConfigDir}{\\basedir/".Common::get_template("InInstConfigDir")."}\n";
+	
 	$output_txt .= "\\newcommand{\\InCountryTexDir}{\\basedir/".Common::get_template("InCountryTexDir")."}\n";
+	$output_txt .= "\\newcommand{\\InProgramTexDir}{\\basedir/".Common::get_template("InProgramTexDir")."}\n";
+	
 	$output_txt .= "\\newcommand{\\InSPCDir}{\\basedir/".Common::get_template("InCountryDir")."/$Common::config{discipline}/$Common::config{area}/SPC}\n";
  	$output_txt .= "\\newcommand{\\InProgramDir}{\\basedir/".Common::get_template("InProgramDir")."}\n";
 	$output_txt .= "\\newcommand{\\InLogosDir}{\\basedir/".Common::get_template("InLogosDir")."}\n";
 
 	$output_txt .= "\\newcommand{\\OutputTexDir}{\\basedir/".Common::get_template("OutputTexDir")."}\n";
- 	$output_txt .= "\\newcommand{\\OutputFigDir}{\\basedir/".Common::get_template("OutputFigDir")."}\n";
+	$output_txt .= "\\newcommand{\\OutputCompetencesDir}{\\basedir/".Common::get_template("OutputCompetencesDir")."}\n";
+	
+ 	$output_txt .= "\\newcommand{\\OutputFigsDir}{\\basedir/".Common::get_template("OutputFigsDir")."}\n";
  	$output_txt .= "\\newcommand{\\InSyllabiBaseDir}{\\basedir/".Common::get_template("InSyllabiContainerDir")."}\n";
  	$output_txt .= "\\newcommand{\\OutputPrereqDir}{\\basedir/".Common::get_template("OutputPrereqDir")."}\n";
  	$output_txt .= "\n";

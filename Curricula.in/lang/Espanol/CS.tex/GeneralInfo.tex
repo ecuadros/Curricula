@@ -2,7 +2,7 @@
 
 \section{Clasificación de los cursos por niveles}
 De acuerdo a la \textit{Computing Curricula}, los cursos son clasificados en 3 niveles: Introductorios (Códigos 100), 
-Intermedios  (Códigos 200), Avanzados  (Códigos 300) y orientados a la construcción del trabajo de final de carrera  (Códigos 400) también llamado tesis.
+Intermedios  (Códigos 2..), Avanzados  (Códigos 3..) y orientados a la construcción del trabajo de final de carrera  (Códigos 4..) también llamado tesis.
 
 Los cursos de tercer nivel tienen por objetivo abrir varias posibilidades de especialización a través de cursos electivos
 
@@ -15,7 +15,7 @@ Los cursos se encuentran codificados bajo el esquema que se muestra en la Figura
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=13cm]{\OutputFigDir/course-coding}
+   \includegraphics[width=13cm]{\OutputFigsDir/course-coding}
    \caption{Esquema de codificación para los cursos.}
    \label{fig:course-number}
 \end{figure}
@@ -39,12 +39,27 @@ Al mismo tiempo, y de acuerdo a la ley universitaria vigente, los cursos están 
 \input{\InTexDir/outcomes-by-course}
 
 \section{Malla curricular}\label{sec:vision-grafica}
-\vspace{-0.3cm}Este documento también puede ser analizado desde el punto de vista de los prerequisitos de forma gráfica.
-\begin{figure}[H]
-      \includegraphics[width=23cm]{\OutputFigDir/small-graph-curricula-ES.ps}
-      \label{fig:malla-curricular}
-      \caption{Malla curricular \SchoolFullName}
-\end{figure}
+\vspace{-0.3cm}
+Este documento también puede ser analizado desde el punto de vista 
+de los prerequisitos de forma gráfica.
+
+\begin{latexonly}
+      \begin{figure}[H]
+            \includegraphics[width=23cm]{\OutputFigsDir/small-graph-curricula-ES.ps}
+            \label{fig:malla-curricular}
+            \caption{Malla curricular \SchoolFullName}
+      \end{figure}
+\end{latexonly}
+\begin{htmlonly}
+      \begin{rawhtml}
+            <div class="center">
+                  <iframe scrolling="no" frameborder="0" src="./figs/big-graph-curricula-<LANG_PREFIX>.svg" width="1916pt" height="1218pt">
+                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
+                  </iframe>
+            </div>
+      \end{rawhtml}
+\end{htmlonly}
+
 \end{landscape}
 
 \input{\InTexDir/courses-by-outcome}

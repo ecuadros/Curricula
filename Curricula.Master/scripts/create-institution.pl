@@ -22,7 +22,7 @@ $Common::command 	= $ARGV[4];
 sub main()
 {
 	Common::setup();
-	my $institution_info_file = Common::get_template("this-institutions-info-file");
+	my $institution_info_file = Common::get_template("this-institution-info-file");
 	my $NewInstDir = Common::GetInstDir($newcountry, $newdiscipline, $newarea, $newinstitution);
 	my $command = "mkdir -p $NewInstDir";
 	Util::print_message("Creating directory: $NewInstDir");

@@ -4,6 +4,7 @@ use Carp::Assert;
 use Lib::Common;
 use Data::Dumper;
 use Cwd;
+use List::Util qw(max);
 use strict;
 
 # ok
@@ -27,23 +28,18 @@ sub generate_course_tables($)
 		# Write the header for this table
 		my $this_sem_text = "";
 		$this_sem_text .= "\\begin{center}\n";
-# 		$this_sem_text .= "\t\\begin{htmlonly}\n";
-# 		$this_sem_text .= "\t\\begin{rawhtml}\n";
-# 		$this_sem_text .= "\t<A NAME=\"tab:$semester"."Sem\"></A>\n";
-# 		$this_sem_text .= "\t\\end{rawhtml}\n";
-# 		$this_sem_text .= "\t\\end{htmlonly}\n";
-
 		$this_sem_text .= "\\begin{tabularx}{23cm}{$Common::config{dictionary}{fields_header}}\\hline\n";
 		my $caption .= "$Common::config{dictionary}{semester_ordinal}{$semester} ";
 		   $caption .= "$Common::config{dictionary}{Semester}";
 		$this_sem_text .= "\\multicolumn{$n_columns}{|l|}{\\textbf{$caption}} \\\\ \\hline \n";
 
 # 		$this_sem_text .= "Code & Course & Area & HT & HP & HL & Cr & T & Prerequisites             \\\\ \\hline\n";
- 		my $course_headers= $Common::config{dictionary}{course_fields};
-		$course_headers =~ s/$begin_tag/{\\bf $begin_tag/g;
-		$course_headers =~ s/$end_tag/$end_tag}/g;
- 		$this_sem_text .= Common::replace_tags($course_headers, $begin_tag, $end_tag, %{$Common::config{dictionary}});
-
+ 		my $course_headers= $Common::config{course_fields};
+		#Util::print_color("GeneralInfo:course_fields=$course_headers");
+		#exit;
+		$course_headers =~ s/$begin_tag/\\textbf\{$begin_tag/g;    # aqui
+		$course_headers =~ s/$end_tag/$end_tag\}/g;
+ 		$this_sem_text .= Common::replace_tags_from_hash($course_headers, $begin_tag, $end_tag, %{$Common::config{dictionary}});
 		$this_sem_text .= "\n";
 
 		# 2nd Write the info for this course
@@ -62,8 +58,8 @@ sub generate_course_tables($)
 			my $pdflink 	= Common::get_pdf_link($codcour);
 
 # 			Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
-			$this_course_info{COURSECODE} = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
-			$this_course_info{COURSENAME} = Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
+			$this_course_info{Course}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
+			$this_course_info{Course} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
 #			$this_course_info{COURSENAME} = "\\htmlref{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
 # 			Util::print_message("codcour=$codcour");
 # 			print Dumper ( \%{$Common::course_info{$codcour}} );
@@ -112,17 +108,17 @@ sub generate_course_tables($)
 			}
 			else # Electives
 			{
-                                my $group = $Common::course_info{$codcour}{group};
-                                assert(not $group eq "");
+                my $group = $Common::course_info{$codcour}{group};
+                assert(not $group eq "");
 				$Common::counts{electives}{$semester}{$group}{cr}	= $Common::course_info{$codcour}{cr};
-                                $Common::counts{electives}{$semester}{$group}{area}	= $Common::course_info{$codcour}{area};
+                $Common::counts{electives}{$semester}{$group}{area}	= $Common::course_info{$codcour}{area};
 			}
 			$this_course_info{PREREQ} = "~";
 			if( not $Common::course_info{$codcour}{code_and_sem_prerequisites} eq "" )
 			{	$this_course_info{PREREQ} = $Common::course_info{$codcour}{code_and_sem_prerequisites};
 			}
 
-			$this_line 	= Common::replace_tags($this_line, $begin_tag, $end_tag, %this_course_info);
+			$this_line 	= Common::replace_tags_from_hash($this_line, $begin_tag, $end_tag, %this_course_info);
 			$this_line 	=~ s/$begin_tag(.*?)$end_tag/~/g;
 
 			$this_sem_text .= $this_line;
@@ -144,19 +140,20 @@ sub generate_course_tables($)
 
 		if($cred_column == 1)
 		{	$this_sem_text .= " $Common::config{credits_this_semester}{$semester} & ";
-			$this_sem_text .= "\\multicolumn{".($n_columns-$cred_column)."}{|l}{} \\\\ \\cline{$cred_column-$cred_column}\n";
+			$this_sem_text .= "\\multicolumn{".($n_columns-$cred_column)."}{|l}{}";
 		}
 		elsif($cred_column > 1 and $cred_column < $n_columns)
 		{
 			$this_sem_text .= "\\multicolumn{".($cred_column-1)."}{l|}{} & ";
 			$this_sem_text .= " $Common::config{credits_this_semester}{$semester} & ";
-			$this_sem_text .= "\\multicolumn{".($n_columns-$cred_column)."}{|l}{} \\\\ \\cline{$cred_column-$cred_column}\n";
+			$this_sem_text .= "\\multicolumn{".($n_columns-$cred_column)."}{|l}{}";
 		}
 		elsif($cred_column == $n_columns)
 		{	$this_sem_text .= "\\multicolumn{".($cred_column-1)."}{l|}{} & ";
-			$this_sem_text .= " $Common::config{credits_this_semester}{$semester} ";
-			$this_sem_text .= " \\\\ \\cline{$cred_column-$cred_column}\n";
+			$this_sem_text .= " $Common::config{credits_this_semester}{$semester}";
+			
 		}
+		$this_sem_text .= " \\\\ \\cline{$cred_column-$cred_column}\n";
 
 		$this_sem_text .= "\\end{tabularx}\n";
 		#$this_sem_text .= "\\end{table}\n";
@@ -172,13 +169,13 @@ sub generate_course_tables($)
 # 	print Dumper \%{$Common::counts{map_cred_area}{9}};
 	foreach my $semester (keys %{$Common::counts{electives}})
 	{
- 	      foreach my $group (keys %{$Common::counts{electives}{$semester}})
- 	      {
-		  #Util::print_message("Semester $semester, Group $group");
-		  #print Dumper \%{$Common::counts{electives}{$semester}{$group}}
- 		  my $area = $Common::counts{electives}{$semester}{$group}{area};
- 		  $Common::counts{map_cred_area}{$semester}{$area} += $Common::counts{electives}{$semester}{$group}{cr};
- 	      }
+		foreach my $group (keys %{$Common::counts{electives}{$semester}})
+		{
+			#Util::print_message("Semester $semester, Group $group");
+			#print Dumper \%{$Common::counts{electives}{$semester}{$group}}
+			my $area = $Common::counts{electives}{$semester}{$group}{area};
+			$Common::counts{map_cred_area}{$semester}{$area} += $Common::counts{electives}{$semester}{$group}{cr};
+		}
  	}
 	$output_txt .= "\\noindent\\textbf{$Common::config{dictionary}{TotalNumberOfCreditsMsg}: } \\input{\\OutputTexDir/ncredits}.\n";
 	Util::write_file($output_file, $output_txt);
@@ -233,13 +230,13 @@ sub generate_distribution_credits_by_area_by_semester()
 	my $table_end1  = "\\end{tabularx}\n";
 	my $table_end2  = "\\end{table}\n\n";
 
-	my ($header, $areas_header, $area_sum, $percent)       = ("|X|", "  ", " {\\bf $Common::config{dictionary}{Total}} ", "");
+	my ($header, $areas_header, $area_sum, $percent)       = ("|X|", "  ", " \\textbf{$Common::config{dictionary}{Total}} ", "");
 	my $area;
 	foreach $area (sort {$Common::config{area_priority}{$a} <=> $Common::config{area_priority}{$b}} keys %{$Common::config{area_priority}})
 	{
 		$header         .= "c|";
 		my $color		  = $Common::config{colors}{$area}{bgcolor};
-		$areas_header   .= "& \\colorbox{$color}{{\\bf $area}}";
+		$areas_header   .= "& \\colorbox{$color}{\\textbf{$area}}";
 		$Common::counts{credits}{prefix}{$area} = 0;
 		$area_sum .= " & $area";
 		$percent  .= " & $area";
@@ -252,7 +249,7 @@ sub generate_distribution_credits_by_area_by_semester()
 	my $table_body= "";
 	for(my $semester=1; $semester <= $Common::config{n_semesters} ; $semester++)
 	{
-		$table_body .= "{\\bf $Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester}}";
+		$table_body .= "\\textbf{$Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester}}";
 		my $sum_sem  = 0;
 		foreach $area (sort {$Common::config{area_priority}{$a} <=> $Common::config{area_priority}{$b}} keys %{$Common::config{area_priority}})
 		{
@@ -272,8 +269,8 @@ sub generate_distribution_credits_by_area_by_semester()
 
 	foreach $area (sort {$Common::config{area_priority}{$a} <=> $Common::config{area_priority}{$b}} keys %{$Common::config{area_priority}})
 	{	$area_sum =~ s/$area/$Common::counts{credits}{prefix}{$area}/g;
-                my $area_percent = int(1000*$Common::counts{credits}{prefix}{$area}/$Common::config{ncredits})/10.0;
-                $percent =~ s/$area/$area_percent\\%/g;
+		my $area_percent = int(1000*$Common::counts{credits}{prefix}{$area}/$Common::config{ncredits})/10.0;
+		$percent =~ s/$area/$area_percent\\%/g;
 	}
 	$output_txt .= $table_begin;
 	$output_txt .= $areas_header;
@@ -281,7 +278,8 @@ sub generate_distribution_credits_by_area_by_semester()
 	$output_txt .= $area_sum;
 	$output_txt .= $percent;
 	$output_txt .= $table_end1;
-	$output_txt .= "\\caption{$Common::config{dictionary}{DistributionCreditsByArea}}\\label{tab:DistributionCreditsByArea}\n";
+	$output_txt .= "\\caption{$Common::config{dictionary}{DistributionCreditsByArea}}\n";
+	$output_txt .= "\\label{tab:DistributionCreditsByArea}\n";
 	$output_txt .= $table_end2;
 	Util::write_file($output_file, $output_txt);
 	Util::print_message("generate_distribution_area_by_semester ($output_file) ... OK!");
@@ -328,12 +326,12 @@ sub generate_bok_index_old()
 	    }
 	    if($cmd_full =~ m/(.*?)BOKArea$end/)
 	    {
-		$current_area = $1;
+			$current_area = $1;
 	    }
 	    elsif($cmd_full =~ m/($current_area)(.*)Def$end/)
 	    {
 		my ($this_area, $this_prefix) 	= ($1, $2);
-                $macros_order .= "$this_area$this_prefix"."Def\n";
+            $macros_order .= "$this_area$this_prefix"."Def\n";
 		my $prev_unit = "";
 		if(not $map{CMD} eq "")
 		{
@@ -346,9 +344,9 @@ sub generate_bok_index_old()
 		      $map{BOK_AREA_HOURS_LABEL}  = " ($Common::config{dictionary}{nocorehours}))" if($map{BOK_AREA_HOURS} == 0);
 		      $map{BOK_AREA_HOURS_LABEL}  = " ($map{BOK_AREA_HOURS} $Common::config{dictionary}{corehours})" if($map{BOK_AREA_HOURS} > 0);
 
-		      $prev_unit 	 = Common::replace_tags($unit_tpl, "<", ">", %map);
+		      $prev_unit 	 = Common::replace_tags_from_hash($unit_tpl, "<", ">", %map);
 		      if($map{NOBJECTIVES} > 0)
-		      {		$prev_unit 	 .= Common::replace_tags($learning_outcomes, "<", ">", %map);
+		      {		$prev_unit 	 .= Common::replace_tags_from_hash($learning_outcomes, "<", ">", %map);
 		      }
 		      $map{BOK_AREA_INDEX}    .= "\\htmlref{$map{CMD_TEXT}$map{THIS_UNIT_HOURS_LABEL}}{$map{CMD_LABEL}}";
 		      #	$map{BOK_AREA_INDEX}    .= " ($Common::config{dictionary}{Pag}~\\pageref{$map{CMD_LABEL}})";
@@ -415,9 +413,9 @@ sub generate_bok_index_old()
 	    {	next;	}
 	}
 	# Flush the last unit
-	$this_area_txt  .= Common::replace_tags($unit_tpl, "<", ">", %map);
+	$this_area_txt  .= Common::replace_tags_from_hash($unit_tpl, "<", ">", %map);
 	if($map{NOBJECTIVES} > 0)
-	{	$this_area_txt  .= Common::replace_tags($learning_outcomes, "<", ">", %map);
+	{	$this_area_txt  .= Common::replace_tags_from_hash($learning_outcomes, "<", ">", %map);
 	}
 # Begin
         $map{THIS_UNIT_HOURS_LABEL} = "";
@@ -429,7 +427,7 @@ sub generate_bok_index_old()
         $map{BOK_AREA_HOURS_LABEL}  = " ($Common::config{dictionary}{nocorehours}))" if($map{BOK_AREA_HOURS} == 0);
         $map{BOK_AREA_HOURS_LABEL}  = " ($map{BOK_AREA_HOURS} $Common::config{dictionary}{corehours})" if($map{BOK_AREA_HOURS} > 0);
 
-        my $prev_unit         = Common::replace_tags($unit_tpl, "<", ">", %map);
+        my $prev_unit         = Common::replace_tags_from_hash($unit_tpl, "<", ">", %map);
 
         $map{BOK_AREA_INDEX}    .= "\\htmlref{$map{CMD_TEXT}$map{THIS_UNIT_HOURS_LABEL}}{$map{CMD_LABEL}}";
         # $map{BOK_AREA_INDEX}    .= " ($Common::config{dictionary}{Pag}~\\pageref{$map{CMD_LABEL}})";
@@ -437,7 +435,7 @@ sub generate_bok_index_old()
 # End
 	my $BOKArea 	 = $cur_area."BOKArea";
 	$bok_body  	.= "\\subsection{$cur_area. $Common::config{macros}{$BOKArea}$map{BOK_AREA_HOURS_LABEL}}\\label{sec:BOK-$cur_area}\n";
-	$bok_body	.= "\\noindent{\\bf $map{BOK_AREA_INDEX}}\n\n";
+	$bok_body	.= "\\noindent\\textbf{$map{BOK_AREA_INDEX}}\n\n";
 	$bok_body  	.= "\\$cur_area"."Description\n\n";
 	$bok_body  	.= $this_area_txt;
 
@@ -527,7 +525,7 @@ sub initialize_critical_path()
 		}
 }
 
-sub process_critical_path_for_one_course    #($)
+sub process_critical_path_for_one_course($)
 {
 	my ($codcour) = (@_);
 	my ($distance) = (0);
@@ -565,53 +563,49 @@ sub process_critical_path_for_one_course    #($)
 
 sub load_critical_path(@)
 {
-			my (@critical_paths) = (@_);
-			#print Dumper(\@critical_paths);
-			foreach my $_one_path (@critical_paths)
-			{
-					my @one_path = @{$_one_path};
-					#print Dumper(\@one_path);
-					my $ncourses = scalar(@one_path);
-					for(my $i = 0; $i < $ncourses-1 ; $i++ )
-					{		#Util::print_message($one_path[$i]."->".$one_path[$i+1]." *");
-							my ($source, $target) = ($one_path[$i], $one_path[$i+1]);
-							$Common::course_info{$source}{critical_path}{$target}++;
-					}
+	my (@critical_paths) = (@_);
+	#print Dumper(\@critical_paths);
+	foreach my $_one_path (@critical_paths)
+	{
+			my @one_path = @{$_one_path};
+			#print Dumper(\@one_path);
+			my $ncourses = scalar(@one_path);
+			for(my $i = 0; $i < $ncourses-1 ; $i++ )
+			{		#Util::print_message($one_path[$i]."->".$one_path[$i+1]." *");
+					my ($source, $target) = ($one_path[$i], $one_path[$i+1]);
+					$Common::course_info{$source}{critical_path}{$target}++;
 			}
+	}
 }
 
 sub detect_critical_path()
 {
 	initialize_critical_path();
-	return;
-	#my $test = "CS1D01";
-	#my ($distance_child, @path_child) = process_critical_path_for_one_course($test);
-	#Util::print_message("$test distance=$distance_child");
-	#print Dumper(\@path_child);
 	my $max_distance = 0;
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
 	{
-			foreach my $codcour (@{$Common::courses_by_semester{$semester}})
-			{
-					my ($distance_for_this_course, @path) = process_critical_path_for_one_course($codcour);
-					if( $distance_for_this_course >= $max_distance )
-					{			#if( not defined( $critical_path{$distance_for_this_course} ) )
-								#{		@{$critical_path{$distance_for_this_course}} = [];	}
-								$max_distance = $distance_for_this_course;
-								push(@{$critical_path{$distance_for_this_course}}, @path);
-					}
+		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
+		{
+			my ($distance_for_this_course, @path) = process_critical_path_for_one_course($codcour);
+			if( $distance_for_this_course >= $max_distance )
+			{	
+				$max_distance = $distance_for_this_course;
+				push(@{$critical_path{$distance_for_this_course}}, @path);
 			}
+		}
 	}
 	load_critical_path(@{$critical_path{$max_distance}});
 	Util::check_point("detect_critical_path");
+	Util::print_color("detect_critical_path Ok!");
 }
 
 # dot
 sub generate_curricula_in_dot($$)
 {
 	my ($size, $lang) = (@_);
+	Util::check_point("detect_critical_path");
 	my $output_file = Common::ExpandTags(Common::get_template("out-$size-graph-curricula-dot-file"), $lang);
-	my $course_tpl 	= Util::read_file(Common::get_template("in-$size-graph-item.dot"));
+	my $course_tpl 	= Util::read_file(Common::read_dot_template($size, $lang));
 	my $output_txt = "";
 	$output_txt .= "digraph curricula\n{\n";
 # 	$output_txt .= "\tcompound=true;\n";
@@ -690,12 +684,12 @@ sub generate_curricula_in_dot($$)
 				$cluster_count++;
 			}
 		}
-		if( $ncourses > 0 )
-		{
+		#if( $ncourses > 0 )
+		#{
 			$output_txt .= "\n#\t$semester $Common::config{dictionary}{Semester}\n";
 			$output_txt .= "$sem_text";
 			$rank_text .= "\n\t{ rank = same; $sem_label; $sem_rank }";
-		}
+		#}
 	}
 	$output_txt .= "$rank_text\n\n";
 
@@ -707,66 +701,55 @@ sub generate_curricula_in_dot($$)
 			{	Util::print_soft_error("Course $codcour ($Common::course_info{$codcour}{semester} Sem) has a prefix ($Common::course_info{$codcour}{prefix}) which hasn't prefix_priority defined ...\n See ./Curricula.in/lang/<LANG>/<AREA>.config/<AREA>-All.config ");
 			}
 		}
-
 		foreach my $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
-				foreach my $req (split(",", $Common::course_info{$codcour}{prerequisites_just_codes}))
+			foreach my $req (split(",", $Common::course_info{$codcour}{prerequisites_just_codes}))
+			{
+				if( $req =~ m/$Common::institution=(.*)/ )
 				{
-							if( $req =~ m/$Common::institution=(.*)/ )
-							{
-										$output_txt .= "\"$1\"->$codcour;\t\t";
-										$output_txt .= "\"$1\" [$Common::config{ExtraDotItemStyle}];\n";
-										#if( $codcour eq "FG601" ){	Util::print_message("A");	}
-							}
-							else
-							{
-										my ($source, $target) = (Common::get_label($req), $codcour);
-										my $critical_path_style = "";
-										my $width = 4;
-										if( defined($Common::course_info{$source}{critical_path}{$target}))
-										{			$critical_path_style = " [penwidth=$width]";	}
-										$output_txt .= "$source->$codcour$critical_path_style;\n";
-										#if( $codcour eq "FG601" ){	Util::print_message("B");	}
-							}
+					$output_txt .= "\"$1\"abc->$codcour;\t\t";
+					$output_txt .= "\"$1\" [$Common::config{ExtraDotItemStyle}];\n";
 				}
-				if( $Common::config{recommended_prereq_flag} == 1 )
-				{			foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
-							{
-								$output_txt .= Common::get_label($rec);
-								$output_txt .= "->";
-								$output_txt .= Common::get_label($codcour);
-								$output_txt .= " [$Common::config{CoRequisiteStyle}];\n";
-							}
-				}
-				if($Common::config{corequisites_flag} == 1)
+				else
 				{
-							foreach my $coreq (split(",", $Common::course_info{$codcour}{corequisites}))
-							{
-								#print "codigo = $codcour (sem=$Common::course_info{$codcour}{semester}), coreq = $coreq\n";
-								$output_txt .= Common::get_label($coreq);
-								$output_txt .= "->";
-								$output_txt .= Common::get_label($codcour);
-								$output_txt .= "[$Common::config{RecommendedRequisiteStyle}];\n";
-							}
+					my ($source, $target) = (Common::get_label($req), $codcour);
+					if($source eq "")
+					{
+						Util::print_message("Something wrong here ! codcour=$codcour (Sem: $Common::course_info{$codcour}{semester}), req=$req");
+						Util::print_message("$Common::course_info{$codcour}{prerequisites_just_codes}");
+						exit;
+					}
+					my ($output_connection, $regular_course) = Common::generate_connection_between_two_courses($source, $target, $lang);
+					$output_txt .= $output_connection;
+					#my $critical_path_style = "";
+					#my $width = 4;
+					#if( defined($Common::course_info{$source}{critical_path}{$target}))
+					#{		$critical_path_style = " [penwidth=$width]";	}
+					#$output_txt .= "$source->$codcour$critical_path_style;\n";
 				}
+			}
+			if( $Common::config{recommended_prereq_flag} == 1 )
+			{	foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
+				{
+					$output_txt .= Common::get_label($rec);
+					$output_txt .= "->";
+					$output_txt .= Common::get_label($codcour);
+					$output_txt .= " [$Common::config{CoRequisiteStyle}];\n";
+				}
+			}
+			if($Common::config{corequisites_flag} == 1)
+			{
+				foreach my $coreq (split(",", $Common::course_info{$codcour}{corequisites}))
+				{
+					#print "codigo = $codcour (sem=$Common::course_info{$codcour}{semester}), coreq = $coreq\n";
+					$output_txt .= Common::get_label($coreq);
+					$output_txt .= "->";
+					$output_txt .= Common::get_label($codcour);
+					$output_txt .= "[$Common::config{RecommendedRequisiteStyle}];\n";
+				}
+			}
 		}
 	}
-
-        #my $legend = "";
-#         $legend .= "subgraph cluster1\n";
-#         $legend .= "{\n";
-#         $legend .= "      node [style=filled];\n";
-#         $legend .= "      CS [shape=box,fillcolor=cornflowerblue, label=\"CS:Ciencia de la Computacion\"];\n";
-#         $legend .= "      CB [shape=box, fillcolor=honeydew3, label=\"CB:Ciencias Básicas\"];\n";
-#         $legend .= "      HU [shape=box, fillcolor=chartreuse3, label=\"HU:Humanidades\"];\n";
-#         $legend .= "      ET [shape=box, fillcolor=tomato3, label=\"BT:Empresas de BT\"];\n";
-#         $legend .= "      CS->CB [style=\"invis\"];\n";
-#         $legend .= "      HU->ET [style=\"invis\"];\n";
-#         $legend .= "      label = \"Legenda\";\n";
-#         $legend .= "      color=black;\n";
-#         $legend .= "}\n";
-
-        #$output_txt .= $legend;
 	$output_txt .= "}\n";
 	Util::write_file($output_file, $output_txt);
 	Util::print_message("generate_curricula_in_dot($size, $lang, $output_file) OK!");
@@ -784,9 +767,14 @@ sub generate_poster($)
  	$Common::config{title_width} = Util::round(($total_left_width-$Common::config{logowidth}) - 1);
  	$poster_txt =~ s/<TITLE_WIDTH>/$Common::config{title_width}$Common::config{logowidth_units}/g;
 
- 	$Common::config{def_width} = $Common::config{title_width}/2-1;
- 	$poster_txt =~ s/<DEF_WIDTH>/$Common::config{def_width}$Common::config{logowidth_units}/g;
+ 	$Common::config{def_width} 	= $Common::config{title_width}/2;
+	$Common::config{COL2} 		= 0.4*$Common::config{title_width};
+	$Common::config{COL3} 		= $Common::config{title_width}-$Common::config{COL2};
+	$poster_txt =~ s/<COL2>/$Common::config{COL2}$Common::config{logowidth_units}/g;
+ 	$poster_txt =~ s/<COL3>/$Common::config{COL3}$Common::config{logowidth_units}/g;
+	$poster_txt =~ s/<POSTER_RIGHT_BG>/$Common::config{POSTER_RIGHT_BG}/g;
 
+	$poster_txt = Common::replace_meta_tags($poster_txt, $lang);
 	#Util::print_message("Common::config{title_width}=$Common::config{title_width}");
 	#Util::print_message("Common::config{def_width}=$Common::config{def_width}");
 	#Util::print_message("Common::config{logowidth}=$Common::config{logowidth}");
@@ -809,12 +797,12 @@ sub generate_poster($)
 	system("cp ".Common::get_template("in-poster-macros-sty-file")." ".Common::get_template("OutputTexDir")); ;
 
     my $cwd = getcwd();
-    chdir(Common::get_template("OutputFigDir"));
-    system("rm Bloom.eps");
-    system("ln -s $cwd/".Common::get_template("InFigDir")."/Bloom.eps");
-	system("rm Bloom-sequence.eps");
-    system("ln -s $cwd/".Common::get_template("InFigDir")."/Bloom-sequence.eps");
-    chdir($cwd);
+    #chdir(Common::get_template("OutputFigsDir"));
+    #system("rm Bloom.eps");
+    #system("ln -s $cwd/".Common::get_template("InFigsDir")."/Bloom.eps");
+	#system("rm Bloom-sequence.eps");
+    #system("ln -s $cwd/".Common::get_template("InFigsDir")."/Bloom-sequence.eps");
+    #chdir($cwd);
 	Util::print_message("generate_poster($lang) OK! $OutPosterFile");
 }
 
@@ -872,7 +860,7 @@ sub generate_pie($)
 	#$area_count{$Common::course_info{$codcour}{area}} += $Common::course_info{$codcour}{cr};
 	#$credit_count += $Common::course_info{$codcour}{cr};
 	Util::write_file_to_gen_fig($output_file, $output_txt);
-# 	my $fig_file = Common::get_template("OutputFigDir")."/pie-$type*";
+# 	my $fig_file = Common::get_template("OutputFigsDir")."/pie-$type*";
 # 	Util::print_message("Removing file: $fig_file ...");
 # 	system("rm $fig_file");
 # 	exit;
@@ -893,16 +881,16 @@ sub get_bigtables_by_course_caption($$$$)
 
 sub generate_table_topics_by_course($$$$$$$)
 {
-	my ($lang, $init_sem, $sem_per_page, $rows_per_page, $outfile,$angle, $size) = (@_);
+	my ($lang, $init_sem, $sem_per_page, $rows_per_page, $outfile, $angle, $size) = (@_);
 
-	Util::precondition("gen_bok");
+	#Util::precondition("gen_bok");
 	Util::precondition("generate_tex_syllabi_files");
 	my ($sep, $hline) = ($Common::config{sep}, $Common::config{hline});
 	my $col_header     = $sep."cX$sep";
 	my $sem_header     = " & ";
 	my $row_text       = "<color> --mandatory-- & --unit-- ";
 	#my $row_text       = "<color>--unit-- ";
-	my $ku_and_course_title = "{\\bf $Common::config{dictionary}{KUsTitle}}";
+	my $ku_and_course_title = "\\textbf{$Common::config{dictionary}{KUsTitle}}";
 
 	my $first_row_text = "";
 	$first_row_text  = "$Common::config{row2} " if($Common::config{graph_version}>= 2);
@@ -927,9 +915,9 @@ sub generate_table_topics_by_course($$$$$$$)
 			$flag = 1 - $flag;
 			$col_header     	.= "$sep$extra_header"."c";
 			my $color 		 = $Common::course_info{$codcour}{bgcolor};
-			my $label 		 = "\\colorbox{$color}{\\htmlref{$codcour_label}{sec:$codcour_label}}";
+			my $label 		 = Common::format_course_label($codcour_label, $color);
 			if( $angle > 0 ) {$first_row_text .= "& \\rotatebox[origin=lb,units=360]{$angle}{$label} ";}
-			else {		  $first_row_text .= "& $codcour_label ";	}
+			else {		  $first_row_text .= "& $label ";	}
 			$row_text       .= "& --$codcour_label-- ";
 			$sum_row_text   .= "& --$codcour_label-- ";
 			$Common::data{hours_by_course}{$codcour_label} = 0;
@@ -945,7 +933,9 @@ sub generate_table_topics_by_course($$$$$$$)
 	my $final_sem = $semester-1;
 	$col_header    .= $sep."c$sep} $hline\n";
 	$sem_header    .= "& . \\\\ $hline\n";
-	$first_row_text.= "& \\rotatebox[origin=lb,units=360]{$angle}{$Common::config{dictionary}{Total}} \\\\ $hline\n";
+	if( $angle > 0 ) {$first_row_text .= "& \\rotatebox[origin=lb,units=360]{$angle}{$Common::config{dictionary}{Total}}";}
+	else 	{		  $first_row_text .= "& $Common::config{dictionary}{Total}";	}
+	$first_row_text.= " \\\\ $hline\n";
 	$row_text      .= "& <Sum> \\\\ $hline\n";
 	$sum_row_text  .= "&        \\\\ $hline\n";
 
@@ -971,29 +961,32 @@ sub generate_table_topics_by_course($$$$$$$)
 	my $row_counter = 0;
 	my $output_text = "";
 	my $table_body  = "";
-	#foreach my $main_areax (sort keys %map_hours_unit_by_course)
+	#foreach my $main_areax (sort keys %Common::map_hours_unit_by_course)
 	#{	print "\"$main_areax\"->$Common::areas_priority{$main_areax}\n";
 	#}
 	#print "Antes do foreach ...\n";
 	my $part_count = 1;
 	#print "main_area = $main_area \n";
-# 	print "priority = $Common::config{topics_priority}{DSTRESDef}\n";
-# 	print "nhoras = $Common::map_hours_unit_by_course{DSTRESDef}{CS105}\n";
+ 	#print "priority = $Common::config{topics_priority}{DSTRESDef}\n";
+ 	#print "nhoras = $Common::map_hours_unit_by_course{DSTRESDef}{CS105}\n";
 
 	my $first_backgroud_flag = $Common::config{first_backgroud_flag};
 	my $background = $first_backgroud_flag;
     
-        #Util::print_message("A");
-    #print Dumper (\%Common::map_hours_unit_by_course); exit;
+    #print Dumper (\%Common::map_hours_unit_by_course); Util::print_message("TODO"); exit;
 	my %list_of_valid_ku = ();
 	foreach my $ku ( keys %{$Common::map_hours_unit_by_course{$lang}})
-	{	if( not defined($Common::config{topics_priority}{$ku}) )
-		{	Util::print_color("generate_table_topics_by_course: ignoring $ku for generate_table_topics_by_course ...");	}
+	{	
+		if( not defined($Common::config{topics_priority}{$ku}) )
+		{	Util::print_color("generate_table_topics_by_course: ignoring $ku ...");		}
 		else
 		{	$list_of_valid_ku{$ku} = "";	}
 	}
-	
-	foreach my $ku (sort {$Common::config{topics_priority}{$a} <=> $Common::config{topics_priority}{$b}} keys %list_of_valid_ku)
+	#Util::print_message("TODO aqui");
+	#print Dumper(\%{$Common::config{topics_priority}}); exit;
+
+	foreach my $ku (sort {$Common::config{topics_priority}{$a} <=> $Common::config{topics_priority}{$b}} 
+					keys %list_of_valid_ku)
 	{
 		my $ka = $Common::ku_info{$lang}{$ku}{ka};
 		#Util::print_message("ABC ka=$ka");
@@ -1017,12 +1010,26 @@ sub generate_table_topics_by_course($$$$$$$)
 		{	Util::print_error("Common::config{ref}{$ku} not defined ..."); #exit;
 		}
 		my $ContainsMandatoryHours = "~";
+		my $star_msg = <<'STAR_MESSAGE';
+	\latexhtml{<STAR_LATEX>}{}
+	\begin{htmlonly}
+		\begin{rawhtml}
+			<img src="./figs/<STAR_ICON>" style="border: 0px solid ; width: 16px; height: 16px;">
+		\end{rawhtml}
+	\end{htmlonly}
+STAR_MESSAGE
+		
 		if( $Common::bok{$lang}{$ka}{KU}{$ku}{nhTier1} > 0 || $Common::bok{$lang}{$ka}{KU}{$ku}{nhTier2} > 0 )
-		{	$current_row  =~ s/--mandatory--/\$\\bigstar\$/g;
+		{	
+			$star_msg =~ s/<STAR_LATEX>/\$\\bigstar\$/g;
+			$star_msg =~ s/<STAR_ICON>/star.gif/g;
 			#$ContainsMandatoryHours = "\$\\bigstar\$";
 		}
 		else
-		{	$current_row  =~ s/--mandatory--/~/g;	}
+		{	$star_msg =~ s/<STAR_LATEX>/~/g;
+			$star_msg =~ s/<STAR_ICON>/none.gif/g;
+		}
+		$current_row  =~ s/--mandatory--/$star_msg/g;
 
  		#my $unit_cell = "$pdflink\\htmlref{$ContainsMandatoryHours$ku_label}{$Common::config{ref}{$ku}}";
  		#my $unit_cell = "$pdflink\\htmlref{$ku_label}{$Common::config{ref}{$ku}}";
@@ -1103,7 +1110,9 @@ sub generate_all_topics_by_course($)
  	my $rows_per_page = $Common::config{topics_rows_per_page}-2;
  	my $sem_per_page  = $Common::config{topics_sem_per_page};
 
-	my $output_file		= Common::get_template("OutputTexDir")."/$prefix-by-course";
+	my $file_name_base = "$prefix-by-course";
+	my $output_file		= Common::get_template("OutputTexDir")."/$file_name_base";
+	
 	# First files for the pdf
 	my $output_txt		= "";
 	for(my $i = 1; $i <= $Common::config{n_semesters} ; $i += $sem_per_page)
@@ -1112,6 +1121,7 @@ sub generate_all_topics_by_course($)
 		generate_table_topics_by_course($lang, $i, $sem_per_page, $rows_per_page, "$output_file-$i.tex", 90, "book");
 		$rows_per_page	= $Common::config{topics_rows_per_page};
 		$output_txt	.= "\\input{$output_file-$i}\n";
+		$Common::config{change_file}{"$file_name_base-$i"}    = "$file_name_base-$i-web";
 	}
 	Util::write_file("$output_file.tex", $output_txt);
 
@@ -1120,16 +1130,17 @@ sub generate_all_topics_by_course($)
 	$rows_per_page	= $Common::config{topics_rows_per_page};
 	for(my $i = 1; $i <= $Common::config{n_semesters} ; $i += $sem_per_page)
 	{
-		generate_table_topics_by_course($lang, $i, $sem_per_page, 500, "$output_file-$i-web.tex", 90, "book");
+		generate_table_topics_by_course($lang, $i, $sem_per_page, 500, "$output_file-$i-web.tex", 0, "book");
 		$output_txt	.= "\\input{$output_file-$i-web}\n";
 	}
 	Util::print_message("Generating $output_file-web.tex OK");
 	Util::write_file("$output_file-web.tex", $output_txt);
 
-	#exit;
 	#my $big_file 	= Common::get_template("OutputTexDir")."/all-$prefix-by-course";
 	#generate_table_topics_by_course($lang, 1, 10, 500, "$big_file.tex", 90, "poster");
 	Util::print_message("generate_all_topics_by_course() OK!");
+	#print Dumper(\%{$Common::config{change_file}});
+	#exit;
 }
 
 sub generate_list_of_outcomes()
@@ -1138,7 +1149,7 @@ sub generate_list_of_outcomes()
 	my @outcomes_list = split(",", $Common::config{outcomes_list}{$version});
 	my $output_tex  = "\\begin{description}\n";
 	foreach my $outcome (@outcomes_list)
-	{	$output_tex  .= "\\item {\\bf $outcome)} \\ShowOutcomeText{$outcome}\\label{out:Outcome$outcome}\n";		}
+	{	$output_tex  .= "\\item \\textbf{$outcome)} \\ShowOutcomeText{$outcome}\\label{out:Outcome$outcome}\n";		}
 	$output_tex  .= "\\end{description}\n";
 	my $output_file	= Common::get_template("out-list-of-outcomes");
 	Util::print_message("generate_list_of_outcomes OK! ($output_file)");
@@ -1152,38 +1163,202 @@ sub generate_list_of_courses_by_outcome($)
 	my $version = $Common::config{OutcomesVersion};
 	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
 	{
-	      my $counter = 0;
-	      my $this_outcome_txt = "";
-	      foreach my $codcour (@{$Common::config{course_by_outcome}{$outcome}})
-	      {
-		    $counter++;
-		    $this_outcome_txt .= "\t\\item ". Common::get_course_link($codcour, $lang)."\n";
-	      }
-	      if($counter > 0)
-	      {
-		  $output_txt .= "\\subsection{Outcome: $outcome}\n";
-		  $output_txt .= "\\begin{itemize}\n";
-		  $output_txt .= $this_outcome_txt;
-		  $output_txt .= "\\end{itemize}\n";
-	      }
-	      $output_txt .= "\n";
+		my $counter = 0;
+		my $this_outcome_txt = "";
+		foreach my $codcour ( sort  { $Common::codcour_list_priority{$a} <=> $Common::codcour_list_priority{$b} }
+							  keys %{ $Common::config{course_by_outcome}{$outcome} } 
+							)
+		{
+			$counter++;
+			$this_outcome_txt .= "\t\\item ". Common::get_course_link($codcour, $lang)."\n";
+		}
+		#Util::print_message("ABC outcome=$outcome ($counter)...");
+		if($counter > 0)
+		{
+			$output_txt .= "\\subsection{Outcome: $outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
+			$output_txt .= "\\begin{itemize}\n";
+			$output_txt .= $this_outcome_txt;
+			$output_txt .= "\\end{itemize}\n";
+		}
+		$output_txt .= "\n";
 	}
 	my $output_file = Common::get_expanded_template("list-of-courses-by-outcome", $lang);
 	Util::print_message("Generating list_of_courses_by_outcome ok ($output_file)");
 	Util::write_file($output_file, $output_txt);
+	#exit;
+}
+
+#$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
+#$config{specificoutcome}{$lang}{$outcome}{$number}{label}    = $2;
+#$config{specificoutcome}{$lang}{$outcome}{$number}{priority} 
+sub generate_list_of_courses_by_specific_outcome($)
+{
+    my ($lang) = (@_);
+	my $output_txt = "% Generated by generate_list_of_courses_by_specific_outcome($lang)\n";
+	my $version = $Common::config{OutcomesVersion};
+	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
+	{
+		my $this_outcome  = "";
+		#$this_outcome .= "\\section{Outcome: $outcome ".$Common::config{macros}{$lang}{"outcome$outcome"}."}\n";
+		foreach my $number  ( sort  {$Common::config{specificoutcome}{$lang}{$outcome}{$a}{priority} <=> $Common::config{specificoutcome}{$lang}{$outcome}{$b}{priority}}
+							  keys %{$Common::config{course_by_specificoutcome}{$outcome}}
+							)
+		{
+			my $courses_counter = 0;
+			my ($this_specific_outcome_txt, $list_of_courses) = ("", "");
+			my @courses = keys %{ $Common::config{course_by_specificoutcome}{$outcome}{$number} };
+			#Util::print_message("Outcome $outcome, suboutcome: $Common::config{specificoutcome}{$lang}{$outcome}{$number}{label}, priority=$Common::config{specificoutcome}{$lang}{$outcome}{$number}{priority}");
+			#print Dumper (\@courses);
+			
+			foreach my $codcour ( sort  { $Common::codcour_list_priority{$a} <=> $Common::codcour_list_priority{$b} }
+								  keys %{ $Common::config{course_by_specificoutcome}{$outcome}{$number} } 
+								)
+			{
+				$courses_counter++;
+				$list_of_courses .= "\t\\item ". Common::get_course_link($codcour, $lang)."\n";
+			}
+			#Util::print_message("ABC outcome=$outcome ($courses_counter)...");
+			#if($courses_counter > 0)
+			#{
+				$this_specific_outcome_txt .= "\\subsection{$Common::config{specificoutcome}{$lang}{$outcome}{$number}{label}) $Common::config{specificoutcome}{$lang}{$outcome}{$number}{txt}}\n";
+				$this_specific_outcome_txt .= "\\begin{itemize}\n";
+				$this_specific_outcome_txt .= $list_of_courses;
+				$this_specific_outcome_txt .= "\\end{itemize}\n";
+				$this_specific_outcome_txt .= "\n";
+				
+				$this_outcome .= $this_specific_outcome_txt;
+			#}
+		}
+		$output_txt .= "\\section{$outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
+		$output_txt .= $this_outcome;
+	}
+	my $output_file = Common::get_expanded_template("list-of-courses-by-specific-outcome", $lang);
+	Util::print_message("Generating list_of_courses_by_specific_outcome ok ($output_file, $lang)");
+	Util::write_file($output_file, $output_txt);
+	#exit;
+}
+
+sub generate_table_of_courses_for_one_outcome($$)
+{
+	my ($outcome, $lang) = (@_);
+	my $OutputCompetencesDir = Common::get_expanded_template("OutputCompetencesDir", $lang);
+	my ($pagesize, $firstrowsize, $halfpage) = ("23cm", "22.5cm", "10.5cm");
+	my $nchars_by_row = 79;
+	my $max_nrows = 30;
+	my $begin_table = "%". ("*"x50) ."\n";
+	$begin_table .= "\\begin{tabularx}{$pagesize}{|p{0.5cm}X|X|} \\hline\n";
+	my $end_table = "\\end{tabularx}\n\n";
+
+	#$output_txt .= $begin_table;
+	my $tmp_output  = "";
+	my $header 		= "";
+	#$output_txt .= "\\textbf{$Common::config{dictionaries}{$lang}{Outcomes}} & \\textbf{$Common::config{dictionaries}{$lang}{SpecificCompetences}} & \\textbf{$Common::config{dictionaries}{$lang}{Course}} \\\\ \\hline\n";
+	my $counter 	= 0;
+	my $one_line_template = "%".("*"x50)." <<SpecificOutcomeLabel>> ". ("*"x50)."\n";
+	$one_line_template   .= "<<SpecificOutcomeLabel>>\n& <<SpecificOutcome>> \\vspace{0.1cm} &\n\n<<Courses>> \\\\ \\hline\n\n";
+	my %map = ();
+
+	($map{Outcome} = "$outcome) ".$Common::config{macros}{"outcome$outcome"}) =~ s/\\xspace//g;
+	my $this_outcome = "";
+	my $first_time   = 1;
+	foreach my $number  ( sort  {$Common::config{specificoutcome}{$lang}{$outcome}{$a}{priority} <=> $Common::config{specificoutcome}{$lang}{$outcome}{$b}{priority}}
+							keys %{$Common::config{course_by_specificoutcome}{$outcome}}
+						)
+	{
+		my ($label, $txt) = ($Common::config{specificoutcome}{$lang}{$outcome}{$number}{label},
+								$Common::config{specificoutcome}{$lang}{$outcome}{$number}{txt}
+							);
+		$map{SpecificOutcomeLabel}   = "\\textbf{$label)}";
+		$map{SpecificOutcome}  		 = "\\begin{minipage}{$halfpage}\n";
+		$map{SpecificOutcome} 	    .= "\\vspace{0.1cm}\n";
+		#Util::print_message("label: $label, length:". (length($txt)));
+		my $nlines_SpecificOutcome   = int((length($txt)+$nchars_by_row-1)/$nchars_by_row);
+		$map{SpecificOutcome} 		.= "$txt\n";
+		$map{SpecificOutcome} 	   	.= "\\vspace{0.1cm}\n";
+		$map{SpecificOutcome} 		.= "\\end{minipage}\n";
+		$map{SpecificOutcome}        =~ s/\\xspace//g;
+		my $courses_counter = keys %{ $Common::config{course_by_specificoutcome}{$outcome}{$number} };
+		my $nlines = max($nlines_SpecificOutcome, $courses_counter);
+		$counter += $nlines;
+		my $list_of_courses = "";
+		foreach my $codcour ( sort  { $Common::codcour_list_priority{$a} <=> $Common::codcour_list_priority{$b} }
+								keys %{ $Common::config{course_by_specificoutcome}{$outcome}{$number} } 
+							)
+		{	$list_of_courses .= "\t\\item ". Common::get_course_link($codcour, $lang)."\n";
+		}
+		$map{Courses} = "";
+		if($courses_counter > 0)
+		{
+			$map{Courses}  = "\\begin{minipage}{$halfpage}\n";
+			$map{Courses} .= "\\vspace{0.1cm}\n";
+			$map{Courses} .= "\\setlist{nolistsep,leftmargin=*}\n";
+			$map{Courses} .= "\\begin{itemize}\n";
+			$map{Courses} .= $list_of_courses;
+			$map{Courses} .= "\\end{itemize}\n";
+			$map{Courses} .= "\\vspace{0.1cm}\n";
+			$map{Courses} .= "\\end{minipage}";
+		}
+		my $this_line = $one_line_template;
+		if( $first_time == 1 )
+		{	$header = "\\multicolumn{3}{|l|}{\n";
+			$header .= "\\begin{minipage}{$firstrowsize}\n";
+			$header .= "\\vspace{0.1cm}\n";
+			$header .= "\\cellcolor{black!25} \\color{black}{\\textbf{$Common::config{dictionaries}{$lang}{Outcome}: } <<Outcome>>}\n";
+			$header .= "\\vspace{0.1cm}\n";
+			$header .= "\\end{minipage}\n";
+			$header .= "} \\\\ \\hline\n";
+			$this_line = $header . $this_line;
+			$first_time = 0; 
+			$counter++;	
+		}
+		$tmp_output .= Common::replace_tags_from_hash($this_line, "<<", ">>", %map);
+		if( $counter >= ($max_nrows-5) )
+		{
+			$this_outcome .= "$begin_table$tmp_output$end_table";
+		#	my $file = Common::save_courses_by_competence("$begin_table$tmp_output$end_table", $outcome, $lang);
+		#	$output_txt .= "\\input{$file}\n";
+		#	#$output_txt .= "$begin_table$tmp_output$end_table";
+			$tmp_output  = "";
+			$counter     = 0;
+		}
+	}
+	my $file = "";
+	if( $counter > 0 )
+	{	
+		$this_outcome .= "$begin_table$tmp_output$end_table";
+		$file       = Common::save_courses_by_competence($this_outcome, $outcome, $lang);
+	}
+	return ($file, $counter);
+}
+
+sub generate_table_of_courses_by_specific_outcome($)
+{
+    my ($lang) = (@_);
+	my $output_txt = "% Generated by generate_table_of_courses_by_specific_outcome($lang)\n";
+	
+	my $version 			 = $Common::config{OutcomesVersion};
+	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
+	{
+		my ($file, $counter) = generate_table_of_courses_for_one_outcome($outcome, $lang);
+		if($counter > 0)
+		{	$output_txt   .= "\\input{$file}\n";	}
+	}
+	my $output_file = Common::get_expanded_template("table-of-courses-by-specific-outcome", $lang);
+	Util::print_message("Generating table_of_courses_by_specific_outcome ok ($output_file, $lang)");
+	Util::write_file($output_file, $output_txt);
 }
 
 # ok
-sub generate_outcomes_by_course($$$$$$$)
+sub generate_outcomes_by_course($$$$$$$$)
 {
-	my ($lang, $init_sem, $sem_per_page, $rows_per_page, $outfile, $angle, $size) = (@_);
+	my ($lang, $init_sem, $sem_per_page, $rows_per_page, $outfile, $angle, $size, $show_all_rows) = (@_);
 	my ($sep, $hline) = ($Common::config{sep}, $Common::config{hline});
 	my $col_header     = $sep."rX$sep";
 	my $sem_header     = " & ";
 	my $row_text       = "<color>--outcome-- ";
 	my $first_row_text = "";
 # 	$first_row_text  = "$Common::config{row2} " if($Common::config{graph_version}>= 2);
-	$first_row_text .= "& \\textbf{$Common::config{dictionaries}{$lang}{Skill}/$Common::config{dictionaries}{$lang}{COURSENAME}} ";
+	$first_row_text .= "& \\textbf{$Common::config{dictionaries}{$lang}{Skill}/$Common::config{dictionaries}{$lang}{Course}} ";
 	#my $sum_row_text   = "Total ";
 	my %sem_per_course = ();
 
@@ -1194,6 +1369,7 @@ sub generate_outcomes_by_course($$$$$$$)
 	my $ncourses 		 = 0;
 	my $extra_header	 = "";
 	my $flag		 = 1;
+	
 	for($semester=$init_sem; $semester < $init_sem+$sem_per_page && $semester <= $Common::config{n_semesters}; $semester++)
 	{
 		$sem_per_course{$semester} = 0;
@@ -1210,10 +1386,7 @@ sub generate_outcomes_by_course($$$$$$$)
 			if( not $color )
 			{	Util::print_error("Course $codcour (Alias: $codcour_label) ($semester Sem) has NOT color");	}
 
-			# \colorbox{cornflowerblue}{\htmlref{CS1100}{sec:CS1100}}
-			my $label 		= "\\colorbox{$color}{\\htmlref{$codcour_label}{sec:$codcour_label}}";
-			#my $label 		= "\\htmlref{$codcour_label}{sec:$codcour_label}";
-# 			$first_row_text .= "& \\cellcolor{$color} ";
+			my $label 		 = Common::format_course_label($codcour_label, $color);
 			$first_row_text .= "& ";
 			if( $angle > 0 ) {$first_row_text .= "\\rotatebox[origin=lb,units=360]{$angle}{$label} ";}
 			else {		  $first_row_text .= "$label ";	}
@@ -1279,36 +1452,33 @@ sub generate_outcomes_by_course($$$$$$$)
 	{
 		#print "main_area = $main_area \n";
 		#print "unit_name=$unit_name ...\n";
-		$current_row = $row_text;
-
+		$current_row = $row_text; 
 		my $new_txt = "";
-		#@{$Common::config{macros}{outcomes}{$lang}}{keys %outcomes_defs} = values %outcomes_defs;
-		#print Dumper( \%{$Common::config{macros}{outcomes}} );
-		#Util::print_message("Lang=$lang");
-		#Util::print_message("Common::config{macros}{outcomes}{$lang}{outcome$outcome}=".$Common::config{macros}{outcomes}{$lang}{"outcome$outcome"});
-		#Util::print_message("Common::config{macros}{outcomes}{$lang}{outcome$outcome"."Short}=".$Common::config{macros}{outcomes}{$lang}{"outcome$outcome"."Short"});
-		#exit;
+		my $outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};
 		if($background_flag == 1 && $Common::config{graph_version}>= 2)
-		{	$new_txt = "$outcome) & ". $Common::config{macros}{outcomes}{$lang}{"outcome$outcome"."Short"};		}
-		else{	$new_txt = "$Common::config{cell} $outcome) & $Common::config{cell} ". $Common::config{macros}{outcomes}{$lang}{"outcome$outcome"."Short"};		}
+									   #$Common::config{macros}{$lang}}{keys %outcomes_macros}
+		{	$new_txt = "$outcome) & ". $outcome_label;		}
+		#{	$new_txt = "$outcome) & ". $Common::config{macros}{$lang}{outcomes}{"outcome$outcome"."Short"};		}
+		else{	$new_txt = "$Common::config{cell} $outcome) & $Common::config{cell} ". $outcome_label;		}
 
 		$current_row =~ s/--outcome--/$new_txt/g;
 		my $sum_row = 1;
+		my $courses_with_this_outcome = 0;
 		while($current_row =~ m/--(.*?)--/g)
 		{
+			my $codcour = $1;
 			my $background_color = "$Common::config{cell} ";
 			if($background_flag == 1 && $Common::config{graph_version}>= 2)
 			{	$background_color = "";	}
-			my $codcour = $1;
-			#my $codcour_label = Common::get_label($codcour);
-			my $codcour_label = $codcour;
-# 			            $Common::course_info{$codcour}{$env}{$version}{$key} = $2;
-			if( defined($Common::course_info{$codcour}{outcomes}{$version}{$outcome}) )
+			# ERNESTO TODO
+			#$Common::course_info{$codcour}{$lang}{$env}{$version}{$params[0]}
+			#$Common::course_info{$codcour}{$lang}{$env}{$version}{$specificoutcome} = $params[2];
+			#$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$specificoutcome} = $params[2];
+			if( defined($Common::course_info{$codcour}{$lang}{outcomes}{$version}{$outcome}) )
 			{
-                                #$current_row =~ s/--$codcour--/\$\\checkmark\$/;
-                                $current_row =~ s/--$codcour--/$background_color\\htmlref{$Common::course_info{$codcour}{outcomes}{$version}{$outcome}}{sec:$codcour_label}/;
-                                #Util::print_error("Porque llego aqui si nunca se está cargando lo que esta en este if");
-                                #Util::print_message("Common::course_info{$codcour}{outcomes}{$outcome}=$Common::course_info{$codcour}{outcomes}{$version}{$outcome}");
+				#$current_row =~ s/--$codcour--/\$\\checkmark\$/;		  $Common::config{macros}{$lang}}{keys %outcomes_macros}
+				$current_row =~ s/--$codcour--/$background_color\\htmlref{$Common::course_info{$codcour}{$lang}{outcomes}{$version}{$outcome}}{sec:$codcour}/;
+				$courses_with_this_outcome++;
 			}
 			else # There is no information for this cell
 			{	$current_row =~ s/--$codcour--/$background_color/;
@@ -1324,7 +1494,8 @@ sub generate_outcomes_by_course($$$$$$$)
 			$current_row =~ s/<color>/$txt/g;
 			$background_flag = 1-$background_flag;
 
-			$table_body .= $current_row;
+			if( $show_all_rows == 1 || $courses_with_this_outcome > 0 )
+			{	$table_body .= $current_row;	}
 			if( $row_counter % $rows_per_page == 0 )
 			{
 				$output_text .= $table_begin;
@@ -1354,7 +1525,7 @@ sub generate_outcomes_by_course($$$$$$$)
 
 	Util::write_file($outfile, $output_text);
 	Util::print_message("Writing $outfile ... ok!");
-# 	Util::print_message("generate_outcomes_by_course($init_sem, $sem_per_page, $rows_per_page,$outfile,$angle,$size) OK! ...");
+# 	Util::print_message("generate_outcomes_by_course($init_sem, $sem_per_page, $rows_per_page,$outfile,$angle,$size,$show_all_rows) OK! ...");
 }
 
 # ok
@@ -1371,14 +1542,14 @@ sub generate_all_outcomes_by_course($)
 	#$output_txt	.= "\\begin{landscape}\n";
 	for(my $i = 1; $i <= $Common::config{n_semesters} ; $i += $sem_per_page)
 	{
-		generate_outcomes_by_course($lang, $i, $sem_per_page, $rows_per_page, "$outfile-$i.tex", $angle, "book");
+		generate_outcomes_by_course($lang, $i, $sem_per_page, $rows_per_page, "$outfile-$i.tex", $angle, "book", 1);
 		$output_txt	.= "\\input{$outfile-$i}\n";
 	}
 	#$output_txt	.= "\\end{landscape}\n";
 	Util::write_file("$outfile.tex", $output_txt);
 
 	my $big_file 	= Common::get_expanded_template("in-all-outcomes-by-course-poster", $lang);
-	generate_outcomes_by_course($lang, 1, 10, 500, $big_file, 90, "poster");
+	generate_outcomes_by_course($lang, 1, 10, 500, $big_file, 90, "poster", 1);
 	Util::print_message("generate_all_outcomes_by_course($lang_prefix) OK!");
 }
 
@@ -1523,8 +1694,7 @@ sub generate_background_figure_for_one_standard($$$$)
 	#(0,0)(2,3)(3,2.5)
 	my $output_polygon = "";
 	$count = 0;
- 	foreach my $axe (sort {$Common::config{sub_areas_priority}{$a} <=>
-                               $Common::config{sub_areas_priority}{$b}}
+ 	foreach my $axe (sort {$Common::config{sub_areas_priority}{$a} <=> $Common::config{sub_areas_priority}{$b}}
                            keys %{$Common::config{dictionary}{all_areas}})
 	{
 	    my ($axe1,  $axe2) = ($count, ($count+1)%$nareas);
@@ -1711,18 +1881,12 @@ sub generate_latex_include_for_this_standard($$$)
 
 	my $output_txt .= "\\begin{figure}[H]\n";
 	$output_txt .= "\\centering\n";
-	$output_txt .= "	\\includegraphics[scale=1.0]{$output_file_without_extension}\n";
+	$output_txt .= "\\includegraphics[scale=1.0]{$output_file_without_extension}\n";
 
-	my $caption = $Common::config{dictionary}{ComparisonWithStandardCaption};
-	#Comparacin por rea de \\SchoolShortName de la \\siglas~con la propuesta de {\\it <STANDARD_LONG_NAME>} <STANDARD> de <STANDARD_REF_INSTITUTION>.
-	$caption =~ s/<STANDARD_LONG_NAME>/$Common::config{dictionary}{standards_long_name}{$standard}/g;
-	$caption =~ s/<STANDARD>/$standard/g;
-	$caption =~ s/<STANDARD_REF_INSTITUTION>/$Common::config{dictionary}{InstitutionToCompareWith}/g;
-	$caption =~ s/<AREA>/$Common::config{area}/g;
+	my $caption = Common::get_standard_title($standard);
 	$output_txt .= "	\\caption{$caption}\n";
-	# 		$output_txt .= "	\\caption{Comparacin en creditaje por rea de \\SchoolShortName de la \\siglas~con la propuesta de \\ingles{$Common::standards_long_name{$standard}} ($standard) de IEEE-CS/ACM.}\n";
 	$output_txt .= "	\\label{fig:comparing-$label}\n";
-	$output_txt .= "\\end{figure}\n\n";
+	$output_txt .= "\\end{figure}\n";
 	return $output_txt;
 }
 
@@ -1743,7 +1907,7 @@ sub generate_compatibility_with_standards($)
 	$Common::config{legend_space} = 0.5;
 
 	my $OutputTexDir = Common::get_template("OutputTexDir");
-	my $OutputFigDir = Common::get_template("OutputFigDir");
+	my $OutputFigsDir = Common::get_template("OutputFigsDir");
 	my $output_txt = "";
 	foreach my $standard (split(",", $Common::config{Standards}))
 	{
@@ -1751,14 +1915,29 @@ sub generate_compatibility_with_standards($)
 		{
 			my $output_file = "$type_of_graph-$Common::area-with-$standard-$lang_prefix";
 			Util::print_color("Generating $output_file ...");
+			$output_txt .= "\\begin{latexonly}\n";
 			if($type_of_graph eq "spider" && $Common::config{type_of_graph}{spider} == 1)
-			{	generate_spider_with_one_standard($standard, $lang, "$OutputTexDir/$output_file.tex");
-				$output_txt .= generate_latex_include_for_this_standard($standard, "$OutputFigDir/$output_file", $output_file);		
-			}
+			{	generate_spider_with_one_standard($standard, $lang, "$OutputTexDir/$output_file.tex");	}			
 			elsif($type_of_graph eq "curves" && $Common::config{type_of_graph}{curves} == 1)				
-			{	generate_curves_with_one_standard($standard, $lang, "$OutputTexDir/$output_file.tex");
-				$output_txt .= generate_latex_include_for_this_standard($standard, "$OutputFigDir/$output_file", $output_file);		
-			}	
+			{	generate_curves_with_one_standard($standard, $lang, "$OutputTexDir/$output_file.tex");	}
+			$output_txt .= generate_latex_include_for_this_standard($standard, "$OutputFigsDir/$output_file", $output_file);
+			$output_txt .= "\\end{latexonly}\n\n";	
+
+			my $one_standard = <<'STANDARD_MESSAGE';
+\begin{htmlonly}
+	\begin{rawhtml}
+		<p style="text-align:center;">
+		<img src="./figs/<STD_FIG>.png" style="border: 0px solid ; width: 20cm;">
+		<b><Figure>:</b> <STD_FIG_TITLE>
+        </p>
+	\end{rawhtml}
+\end{htmlonly}
+
+STANDARD_MESSAGE
+			my $caption = Common::get_standard_title($standard);
+			$one_standard =~ s/<STD_FIG>/$output_file/g;
+			$one_standard =~ s/<STD_FIG_TITLE>/$caption/g;
+			$output_txt .= $one_standard;
 		}
 	}
 	my $output_file = Common::get_expanded_template("out-comparing-with-standards-file", $lang);
@@ -1935,7 +2114,7 @@ sub generate_equivalence_old2new($)
 				$tags{OLD_COURSE_CREDITS} = "";
 			}
 
-			$output_txt .= Common::replace_tags($line_tpl, "<", ">", %tags);
+			$output_txt .= Common::replace_tags_from_hash($line_tpl, "<", ">", %tags);
 		}
 		$output_txt .= "$endtable";
 	}
@@ -2009,7 +2188,7 @@ sub generate_equivalence_new2old($)
 			{	$old_semester_label = "\\colorbox{honeydew3}{\\textcolor{black}{$old_semester_label}}";		}
 			$tags{OLD_COURSE_SEM}		= $old_semester_label;
 
-			$output_txt .= Common::replace_tags($line_tpl, "<", ">", %tags);
+			$output_txt .= Common::replace_tags_from_hash($line_tpl, "<", ">", %tags);
 
 		}
 # 		foreach my $old_course (@{$Common::config{equivalences}{$old_curricula}{empty_equivalences}{$semester}})
@@ -2165,7 +2344,7 @@ sub generate_courses_by_professor($)
 		}
 		if($courses_by_professor_count > 0)
 		{
-			$out_txt .= "{\\bf $name}\n";
+			$out_txt .= "\\textbf{$name}\n";
 			$out_txt .= "\\begin{itemize}\n$this_professor_list\\end{itemize}\n";
 			$professor_count++;
 		}
@@ -2206,7 +2385,7 @@ sub generate_professor_by_course($)
 		{
 			my $number_of_courses_assigned = scalar keys %{$Common::config{faculty}{$email}{fields}{courses_assigned}};
 			if( $number_of_courses_assigned == 0 )
-			{	$professor_list .= "\t\\item $Common::config{faculty}{$email}{fields}{name} ($email) ({\\bf ***})\n";
+			{	$professor_list .= "\t\\item $Common::config{faculty}{$email}{fields}{name} ($email) (\\textbf{***})\n";
 				next;	
 			}
 			$professor_list .= "\t\\item $Common::config{faculty}{$email}{fields}{name} ($email)\n";

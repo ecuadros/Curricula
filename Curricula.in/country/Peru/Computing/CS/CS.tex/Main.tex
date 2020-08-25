@@ -15,7 +15,7 @@
 \listoffigures
 \listoftables
   
-\input{\InInstDir/ack}			\newpage
+\input{\InProgramDir/ack}			\newpage
 \input{\OutputTexDir/acronyms}		\newpage
 . \newpage
  
@@ -24,7 +24,7 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-%\OnlySPC{\input{\InTexDir/about-this-document}}
+\OnlySPC{\input{\InTexDir/about-this-document}}
 \input{\InTexDir/chap-introduction}
 
 % % %\part{Otra parte}
@@ -42,8 +42,23 @@
 \chapter{Contenido detallado por curso}\label{chap:syllabi}
 \input{\OutputTexDir/list-of-syllabi}
 
-\NotUTEC{\input{\InTexDir/equivalence}}
+\OnlyUCSP{\input{\InTexDir/equivalence}}
  
 \input{\InTexDir/Laboratories}
 
-\input{\InTexDir/professors-and-courses}
+\OnlySPC{\input{\InTexDir/professors-and-courses}}
+\OnlyMINEDU{\input{\InTexDir/professors-and-courses}}
+
+\OnlySPC{\chapter{Resultados específicos por curso}\label{sec:specific-outcomes-by-course}
+%\input{\OutputTexDir/list-of-courses-by-specific-outcome-\LANG}
+\begin{landscape}
+\input{\OutputTexDir/table-of-courses-by-specific-outcome-\LANG}
+\end{landscape}
+}
+
+\OnlyMINEDU{\chapter{Resultados específicos por curso}\label{sec:specific-outcomes-by-course}
+%\input{\OutputTexDir/list-of-courses-by-specific-outcome-\LANG}
+\begin{landscape}
+\input{\OutputTexDir/table-of-courses-by-specific-outcome-\LANG}
+\end{landscape}
+}

@@ -1,1021 +1,2081 @@
+%%%%%%%%%%%%%%
+%%% Informacion de formula de evaluacion de cada curso
+%%%%%%%%%%%%%%
 
-%%% Informacion en Espanol
-
-
-%%% Estructuras Discretas 1
-\begin{evaluation}{CS1D01}{Espanol}{THEORY,LAB,ORAL,READING}
-  Sea $[\cdot]$  el redondeo al entero más cercano. La nota final $NF$ es calculada de la siguiente manera:
-  \[ NF =
-      \begin{cases}
-      10  &  \quad \text{Si} \min (<<ExamAcronym>>,<<PracticalTestAcronym>>,<<ContinuousAssessmentAcronym>>) < 11  \text{ y }  [\frac{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}] \geq 11 \\
-      [\frac{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}]        & \quad \text{ En caso contrario}
-      \end{cases}
-  \]
-  donde:
-     \begin{description}
-         \item [<<ExamAcronym>> :] <<Exam>>. <<ExamAcronym>> es el promedio, redondeada al entero más cercano, de \textit{exámenes} sobre conceptos. Esta nota es individual.
-         \item [<<PracticalTestAcronym>>: ] <<PracticalTest>>.  <<PracticalTestAcronym>> es el promedio, redondeada al entero más cercano, de las \textit{prácticas calificadas} propuestas en clase. Esta nota puede ser grupal o individual.
-         \item [<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>. <<ContinuousAssessmentAcronym>> es el promedio, redondeada al entero más cercano, de evaluación continua. Esta nota es individual, comprende la participación en clase y problemas de esfuerzo.
-     \end{description}
+  %% Introduccion a la Ciencia de la Computación - Español
+\begin{evaluation}{CS1100}{Espanol}{THEORY,LAB,ORAL}
+La nota final $NF$ se obtiene a través de:
  
-  \noindent Para aprobar el curso, el alumno debe obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
-  %%% Estructuras Discretas II
-  \begin{evaluation}{CS1D02}{Espanol}{THEORY,LAB,ORAL,READING}
-  Sea $[\cdot]$  el redondeo al entero más cercano. La nota final $NF$ es calculada de la siguiente manera:
-  \[ NF =
-      \begin{cases}
-      10  &  \quad \text{Si} \min (<<ExamAcronym>>,<<PracticalTestAcronym>>,<<ContinuousAssessmentAcronym>>) < 11  \text{ y }  [\frac{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}] \geq 11 \\
-      [\frac{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}]        & \quad \text{ En caso contrario}
-      \end{cases}
-  \]
-  donde:
-     \begin{description}
-         \item [<<ExamAcronym>> :] <<Exam>>. <<ExamAcronym>> es el promedio, redondeada al entero más cercano, de \textit{exámenes} sobre conceptos. Esta nota es individual.
-         \item [<<PracticalTestAcronym>>: ] <<PracticalTest>>.  <<PracticalTestAcronym>> es el promedio, redondeada al entero más cercano, de las \textit{prácticas calificadas} propuestas en clase. Esta nota puede ser grupal o individual.
-         \item [<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>. <<ContinuousAssessmentAcronym>> es el promedio, redondeada al entero más cercano, de evaluación continua. Esta nota es individual, comprende la participación en clase y problemas de esfuerzo.
-     \end{description}
- 
-  \noindent Para aprobar el curso, el alumno debe obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
-  %% Introduccion a la Ciencia de la Computación - ok
-  \begin{evaluation}{CS1100}{Espanol}{THEORY,LAB,ORAL}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-    <<FG>>  =~ & $0.30*<<ExamAcronym>>_{1}$  + \\
-               & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.05*<<ContinuousAssessmentAcronym>>_{2}$  \\
-               & $0.09*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2}$ +\\
-               & $<<PracticalTestAcronym>>_{3} + <<PracticalTestAcronym>>_{4})$ + \\
-               & $0.04*<<ProjectAcronym>>_{1} + 0.08*<<ProjectAcronym>>_{2}$ +\\
-               & $0.12*<<ProjectAcronym>>_{3}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-     \item[<<ExamAcronym>> :] <<Exam>> (1). <<ExamAcronym>>1 corresponde a evaluaciones de las clases desarrolladas en el Auditorio.  No se requiere impresión
+\begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+\multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+& % Formula para Teoria va dentro del tabular
+    \begin{minipage}{0.95\textwidth}
+    \begin{tabular}{l}
+        $0.40*<<ExamAcronym>>_{1}$
+        \end{tabular} 
+    \end{minipage} 
+& % Formula para Laboratorio va dentro del tabular
+    \begin{minipage}{0.95\textwidth}
+    \begin{tabular}{l}
+      $0.04*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$ + \\
+      $0.08*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2} + <<PracticalTestAcronym>>_{3} + <<PracticalTestAcronym>>_{4})$ + \\
+      $0.04*<<ProjectAcronym>>_{1}$  + \\ 
+      $0.08*(<<ProjectAcronym>>_{2} + <<ProjectAcronym>>_{3})$  
+    \end{tabular} 
+    \end{minipage}                 \\ \cline{2-3}
+& % Theory % goes here 
+40\% 
+& % Lab % goes here
+60\% \\ \cline{2-3}
+& \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+& \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+\end{tabularx}
+  
+\vspace{2mm}
+\noindent <<Where>>:
+\begin{description}
+    \item[<<ExamAcronym>> :] <<Exam>> (1). <<ExamAcronym>>1 corresponde a evaluaciones de las clases desarrolladas en el Auditorio.  No se requiere impresión
     \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-      \begin{itemize}
-             \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-       \end{itemize}
+    \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+    \end{itemize}
     \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (4)
     \item[<<ProjectAcronym>> :] <<Project>> (3)
+\end{description}
+
+\noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+\end{evaluation}
+
+  %% Introduccion a la Ciencia de la Computación - Ingles
+\begin{evaluation}{CS1100}{English}{THEORY,LAB,ORAL}
+The final grade $FG$ is obtained through of:
+
+\begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+\multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+& % Formula para Teoria va dentro del tabular
+    \begin{minipage}{0.95\textwidth}
+    \begin{tabular}{l}
+        $0.40*<<ExamAcronym>>_{1}$
+        \end{tabular} 
+    \end{minipage} 
+& % Formula para Laboratorio va dentro del tabular
+    \begin{minipage}{0.95\textwidth}
+    \begin{tabular}{l}
+        $0.04*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$  + \\
+        $0.08*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2} + <<PracticalTestAcronym>>_{3} + <<PracticalTestAcronym>>_{4})$ + \\
+        $0.04*<<ProjectAcronym>>_{1}$  + \\ 
+        $0.08*(<<ProjectAcronym>>_{2} + <<ProjectAcronym>>_{3})$  
+    \end{tabular} 
+    \end{minipage}                 \\ \cline{2-3}
+
+& % Theory % goes here 
+40\% 
+& % Lab % goes here
+60\% \\ \cline{2-3}
+& \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+& \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+\end{tabularx}
+  
+\vspace{2mm}
+\noindent <<Where>>:
+\begin{description}
+    \item[<<ExamAcronym>> :] <<Exam>> (1). <<ExamAcronym>>1 corresponds to evaluations of the classes developed in the Auditorium. No printing required
+    \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+    \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+    \end{itemize}
+    \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (4)
+    \item[<<ProjectAcronym>> :] <<Project>> (3)
+\end{description}
+
+\noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+\end{evaluation}
+  
+
+  %%% Estructuras Discretas I - Español
+  \begin{evaluation}{CS1D01}{Espanol}{THEORY,PRACTICAL}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{T}} = [<<ExamAcronym>>_{1}$  +
+          $<<ExamAcronym>>_{2}$  +
+          $<<ExamAcronym>>_{3}]/3$
+          \end{tabular}
+      \end{minipage}
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{P}} = [<<ContinuousAssessmentAcronym>>_{1}$ +
+          $<<ContinuousAssessmentAcronym>>_{2}]/2$
+      \end{tabular}
+      \end{minipage}                 \\ \cline{2-3}
+
+  & % Theory % goes here
+  60\% 
+  & % Lab % goes here
+  40\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{
+    \begin{math}
+      NF =
+      \begin{cases}
+        10     & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ y } 0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}} \geq 11 \\
+        0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}}  & \quad \text{En caso contrario}
+      \end{cases}
+    \end{math}
+  } \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ExamAcronym>> :] <<Unit>> 1($<<ExamAcronym>>_{1}$), <<Unit>> 2($<<ExamAcronym>>_{2}$) y <<Unit>> 3 y 4($<<ExamAcronym>>_{3}$) 
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2): Comprende trabajos grupales, participación activa en clase, test de ejercicios.
+      \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 8) 
+            \item <<ContinuousAssessmentAcronym>>2 (Semanas 9 - 15)
+      \end{itemize}
   \end{description}
  
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \noindent Para aprobar el curso, el alumno debe obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%% Estructuras Discretas I - Ingles
+  \begin{evaluation}{CS1D01}{English}{THEORY,PRACTICAL}
+    The final grade $FG$ is obtained through of:
+
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{T}} = [<<ExamAcronym>>_{1}$  +
+          $<<ExamAcronym>>_{2}$  +
+          $<<ExamAcronym>>_{3}]/3$
+          \end{tabular}
+      \end{minipage}
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{P}} = [<<ContinuousAssessmentAcronym>>_{1}$ +
+          $<<ContinuousAssessmentAcronym>>_{2}]/2$
+      \end{tabular}
+      \end{minipage}                 \\ \cline{2-3}
+  
+    & % Theory % goes here
+    60\% 
+    & % Lab % goes here
+    40\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{
+      \begin{math}
+        NF =
+        \begin{cases}
+          10     & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ y } 0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}} \geq 11 \\
+        0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}}  & \quad \text{Otherwise}
+        \end{cases}
+      \end{math}
+    } \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation would be done if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+        
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ExamAcronym>> :] <<Unit>> 1($<<ExamAcronym>>_{1}$), <<Unit>> 2($<<ExamAcronym>>_{2}$) and <<Unit>> 3 and 4($<<ExamAcronym>>_{3}$) 
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2): It includes group work, active participation in class, exercise test.
+        \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 8) 
+              \item <<ContinuousAssessmentAcronym>>2 (weeks 9 - 15)
+        \end{itemize}
+    \end{description}
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
  
-  %% Programación Orientada a Objetos 1 - ok
+  %%% Estructuras Discretas II - Español
+  \begin{evaluation}{CS1D02}{Espanol}{THEORY,ORAL,PRACTICAL}
+    La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{T}} = [<<ExamAcronym>>_{1}$  +
+          $<<ExamAcronym>>_{2}$  +
+          $<<ExamAcronym>>_{3}$ +
+          $<<ExamAcronym>>_{4}]/4$
+          \end{tabular}
+      \end{minipage}
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{P}} = [<<ContinuousAssessmentAcronym>>_{1}$ +
+          $<<ContinuousAssessmentAcronym>>_{2}]/2$
+      \end{tabular}
+      \end{minipage}                 \\ \cline{2-3}
+
+  & % Theory % goes here
+  60\% 
+  & % Lab % goes here
+  40\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{
+    \begin{math}
+      NF =
+      \begin{cases}
+        10     & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ y } 0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}} \geq 11 \\
+        0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}}  & \quad \text{En caso contrario}
+      \end{cases}
+    \end{math}
+  } \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ExamAcronym>> :] <<Unit>> 1($<<ExamAcronym>>_{1}$), <<Unit>> 2($<<ExamAcronym>>_{2}, <<ExamAcronym>>_{3}$) y <<Unit>> 3($<<ExamAcronym>>_{4}$)
+    \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2): Comprende trabajos grupales, participación activa en clase, test de ejercicios.
+    \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 8)
+          \item <<ContinuousAssessmentAcronym>>2 (Semanas 9 - 15)
+    \end{itemize}
+  \end{description}
+
+  \noindent Para aprobar el curso, el alumno debe obtener 11 o más en la nota final $NF$.
+\end{evaluation}
+ 
+  %%% Estructuras Discretas II - Ingles
+  \begin{evaluation}{CS1D02}{English}{THEORY,ORAL,PRACTICAL}
+  The final grade $FG$ is obtained through of:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+    \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $\text{\textbf{T}} = [<<ExamAcronym>>_{1}$  +
+        $<<ExamAcronym>>_{2}$  +
+        $<<ExamAcronym>>_{3}$  +
+        $<<ExamAcronym>>_{4}]/4$
+      \end{tabular}
+    \end{minipage}
+    & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{P}} = [<<ContinuousAssessmentAcronym>>_{1}$ +
+          $<<ContinuousAssessmentAcronym>>_{2}]/2$
+      \end{tabular}
+    \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here
+    60\% 
+    & % Lab % goes here
+    40\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{
+      \begin{math}
+        NF =
+        \begin{cases}
+          10     & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ y } 0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}} \geq 11 \\
+          0.6*\text{\textbf{T}} + 0.4*\text{\textbf{P}}  & \quad \text{Otherwise}
+        \end{cases}
+      \end{math}
+    } \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation would be done if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+      
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+      \item[<<ExamAcronym>> :] <<Unit>> 1($<<ExamAcronym>>_{1}$), <<Unit>> 2($<<ExamAcronym>>_{2}, <<ExamAcronym>>_{3}$) and <<Unit>> 3($<<ExamAcronym>>_{4}$) 
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2): It includes group work, active participation in class, exercise test.
+        \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 8) 
+              \item <<ContinuousAssessmentAcronym>>2 (weeks 9 - 15)
+        \end{itemize}
+  \end{description}
+ 
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+ 
+
+  %% Programación Orientada a Objetos I - Español
   \begin{evaluation}{CS1102}{Espanol}{THEORY,LAB,ORAL,READING}
   La nota final $NF$ se obtiene a través de: \\
  
-  \begin{tabular}{cl}
-    <<FG>> =  & $0.25*<<ExamAcronym>>_{1}$ +\\
-              & $0.15*<<ExamAcronym>>_{2}$ +\\
-              & $0.15*<<ExamAcronym>>_{3}$ +\\
-              & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-              & $0.05*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-              & $0.10*<<PracticalTestAcronym>>_{1}$ +\\
-              & $0.10*<<PracticalTestAcronym>>_{2}$ + \\
-              & $0.15*<<ProjectAcronym>>_{1}$
-  \end{tabular}
-
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.40*<<ExamAcronym>>_{1}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*(<<ExamAcronym>>_{2} + <<ExamAcronym>>_{3})$ + \\
+        $0.05*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$ + \\
+        $0.10*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2})$ + \\
+        $0.10*<<ProjectAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-         \item[<<ExamAcronym>> :] <<Exam>> (3). <<ExamAcronym>>1 corresponde a evaluaciones de las clases desarrolladas en el Auditorio. No se requiere impresión. <<ExamAcronym>>2 y <<ExamAcronym>>3 requieren impresión
-         \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-             \begin{itemize}
-                \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-                 \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-             \end{itemize}
-    \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (2)
-    \item[<<ProjectAcronym>> :] <<Project>> (1)
-  \end{description}
- 
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
- 
- 
-  %% Programación Orientada a Objetos II - Ok
-  \begin{evaluation}{CS1103}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
-
-  \begin{tabular}{cl}
-   <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.10*<<ContinuousAssessmentAcronym>>_{2}$  +\\ 
-            & $0.05*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-            & $0.15*<<PracticalTestAcronym>>_{3} + 0.15*<<PracticalTestAcronym>>_{4}$  + \\
-            & $0.15*<<ProjectAcronym>>_{1} + 0.20*<<ProjectAcronym>>_{2} $
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-     \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+      \item[<<ExamAcronym>> :] <<Exam>> (3). <<ExamAcronym>>1, <<ExamAcronym>>2 y <<ExamAcronym>>3
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
       \begin{itemize}
-             \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-       \end{itemize}
-    \item[<<PracticalTestAcronym>>:]<<PracticalTest>> (4)
-    \item[<<ProjectAcronym>>:] <<Project>> (2)
+              \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+      \end{itemize}
+      \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (2)
+      \item[<<ProjectAcronym>> :] <<Project>> (3)
   \end{description}
  
   \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
  
- 
-  %%% Desarrollo Basado en Plataformas - ok
-  \begin{evaluation}{CS2B01}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ depende de cuatro rubros:
-
-  \begin{tabular}{cl}
-   <<FG>> = & $0.2*<<ProjectAcronym>>_{1}  + 0.2*<<ProjectAcronym>>_{2}$ +\\
-            & $0.1*<<LabExperimentsAcronym>>_{1}$ + \\
-            & $0.1*<<LabExperimentsAcronym>>_{2}$  + \\
-            & $0.2*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.2*<<ContinuousAssessmentAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-         \item[<<ProjectAcronym>> :] <<Project>> (2)
-         \item[<<LabExperimentsAcronym>> :] <<LabExperiments>> (2)
-        \item[<<ContinuousAssessmentAcronym>>] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Lecturas
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Lecturas
-       \end{itemize}
-  \end{description}
- 
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
-  %%%  Arquitectura de Computadores - Ok
-  \begin{evaluation}{CS2201}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-   <<FG>> = & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.05*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-            & $0.10*<<PracticalTestAcronym>> + 0.30*<<ProjectAcronym>>$ + \\
-            & $0.20*<<LabExperimentsAcronym>>$ + \\
-            & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ExamAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-   \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-   \begin{itemize}
-      \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas
-      \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas
-   \end{itemize}
-   \item[<<PracticalTestAcronym>>:] <<PracticalTest>> (1)
-   \item[<<ProjectAcronym>>:] <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>> (2), <<ExamAcronym>>1 y <<ExamAcronym>>2  los dos textos requieren impresión
-   \end{description}
- 
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
-  %%% Algoritmos y Estructura de Datos -OK
-  \begin{evaluation}{CS2100}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
-
-  \begin{tabular}{cl}
-   <<FG>> = & $0.2*<<ExamAcronym>>_{1} + 0.2*<<ExamAcronym>>_{2}$ + \\
-            & $0.2*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.2*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-            & $0.1*<<ProjectAcronym>>_{1} + 0.1*<<ProjectAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-     \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>>(2):
-     \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Quizzes
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Quizzes
-       \end{itemize}
-     \item[<<ProjectAcronym>>:] <<Project>> (2)
-     \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2, ambos textos requieren impresión
-  \end{description}
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
-  %% Base De Datos I - OK
-  \begin{evaluation}{CS2701}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-    <<FG>> =  & $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-              & $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ +\\
-              & $0.10*<<ProjectAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{2}$ + \\
-              & $0.07*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-              & $0.08*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-              & $0.2*<<ExamAcronym>>_{1}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-  \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Participación activa en clase
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Participación activa en clase
-       \end{itemize}
-      \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(4)
-      \item[<<ProjectAcronym>>:] <<Project>> (2)   
-      \item[<<ExamAcronym>>:] <<Exam>>(1) <<ExamAcronym>>1 3l texto requieren impresión
-
-  \end{description}
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
-  %%% Teoría de la Computación - ok
-  \begin{evaluation}{CS2101}{Espanol}{THEORY,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.3* <<ExamAcronym>>_{1} + 0.3* <<ExamAcronym>>_{2}$ + \\         
-               & $0.2*<<ProjectAcronym>>$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{2}$  \\
-
-
- \end{tabular}
-
-    \noindent <<Where>>:
-  \begin{description}
-      \item[<<ExamAcronym>>:] <<Exam>> (2), Todos los textos requieren impresión
-      \item[<<ProjectAcronym>>:] <<Project>> (1)
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-      \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) 
-       \end{itemize}
-  \end{description}
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
-  %% Análisis y Diseño de Algoritmos - OK
-  \begin{evaluation}{CS2102}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.20*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{1}$ + \\
-               & $0.20*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.15*<<ExamAcronym>>_{2} + 0.15*<<ProjectAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-            \item[ <<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-            \begin{itemize}
-                \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Participación activa en clase
-                \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Participación activa en clase
-            \end{itemize}
-      \item[<<ExamAcronym>> :] <<Exam>> (2) Ambos textos requieren impresión
-      \item[<<ProjectAcronym>>:] <<Project>> (2)
- 
-  \end{description}
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $FG$.
-  \end{evaluation}
- 
-  %% Ing. de Software - Ok
-  \begin{evaluation}{CS2901}{Espanol}{THEORY,LAB,ORAL}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.40*<<ProjectAcronym>>$ + \\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ +  \\
-               & $0.40*<<ExamAcronym>>_{1}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-     \item[<<ProjectAcronym>>:] <<Project>> (1)
-     \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>>(2):
-      \begin{itemize}
-            \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Quizzes + Participación activa en clase
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Quizzes + Participación activa en clase
-       \end{itemize}
-     \item[<<ExamAcronym>>:] <<Exam>> (1) Al finalizar el ciclo, El texto requiere impresión
-  \end{description}
- 
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
-  %% Base De Datos II - OK
-  \begin{evaluation}{CS2702}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
-
-  \begin{tabular}{cl}
-    <<FG>> = & $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-             & $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ + \\
-             & $0.13*<<ProjectAcronym>>_{1} + 0.13*<<ProjectAcronym>>_{2}$ + \\
-& $0.14*<<ProjectAcronym>>_{3}$ +\\
-             & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-             & $0.10*<<ContinuousAssessmentAcronym>>_{2}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-  \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-  \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas + Participación activa en clase
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas + Participación activa en clase
-       \end{itemize}
-      \item[<<PracticalTestAcronym>>:] <<PracticalTest>> (4)
-      \item[<<ProjectAcronym>>:] <<Project>> (3)    
-  \end{description}
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
- 
-  %%% Sistemas Operativos - OK
-  \begin{evaluation}{CS2S01}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-     <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-              & $0.25*<<LabExperimentsAcronym>>_{1}$ + \\
-              & $0.25*<<LabExperimentsAcronym>>_{2}$  + \\
-              & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ExamAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-  \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-  \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) :  Tareas +   Quizzes
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas +  Quizzes
-       \end{itemize}
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
-   \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2. Ambos textos requieren impresión
-  
-  \end{description}
- 
-  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
- 
- 
- 
-  %%%% Curso: Compiladores - OK
-  \begin{evaluation}{CS3402}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
-
-  \begin{tabular}{cl}
-   <<FG>> = ~ & $0.20*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-              & $0.30*<<ExamAcronym>>_{1}$ + \\
-              & $0.20*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-              & $0.30*<<ExamAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>>(2):
-  \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Quizzes
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Quizzes
-    \end{itemize}
-      \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2 ambos textos requieren impresión
-  \end{description}
-  \end{evaluation}
- 
-
- 
-
- 
-
-
-
-
-  %%%%%%%%%%%%%%
-  %%% Información en Ingles
-  %%%%%%%%%%%%%%
- 
- 
-  %%% Estructuras Discretas 1 en ingles
-  \begin{evaluation}{CS1D01}{English}{THEORY,LAB,ORAL,READING}
-  Given $[\cdot]$ means the round to the nearest integer.  The final grade $FG$ is calculated under the following conditions:
-  \[ FG =
-      \begin{cases}
-      10  &  \quad \text{if} \min (<<ExamAcronym>>,<<PracticalTestAcronym>>,<<ContinuousAssessmentAcronym>>) < 11  \text{ and }  [\div{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}] \geq 11 \\
-      [\div{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}]     & \quad \text{otherwise}
-      \end{cases}
-  \]
- 
-     \begin{description}
-         \item [<<ExamAcronym>> :] <<Exam>>. <<ExamAcronym>> is the average, rounded to the nearest integer, of exams about definitions. This grade is individually assigned.
-         \item [<<PracticalTestAcronym>>: ] <<PracticalTest>>.  <<PracticalTestAcronym>> is the average, rounded to the nearest integer, of practical tests. This grade is individually assigned or based on group effort.
-         \item [<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>. <<ContinuousAssessmentAcronym>> is the average, rounded to the nearest integer, of continuous assessment. This grade covers the class participation and effort problems. Lastly, <<ContinuousAssessmentAcronym>> is individually assigned.
-     \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
- 
- 
-  %%% Estructuras Discretas II en ingles
-   \begin{evaluation}{CS1D02}{English}{THEORY,LAB,ORAL,READING}
-  Given $[\cdot]$ means the round to the nearest integer.  The final grade $FG$ is calculated under the following conditions:
-  \[ FG =
-      \begin{cases}
-      10  &  \quad \text{if} \min (<<ExamAcronym>>,<<PracticalTestAcronym>>,<<ContinuousAssessmentAcronym>>) < 11  \text{ and }  [\div{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}] \geq 11 \\
-      [\div{<<ExamAcronym>>+<<PracticalTestAcronym>>+<<ContinuousAssessmentAcronym>>}{3}]     & \quad \text{otherwise}
-      \end{cases}
-  \]
- 
-     \begin{description}
-         \item [<<ExamAcronym>> :] <<Exam>>. <<ExamAcronym>> is the average, rounded to the nearest integer, of exams about definitions. This grade is individually assigned.
-         \item [<<PracticalTestAcronym>>: ] <<PracticalTest>>.  <<PracticalTestAcronym>> is the average, rounded to the nearest integer, of practical tests. This grade is individually assigned or based on group effort.
-         \item [<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>. <<ContinuousAssessmentAcronym>> is the average, rounded to the nearest integer, of continuous assessment. This grade covers the class participation and effort problems. Lastly, <<ContinuousAssessmentAcronym>> is individually assigned.
-     \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
- 
-  %% Introduccion a la Ciencia de la Computación - Ingles
-  \begin{evaluation}{CS1100}{English}{THEORY,LAB,ORAL}
-  The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-    <<FG>>  =  & $0.30*<<ExamAcronym>>_{1}$  + \\
-               & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.05*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-               & $0.09*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2}$ +\\
-               & $<<PracticalTestAcronym>>_{3} + <<PracticalTestAcronym>>_{4})$ +\\
-               & $0.04*<<ProjectAcronym>>_{1} + 0.08*<<ProjectAcronym>>_{2}$ +\\
-               & $0.12*<<ProjectAcronym>>_{3}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-  \item[<<ExamAcronym>> :] <<Exam>> (1). <<ExamAcronym>>1 corresponds to evaluations of the classes developed in the Auditorium. No printing required
-   \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-      \begin{itemize}
-             \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-       \end{itemize}
-  \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (4)
-  \item[<<ProjectAcronym>> :] <<Project>> (3)
-  \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
- 
- 
- 
-  %% Programación Orientada a Objetos 1 - ingles
+  %% Programación Orientada a Objetos I - Ingles
   \begin{evaluation}{CS1102}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-\begin{tabular}{cl}
-    <<FG>> =  & $0.25*<<ExamAcronym>>_{1}$ +\\
-              & $0.15*<<ExamAcronym>>_{2}$ +\\
-              & $0.15*<<ExamAcronym>>_{3}$ +\\
-              & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-              & $0.05*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-              & $0.10*<<PracticalTestAcronym>>_{1}$ +\\
-              & $0.10*<<PracticalTestAcronym>>_{2}$ + \\
-              & $0.15*<<ProjectAcronym>>_{1}$
-  \end{tabular}
-
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.40*<<ExamAcronym>>_{1}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*(<<ExamAcronym>>_{2} + <<ExamAcronym>>_{3})$ + \\
+        $0.05*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$ + \\
+        $0.10*(<<PracticalTestAcronym>>_{1} + <<PracticalTestAcronym>>_{2})$ + \\
+        $0.10*<<ProjectAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-      \item[<<ExamAcronym>> :] <<Exam>> (3). <<ExamAcronym>>1 corresponds to evaluations of the classes developed in the Auditorium. No printing required. <<ExamAcronym>>2 and  <<ExamAcronym>>3 require printing.
+      \item[<<ExamAcronym>> :] <<Exam>> (3). <<ExamAcronym>>1, <<ExamAcronym>>2 and <<ExamAcronym>>3 
       \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-         \begin{itemize}
-             \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-       \end{itemize}
-  \item[<<PracticalTestAcronym>> :] <<PracticalTest>>(2)
-  \item[<<ProjectAcronym>> :] <<Project>> (1)
+      \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+      \end{itemize}
+      \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (2)
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
   \end{description}
- 
+  
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
  
+  %% Programación Orientada a Objetos II - Español
+  \begin{evaluation}{CS1103}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.05*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+          $0.05*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+          $0.25*<<ProjectAcronym>>$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.05*<<ContinuousAssessmentAcronym>>_{3}$ + \\
+        $0.05*<<ContinuousAssessmentAcronym>>_{4}$ + \\
+        $0.10*<<PracticalTestAcronym>>_{1}$ + \\
+        $0.15*<<PracticalTestAcronym>>_{2}$ + \\
+        $0.15*<<PracticalTestAcronym>>_{3}$ + \\
+        $0.15*<<PracticalTestAcronym>>_{4}$ + \\
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  35\% 
+  & % Lab % goes here
+  65\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ProjectAcronym>> :] <<Project>> (1)
+    \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (4)
+    \item[<<ContinuousAssessmentAcronym>>] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 y <<ContinuousAssessmentAcronym>>3 (Semanas 1 - 7) : Tareas + Lecturas
+          \item <<ContinuousAssessmentAcronym>>2 y <<ContinuousAssessmentAcronym>>4(Semanas 8 - 15) : Tareas + Lecturas
+      \end{itemize}
+  \end{description}
+
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
  
-  %% Programación Orientada a Objetos II - ingles 
+  %% Programación Orientada a Objetos II - Ingles 
   \begin{evaluation}{CS1103}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.05*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-               & $0.15*<<PracticalTestAcronym>>_{3} + 0.15*<<PracticalTestAcronym>>_{4}$ + \\
-               & $0.15*<<ProjectAcronym>>_{1} + 0.20*<<ProjectAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-  \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-  \begin{itemize}
-             \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
-       \end{itemize}
-  \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(4)
-  \item[<<ProjectAcronym>> :] <<Project>> (2)
-  \end{description}
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.05*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+            $0.05*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+            $0.25*<<ProjectAcronym>>$
+            \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.05*<<ContinuousAssessmentAcronym>>_{3}$ + \\
+          $0.05*<<ContinuousAssessmentAcronym>>_{4}$ + \\
+          $0.10*<<PracticalTestAcronym>>_{1}$ + \\
+          $0.15*<<PracticalTestAcronym>>_{2}$ + \\
+          $0.15*<<PracticalTestAcronym>>_{3}$ + \\
+          $0.15*<<PracticalTestAcronym>>_{4}$ + \\
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    & % Theory % goes here 
+    35\% 
+    & % Lab % goes here
+    65\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
+      \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (4)
+      \item[<<ContinuousAssessmentAcronym>>] <<ContinuousAssessment>> (2):
+        \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 and <<ContinuousAssessmentAcronym>>3 (Semanas 1 - 7) : Homework + Lectures
+            \item <<ContinuousAssessmentAcronym>>2 and <<ContinuousAssessmentAcronym>>4(Semanas 8 - 15) : Homework + Lectures
+        \end{itemize}
+    \end{description}
  
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
- 
-  %%% Desarrollo Basado en Plataformas - ingles
-  \begin{evaluation}{CS2B01}{English}{THEORY,LAB,ORAL,READING}
-  The final grade $FG$ depends of 4 intermediary grades :
- 
-  \begin{tabular}{cl}
-    <<FG>> & $0.2*<<ProjectAcronym>>_{1}  + 0.2*<<ProjectAcronym>>_{2}$ + \\
-           & $0.1*<<LabExperimentsAcronym>>_{1}$ + \\
-           & $0.1*<<LabExperimentsAcronym>>_{2}$  + \\
-           & $0.2*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-           & $0.2*<<ContinuousAssessmentAcronym>>_{2}$
-  \end{tabular}
 
+   %%%  Arquitectura de Computadores - Español
+  \begin{evaluation}{CS2201}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+  
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\
+          $0.15*<<ExamAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.05*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.05*<<ContinuousAssessmentAcronym>>_{2}$ + \\
+          $0.10*<<PracticalTestAcronym>>$ + \\
+          $0.30*<<ProjectAcronym>>$ + \\
+          $0.20*<<LabExperimentsAcronym>>$ + \\
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-         \item[<<ProjectAcronym>>:] <<Project>> (2)
-         \item[<<LabExperimentsAcronym>>:]<<LabExperiments>> (2)
-        \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-              \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework + Readings
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework + Readings 
-       \end{itemize}
+    \item[<<PracticalTestAcronym>>:] <<PracticalTest>> (1)
+    \item[<<ProjectAcronym>>:] <<Project>> (1)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
+    \item[<<ExamAcronym>>:] <<Exam>> (2), <<ExamAcronym>>1 y <<ExamAcronym>>2  los dos textos requieren impresión
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+    \begin{itemize}
+       \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) : Tareas
+       \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas
+    \end{itemize}
   \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
- 
- 
- 
-  %%%  Arquitectura de Computadores - ingles
+
+ %%%  Arquitectura de Computadores - Ingles
   \begin{evaluation}{CS2201}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> = & $0.05*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.05*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-               & $0.10*<<PracticalTestAcronym>> + 0.30*<<ProjectAcronym>>$ + \\
-               & $0.20*<<LabExperimentsAcronym>>$ + \\
-               & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ExamAcronym>>_{2}$
-  \end{tabular}
- 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\
+          $0.15*<<ExamAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.05*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.05*<<ContinuousAssessmentAcronym>>_{2}$ + \\
+          $0.10*<<PracticalTestAcronym>>$ + \\
+          $0.30*<<ProjectAcronym>>$ + \\
+          $0.20*<<LabExperimentsAcronym>>$ + \\
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{\textbf{The weighting of the evaluation will be made if both parties are approved.}}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-  \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework 
-       \end{itemize}
-   \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(1)
-   \item[<<ProjectAcronym>>:]  <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>>(2) both text require printing
+    \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(1)
+    \item[<<ProjectAcronym>>:]  <<Project>> (1)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
+    \item[<<ExamAcronym>>:] <<Exam>>(2) Both texts require printing.
+    \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+          \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework
+          \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework 
+      \end{itemize}
   \end{description}
- 
+
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
+
+  %%% Desarrollo Basado en Plataformas - Español
+  \begin{evaluation}{CS2B01}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ depende de cuatro rubros:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.20*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$ 
+        \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*(<<LabExperimentsAcronym>>_{2} + <<LabExperimentsAcronym>>_{3})$ + \\
+        $0.20*(<<ProjectAcronym>>_{1} + <<ProjectAcronym>>_{2})$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%} \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ProjectAcronym>>:] <<Project>> (2)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
+    \item[<<ContinuousAssessmentAcronym>>] <<ContinuousAssessment>> (2):
+    \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) : Tareas + Lecturas
+          \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas + Lecturas
+    \end{itemize}
+  \end{description}
  
-  %%% Algoritmos y Estructura de Datos -ingles OK
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%% Desarrollo Basado en Plataformas - Ingles
+  \begin{evaluation}{CS2B01}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ depends of 4 intermediary grades :
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.20*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$ 
+        \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*(<<LabExperimentsAcronym>>_{2} + <<LabExperimentsAcronym>>_{3})$ + \\
+        $0.20*(<<ProjectAcronym>>_{1} + <<ProjectAcronym>>_{2})$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ProjectAcronym>> :] <<Project>> (2)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
+    \item[<<ContinuousAssessmentAcronym>>] <<ContinuousAssessment>> (2):
+    \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homewok + Lectures
+          \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homewok + Lectures
+    \end{itemize}
+  \end{description}
+  
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+
+  %%% Algoritmos y Estructura de Datos - Español
+  \begin{evaluation}{CS2100}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ExamAcronym>>_{1}$  + \\
+            $0.25*<<ContinuousAssessmentAcronym>>_{1}$
+            \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ExamAcronym>>_{1}$  + \\
+            $0.25*<<ContinuousAssessmentAcronym>>_{2}$  +\\
+            $0.05*<<ProjectAcronym>>_{1}$ + \\
+            $0.05*<<ProjectAcronym>>_{2}$
+            \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    45\% 
+    & % Lab % goes here
+    55\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+    \end{tabularx}
+    
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2, Ambos textos requieren impresión.
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+                \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7): Tareas + Quizzes
+                \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15): Tareas + Quizzes
+        \end{itemize}
+        \item[<<ProjectAcronym>> :] <<Project>> (2)
+    \end{description}
+
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%% Algoritmos y Estructura de Datos - Ingles
   \begin{evaluation}{CS2100}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> = & $0.2*<<ExamAcronym>>_{1} + 0.2*<<ExamAcronym>>_{2}$ + \\
-               & $0.2*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-               & $0.2*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.1*<<ProjectAcronym>>_{1} + 0.1*<<ProjectAcronym>>_{2}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-   \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-   \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homeworks + quizzes
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homeworks + quizzes
-       \end{itemize}
-   \item[<<ProjectAcronym>>:] <<Project>> (2)
-   \item[<<ExamAcronym>>:] <<Exam>> (2), <<ExamAcronym>>1 y <<ExamAcronym>>2 both texts require printing
-  \end{description}
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ExamAcronym>>_{1}$  + \\
+            $0.25*<<ContinuousAssessmentAcronym>>_{1}$
+            \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ExamAcronym>>_{1}$  + \\
+            $0.25*<<ContinuousAssessmentAcronym>>_{2}$  +\\
+            $0.05*<<ProjectAcronym>>_{1}$ + \\
+            $0.05*<<ProjectAcronym>>_{2}$
+            \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    45\% 
+    & % Lab % goes here
+    55\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%} \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+    
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2 Both texts require printing.
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+                \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7): Homeworks + quizzes
+                \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15): Homeworks + quizzes
+        \end{itemize}
+        \item[<<ProjectAcronym>> :] <<Project>> (2)
+    \end{description}
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
+
+  %%% Teoría de la Computación - Español
+  \begin{evaluation}{CS2101}{Espanol}{THEORY,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
  
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.20* <<ExamAcronym>>_{2}$ + \\ 
+          $0.20* <<ExamAcronym>>_{3}$ + \\  
+          $0.20* <<ExamAcronym>>_{1}$ + \\  
+          $0.20* <<ExamAcronym>>_{4}$
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.20*<<ProjectAcronym>>_{1}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  80\% 
+  & % Lab % goes here
+  20\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+      \item[<<ExamAcronym>>:] <<Exam>> (2), Todos los textos requieren impresión.
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
+  \end{description}
+      
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%% Teoría de la Computación - Ingles 
+  \begin{evaluation}{CS2101}{English}{THEORY,ORAL,READING}
+  The final grade $FG$ is obtained through of:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \\multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20* <<ExamAcronym>>_{1}$ + \\  
+            $0.20* <<ExamAcronym>>_{2}$ + \\ 
+            $0.20* <<ExamAcronym>>_{3}$ + \\  
+            $0.20* <<ExamAcronym>>_{4}$
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ProjectAcronym>>_{1}$
+            \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    80\% 
+    & % Lab % goes here
+    20\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+    
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ExamAcronym>>:] <<Exam>> (2), All texts require printing
+        \item[<<ProjectAcronym>> :] <<Project>> (1)
+    \end{description}
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+
+  %% Base De Datos I - Español
+  \begin{evaluation}{CS2701}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.12*<<PracticalTestAcronym>>_{1} + 0.14*<<PracticalTestAcronym>>_{2} + 0.14*<<PracticalTestAcronym>>_{3}$ + \\  
+          $0.20*<<ExamAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.07*<<ContinuousAssessmentAcronym>>_{1} + 0.08*<<ContinuousAssessmentAcronym>>_{2}$  +\\
+          $0.10*<<ProjectAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  60\% 
+  & % Lab % goes here
+  40\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(3)
+    \item[<<ProjectAcronym>>:] <<Project>> (2)   
+    \item[<<ExamAcronym>>:] <<Exam>>(1) <<ExamAcronym>>1 el texto requieren impresión
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+        \begin{itemize}
+             \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) : Tareas + Participación activa en clase
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas + Participación activa en clase
+        \end{itemize}
+  \end{description}
+  
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+
+   
   %% Base De Datos I - ingles
   \begin{evaluation}{CS2701}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> =  & $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-                & $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ +\\
-                & $0.10*<<ProjectAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{2}$ + \\
-                & $0.07 *<<ContinuousAssessmentAcronym>>_{1}$ + \\
-                & $0.08 *<<ContinuousAssessmentAcronym>>_{2}$ + \\
-                & $0.2*<<ExamAcronym>>_{1}$
-    \end{tabular}
- 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.12*<<PracticalTestAcronym>>_{1} + 0.14*<<PracticalTestAcronym>>_{2} + 0.14*<<PracticalTestAcronym>>_{3}$ + \\  
+          $0.20*<<ExamAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.07*<<ContinuousAssessmentAcronym>>_{1} + 0.08*<<ContinuousAssessmentAcronym>>_{2}$  +\\
+          $0.10*<<ProjectAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  60\% 
+  & % Lab % goes here
+  40\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>>(2):
+    \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(3)
+    \item[<<ProjectAcronym>>:] <<Project>> (2)  
+    \item[<<ExamAcronym>>:] <<Exam>>(1) <<ExamAcronym>>1, text require printing
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>>(2):
      \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework + performance in class
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) :  Homework + performance in class
-       \end{itemize}
-      \item[<<PracticalTestAcronym>>:] <<PracticalTest>>(4)
-      \item[<<ProjectAcronym>>:] <<Project>> (2)  
-\item[<<ExamAcronym>>:] <<Exam>>(1) <<ExamAcronym>>1, text require printing 
+            \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework + performance in class
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) :  Homework + performance in class
+      \end{itemize}
   \end{description}
+
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
- 
-%%% Teoría de la Computación - en ingles 
-  \begin{evaluation}{CS2101}{English}{THEORY,ORAL,READING}
-The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.3* <<ExamAcronym>>_{1} + 0.3* <<ExamAcronym>>_{2}$ + \\         
-               & $0.2*<<ProjectAcronym>>$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{2}$  \\
- \end{tabular}
 
-    \noindent <<Where>>:
+  %% Análisis y Diseño de Algoritmos - Español
+  \begin{evaluation}{CS2102}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\  
+          $0.15*<<ExamAcronym>>_{2}$  
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ProjectAcronym>>_{1}$ + \\
+          $0.15*<<ProjectAcronym>>_{2}$ + \\
+          $0.20*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.20*<<ContinuousAssessmentAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
+  \noindent <<Where>>:
   \begin{description}
-      \item[<<ExamAcronym>>:] <<Exam>> (2), All texts require printing
-      \item[<<ProjectAcronym>>:] <<Project>> (1)
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-      \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
-             \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) 
-       \end{itemize}
+    \item[<<ProjectAcronym>>:] <<Project>> (2)   
+    \item[<<ExamAcronym>>:] <<Exam>>(2) 
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+        \begin{itemize}
+              \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7)
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+        \end{itemize}
   \end{description}
-\noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
  
-
- 
-  %% Análisis y Diseño de Algoritmos -ingles  OK
+   %% Análisis y Diseño de Algoritmos - Ingles
   \begin{evaluation}{CS2102}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> = & $0.20*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ProjectAcronym>>_{1}$ + \\
-               & $0.20*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.15*<<ExamAcronym>>_{2} + 0.15*<<ProjectAcronym>>_{2}$
-  \end{tabular}
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\  
+          $0.15*<<ExamAcronym>>_{2}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ProjectAcronym>>_{1}$ + \\
+          $0.15*<<ProjectAcronym>>_{2}$ + \\
+          $0.20*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.20*<<ContinuousAssessmentAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ProjectAcronym>>:] <<Project>> (2)  
+    \item[<<ExamAcronym>>:] <<Exam>>(1) 
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>>(2):
+      \begin{itemize}
+            \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) 
+      \end{itemize}
+  \end{description}
 
+  \noindent To pass the ctempourse you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+
+  %% Base De Datos II - Español
+  \begin{evaluation}{CS2702}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\  
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ + \\ 
+          $0.14*<<ProjectAcronym>>_{1} + 0.14*<<ProjectAcronym>>_{2}$  +\\
+          $0.12*<<ProjectAcronym>>_{3}$ +\\
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-            \item[ <<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>>(2):
-            \begin{itemize}
-                \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework + performance in class
-                \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework + performance in class
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+             \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) : Tareas + Participación activa en clase
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas + Participación activa en clase
        \end{itemize}
-      \item[<<ExamAcronym>> :] <<Exam>> (2), both texts requiere printing
-      \item[<<ProjectAcronym>> :] <<Project>> (2)
+    \item[<<PracticalTestAcronym>>:] <<PracticalTest>> (4)
+    \item[<<ProjectAcronym>>:] <<Project>> (3)    
   \end{description}
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
  
- 
- 
-  %% Ing. de Software - ingles Ok
-  \begin{evaluation}{CS2901}{English}{THEORY,LAB,ORAL}
-  The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-      <<FG>> =~ & $0.40*<<ProjectAcronym>>$ + \\
-                & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-                & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ +  \\
-                & $0.40*<<ExamAcronym>>_{1}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
-     \item[<<ProjectAcronym>> :] <<Project>> (1)
-      \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-                \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework + Quizzes + performance in class
-                \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework +  Quizzes + performance in class
-       \end{itemize}
-     \item[<<ExamAcronym>> :]  <<Exam>> (1).  At end of the cycle. Text require printing
-  \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
- 
- 
-  %% Base De Datos II - ingles OK
+  %% Base De Datos II - Ingles
   \begin{evaluation}{CS2702}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-    <<FG>> = & $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\
-             & $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ + \\
-             & $0.13*<<ProjectAcronym>>_{1} + 0.13*<<ProjectAcronym>>_{2}$ + \\
-             & $0.14*<<ProjectAcronym>>_{2}$ + \\
-             & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-             & $0.10*<<ContinuousAssessmentAcronym>>_{2}$
-  \end{tabular}
- 
-  \noindent <<Where>>:
-  \begin{description}
+  
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.10*<<PracticalTestAcronym>>_{1} + 0.10*<<PracticalTestAcronym>>_{2}$ + \\  
+            $0.10*<<ContinuousAssessmentAcronym>>_{1}$
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.10*<<PracticalTestAcronym>>_{3} + 0.10*<<PracticalTestAcronym>>_{4}$ + \\ 
+            $0.14*<<ProjectAcronym>>_{1} + 0.14*<<ProjectAcronym>>_{2}$  +\\
+            $0.12*<<ProjectAcronym>>_{3}$ +\\
+            $0.10*<<ContinuousAssessmentAcronym>>_{2}$
+            \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    30\% 
+    & % Lab % goes here
+    70\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+    
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
       \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-     \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)  : Homework
+          \begin{itemize}
+              \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)  : Homework
               \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework
-       \end{itemize}
-      \item[<<<<PracticalTestAcronym>>:] <<PracticalTest>> (4)
-      \item[<<ProjectAcronym>>:] <<Project>> (3)   
-  \end{description}
- 
- 
+          \end{itemize}
+      \item[<<PracticalTestAcronym>>:] <<PracticalTest>> (4)
+      \item[<<ProjectAcronym>>:] <<Project>> (3)       
+    \end{description}
+
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
  
+
+  %% Ing. de Software - Español
+  \begin{evaluation}{CS2901}{Espanol}{THEORY,LAB,ORAL}
+  La nota final $NF$ se obtiene a través de:
  
- 
-  %%% Sistemas Operativos - ingles OK
- 
-  \begin{evaluation}{CS2S01}{English}{THEORY,LAB,ORAL,READING}
-  The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.25*<<LabExperimentsAcronym>>_{1}$ + \\
-               & $0.25*<<LabExperimentsAcronym>>_{2}$  + \\
-               & $0.15*<<ExamAcronym>>_{1} + 0.15*<<ExamAcronym>>_{2}$
-  \end{tabular}
- 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{T}} = 0.05*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+          $0.05*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+          $0.20*<<ExamAcronym>>_{1}$  + \\  
+          $0.20*<<ExamAcronym>>_{2}$  
+          \end{tabular}
+      \end{minipage}
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $\text{\textbf{P}} =0.2(A + D) + 0.3(Dev) + 0.3(DF)$ 
+      \end{tabular}
+      \end{minipage}                 \\ \cline{2-3}
+
+  & % Theory % goes here
+  50\% 
+  & % Lab % goes here
+  50\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{
+    \begin{math}
+      NF =
+      \begin{cases}
+        \text{\textbf{10}}   & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ y }  [\frac{\textbf{P} + \text{\textbf{T}}}{2}] \geq  11\\
+        [\frac{\textbf{P} + \text{\textbf{T}}}{2}]    & \quad \text{En caso contrario}
+      \end{cases}
+    \end{math}
+  } \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+  
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-   \item[ <<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>>(2):
-     \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)  : Homework + Quizzes
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework + Quizzes
-       \end{itemize}
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
-   \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 and <<ExamAcronym>>2. Both texts require printing
-  \end{description}
- 
-  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
- 
- 
-  %%%% Curso: Compiladores - ingles  OK
-  \begin{evaluation}{CS3402}{English}{THEORY,LAB,ORAL,READING}
-  The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.20*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.30*<<ExamAcronym>>_{1}$ +\\
-               & $0.20*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.30*<<ExamAcronym>>_{2}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-            \begin{itemize}
-               \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)  : Quizzes
-                \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Quizzes
-            \end{itemize}
-      \item[<<ExamAcronym>> :] <<Exam>> (2), <<ExamAcronym>>1 and <<ExamAcronym>>2. Both text require printing
-  \end{description}
-  \end{evaluation}
- 
- %%%% Curso:Estructuras de Datos Avanzadas - ingles  OK
- \begin{evaluation}{CS3102}{English}{THEORY,LAB,ORAL,READING}
-  The final grade $FG$ is obtained through of:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.10*<<ExamAcronym>>_{1}$ +\\
-               & $0.10*<<ExamAcronym>>_{2}$ + \\
-               & $0.60*<<ProjectAcronym>>$ + \\
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-            \begin{itemize}
-               \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)  : Quizzes
-                \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Quizzes
-            \end{itemize}
-      \item[<<ExamAcronym>> :] <<Exam>> (2), <<ExamAcronym>>1 and <<ExamAcronym>>2. Both text require printing
-      \item[<<ProjectAcronym>>:] <<Project>> 
-  \end{description}
-\noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
-
-%%%% Curso:Estructuras de Datos Avanzadas - español  OK
-   \begin{evaluation}{CS3102}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de: 
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-               & $0.10*<<ExamAcronym>>_{1}$ +\\
-               & $0.10*<<ExamAcronym>>_{2}$ + \\
-               & $0.60*<<ProjectAcronym>>$ + \\
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-            \begin{itemize}
-               \item  <<ContinuousAssessmentAcronym>>1(semanas 1 - 7)      
-                  \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15
-            \end{itemize}
-      \item[<<ExamAcronym>> :] <<Exam>> (2), <<ExamAcronym>>1 y <<ExamAcronym>>2. Ambos textos requieren de impresión
-      \item[<<ProjectAcronym>>:] <<Project>> 
-  \end{description}
-\noindent Para aprobar el curso se requiere obtener 11 o más en la nota final $NF$.
-  \end{evaluation}
-
- %% Programacion Competitiva en español - ok
-  \begin{evaluation}{CS3101}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de: \\
- 
-  \begin{tabular}{cl}
-    <<FG>> =  & $0.20*<<ExamAcronym>>_{1}$ +\\
-              & $0.20*<<ExamAcronym>>_{2}$ +\\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +  \\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-              & $0.20*<<PracticalTestAcronym>>_{1} +\\
-              & $0.20*<<PracticalTestAcronym>>_{2}$ +\\
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-         \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2  se requiere impresión
-         \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-             \begin{itemize}
-                \item <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) 
-                 \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15)
-             \end{itemize}
-    \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (2)
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+    \begin{itemize}
+        \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7)  : Tareas + Lecturas + Participación activa en clase.
+        \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas + Lecturas + Participación activa en clase.
+    \end{itemize}
+    \item[<<ExamAcronym>>1 :] (Semana 8) Examen Parcial.
+    \item[<<ExamAcronym>>2 :] Examen Final tomado al finalizar el semestre.
+    \item[A:] Etapa de Análisis (Semana 5). Esta nota puede ser obtenida en dos intentos:
+      \begin{itemize}
+        \item[] Primer Intento: Será evaluado sobre la nota 20.
+        \item[] Segundo Intento: Reemplazará la nota obtenida durante el primer intento (inclusive si es menor). La nota máxima en este intento es 15.
+      \end{itemize}
+    \item[D:] Etapa de Diseño (Semana 7). Esta nota puede ser obtenida en dos intentos:
+      \begin{itemize}
+        \item[] Primer Intento: Será evaluado sobre la nota 20.
+        \item[] Segundo Intento: Reemplazará la nota obtenida durante el primer intento (inclusive si es menor). La nota máxima en este intento es 15.
+      \end{itemize}
+    \item[Dev:] Etapa de Implementación y Testeo (Semanas 8 - 13). La nota $Dev$ es el promedio de tres entregas Dev1.1, Dev1.2, Dev1.3. La nota de cada entrega es otorgada por los profesores del curso y el cliente.
+    \item[DF:] Demo Final (Semana 15). Esta nota es otorgada por los profesores del curso y el cliente.  
   \end{description}
  
   \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
-
-%% Programacion Competitiva en ingles - ok
-  \begin{evaluation}{CS3101}{English}{THEORY,LAB,ORAL,READING}
-The final grade $NF$ is obtained through of:\\
  
-  \begin{tabular}{cl}
-    <<FG>> =  & $0.20*<<ExamAcronym>>_{1}$ +\\
-              & $0.20*<<ExamAcronym>>_{2}$ +\\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +  \\
-              & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-              & $0.20*<<PracticalTestAcronym>>_{1} +\\
-              & $0.20*<<PracticalTestAcronym>>_{2}$ +\\
-  \end{tabular}
+  %% Ing. de Software - Ingles
+  \begin{evaluation}{CS2901}{English}{THEORY,LAB,ORAL}
+  The final grade $FG$ is obtained through of:
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Practice>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $\text{\textbf{T}} = 0.05*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+            $0.05*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+            $0.20*<<ExamAcronym>>_{1}$  + \\  
+            $0.20*<<ExamAcronym>>_{2}$  
+            \end{tabular}
+        \end{minipage}
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $\text{\textbf{P}} =0.2(A + D) + 0.3(Dev) + 0.3(DF)$ 
+        \end{tabular}
+        \end{minipage}                 \\ \cline{2-3}
+  
+    & % Theory % goes here
+    50\% 
+    & % Lab % goes here
+    50\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{
+      \begin{math}
+        FG =
+        \begin{cases}
+          \text{\textbf{10}}   & \quad \text{Si } \min(\text{\textbf{T}},\text{\textbf{P}}) < 11 \text{ and }  [\frac{\textbf{P} + \text{\textbf{T}}}{2}] \geq  11\\
+          [\frac{\textbf{P} + \text{\textbf{T}}}{2}]    & \quad \text{Otherwise}
+        \end{cases}
+      \end{math}
+    } \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+    
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+      \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+        \begin{itemize}
+            \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7)  : Homework + Lectures + Active participation in class.
+            \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Homework + Lectures + Active participation in class.
+        \end{itemize}
+      \item[<<ExamAcronym>>1 :] (Week 8) Partial Exam.
+      \item[<<ExamAcronym>>2 :]  Final exam taken at the end of the semester.
+      \item[A:] Analysis stage (week 5). This note can be obtained in two attempts
+        \begin{itemize}
+          \item[] First Try: It will be evaluated on note 20.
+          \item[] Second Attempt: Replace the grade obtained during the first attempt (even if it is less). The maximum mark in this attempt is 15.
+        \end{itemize}
+      \item[D:] Etapa de Diseño (Semana 7). Esta nota puede ser obtenida en dos intentos:
+        \begin{itemize}
+          \item[] First Try: It will be evaluated on note 20.
+          \item[] Second Attempt: Replace the grade obtained during the first attempt (even if it is less). The maximum mark in this attempt is 15.
+        \end{itemize}
+      \item[Dev:] Implementation and Testing Stage (Weeks 8 - 13). The $Dev$ note is the average of three deliveries Dev1.1, Dev1.2, Dev1.3. The mark of each delivery is granted by the teachers of the course and the client.
+      \item[DF:] Final Demo (Week 15). This grade is awarded by the course teachers and the client.
+    \end{description}
+ 
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
 
+
+  %%% Sistemas Operativos - Español
+  \begin{evaluation}{CS2S01}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\
+          $0.15*<<ExamAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.25*<<LabExperimentsAcronym>>_{1}$ + \\
+          $0.25*<<LabExperimentsAcronym>>_{2}$ + \\
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}}  \\ \hline
+  \end{tabularx}
+      
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-         \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2  All texts require printing
-         \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
-             \begin{itemize}
-                \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
-                 \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
-             \end{itemize}
-    \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (2)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
+    \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2. Ambos textos requieren impresión.
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+        \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) :  Tareas +   Quizzes
+        \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) : Tareas +  Quizzes
+      \end{itemize}
   \end{description}
+ 
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%% Sistemas Operativos - Ingles
+  \begin{evaluation}{CS2S01}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ is obtained through of:
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.15*<<ExamAcronym>>_{1}$ + \\
+          $0.15*<<ExamAcronym>>_{2}$
+          \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.25*<<LabExperimentsAcronym>>_{1}$ + \\
+          $0.25*<<LabExperimentsAcronym>>_{2}$ + \\
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{\textbf{The weighting of the evaluation will be made if both parties are approved.}}}  \\ \hline
+  \end{tabularx}
+      
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (2)
+    \item[<<ExamAcronym>>:] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2. Both texts require printing.
+    \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+        \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) :  Homework + Quizzes
+        \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework + Quizzes
+      \end{itemize}
+  \end{description}
+
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+ 
+  %%%% Curso: Compiladores - Español
+  \begin{evaluation}{CS3402}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+        $0.25*<<ExamAcronym>>_{1}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+        $0.25*<<ExamAcronym>>_{2}$  +  \\
+        $0.30*<<ProjectAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  35\% 
+  & % Lab % goes here
+  65\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+      \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+      \end{itemize}
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
+      \item[<<ExamAcronym>> :] <<ExamAcronym>>1: Examen Parcial
+      \item[<<ExamAcronym>> :] <<ExamAcronym>>2: Examen Final
+  \end{description}
+
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+ 
+  %%%% Curso: Compiladores - Ingles
+  \begin{evaluation}{CS3402}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ is obtained through of:
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+        $0.25*<<ExamAcronym>>_{1}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+        $0.25*<<ExamAcronym>>_{2}$  +  \\
+        $0.30*<<ProjectAcronym>>_{1}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  35\% 
+  & % Lab % goes here
+  65\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+      \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+      \end{itemize}
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
+      \item[<<ExamAcronym>> :] <<ExamAcronym>>1: Partial Exam
+      \item[<<ExamAcronym>> :] <<ExamAcronym>>2: Final Exam
+  \end{description}
+
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+
+  %%%  Redes y Comunicaciones - Espanol
+  \begin{evaluation}{CS2301}{Espanol}{THEORY,LAB,ORAL,READING}
+    La nota final $NF$ se obtiene a través de:
+
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.30*<<ExamAcronym>>_{1}$ 
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$  + \\
+          $0.05*(<<LabExperimentsAcronym>>_{1} + <<LabExperimentsAcronym>>_{2} + <<LabExperimentsAcronym>>_{3} + <<LabExperimentsAcronym>>_{4})$ + \\
+          $0.30*<<ProjectAcronym>>$
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    30\% 
+    & % Lab % goes here
+    70\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+      \item[<<ExamAcronym>> :] <<ExamAcronym>>(1)
+      \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (4)
+      \item[<<ProjectAcronym>> :] <<Project>> (1)
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+      \begin{itemize}
+              \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+              \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+      \end{itemize}
+    \end{description}
+  
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+
+  %%%  Redes y Comunicaciones - Ingles
+  \begin{evaluation}{CS2301}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ is obtained through of:\\
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.30*<<ExamAcronym>>_{1}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*(<<ContinuousAssessmentAcronym>>_{1} + <<ContinuousAssessmentAcronym>>_{2})$  + \\
+        $0.05*(<<LabExperimentsAcronym>>_{1} + <<LabExperimentsAcronym>>_{2} + <<LabExperimentsAcronym>>_{3} + <<LabExperimentsAcronym>>_{4})$ + \\
+        $0.30*<<ProjectAcronym>>$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  30\% 
+  & % Lab % goes here
+  70\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ExamAcronym>> :] <<ExamAcronym>>(1)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (4)
+    \item[<<ProjectAcronym>> :] <<Project>> (1)
+    \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+    \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+    \end{itemize}
+  \end{description}
+  
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+ 
+
+ %% Programacion Competitiva en Español
+  \begin{evaluation}{CS3101}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de: \\
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.20*<<ExamAcronym>>_{1}$  + \\
+        $0.20*<<ExamAcronym>>_{2}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+        $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+        $0.20*<<PracticalTestAcronym>>_{1}$  +  \\
+        $0.20*<<PracticalTestAcronym>>_{2}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2  Ambos textos requieren impresión.
+    \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (2)
+    \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+      \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+          \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+      \end{itemize}
+  \end{description}
+
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+
+  %% Programacion Competitiva en Ingles
+  \begin{evaluation}{CS3101}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $NF$ is obtained through of:\\
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.20*<<ExamAcronym>>_{1}$  + \\
+          $0.20*<<ExamAcronym>>_{2}$ 
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+          $0.20*<<PracticalTestAcronym>>_{1}$  +  \\
+          $0.20*<<PracticalTestAcronym>>_{2}$
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    40\% 
+    & % Lab % goes here
+    60\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+      \item[<<ExamAcronym>> :] <<Exam>> (2). <<ExamAcronym>>1 y <<ExamAcronym>>2  All texts require printing
+      \item[<<PracticalTestAcronym>> :] <<PracticalTest>> (2)
+      \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+          \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+        \end{itemize}
+    \end{description}
+
    \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
 
 
-  %%%  Redes y Comunicaciones en espanol - Ok
-  \begin{evaluation}{CS2301}{Espanol}{THEORY,LAB,ORAL,READING}
-  La nota final $NF$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-   <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-            & $0.30*<<ProjectAcronym>>$ + \\
-            & $0.20*<<LabExperimentsAcronym>>$ + \\
-            & $0.30*<<ExamAcronym>>_{1}$
-  \end{tabular}
+  %%%% Curso:Estructuras de Datos Avanzadas - Español
+  \begin{evaluation}{CS3102}{Espanol}{THEORY,LAB,ORAL,READING}
+  La nota final $NF$ se obtiene a través de: 
 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.20*<<ExamAcronym>>_{1}$  + \\
+        $0.20*<<ExamAcronym>>_{2}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ProjectAcronym>>_{1}$  + \\
+        $0.10*<<ProjectAcronym>>_{2}$  + \\
+        $0.10*<<ProjectAcronym>>_{3}$  + \\
+        $0.30*<<ProjectAcronym>>_{4}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-   \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-   \begin{itemize}
-      \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7) : Tareas
-      \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) : Tareas
-   \end{itemize}
-   \item[<<ProjectAcronym>>:] <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>>(1), <<ExamAcronym>>1 El texto requiere impresión
-   \end{description}
+      \item[<<ExamAcronym>> :] <<Exam>> (2) Ambos textos requieren impresión.
+      \item[<<ProjectAcronym>> :] <<Project>> (4)
+  \end{description}
+
+  \noindent Para aprobar el curso se requiere obtener 11 o más en la nota final $NF$.
+  \end{evaluation}
+
+
+ %%%% Curso:Estructuras de Datos Avanzadas - Ingles
+ \begin{evaluation}{CS3102}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ is obtained through of:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.20*<<ExamAcronym>>_{1}$  + \\
+        $0.20*<<ExamAcronym>>_{2}$ 
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.10*<<ProjectAcronym>>_{1}$  + \\
+        $0.10*<<ProjectAcronym>>_{2}$  + \\
+        $0.10*<<ProjectAcronym>>_{3}$  + \\
+        $0.30*<<ProjectAcronym>>_{4}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  40\% 
+  & % Lab % goes here
+  60\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+      \item[<<ExamAcronym>> :] <<Exam>> (2) Both texts require printing.
+      \item[<<ProjectAcronym>> :] <<Project>> (4)
+  \end{description}
+  
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
+
+ 
+  %%%  CS3903 Sistemas de Información - Espanol
+  \begin{evaluation}{CS3903}{Espanol}{THEORY,LAB,ORAL,READING}
+  El promedio final $NF$ se obtiene a través de:
+
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.25*<<ExamAcronym>>$ + \\
+        $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+        $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.30*<<ProjectAcronym>>_{1}$  + \\
+        $0.25*<<LabExperimentsAcronym>>_{2}$  
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  45\% 
+  & % Lab % goes here
+  55\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
+  \noindent <<Where>>:
+  \begin{description}
+    \item[<<ProjectAcronym>>:]  <<Project>> (1)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
+    \item[<<ExamAcronym>>:] <<Exam>>(1)
+    \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+          \item  <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7
+          \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15) 
+      \end{itemize}
+  \end{description}
  
   \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
-
-
-  %%%  Redes y Comunicaciones en ingles - Ok
-  \begin{evaluation}{CS2301}{English}{THEORY,LAB,ORAL,READING}
-  The final grade $FG$ is obtained through of:\\
  
-  \begin{tabular}{cl}
-   <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ + \\
-            & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ + \\
-            & $0.30*<<ProjectAcronym>>$ + \\
-            & $0.20*<<LabExperimentsAcronym>>$ + \\
-            & $0.30*<<ExamAcronym>>_{1}$
-  \end{tabular}
-
-  \noindent <<Where>>:
-  \begin{description}
-   \item[<<ContinuousAssessmentAcronym>> :] <<ContinuousAssessment>> (2):
-   \begin{itemize}
-      \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
-      \item <<ContinuousAssessmentAcronym>>2 (weeks  8 - 15)
-   \end{itemize}
-   \item[<<ProjectAcronym>>:] <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>>(1), <<ExamAcronym>>1 Text require  printing 
-   \end{description}
- \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
-  \end{evaluation}
-
-
-%%%  CS3903 Sistemas de Informacion - ingles
+  %%%  CS3903 Sistemas de Informacion - Ingles
   \begin{evaluation}{CS3903}{English}{THEORY,LAB,ORAL,READING}
   The final grade $FG$ is obtained through of:
  
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-               & $0.30*<<ProjectAcronym>>$ + \\
-               & $0.25*<<LabExperimentsAcronym>>$ + \\
-               & $0.25*<<ExamAcronym>>_{1}$
-  \end{tabular}
- 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.25*<<ExamAcronym>>$ + \\
+        $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+        $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+        $0.30*<<ProjectAcronym>>_{1}$  + \\
+        $0.25*<<LabExperimentsAcronym>>_{2}$  
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  45\% 
+  & % Lab % goes here
+  55\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-  \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) : Homework
-              \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) : Homework 
-       \end{itemize}
-   \item[<<ProjectAcronym>>:]  <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>>(1) Text require printing
+    \item[<<ProjectAcronym>>:]  <<Project>> (1)
+    \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
+    \item[<<ExamAcronym>>:] <<Exam>>(1)
+    \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
+      \begin{itemize}
+          \item  <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7)
+          \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15) 
+      \end{itemize}
   \end{description}
  
   \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
   \end{evaluation}
+
+
+    %%%  CS3P01 Computación Paralela y Distribuida - Espanol
+    \begin{evaluation}{CS3P01}{Espanol}{THEORY,LAB,ORAL,READING}
+    El promedio final $FG$ se obtiene a través de:
+
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+          $0.25*<<ExamAcronym>>_{1}$ 
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+          $0.25*<<ExamAcronym>>_{2}$  +  \\
+          $0.30*<<ProjectAcronym>>_{1}$
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    35\% 
+    & % Lab % goes here
+    65\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+                \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7) 
+                \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15)
+        \end{itemize}
+        \item[<<ProjectAcronym>> :] <<Project>> (1)
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>1: Examen Parcial
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>2: Examen Final
+    \end{description}
+
+    \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+    \end{evaluation}
+   
+    %%%  CS3P01 Computación Paralela y Distribuida - Ingles
+    \begin{evaluation}{CS3P01}{English}{THEORY,LAB,ORAL,READING}
+    The final grade $FG$ is obtained through of:
+   
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+          $0.25*<<ExamAcronym>>_{1}$ 
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+          $0.10*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+          $0.25*<<ExamAcronym>>_{2}$  +  \\
+          $0.30*<<ProjectAcronym>>_{1}$
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    35\% 
+    & % Lab % goes here
+    65\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+     
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7) 
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15)
+        \end{itemize}
+        \item[<<ProjectAcronym>> :] <<Project>> (1)
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>1: Parcial Exam
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>2: Final Exam
+    \end{description}
+   
+    \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+    \end{evaluation}
+
+
+    
+%%%  CS2601 Inteligenia Artificial - Espanol
+\begin{evaluation}{CS2601}{Espanol}{THEORY,LAB,ORAL,READING}
+  El promedio final $NF$ se obtiene a través de:
  
-%%%  CS3903 Sistemas de Información - espanol
-  \begin{evaluation}{CS3903}{Espanol}{THEORY,LAB,ORAL,READING}
-  El promedio final $FG$ se obtiene a través de:
- 
-  \begin{tabular}{cl}
-      <<FG>> = & $0.10*<<ContinuousAssessmentAcronym>>_{1}$ +\\
-               & $0.10*<<ContinuousAssessmentAcronym>>_{2}$ +\\
-               & $0.30*<<ProjectAcronym>>$ + \\
-               & $0.25*<<LabExperimentsAcronym>>$ + \\
-               & $0.25*<<ExamAcronym>>_{1}$
-  \end{tabular}
- 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+  \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+  & % Formula para Teoria va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.05*<<PracticalTestAcronym>>_{1}$  + \\
+          $0.10*<<PracticalTestAcronym>>_{2}$  + \\
+          $0.20*<<PracticalTestAcronym>>_{3}$
+      \end{tabular} 
+      \end{minipage} 
+  & % Formula para Laboratorio va dentro del tabular
+      \begin{minipage}{0.95\textwidth}
+      \begin{tabular}{l}
+          $0.20*<<PracticalTestAcronym>>_{4}$  + \\
+          $0.05*<<ProjectAcronym>>_{1}$  + \\
+          $0.15*<<ProjectAcronym>>_{2}$  + \\
+          $0.25*<<ProjectAcronym>>_{3}$
+      \end{tabular} 
+      \end{minipage}                 \\ \cline{2-3}
+  
+  & % Theory % goes here 
+  35\% 
+  & % Lab % goes here
+  65\% \\ \cline{2-3}
+  & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+  & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+  \end{tabularx}
+    
+  \vspace{2mm}
   \noindent <<Where>>:
   \begin{description}
-  \item[<<ContinuousAssessmentAcronym>>:] <<ContinuousAssessment>> (2):
-       \begin{itemize}
-             \item  <<ContinuousAssessmentAcronym>>1 (semanas 1 - 7
-              \item <<ContinuousAssessmentAcronym>>2 (semanas 8 - 15) 
-       \end{itemize}
-   \item[<<ProjectAcronym>>:]  <<Project>> (1)
-   \item[<<LabExperimentsAcronym>>:] <<LabExperiments>> (1)
-   \item[<<ExamAcronym>>:] <<Exam>>(1) El texto requiere de impresión
+      \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (4)
+      \item[<<ProjectAcronym>> :] <<Project>> (3)
   \end{description}
-\noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+  
+  \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
   \end{evaluation}
  
+  %%%  CS2601 Inteligenia Artificial - Ingles
+  \begin{evaluation}{CS2601}{English}{THEORY,LAB,ORAL,READING}
+  The final grade $FG$ is obtained through of:
+ 
+  \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.05*<<PracticalTestAcronym>>_{1}$  + \\
+            $0.10*<<PracticalTestAcronym>>_{2}$  + \\
+            $0.20*<<PracticalTestAcronym>>_{3}$
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<PracticalTestAcronym>>_{4}$  + \\
+            $0.05*<<ProjectAcronym>>_{1}$  + \\
+            $0.15*<<ProjectAcronym>>_{2}$  + \\
+            $0.25*<<ProjectAcronym>>_{3}$
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    35\% 
+    & % Lab % goes here
+    65\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<PracticalTestAcronym>> :] <<PracticalTest>>  (4)
+        \item[<<ProjectAcronym>> :] <<Project>> (3)
+    \end{description}
+ 
+  \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+  \end{evaluation}
 
-
+  %%%  CS2H01 Interacción Humano Computador - Espanol
+    \begin{evaluation}{CS2H01}{Espanol}{THEORY,LAB,ORAL,READING}
+    El promedio final $NF$ se obtiene a través de:
+   
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+    \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+    & % Formula para Teoria va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.20*<<ExamAcronym>>_{1}$  + \\
+            $0.20*<<ExamAcronym>>_{2}$  
+        \end{tabular} 
+        \end{minipage} 
+    & % Formula para Laboratorio va dentro del tabular
+        \begin{minipage}{0.95\textwidth}
+        \begin{tabular}{l}
+            $0.15*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+            $0.15*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+            $0.15*<<ProjectAcronym>>_{1}$  + \\
+            $0.15*<<ProjectAcronym>>_{2}$ 
+        \end{tabular} 
+        \end{minipage}                 \\ \cline{2-3}
+    
+    & % Theory % goes here 
+    40\% 
+    & % Lab % goes here
+    60\% \\ \cline{2-3}
+    & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+    & \multicolumn{2}{c|}{\textbf{La ponderación de la evaluación se haría si ambas partes están aprobadas.}}  \\ \hline
+    \end{tabularx}
+      
+    \vspace{2mm}
+    \noindent <<Where>>:
+    \begin{description}
+        \item[<<ProjectAcronym>> :] <<Project>> (2)
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>(2)
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (Semanas 1 - 7): Tareas + Quizzes
+            \item <<ContinuousAssessmentAcronym>>2 (Semanas 8 - 15): Tareas + Quizzes
+        \end{itemize}
+    \end{description}
+    
+    \noindent Para aprobar el curso hay que obtener 11 o más en la nota final $NF$.
+    \end{evaluation}
+   
+    %%%  CS2H01 Interacción Humano Computador - Ingles
+    \begin{evaluation}{CS2H01}{English}{THEORY,LAB,ORAL,READING}
+    The final grade $FG$ is obtained through of:
+   
+    \begin{tabularx}{0.9\textwidth}{|X|p{0.35\textwidth}|p{0.35\textwidth}|} \hline
+      \multirow{4}{*}{\uppercase{<<Evaluation>>}} & \uppercase{<<Theory>>} & \uppercase{<<Laboratory>>} \\ \cline{2-3}
+      & % Formula para Teoria va dentro del tabular
+          \begin{minipage}{0.95\textwidth}
+          \begin{tabular}{l}
+              $0.20*<<ExamAcronym>>_{1}$  + \\
+              $0.20*<<ExamAcronym>>_{2}$  
+          \end{tabular} 
+          \end{minipage} 
+      & % Formula para Laboratorio va dentro del tabular
+          \begin{minipage}{0.95\textwidth}
+          \begin{tabular}{l}
+              $0.15*<<ContinuousAssessmentAcronym>>_{1}$  + \\
+              $0.15*<<ContinuousAssessmentAcronym>>_{2}$  + \\
+              $0.15*<<ProjectAcronym>>_{1}$  + \\
+              $0.15*<<ProjectAcronym>>_{2}$ 
+          \end{tabular} 
+          \end{minipage}                 \\ \cline{2-3}
+      
+      & % Theory % goes here 
+      40\% 
+      & % Lab % goes here
+      60\% \\ \cline{2-3}
+      & \multicolumn{2}{c|}{100\%}  \\ \cline{2-3}
+      & \multicolumn{2}{c|}{\textbf{The weighting of the evaluation will be made if both parties are approved.}}  \\ \hline
+      \end{tabularx}
+        
+      \vspace{2mm}
+      \noindent <<Where>>:
+      \begin{description}
+        \item[<<ProjectAcronym>> :] <<Project>> (2)
+        \item[<<ExamAcronym>> :] <<ExamAcronym>>(2)
+        \item[<<ContinuousAssessmentAcronym>>:]<<ContinuousAssessment>>(2):
+        \begin{itemize}
+            \item <<ContinuousAssessmentAcronym>>1 (weeks 1 - 7): Homeworks + Quizzes
+            \item <<ContinuousAssessmentAcronym>>2 (weeks 8 - 15): Homeworks + Quizzes
+        \end{itemize}
+      \end{description}
+   
+    \noindent To pass the course you must obtain 11 or more in the final grade $FG$.
+    \end{evaluation}

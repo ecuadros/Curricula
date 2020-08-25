@@ -1,5 +1,0 @@
-rm -rf html/PUCP/Silabos
-mkdir -p html/PUCP/Silabos
-rm -rf gen-tex/CS-PUCP/PDFSilabos
-mkdir -p gen-tex/CS-PUCP/PDFSilabos
-

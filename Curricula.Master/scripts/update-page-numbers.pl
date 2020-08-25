@@ -9,8 +9,7 @@ if(defined($ARGV[0])) { $Common::command = shift or Util::halt("There is no comm
 
 sub main()
 {
-        Common::set_initial_configuration($Common::command);
-        #print Dumper(%{$Common::config{outcomes_map}}); exit;
+        Common::setup();
         my $lang = $Common::config{language_without_accents};
         Common::read_pagerefs();
         Common::process_courses();

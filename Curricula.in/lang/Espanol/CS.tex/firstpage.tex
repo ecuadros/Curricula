@@ -2,49 +2,39 @@
 
 \begin{center}
     \vspace{3cm}
-    \includegraphics[width=7cm]{\InLogosDir/\siglas}\\
+    \begin{latexonly}
+        \includegraphics[width=7cm]{\InLogosDir/\siglas}\\
+    \end{latexonly}
+    \begin{htmlonly}
+		\begin{rawhtml}
+			<img src="./figs/<INST>.jpg" style="border: 0px solid ; width: 7cm;"> <br>
+		\end{rawhtml}
+	\end{htmlonly}
+    
     \begin{huge}
         \underlogotext
     \end{huge}
-    \vspace{3cm}
+    \latexhtml{\vspace{3cm}}{}
 
     \begin{huge}
         \doctitle
     \end{huge}
-    \vspace{3cm}
+    \latexhtml{\vspace{3cm}}{}
 
-\latexhtml{}{%
 	\begin{htmlonly}
-		\begin{rawhtml}<BOOKS>
+		\begin{rawhtml}
+        <PDF-LINK>
+
+        <BOOKS>
 		\end{rawhtml}
 	\end{htmlonly}
-}
 
     \begin{Large}
         \textit{-- \FinalReport --}
     \end{Large}
-    \vspace{4cm}
+    \latexhtml{\vspace{4cm}}{}
 
     \begin{Large}
         \textbf{\LastModification: \fecha}
     \end{Large}
 \end{center}
-
-% 			<TABLE BORDER=0 BORDERCOLOR=RED>
-% 			      <TR> <TD colspan="3" align="center"> <a href="\currentarea-\siglas-poster.pdf">
-% 			                               <IMG SRC="\currentarea-\siglas-poster.png" ALT="Ver p&oacute;ster de toda la carrera en PDF" height ="280"><BR>
-% 			                               P&oacute;ster</a>
-% 			           </TD>
-% 			      </TR> 
-% 			      <TR> 
-% 			           <TD align="center"> <a href="BookOfSyllabi-ES.pdf">
-% 			                               <IMG SRC="BookOfSyllabi-ES-P1.png" ALT="Libro de S&iacute;labos" height ="500"><br>Libro de S&iacute;labos</a> 
-% 			           </TD>
-% 			           <TD align="center"> <a href="BookOfBibliography-ES.pdf">
-% 			                               <IMG SRC="BookOfBibliography-ES-P1.png" ALT="Libro de Bibliograf&iacute;a" height ="500"><br>Libro de Bibliograf&iacute;a</a> 
-% 			           </TD>
-% 			           <TD align="center"> <a href="BookOfDescriptions-ES.pdf">
-% 							<IMG SRC="BookOfDescriptions-ES-P1.png" ALT="Libro de Sumillas" height ="500"><br>Libro de Sumillas</a> 
-% 				    </TD>
-% 			      </TR>
-% 			</TABLE>

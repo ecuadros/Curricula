@@ -1,6 +1,6 @@
 \begin{syllabus}
 
-\course{CS2102. Analysis and Design of Algorithms}{Obligatorio}{CS2102}
+\course{CS212. Analysis and Design of Algorithms}{Obligatorio}{CS212}
 % Source file: ../Curricula.in/lang/English/cycle/2021-I/Syllabi/Computing/CS/CS212.tex
 
 \begin{justification}
@@ -18,60 +18,31 @@ with the purpose of learning the fundamental principles of the design, implement
 \item Be able to answer the following questions when a new algorithm is presented: How good is the performance ?, Is there a better way to solve the problem?
 \end{goals}
 
-\begin{outcomes}{V1}
-    \item \ShowOutcome{a}{3} 
-    \item \ShowOutcome{b}{3} 
-\end{outcomes}
+--COMMON-CONTENT--
 
-\begin{outcomes}{V2}
-    \item \ShowOutcome{1}{2} 
-    \item \ShowOutcome{2}{2} 
-\end{outcomes}
-
-\begin{competences}{V1}
-    \item \ShowCompetence{C1}{a} 
-    \item \ShowCompetence{C2}{b} 
-    \item \ShowCompetence{C3}{b} 
-    \item \ShowCompetence{C5}{a} 
-    \item \ShowCompetence{C6}{a} 
-    \item \ShowCompetence{C9}{a} 
-\end{competences}
-
-\begin{competences}{V2}
-    \item \ShowCompetence{C1}{1} 
-    \item \ShowCompetence{C2}{2} 
-    \item \ShowCompetence{C3}{2} 
-    \item \ShowCompetence{C5}{1} 
-    \item \ShowCompetence{C6}{1} 
-    \item \ShowCompetence{C9}{2} 
-\end{competences}
-
-\begin{unit}{\ALBasicAnalysis}{}{KT2005, DPV2006, CLRS2009, S2013, K1997}{10}{C1}
+\begin{unit}{\ALBasicAnalysis}{}{KT2005, DPV2006, CLRS2009, S2013, K1997}{10}{a}
 \begin{topics}%
     \item \ALBasicAnalysisTopicDifferences % Differences between the best, the expected and the worst case of an algorithm.
     \item \ALBasicAnalysisTopicAsymptotic % Asymptotic analysis of upper and expected complexity of dimensions.
-    \item \ALBasicAnalysisTopicBig % Formal definition of notation Big O.
     \item \ALBasicAnalysisTopicComplexity % Complexity classes such as constant, logarithmic, linear, quadratic, and exponential.
-    \item \ALBasicAnalysisTopicBigO % Use of notation Big O.
-    \item \ALBasicAnalysisTopicRecurrence % Concurrent relations.
+    \item Asymptotic Notation
     \item \ALBasicAnalysisTopicAnalysis % Analysis of iterative and recursive algorithms.
+    \item Inductive proofs and correctness of algorithms
     \item \ALBasicAnalysisTopicSome % Some versions of the Master Theorem.
 \end{topics}
 \begin{learningoutcomes}
     \item \ALBasicAnalysisLOExplain [\Assessment] % Explain to refer to "better", "expected" and "worse" behavioral case of an algorithm.
-    \item \ALBasicAnalysisLOIn [\Assessment] % In the context of specific algorithms, identify the characteristics of data and / or other conditions or assumptions that lead to different behaviors.
     \item \ALBasicAnalysisLODetermine [\Assessment] % Informally determine the time and complexity space of simple algorithms.
-    \item \ALBasicAnalysisLOState [\Assessment] % Indicate the formal definition of Big O.
     \item \ALBasicAnalysisLOList [\Assessment] % List and contrast of standard classes of complexity.
-    \item \ALBasicAnalysisLOUse [\Assessment] % Use the formal notation of the Big O to give asymptotic upper bounds on the time and space complexity of the algorithms.
-    \item \ALBasicAnalysisLOUseBig [\Assessment] % Use formal notation Big O to give boundaries of expected cases in the time complexity of algorithms.
     \item \ALBasicAnalysisLOExplainThe [\Assessment] % Explain the use of the big, large, and small omega notation to describe the amount of work done by an algorithm.
+    \item Analyze worst-case running times of algorithms using asymptotic analysis [\Assessment]
     \item \ALBasicAnalysisLOUseRecurrence [\Assessment] % Use recurring relations to determine the complexity time of recursively defined algorithms.
     \item \ALBasicAnalysisLOSolve [\Assessment] % Solve basic recurrence relations, for example. Using some form of the Master Theorem
+    \item Argue the correctness of algorithms using inductive proofs [\Assessment]
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ALAlgorithmicStrategies}{}{KT2005, DPV2006, CLRS2009, A1999}{30}{C2}
+\begin{unit}{\ALAlgorithmicStrategies}{}{KT2005, DPV2006, CLRS2009, A1999}{30}{a,b}
 \begin{topics}%
     \item \ALAlgorithmicStrategiesTopicBrute % Brute force algorithms
     \item \ALAlgorithmicStrategiesTopicGreedy % Voracious Algorithms.
@@ -87,41 +58,29 @@ with the purpose of learning the fundamental principles of the design, implement
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ALFundamentalDataStructuresandAlgorithms}{}{KT2005, DPV2006, CLRS2009, S2011, GT2009}{10}{C6}
+\begin{unit}{\ALFundamentalDataStructuresandAlgorithms}{}{KT2005, DPV2006, CLRS2009, S2011, GT2009}{6}{a,b}
 \begin{topics}%
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicSimple % Simple numerical algorithms, such as calculating the mean of a list of numbers, find the minimum and maximum..
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicSequential % Sequential and binary search algorithms.
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicWorst % Algorithms of order of worst case quadratic (selection, insertion)
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicWorstOr % Ordering algorithms with worst case or average case in O (Ng N) (Quicksort, Heapsort, Mergesort)
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicGraphs % "Graphs and algorithms in graphs:
-							    % begin{subtopic} 
-							    % \item Representation of graphs (in., Adjacency list, adjacency matrix) 
-							    % \item 
-							    % end{subtopic}"
-    \item \ALFundamentalDataStructuresandAlgorithmsTopicHeaps %Montículos (Heaps)
     \item \ALFundamentalDataStructuresandAlgorithmsTopicGraphsAnd % "Graphs and algorithms in graphs:
 									      % begin{subtopic} 
 										  % \item Shortest Path Algorithms (Dijkstra and Floyd Algorithms)
 										  % \item Minimum expansion tree (Prim and Kruskal algorithm)
-										    % end{subtopic}"
+                                            % end{subtopic}"
+    \item Cache oblivious algorithms 
+    \item Number theory and cryptography
 \end{topics}
 \begin{learningoutcomes}
-    \item \ALFundamentalDataStructuresandAlgorithmsLOImplement [\Assessment] % Implement basic numerical algorithms.
-    \item \ALFundamentalDataStructuresandAlgorithmsLOImplementSimple [\Assessment] % Implement simple search algorithms and explain the differences in their complexity times.
-    \item \ALFundamentalDataStructuresandAlgorithmsLOBe [\Assessment] % Be able to implement common quadratic ordering algorithms and O (N log N).
-    \item \ALFundamentalDataStructuresandAlgorithmsLODiscuss [\Usage] % Discuss the execution time and memory efficiency of the main algorithms for sorting, searching and hashing..
     \item \ALFundamentalDataStructuresandAlgorithmsLODiscussFactors [\Familiarity] % Discuss factors other than computational efficiency that influence the choice of algorithms, such as programming time, maintainability, and the use of application-specific patterns in the input data.
     \item \ALFundamentalDataStructuresandAlgorithmsLOSolveProblems [\Assessment] % Solve problems using basic algorithms of graphs, including search by depth and search by amplitude.
     \item \ALFundamentalDataStructuresandAlgorithmsLODemonstrate [\Assessment] % Demonstrate ability to evaluate algorithms, to select from a range of possible options, to provide a justification for that selection, and to implement the algorithm in a specific context.
-    \item \ALFundamentalDataStructuresandAlgorithmsLODescribeTheAnd [\Assessment] % Describe the property of heap and the use of heaps as a priority queue implementation
     \item \ALFundamentalDataStructuresandAlgorithmsLOSolveProblemsAlgorithms [\Assessment] % Solve problems using graph algorithms, including shorter single source path and shorter path of all pairs,and at least a minimal expansion tree algorithm..
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ALBasicAutomataComputabilityandComplexity}{}{KT2005, DPV2006, CLRS2009}{2}{C9}
+\begin{unit}{\ALBasicAutomataComputabilityandComplexity}{}{KT2005, DPV2006, CLRS2009}{2}{a,b}
 \begin{topics}%
     \item \ALBasicAutomataComputabilityandComplexityTopicIntroduction % Introduction to the classes P and NP and the problem P vs. NP.
     \item \ALBasicAutomataComputabilityandComplexityTopicIntroductionTo % Introduction and examples of problems NP- Complete and NP-Complete classes.
+    \item Reductions
 \end{topics}
 \begin{learningoutcomes}
     \item \ALBasicAutomataComputabilityandComplexityLODefine [\Familiarity] % Define the classes P and NP
@@ -129,13 +88,14 @@ with the purpose of learning the fundamental principles of the design, implement
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{\ALAdvancedDataStructuresAlgorithmsandAnalysis}{}{KT2005, DPV2006, CLRS2009, T1983, R1992}{8}{C16}
+\begin{unit}{\ALAdvancedDataStructuresAlgorithmsandAnalysis}{}{KT2005, DPV2006, CLRS2009, T1983, R1992}{12}{a,b}
 \begin{topics}%
     \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicGraphs % Graphs (eg topological ordering, finding strongly connected components)
-    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicNumber % Theoretical-Numeric Algorithms (Modular Arithmetic, Primal Number Test, Integer Factorization)
     \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicRandomized % Random algorithms.
     \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicAmortized % Amortized analysis.
     \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicProbabilistic % Probabilistic Analysis.
+    \item Approximation Algorithms 
+    \item Linear Programming
 \end{topics}
 \begin{learningoutcomes}
     \item \ALAdvancedDataStructuresAlgorithmsandAnalysisLOUnderstand [\Familiarity]% Understand the mapping of real-world problems to algorithmic solutions (eg, gran) to solve real problems.

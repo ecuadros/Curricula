@@ -1,6 +1,8 @@
 package Util;
 use strict;
 use Carp::Assert;
+use Text::Balanced qw<extract_bracketed>;
+
 # use Term::ANSIColor; # http://pueblo.sourceforge.net/doc/manual/ansi_color_codes.html
 # use POSIX;
 # use POSIX qw(setsid);
@@ -11,6 +13,10 @@ our %control	= ();
 sub precondition($)
 {
 	my ($key) = (@_);
+	if(not defined($control{$key}))
+	{
+		Util::print_color("precondition $key is not fulfilled ...")
+	}
 	assert(defined($control{$key}));
 	assert($control{$key} == 1);
 }
@@ -122,6 +128,7 @@ sub calc_percent($$)
 	return $percent;
 }
 
+our $flag = 0;
 # ok
 sub read_file($)
 {
@@ -132,6 +139,31 @@ sub read_file($)
 	return join("", @lines);
 }
 
+sub trim_comments($)
+{
+	my ($txt) = (@_);
+	my @lines = split("\n", $txt);
+	my $cline = 0;
+	foreach (@lines)
+	{
+		$lines[$cline] =~ s/^%.*$//g;
+		pos($lines[$cline])   =  0;
+		while( $lines[$cline] =~ m/(.)%(.*)/g )
+		{
+			my $matchpos = $-[0];
+			my ($char, $comment) = ($1, $2);
+			if( not $char eq "\\" )
+			{
+				$lines[$cline] =~ s/$char%$comment/$char/g;
+			}
+			#Util::print_message("Entró ! ($matchpos)$cline:$char%$comment");
+			pos($lines[$cline]) = $matchpos + 1;
+			#exit;
+		}
+		$cline++;
+	}
+	return join("\n", @lines);
+}
 # ok
 
 sub write_file($$)

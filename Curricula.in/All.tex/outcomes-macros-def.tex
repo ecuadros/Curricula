@@ -1,37 +1,21 @@
-\newcommand{\DefineOutcome}[2]{%
-\expandafter\def\csname Outcome#1\endcsname{#2}%
-}
+\newcommand{\DefineOutcome}[2]           { \expandafter\def\csname Outcome#1\endcsname{#2} }
+\newcommand{\ShowOutcome}[2]             { \textbf{#1)} \csname Outcome#1\endcsname (\textbf{\ShowCompetenceLevel{#2}}) }
+\newcommand{\ShowShortOutcomeLetter}[1]  { \textbf{#1)} \csname Outcome#1Short\endcsname }
+\newcommand{\ShowOutcomeText}[1]         { \csname Outcome#1\endcsname }
 
-\newcommand{\ShowOutcomeText}[1]{%
-\csname Outcome#1\endcsname %
-}
+\newcommand{\ShowShortOutcome}[1]        { \csname Outcome#1Short\endcsname }
 
-\newcommand{\ShowOutcome}[2]{%
-{\bf #1)} \csname Outcome#1\endcsname ({\bf \ShowCompetenceLevel{#2}})%
-}
+\newcommand{\DefineSpecificOutcome}[4]      {   \expandafter\def\csname SpecificOutcomeLabel#1#2\endcsname{#3}%
+                                                \expandafter\def\csname SpecificOutcome#1#2\endcsname{#4}% 
+                                            }%
+\newcommand{\ShowSpecificOutcome}[3]        { \textbf{\csname SpecificOutcomeLabel#1#2\endcsname)} \csname SpecificOutcome#1#2\endcsname }
+\newcommand{\ShowSpecificOutcomeLetter}[2]  { \textbf{\csname SpecificOutcomeLabel#1#2\endcsname)} }
+\newcommand{\ShowSpecificOutcomeText}[2]    { \csname SpecificOutcome#1#2\endcsname }
 
-\newcommand{\ShowShortOutcomeLetter}[1]{%
-{\bf #1)} \csname Outcome#1Short\endcsname %
-}
+\newcommand{\DefineCompetence}[2]{ \expandafter\def\csname #1\endcsname{#2} }
 
-\newcommand{\ShowShortOutcome}[1]{%
-\csname Outcome#1Short\endcsname %
-}
+\newcommand{\Competence}[1]{ \csname #1\endcsname\label{Competence:#1} }
+\newcommand{\ShowCompetence}[2]{ \textbf{#1.} \csname #1\endcsname \textbf{$\Rightarrow$ Outcome #2} }
 
-\newcommand{\DefineCompetence}[2]{%
-\expandafter\def\csname #1\endcsname{#2}%
-}
-
-\newcommand{\Competence}[1]{%
-\csname #1\endcsname\label{Competence:#1}%
-}
-\newcommand{\ShowCompetence}[2]{%
-{\bf #1.} \csname #1\endcsname {\bf $\Rightarrow$ Outcome #2}%
-}
-
-\newcommand{\DefineCompetenceLevel}[2]{%
-\expandafter\def\csname CompetenceLevel#1\endcsname{#2}%
-}
-\newcommand{\ShowCompetenceLevel}[1]{%
-\csname CompetenceLevel#1\endcsname%
-}
+\newcommand{\DefineCompetenceLevel}[2]{ \expandafter\def\csname CompetenceLevel#1\endcsname{#2} }
+\newcommand{\ShowCompetenceLevel}[1]{\csname CompetenceLevel#1\endcsname}

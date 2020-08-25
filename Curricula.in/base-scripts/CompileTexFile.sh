@@ -30,24 +30,24 @@ rm *.ps *.pdf *.log *.dvi *.aux *.bbl *.blg *.toc *.out *.xref *.lof *.log *.lot
 
 mkdir -p $current_dir/<OUT_LOG_DIR>;
 $latex_prg $MainFile;
-set compbib = "$current_dir/scripts/compbib.sh $MainFile > $current_dir/../Curricula.out/log/$area-$institution-$MainFile-Errors-bib.txt"
-$compbib;
+echo "$current_dir/scripts/compbib.sh $MainFile > $current_dir/../Curricula.out/log/$area-$institution-$MainFile-Errors-bib.txt";
+$current_dir/scripts/compbib.sh $MainFile > $current_dir/../Curricula.out/log/$area-$institution-$MainFile-Errors-bib.txt;
 
 $latex_prg $MainFile;
 $latex_prg $MainFile;
 if($latex_prg == "latex") then
   dvips $MainFile.dvi -o $MainFile.ps;
   ps2pdf $MainFile.ps $MainFile.pdf;
-  rm *.aux  *.log *.toc *.blg *.bbl $MainFile.ps $MainFile.dvi
 endif
 
-rm *.aux  *.log *.toc *.blg *.bbl;
+rm *.aux  *.log *.toc *.blg *.bbl $MainFile.ps $MainFile.dvi;
 
 echo "cd $current_dir";
 cd $current_dir;
 
+mkdir -p <OUTPUT_HTML_DOCS_DIR>;
 echo "cp <OUTPUT_TEX_DIR>/$MainFile.pdf <OUTPUT_HTML_DIR>/."
-cp "<OUTPUT_TEX_DIR>/$MainFile.pdf" <OUTPUT_HTML_DIR>/.;
+cp "<OUTPUT_TEX_DIR>/$MainFile.pdf" <OUTPUT_HTML_DOCS_DIR>/.;
 
 cp "<OUTPUT_TEX_DIR>/$MainFile.pdf" "<OUTPUT_DIR>/pdfs/$OutputFile.pdf";
 echo "File <OUTPUT_DIR>/pdfs/$OutputFile generated !";

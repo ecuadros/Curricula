@@ -1,104 +1,97 @@
 \begin{syllabus}
 
-\course{MA201. Ecuaciones Diferenciales}{Obligatorio}{MA201}
+\course{MA201. Math  III}{Obligatorio}{MA201}
 
 \begin{justification}
-Es una extensión de los cursos de Análisis Matemático I y Análisis Matemático II, tomando en cuenta dos o más variables, indispensables para aquellas materias que requieren trabajar con geometría en curvas y superficies, así­ como en procesos de búsqueda de puntos extremos.
-\end{justification}
-
-\begin{goals}
-\item Diferenciar e integrar funciones vectoriales de variable real, entender y manejar el concepto de parametrización. Describir una curva en forma paramétrica.
-\item Describir, analizar, diseñar y formular modelos continuos que dependen de más de una variable.
-\item Establecer relaciones entre diferenciación e integración y aplicar el cálculo diferencial e integral ala resolución de problemas geométricos y de optimización.
-\end{goals}
-
-\begin{outcomes}
-    \item \ShowOutcome{a}{3}
-    \item \ShowOutcome{j}{3}
-\end{outcomes}
-
-\begin{competences}
-    \item \ShowCompetence{C1}{a} 
-    \item \ShowCompetence{C20}{j} 
-    \item \ShowCompetence{C24}{j}
-\end{competences}
-
-\begin{unit}{}{Geometría en el espacio}{Apostol73,Simmons95}{8}{C1}
+   This course introduces the first concepts of Linear Algebra, as well as Numerical Methods with emphasis on problem solving using the Open Source Scilab computer package. While effective and pure problem solving is privileged, in each subject, only a few methods of relevance to everyday engineering are taught. Knowledge of these methods prepares students to seek more advanced alternatives only when necessary.
+ 
+ \end{justification}
+ 
+ \begin{goals}
+ \item Ability to apply knowledge of mathematics.
+ \item Ability to apply knowledge about engineering.
+ \item Ability to apply the knowledge, techniques, skills and modern tools of modern engineering to the practice of engineering.
+ \end{goals}
+ 
+ \begin{outcomes}{V1}
+     \item \ShowOutcome{a}{3}
+     \item \ShowOutcome{j}{3}
+ \end{outcomes}
+ 
+ \begin{competences}{V1}
+     \item \ShowCompetence{C1}{a} 
+     \item \ShowCompetence{C20}{j} 
+     \item \ShowCompetence{C24}{j} 
+ \end{competences}
+ 
+ \begin{unit}{Linear Algebra Theory}{}{ChapCan,JCValle}{18}{C1}
    \begin{topics}
-      \item $R^3$ como espacio euclídeo y álgebra .
-      \item Superficies básicas en el espacio.
+       \item Matrices and Determinants.
+       \item Null spaces.
+       \item System of Linear Equations.
+         \begin{subtopics}
+           \item Gaussian elimination.
+           \item LU factorization.
+         \end{subtopics}
+       \item Linear Transformations
+         \begin{subtopics}
+           \item Matrix Representations of Linear Transformations
+         \end{subtopics}
+       \item Own Values and Vectors
+         \begin{subtopics}
+           \item Characteristic polynomial.
+           \item Algebraic and geometric multiplicity
+           \item Power method.
+         \end{subtopics}
+    \end{topics}
+ 
+    \begin{learningoutcomes}
+       \item Apply operations with matrices and determinants, as well as the ordering of information in matrix terms to model real context situations with systems of linear equations by analyzing the consistency of the system.
+       \item Apply the Gaussian elimination method with pivoting in its resolution and LU factorization techniques for a matrix in the resolution of linear equation systems.
+       \item Identify linear transformations and their properties in problem solving and their relationship to matrices.
+       \item Apply linear transformations to solve problems in a real context.
+       \item Calculate proper values and vectors of a matrix in the modeling and solving of problems in a real context, as well as the approximation of proper values and vectors using the power method.
+    \end{learningoutcomes}
+ \end{unit}
+ 
+ 
+ \begin{unit}{Numerical methods}{}{ChapCan,JCValle}{22}{C24}
+   \begin{topics}
+     \item Coma Flotante.
+     \item System of linear equations
+       \begin{subtopics}
+         \item Iterative methods.
+       \end{subtopics}
+     \item Non-Linear Equations.
+       \begin{subtopics}
+         \item Bisection Method.
+         \item Fixed Point Method.
+       \end{subtopics}
+     \item Approximation of functions.
+       \begin{subtopics}
+         \item Least squares method.
+         \item QR decomposition.
+         \item Decomposition into singular values.
+       \end{subtopics}
+     \item Polynomial interpolation.
+     \item Spline.
+     \item Differentiation and Numerical Integration.
+     \item Numerical Solution for Ordinary Difference Equations.
+     \item Numerical Solution for Ordinary Differential Equation System.
    \end{topics}
+ 
    \begin{learningoutcomes}
-      \item Manejar el álgebra vectorial en $R^3$[\Usage].
-      \item Identificar tipos de superficies en el espacio [\Usage].
-      \item Graficar superficies básicas [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-\begin{unit}{}{Curvas y parametrizaciones}{Apostol73,Simmons95}{20}{C1}
-   \begin{topics}
-      \item Funciones vectoriales de variable real. Reparametrizaciones
-      \item Diferenciación  e integración 
-      \item Velocidad, aceleración , curvatura, torsión 
-      \end{topics}
-   \begin{learningoutcomes}
-      \item Describir las diferentes carácteristicas  de una curva [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-\begin{unit}{}{Campos escalares}{Apostol73,Bartle76,Simmons95}{20}{C1}
-   \begin{topics}
-      \item Curvas de nivel
-      \item Límites y continuidad
-      \item Diferenciación
-      \end{topics}
-   \begin{learningoutcomes}
-      \item Graficar campos escalares
-      \item Discutir la existencia de un límite y la continuidad de un campo escalar [\Usage].
-      \item Calcular derivadas parciales y totales [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-\begin{unit}{}{Aplicaciones}{Apostol73,Simmons95,Bartle76}{12}{C20}
-   \begin{topics}
-      \item Máximos y mínimos
-      \item Multiplicadores de Lagrange
-      \end{topics}
-   \begin{learningoutcomes}
-      \item Interpretar la noción de gradiente en curvas de nivel y en superficies de nivel [\Usage].
-      \item Usar técnicas para hallar extremos [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-\begin{unit}{}{Integración Múltiple}{Apostol73}{12}{C24}
-   \begin{topics}
-      \item Integración de Riemann
-      \item Integración sobre regiones
-      \item Cambio de coordenadas
-      \item Aplicaciones
-      \end{topics}
-   \begin{learningoutcomes}
-      \item Reconocer regiones de integración adecuadas [\Usage].
-      \item Realizar cambios de coordenadas adecuados [\Usage].
-      \item Aplicar la integración múltiple a problemas [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-\begin{unit}{}{Campos vectoriales}{Apostol73}{18}{C1}
-   \begin{topics}
-      \item Integrales de linea
-      \item Campos conservativos
-      \item Integrales de superficie
-   \end{topics}
-   \begin{learningoutcomes}
-      \item Calcular la integral de linea de campos vectoriales[\Usage].
-      \item Reconocer campos conservativos[\Usage].
-      \item Hallar funciones potenciales de campos conservativos [\Usage].
-      \item Hallar integrales de superficies y aplicarlas [\Usage].
-      \end{learningoutcomes}
-\end{unit}
-
-
+     \item Represent the actual numbers in the floating point system.
+     \item Apply the iterative methods for solving systems of linear equations after convergence of each iterative method and find the error made in each iteration
+     \item Locate and approximate the solutions of non-linear equations after convergence of each iterative method, as well as the error made in each iteration.
+     \item Approximate functions using the least-squares method, as well as QR decomposition and decomposition into singular values of a matrix.
+     \item Approximate complicated functions using polynomials, given a set of data for subsequent interpolation
+     \item Apply the Splines in solving problems in a real context and approximate the derivatives by means of numerical differentiation and Taylor polynomials.
+     \item Apply numerical integration to approximate defined integrals.
+     \item Apply one-step numerical methods to approximate ordinary differential equations.
+     \item Apply one-step numerical methods to approximate ordinary differential equation systems.
+  \end{learningoutcomes}
+ \end{unit}
 
 \begin{coursebibliography}
 \bibfile{BasicSciences/MA201}

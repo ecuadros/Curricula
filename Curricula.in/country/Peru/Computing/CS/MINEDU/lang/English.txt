@@ -1,0 +1,4 @@
+Semester=Académico period
+Sem=AP
+Course=Didactic unit
+TypeOfCourse=Type of course

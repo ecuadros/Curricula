@@ -1,5 +1,0 @@
-rm -rf html/CS-USGP/Silabos
-mkdir -p html/CS-USGP/Silabos
-rm -rf gen-tex/CS-USGP/PDFSilabos
-mkdir -p gen-tex/CS-USGP/PDFSilabos
-

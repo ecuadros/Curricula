@@ -1,0 +1,94 @@
+%xyz%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%abc%
+% Knowledge Area: AL
+\newcommand{\AL}{Algoritmos y Complejidad (AL)\xspace}
+\newcommand{\ALBOKDescription}{Los algoritmos son fundamentales para la ciencia de la computación y la ingeniería de software. En el mundo real el rendimiento de cualquier sistema de software depende de: (1) los algoritmos elegidos y (2) la idoneidad y la eficiencia de las diversas capas de aplicación. Un buen diseño de algoritmos es crucial para el rendimiento de todos los sistemas de software. Por otra parte, el estudio de algoritmos da una idea de la naturaleza intrínseca del problema y las posibles soluciones técnicas independientes del lenguaje de programación, paradigma de programación, hardware, o cualquier otro aspecto de implementación. 
+
+Una parte importante de la informática es la capacidad de seleccionar los algoritmos apropiados para determinados 
+propósitos y aplicarlos, reconociendo la posibilidad de que no se encuentre un algoritmo adecuado. Este facilidad se basa en la comprensión de la variedad de algoritmos que abordan un importante conjunto de problemas bien determinadas, reconociendo sus fortalezas y debilidades, y su idoneidad en determinados contextos. La eficiencia es un tema omnipresente en toda esta área. Esta área de conocimiento se definen los conceptos centrales y los conocimientos necesarios para diseñar, implementar y analizar los algoritmos para resolver problemas. Los algoritmos son esenciales en todas las áreas avanzadas de la informática: inteligencia artificial, bases de datos, computación distribuida, gráficos, redes, sistemas operativos, lenguajes de programación, de seguridad, y así sucesivamente. Algoritmos que tienen utilidad específica en cada uno de éstos se enumeran en las áreas de conocimiento relevantes. Criptografía, por ejemplo, aparece en la nueva área de conocimiento en \xref{IAS}, mientras que los algoritmos paralelos y distribuidos aparecen el Área de Conocimiento de \xref{PD}. 
+
+Al igual que con todas las áreas de conocimiento, el orden de los temas y sus agrupaciones no necesariamente se correlaciona con un orden específico de presentación. Diferentes programas enseñarán los temas en diferentes cursos y deben hacerlo en el orden que ellos creen es el más apropiado para sus estudiantes.\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KU: AL:Análisis Básico
+\newcommand{\ALBasicAnalysis}{Análisis Básico\xspace}
+\newcommand{\ALBasicAnalysisDescription}{~\xspace}
+\newcommand{\ALBasicAnalysisTopicDifferences}{Diferencias entre el mejor, el esperado y el peor caso de un algoritmo.\xspace}
+\newcommand{\ALBasicAnalysisTopicAsymptotic}{Análisis asintótico de complejidad de cotas superior y esperada.\xspace}
+\newcommand{\ALBasicAnalysisTopicBig}{Definición formal de la Notación Big O.\xspace}
+\newcommand{\ALBasicAnalysisTopicComplexity}{Clases de complejidad como constante, logarítmica, lineal, cuadrática y exponencial.\xspace}
+\newcommand{\ALBasicAnalysisTopicEmpirical}{Medidas empíricas de desempeño.\xspace}
+\newcommand{\ALBasicAnalysisTopicTime}{Compensación entre espacio y tiempo en los algoritmos.\xspace}
+
+\newcommand{\ALBasicAnalysisTopicBigO}{Uso de la notación Big O.\xspace}
+\newcommand{\ALBasicAnalysisTopicLittle}{Notación Little o, Big omega y Big theta.\xspace}
+\newcommand{\ALBasicAnalysisTopicRecurrence}{Relaciones recurrentes.\xspace}
+\newcommand{\ALBasicAnalysisTopicAnalysis}{Análisis de algoritmos iterativos y recursivos.\xspace}
+\newcommand{\ALBasicAnalysisTopicSome}{Teorema Maestro y Árboles Recursivos.\xspace}
+
+\newcommand{\ALBasicAnalysisAllTopics}{% abc
+\begin{topics}%
+	\item \ALBasicAnalysisTopicDifferences\xspace
+	\item \ALBasicAnalysisTopicAsymptotic\xspace
+	\item \ALBasicAnalysisTopicBig\xspace
+	\item \ALBasicAnalysisTopicComplexity\xspace
+	\item \ALBasicAnalysisTopicEmpirical\xspace
+	\item \ALBasicAnalysisTopicTime\xspace
+	\item \ALBasicAnalysisTopicBigO\xspace
+	\item \ALBasicAnalysisTopicLittle\xspace
+	\item \ALBasicAnalysisTopicRecurrence\xspace
+	\item \ALBasicAnalysisTopicAnalysis\xspace
+	\item \ALBasicAnalysisTopicSome\xspace
+\end{topics}
+}
+\newcommand{\ALBasicAnalysisLOExplain}{Explique a que se refiere con ``mejor", ``esperado" y ``peor" caso de comportamiento de un algoritmo\xspace}
+\newcommand{\ALBasicAnalysisLOExplainLevel}{Familiarizarse}
+\newcommand{\ALBasicAnalysisLOIn}{En el contexto de a algoritmos específicos, identifique las características de data y/o otras condiciones o suposiciones que lleven a diferentes comportamientos\xspace}
+\newcommand{\ALBasicAnalysisLOInLevel}{Evaluar}
+\newcommand{\ALBasicAnalysisLODetermine}{Determine informalmente el tiempo y el espacio de complejidad de diferentes algoritmos\xspace}
+\newcommand{\ALBasicAnalysisLODetermineLevel}{Usar}
+\newcommand{\ALBasicAnalysisLOState}{Indique la definición formal de Big O\xspace}
+\newcommand{\ALBasicAnalysisLOStateLevel}{Familiarizarse}
+\newcommand{\ALBasicAnalysisLOList}{Lista y contraste de clases estándares de complejidad\xspace}
+\newcommand{\ALBasicAnalysisLOListLevel}{Familiarizarse}
+\newcommand{\ALBasicAnalysisLOPerform}{Realizar estúdios empíricos para validar una hipótesis sobre runtime stemming desde un análisis matemático Ejecute algoritmos con entrada de varios tamaños y compare el desempeño\xspace}
+\newcommand{\ALBasicAnalysisLOPerformLevel}{Evaluar}
+\newcommand{\ALBasicAnalysisLOGive}{Da ejemplos que ilustran las compensaciones entre espacio y tiempo que se dan en los algoritmos\xspace}
+\newcommand{\ALBasicAnalysisLOGiveLevel}{Familiarizarse}
+
+\newcommand{\ALBasicAnalysisLOUse}{Use la notación formal de la Big O para dar límites superiores asintóticos en la complejidad de tiempo y espacio de los algoritmos\xspace}
+\newcommand{\ALBasicAnalysisLOUseLevel}{Usar}
+\newcommand{\ALBasicAnalysisLOUseBig}{Usar la notación formal Big O para dar límites de casos esperados en el tiempo de complejidad de los algoritmos\xspace}
+\newcommand{\ALBasicAnalysisLOUseBigLevel}{Usar}
+\newcommand{\ALBasicAnalysisLOExplainThe}{Explicar el uso de la notación theta grande, omega grande y o pequeña para describir la cantidad de trabajo hecho por un algoritmo\xspace}
+\newcommand{\ALBasicAnalysisLOExplainTheLevel}{Familiarizarse}
+\newcommand{\ALBasicAnalysisLOUseRecurrence}{Usar relaciones recurrentes para determinar el tiempo de complejidad de algoritmos recursivamente definidos\xspace}
+\newcommand{\ALBasicAnalysisLOUseRecurrenceLevel}{Usar}
+\newcommand{\ALBasicAnalysisLOSolve}{Resuelve relaciones de recurrencia básicas, por ejemplo. usando alguna forma del Teorema Maestro\xspace}
+\newcommand{\ALBasicAnalysisLOSolveLevel}{Usar}
+
+\newcommand{\ALBasicAnalysisAllLearningOutcomes}{%
+\begin{learningoutcomes}%
+	\item \ALBasicAnalysisLOExplain\xspace[\ALBasicAnalysisLOExplainLevel] %
+	\item \ALBasicAnalysisLOIn\xspace[\ALBasicAnalysisLOInLevel] %
+	\item \ALBasicAnalysisLODetermine\xspace[\ALBasicAnalysisLODetermineLevel] %
+	\item \ALBasicAnalysisLOState\xspace[\ALBasicAnalysisLOStateLevel] %
+	\item \ALBasicAnalysisLOList\xspace[\ALBasicAnalysisLOListLevel] %
+	\item \ALBasicAnalysisLOPerform\xspace[\ALBasicAnalysisLOPerformLevel] %
+	\item \ALBasicAnalysisLOGive\xspace[\ALBasicAnalysisLOGiveLevel] %
+	\item \ALBasicAnalysisLOUse\xspace[\ALBasicAnalysisLOUseLevel] %
+	\item \ALBasicAnalysisLOUseBig\xspace[\ALBasicAnalysisLOUseBigLevel] %
+	\item \ALBasicAnalysisLOExplainThe\xspace[\ALBasicAnalysisLOExplainTheLevel] %
+	\item \ALBasicAnalysisLOUseRecurrence\xspace[\ALBasicAnalysisLOUseRecurrenceLevel] %
+	\item \ALBasicAnalysisLOSolve\xspace[\ALBasicAnalysisLOSolveLevel] %
+\end{learningoutcomes}%
+}
+
+
+0123 56 \% la \% ye \% co \% test % comentario % uno mas aqui
+hola
+
+
+
+
+
+

@@ -80,16 +80,22 @@
 
 \newenvironment{outcomes}%
 {
-\begin{syllabus-section}{Competencias Generales ({\it Outcomes})}%
-\end{syllabus-section}
+\begin{syllabus-section}{Competencias Generales ({\it Outcomes})}			\end{syllabus-section}
+\begin{description}%
+}
+{\end{description}%
+}%
+
+\newenvironment{specificoutcomes}%
+{
+\begin{syllabus-section}{Competencias específicas}							\end{syllabus-section}
 \begin{description}%
 }
 {\end{description}%
 }%
 
 \newenvironment{competences}%
-{\begin{syllabus-section}{Competencias específicas de Computación (IEEE)}%
- \end{syllabus-section}%
+{\begin{syllabus-section}{Competencias específicas de Computación (IEEE)}	\end{syllabus-section}%
 \begin{description}%
 }%
 {\end{description}%
@@ -105,7 +111,7 @@
 	\item [Competencias: ] #5
 }
 {%
-	\begin{sloppypar}%citations will repect margins now !
+	\begin{sloppypar}%citations will respect margins now !
 	\item [\Bibliography:] \cite{\thisunitbib}%
 	\end{sloppypar}
 	\end{description}%
