@@ -1013,15 +1013,15 @@ sub generate_table_topics_by_course($$$$$$$)
 		{	Util::print_error("Common::config{ref}{$ku} not defined ..."); #exit;
 		}
 		my $ContainsMandatoryHours = "~";
-		my $star_msg = <<'STAR_MESSAGE';
-	\latexhtml{<STAR_LATEX>}{}
-	\begin{htmlonly}
-		\begin{rawhtml}
-			<img src="./figs/<STAR_ICON>" style="border: 0px solid ; width: 16px; height: 16px;">
-		\end{rawhtml}
-	\end{htmlonly}
-STAR_MESSAGE
-		
+		my $star_msg = '
+	\latexhtml{<STAR_LATEX>}{%
+		\begin{htmlonly}
+			\begin{rawhtml}
+				<img src="./figs/<STAR_ICON>" style="border: 0px solid ; width: 16px; height: 16px;">
+			\end{rawhtml}
+		\end{htmlonly}
+	}';
+
 		if( $Common::bok{$lang}{$ka}{KU}{$ku}{nhTier1} > 0 || $Common::bok{$lang}{$ka}{KU}{$ku}{nhTier2} > 0 )
 		{	
 			$star_msg =~ s/<STAR_LATEX>/\$\\bigstar\$/g;
