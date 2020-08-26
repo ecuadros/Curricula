@@ -533,32 +533,32 @@ sub process_critical_path_for_one_course($)
 	#Util::print_message("Processing $codcour");
 	foreach my $codpost (@{$Common::course_info{$codcour}{courses_after_this_course}})
 	{
-				#Util::print_message("\t$codpost");
-				my ($distance_child, @path_child) = process_critical_path_for_one_course($codpost);
-				$distance_child++;
-				#unshift(@path_child, $codcour);
-				my $new_path_pos = 0;
-				if( defined($paths{$distance_child}) )
-				{		$new_path_pos = scalar( @{$paths{$distance_child}} );	}
-				my $i=0;
-				foreach (@path_child)
-				{
-						$paths{$distance_child}[$new_path_pos+$i][0] = $codcour;
-						foreach my $one_codcour (@{$path_child[$i]})
-						{		push(@{$paths{$distance_child}[$new_path_pos+$i]}, $one_codcour);			}
-						$i++;
-				}
-				if ($distance_child > $distance)
-				{		$distance	= $distance_child;		}
-		}
-		if($distance == 0)
+		#Util::print_message("\t$codpost");
+		my ($distance_child, @path_child) = process_critical_path_for_one_course($codpost);
+		$distance_child++;
+		#unshift(@path_child, $codcour);
+		my $new_path_pos = 0;
+		if( defined($paths{$distance_child}) )
+		{		$new_path_pos = scalar( @{$paths{$distance_child}} );	}
+		my $i=0;
+		foreach (@path_child)
 		{
-				$paths{++$distance}[0][0] = $codcour;
-				return ($distance, @{$paths{$distance}})
+				$paths{$distance_child}[$new_path_pos+$i][0] = $codcour;
+				foreach my $one_codcour (@{$path_child[$i]})
+				{		push(@{$paths{$distance_child}[$new_path_pos+$i]}, $one_codcour);			}
+				$i++;
 		}
-		#Util::print_message("Returning from $codcour, max distance=$distance");
-		#print Dumper(\%paths);
-		return ($distance, @{$paths{$distance}});
+		if ($distance_child > $distance)
+		{		$distance	= $distance_child;		}
+	}
+	if($distance == 0)
+	{
+			$paths{++$distance}[0][0] = $codcour;
+			return ($distance, @{$paths{$distance}})
+	}
+	#Util::print_message("Returning from $codcour, max distance=$distance");
+	#print Dumper(\%paths);
+	return ($distance, @{$paths{$distance}});
 }
 
 sub load_critical_path(@)
@@ -599,20 +599,41 @@ sub detect_critical_path()
 	Util::print_color("detect_critical_path Ok!");
 }
 
-# dot
-sub generate_curricula_in_dot($$)
+sub do_nothing($$$$)
 {
-	my ($size, $lang) = (@_);
+	my ($codcour, $lang, $course_tpl, $outcome) = (@_);
+	return $course_tpl;
+}
+
+#$highlight, $underemphasize
+sub highlight_outcome($$$$)
+{
+	my ($codcour, $lang, $course_tpl, $outcome) = (@_);
+	my $version = $Common::config{OutcomesVersion};
+	my %map = ();
+	if( defined($Common::course_info{$codcour}{$lang}{outcomes}{$version}{$outcome}) )
+	{
+		#$map{"FONTCOLOR"}   = "black";
+		#$map{"FILLCOLOR"}   = "yellow";
+		#$map{"BORDERCOLOR"} = "black");
+	}
+	else
+	{
+		$map{"FONTCOLOR"}   = "black";
+		$map{"FILLCOLOR"}   = "white";
+		$map{"BORDERCOLOR"} = "black";
+	}
+	$course_tpl = Common::replace_tags_from_hash($course_tpl, "<", ">", %map);
+	return $course_tpl;
+}
+
+# dot
+sub generate_curricula_in_dot_internal($$$$$)
+{
+	my ($output_dot_file, $course_tpl, $lang, $filter, $pre_processing_course) = (@_);
 	Util::check_point("detect_critical_path");
-	my $output_file = Common::ExpandTags(Common::get_template("out-$size-graph-curricula-dot-file"), $lang);
-	my $course_tpl 	= Util::read_file(Common::read_dot_template($size, $lang));
 	my $output_txt = "";
 	$output_txt .= "digraph curricula\n{\n";
-# 	$output_txt .= "\tcompound=true;\n";
-# 	$output_txt .= "\tfontname=Courier;\n";
-# 	$output_txt .= "\tsize=\"7,2\";\n";
-#  	$output_txt .= "\tranksep=0.9;\n";
-# 	$output_txt .= "\trankdir=TB;\n";
 	$output_txt .= "\tbgcolor=white;\n";
 	$output_txt .= "\tnewrank=true;\n";
 	$output_txt .= "\t";
@@ -649,7 +670,8 @@ sub generate_curricula_in_dot($$)
 		foreach $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
 		    my $group = $Common::course_info{$codcour}{group};
-		    my $this_course_dot = Common::generate_course_info_in_dot($codcour, $course_tpl, $lang)."\n";
+			my $this_course_tpl = $pre_processing_course->($codcour, $lang, $course_tpl, $filter);
+		    my $this_course_dot = Common::generate_course_info_in_dot($codcour, $this_course_tpl, $lang)."\n";
 		    if($Common::config{graph_version} == 1 || $group eq "")
 			{       $sem_text .= $this_course_dot;   }
 		    elsif($Common::config{graph_version} >= 2) # related links for elective courses
@@ -675,7 +697,8 @@ sub generate_curricula_in_dot($$)
 				my $group_name = "$Common::config{dictionary}{Electives}$semester$group";
 				foreach $codcour (@{$clusters_info{$group}{courses}})
 				{
-					my $this_course_dot = Common::generate_course_info_in_dot($codcour, $course_tpl, $lang);
+					my $this_course_tpl = $pre_processing_course->($codcour, $lang, $course_tpl, $filter);
+					my $this_course_dot = Common::generate_course_info_in_dot($codcour, $this_course_tpl, $lang);
 					$sem_text .= "\t$this_course_dot\n";
 					$sem_rank .= " \"$codcour\";";
 					$ncourses++;
@@ -684,12 +707,9 @@ sub generate_curricula_in_dot($$)
 				$cluster_count++;
 			}
 		}
-		#if( $ncourses > 0 )
-		#{
-			$output_txt .= "\n#\t$semester $Common::config{dictionary}{Semester}\n";
-			$output_txt .= "$sem_text";
-			$rank_text .= "\n\t{ rank = same; $sem_label; $sem_rank }";
-		#}
+		$output_txt .= "\n#\t$semester $Common::config{dictionary}{Semester}\n";
+		$output_txt .= "$sem_text";
+		$rank_text .= "\n\t{ rank = same; $sem_label; $sem_rank }";
 	}
 	$output_txt .= "$rank_text\n\n";
 
@@ -751,8 +771,49 @@ sub generate_curricula_in_dot($$)
 		}
 	}
 	$output_txt .= "}\n";
-	Util::write_file($output_file, $output_txt);
-	Util::print_message("generate_curricula_in_dot($size, $lang, $output_file) OK!");
+	
+	Util::write_file($output_dot_file, $output_txt);
+	#Util::print_message($course_tpl);
+	Util::print_message("generate_curricula_in_dot_internal($output_dot_file, <<course_tpl>>, $lang) OK!");
+
+}
+
+sub generate_curricula_in_dot($$)
+{
+	my ($size, $lang) = (@_);
+	Util::check_point("detect_critical_path");
+	my $output_dot_file = Common::ExpandTags(Common::get_template("out-$size-graph-curricula-dot-file"), $lang);
+	my $course_tpl 	= Util::read_file(Common::read_dot_template($size, $lang));
+	generate_curricula_in_dot_internal($output_dot_file, $course_tpl, $lang, "*", \&do_nothing);
+
+	#my $OutputFigsDir	= Common::get_template("OutputFigsDir");
+	#$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$filename.svg ...\";\n";
+	##$Common::config{"dots_to_be_generated"}	.= "dot -Tps  $output_dot_file -o $OutputFigsDir/$filename.ps; \n";
+	#$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$filename.svg; \n\n";
+}
+
+sub generate_map_of_courses_by_outcome($$)
+{
+	my ($size, $lang) = (@_);
+	Util::check_point("detect_critical_path");
+	my $version	= $Common::config{OutcomesVersion};
+	my $OutputDotDir 	= Common::get_template("OutputDotDir");
+	my $OutputFigsDir	= Common::get_template("OutputFigsDir");
+	my $course_tpl 		= Util::read_file(Common::read_dot_template($size, $lang));
+	my $lang_prefix 	= $Common::config{dictionaries}{$lang}{lang_prefix};
+	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
+	{	
+		my $courses_counter = keys %{ $Common::config{course_by_outcome}{$outcome} };
+		if($courses_counter > 0)
+		{
+			my $filename 		= "outcome-$outcome-$size-map-$lang_prefix";
+			my $output_dot_file = "$OutputDotDir/$filename.dot";
+			generate_curricula_in_dot_internal($output_dot_file, $course_tpl, $lang, $outcome, \&highlight_outcome);
+			$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$filename.svg ...\";\n";
+			#$Common::config{"dots_to_be_generated"}	.= "dot -Tps  $output_dot_file -o $OutputFigsDir/$filename.ps; \n";
+			$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$filename.svg; \n\n";
+		}
+	}
 }
 
 # ok

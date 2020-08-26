@@ -141,7 +141,7 @@ if($html == 1) then
     cp <IN_COUNTRY_DIR>/logos/<INST>.jpg <OUTPUT_HTML_FIGS_DIR>/.;
     
     ./scripts/post-processing.pl <AREA>-<INST>;
-    <OUTPUT_SCRIPTS_DIR>/gen-map-for-course.sh;
+    <OUTPUT_SCRIPTS_DIR>/gen-dot-maps.sh;
     ./scripts/update-cvs-files.pl <AREA>-<INST>;
 
     ./scripts/update-analytic-info.pl <AREA>-<INST>;

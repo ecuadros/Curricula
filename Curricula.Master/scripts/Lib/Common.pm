@@ -824,7 +824,7 @@ sub set_initial_paths()
 
 	$path_map{"out-batch-to-gen-figs-file"}         = $path_map{OutputScriptsDir}."/gen-fig-files.sh";
 	$path_map{"out-gen-syllabi.sh-file"}			= $path_map{OutputScriptsDir}."/gen-syllabi.sh";
-	$path_map{"out-gen-map-for-course"}				= $path_map{OutputScriptsDir}."/gen-map-for-course.sh";
+	$path_map{"out-dot-maps-batch"}					= $path_map{OutputScriptsDir}."/gen-dot-maps.sh";
 
 	# Dot files
 	#$path_map{"in-country-small-graph-item.dot"}	= $path_map{InCountryDir}."/dot/small-graph-item$config{graph_version}.dot";
@@ -5606,6 +5606,16 @@ sub dump_course_errors()
 	return $output_txt;
 }
 
+sub save_batch_to_generate_dot_maps()
+{
+	my $batch_txt 	 = "#!/bin/csh\n\n";
+	$batch_txt 		.= $Common::config{"dots_to_be_generated"};
+	my $batch_map_for_course_file = Common::get_template("out-dot-maps-batch");
+	Util::print_message("Generating $batch_map_for_course_file at save_batch_to_generate_dot_maps");
+	Util::write_file($batch_map_for_course_file, $batch_txt);
+	system("chmod 774 $batch_map_for_course_file");
+}
+
 sub dump_errors()
 {
 	my $output_txt = "";
@@ -5615,6 +5625,11 @@ sub dump_errors()
 	my $output_errors_file = get_template("output-errors-file");
 	Util::write_file($output_errors_file, $output_txt);
 	Util::print_message("Dumped errors !");
+}
+
+sub save_logs()
+{
+	save_batch_to_generate_dot_maps();
 }
 
 sub process_courses()
@@ -5642,6 +5657,8 @@ sub setup()
 
 sub shutdown()
 {
+	save_logs();
+	dump_errors();
 	print "\x1b[44m***********************************************************************\x1b[49m\n";
 	print "\x1b[44m**                     Finishing                                     **\x1b[49m\n";
 	print "\x1b[44m***********************************************************************\x1b[49m\n";

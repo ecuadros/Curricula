@@ -1494,13 +1494,19 @@ sub get_course_dot_map($$$)
 	return $output_tex;
 }
 
-
-sub generate_course_dot_map($$$$)
+sub generate_course_dot_map($$$)
 {
-	my ($codcour, $lang, $course_tpl, $output_file) = (@_);
-	my $output_tex 	= get_course_dot_map($codcour, $lang, $course_tpl);
-	Util::write_file($output_file, $output_tex);
-	Util::print_message("Generating $output_file ok! ..."); 
+	my ($codcour, $lang, $course_tpl) = (@_);
+	my $output_dot_tex  = get_course_dot_map($codcour, $lang, $course_tpl);
+	my $output_dot_file = Common::get_template("OutputDotDir")."/$codcour.dot";
+
+	Util::print_message("Generating $output_dot_file ok! ..."); 
+	Util::write_file($output_dot_file, $output_dot_tex);
+
+	my $OutputFigsDir 	= Common::get_template("OutputFigsDir");
+	$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$codcour.svg ...\";\n";
+	#$Common::config{"dots_to_be_generated"}	.= "dot -Tps  $output_dot_file -o $OutputFigsDir/$codcour.ps; \n";
+	$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$codcour.svg; \n\n";
 }
 
 sub generate_dot_maps_for_all_courses($)
@@ -1511,24 +1517,15 @@ sub generate_dot_maps_for_all_courses($)
 	my $template_file	= Common::read_dot_template($size, $lang);
 	my $course_tpl 		= Util::read_file($template_file);
 	Util::print_message("Reading $template_file ... (generate_dot_maps_for_all_courses)");
-	my $OutputDotDir  				= Common::get_template("OutputDotDir");
-	my $OutputFigsDir 				= Common::get_template("OutputFigsDir");
-	my $batch_txt 					= "#!/bin/csh\n\n";
+	my $OutputDotDir  	= Common::get_template("OutputDotDir");
+	#my $OutputFigsDir 	= Common::get_template("OutputFigsDir");
 	
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
-	{	$batch_txt .= "# Semester #$semester\n";
+	{	$Common::config{"dots_to_be_generated"} .= "# Semester #$semester\n";
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
-		{	my $output_file = "$OutputDotDir/$codcour.dot";
-			generate_course_dot_map($codcour, $lang, $course_tpl, $output_file);
-			$batch_txt	.= "echo \"Generating $OutputFigsDir/$codcour.svg ...\"\n";
-			$batch_txt	.= "dot -Tps  $output_file -o $OutputFigsDir/$codcour.ps; \n";
-      		$batch_txt	.= "dot -Tsvg $output_file -o $OutputFigsDir/$codcour.svg; \n\n";
+		{	generate_course_dot_map($codcour, $lang, $course_tpl);
 		}
 	 }
-	 my $batch_map_for_course_file = Common::get_template("out-gen-map-for-course");
-	 Util::write_file($batch_map_for_course_file, $batch_txt);
-	 system("chmod 774 $batch_map_for_course_file");
-	 Util::print_message("generate_dot_maps_for_all_courses ok!");
 }
 
 1;
