@@ -21,7 +21,7 @@
 *.bak
 escritorio
 *swp
-.DS_Store
+.DS_Store*
 Curricula.Master/delete/temp.tex
 Curricula.Master/log/*
 
@@ -34,5 +34,7 @@ Curricula.in/country/Peru/Computing/CS/.DS_Store
 Curricula.Master/log/Peru-CS-MINEDU-time.txt
 Curricula.Master/log/Peru-CS-MINEDU-errors-bib.txt
 Curricula.Master/log/Peru-CS-SPC-time.txt
-Curricula.Master/unified-curricula-main.tex
 
+Curricula.Master/unified-curricula-main.tex
+Curricula.Master/compile1institucion.sh
+Curricula.Master/gen-html-1institution.sh

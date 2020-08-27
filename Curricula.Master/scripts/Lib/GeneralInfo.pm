@@ -16,7 +16,7 @@ sub generate_course_tables($)
 	my $output_txt = "";
 	my $total_credits = 0;
 	my $this_line   = $Common::config{dictionary}{course_fields};
-# 	Util::print_message("course_field=$this_line"); exit;
+ 	#Util::print_message("course_field=$this_line"); exit;
 	my $cred_column = Common::find_credit_column($Common::config{dictionary}{course_fields});
 	my $n_columns   = Common::count_number_of_tags($this_line);
 #  	print "COURSENAME=$Common::config{COURSENAME}\n"; exit;
@@ -58,8 +58,8 @@ sub generate_course_tables($)
 			my $pdflink 	= Common::get_pdf_link($codcour);
 
 # 			Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
-			$this_course_info{Course}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
-			$this_course_info{Course} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
+			$this_course_info{COURSECODE}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
+			$this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
 #			$this_course_info{COURSENAME} = "\\htmlref{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
 # 			Util::print_message("codcour=$codcour");
 # 			print Dumper ( \%{$Common::course_info{$codcour}} );
@@ -613,9 +613,9 @@ sub highlight_outcome($$$$)
 	my %map = ();
 	if( defined($Common::course_info{$codcour}{$lang}{outcomes}{$version}{$outcome}) )
 	{
-		#$map{"FONTCOLOR"}   = "black";
-		#$map{"FILLCOLOR"}   = "yellow";
-		#$map{"BORDERCOLOR"} = "black");
+		$map{"FONTCOLOR"}   = "black";
+		$map{"FILLCOLOR"}   = "yellow";
+		$map{"BORDERCOLOR"} = "black";
 	}
 	else
 	{
@@ -792,6 +792,13 @@ sub generate_curricula_in_dot($$)
 	#$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$filename.svg; \n\n";
 }
 
+sub get_outcome_map_name($$$)
+{
+	my ($outcome, $size, $lang) = (@_);
+	my $lang_prefix = $Common::config{dictionaries}{$lang}{lang_prefix};
+	return "outcome-$outcome-$size-map-$lang_prefix";
+}
+
 sub generate_map_of_courses_by_outcome($$)
 {
 	my ($size, $lang) = (@_);
@@ -800,13 +807,12 @@ sub generate_map_of_courses_by_outcome($$)
 	my $OutputDotDir 	= Common::get_template("OutputDotDir");
 	my $OutputFigsDir	= Common::get_template("OutputFigsDir");
 	my $course_tpl 		= Util::read_file(Common::read_dot_template($size, $lang));
-	my $lang_prefix 	= $Common::config{dictionaries}{$lang}{lang_prefix};
 	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
 	{	
 		my $courses_counter = keys %{ $Common::config{course_by_outcome}{$outcome} };
 		if($courses_counter > 0)
 		{
-			my $filename 		= "outcome-$outcome-$size-map-$lang_prefix";
+			my $filename 		= get_outcome_map_name($outcome, $size, $lang);
 			my $output_dot_file = "$OutputDotDir/$filename.dot";
 			generate_curricula_in_dot_internal($output_dot_file, $course_tpl, $lang, $outcome, \&highlight_outcome);
 			$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$filename.svg ...\";\n";
@@ -1238,15 +1244,29 @@ sub generate_list_of_courses_by_outcome($)
 		{
 			$output_txt .= "\\subsection{Outcome: $outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
 			$output_txt .= "\\begin{itemize}\n";
+			$output_txt .= "\\setlist{nolistsep,leftmargin=*}\n";
 			$output_txt .= $this_outcome_txt;
 			$output_txt .= "\\end{itemize}\n";
+			my $filename = get_outcome_map_name($outcome, "big", $lang);
+			my $courses_by_outcome = <<'MAP';
+\begin{htmlonly}
+	\begin{rawhtml}
+		<div class="center">
+            <iframe scrolling="no" frameborder="0" src="./figs/<filename>.svg" width="958pt" height="609pt">
+                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
+            </iframe>
+        </div>
+	\end{rawhtml}
+\end{htmlonly}
+MAP
+			$courses_by_outcome =~ s/<filename>/$filename/g;
+			$output_txt .= $courses_by_outcome; # size is 50%
 		}
 		$output_txt .= "\n";
 	}
 	my $output_file = Common::get_expanded_template("list-of-courses-by-outcome", $lang);
 	Util::print_message("Generating list_of_courses_by_outcome ok ($output_file)");
 	Util::write_file($output_file, $output_txt);
-	#exit;
 }
 
 #$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
@@ -1305,10 +1325,10 @@ sub generate_table_of_courses_for_one_outcome($$)
 	my $OutputCompetencesDir = Common::get_expanded_template("OutputCompetencesDir", $lang);
 	my ($pagesize, $firstrowsize, $halfpage) = ("23cm", "22.5cm", "10.5cm");
 	my $nchars_by_row = 79;
-	my $max_nrows = 30;
+	my $max_nrows   = 30;
 	my $begin_table = "%". ("*"x50) ."\n";
-	$begin_table .= "\\begin{tabularx}{$pagesize}{|p{0.5cm}X|X|} \\hline\n";
-	my $end_table = "\\end{tabularx}\n\n";
+	$begin_table   .= "\\begin{tabularx}{$pagesize}{|p{0.5cm}X|X|} \\hline\n";
+	my $end_table   = "\\end{tabularx}\n\n";
 
 	#$output_txt .= $begin_table;
 	my $tmp_output  = "";
@@ -1327,7 +1347,7 @@ sub generate_table_of_courses_for_one_outcome($$)
 						)
 	{
 		my ($label, $txt) = ($Common::config{specificoutcome}{$lang}{$outcome}{$number}{label},
-								$Common::config{specificoutcome}{$lang}{$outcome}{$number}{txt}
+							 $Common::config{specificoutcome}{$lang}{$outcome}{$number}{txt}
 							);
 		$map{SpecificOutcomeLabel}   = "\\textbf{$label)}";
 		$map{SpecificOutcome}  		 = "\\begin{minipage}{$halfpage}\n";
