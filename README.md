@@ -1,49 +1,68 @@
 # Computing Curricula Generator 3.0
 
-Generador de curriculas para escuelas profesionales relacionadas a la computación.
+Curricula generator for Computer Science related careers (CS, IS, Technical CS, etc)
 
-## Requerimientos
+## Requirements
 
-Versiones probadas utilizadas:
+Tested on:
 
 ```
-Ubuntu 16.04 || Ubuntu 18.04 || Ubuntu 20.04
+Ubuntu 16.04 || Ubuntu 18.04 || Ubuntu 20.04 || macOS Catalina
 Perl v5.30.0
 TeX v3.14159265
 ```
 
-## Instalación
+## Setup
 
 ### Ubuntu
 
-#### Instalando paquetes necesarios:
+#### Install required packages:
 
 ```
-sudo apt-get install texlive-full texlive-science texlive-latex-extra texlive-bibtex-extra texlive-lang-spanish gv inkscape csh libcarp-assert-perl okular chromium-browser graphviz dot2tex texlive-pstricks biber kile ps2eps latex2html build-essential pdftk
-
+sudo apt-get install texlive-full texlive-science texlive-latex-extra texlive-bibtex-extra texlive-lang-spanish gv inkscape csh libcarp-assert-perl okular chromium-browser graphviz dot2tex texlive-pstricks biber kile ps2eps latex2html build-essential pdftk mupdf mupdf-tools libnumber-bytes-human-perl
 ```
 
-#### Instalando modulo PERL necesario:
+#### Install required PERL modules:
 
 ```
-sudo apt-get install libnumber-bytes-human-perl
 sudo cpan install Clone
 sudo cpan install CAM::PDF
 sudo cpan install Switch
 ```
 
-#### **Solo en Ubuntu 18.04 o superiores**
+#### Adding rule to prevent convert error:
 
-No se encuentra el paquete necesario __pdftk__
+Error:
+```
+convert-im6.q16: attempt to perform an operation not allowed by the security policy `PS' @ error/constitute.c/IsCoderAuthorized/408.
+```
+Solution:
+
+Change or add this line:
+```
+<policy domain="coder" rights="none" pattern="PDF" />
+```
+to
+```
+<policy domain="coder" rights="read | write" pattern="PDF" />
+```
+
+
+#### **Only for Ubuntu 18.04 or higher**
+
+`__pdftk__ package not found`
+
+Solution:
 
 ```
 sudo add-apt-repository ppa:malteworld/ppa
 sudo apt update
 sudo apt install pdftk
 ```
-* Exportar librerías propias: `export PERL5LIB=/home/$USER/Curricula/Curricula.Master/scripts/`
-
-
+Export custom PERL libraries:
+```
+export PERL5LIB=/home/$USER/Curricula/Curricula.Master/scripts/
+```
 
 ## Generar Curricula
 
