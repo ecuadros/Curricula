@@ -1244,22 +1244,15 @@ sub generate_list_of_courses_by_outcome($)
 		{
 			$output_txt .= "\\subsection{Outcome: $outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
 			$output_txt .= "\\begin{itemize}\n";
-			$output_txt .= "\\setlist{nolistsep,leftmargin=*}\n";
+			$output_txt .= "$Common::nolistsep\n";
 			$output_txt .= $this_outcome_txt;
 			$output_txt .= "\\end{itemize}\n";
 			my $filename = get_outcome_map_name($outcome, "big", $lang);
-			my $courses_by_outcome = <<'MAP';
-\begin{htmlonly}
-	\begin{rawhtml}
-		<div class="center">
-            <iframe scrolling="no" frameborder="0" src="./figs/<filename>.svg" width="958pt" height="609pt">
-                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
-            </iframe>
-        </div>
-	\end{rawhtml}
-\end{htmlonly}
-MAP
+			#Util::print_message("($outcome, big, $lang) => $filename");
+			my $courses_by_outcome = $Common::svg_in_html;
 			$courses_by_outcome =~ s/<filename>/$filename/g;
+			$courses_by_outcome =~ s/<WIDTH>/1341pt/g;   # 70% de 1916
+			$courses_by_outcome =~ s/"<HEIGHT>"/853pt/g; #70% de 1218
 			$output_txt .= $courses_by_outcome; # size is 50%
 		}
 		$output_txt .= "\n";
@@ -1267,6 +1260,7 @@ MAP
 	my $output_file = Common::get_expanded_template("list-of-courses-by-outcome", $lang);
 	Util::print_message("Generating list_of_courses_by_outcome ok ($output_file)");
 	Util::write_file($output_file, $output_txt);
+	#exit;
 }
 
 #$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
@@ -1372,7 +1366,7 @@ sub generate_table_of_courses_for_one_outcome($$)
 		{
 			$map{Courses}  = "\\begin{minipage}{$halfpage}\n";
 			$map{Courses} .= "\\vspace{0.1cm}\n";
-			$map{Courses} .= "\\setlist{nolistsep,leftmargin=*}\n";
+			$map{Courses} .= "$Common::nolistsep\n";
 			$map{Courses} .= "\\begin{itemize}\n";
 			$map{Courses} .= $list_of_courses;
 			$map{Courses} .= "\\end{itemize}\n";

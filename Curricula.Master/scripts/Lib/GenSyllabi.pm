@@ -1387,19 +1387,12 @@ sub gen_course_general_info($)
 
 			my $output_tex  = "";
 			$output_tex    .= "\\input{$output_file}\n\n";
-			my $map_for_course = <<'MAP';
-\begin{htmlonly}
-	\begin{rawhtml}
-		<div class="center">
-            <iframe scrolling="no" frameborder="0" src="./figs/<codcour>.svg" width="<WIDTH>" height="<HEIGHT>">
-                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
-            </iframe>
-        </div>
-	\end{rawhtml}
-\end{htmlonly}
-MAP
+			my $map_for_course = $Common::svg_in_html;
+
 			#$map_for_course =~ s/<OutputFigsDir>/$OutputFigsDir/g;
-			$map_for_course =~ s/<codcour>/$codcour_label/g;
+			$map_for_course =~ s/<filename>/$codcour_label/g;
+			#$map_for_course =~ s/<WIDHT>/70%/g;
+			#$map_for_course =~ s/<HEIGHT>/70%/g;
 			$output_tex    .= $map_for_course;
 			#$output_tex    .= "\\begin{figure}\n";
 			#$output_tex    .= "\\centering\n";

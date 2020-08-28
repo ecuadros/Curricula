@@ -61,6 +61,28 @@ our %dedication_ranking = ("TC"       => 1, "TP"        => 2);
 # flush stdout with every print -- gives better feedback during
 # long computations
 $| = 1;
+our $nolistsep = "\\setlist{nolistsep,leftmargin=*}";
+our $svg_in_html = <<'MAP';
+\begin{htmlonly}
+	\begin{rawhtml}
+		<div class="svg-container">
+			<object type="image/svg+xml" data="./figs/<filename>.svg" width="<WIDTH>" height="<HEIGHT>" class="svg-content">
+			</object>
+		</div>
+	\end{rawhtml}
+\end{htmlonly}
+MAP
+#my $svg_in_html = <<'MAP';
+#\begin{htmlonly}
+#	\begin{rawhtml}
+#		<div class="center">
+#            <iframe scrolling="no" frameborder="0" src="./figs/<filename>.svg" width="958pt" height="609pt">
+#                  <p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>
+#            </iframe>
+#        </div>
+#	\end{rawhtml}
+#\end{htmlonly}
+#MAP
 
 # ok
 sub replace_accents($)
