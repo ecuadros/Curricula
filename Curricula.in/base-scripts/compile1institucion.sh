@@ -139,13 +139,14 @@ if($html == 1) then
     cp <IN_LANG_DIR>/figs/pdf.jpeg <IN_LANG_DIR>/figs/star.gif <IN_LANG_DIR>/figs/none.gif <IN_LANG_DIR>/figs/*.png <OUTPUT_HTML_FIGS_DIR>/.;
     cp <OUTPUT_FIGS_DIR>/*.png <OUTPUT_HTML_FIGS_DIR>/.;
     cp <IN_COUNTRY_DIR>/logos/<INST>.jpg <OUTPUT_HTML_FIGS_DIR>/.;
-    
-    ./scripts/post-processing.pl <AREA>-<INST>;
-    <OUTPUT_SCRIPTS_DIR>/gen-map-for-course.sh;
-    ./scripts/update-cvs-files.pl <AREA>-<INST>;
 
     ./scripts/update-analytic-info.pl <AREA>-<INST>;
 endif
+
+./scripts/post-processing.pl <AREA>-<INST>;
+<OUTPUT_SCRIPTS_DIR>/gen-dot-maps.sh;
+./scripts/update-cvs-files.pl <AREA>-<INST>;
+cp <OUTPUT_FIGS_DIR>/*.svg <OUTPUT_HTML_FIGS_DIR>/.;
 
 mkdir -p <OUTPUT_HTML_DIR>/figs;
 foreach lang (<LIST_OF_LANGS>)

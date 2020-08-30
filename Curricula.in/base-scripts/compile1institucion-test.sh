@@ -84,7 +84,7 @@ endif
 ./scripts/update-outcome-itemizes.pl <AREA>-<INST> &
 ./scripts/update-page-numbers.pl <AREA>-<INST>;
 <OUTPUT_SCRIPTS_DIR>/gen-graph.sh big &
-<OUTPUT_SCRIPTS_DIR>/gen-map-for-course.sh &
+<OUTPUT_SCRIPTS_DIR>/gen-dot-maps.sh &
 
 if($html == 1) then
       rm <UNIFIED_MAIN_FILE>* ;

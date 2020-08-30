@@ -48,6 +48,10 @@ sub generate_general_info()
 				my $OutFile = Common::get_expanded_template("out-$size-graph-curricula-file", $lang);	# "out-small-graph-curricula-file", "out-big-graph-curricula-file"
 				Common::copy_file_expanding_tags($InFile, $OutFile, $lang);
 			}
+			if( $size eq "big" )
+			{
+				GeneralInfo::generate_map_of_courses_by_outcome($size, $lang);
+			}
 		}
 		#GeneralInfo::generate_curricula_in_dot("big", $lang); 
 		GeneralInfo::generate_poster($lang);
@@ -123,16 +127,13 @@ sub main()
 	    GenSyllabi::generate_team_file($lang);
 	}
 	generate_general_info();
-	Common::dump_errors();
 
     #copy_basic_files();
 #   Util::generate_batch_to_gen_figs(Common::get_template("out-batch-to-gen-figs-file"));
 # 	
 # 	Common::generate_html_index_by_country();
-	Util::print_time_elapsed();
-	Util::print_message("process-curricula finished ok ...");
- 	#print Dumper(\%{$Common::config{faculty}{"acuadros\@ucsp.edu.pe"}});
  	Common::shutdown();
+	Util::print_time_elapsed();
 }
 
 main();

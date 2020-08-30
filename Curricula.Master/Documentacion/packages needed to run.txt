@@ -3,6 +3,8 @@ Ubuntu: export PERL5LIB=/home/ecuadros/Articles/Curricula/Curricula.Master/scrip
 Mac   :
 export PERL5LIB=/usr/local/Cellar/perl/5.30.2_1/lib/perl5/site_perl/5.30.2:/usr/local/Cellar/perl/5.26.1/lib/perl5/site_perl/5.26.1:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
 export TEXINPUTS=::/usr/local/Cellar/latex2html/2020/texinputs
+source ~/.zshrc
+
 export GITHUB_NOTIFICATIONS_TOKEN=::32c429a81bf67dd7faf8f702b6f73eb4bf2e874a
 
 sudo apt-get install zsh
