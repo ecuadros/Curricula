@@ -36,7 +36,7 @@ if($area == "CS") then
 		    ps2eps -f $tmptex.ps;
 			convert $tmptex.eps $tmptex.png;
 			cp $tmptex.eps $tmptex.png $current_dir/<OUTPUT_FIGS_DIR>;
-		    ./scripts/updatelog "$tmptex generated";
+		    ./scripts/updatelog.pl "$tmptex generated";
 		    echo "******************************** File ($tmptex) ... OK ! ********************************";
 	    else
 		    echo "Figures $tmptex.eps $tmptex.jpg $tmptex.png already exist ... jumping";
@@ -55,7 +55,7 @@ foreach tmptex ('<AREA>' 'course-levels' 'course-coding')
 		ps2eps -f $tmptex.ps;
 		convert $tmptex.eps $tmptex.png;
 		cp $tmptex.eps $tmptex.svg $tmptex.png $current_dir/<OUTPUT_FIGS_DIR>;
-		./scripts/updatelog "$tmptex generated";
+		./scripts/updatelog.pl "$tmptex generated";
 		echo "******************************** File ($tmptex) ... OK ! ********************************";
 	else
 		echo "Figures $tmptex.eps $tmptex.png already exist ... jumping";

@@ -1,4 +1,4 @@
-Semester=periodo académico
+Semester=Periodo académico
 Sem=PA
 Course=Unidad didáctica
 COURSENAME=Unidad didáctica
