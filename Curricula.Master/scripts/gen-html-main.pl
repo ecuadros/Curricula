@@ -310,7 +310,6 @@ sub main()
 	my $laps		= 0;
 	
 	while(($changes+$macros_changed+$environments_count) > 0)
-	#for(my $laps = 0; $laps < 5 ; $laps++)
 	{
 		Util::print_message("Laps = ".++$laps) 	   if( $Common::config{verbose} == 1 );
 		($maintxt, $macros_changed) = Common::expand_macros   ($main_file, $maintxt);
@@ -319,7 +318,6 @@ sub main()
 		Util::print_message(" ($changes+$macros_changed+$environments_count) ...") if( $Common::config{verbose} == 1 );
 		$maintxt =~ s/\\xref\{(.*?)\}/\\htmlref\{\\$1\}\{sec:BOK:$1\}/g;
 		$maintxt =~ s/\\xrefTextAndPage\{(.*?)\}/\\htmlref\{\\$1\}\{sec:BOK:$1\}/g;
-#		$maintxt =~ s/\\xref\{(.*?)\}/\\ref\{sec:BOK:$1\} \\htmlref\{\csname #1\endcsname\}\{sec:BOK:#1\}
 		Util::print_message("$Common::institution: Environments = $environments_count");
 # 		Util::write_file($output_file, $maintxt);
 	}
@@ -379,6 +377,7 @@ sub main()
 	
 	$maintxt =~ s/\\cellcolor\{.*?\}//g;
 	$maintxt =~ s/\{enumerate\}\s*\\\\\s*\\/\{enumerate\} \\/g;
+	$maintxt =~ s/\\setlist\{.*?\}//g;
 	Util::write_file($output_file, $maintxt);
 	Util::print_message("File $output_file generated OK!");
 	Util::print_message("Finishing gen-html-main.pl ... ");

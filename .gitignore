@@ -22,6 +22,10 @@
 *.png
 escritorio
 *swp
+<<<<<<< HEAD
+=======
+.DS_Store*
+>>>>>>> 6a1c3a8d04b25a14bd963d221b5444377be450cd
 Curricula.Master/delete/temp.tex
 Curricula.Master/log/*
 
@@ -43,3 +47,4 @@ Curricula.in/country/.DS_Store
 Curricula.in/country/Peru/.DS_Store
 Curricula.in/lang/Espanol/CS.tex/tex4fig/Pregunta*.png
 Curricula.Master/compile1institucion.sh
+
