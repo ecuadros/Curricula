@@ -7,7 +7,7 @@ set area        = $4
 set institution = $5
 set plan        = $6
 set cycle       = $7
-# ./scripts/create-program.sh Peru Computing Espanol CS UDEP Plan2021 2021-I
+# ls 
 
 set countryBase     = Peru
 set disciplineBase  = Computing

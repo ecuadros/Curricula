@@ -46,7 +46,7 @@ echo "cd $current_dir";
 cd $current_dir;
 
 mkdir -p <OUTPUT_HTML_DOCS_DIR>;
-echo "cp <OUTPUT_TEX_DIR>/$MainFile.pdf <OUTPUT_HTML_DIR>/."
+echo "cp <OUTPUT_TEX_DIR>/$MainFile.pdf <OUTPUT_HTML_DOCS_DIR>/."
 cp "<OUTPUT_TEX_DIR>/$MainFile.pdf" <OUTPUT_HTML_DOCS_DIR>/.;
 
 cp "<OUTPUT_TEX_DIR>/$MainFile.pdf" "<OUTPUT_DIR>/pdfs/$OutputFile.pdf";

@@ -11,6 +11,7 @@ rm -rf html/CS-UDEP CS-UDEP-big-main.*
 rm -rf html/CS-UNAM CS-UNAM-big-main.*
 rm -rf html/CS-UNMSM CS-UNMSM-big-main.*
 rm -rf html/CS-UNSA CS-UNSA-big-main.*
+rm -rf html/CS-UPCH CS-UPCH-big-main.*
 rm -rf html/CS-USGP CS-USGP-big-main.*
 rm -rf html/CS-UTEC CS-UTEC-big-main.*
 
@@ -57,6 +58,10 @@ rm -rf html/CS-UTEC CS-UTEC-big-main.*
 ./scripts/updatelog.pl "UNSA: Starting compilation ..."
 ./compile  CS-UNSA 
 ./gen-html CS-UNSA
+
+./scripts/updatelog.pl "UPCH: Starting compilation ..."
+./compile  CS-UPCH 
+./gen-html CS-UPCH
 
 ./scripts/updatelog.pl "USGP: Starting compilation ..."
 ./compile  CS-USGP 

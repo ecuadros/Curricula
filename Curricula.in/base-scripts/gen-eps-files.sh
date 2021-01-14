@@ -54,7 +54,7 @@ foreach tmptex ('<AREA>' 'course-levels' 'course-coding')
 		dvips -o $tmptex.ps $tmptex;
 		ps2eps -f $tmptex.ps;
 		convert $tmptex.eps $tmptex.png;
-		cp $tmptex.eps $tmptex.png $current_dir/<OUTPUT_FIGS_DIR>;
+		cp $tmptex.eps $tmptex.png $tmptex.svg $current_dir/<OUTPUT_FIGS_DIR>;
 		./scripts/updatelog.pl "$tmptex generated";
 		echo "******************************** File ($tmptex) ... OK ! ********************************";
 	else

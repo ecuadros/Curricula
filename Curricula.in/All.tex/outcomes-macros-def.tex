@@ -8,6 +8,10 @@
 \newcommand{\DefineSpecificOutcome}[4]      {   \expandafter\def\csname SpecificOutcomeLabel#1#2\endcsname{#3}%
                                                 \expandafter\def\csname SpecificOutcome#1#2\endcsname{#4}% 
                                             }%
+\newcommand{\DefineSpecificCompetence}[4]   {   \expandafter\def\csname SpecificOutcomeLabel#1#2\endcsname{#3}%
+    \expandafter\def\csname SpecificOutcome#1#2\endcsname{#4}% 
+}%
+
 \newcommand{\ShowSpecificOutcome}[3]        { \textbf{\csname SpecificOutcomeLabel#1#2\endcsname)} \csname SpecificOutcome#1#2\endcsname }
 \newcommand{\ShowSpecificOutcomeLetter}[2]  { \textbf{\csname SpecificOutcomeLabel#1#2\endcsname)} }
 \newcommand{\ShowSpecificOutcomeText}[2]    { \csname SpecificOutcome#1#2\endcsname }

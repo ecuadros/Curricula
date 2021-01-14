@@ -17,8 +17,8 @@ set current_dir = `pwd`;
 echo "<OUTPUT_SCRIPTS_DIR>/CompileTexFile.sh <AREA> <INST> $Compiler $MainFile $OutputFile";
 <OUTPUT_SCRIPTS_DIR>/CompileTexFile.sh <AREA> <INST> $Compiler $MainFile "$OutputFile";
 
-echo "cd <OUTPUT_HTML_DIR>";
-cd "<OUTPUT_HTML_DIR>";
+echo "cd <OUTPUT_HTML_DOCS_DIR>";
+cd "<OUTPUT_HTML_DOCS_DIR>";
 #echo "pdftk A=$MainFile.pdf cat A1-1 output $MainFile-P1.pdf";
 #pdftk A=$MainFile.pdf cat A1-1 output $MainFile-P1.pdf;
 #convert $MainFile-P1.pdf $MainFile-P1.png;
@@ -29,9 +29,9 @@ mutool convert -o $MainFile-P%d.png $MainFile.pdf 1-1;
 echo "cd $current_dir;"
 cd $current_dir;
 mkdir -p <OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>;
-echo "cp <OUTPUT_HTML_DIR>/$MainFile.pdf <OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.;"
-cp "<OUTPUT_HTML_DIR>/$MainFile.pdf" "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.";
+echo "cp <OUTPUT_HTML_DOCS_DIR>/$MainFile.pdf <OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.;"
+cp "<OUTPUT_HTML_DOCS_DIR>/$MainFile.pdf" "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.";
 
-echo "cp <OUTPUT_HTML_DIR>/$MainFile-P1.png <OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.;"
-cp "<OUTPUT_HTML_DIR>/$MainFile-P1.png" "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.";
+echo "cp <OUTPUT_HTML_DOCS_DIR>/$MainFile-P1.png <OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.;"
+cp "<OUTPUT_HTML_DOCS_DIR>/$MainFile-P1.png" "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/.";
 
