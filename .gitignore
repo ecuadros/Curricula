@@ -29,22 +29,18 @@ escritorio
 Curricula.Master/delete/temp.tex
 Curricula.Master/log/*
 
-Curricula.in/.DS_Store
-Curricula.in/country/.DS_Store
-Curricula.in/country/Peru/.DS_Store
-Curricula.in/country/Peru/Computing/.DS_Store
-Curricula.in/country/Peru/Computing/CS/.DS_Store
-
 Curricula.Master/log/Peru-CS-MINEDU-time.txt
 Curricula.Master/log/Peru-CS-MINEDU-errors-bib.txt
 Curricula.Master/log/Peru-CS-SPC-time.txt
 ./Curricula.Master/unified-curricula-main.tex
 
 .vscode/
+Curricula.in/lang/Espanol/CS.tex/tex4fig/Pregunta*.png
+Curricula.Master/compile1institucion.sh
+
 .DS_Store
 Curricula.in/.DS_Store
 Curricula.in/country/.DS_Store
 Curricula.in/country/Peru/.DS_Store
-Curricula.in/lang/Espanol/CS.tex/tex4fig/Pregunta*.png
-Curricula.Master/compile1institucion.sh
-
+Curricula.in/country/Peru/Computing/.DS_Store
+Curricula.in/country/Peru/Computing/CS/.DS_Store
