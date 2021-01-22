@@ -1,22 +1,22 @@
 COURSE=CS1100
 OutcomesForOtherTitle=<<CompetencesForEngineering>>
 OutcomesForOtherContentEspanol=
-\item {\bf a3)} Capacidad de aplicar conocimientos de ingeniería (nivel 2)
-\item {\bf k1)} Capacidad de utilizar las técnicas, las habilidades y las herramientas de la ingeniería moderna necesarias para la práctica de la ingeniería (nivel 2) 
+\item \textbf{a3)} Capacidad de aplicar conocimientos de ingeniería (nivel 2)
+\item \textbf{k1)} Capacidad de utilizar las técnicas, las habilidades y las herramientas de la ingeniería moderna necesarias para la práctica de la ingeniería (nivel 2) 
 
 OutcomesForOtherContentEnglish=
-\item {\bf a3)} An ability to applying knowledge of engineering (level2)
-\item {\bf k1)} an ability to use the techniques, skills, and modern engineering tools necessary for engineering practice (level 2)
+\item \textbf{a3)} An ability to applying knowledge of engineering (level2)
+\item \textbf{k1)} an ability to use the techniques, skills, and modern engineering tools necessary for engineering practice (level 2)
 
 
 COURSE=CS1102
 OutcomesForOtherTitle=<<CompetencesForEngineering>>
 OutcomesForOtherContentEspanol=
-\item {\bf a1)} Capacidad de aplicar conocimientos de matemáticas (nivel 3)
-\item {\bf a3)} Capacidad de aplicar conocimientos de ingeniería(nivel 2)
-\item {\bf c1)} Capacidad para diseñar un sistema, un componente o un proceso para satisfacer las necesidades deseadas dentro de restricciones realistas (nivel 2)
+\item \textbf{a1)} Capacidad de aplicar conocimientos de matemáticas (nivel 3)
+\item \textbf{a3)} Capacidad de aplicar conocimientos de ingeniería(nivel 2)
+\item \textbf{c1)} Capacidad para diseñar un sistema, un componente o un proceso para satisfacer las necesidades deseadas dentro de restricciones realistas (nivel 2)
 
 OutcomesForOtherContentEnglish=
-\item {\bf a1)} An ability to applying knowledge of Mathematics (level 3)
-\item {\bf a3)} An ability to applying knowledge of engineering (level2)
-\item {\bf c1)} an ability to design a system, component, or process to meet desired needs within realistic constraints (nivel 2)
+\item \textbf{a1)} An ability to applying knowledge of Mathematics (level 3)
+\item \textbf{a3)} An ability to applying knowledge of engineering (level2)
+\item \textbf{c1)} an ability to design a system, component, or process to meet desired needs within realistic constraints (nivel 2)

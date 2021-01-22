@@ -1,9 +1,0 @@
---BEGIN-PROFESSOR--<ecuadros@spc.org.pe>
-TITLE=Dr.
-Ernesto Cuadros-Vargas
-\begin{itemize}
-\item Dr. en Ciencia de la Computación, ICMC-USP, Brasil (2004).
-\item M.Sc. en Ciencia de la Computación, ICMC-USP, Brasil (1998).
-\item http://socios.spc.org.pe/ecuadros
-\end{itemize}
---END-PROFESSOR--

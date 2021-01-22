@@ -1,5 +1,7 @@
 #!/bin/csh
 
+#i.e. ./scripts/create-program.sh Peru Computing Espanol CS UDEP Plan2021 2022-I
+
 set country     = $1
 set discipline  = $2
 set language    = $3

@@ -1,0 +1,110 @@
+\begin{syllabus}
+
+\course{CS212. Analysis and Design of Algorithms}{Obligatorio}{CS212}
+% Source file: ../Curricula.in/lang/English/cycle/2021-I/Syllabi/Computing/CS/CS212.tex
+
+\begin{justification}
+An algorithm is, essentially, a well-defined set of rules or instructions that allow solving a computational problem.
+The theoretical study of the performance of the algorithms and the resources used by them, usually time and space, allows us to evaluate if an algorithm is suitable for solving a specific problem, comparing it with other algorithms for the same problem or even delimiting the boundary between Viable and impossible.
+This matter is so important that even Donald E. Knuth defined Computer Science as the study of algorithms.
+This course will present the most common techniques used in the analysis and design of efficient algorithms,
+with the purpose of learning the fundamental principles of the design, implementation and analysis of algorithms for the solution of computational problems
+\end{justification}
+
+\begin{goals} 
+\item Develop the ability to evaluate the complexity and quality of algorithms proposed for a given problem.
+\item Study the most representative, introductory algorithms of the most important classes of problems treated in computation.
+\item Develop the ability to solve algorithmic problems using the fundamental principles of algorithm design learneds.
+\item Be able to answer the following questions when a new algorithm is presented: How good is the performance ?, Is there a better way to solve the problem?
+\end{goals}
+
+--COMMON-CONTENT--
+
+\begin{unit}{\ALBasicAnalysis}{}{KT2005, DPV2006, CLRS2009, S2013, K1997}{10}{a}
+\begin{topics}%
+    \item \ALBasicAnalysisTopicDifferences % Differences between the best, the expected and the worst case of an algorithm.
+    \item \ALBasicAnalysisTopicAsymptotic % Asymptotic analysis of upper and expected complexity of dimensions.
+    \item \ALBasicAnalysisTopicComplexity % Complexity classes such as constant, logarithmic, linear, quadratic, and exponential.
+    \item Asymptotic Notation
+    \item \ALBasicAnalysisTopicAnalysis % Analysis of iterative and recursive algorithms.
+    \item Inductive proofs and correctness of algorithms
+    \item \ALBasicAnalysisTopicSome % Some versions of the Master Theorem.
+\end{topics}
+\begin{learningoutcomes}
+    \item \ALBasicAnalysisLOExplain [\Assessment] % Explain to refer to "better", "expected" and "worse" behavioral case of an algorithm.
+    \item \ALBasicAnalysisLODetermine [\Assessment] % Informally determine the time and complexity space of simple algorithms.
+    \item \ALBasicAnalysisLOList [\Assessment] % List and contrast of standard classes of complexity.
+    \item \ALBasicAnalysisLOExplainThe [\Assessment] % Explain the use of the big, large, and small omega notation to describe the amount of work done by an algorithm.
+    \item Analyze worst-case running times of algorithms using asymptotic analysis [\Assessment]
+    \item \ALBasicAnalysisLOUseRecurrence [\Assessment] % Use recurring relations to determine the complexity time of recursively defined algorithms.
+    \item \ALBasicAnalysisLOSolve [\Assessment] % Solve basic recurrence relations, for example. Using some form of the Master Theorem
+    \item Argue the correctness of algorithms using inductive proofs [\Assessment]
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{\ALAlgorithmicStrategies}{}{KT2005, DPV2006, CLRS2009, A1999}{30}{a,b}
+\begin{topics}%
+    \item \ALAlgorithmicStrategiesTopicBrute % Brute force algorithms
+    \item \ALAlgorithmicStrategiesTopicGreedy % Voracious Algorithms.
+    \item \ALAlgorithmicStrategiesTopicDivide % Divide and conquer
+    \item \ALAlgorithmicStrategiesTopicDynamic % Dynamic Programming.
+\end{topics}
+\begin{learningoutcomes}
+    \item \ALAlgorithmicStrategiesLOFor [\Assessment] % For each of the strategies (brute force, greedy algorithm, divide and conquer, reverse recursion and dynamic programming), it identifies a practical example in which it can be applied.
+    \item \ALAlgorithmicStrategiesLOUseA [\Assessment] % It uses a voracious approach to solve a specific problem and determines if the chosen rule guides it to an optimal solution.
+    \item \ALAlgorithmicStrategiesLOUseAConquer [\Assessment] % Use a divide and solve algorithm to solve a given problem
+    \item \ALAlgorithmicStrategiesLOUseDynamic [\Assessment] % Use dynamic programming to solve a given problem
+    \item \ALAlgorithmicStrategiesLODetermineAn [\Assessment] % Determines the right algorithmic approach for a problem.
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{\ALFundamentalDataStructuresandAlgorithms}{}{KT2005, DPV2006, CLRS2009, S2011, GT2009}{6}{a,b}
+\begin{topics}%
+    \item \ALFundamentalDataStructuresandAlgorithmsTopicGraphsAnd % "Graphs and algorithms in graphs:
+									      % begin{subtopic} 
+										  % \item Shortest Path Algorithms (Dijkstra and Floyd Algorithms)
+										  % \item Minimum expansion tree (Prim and Kruskal algorithm)
+                                            % end{subtopic}"
+    \item Cache oblivious algorithms 
+    \item Number theory and cryptography
+\end{topics}
+\begin{learningoutcomes}
+    \item \ALFundamentalDataStructuresandAlgorithmsLODiscussFactors [\Familiarity] % Discuss factors other than computational efficiency that influence the choice of algorithms, such as programming time, maintainability, and the use of application-specific patterns in the input data.
+    \item \ALFundamentalDataStructuresandAlgorithmsLOSolveProblems [\Assessment] % Solve problems using basic algorithms of graphs, including search by depth and search by amplitude.
+    \item \ALFundamentalDataStructuresandAlgorithmsLODemonstrate [\Assessment] % Demonstrate ability to evaluate algorithms, to select from a range of possible options, to provide a justification for that selection, and to implement the algorithm in a specific context.
+    \item \ALFundamentalDataStructuresandAlgorithmsLOSolveProblemsAlgorithms [\Assessment] % Solve problems using graph algorithms, including shorter single source path and shorter path of all pairs,and at least a minimal expansion tree algorithm..
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{\ALBasicAutomataComputabilityandComplexity}{}{KT2005, DPV2006, CLRS2009}{2}{a,b}
+\begin{topics}%
+    \item \ALBasicAutomataComputabilityandComplexityTopicIntroduction % Introduction to the classes P and NP and the problem P vs. NP.
+    \item \ALBasicAutomataComputabilityandComplexityTopicIntroductionTo % Introduction and examples of problems NP- Complete and NP-Complete classes.
+    \item Reductions
+\end{topics}
+\begin{learningoutcomes}
+    \item \ALBasicAutomataComputabilityandComplexityLODefine [\Familiarity] % Define the classes P and NP
+    \item \ALBasicAutomataComputabilityandComplexityLOExplainTheNp [\Familiarity] % Explain the meaning of NP-Completitud
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{\ALAdvancedDataStructuresAlgorithmsandAnalysis}{}{KT2005, DPV2006, CLRS2009, T1983, R1992}{12}{a,b}
+\begin{topics}%
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicGraphs % Graphs (eg topological ordering, finding strongly connected components)
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicRandomized % Random algorithms.
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicAmortized % Amortized analysis.
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisTopicProbabilistic % Probabilistic Analysis.
+    \item Approximation Algorithms 
+    \item Linear Programming
+\end{topics}
+\begin{learningoutcomes}
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisLOUnderstand [\Familiarity]% Understand the mapping of real-world problems to algorithmic solutions (eg, gran) to solve real problems.
+    \item \ALAdvancedDataStructuresAlgorithmsandAnalysisLOSelectAnd [\Usage] % Select and apply advanced techniques of analysis (example, amortized, probabilistic, etc.) for algorithms.
+\end{learningoutcomes}
+\end{unit}
+
+\begin{coursebibliography}
+\bibfile{Computing/CS/CS212}
+\end{coursebibliography}
+
+\end{syllabus}

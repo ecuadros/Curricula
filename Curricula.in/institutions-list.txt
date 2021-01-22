@@ -9,11 +9,11 @@ CS-UNSA   : Peru	: Computing  : UNSA       : Plan2017 : final
 CS-UTEC   : Peru	: Computing  : UTEC       : Plan2017 : final
 CS-UDEP   : Peru	: Computing  : UDEP       : Plan2021 : final
 CS-UPCH   : Peru	: Computing  : SPC        : Plan2021 : final
+CS-UDEP   : Peru	: Computing  : UDEP       : Plan2021 : final
 CS-MINEDU : Peru	: Computing  : MINEDU6    : Plan2021 : final
 
 DS-SPC    : Peru	: Computing  : SPC        : Plan2020 : final
 DS-UTEC   : Peru	: Computing  : UTEC,UTECFG: Plan2020 : final
-
 
 ******PUCP   : Peru	: Computing  : PUCP       : Plan2017 : final
 CS-ANR    : Peru	: Computing  : SPC        : Plan2010 : final

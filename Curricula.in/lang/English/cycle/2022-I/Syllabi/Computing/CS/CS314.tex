@@ -1,0 +1,112 @@
+\begin{syllabus}
+
+\course{CS314. Algoritmos Paralelos}{Obligatorio}{CS314}
+
+\begin{justification}
+Las arquitecturas de computadores están tendiendo a incluir cada vez más núcleos 
+y/o procesadores por máquina como método de incrementar la capacidad computacional
+de cada unidad. La posibilidad de realizar múltiples tareas simultaneamente mediante hardware 
+no es inmediatamente traducida al software, pues las aplicaciones deben 
+ser diseñadas para aprovechar estas nuevas capacidades, mediante el uso de hebras y/o procesos.
+\end{justification}
+
+\begin{goals}
+\item Que el alumno sea capaz de crear aplicaciones paralelas de mediana complejidad aprovechando eficientemente máquinas con múltiples núcleos.
+\item Que el alumno sea capaz de comparar aplicaciones secuenciales y paralelas.
+\item Que el alumno sea capaz de convertir, cuando la situación lo amerite, aplicaciones secuenciales a paralelas de forma eficiente.
+\end{goals}
+
+\begin{outcomes}
+\ExpandOutcome{a}{3}
+\ExpandOutcome{b}{4}
+\ExpandOutcome{c}{4}
+\ExpandOutcome{g}{3}
+\ExpandOutcome{h}{3}
+\ExpandOutcome{i}{3}
+\ExpandOutcome{j}{4}
+\end{outcomes}
+
+\begin{unit}{\CNParallelComputationDef}{progpara}{5}{a,b}
+      \CNParallelComputationAllTopics %% Esto esta cubriendo todos los topicos.
+      \CNParallelComputationAllObjectives
+\end{unit}
+
+\begin{unit}{\ARMultiprocessingDef}{progpara}{5}{a,b}
+      \ARMultiprocessingAllTopics
+      \ARMultiprocessingAllObjectives
+\end{unit}
+
+\begin{unit}{\ALParallelAlgorithmsDef}{progpara}{3}{a,b}
+      \ALParallelAlgorithmsAllTopics %% Esta parte en realidad esta embebida en la primera.
+      \ALParallelAlgorithmsAllObjectives
+\end{unit}
+
+\begin{unit}{Modelos de Threads con PTHREADs}{pthread,progpara}{0}{a,b,c}
+\begin{topics}
+         \item ?`Qué es una hebra?
+         \item ?`Qué es  pthread?
+         \item Diseñando programas con pthreads.
+         \item Creacuón y manejo de hebras.
+         \item Sincronización de hebras con mutex.
+\end{topics}
+
+\begin{learningoutcomes}
+	\item Entender los distintos modelos de programación paralela.
+	\item Conocer ventajas y desventajas de los distintos modelos de programación paralela.
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{Modelos de Threads con OpenMP}{openmp,progpara}{0}{a,b,c}
+\begin{topics}
+         \item ?`Qué es OpenMP?
+         \item El modelo de programación OpenMP.
+         \item Directivas de OpenMP.
+         \item Constructores de trabajo compartido.
+         \item Constructores de Tareas.
+         \item Constructores de sincronización.
+	 \item Manejo de datos privados y compartidos.
+\end{topics}
+
+\begin{learningoutcomes}
+	\item Implementar programas multihebras por medio de OpenMP.
+	\item Entender y aplicar conceptos de sincronización y trabajo compartido.
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{Modelo de programación mediante paso de Mensajes con MPI}{mpi,progpara}{0}{a,b,c,i}
+\begin{topics}
+         \item ?`Qué es MPI?
+         \item Rutinas de administración de ambiente.
+         \item Rutinas de comunicación punto a punto.
+         \item Rutinas de comunicación colectiva.
+         \item Tipos de datos derivados.
+         \item Rutinas de administración del comunicador y de grupo.
+	 \item Topología virtual.
+\end{topics}
+
+\begin{learningoutcomes}
+	\item Implementar programas multihebras por medio de OpenMP.
+	\item Entender y aplicar conceptos de sincronización y trabajo compartido.
+\end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{\textit{Threading Building Blocks (TBB)}}{tbb,progpara}{0}{a,b,c,i}
+\begin{topics}
+      \item Bucles Simples Paralelos.
+      \item Bucles Complejos Paralelos.
+      \item Cancelación y Exepciones.
+      \item Contenedores paralelos. 
+\end{topics}
+
+\begin{learningoutcomes}
+	\item Entender y aplicar el modelo de datos paralelos utilizando la herramienta TBB.
+\end{learningoutcomes}
+\end{unit}
+
+
+
+\begin{coursebibliography}
+\bibfile{Computing/CS/CS314}
+\end{coursebibliography}
+
+\end{syllabus}
