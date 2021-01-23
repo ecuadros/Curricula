@@ -20,7 +20,7 @@ biber $course
 latex $course
 latex $course
 dvipdfm -o ../syllabi/$course.pdf $course.dvi 
-rm $course.ps $course.log $course.dvi $course.aux $course.bbl $course.blg $course.toc
+rm $course.ps $course.log $course.dvi $course.aux $course.bbl $course.blg $course.toc $course.bcf $course*.xml
  
 cd $current_dir
 cp $OutputTexDir/../syllabi/$course.pdf $OutputHtmlDir/syllabi/$course.pdf

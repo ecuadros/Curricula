@@ -357,11 +357,12 @@ sub read_syllabus_info($$$)
 {
 	my ($codcour, $semester, $lang)   = (@_);
 	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
+	Util::print_message("Reading syllabus: $fullname ...");
 	my $syllabus_in	= Util::read_file($fullname);
 	init_course_units_vars($codcour);
 	my $version = $Common::config{OutcomesVersion};
- 	#if($codcour =~ m/CS2H/g)
-	#{	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");  }
+ 	# if($codcour =~ m/CS2T1/g)
+	# {	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");  exit; }
 
 	my $CommonTexFile = get_common_file($fullname, $codcour, $lang);
 	if( -e $CommonTexFile )
@@ -482,6 +483,11 @@ sub read_syllabus_info($$$)
 	foreach (keys %{$Common::course_info{$codcour}{extra_tags}})
 	{	$map{$_} = $Common::course_info{$codcour}{extra_tags}{$_};		}
 
+	# if($codcour =~ m/CS2T1/g)
+	# {	Util::print_message("GenSyllabi::read_syllabus_info $codcour($lang) ...");  
+	# 	print Dumper(\%{$Common::course_info{$codcour}{$lang}{goals}});
+	# 	exit;
+	# }
 	return %map;
 }
 
