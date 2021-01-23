@@ -15,6 +15,7 @@ echo "********************************* Compiling $course **********************
 echo `pwd`
 
 cd $OutputTexDir
+rm *.ps *.pdf *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.out *.xref *.lof *.log *.lot *.brf *~ *.tmp
 latex $course
 biber $course
 latex $course
