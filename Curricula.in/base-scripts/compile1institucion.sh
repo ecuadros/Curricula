@@ -34,6 +34,8 @@ else
 endif
 
 echo "pdf=$pdf, html=$html, syllabi=$syllabi"
+export max_print_line=1000
+export error_line=254
 
 set LogDir=<OUT_LOG_DIR>
 date > <OUT_LOG_DIR>/<COUNTRY>-<AREA>-<INST>-time.txt
@@ -60,7 +62,7 @@ set OutputTexDir=<OUTPUT_TEX_DIR>
 set OutputScriptsDir=<OUTPUT_SCRIPTS_DIR>
 set OutputHtmlDir=<OUTPUT_HTML_DIR>
 
-rm *.ps *.pdf *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.out *.xref *.lof *.log *.lot *.brf *~ *.tmp;
+rm *.ps *.pdf *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.log *.out *.xref *.lof *.lot *.tmp *.bit *.idx *.glo *.ind *.x;
 # ls IS*.tex | xargs -0 perl -pi -e 's/CATORCE/UNOCUATRO/g'
 
 # sudo addgroup curricula
@@ -75,7 +77,9 @@ end
 
 if($pdf == 1) then
     # latex -interaction=nonstopmode <MAIN_FILE>
-    rm *.ps *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.out *.xref *.lof *.log *.lot *.brf *~ *.tmp;
+    
+    rm *.ps *.pdf *.log *.dvi *.aux *.bcf *.xml *.bbl *.blg *.toc *.log *.out *.xref *.lof *.lot *.tmp *.bit *.idx *.glo *.ind *.x;
+    ./scripts/clean.sh;
     latex <MAIN_FILE>;
 
     mkdir -p <OUT_LOG_DIR>;

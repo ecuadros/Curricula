@@ -5119,7 +5119,7 @@ sub detect_link_for_courses()
 			{
 				$Common::course_info{$codcour}{link} = $link = $1;
 				Util::print_success("$link");
-				# 			Util::print_message("codcour=$codcour ($Common::config{dictionary}{$Common::course_info{$codcour}{course_type}}), link = $link");
+				# Util::print_message("codcour=$codcour ($Common::config{dictionary}{$Common::course_info{$codcour}{course_type}}), link = $link");
 			}
 			else
 			{

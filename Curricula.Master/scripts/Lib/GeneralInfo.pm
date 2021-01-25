@@ -62,7 +62,8 @@ sub generate_course_tables($)
 
 # 			Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
 			$this_course_info{COURSECODE}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
-			$this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
+			# $this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
+
 #			$this_course_info{COURSENAME} = "\\htmlref{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
 # 			Util::print_message("codcour=$codcour");
 # 			print Dumper ( \%{$Common::course_info{$codcour}} );

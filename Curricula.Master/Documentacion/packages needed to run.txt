@@ -1,8 +1,8 @@
 You can add this to the ~/.bashrc to make it always available when you log-in.
 Ubuntu: export PERL5LIB=/home/ecuadros/Articles/Curricula/Curricula.Master/scripts
 Mac   :
-export PERL5LIB=/usr/local/Cellar/perl/5.30.2_1/lib/perl5/site_perl/5.30.2:/usr/local/Cellar/perl/5.26.1/lib/perl5/site_perl/5.26.1:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
-export TEXINPUTS=::/usr/local/Cellar/latex2html/2020/texinputs
+export PERL5LIB=/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
+export TEXINPUTS=::/usr/local/Cellar/latex2html/2021/texinputs
 source ~/.zshrc
 
 export GITHUB_NOTIFICATIONS_TOKEN=::32c429a81bf67dd7faf8f702b6f73eb4bf2e874a
@@ -35,20 +35,27 @@ cpan install Switch;
 # convert does not work correctly with default parameters
 sudo sed -i 's/\(<policy domain="coder" rights=\)"none" \(pattern="PDF" \/>\)/\1"read|write"\2/g' /etc/ImageMagick-6/policy.xml
 
-%%%% /usr/local/Cellar/latex2html/2020/l2hconf.pm
-$LATEX = '/Library/TeX/texbin/latex';   # LaTeX
-$DVIPS = '/Library/TeX/texbin/dvips';   # dvips
-$DVIPNG = '/Library/TeX/texbin/dvipng'; # dvipng
-$TEX = "/Library/TeX/texbin/TeX";                       # TeX
-$INILATEX = "/Library/TeX/texbin/initex \"&latex\"";    # initex+latex
-
+%%%% /usr/local/Cellar/latex2html/2021/l2hconf.pm
+#  Give the paths to latex and dvips on your system:
+#
+$LATEX = '/Library/TeX/texbin/latex';	# LaTeX
 $PDFLATEX = '/Library/TeX/texbin/pdflatex';	# pdfLaTeX
 $LUALATEX = '/Library/TeX/texbin/lualatex';	# LuaLaTeX
 $DVILUALATEX = '/Library/TeX/texbin/dvilualatex';	# dviLuaLaTeX
+$DVIPS = '/Library/TeX/texbin/dvips';	# dvips
+$DVIPNG = '/Library/TeX/texbin/dvipng';	# dvipng
 $PDFTOCAIRO = '/usr/local/bin/pdftocairo';	# pdf to svg converter
 $PS2PDF = '/usr/local/bin/ps2pdf';	# ps to pdf converter
 $PDFCROP = '/Library/TeX/texbin/pdfcrop';	# pdfcrop
 $GS = '/usr/local/opt/ghostscript/bin/gs';	# GhostScript
+
+
+#  give these too, to use the  -ldump  feature
+#
+$TEX = "/Library/TeX/texbin/TeX"; 			# TeX
+$INILATEX = " \"&latex\"";	# initex+latex
+
+
 
 brew tap homebrew/cask
 brew cask install inkscape
@@ -87,7 +94,7 @@ brew install graphviz;
 brew install latex2html; brew upgrade latex2html
 apt-get install ps2pdf; (ya viene); xxxxxx
 brew install gv;
-brew install Caskroom/cask/inkscape
+brew install Caskroom/cask/inkscape;
 brew install Caskroom/cask/mactex;
 * brew install scsh;
 brew install tcsh;
@@ -96,7 +103,12 @@ brew cask install mactex;
 brew install caskroom/cask/meld
 
 brew install cpanm
+cpan install Text::Levenshtein::XS
 cpanm Carp::Assert
+cpan install Carp::Assert
+cpan install Number::Bytes::Human
+cpan install CAM::PDF
+cpan install Switch
 
 --- Install Perlbrew ---
 \curl -L https://install.perlbrew.pl | bash

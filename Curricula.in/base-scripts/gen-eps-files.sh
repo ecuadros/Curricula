@@ -39,7 +39,9 @@ if($area == "CS") then
 		    ./scripts/updatelog.pl "$tmptex generated";
 		    echo "******************************** File ($tmptex) ... OK ! ********************************";
 	    else
-		    echo "Figures $tmptex.eps $tmptex.jpg $tmptex.png already exist ... jumping";
+		    echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.eps already exist ... jumping";
+			echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.jpg already exist ... jumping";
+			echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.png already exist ... jumping";
 	    endif
 		rm -f *.aux *.dvi *.log *.ps *.eps $tmptex.jpg;
     end
@@ -51,14 +53,15 @@ foreach tmptex ('<AREA>' 'course-levels' 'course-coding')
 	if( ! -e $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.eps || ! -e $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.png ) then
 		echo "******************************** Compiling coding courses $area-$institution ($tmptex) ...******************************** "
 		latex $tmptex;
-		dvips -o $tmptex.ps $tmptex;
+		dvips -o $tmptex.ps $tmptex.dvi;
 		ps2eps -f $tmptex.ps;
-		convert $tmptex.eps $tmptex.png;
+		convert $tmptex.eps -colorspace RGB $tmptex.png;
 		cp $tmptex.eps $tmptex.png $tmptex.svg $current_dir/<OUTPUT_FIGS_DIR>;
 		./scripts/updatelog.pl "$tmptex generated";
 		echo "******************************** File ($tmptex) ... OK ! ********************************";
 	else
-		echo "Figures $tmptex.eps $tmptex.png already exist ... jumping";
+		echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.eps already exist ... jumping";
+		echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.png already exist ... jumping";
 	endif
 	rm -f *.aux *.dvi *.log *.ps *.eps $tmptex.jpg $tmptex.png;
 end
@@ -77,7 +80,8 @@ foreach tmptex ('pie-credits' 'pie-by-levels') # 'pie-horas'
 		cp $tmptex.eps $tmptex.png $current_dir/<OUTPUT_FIGS_DIR>;
 		echo "******************************** File ($tmptex) ... OK ! ********************************";
 	else
-		echo "Figures $tmptex.eps $tmptex.png already exist ... jumping" ;
+		echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.eps already exist ... jumping";
+		echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$tmptex.png already exist ... jumping";
 	endif
 	rm -f *.aux *.dvi *.log *.ps *.eps $tmptex.jpg $tmptex.png;
 end
@@ -98,7 +102,8 @@ foreach graphtype ('curves' 'spider')
 				cp $file.eps $file.png $current_dir/<OUTPUT_FIGS_DIR>;
 				echo "******************************** File ($file) ... OK ! ********************************";
 			else
-				echo "Figures $file.ps $file.jpg already exist ... jumping" ;
+				echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$file.ps already exist ... jumping";
+				echo "Figures $current_dir/<OUTPUT_FIGS_DIR>/$file.jpg already exist ... jumping";
 			endif
 			rm *.aux *.dvi *.log *.ps *.eps $file.jpg $file.png;
 		end

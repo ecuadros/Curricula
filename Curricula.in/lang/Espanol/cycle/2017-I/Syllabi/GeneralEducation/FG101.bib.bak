@@ -17,7 +17,7 @@
 
 
 @Book{Rodriguez,
-  author = "Rodríguez, J.",
+  author = "J. Rodríguez,",
   title =  "Guía para el método de estudio universitario"
   publisher = "Educa",
   year =   "2007"
@@ -31,14 +31,14 @@
 }
 
 @Book{Pereza,
-  author = "Perez,A.E.",
+  author = "A.E. Perez",
   title =  "Teoría del Derecho",
   publisher = "Editorial Madrid",
   year =   "2010"
 }
 
 @Book{Quintana,
-  author = "Quintana, V.",
+  author = "V. Quintana",
   title =  "El estudio Universitario y elementos de investigación científica"
   publisher = "Editorial universitaria",
   year =   "2007"
@@ -53,7 +53,7 @@
 
 
 @Book{Pauk,
-  author = "Pauk, W.",
+  author = "W. Pauk",
   title =  "Estrategias de estudio",
   publisher = "Pearson Educacion",
   year =   "2002"
