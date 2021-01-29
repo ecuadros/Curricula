@@ -5,7 +5,6 @@ Curricula generator for Computer Science related careers (CS, IS, Technical CS, 
 ## Requirements
 
 Tested on:
-
 ```
 Ubuntu 16.04 || Ubuntu 18.04 || Ubuntu 20.04 || macOS Catalina
 Perl v5.30.0
@@ -23,7 +22,6 @@ sudo apt-get install texlive-full texlive-science texlive-latex-extra texlive-bi
 ```
 
 #### Install required PERL modules:
-
 ```
 sudo cpan install Clone
 sudo cpan install CAM::PDF
@@ -74,43 +72,32 @@ export PERL5LIB=/home/$USER/Curricula/Curricula.Master/scripts/
     * Modificar \newcommand{\equivalences}{2010} %  si existen equivalencias
 
 1. Ejecutar los siguientes scripts:
-    * `./scripts/gen-scripts.pl CS-UTEC` genera scripts para CS-UTEC en Curricula.out
-    * `./compile1institucion.sh Y N N` genera la curricula y extras (Y) en .pdf, pero no la parte HTML (N)
+    * `./scripts/gen-scripts.pl CS-INST` genera scripts para CS-INST en Curricula.out
+    * `./compile1institucion.sh y n n` genera la curricula y extras (Y) en .pdf, pero no la parte HTML (N)
 
 1. Imprimir el archivo, distribuir syllabi y descansar hasta el próximo semestre!"
-
 
 ## Localizaciones
 Directorios y archivos importantes a considerar:
 
 ### Curricula.in/
-
 1. Macros: ./Curricula.in/lang/{Lenguaje}/CS.sty/bok-macros.sty
-
 1. Sílabos: ./Curricula.in/lang/{Lenguaje}/cycle/{ciclo}/Syllabi/{Área}/{Programa}
-
 1. Dependencias (cursos): ./Curricula.in/lang/Espanol/CS.tex/CS201X-dependencies.tex
-
 1. Lista de instituciones: ./Curricula.in/institutions-list.txt
 
 ### Curricula.Master/
-
 1. Scripts generales: ./Curricula.Master/scripts
-
 1. Librerías propias: ./Curricula.Master/scripts/Lib
 
 ### Curricula.out/ (Generado)
-
 1. Curricula y Libros: ./Curricula.out/pdfs
 
 ## Fuentes
-
 CS2013: http://ai.stanford.edu/users/sahami/CS2013/final-draft/CS2013-final-report.pdf
 
 ## Colaborar
-
 Cualquier ayuda a este proyecto o algún bug no resuelto reportarlo!
-
 Realizar Pull request para colaborar o presentar un Issue con los errores!
 
 Gracias!
