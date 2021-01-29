@@ -58,11 +58,12 @@ sub generate_course_tables($)
 			#my $codcour_label 	= Common::get_label($codcour);
 			$this_line		= $Common::config{dictionary}{course_fields};
 			my $prefix		= $Common::course_info{$codcour}{prefix};
-			my $pdflink 	= Common::get_pdf_link($codcour);
+			my $pdflink 	= "";
+			# my $pdflink 	= Common::get_pdf_link($codcour);
 
 # 			Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
 			$this_course_info{COURSECODE}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
-			# $this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
+			$this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
 
 #			$this_course_info{COURSENAME} = "\\htmlref{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
 # 			Util::print_message("codcour=$codcour");
@@ -727,11 +728,12 @@ sub generate_curricula_in_dot_internal($$$$$)
 		}
 		foreach my $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
-			foreach my $req (split(",", $Common::course_info{$codcour}{prerequisites_just_codes}))
+			my $req = "";
+			foreach $req (split(",", $Common::course_info{$codcour}{prerequisites_just_codes}))
 			{
 				if( $req =~ m/$Common::institution=(.*)/ )
 				{
-					$output_txt .= "\"$1\"abc->$codcour;\t\t";
+					$output_txt .= "\"$1\"->$codcour;\t\t";
 					$output_txt .= "\"$1\" [$Common::config{ExtraDotItemStyle}];\n";
 				}
 				else
@@ -745,12 +747,13 @@ sub generate_curricula_in_dot_internal($$$$$)
 					}
 					my ($output_connection, $regular_course) = Common::generate_connection_between_two_courses($source, $target, $lang);
 					$output_txt .= $output_connection;
-					#my $critical_path_style = "";
-					#my $width = 4;
-					#if( defined($Common::course_info{$source}{critical_path}{$target}))
-					#{		$critical_path_style = " [penwidth=$width]";	}
-					#$output_txt .= "$source->$codcour$critical_path_style;\n";
+					# Util::print_message("generate_connection_between_two_courses($source, $target) : $output_connection");
+					# exit;
 				}
+			}
+			# Generate invisible links just to align courses
+			foreach $req (sort {$a cmp $b}	keys %{$Common::course_info{$codcour}{prereq_invis}})
+			{	$output_txt .= Common::generate_invisible_connection_between_two_courses($req, $codcour);
 			}
 			if( $Common::config{recommended_prereq_flag} == 1 )
 			{	foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
@@ -779,7 +782,6 @@ sub generate_curricula_in_dot_internal($$$$$)
 	Util::write_file($output_dot_file, $output_txt);
 	#Util::print_message($course_tpl);
 	Util::print_message("generate_curricula_in_dot_internal($output_dot_file, <<course_tpl>>, $lang) OK!");
-
 }
 
 sub generate_curricula_in_dot($$)

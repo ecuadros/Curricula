@@ -376,22 +376,56 @@ sub get_pdf_link($)
 	return $pdflink;
 }
 
+sub format_connection_beetween_two_nodes($$$$)
+{
+	my ($source, $target, $style, $comment) = (@_);
+	my $output_txt = "";
+	$output_txt = "\t\"$source\"->\"$target\"";
+	if( not $style eq "" ) # Do we have any style, then add it
+	{	$output_txt .= " [$style]";		}
+	$output_txt .= ";";
+	if( not $comment eq "" ) # Do we have any comment
+	{	$output_txt .= " # $comment";		}
+	$output_txt .= "\n";
+	return $output_txt;
+}
+
 sub generate_connection_between_two_courses($$$)
 {
 	my ($source, $target, $lang) = (@_);
-	my $output_txt = "";
+	my ($output_txt, $prefix) = ("", "");
+	my ($style, $comment)     = ("", "");
 	if($source =~ m/(.*?)=(.*)/)
 	{
 		my ($inst, $prereq) = ($1, $2);
 		assert( $inst eq $Common::institution);
-		$output_txt .= "\t\"$prereq\"->\"$target\";\n";
-		return ($output_txt, 0);
+		return (format_connection_beetween_two_nodes($prereq, $target, $style, $comment), 0);
 	}
 	my ($critical_path_style, $width) = ("", 4);
 	if( defined($Common::course_info{$source}{critical_path}{$target}))
-	{			$critical_path_style = "penwidth=$width,label=\"$Common::config{dictionaries}{$lang}{CriticalPath}\"";	}
-	$output_txt .= "\t\"$source\"->\"$target\" [$critical_path_style];\n";
+	{			$style .= "penwidth=$width,label=\"$Common::config{dictionaries}{$lang}{CriticalPath}\"";	}
+	if( defined($course_info{$target}{prereq_to_hide}{$source}) )
+	{	$prefix  = "# ";
+		$comment = "# (H) Hide this link just in the picture";	
+	}
+	$output_txt = $prefix.format_connection_beetween_two_nodes($source, $target, $style, $comment);
 	return ($output_txt, 1);
+}
+
+sub generate_invisible_connection_between_two_courses($$)
+{
+	my ($source, $target) = (@_);
+	my ($output_txt, $comment) = ("", "");
+	
+	if( defined($course_info{$target}{prereq_invis}{$source}) ) # Pending
+	{	my $style   = "style=dotted, penwidth=1";
+		my $comment = "Invisible link ... just to arrange nodes ...";
+		return format_connection_beetween_two_nodes($source, $target, $style, $comment);
+	}
+	else{
+		Util::print_error("generate_invisible_connection_between_two_courses: something wrong! $target has not $source as invisible connection !")
+	}
+	return ($output_txt);
 }
 
 sub GetCourseNameWithLink($$$$)
@@ -3657,14 +3691,14 @@ sub parse_courses()
 			my ($course_params) = ($1);
 			$course_params =~ s/\n//g; $course_params =~ s/\r//g;
 			#                       {sem}{course_type}{area_country}{area_pie}{dpto}{cod}{alias}{name} {cr}{th}  {ph}  {lh} {ti}{Tot} {labtype}  {req} {rec} {corq}{grp} {axe} %filter
-			if($course_params =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
+			if($course_params =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
 			{
 				#Util::print_color("\\course$course_params");
-				my ($semester, $course_type, $area, $area_pie, $department)      = ($1, $2, $3, $4, $5);
-				my ($codcour, $codcour_alias, $course_name_es, $course_name_en)  = ($6, $7, $8, $9);
-				my ($credits, $ht, $hp, $hl, $ti, $tot, $labtype)   		       = ($10, $11, $12, $13, $14, $15, $16);
-				my ($prerequisites, $recommended, $coreq, $group)   		       = ($17, $18, $19, $20);
-				my ($axes, $inst_wildcard)			      		               = ($21, $22);
+				my ($semester, $course_type, $area, $area_pie, $department)     = ($1, $2, $3, $4, $5);
+				my ($codcour, $codcour_alias, $course_name_es, $course_name_en) = ($6, $7, $8, $9);
+				my ($credits, $ht, $hp, $hl, $ti, $tot, $labtype)   		    = ($10, $11, $12, $13, $14, $15, $16);
+				my ($prerequisites, $invis, $recommended, $coreq, $group)   	= ($17, $18, $19, $20, $21);
+				my ($axes, $inst_wildcard)			      		               	= ($22, $23);
 				my $coursefile = $codcour;
 
 				#if( $codcour eq "CS211" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
@@ -3737,6 +3771,7 @@ sub parse_courses()
 				#print "wildcards = $inst_wildcard\n";
 				#Util::print_message("coursecode = $codcour, semester = $semester\n");
 				$prerequisites =~ s/ //g;
+				$invis         =~ s/ //g;
 				$recommended   =~ s/ //g;
 				$coreq	       =~ s/ //g;
 
@@ -3773,15 +3808,33 @@ sub parse_courses()
 				$course_info{$codcour}{lh}             	= $hl if(not $hl eq "");
 
 				($course_info{$codcour}{ti}, $course_info{$codcour}{tot})            = (0, 0);
-				$course_info{$codcour}{ti}                      = $ti if(not $ti eq "");
-				$course_info{$codcour}{tot}                     = $tot if(not $tot eq "");
+				$course_info{$codcour}{ti}                  = $ti  if(not $ti eq "");
+				$course_info{$codcour}{tot}                 = $tot if(not $tot eq "");
 
-				$course_info{$codcour}{labtype}                 = $labtype;
-				$course_info{$codcour}{prerequisites}           = $prerequisites;
+				$course_info{$codcour}{labtype}             = $labtype;
+				$course_info{$codcour}{prerequisites}		= "";
+				%{$course_info{$codcour}{prereq_to_hide}} 	= ();
+				%{$course_info{$codcour}{prereq_invis}} 	= ();
+				my $sep = "";
+				foreach my $prereq (split(",", $prerequisites)) 
+				{
+					if( $prereq =~ m/(.*)\(H\)/g )
+					{	$course_info{$codcour}{prereq_to_hide}{$1} = "";	}
+				}
+				foreach my $prereq_invis (split(",", $invis)) 
+				{	$course_info{$codcour}{prereq_invis}{$prereq_invis} = "";
+				}
+				($course_info{$codcour}{prerequisites} = $prerequisites) =~ s/\(H\)//g;
+				# if( $codcour eq "CS364" ) Pending
+				# {
+				# 	print "$course_info{$codcour}{prerequisites}\n";
+				# 	print Dumper(\%{$course_info{$codcour}{prereq_invis}});
+				# 	exit;
+				# }
 				foreach my $lang ( @{$config{SyllabusLangsList}} )
 				{
-						$course_info{$codcour}{$lang}{full_prerequisites} = []; # # CS101F. Name1 (1st Sem, $Common::config{dictionary}{Pag} 56), CS101O. Name2 (2nd Sem, Pag 87), ...
-						$course_info{$codcour}{$lang}{code_name_and_sem_prerequisites} = [];
+					$course_info{$codcour}{$lang}{full_prerequisites} = []; # # CS101F. Name1 (1st Sem, $Common::config{dictionary}{Pag} 56), CS101O. Name2 (2nd Sem, Pag 87), ...
+					$course_info{$codcour}{$lang}{code_name_and_sem_prerequisites} = [];
 				}
 				$course_info{$codcour}{code_and_sem_prerequisites}	= "";
 
