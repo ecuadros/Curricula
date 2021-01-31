@@ -29,7 +29,7 @@ Curricula.Master/log/*
 Curricula.Master/log/Peru-CS-MINEDU-time.txt
 Curricula.Master/log/Peru-CS-MINEDU-errors-bib.txt
 Curricula.Master/log/Peru-CS-SPC-time.txt
-./Curricula.Master/unified-curricula-main.tex
+Curricula.Master/unified-curricula-main.tex
 
 .vscode/
 Curricula.in/lang/Espanol/CS.tex/tex4fig/Pregunta*.png
@@ -42,3 +42,13 @@ Curricula.in/country/.DS_Store
 Curricula.in/country/Peru/.DS_Store
 Curricula.in/country/Peru/Computing/.DS_Store
 Curricula.in/country/Peru/Computing/CS/.DS_Store
+
+Curricula.Master/gen-poster.sh
+Curricula.Master/gen-poster-fast.sh
+Curricula.Master/compile-simple-latex.sh
+Curricula.Master/CompileTexFile.sh
+Curricula.Master/gen-book.sh
+Curricula.Master/gen-eps-files.sh
+Curricula.Master/gen-graph.sh
+Curricula.Master/gen-html-1institution.sh
+Curricula.Master/compileall
