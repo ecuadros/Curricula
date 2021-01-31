@@ -15,9 +15,9 @@ set countryBase     = Peru
 set disciplineBase  = Computing
 set languageBase    = Espanol
 set areaBase        = CS
-set institutionBase = UTEC
-set planBase        = Plan2018
-set cycleBase       = 2020-I
+set institutionBase = SPC
+set planBase        = Plan2021
+set cycleBase       = 2021-I
 
 echo "mkdir -p ../Curricula.in/country/$country/$discipline/$area/$institution/cycle/$cycle/$plan"
 mkdir -p       ../Curricula.in/country/$country/$discipline/$area/$institution/cycle/$cycle/$plan
