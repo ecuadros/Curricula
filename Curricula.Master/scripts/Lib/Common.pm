@@ -283,10 +283,16 @@ sub get_size($)
 sub getPDFnPages($)
 {
 	my ($file) = (@_);
-	my $pdf 	= CAM::PDF->new($file) or Util::print_color("Error trying to find: $file");
-	my $nPages	= $pdf->numPages();
-	Util::print_message("PDF: $file -> $nPages Pages detected ...");
-	return $nPages;
+	if(-e $file )
+	{	my $pdf 	= CAM::PDF->new($file) or Util::print_color("Error trying to find: $file");
+		my $nPages	= $pdf->numPages();
+		Util::print_message("PDF: $file -> $nPages Pages detected ...");
+		return $nPages;
+	}
+	else
+	{	Util::print_color("Error trying to find: $file");
+		return 0;
+	}
 }
 
 
@@ -2194,6 +2200,11 @@ sub set_initial_configuration($)
 	parse_input_command($command);
 	$path_map{"institutions-list"}	= "$config{in}/institutions-list.txt";
 	read_institutions_list();
+	# print Dumper(\%inst_list); exit;
+	if(not defined($inst_list{$config{institution}}{plan}))
+	{
+		Util::print_error("I couldnt find configuration for $command ... did you config at: ".$path_map{"institutions-list"}."?");
+	}
 	$config{discipline}	  	= $inst_list{$config{institution}}{discipline};
 	$config{Plan}			= $inst_list{$config{institution}}{plan};
 	Util::print_message("config{Plan}=$config{Plan}");
