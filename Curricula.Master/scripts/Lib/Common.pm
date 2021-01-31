@@ -874,6 +874,8 @@ sub set_initial_paths()
 
 	$path_map{"in-gen-poster-base-file"}			= $path_map{InDir}."/base-scripts/gen-poster.sh";
 	$path_map{"out-gen-poster-file"} 				= $path_map{OutputScriptsDir}."/gen-poster.sh";
+	$path_map{"in-gen-poster-fast-base-file"}		= $path_map{InDir}."/base-scripts/gen-poster-fast.sh";
+	$path_map{"out-gen-poster-fast-file"} 			= $path_map{OutputScriptsDir}."/gen-poster-fast.sh";
 	
 	$path_map{"update-page-numbers"}	 			= $path_map{InScriptsDir}."/update-page-numbers.pl";
 
@@ -2183,6 +2185,7 @@ sub set_initial_configuration($)
 	#$config{lang_for_latex}{Espanol}   = "spanish";
 	#$config{lang_for_latex}{English}   = "english";
 	#$config{lang_for_latex}{Portugues} = "english";
+	$config{empty_track} = "empty-track";
 	$config{COL4LABS} = "lh";
 
     system("mkdir -p $config{out}/tex");
@@ -3691,14 +3694,15 @@ sub parse_courses()
 			my ($course_params) = ($1);
 			$course_params =~ s/\n//g; $course_params =~ s/\r//g;
 			#                       {sem}{course_type}{area_country}{area_pie}{dpto}{cod}{alias}{name} {cr}{th}  {ph}  {lh} {ti}{Tot} {labtype}  {req} {rec} {corq}{grp} {axe} %filter
-			if($course_params =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
+			if($course_params =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
 			{
 				#Util::print_color("\\course$course_params");
 				my ($semester, $course_type, $area, $area_pie, $department)     = ($1, $2, $3, $4, $5);
 				my ($codcour, $codcour_alias, $course_name_es, $course_name_en) = ($6, $7, $8, $9);
 				my ($credits, $ht, $hp, $hl, $ti, $tot, $labtype)   		    = ($10, $11, $12, $13, $14, $15, $16);
-				my ($prerequisites, $invis, $recommended, $coreq, $group)   	= ($17, $18, $19, $20, $21);
-				my ($axes, $inst_wildcard)			      		               	= ($22, $23);
+				my ($prerequisites, $invis, $recommended, $coreq) 				= ($17, $18, $19, $20);
+				my ($group, $track)												= ($21, $22);
+				my ($axes, $inst_wildcard)			      		               	= ($23, $24);
 				my $coursefile = $codcour;
 
 				#if( $codcour eq "CS211" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
@@ -3845,8 +3849,9 @@ sub parse_courses()
 		# 		  Util::print_warning("codcour=$codcour, $recommended");
 				$course_info{$codcour}{recommended}   		= get_label($recommended);
 		# 		  Util::print_warning("course_info{$codcour}{recommended}=$course_info{$codcour}{recommended}"); exit;
-				$course_info{$codcour}{corequisites}			= get_label($coreq);
+				$course_info{$codcour}{corequisites}		= get_label($coreq);
 				$course_info{$codcour}{group}          		= $group;
+				$course_info{$codcour}{track}          		= $track;
 
 				$course_info{$codcour}{inst_list}      		= $inst_wildcard;
 				$course_info{$codcour}{equivalence}			= "";

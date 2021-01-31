@@ -675,41 +675,57 @@ sub generate_curricula_in_dot_internal($$$$$)
 		foreach $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
 		    my $group = $Common::course_info{$codcour}{group};
+			my $track = $Common::config{empty_track};
+			if( not $Common::course_info{$codcour}{track} eq "" )
+			{	$track = $Common::course_info{$codcour}{track};		}
 			my $this_course_tpl = $pre_processing_course->($codcour, $lang, $course_tpl, $filter);
 		    my $this_course_dot = Common::generate_course_info_in_dot($codcour, $this_course_tpl, $lang)."\n";
 		    if($Common::config{graph_version} == 1 || $group eq "")
 			{       $sem_text .= $this_course_dot;   }
 		    elsif($Common::config{graph_version} >= 2) # related links for elective courses
-		    {       if(not defined($clusters_info{$group}))
-		           	{       $clusters_info{$group}{dot} = "";
+		    {       if(not defined($clusters_info{$track}{$group}))
+		           	{       $clusters_info{$track}{$group}{dot} = "";
 					}
-		            $clusters_info{$group}{dot} .= $this_course_dot;
-					push( @{$clusters_info{$group}{courses}}, $codcour);
+		            $clusters_info{$track}{$group}{dot} .= $this_course_dot;
+					push( @{$clusters_info{$track}{$group}{courses}}, $codcour);
 		    }
 			#my $codcour_label = Common::get_label($codcour);
 			$sem_rank .= " \"$codcour\";";
 			$ncourses++;
 		}
 
-    	if($Common::config{graph_version} >= 2)
+		if($Common::config{graph_version} >= 2)
 		{
-			foreach my $group (keys %clusters_info)
+			foreach my $track (keys %clusters_info)
 			{
-				$sem_text .= "subgraph cluster$group$cluster_count\n{";
-				$sem_text .= "\tlabel = \"$Common::config{dictionary}{Electives}\";\n";
-				$sem_text .= "\tgraph[color=black,style=dotted,penwidth=2];\n";
-					
-				my $group_name = "$Common::config{dictionary}{Electives}$semester$group";
-				foreach $codcour (@{$clusters_info{$group}{courses}})
-				{
-					my $this_course_tpl = $pre_processing_course->($codcour, $lang, $course_tpl, $filter);
-					my $this_course_dot = Common::generate_course_info_in_dot($codcour, $this_course_tpl, $lang);
-					$sem_text .= "\t$this_course_dot\n";
-					$sem_rank .= " \"$codcour\";";
-					$ncourses++;
+				#print Dumper(\%clusters_info);
+				my $tab = "";
+				if( not $track eq $Common::config{empty_track} )
+				{	$sem_text .= "subgraph cluster$track\n{";
+					$sem_text .= "\tlabel = \"Track $track\";\n";
+					$sem_text .= "\tgraph[color=black,style=dotted,penwidth=2];\n";
+					# $sem_text .= "Tag setted !\n";
+					$tab = "\t";
 				}
-				$sem_text .= "}\n";
-				$cluster_count++;
+				foreach my $group ( keys %{$clusters_info{$track}} )
+				{
+					$sem_text .= $tab."subgraph cluster$group$cluster_count\n";
+					$sem_text .= $tab."{\tlabel = \"$Common::config{dictionary}{Electives}\";\n";
+					$sem_text .= "$tab\tgraph[color=black,style=dotted,penwidth=2];\n";
+
+					foreach $codcour (@{$clusters_info{$track}{$group}{courses}})
+					{
+						my $this_course_tpl = $pre_processing_course->($codcour, $lang, $course_tpl, $filter);
+						my $this_course_dot = Common::generate_course_info_in_dot($codcour, $this_course_tpl, $lang);
+						$sem_text .= "$tab\t$this_course_dot\n";
+						$sem_rank .= " \"$codcour\";";
+						$ncourses++;
+					}
+					$sem_text .= $tab."}\n";
+					$cluster_count++;
+				}
+				if( not $track eq $Common::config{empty_track} )
+				{	$sem_text .= "}\n";	}
 			}
 		}
 		$output_txt .= "\n#\t$semester $Common::config{dictionary}{Semester}\n";

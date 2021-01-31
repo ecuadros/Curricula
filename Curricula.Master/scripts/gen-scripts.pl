@@ -160,12 +160,16 @@ sub gen_batch_files()
 	    Util::print_message("Creating shorcut: ln -s $output");
 	    system("cp $output .");
 	}
-	foreach my $file ("gen-eps-files", "gen-graph", "gen-book", "CompileTexFile", "compile-simple-latex", "gen-poster")
+	foreach my $file ("gen-eps-files" , "gen-graph", "gen-book", 
+					  "CompileTexFile", "compile-simple-latex", 
+					  "gen-poster"    , "gen-poster-fast")
 	{
+		system("rm $file*");
+		$input     = Common::get_template("in-$file-base-file");
 	    $output    = Common::get_template("out-$file-file");
 	    system("rm $output");
-		$input     = Common::get_template("in-$file-base-file");
 		Common::gen_batch($input, $output, $lang);
+		system("cp $output .");
 	}
 	my $command = "cp ". Common::get_template("preamble0-file")." ". Common::get_template("OutputTexDir");
 	Util::print_message($command);
