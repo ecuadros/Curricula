@@ -3,7 +3,13 @@
 \course{CS369. Computación Evolutiva}{Electivo}{CS369}
 
 \begin{justification}
-    La Computación Evolutiva comprende un conjunto de metodologías de búsqueda y optimización cuya base primordial es el Paradigma Neodarwiniano que agrupa la Herencia Genética (Mendel), el Seleccionismo (Weismann) y la Evolución de las Especies (Darwin) que, cuando llevadas a implementaciones computacionales, ofrecen una herramienta poderosa de optimización global para una determinada función objetivo. Son bastante robustos cuando se supone la existencia de muchos óptimos locales. De esta forma, estos algoritmos pueden aplicarse en diversos problemas de optimización.
+La Computación Evolutiva comprende un conjunto de metodologías de búsqueda y optimización
+cuya base primordial es el Paradigma Neodarwiniano que agrupa la Herencia Genética (Mendel), 
+el Seleccionismo (Weismann) y la Evolución de las Especies (Darwin) que, 
+cuando llevadas a implementaciones computacionales, ofrecen una herramienta poderosa de optimización global 
+para una determinada función objetivo. 
+Son bastante robustos cuando se supone la existencia de muchos óptimos locales. 
+De esta forma, estos algoritmos pueden aplicarse en diversos problemas de optimización.
 \end{justification}
 
 \begin{goals}
@@ -13,14 +19,9 @@
 \item Capacidad de tratar un problema real de optimización utilizando Computación Evolutiva
 \end{goals}
 
-\begin{outcomes}
-\ExpandOutcome{a}{4}
-\ExpandOutcome{b}{5}
-\ExpandOutcome{i}{4}
-\ExpandOutcome{j}{3}
-\end{outcomes}
+--COMMON-CONTENT--
 
-\begin{unit}{Introducción a la Optimización}{weise09, Rozenberg:2012}{4}{a,b}
+\begin{unit}{Introducción a la Optimización}{}{weise09, Rozenberg:2012}{4}{a,b}
 \begin{topics}
         \item Definiciones de Optimización: principio de estabilidad, optimización global.
         \item Optimización Clásica: Definición del problema de optimización, concepto de convexidad, optimización numérica y combinatoria.
@@ -34,7 +35,7 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Computación Evolutiva: Conceptos básicos}{Rozenberg:2012,weise09,fogel95,koza98,mel98,michalewicz96}{8}{a,b,i}
+\begin{unit}{Computación Evolutiva: Conceptos básicos}{}{Rozenberg:2012,weise09,fogel95,koza98,mel98,michalewicz96}{8}{a,b,i}
 \begin{topics}
         \item Computación Evolutiva: definiciones
         \item Ideas precursoras: El origen de las ideas, L'Eclerc, Lamarck, Darwin, Weismann, Mendel, Baldwin, Paradigma Neodarwiniano
@@ -47,11 +48,15 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Algoritmo Genético Canónico}{Rozenberg:2012,holland75,goldberg89,mel98,michalewicz96}{8}{a,b,i}
+\begin{unit}{Algoritmo Genético Canónico}{}{Rozenberg:2012,holland75,goldberg89,mel98,michalewicz96}{8}{a,b,i}
 \begin{topics}
    \item Algoritmo Genético: definición, componentes.
-   \item Algoritmo Genético Canónico: procedimiento elemental, ciclo de un AG, representación (codificación binaria, real a binario, decodificación binario a real), inicialización de la población, evaluación y aptitud, selección (proporcional, torneo), operadores genéticos (cruces, mutaciones), el dilema \textit{exploiting-exploring}, ajustes en la aptitud, ajustes en la selección.
-	 \item Monitoreo de un AG: curvas \textit{best-so-far, online, off-line}
+   \item Algoritmo Genético Canónico: procedimiento elemental, ciclo de un AG,
+         representación (codificación binaria, real a binario, decodificación binario a real), 
+         inicialización de la población, evaluación y aptitud, selección (proporcional, torneo), 
+         operadores genéticos (cruces, mutaciones), el dilema \textit{exploiting-exploring}, 
+         ajustes en la aptitud, ajustes en la selección.
+	 \item Monitoreo de un AG, curva \textit{best-so-far, online, off-line},
 	 \item Convergencia
    \item Teoría de \textit{Schemata}: Máscaras, esquemas, definiciones y propiedades, \textit{Schemata theorem}: impacto de la selección, cruce de 1 punto y mutación, teorema fundamental de los algoritmos genéticos, hipótesis de los bloques constructores.
 \end{topics}
@@ -62,12 +67,14 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Algoritmos Evolutivos en Optimización Numérica}{Rozenberg:2012,michalewicz96,michalewicz2000,smith2000}{8}{a,b,i}
+\begin{unit}{Algoritmos Evolutivos en Optimización Numérica}{}{Rozenberg:2012,michalewicz96,michalewicz2000,smith2000}{8}{a,b,i}
 \begin{topics}
    \item Problemas con restricciones: definiciones, espacios válido e inválido.
    \item Tratamiento de las restricciones: Penalización, reparación, uso de codificadores, operadores especializados.
-	 \item Uso de codificación real: binario vs. real, algoritmo evolutivo con codificación real.
-	 \item Modelo GENOCOP: tratamiento de restricciones lineales, inicialización, operadores, inicialización, modelo GENOCOP III para restricciones no lineales: reparación de individuos.
+   \item Uso de codificación real: binario vs real algoritmo evolutivo con codificación real.
+   \item Modelo GENOCOP, tratamiento de restricciones lineales, inicialización, 
+         operadores, inicialización, modelo GENOCOP III para restricciones no lineales: 
+         reparación de individuos
 \end{topics}
 \begin{learningoutcomes}
   \item Comprensión de las formas de tratar problemas de optimización con restricciones.
@@ -76,12 +83,12 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Algoritmos Evolutivos en Optimización Combinatoria}{Rozenberg:2012,mel98,vargas03}{8}{a,b,i}
+\begin{unit}{Algoritmos Evolutivos en Optimización Combinatoria}{}{Rozenberg:2012,mel98,vargas03}{8}{a,b,i}
 \begin{topics}
   \item Espacios discretos y finitos
 	\item Algoritmos Evolutivos discretos: definición, modelo discreto generalizado
   \item Algoritmos Evolutivos de orden: representación de soluciones, operadores de orden: cruces, mutaciones
-	\item Aplicaciones: \textit{Quadratic assignment Problem} -- QAP, \textit{Travelling Salesman Problem} -- TSP
+	\item Aplicaciones: \textit{Quadratic assignment Problem} (QAP), \textit{Travelling Salesman Problem} (TSP)
 	\item Problemas de Planificación: variables típicas, carácteristicas, representación, codificadores, evaluación de una planificación. 
 \end{topics}
 \begin{learningoutcomes}
@@ -90,12 +97,12 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Paralelización y Multi objetivos}{Rozenberg:2012,Cantu-Paz2000,coello07}{8}{a,b,i,j}
+\begin{unit}{Paralelización y Multi objetivos}{}{Rozenberg:2012,Cantu-Paz2000,coello07}{8}{a,b,i,j}
 \begin{topics}
-  \item PEA -- Algoritmos Evolutivos en Paralelo: arquitecturas de paralelización, arquitecturas \textit{master-slave}, \textit{coarse-grained}, \textit{fine-grained} e híbridas 
+  \item Algoritmos Evolutivos en Paralelo (PEA): arquitecturas de paralelización, arquitecturas \textit{master-slave}, \textit{coarse-grained}, \textit{fine-grained} e híbridas 
   \item Análisis de la ejecución de una implementación \textit{master-slave}.
   \item Optimización de Multiples Objetivos: Definición formal, criterio de Pareto, Algoritmos Evolutivos Multi Objetivos (MOEA) sin uso de Pareto, MOEA con uso de Pareto: MOGA, NSGA, NPGA, NPGA2, PESA, SPEA, SPEA-II, Algoritmo Microgenético. 
-	\item MOEA -- Métricas de desempeño, investigación futura
+	\item Métricas de desempeño (MOEA), investigación futura
 \end{topics}
 \begin{learningoutcomes}
   \item Comprender y analizar la capacidad de paralelización de los modelos evolutivos
@@ -104,22 +111,21 @@
 \end{learningoutcomes}
 \end{unit}
 
-\begin{unit}{Algoritmos Genéticos Avanzados}{Rozenberg:2012,tarek06,koza92,Reynolds94,Storn95,AbsDaCruz2007}{16}{a,b,i,j}
+\begin{unit}{Algoritmos Genéticos Avanzados}{}{Rozenberg:2012,tarek06,koza92,Reynolds94,Storn95,AbsDaCruz2007}{16}{a,b,i,j}
 \begin{topics}
-      \item HEA -- Algoritmos Evolutivos Híbridos: Por qué hibridizar?, formas de hibridización, búsqueda local y aprendizaje.
-      \item GP -- Programación Genética: definición, representación, ciclo de la GP. 
-      \item CA -- Algoritmos Culturales: Evolución Cultural, componentes, procedimiento, espacio de creencia, operadores culturales.
-      \item CoEv -- Coevolución: carácteristicas, modelo competitivo, modelo cooperativo.
-      \item DE -- Evolución Diferencial: inicialización, operaciones, selección, DE vs. GA, variantes de DE, \textit{Dynamic DE}
-      \item QIEA -- Algoritmos Evolutivos con Inspiración Quántica: Computación quántica, algoritmos con inspiración quántica, QIEA-\textbf{B}, QIEA-\textbf{R}
+      \item Algoritmos Evolutivos Híbridos (HEA): Por qué hibridizar?, formas de hibridización, búsqueda local y aprendizaje.
+      \item Programación Genética (GP): definición, representación, ciclo de la GP,
+      \item Algoritmos Culturales (CA): Evolución Cultural, componentes, procedimiento, espacio de creencia, operadores culturales.
+      \item Coevolución: carácteristicas (CoEv), modelo competitivo, modelo cooperativo.
+      \item Evolución Diferencial (DE): inicialización, operaciones, selección, DE vs. GA, variantes de DE, \textit{Dynamic DE}
+      \item Algoritmos Evolutivos con Inspiración Quántica (QIEA): Computación quántica, algoritmos con inspiración quántica, QIEA-\textbf{B}, QIEA-\textbf{R}
 \end{topics}
+
 \begin{learningoutcomes}
   \item Reconocer y analizar la necesidad de usar Algoritmos Evolutivos más avanzados
   \item Implementación de modelos avanzados de computación evolutiva
 \end{learningoutcomes}
 \end{unit}
-
-
 
 \begin{coursebibliography}
 \bibfile{Computing/CS/CS365}
