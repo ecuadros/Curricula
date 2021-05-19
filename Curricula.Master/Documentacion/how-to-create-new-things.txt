@@ -36,12 +36,13 @@ How to create new institutions
 How to create courses of new areas (ie. JK123.tex)
 
 Modify:
-./Curricula.in/lang/Espanol/Computing.config/Computing.config
-./Curricula.in/config/all.config
-./Curricula.in/lang/Espanol/CS.config/CS-All.config
-./Curricula.in/lang/Espanol/dictionary.txt
-./Curricula.in/lang/Espanol/CS.tex/description-foreach-prefix.tex
+../Curricula.in/lang/Espanol/Computing.config/Computing.config
+../Curricula.in/config/all.config
+../Curricula.in/lang/Espanol/CS.config/Area.config
+../Curricula.in/lang/Espanol/CS.tex/description-foreach-prefix.tex
+
 ../Curricula.in/config/colors.config
+../Curricula.in/lang/Espanol/dictionary.txt
 
 ***********************************************************************************************************
 How to create a new program 
