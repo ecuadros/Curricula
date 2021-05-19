@@ -11,7 +11,7 @@ CS-UDEP   : Peru	: Computing  : UDEP,DS,BI,AI: Plan2021 : final
 CS-UPCH   : Peru	: Computing  : SPC        : Plan2021 : final
 CS-MINEDU : Peru	: Computing  : MINEDU6    : Plan2021 : final
 CS-UNPRG  : Peru	: Computing  : UNPRG      : Plan2021 : final
-CS-USIL   : Peru	: Computing  : USIL,AI: Plan2021 : final
+CS-USIL   : Peru	: Computing  : USIL       : Plan2021 : final
 
 DS-SPC    : Peru	: Computing  : SPC        : Plan2020 : final
 DS-UTEC   : Peru	: Computing  : UTEC,UTECFG: Plan2020 : final
