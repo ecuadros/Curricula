@@ -1,0 +1,77 @@
+\begin{syllabus}
+
+\course{CS240S. Compiladores}{Obligatorio}{CS240S}
+
+\begin{justification}
+Que el alumno conozca y comprenda los conceptos y principios
+fundamentales de la teoría de compilación para realizar la
+construcción de un compilador
+\end{justification}
+
+\begin{goals}
+\item Conocer las técnicas básicas empleadas durante el proceso de generación intermedio, optimización y generación de código.
+\item Aprender a implementar pequeños compiladores.
+\end{goals}
+
+\begin{outcomes}
+\ExpandOutcome{a}{3}
+\ExpandOutcome{b}{4}
+\ExpandOutcome{j}{4}
+\end{outcomes}
+
+\begin{unit}{\PLOverviewDef}{Lou004LP,Pratt98}{8}{a}
+   \PLOverviewAllTopics
+   \PLOverviewAllObjectives
+\end{unit}
+
+\begin{unit}{\PLBasicLanguageTranslationDef}{Aho2008,Aho90,Teu98,Lou004CO,Appe002}{12}{a}
+   \PLBasicLanguageTranslationAllTopics
+   \PLBasicLanguageTranslationAllObjectives
+\end{unit}
+
+\begin{unit}{\PLLanguageTranslatioSystemsDef}{Aho2008,Aho90,Lou004CO,Teu98,Lem96,Appe002}{24}{a,b}
+   \PLLanguageTranslatioSystemsAllTopics
+   \PLLanguageTranslatioSystemsAllObjectives
+\end{unit}
+
+\begin{unit}{Paralelismo a nivel de instrucción}{Aho2008}{4}{a,b}
+  \begin{topics}
+     \item Arquitectura de procesadores.
+     \item Restricciones de programación de código.
+     \item Programación de bloques básicos.
+     \item Programación de código global.
+     \item Canalización por software.
+  \end{topics}
+
+  \begin{learningoutcomes}
+     \item Describir la importancia y poder de la extracción de paralelismo de las secuencias de instrucciones.
+     \item Explicar los conceptos de bloques básicos y código global.
+     \item Distinguir los conceptos entre canalización de instrucciones por software.
+  \end{learningoutcomes}
+\end{unit}
+
+\begin{unit}{Optimización para el paralelismo y la localidad}{Aho2008}{4}{a,b,j}
+  \begin{topics}
+     \item Conceptos básicos.
+     \item Multiplicación de matrices.
+     \item Espacios de iteraciones.
+     \item Indices de arreglos afines.
+     \item Análisis de dependencias de datos de arreglos.
+     \item Búsqueda del paralelismo sin sincronización.
+     \item Sincronización entre ciclos paralelos.
+  \end{topics}
+
+  \begin{learningoutcomes}
+     \item Diseñar, codificar programas para cálculos paralelos.
+     \item Identificar las propiedades básicas del paralelismo.
+     \item Aplicar los fundamentos del paralelismo en la programación.
+  \end{learningoutcomes}
+\end{unit}
+
+
+
+\begin{coursebibliography}
+\bibfile{Computing/CS/CS240S}
+\end{coursebibliography}
+
+\end{syllabus}
