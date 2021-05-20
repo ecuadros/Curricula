@@ -70,7 +70,7 @@ sub print_soft_error($)
 sub print_color($)
 {
 	my ($msg) = (@_);
-	print "\x1b[43m\x1b[30m$msg\x1b[39m\x1b[49m\n";
+	print "\x1b[43m\x1b[30m$msg\x1b[0m\n";
 }
 
 # https://pypi.python.org/pypi/colorama
@@ -85,6 +85,22 @@ sub print_success($)
 {
 	my ($msg) = (@_);
 	print "\x1b[44m $msg\x1b[0m\n";
+}
+
+sub color($$$)
+{
+	my ($pre, $msg, $post) = (@_);
+	return "$pre$msg$post";
+}
+
+sub red($)
+{	my ($msg) = (@_);
+	return color("\x1b[41m", $msg, "\x1b[0m");
+}
+
+sub green($)
+{	my ($msg) = (@_);
+	return color("\x1b[42m\x1b[30m", $msg, "\x1b[0m");
 }
 
 #  ok

@@ -9,6 +9,8 @@ use strict;
 use Scalar::Util qw(looks_like_number);
 use Number::Bytes::Human qw(format_bytes);
 use CAM::PDF;
+use Lib::HotKey;
+use File::Slurp qw(read_dir);
 
 our $command     = "";
 our $institution = "";
@@ -23,8 +25,8 @@ our %list_of_areas			= ();
 our %list_of_courses_per_area   = ();
 our %config 				= ();
 our %error 					= ();
-			#$Common::error{"$codcour-$lang"}{file} = $fullname;
-			#$Common::error{"$codcour-$lang"}{$env} = "I did not find $env";
+			#$Common::error{"$codcour}{$lang"}{file} = $fullname;
+			#$Common::error{"$codcour}{$lang"}{$env} = "I did not find $env";
 our %general_info			= ();
 our %dictionary				= ();
 our %path_map				= ();
@@ -165,6 +167,7 @@ sub ExpandTags($$)
 	$InTxt =~ s/<DISCIPLINE>/$Common::config{discipline}/g;
 	$InTxt =~ s/<AREA>/$Common::area/g;
 	$InTxt =~ s/<INST>/$Common::institution/g;
+	$InTxt =~ s/<COUNTRY>/$config{country_without_accents}/g;
 	return $InTxt; 
 }
 
@@ -570,12 +573,17 @@ sub read_pagerefs()
     Util::check_point("read_pagerefs");
 }
 
+sub format_semester($$)
+{
+	my ($semester, $lang) = (@_);
+	return "$semester$config{dictionaries}{$lang}{ordinal_postfix}{$semester} $config{dictionaries}{$lang}{Sem}";
+}
+
 # ok
 sub sem_label($$)
 {
 	my ($sem, $lang) = (@_);
-# 	print "$sem\n";
-	my $rpta  = "\"$sem$config{dictionaries}{$lang}{ordinal_postfix}{$sem} $config{dictionaries}{$lang}{Sem} ";
+	my $rpta  = "\"".format_semester($sem, $lang)." ";
 	$rpta    .= "($config{credits_this_semester}{$sem} $config{dictionaries}{$lang}{cr})\"";
 	return  $rpta;
 }
@@ -691,6 +699,8 @@ sub set_initial_paths()
 	$path_map{InStyDir}					= $path_map{InLangDefaultDir}."/$config{area}.sty";
 	$path_map{InStyAllDir}				= $path_map{InDir}."/All.sty";
 	$path_map{InSyllabiContainerDir}	= $path_map{InLangDefaultDir}."/cycle/$config{Semester}/Syllabi";
+	$path_map{InEmptySyllabiDir}		= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/<LANG-EXTENDED>"; 
+	$path_map{InEmptySyllabiCommonDir}	= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/Common"; 
 
 	$path_map{InOthersDir}				= $path_map{InLangDefaultDir}."/$config{area}.others";
 	$path_map{InHtmlDir}				= $path_map{InLangDefaultDir}."/All.html";
@@ -703,8 +713,8 @@ sub set_initial_paths()
 	$path_map{InProgramTexDir}			= "$path_map{InCountryDir}/$config{discipline}/$config{area}/$config{institution}";
 	
 	$path_map{InInstUCSPDir}			= GetProgramInDir("Peru", "Computing", "CS", "UCSP");
-	$path_map{InInstitutionBaseDir}		= "$path_map{InDir}/country/$path_map{country_without_accents}/institutions";
-	$path_map{InInstConfigDir}			= $path_map{InInstitutionBaseDir};
+	$path_map{InInstitutionsBaseDir}	= "$path_map{InDir}/country/$path_map{country_without_accents}/institutions";
+	$path_map{InInstitutionConfigDir}	= "$path_map{InInstitutionsBaseDir}/$config{institution}";
 	
 	$path_map{InEquivDir}				= $path_map{InProgramDir}."/equivalences";
 	$path_map{InLogosDir}				= $path_map{InCountryDir}."/logos";
@@ -824,8 +834,13 @@ sub set_initial_paths()
 	$path_map{"in-description-foreach-prefix-file"}   = $path_map{InTexDir}."/description-foreach-prefix.tex";
 	$path_map{"out-description-foreach-prefix-file"}  = $path_map{OutputTexDir}."/prefix-description-<LANG>.tex";
 
+	$path_map{InLangBaseDir} 						= $path_map{InLangBaseDir};
 	$path_map{"in-sumilla-template-file"}			= $path_map{InProgramDir}."/sumilla-template.tex";
 	$path_map{"in-syllabus-template-file"}			= $path_map{InProgramDir}."/syllabus-template.tex";
+	$path_map{"in-empty-syllabus-tex-file"}			= $path_map{InLangBaseDir}."/empty-syllabus.tex";
+	$path_map{"in-empty-syllabus-bib-file"}			= $path_map{InLangBaseDir}."/empty-syllabus.bib";
+	$path_map{"in-empty-common-file"}				= $path_map{InLangBaseDir}."/empty-common.tex";
+
 	$path_map{"in-institution-dictionary"}			= $path_map{InProgramDir}."/lang/<LANG-EXTENDED>.txt";
 	$path_map{"in-syllabus-program-template-file"}	= $path_map{InProgramDir}."/cycle/$config{Semester}/syllabus-template.tex";
 	$path_map{"in-syllabus-first-page-file"}		= $path_map{InProgramDir}."/cycle/$config{Semester}/syllabus-Page*";
@@ -914,11 +929,13 @@ sub set_initial_paths()
 	# Config files
 	$path_map{"all-config"}							= $path_map{InDir}."/config/all.config";
 	$path_map{"colors"}								= $path_map{InDir}."/config/colors.config";
+	$path_map{"institution-color"}					= "$path_map{InInstitutionConfigDir}/colors.config";
+
 	$path_map{"discipline-config"}		   			= $path_map{InLangDefaultDir}."/$config{discipline}.config/$config{discipline}.config";
 	$path_map{"in-area-all-config-file"}			= $path_map{InLangDefaultDir}."/$config{area}.config/All.config";
 	$path_map{"in-area-config-file"}				= $path_map{InLangDefaultDir}."/$config{area}.config/Area.config";
 	$path_map{"in-country-config-file"}				= GetInCountryBaseDir($config{country_without_accents})."/country.config";
-	$path_map{"in-institution-config-file"}			= $path_map{InInstConfigDir}."/$config{institution}.config";
+	$path_map{"in-institution-config-file"}			= $path_map{InInstitutionConfigDir}."/$config{institution}.config";
 	$path_map{"in-country-environments-to-insert-file"}	= GetInCountryBaseDir($config{country_without_accents})."/country-environments-to-insert.tex";
 	$path_map{"DefaultDictionary"}					= $path_map{InLangDefaultDir}."/dictionary.txt";
 	$path_map{"dictionary"}							= $path_map{InLangBaseDir}."/<LANG-EXTENDED>/dictionary.txt";
@@ -935,10 +952,26 @@ sub get_file_name($)
 	return get_template($tpl);
 }
 
+sub get_list_of_dirs($)
+{
+	my ($root) = (@_);
+	#Util::print_message("root=$root");
+	my @list = ();
+	for my $dir (grep { -d "$root/$_" } read_dir($root))
+	{
+		push(@list, "$root/$dir");
+		if( -d "$root/$dir" )
+		{	push(@list, get_list_of_dirs("$root/$dir"));	}
+	}
+	return @list;
+}
+
 # ok
 sub read_discipline_config()
 {
-	my %discipline_cfg	= read_config_file(get_template("discipline-config"));
+	my $DisciplineConfigFile = get_template("discipline-config");
+	my %discipline_cfg	= read_config_file($DisciplineConfigFile);
+	push(@{$config{config_file}}, $DisciplineConfigFile);
 	#print Dumper (\%discipline_cfg); exit;
 	my ($key, $value);
 	while ( ($key, $value)  = each(%discipline_cfg) )
@@ -946,20 +979,24 @@ sub read_discipline_config()
 # 		print "country-info: key=$key, value=$value\n";
 		$config{$key} = $value;
 	}
-
-	@{$config{SyllabiDirs}} = ();
-	foreach my $dir (split(",", $config{SyllabusListOfDirs}))
-	{
-		push(@{$config{SyllabiDirs}}, $dir);
-	}
-
+	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	@{$config{SyllabiDirs}} = get_list_of_dirs($syllabus_base_dir);
 	%{$config{sub_areas_priority}} = ();
 	my $count = 0;
 	foreach my $axe (split(",", $config{SpiderChartAxes}))
-	{
-		$config{sub_areas_priority}{$axe} = $count++;
-	}
+	{	$config{sub_areas_priority}{$axe} = $count++;	}
 	$config{NumberOfAxes} = $count;
+}
+
+sub get_list_of_dirs_to_find_syllabi($)
+{
+	my ($codcour) = (@_);
+	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	my $coursefile = $course_info{$codcour}{coursefile};
+	my $dirlist = "";
+	foreach my $dir (@{$config{SyllabiDirs}})
+	{	$dirlist .= "$dir/$coursefile.tex\n";		}
+	return $dirlist;
 }
 
 # ok
@@ -967,46 +1004,86 @@ sub get_syllabus_dir($)
 {
 	my ($codcour) = (@_);
 	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
-	my $codcourfile = $course_info{$codcour}{coursefile};
+	my $coursefile = $course_info{$codcour}{coursefile};
 	foreach my $dir (@{$config{SyllabiDirs}})
 	{
-		my $file = "$syllabus_base_dir/$dir/$codcourfile";
+		my $file = "$syllabus_base_dir/$dir/$coursefile";
 		if(-e $file.".tex" or -e $file.".bib")
 		{	return "$syllabus_base_dir/$dir";	}
 	}
 	Util::halt("I can not find syllabus/bib file for $codcour");
 }
 
+sub getchar()
+{
+	ReadMode("cbreak");
+	my $key = ReadKey(0);
+	ReadMode("normal");
+}
+
 # ok
 sub get_syllabus_full_path($$$)
 {
 	my ($codcour, $semester, $lang) = (@_);
-	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
-	$syllabus_base_dir =~ s/$config{language_without_accents}/$lang/;
 	my $codcourfile = $course_info{$codcour}{coursefile};
-
-# 	if($lang eq "English")
-# 	{	Util::print_message("$syllabus_base_dir");
-#		$syllabus_base_dir =~ s/$config{language_without_accents}/$lang/;
-# 		Util::print_message("$syllabus_base_dir");
-# 		exit;
-# 	}
 	foreach my $dir (@{$config{SyllabiDirs}})
 	{
-		my $file = "$syllabus_base_dir/$dir/$codcourfile";
-  		#Util::print_message("Trying file= $syllabus_base_dir + $dir + $codcour ...");
+		my $file = "$dir/$codcourfile";
 		if(-e $file.".tex")
 		{	return $file.".tex";	}
 		if(-e $file.".bib")
 		{	return $file.".bib";	}
 	}
-# 	Util::print_message("syllabus_base_dir=$syllabus_base_dir ...");
-# 	print Dumper(\@{$config{SyllabiDirs}});
-	Util::print_message("I could not find course $codcour proposed at $config{dictionary}{Sem} #$semester ... VERIFY file: \"$syllabus_base_dir/$codcour\"");
-	my $dirlist = "";
-	foreach my $dir (@{$config{SyllabiDirs}})
-	{	$dirlist .= "$syllabus_base_dir/$dir/$codcourfile.tex\n";		}
-	Util::halt("Verify this list of dirs where I was looking for that file:\n$dirlist");
+	my $InEmptySyllabiDir 		= get_expanded_template("InEmptySyllabiDir", $lang);
+	my $InEmptySyllabiCommonDir = get_expanded_template("InEmptySyllabiCommonDir", $lang);
+	my $new_file = "$InEmptySyllabiDir/$codcourfile";
+	if( -e $new_file )
+	{	my $msg = "Syllabus for $codcour is still in the wrong place (See: $new_file) !";
+		Util::print_color($msg);
+		$Common::error{$codcour}{others}{"AtEmpty$lang"} = $msg;
+		return $new_file;	
+	}
+	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	my $course_name = $course_info{$codcour}{$lang}{course_name};
+	my $course_type = $course_info{$codcour}{course_type};
+	my $msg = "$course_name, ".format_semester($semester, $lang);
+	Util::print_color("I could not find course $codcour ($msg) ...\n".
+					"I was looking for that file at: $syllabus_base_dir");
+	print("Do you want to create an empty syllabi? [y]/n: ");
+	my $key = <STDIN>;
+	chomp $key;
+	$key = uc($key);
+
+	if($key eq "Y")
+	{	
+		# Create the tex file
+		system("mkdir -p $InEmptySyllabiDir");
+		Util::print_message("Creating file $InEmptySyllabiDir/".Util::red("$codcourfile.tex")." ($msg)");
+		
+		my $empty_syllabus_tex_file = get_template("in-empty-syllabus-tex-file");
+		my $empty_syllabus_in_tex	= Util::read_file($empty_syllabus_tex_file);
+		$empty_syllabus_in_tex      =~ s/<CODE>/$codcour/g;
+		$empty_syllabus_in_tex      =~ s/<NAME>/$course_name/g;
+		$empty_syllabus_in_tex      =~ s/<COURSE_TYPE>/$config{dictionaries}{$lang}{$course_type}/g;
+		Util::write_file("$new_file.tex", $empty_syllabus_in_tex);
+
+		# Create the bib file
+		Util::print_message("Creating file $InEmptySyllabiDir/".Util::red("$codcourfile.bib"));
+		my $empty_syllabus_bib 	= Util::read_file(get_template("in-empty-syllabus-bib-file"));
+		Util::write_file("$new_file.bib", $empty_syllabus_bib);
+
+		# Create the common file
+		my $common_file = "$InEmptySyllabiCommonDir/$codcourfile.tex";
+		$course_info{$codcour}{common_file} = $common_file;
+		Util::print_message("Creating file $InEmptySyllabiCommonDir/".Util::red("$codcourfile.tex"));
+		system("mkdir -p $InEmptySyllabiCommonDir");
+		my $common_file_txt 	= Util::read_file(get_template("in-empty-common-file"));
+		Util::write_file($common_file, $common_file_txt);
+		
+		return "$new_file.tex";
+	}
+	else
+	{	Util::halt("Bye!");		}
 }
 
 # ok
@@ -1106,9 +1183,22 @@ sub read_config($)
 	while ( ($key, $value) = each(%map))
 	{
 		$config{$key} = $value;
+		push( @{$config{KeyLog}{$key}{files}}, $file);
+		push( @{$config{KeyLog}{$key}{values}}, $value);
 # 		if( $key eq "SyllabusListOfDirs" )
 #  		{	Util::print_message("$config{$key} = $value"); exit; 	}
 	}
+}
+
+sub print_keyLog($)
+{	my ($key) = (@_);
+	my $count = scalar @{$config{KeyLog}{$key}{files}};
+	for(my $i = 0 ; $i < $count ; $i++)
+	{	Util::print_message( Util::green("V$i"));
+		Util::print_message("  value=$config{KeyLog}{$key}{values}[$i]");
+		Util::print_message("  file =$config{KeyLog}{$key}{files}[$i]");
+	}
+	Util::print_message("");
 }
 
 sub get_dictionary_term($)
@@ -2211,7 +2301,7 @@ sub set_initial_configuration($)
     #Util::print_message("inst_list{$config{institution}}{country}=$inst_list{$config{institution}}{country}");
 
 	$config{InProgramDir} 	= $path_map{InProgramDir} 	= GetProgramInDir($inst_list{$config{institution}}{country}, $config{discipline}, $config{area}, $config{institution});
-	$path_map{"this-institution-info-file"}   			= GetInCountryBaseDir($inst_list{$config{institution}}{country})."/institutions/$config{institution}.tex";
+	$path_map{"this-institution-info-file"}   			= GetInCountryBaseDir($inst_list{$config{institution}}{country})."/institutions/$config{institution}/$config{institution}.tex";
 	$path_map{"this-program-info-file"}					= get_template("InProgramDir")."/program-info.tex";
 	$path_map{"copyrights"}								= "$config{in}/copyrights.tex";
 
@@ -2262,11 +2352,27 @@ sub set_initial_configuration($)
 	read_config(get_template("all-config"));
 
 	$path_map{"crossed-reference-file"}		= $config{main_file}.".aux";
-	read_config(get_template("in-area-all-config-file")); 		# i.e. CS-All.config
- 	read_config(get_template("in-area-config-file"));     		# i.e. CS.config
-	read_config(get_template("in-institution-config-file"));    # i.e. institution.config
+	my $ConfigFile = get_template("in-area-all-config-file");
+	read_config($ConfigFile); 		# i.e. CS-All.config 
+	push(@{$config{config_file}}, $ConfigFile);
+
+	$ConfigFile = get_template("in-area-config-file");
+ 	read_config($ConfigFile);     		# i.e. CS.config
+	push(@{$config{config_file}}, $ConfigFile);
+
+	$ConfigFile = get_template("in-institution-config-file");
+	read_config($ConfigFile);    # i.e. institution.config
+	push(@{$config{config_file}}, $ConfigFile);
+
 	#Util::print_message("CS=$config{dictionary}{AreaDescription}{CS}"); exit;
 	%{$config{temp_colors}} = read_config_file(get_template("colors"));
+	my $InstitutionColorsFile = get_template("institution-color");
+	if( -e $InstitutionColorsFile )
+	{	my %inst_colors = read_config_file($InstitutionColorsFile);
+		my ($key, $value) = ("", "");
+		while( ($key, $value) = each (%inst_colors))
+		{	$config{temp_colors}{$key} = $value;	}
+	}
 
 	# Read dictionary for this language
 	$config{DefaultLang} = $config{language_without_accents};
@@ -2322,7 +2428,7 @@ sub set_initial_configuration($)
 	$config{"country-environments-to-insert"} = "";
 	my $file_to_insert = Common::get_template("in-country-environments-to-insert-file");
 	if(-e $file_to_insert)
-        {	$config{"country-environments-to-insert"} = Util::read_file($file_to_insert);		}
+	{	$config{"country-environments-to-insert"} = Util::read_file($file_to_insert);		}
 
         #Util::print_message($config{"country-environments-to-insert"}); exit;
  	process_config_vars();
@@ -3777,6 +3883,7 @@ sub parse_courses()
 				$config{n_semesters} = $semester if($semester > $config{n_semesters});
 
 				$course_info{$codcour}{coursefile}	= $coursefile;
+				$course_info{$codcour}{common_file} = "";
 				if($axes eq "")
 				{
 					Util::halt("Course $codcour (Sem: $semester) has not area defined, see dependencies");
@@ -3905,7 +4012,7 @@ sub parse_courses()
 # ok
 sub filter_courses($)
 {
-    my ($_lang) = (@_);
+    my ($lang) = (@_);
 	Util::precondition("set_initial_configuration");
 	Util::precondition("parse_courses");
 	Util::precondition("sort_courses");
@@ -4160,7 +4267,7 @@ sub filter_courses($)
 			{
 					if( not $course_info{$codcour}{group} eq "")
 					{
-						Util::print_error("Course: $codcour is $course_info{$codcour}{course_type} ... its group MUST be empty ... ");
+						Util::print_error("Course: $codcour (".$course_info{$codcour}{$lang}{course_name}.", ".format_semester($semester, $lang).") is $course_info{$codcour}{course_type} ... its group MUST be empty ... ");
 					}
 					$Common::config{credits_this_semester}{$semester} += $course_info{$codcour}{cr};
 					#Util::print_message("Sem=$semester,acu=$Common::config{credits_this_semester}{$semester}, course_info{$codcour}{cr}=$course_info{$codcour}{cr}");
@@ -4179,11 +4286,11 @@ sub filter_courses($)
 			}
 			foreach $axe (split(",", $course_info{$codcour}{axes}))
 			{
-			      if(not defined($list_of_courses_per_area{$axe}))
-			      {	$list_of_courses_per_area{$axe} = [];	}
-			      push(@{$list_of_courses_per_area{$axe}}, $codcour);
-                              $counts{credits}{areas}{$axe} += $course_info{$codcour}{cr}/$course_info{$codcour}{naxes};
-			      #Util::print_message("codcour=$codcour, axe=$axe");
+				if(not defined($list_of_courses_per_area{$axe}))
+				{	$list_of_courses_per_area{$axe} = [];	}
+				push(@{$list_of_courses_per_area{$axe}}, $codcour);
+				$counts{credits}{areas}{$axe} += $course_info{$codcour}{cr}/$course_info{$codcour}{naxes};
+				#Util::print_message("codcour=$codcour, axe=$axe");
 			}
 		}
 		#Util::print_message("config{credits_this_semester}{$semester}=$config{credits_this_semester}{$semester}");
@@ -5657,7 +5764,6 @@ sub dump_outcomes_errors()
 	#foreach my $key (keys %outcomes_macros)
 	#	{	$Common::config{outcomes_keys}{$key} = "";	}
 	#	@{$Common::config{macros}{$lang}}{keys %outcomes_macros} = values %outcomes_macros;
-
 	my $output_txt = "Outcomes (Missing keys)\n";
 	foreach my $lang (@{$config{SyllabusLangsList}})
 	{
@@ -5684,15 +5790,26 @@ sub dump_course_errors()
 	my $output_txt = "";
 	foreach my $codcour (sort {$a cmp $b} keys %error)
 	{
-		#$Common::error{"$codcour-$lang"}{file} = $fullname;
 		$output_txt .= "Course=$codcour\n";
 		#$output_txt .= "\tfile=$Common::error{$codcour}{file}\n";
-		foreach my $lang (sort {$a cmp $b} keys %{$Common::error{$codcour}})
-		{	
-			$output_txt .= "\t$lang ($course_info{$codcour}{$lang}{course_name})\n";
-			foreach my $env (sort {$a cmp $b} keys %{$Common::error{$codcour}{$lang}})
-			{
-				$output_txt .= ("\t"x2)."$env=$Common::error{$codcour}{$lang}{$env}\n";
+		if( defined($Common::error{$codcour}{lang}) )
+		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{$codcour}{lang}})
+			{	
+				$output_txt .= "\t$lang ($course_info{$codcour}{$lang}{course_name})\n";
+				if( defined($Common::error{$codcour}{lang}{$lang}) )
+				{
+					foreach my $env (sort {$a cmp $b} keys %{$Common::error{$codcour}{lang}{$lang}})
+					{
+						$output_txt .= ("\t"x2)."$env=$Common::error{$codcour}{lang}{$lang}{$env}\n";
+					}
+				}
+			}
+		}
+		if( defined($Common::error{$codcour}{others}) )
+		{	$output_txt .= "\tOthers\n";
+			foreach my $key (sort {$a cmp $b} keys %{$Common::error{$codcour}{others}})
+			{	
+				$output_txt .= ("\t"x2)."$key=$Common::error{$codcour}{others}{$key}\n";
 			}
 		}
 		$output_txt .= "\n";

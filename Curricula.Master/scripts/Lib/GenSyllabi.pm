@@ -152,21 +152,29 @@ sub process_syllabus_units($$$$)
 sub get_common_file($$$)
 {
 	my ($fullname, $codcour, $lang)   = (@_);
-	my $InLangCommonDir = Common::get_template("InLangCommonDir");
-	#Util::print_message("InLangCommonDir=$InLangCommonDir ...");
-	my $InLangDir 		= Common::replace_special_chars(Common::get_expanded_template("InLangDir", $lang));
 
-	my $PostfixDir = "";
-	my $CommonTexFile	= "";
-	if($fullname =~ m/$InLangDir\/(.*)\/.*\.tex/)
-	{	$PostfixDir 	= $1;
-		#Util::print_message("PostfixDir=$PostfixDir");
-		$CommonTexFile	= "$InLangCommonDir/$PostfixDir/$codcour.tex";
-		return $CommonTexFile;
+	if( not $Common::course_info{$codcour}{common_file} eq "" )
+	{	return $Common::course_info{$codcour}{common_file};		}
+
+	my $InEmptySyllabiCommonDir = Common::get_expanded_template("InEmptySyllabiCommonDir", $lang);
+	my $codcourfile = $Common::course_info{$codcour}{coursefile};
+	my $msg = "Checking $InEmptySyllabiCommonDir/$codcourfile.tex ... ";
+	if( -e "$InEmptySyllabiCommonDir/$codcourfile.tex" )
+	{	Util::print_message($msg.Util::green("found ! (\@wrong place)"));
+		return 	"$InEmptySyllabiCommonDir/$codcourfile.tex";
 	}
-	Util::print_message("InLangCommonDir=$InLangCommonDir ...");
-	Util::print_message("InLangDir=$InLangDir ...");
-	Util::print_message("PostfixDir=$PostfixDir ...");
+	#else
+	#{ Util::print_message($msg.Util::red("Not found!"));	}
+	my $InLangCommonDir = Common::get_template("InLangCommonDir");
+	Util::print_message("Analyzing $fullname ...");
+	my $InLangBaseDir 		= Common::get_expanded_template("InLangBaseDir", $lang);
+	my $CommonTexFile	= "";
+	if($fullname =~ m/$InLangBaseDir\/.*?\/(.*)\/.*\.tex/)
+	{	my $output_file = "$InLangCommonDir/$1/$codcour.tex";
+		Util::print_message($msg.Util::green("found !"));
+		return $output_file;	
+	}
+	Util::print_message("InLangDir=$InLangBaseDir ...");
 	Util::print_error("Something wrong with: get_common_file($fullname, $codcour, $lang)");
 }
 
@@ -236,8 +244,8 @@ sub parse_environments_in_header($$$$)
 		}
 		else
 		{
-			$Common::error{$codcour}{$lang}{file} = $fullname;
-			$Common::error{$codcour}{$lang}{$env} = "I did not find $env"."{$version}";
+			$Common::error{$codcour}{lang}{$lang}{file} = $fullname;
+			$Common::error{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
 		}
 	}
 }
@@ -604,8 +612,8 @@ sub read_syllabus_info_old($$$)
 		}
 		if( $Common::course_info{$codcour}{$lang}{$env}{$version}{count} == 0 )
 		{
-			$Common::error{$codcour}{$lang}{file} = $fullname;
-			$Common::error{$codcour}{$lang}{$env} = "I did not find $env"."{$version}";
+			$Common::error{$codcour}{lang}{$lang}{file} = $fullname;
+			$Common::error{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
 		}
 	}
 	#exit;

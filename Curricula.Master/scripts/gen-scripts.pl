@@ -66,7 +66,7 @@ sub generate_institution($)
     $output_txt .= "\\newcommand{\\InStyAllDir}{\\basedir/".Common::get_template("InStyAllDir")."}\n";
 
 	$output_txt .= "\\newcommand{\\InCountryDir}{\\basedir/".Common::get_template("InCountryDir")."}\n";
-	$output_txt .= "\\newcommand{\\InInstConfigDir}{\\basedir/".Common::get_template("InInstConfigDir")."}\n";
+	$output_txt .= "\\newcommand{\\InInstConfigDir}{\\basedir/".Common::get_template("InInstitutionConfigDir")."}\n";
 	
 	$output_txt .= "\\newcommand{\\InCountryTexDir}{\\basedir/".Common::get_template("InCountryTexDir")."}\n";
 	$output_txt .= "\\newcommand{\\InProgramTexDir}{\\basedir/".Common::get_template("InProgramTexDir")."}\n";

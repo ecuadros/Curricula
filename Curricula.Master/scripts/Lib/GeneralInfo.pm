@@ -60,8 +60,20 @@ sub generate_course_tables($)
 			my $prefix		= $Common::course_info{$codcour}{prefix};
 			my $pdflink 	= "";
 			# my $pdflink 	= Common::get_pdf_link($codcour);
-
-# 			Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
+			if(not defined($Common::course_info{$codcour}{bgcolor}))
+			{
+				Util::print_message("Color is not configured for ".Util::red($codcour)." ...");
+				Util::print_message("Verify files: ".Util::red(Common::get_template("colors")));
+				my $whichdoesnotexists = "";
+				my $InstitutionColorsFile = Common::get_template("institution-color");
+				if( -e $InstitutionColorsFile )
+				{	Util::print_message("and ".Util::green($InstitutionColorsFile)." ...");	}
+				else
+				{	Util::print_message("OR ".Util::red("create: $InstitutionColorsFile ..."));	}
+				assert(0);
+				exit;
+			}
+ 			#Util::print_message("codcour = $codcour, $Common::course_info{$codcour}{bgcolor}");
 			$this_course_info{COURSECODE}  = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour}}{sec:$codcour}";
 			$this_course_info{COURSENAME} .= Common::GetCourseNameWithLink($codcour, $lang, 1, $pdflink);
 
@@ -204,15 +216,15 @@ sub generate_laboratories()
 		{
 			if($Common::course_info{$codcour}{$cols4labs} > 0)
 			{
-			      if($Common::course_info{$codcour}{labtype} eq "")
-			      {		Util::print_message("Course $codcour (Sem #$semester) has not LabType ... did you forget?");
+				if($Common::course_info{$codcour}{labtype} eq "")
+				{	Util::print_message("Course $codcour (Sem #$semester) has not LabType ... did you forget?");
 					assert(not $Common::course_info{$codcour}{labtype} eq "");
-			      }
-			      #Util::print_message("Course $codcour (Sem #$semester) LabType: $Common::course_info{$codcour}{labtype}");
-			      my $this_course = "\\section*{$codcour. $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name} ($Common::config{dictionary}{$Common::course_info{$codcour}{course_type}}) ";
-			      $this_course .= "$Common::course_info{$codcour}{semester}$Common::config{dictionary}{ordinal_postfix}{$semester} $Common::config{dictionary}{Sem}, Lab: $Common::course_info{$codcour}{lh} $Common::config{dictionary}{hrs}}\n";
-			      $this_course .= "\\Lab$Common::course_info{$codcour}{labtype}\n\n";
-			      $output_txt .= $this_course;
+				}
+				#Util::print_message("Course $codcour (Sem #$semester) LabType: $Common::course_info{$codcour}{labtype}");
+				my $this_course = "\\section*{$codcour. $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name} ($Common::config{dictionary}{$Common::course_info{$codcour}{course_type}}) ";
+				$this_course .= "$Common::course_info{$codcour}{semester}$Common::config{dictionary}{ordinal_postfix}{$semester} $Common::config{dictionary}{Sem}, Lab: $Common::course_info{$codcour}{lh} $Common::config{dictionary}{hrs}}\n";
+				$this_course .= "\\Lab$Common::course_info{$codcour}{labtype}\n\n";
+				$output_txt .= $this_course;
 			}
 		}
 	}
@@ -444,18 +456,18 @@ sub generate_bok_index_old()
 	$bok_body  	.= "\\$cur_area"."Description\n\n";
 	$bok_body  	.= $this_area_txt;
 
-        my $label        = "sec:BOK-$cur_area";
-        $bok_index      .= "\\noindent {\\bf\n\\htmlref{$cur_area. $Common::config{macros}{$BOKArea}$map{BOK_AREA_HOURS_LABEL}}{$label}}";
-        $bok_index      .= " ($Common::config{dictionary}{Pag}~\\pageref{$label})";
-        $bok_index      .= "\\\\\n";
-        $bok_index      .= $map{BOK_AREA_INDEX};
+	my $label        = "sec:BOK-$cur_area";
+	$bok_index      .= "\\noindent {\\bf\n\\htmlref{$cur_area. $Common::config{macros}{$BOKArea}$map{BOK_AREA_HOURS_LABEL}}{$label}}";
+	$bok_index      .= " ($Common::config{dictionary}{Pag}~\\pageref{$label})";
+	$bok_index      .= "\\\\\n";
+	$bok_index      .= $map{BOK_AREA_INDEX};
 
 	$bok_index	= "\\begin{multicols}{2}\n\\scriptsize\n$bok_index\\end{multicols}\n";
 	Util::write_file(Common::get_template("out-bok-index-file"), $bok_index);
 	Util::write_file(Common::get_template("out-bok-body-file"), $bok_body);
 
-        #Util::write_file(Common::get_template("in-macros-order-file"), $macros_order);
-        Util::check_point("generate_bok_index");
+	#Util::write_file(Common::get_template("in-macros-order-file"), $macros_order);
+	Util::check_point("generate_bok_index");
 }
 
 sub generate_lu_index()
@@ -494,11 +506,19 @@ sub generate_description($$)
 			$description{$1} = $2;
 		}
 	}
-
-	#print Dumper(\%description);
+	
+	foreach my $key (keys %{$Common::config{$key_for_used_keys}})
+	{
+		if( not defined($Common::config{$keyforhash}{$key}) )
+		{
+			Common::print_keyLog("PrefixPriority");
+			Util::print_message("I don't know ".Util::red("Common::config{$keyforhash}{$key}")." at ".Util::red("$in_file"));
+			Util::print_error("generate_description($type, $lang)");
+		}
+	}
+	#print Dumper(\%description); exit;
 	my ($output, $list_of_areas) = ("", "");
 	$output .= "\\begin{enumerate}\n";
-
 # 	foreach my $area (sort {$Common::config{prefix_priority}{$a} cmp $Common::config{prefix_priority}{$b}} keys %{$Common::config{used_areas}})
  	foreach my $key (sort {$Common::config{$keyforhash}{$a}      cmp $Common::config{$keyforhash}{$b}}     
 	                keys %{$Common::config{$key_for_used_keys}})
