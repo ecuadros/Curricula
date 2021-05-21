@@ -195,7 +195,7 @@ sub GetOutCountryBaseDir($)
 sub GetProgramInDir($$$$)
 {
 	my ($country, $discipline, $area, $inst) = (@_);
-	return GetInCountryBaseDir($country)."/$discipline/$area/$inst";
+	return GetInCountryBaseDir($country)."/institutions/$inst/$discipline/$area";
 }
 
 sub GetInstitutionInfo($$)
@@ -710,11 +710,11 @@ sub set_initial_paths()
 	$path_map{InScriptsDir}				= "./scripts";
 	$path_map{InCountryDir}				= GetInCountryBaseDir($path_map{country_without_accents});
 	$path_map{InCountryTexDir}			= GetInCountryBaseDir($path_map{country_without_accents})."/$config{discipline}/$config{area}/$config{area}.tex";
-	$path_map{InProgramTexDir}			= "$path_map{InCountryDir}/$config{discipline}/$config{area}/$config{institution}";
 	
 	$path_map{InInstUCSPDir}			= GetProgramInDir("Peru", "Computing", "CS", "UCSP");
 	$path_map{InInstitutionsBaseDir}	= "$path_map{InDir}/country/$path_map{country_without_accents}/institutions";
 	$path_map{InInstitutionConfigDir}	= "$path_map{InInstitutionsBaseDir}/$config{institution}";
+	$path_map{InProgramTexDir}			= GetProgramInDir($path_map{country_without_accents}, $config{discipline}, $config{area}, $config{institution});
 	
 	$path_map{InEquivDir}				= $path_map{InProgramDir}."/equivalences";
 	$path_map{InLogosDir}				= $path_map{InCountryDir}."/logos";
