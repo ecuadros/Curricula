@@ -703,6 +703,7 @@ sub set_initial_paths()
 	$path_map{InTexDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.tex";
 	$path_map{InStyDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.sty";
 	$path_map{InStyAllDir}				= $path_map{InDir}."/All.sty";
+	$path_map{InFigsDir}				= $path_map{InDir}."/figs";
 	$path_map{InSyllabiContainerDir}	= $path_map{InLangDefaultDir}."/cycle/$config{Semester}/Syllabi";
 	$path_map{InEmptySyllabiDir}		= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/<LANG-EXTENDED>"; 
 	$path_map{InEmptySyllabiCommonDir}	= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/Common"; 
