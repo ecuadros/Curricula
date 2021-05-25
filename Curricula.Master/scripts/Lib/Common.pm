@@ -1,4 +1,8 @@
 package Common;
+# ! danger
+# ? deberias estar aqui?
+# * super importante
+
 #use Lib::InformationSystems;
 use Carp::Assert;
 use Data::Dumper;
@@ -59,6 +63,7 @@ our %template_files = (	"Syllabus" 		=> "in-syllabus-template-file"
 our %professor_role_order = ("C" => 0, "T" => 1, "L" => 2, "-" => 3);
 our %position_ranking   = ("Director" => 1, "Professor" => 2);
 our %dedication_ranking = ("TC"       => 1, "TP"        => 2);
+our $Disciplines = "Disciplines";
 
 # flush stdout with every print -- gives better feedback during
 # long computations
@@ -695,8 +700,8 @@ sub set_initial_paths()
 	$path_map{InLangDefaultDir}			= $config{InLangDefaultDir};
 	$path_map{InLangDir}				= $path_map{InDir}."/lang/<LANG-EXTENDED>";
 	$path_map{InAllTexDir}				= $path_map{InDir}."/All.tex";
-	$path_map{InTexDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$config{area}.tex";
-	$path_map{InStyDir}					= $path_map{InLangDefaultDir}."/$config{area}.sty";
+	$path_map{InTexDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.tex";
+	$path_map{InStyDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.sty";
 	$path_map{InStyAllDir}				= $path_map{InDir}."/All.sty";
 	$path_map{InSyllabiContainerDir}	= $path_map{InLangDefaultDir}."/cycle/$config{Semester}/Syllabi";
 	$path_map{InEmptySyllabiDir}		= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/<LANG-EXTENDED>"; 
@@ -705,8 +710,14 @@ sub set_initial_paths()
 	$path_map{InOthersDir}				= $path_map{InLangDefaultDir}."/$config{area}.others";
 	$path_map{InHtmlDir}				= $path_map{InLangDefaultDir}."/All.html";
 	$path_map{InTexAllDir}				= $path_map{InLangDefaultDir}."/All.tex";
-	$path_map{InDisciplinesBaseDir}		= $path_map{InDir}."/Disciplines";
+	$path_map{InDisciplinesBaseDir}		= $path_map{InDir}."/$Disciplines";
 	$path_map{InDisciplineDir}			= $path_map{InDisciplinesBaseDir}."/$config{discipline}";
+	$path_map{InDisciplineTexDir}		= $path_map{InDisciplinesBaseDir}."/tex";
+	$path_map{InDisciplineDotDir}		= $path_map{InDisciplineDir}."/dot";
+
+	$path_map{InAreaDir}				= $path_map{InDisciplineDir}."/$config{area}";
+	$path_map{InAreaTexDir}				= $path_map{InAreaDir}."/tex";
+
 	$path_map{InScriptsDir}				= "./scripts";
 	$path_map{InCountryDir}				= GetInCountryBaseDir($path_map{country_without_accents});
 	$path_map{InCountryTexDir}			= GetInCountryBaseDir($path_map{country_without_accents})."/$config{discipline}/$config{area}/$config{area}.tex";
@@ -759,17 +770,16 @@ sub set_initial_paths()
 	# Tex files
 	$path_map{"out-current-institution-file"}	= $path_map{OutputInstDir}."/tex/current-institution.tex";
 	$path_map{"preamble0-file"}                 = $path_map{InAllTexDir}."/preamble0.tex";
-	$path_map{"list-of-courses"}		   		= $path_map{InDisciplineDir}."/$area/$area$config{CurriculaVersion}-dependencies.tex";
+	$path_map{"list-of-courses"}		   		= $path_map{InAreaDir}."/$area$config{CurriculaVersion}-dependencies.tex";
 
-	$path_map{"in-acronyms-base-file"}			= $path_map{InDisciplineDir}."/tex/$config{discipline}-acronyms.tex";
 	$path_map{"out-acronym-file"}				= $path_map{OutputTexDir}."/acronyms.tex";
 	$path_map{"out-ncredits-file"}              = $path_map{OutputTexDir}."/ncredits.tex";
 	$path_map{"out-nsemesters-file"}            = $path_map{OutputTexDir}."/nsemesters.tex";
 
-	$path_map{"in-outcomes-macros-file"}		= $path_map{InLangBaseDir}."/<LANG-EXTENDED>/$config{area}.tex/outcomes-macros.tex";
+	$path_map{"in-outcomes-macros-file"}		= $path_map{InTexDir}."/outcomes-macros.tex";
 	$path_map{"in-bok-file"}					= $path_map{InTexDir}."/bok.tex";
-	$path_map{"in-bok-macros-file"}				= $path_map{InLangBaseDir}."/<LANG-EXTENDED>/$config{area}.sty/bok-macros.sty";
-	$path_map{"in-bok-macros-V0-file"}			= $path_map{InLangBaseDir}."/<LANG-EXTENDED>/$config{area}.sty/bok-macros-V0.sty";
+	$path_map{"in-bok-macros-file"}				= $path_map{InStyDir}."/bok-macros.sty";
+	$path_map{"in-bok-macros-V0-file"}			= $path_map{InStyDir}."/bok-macros-V0.sty";
 
 	$path_map{"in-LU-file"}						= $path_map{InTexDir}."/LU.tex";
 
@@ -824,7 +834,7 @@ sub set_initial_paths()
 	$path_map{"in-Book-of-units-by-course-face-file"}= $path_map{InAllTexDir}."/Book-Face.tex";
 	$path_map{"out-Syllabi-delivery-control-includelist-file"}= $path_map{OutputTexDir}."/pdf-syllabi-delivery-control-includelist.tex";
 
-	$path_map{"in-pdf-icon-file"}					= $path_map{InFigDir}."/pdf.jpeg";
+	$path_map{"in-pdf-icon-file"}					= $path_map{InFigsDir}."/pdf.jpeg";
 
 	$path_map{"out-list-of-unit-by-course-file"}	= $path_map{OutputTexDir}."/list-of-units-by-course.tex";
 
@@ -907,15 +917,15 @@ sub set_initial_paths()
 	# Dot files
 	#$path_map{"in-country-small-graph-item.dot"}	= $path_map{InCountryDir}."/dot/small-graph-item$config{graph_version}.dot";
 	$path_map{"in-country-graph-item.dot"}			= $path_map{InCountryDir}."/dot/<SIZE>-graph-item$config{graph_version}.dot";
-	$path_map{"in-discipline-graph-item.dot"}		= $path_map{InDisciplineDir}."/dot/<SIZE>-graph-item$config{graph_version}.dot";
-	$path_map{"in-area-graph-item.dot"}				= $path_map{InDisciplineDir}."/<AREA>/dot/<SIZE>-graph-item$config{graph_version}.dot";
+	$path_map{"in-discipline-graph-item.dot"}		= $path_map{InDisciplineDotDir}."/<SIZE>-graph-item$config{graph_version}.dot";
+	$path_map{"in-area-graph-item.dot"}				= $path_map{InAreaDir}."/dot/<SIZE>-graph-item$config{graph_version}.dot";
 	$path_map{"in-institution-graph-item.dot"}		= $path_map{InProgramDir}."/dot/<SIZE>-graph-item$config{graph_version}.dot";
 	
 	$path_map{"out-small-graph-curricula-dot-file"} = $config{OutputDotDir}."/small-graph-curricula-<LANG>.dot";
 	$path_map{"out-big-graph-curricula-dot-file"}	= $config{OutputDotDir}."/big-graph-curricula-<LANG>.dot";
 
 	# Poster files
-	$path_map{"in-poster-file"}						= $path_map{InDisciplineDir}."/tex/$config{discipline}-poster.tex";
+	$path_map{"in-poster-file"}						= $path_map{InDisciplineTexDir}."/$config{discipline}-poster.tex";
 	$path_map{"out-poster-file"}					= $path_map{OutputTexDir}."/$config{discipline}-poster-<LANG>.tex";
 	$path_map{"in-a0poster-sty-file"}               = $path_map{InStyAllDir}."/a0poster.sty";
 	$path_map{"in-poster-macros-sty-file"}          = $path_map{InStyAllDir}."/poster-macros.sty";
@@ -931,9 +941,11 @@ sub set_initial_paths()
 	$path_map{"colors"}								= $path_map{InDir}."/config/colors.config";
 	$path_map{"institution-color"}					= "$path_map{InInstitutionConfigDir}/colors.config";
 
-	$path_map{"discipline-config"}		   			= $path_map{InLangDefaultDir}."/$config{discipline}.config/$config{discipline}.config";
-	$path_map{"in-area-all-config-file"}			= $path_map{InLangDefaultDir}."/$config{area}.config/All.config";
-	$path_map{"in-area-config-file"}				= $path_map{InLangDefaultDir}."/$config{area}.config/Area.config";
+	$path_map{"discipline-config"}		   			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/config/$config{discipline}.config";
+	$path_map{"in-area-all-config-file"}			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}.config/All.config";
+	$path_map{"in-area-config-file"}				= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}.config/Area.config";
+	$path_map{"in-acronyms-base-file"}				= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/tex/$config{discipline}-acronyms.tex";
+
 	$path_map{"in-country-config-file"}				= GetInCountryBaseDir($config{country_without_accents})."/country.config";
 	$path_map{"in-institution-config-file"}			= $path_map{InInstitutionConfigDir}."/$config{institution}.config";
 	$path_map{"in-country-environments-to-insert-file"}	= GetInCountryBaseDir($config{country_without_accents})."/country-environments-to-insert.tex";
@@ -1040,7 +1052,7 @@ sub get_syllabus_full_path($$$)
 	if( -e $new_file )
 	{	my $msg = "Syllabus for $codcour is still in the wrong place (See: $new_file) !";
 		Util::print_color($msg);
-		$Common::error{$codcour}{others}{"AtEmpty$lang"} = $msg;
+		$Common::error{courses}{$codcour}{others}{"AtEmpty$lang"} = $msg;
 		return $new_file;	
 	}
 	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
@@ -1776,6 +1788,7 @@ sub process_institution_info($$)
 {
 	# TODO Aqui me quede: hay que partir esta funcion en dos process porque regraba el archivo luego de leerlo y aumentarle cosas ...
 	my ($txt, $file) = (@_);
+	# Util::print_message("process_institution_info ... file=\n$file"); exit;
 	my %this_inst_info = ();
 	my %macros = parse_macros($txt);
 	#print Dumper(\%macros); exit;
@@ -1938,7 +1951,6 @@ sub process_institution_info($$)
 		push( @keys, $extra_key);
 	}
 	#print Dumper(\@keys);	exit;	
-
 	foreach my $key (@keys)
 	{	$this_inst_info{$key} = "";
 		if( defined($macros{$key}) )
@@ -1947,7 +1959,10 @@ sub process_institution_info($$)
 			#Util::print_message("this_inst_info{$key} = $this_inst_info{$key}"); exit;
 		}
 		else
-		{	Util::print_warning("(process_institution_info): there is not \\$key in \"$file\"\n");	}
+		{	my $ErrorMsg = "(process_institution_info): there is not :".Util::red("\\$key")." in: \n".Util::green("\"$file\"");
+			Util::print_message($ErrorMsg);	
+			push(@{$Common::error{general}}, $ErrorMsg);
+		}
 	}
 	# Now post processing some of them
 	if(	$this_inst_info{country} =~ m/(.*?)\\.*?/ )
@@ -5788,32 +5803,48 @@ sub dump_outcomes_errors()
 sub dump_course_errors()
 {
 	my $output_txt = "";
-	foreach my $codcour (sort {$a cmp $b} keys %error)
+	foreach my $codcour (sort {$a cmp $b} keys %{$Common::error{courses}})
 	{
 		$output_txt .= "Course=$codcour\n";
-		#$output_txt .= "\tfile=$Common::error{$codcour}{file}\n";
-		if( defined($Common::error{$codcour}{lang}) )
-		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{$codcour}{lang}})
+		#$output_txt .= "\tfile=$Common::error{courses}{$codcour}{file}\n";
+		if( defined($Common::error{courses}{$codcour}{lang}) )
+		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}})
 			{	
 				$output_txt .= "\t$lang ($course_info{$codcour}{$lang}{course_name})\n";
-				if( defined($Common::error{$codcour}{lang}{$lang}) )
+				if( defined($Common::error{courses}{$codcour}{lang}{$lang}) )
 				{
-					foreach my $env (sort {$a cmp $b} keys %{$Common::error{$codcour}{lang}{$lang}})
+					foreach my $env (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}{$lang}})
 					{
-						$output_txt .= ("\t"x2)."$env=$Common::error{$codcour}{lang}{$lang}{$env}\n";
+						$output_txt .= ("\t"x2)."$env=$Common::error{courses}{$codcour}{lang}{$lang}{$env}\n";
 					}
 				}
 			}
 		}
-		if( defined($Common::error{$codcour}{others}) )
+		if( defined($Common::error{courses}{$codcour}{others}) )
 		{	$output_txt .= "\tOthers\n";
-			foreach my $key (sort {$a cmp $b} keys %{$Common::error{$codcour}{others}})
+			foreach my $key (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{others}})
 			{	
-				$output_txt .= ("\t"x2)."$key=$Common::error{$codcour}{others}{$key}\n";
+				$output_txt .= ("\t"x2)."$key=$Common::error{courses}{$codcour}{others}{$key}\n";
 			}
 		}
 		$output_txt .= "\n";
 	}
+	return $output_txt;
+}
+
+sub dump_general_errors()
+{
+	my $output_txt = "General errors ...\n";
+	my $count = 0;
+	foreach my $key (@{$Common::error{general}})
+	{
+		$output_txt .= "$key\n";
+		$count++;
+	}
+	if( $count == 0 )
+	{	$output_txt .= "\t".Util::green("None")."\n";	}
+	else{	$output_txt .= "\n";	}
+
 	return $output_txt;
 }
 
@@ -5833,9 +5864,10 @@ sub dump_errors()
 	$output_txt .= dump_course_errors();
 	$output_txt .= dump_dictionary_errors();
 	$output_txt .= dump_outcomes_errors();
+	$output_txt .= dump_general_errors();
 	my $output_errors_file = get_template("output-errors-file");
 	Util::write_file($output_errors_file, $output_txt);
-	Util::print_message("Dumped errors !");
+	Util::print_message("Dumped errors ! ".Util::green($output_errors_file));
 }
 
 sub save_logs()
@@ -5873,6 +5905,10 @@ sub shutdown()
 	print "\x1b[44m***********************************************************************\x1b[49m\n";
 	print "\x1b[44m**                     Finishing                                     **\x1b[49m\n";
 	print "\x1b[44m***********************************************************************\x1b[49m\n";
+	my $output_errors_file = get_template("output-errors-file");
+	system("cat \"$output_errors_file\"");
+	#my $output_errors = Util::read_file($output_errors_file);
+	#print "$output_errors\nabc";
 }
 
 1;

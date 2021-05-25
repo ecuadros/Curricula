@@ -8,10 +8,12 @@
 
 \newcommand{\PlanConfig}{Plan2021-Sem2021-II.config}
 \input{\InProgramDir/Plan2021-Sem2021-II.config}
+%newcommand{\equivalences}{2010} %  {2006,2010} 
 
-\newcommand{\OutcomesVersion}{V1}
+\newcommand{\OutcomesVersion}{USIL21}
 \OutcomesList{V1}{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p}
 \OutcomesList{V2}{1,2,3,4,5,6,7,8,9,10}
+\OutcomesList{USIL21}{1,2,3,4,5,USILCG1,USILCG2,USILCG3,USILCG4,USILCG5,USILCG6}
 
 \newcommand{\FacultadNameES}{Facultad de Ingeniería\\ \xspace}
 \newcommand{\FacultadNameEN}{}
@@ -39,14 +41,29 @@
 \newcommand{\SchoolURL}{\htmladdnormallink{http://cs.usil.edu.pe}{http://cs.usil.edu.pe}\xspace}
 \newcommand{\underlogotext}{}
 
+\newcommand{\AcademicDegreeIssuedES}{Bachiller en Ingeniería de Software\xspace}
+\newcommand{\AcademicDegreeIssuedEN}{Bachelor in Software Engineering\xspace}
 \newcommand{\AcademicDegreeIssued}{Bachiller en Ingeniería de Software\xspace}
+
+\newcommand{\TitleIssuedES}{Ingeniero de Software\xspace}
+\newcommand{\TitleIssuedEN}{Software Engineer\xspace}
 \newcommand{\TitleIssued}{Ingeniero de Software\xspace}
-\newcommand{\AcademicDegreeAndTitle}%
+
+\newcommand{\AcademicDegreeAndTitleES}%
 {\begin{description}%
-\item [Grado Académico: ] \AcademicDegreeIssued\xspace y% 
-\item [Titulo Profesional: ] \TitleIssued%
+\item [Grado Académico: ] \AcademicDegreeIssuedES\xspace y% 
+\item [Titulo Profesional: ] \TitleIssuedES%
 \end{description}%
 }
+
+\newcommand{\AcademicDegreeAndTitleEN}%
+{\begin{description}%
+\item [Academic degree: ] \AcademicDegreeIssuedEN\xspace y% 
+%\item [Titulo Profesional: ] \TitleIssued%
+\end{description}%
+}
+
+\newcommand{\AcademicDegreeAndTitle}{\AcademicDegreeAndTitleES}
 
 \newcommand{\doctitle}{Plan Curricular \YYYY\xspace de la \SchoolFullName\\ \SchoolURL}
 
@@ -55,7 +72,6 @@ malla curricular \YYYY del \SchoolFullName de la \University (\textit{\Instituti
 en la ciudad de \city-\country.}
 
 \newcommand{\OtherKeyStones}{}
-
 
 \newcommand{\profileES}{%
 Nuestro perfil profesional puede ser mejor entendido a partir de
@@ -80,6 +96,11 @@ the development of new computational techniques that can be useful at local, nat
 Our professional profile is aimed at generating jobs through permanent innovation. Our professional training has three fundamental pillars: 
 a content according to ACM/IEEE-CS Computing Curricula CS2013 and CC2020, a marked orientation to innovation and human/soft skills.
 }
+\newcommand{\profile}{\profileES}
+
+\newcommand{\visionES}{Líder en la formación de profesionales éticos y de alta calidad, según estándares nacionales e internacionales\xspace}
+\newcommand{\visionEN}{Leader in the training of high quality and ethical professionals, according to national and international standards\xspace}
+\newcommand{\vision}{\visionES}
 
 \newcommand{\missionES}{Contribuir al desarrollo científico, tecnológico y técnico del país  
 formando profesionales competentes, orientados a la creación de nueva 
@@ -95,5 +116,6 @@ as engine that impels and consolidates the software industry based on
 scientific research and technological in innovative areas, forming, IN OUR professionals, 
 a set of skills for solving computational problems with a social commitment.\xspace
 }
+\newcommand{\mission}{\missionES}
 
 

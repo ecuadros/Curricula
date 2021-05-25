@@ -184,6 +184,7 @@ sub main()
 	gen_compileall_script();
 	generate_institution($lang);
 	update_acronyms();
+	Common::shutdown();
 	Util::print_message("End gen-scripts ...\n");
 }
 

@@ -244,8 +244,8 @@ sub parse_environments_in_header($$$$)
 		}
 		else
 		{
-			$Common::error{$codcour}{lang}{$lang}{file} = $fullname;
-			$Common::error{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
+			$Common::error{courses}{$codcour}{lang}{$lang}{file} = $fullname;
+			$Common::error{courses}{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
 		}
 	}
 }
@@ -612,8 +612,8 @@ sub read_syllabus_info_old($$$)
 		}
 		if( $Common::course_info{$codcour}{$lang}{$env}{$version}{count} == 0 )
 		{
-			$Common::error{$codcour}{lang}{$lang}{file} = $fullname;
-			$Common::error{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
+			$Common::error{courses}{$codcour}{lang}{$lang}{file} = $fullname;
+			$Common::error{courses}{$codcour}{lang}{$lang}{$env} = "I did not find $env"."{$version}";
 		}
 	}
 	#exit;
