@@ -152,29 +152,39 @@ sub process_syllabus_units($$$$)
 sub get_common_file($$$)
 {
 	my ($fullname, $codcour, $lang)   = (@_);
-
 	if( not $Common::course_info{$codcour}{common_file} eq "" )
 	{	return $Common::course_info{$codcour}{common_file};		}
 
-	my $InEmptySyllabiCommonDir = Common::get_expanded_template("InEmptySyllabiCommonDir", $lang);
-	my $codcourfile = $Common::course_info{$codcour}{coursefile};
-	my $msg = "Checking $InEmptySyllabiCommonDir/$codcourfile.tex ... ";
-	if( -e "$InEmptySyllabiCommonDir/$codcourfile.tex" )
-	{	Util::print_message($msg.Util::green("found ! (\@wrong place)"));
-		return 	"$InEmptySyllabiCommonDir/$codcourfile.tex";
-	}
-	#else
-	#{ Util::print_message($msg.Util::red("Not found!"));	}
+	my $coursefile = $Common::course_info{$codcour}{coursefile};
+	Util::print_message(sprintf("\t%-10s:%s", "Analyzing", "$fullname ..."));
 	my $InLangCommonDir = Common::get_template("InLangCommonDir");
-	Util::print_message("Analyzing $fullname ...");
-	my $InLangBaseDir 		= Common::get_expanded_template("InLangBaseDir", $lang);
-	my $CommonTexFile	= "";
-	if($fullname =~ m/$InLangBaseDir\/.*?\/(.*)\/.*\.tex/)
-	{	my $output_file = "$InLangCommonDir/$1/$codcour.tex";
-		Util::print_message($msg.Util::green("found !"));
-		return $output_file;	
+	# Util::print_message("InLangCommonDir=$InLangCommonDir ...");
+	my $InLangBaseDir 	= Common::get_expanded_template("InLangBaseDir", $lang);
+	#Util::print_message(sprintf("%-10s=%s", "InLangBaseDir", "$InLangBaseDir ..."));
+	if($fullname =~ m/$InLangBaseDir\/.*?\/(.*)\/$coursefile\.tex/)
+	{	
+		my $output_file = "$InLangCommonDir/$1/$coursefile.tex";
+		Util::print_message(sprintf("\t%-10s:%s ...", "SearchingC", $output_file));
+		if( -e $output_file )
+		{	Util::print_message(sprintf("\t%-10s:%s ... %s", "File", $output_file, Util::green("found !")));
+			return $output_file;
+		}	
 	}
-	Util::print_message("InLangDir=$InLangBaseDir ...");
+	my $InEmptySyllabiCommonDir = Common::get_expanded_template("InEmptySyllabiCommonDir", $lang);
+	my $msg = sprintf("\t%-10s:%s", "Checking", "$InEmptySyllabiCommonDir/$coursefile.tex ...");
+	print($msg);
+	my $common_file = "$InEmptySyllabiCommonDir/$coursefile.tex";
+	my $file_created = $common_file;
+	if( -e $common_file )
+	{	Util::print_message(Util::green("found ! (\@wrong place)"));	}
+	else	
+	{	Util::print_message(Util::red("creating ..."));
+		$file_created = Common::create_common_file($codcour, $lang);
+	}
+	assert($file_created eq $common_file);
+	return $common_file;
+
+	Util::print_message("\nInLangDir=$InLangBaseDir ...");
 	Util::print_error("Something wrong with: get_common_file($fullname, $codcour, $lang)");
 }
 
@@ -199,7 +209,8 @@ sub parse_environments_in_header($$$$)
 		#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{txt}=\n$body");
 		#print Dumper(\%{$Common::course_info{$codcour}{outcomes}});
 		#my $copy_syllabus_in = $syllabus_in;
-		if( $syllabus_in =~ m/\\begin\{$env\}\{$version\}\s*\n((?:.|\n)*?)\\end\{$env\}/g) # legacy version of this environment
+		#my $version = $Common::config{OutcomesVersion};
+		if( $syllabus_in =~ m/\\begin\{$env\}\{$version\}\s*\n((?:.|\n)*?)\\end\{$env\}/g)
 		{
 			#Util::print_message("\\begin{$env}{$version} detected !");
 			$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} = $1;
@@ -336,7 +347,7 @@ sub get_formatted_skills($$$$$)
 	my $EnvforOutcomes = $Common::config{EnvforOutcomes};
 	$map{FULL_SPECIFIC}	= "";
 	if($Common::course_info{$codcour}{$lang}{$env}{$version}{count} == 0)
-	{	Util::print_warning("Course $codcour ... no {$env}{$version} detected ... assuming an empty one!"); 
+	{	# Util::print_warning("Course $codcour ... no {$env}{$version} detected ... assuming an empty one!"); 
 		$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized} = "\\item \\colorbox{red}{No$env}\n";
 	}
 	#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{count}=$Common::course_info{$codcour}{$lang}{$env}{$version}{count}"); exit;
@@ -360,26 +371,44 @@ sub init_course_units_vars($)
 	$Common::course_info{$codcour}{units}{unitgoals}	= [];
 }
 
+sub get_filtered_common_file($$)
+{
+	my ($codcour, $CommonTexFile) = (@_);
+	my $CommonTxt = Util::read_file($CommonTexFile);
+	my $output_txt = "";
+
+	my $version = $Common::config{OutcomesVersion};
+	foreach my $env (@versioned_environments)
+	{
+		if( $CommonTxt =~ m/\\begin\{$env\}\{$version\}\s*\n((?:.|\n)*?)\\end\{$env\}/g)
+		{	$output_txt .= 	"\\begin\{$env\}\{$version\}\n$1\\end\{$env\}\n";	}
+		else
+		{	$Common::error{courses}{$codcour}{competencies}{$env} = "I did not find: ".Util::red("\\begin\{$env\}\{$version\}...\\end\{$env\}")." see file: $CommonTexFile"; 
+			#Util::print_warning("Course $codcour ... no {specificoutcomes}{$version} detected ... assuming an empty one!");
+		}
+	}
+	# print Dumper(\%{$Common::error{courses}{$codcour}{competencies}});
+	# Util::print_message("get_filtered_common_file($codcour):\n$output_txt");
+	return $CommonTexFile;
+}
+
 # ok
 sub read_syllabus_info($$$)
 {
 	my ($codcour, $semester, $lang)   = (@_);
 	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
-	Util::print_message("Reading syllabus: $fullname ...");
+	Util::print_message(sprintf("\t%-10s:%s ...","Reading", $fullname));
 	my $syllabus_in	= Util::read_file($fullname);
 	init_course_units_vars($codcour);
 	my $version = $Common::config{OutcomesVersion};
- 	# if($codcour =~ m/CS2T1/g)
 	# {	Util::print_message("GenSyllabi::read_syllabus_info $codcour ...");  exit; }
-
 	my $CommonTexFile = get_common_file($fullname, $codcour, $lang);
 	if( -e $CommonTexFile )
 	{
-		my $CommonTxt = Util::read_file($CommonTexFile);
-		$syllabus_in =~ s/--COMMON-CONTENT--/$CommonTxt/g;
-		#Util::print_color($syllabus_in);
-		#exit;
+		my $CommonTxt =  get_filtered_common_file($codcour, $CommonTexFile);
+		$syllabus_in  =~ s/--COMMON-CONTENT--/$CommonTxt/g;
 	}
+
 	#Util::print_message("CommonTexFile=$CommonTexFile ..."); exit;
 	$syllabus_in = Common::replace_accents($syllabus_in);
 	while($syllabus_in =~ m/\n\n\n/)
@@ -440,6 +469,7 @@ sub read_syllabus_info($$$)
 	$map{FULL_GOALS}	= "\\begin{itemize}\n$Common::course_info{$codcour}{$lang}{goals}{txt}\n\\end{itemize}";
 	$map{GOALS_ITEMS}	= $Common::course_info{$codcour}{$lang}{goals}{txt};
 
+	# * Pending to review
 	($map{FULL_OUTCOMES},          $map{OUTCOMES_ITEMS}) 		  = get_formatted_skills($codcour, "outcomes", $version, $lang, $fullname);
 	($map{FULL_SPECIFIC_OUTCOMES}, $map{SPECIFIC_OUTCOMES_ITEMS}) = get_formatted_skills($codcour, "specificoutcomes", $version, $lang, $fullname);
 	($map{FULL_COMPETENCES},       $map{COMPETENCES_ITEMS})		  = get_formatted_skills($codcour, "competences", $version, $lang, $fullname);
@@ -499,6 +529,7 @@ sub read_syllabus_info($$$)
 	return %map;
 }
 
+# ! Deprecated
 sub read_syllabus_info_old($$$)
 {
 	my ($codcour, $semester, $lang)   = (@_);
@@ -644,19 +675,19 @@ sub read_syllabus_info_old($$$)
 	$EnvforOutcomes = $Common::config{EnvforOutcomes};
 	$map{FULL_SPECIFIC_OUTCOMES}	= "";
 	if($Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{count} == 0)
-	{	Util::print_warning("Course $codcour ... no {specificoutcomes}{$version} detected ... assuming an empty one!"); 
+	{ 
 		$Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized} = "\\item \\colorbox{red}{<<NoSpecificOutcomes>>}\n";
 	}
 	if( defined($Common::course_info{$codcour}{$lang}{specificoutcomes}{$version})	)
 	{	$map{FULL_SPECIFIC_OUTCOMES}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized}\\end{$EnvforOutcomes}";	}
-	else{	Util::print_warning("There is no specific outcomes ($version) defined for $codcour ($fullname)"); 	}
+	else{	 	}
 	$map{SPECIFIC_OUTCOMES_ITEMS}	= $Common::course_info{$codcour}{$lang}{specificoutcomes}{$version}{itemized};
 
 	# Competences
 	$map{FULL_COMPETENCES}	= "";
 	if( defined($Common::course_info{$codcour}{$lang}{competences}{$version}) )
 	{	$map{FULL_COMPETENCES}	= "\\begin{description}\n$Common::course_info{$codcour}{$lang}{competences}{$version}{itemized}\\end{description}";	}
-	else{	Util::print_warning("There is no competences ($version) defined for $codcour ($fullname)"); 	}
+	else{ 	}
 	$map{COMPETENCES_ITEMS}	= $Common::course_info{$codcour}{$lang}{competences}{$version}{itemized};
 
 	$map{EVALUATION} 	= $Common::config{general_evaluation};
@@ -802,13 +833,11 @@ sub genenerate_tex_syllabus_file($$$$$%)
 	$file_template =~ s/--BEGINUNIT--\s*\n((?:.|\n)*)--ENDUNIT--/$map{$units_field}/g;
 	$file_template =~ s/\\newcommand\{\\INST\}\{\}/\\newcommand\{\\INST\}\{$Common::institution\}/g;
 	$file_template =~ s/\\newcommand\{\\AREA\}\{\}/\\newcommand\{\\AREA\}\{$Common::area\}/g;
-	Util::print_message("genenerate_tex_syllabus_file $codcour: $output_file ...");
-
 	if($file_template =~ m/--OUTCOMES-FOR-OTHERS--/g)
 	{
 		my $nkeys = keys %{$Common::course_info{$codcour}{extra_tags}};
 		if($nkeys > 0 )
-		{	Util::print_message("$output_file extra tags detected ok!");
+		{	Util::print_message("\t$output_file extra tags detected ok!");
 			#print Dumper (\%{$Common::course_info{$codcour}{extra_tags}});	
 			$file_template =~ s/<<Competences>>/<<CompetencesForCS>>/g;
 			my $extra_txt = "\\item \\textbf{<<CompetencesForEngineering>>} \n";
@@ -833,6 +862,7 @@ sub genenerate_tex_syllabus_file($$$$$%)
 	Util::write_file($output_file, $file_template);
 	#Util::print_message("Generating $output_file ok!");
 	#exit;
+	#Util::print_message("genenerate_tex_syllabus_file: ".Util::green($codcour)."\n\n");
 }
 
 sub read_sumilla_template()
@@ -938,13 +968,12 @@ sub generate_tex_syllabi_files()
 			my $codcour_label = Common::get_label($codcour);
 			foreach my $lang (@{$Common::config{SyllabusLangsList}})
 			{
+				my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
+				Util::print_message(Util::yellow(">>>>>>> genenerate_tex_syllabus_file: $codcour"). "-> $output_file ...");
 				my %map = read_syllabus_info($codcour, $semester, $lang);
 				$map{AREA}			= $Common::config{area};
-
-				my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
-				#Util::print_message("Generating Syllabus: $output_file");
 				genenerate_tex_syllabus_file($codcour_label, $Common::config{syllabus_template}, "UNITS_SYLLABUS", $output_file, $lang, %map);
-				
+
 				# Copy bib files
 				my $syllabus_bib = Common::get_template("InSyllabiContainerDir")."/$map{IN_BIBFILE}.bib";
 				#Util::print_message("cp $syllabus_bib $OutputTexDir");

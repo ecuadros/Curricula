@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#/usr/bin/perl -W
 
 use strict;
 use File::Path qw(make_path);

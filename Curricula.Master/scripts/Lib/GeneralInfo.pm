@@ -1346,7 +1346,10 @@ sub generate_list_of_courses_by_specific_outcome($)
 				$this_outcome .= $this_specific_outcome_txt;
 			#}
 		}
-		$output_txt .= "\\section{$outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
+		$output_txt .= "\\section{$outcome) ";
+		if( defined($Common::config{macros}{"outcome$outcome"}) )
+		{	$output_txt .= $Common::config{macros}{"outcome$outcome"};	}
+		$output_txt .= "}\n";
 		$output_txt .= $this_outcome;
 	}
 	my $output_file = Common::get_expanded_template("list-of-courses-by-specific-outcome", $lang);
@@ -1375,7 +1378,10 @@ sub generate_table_of_courses_for_one_outcome($$)
 	$one_line_template   .= "<<SpecificOutcomeLabel>>\n& <<SpecificOutcome>> \\vspace{0.1cm} &\n\n<<Courses>> \\\\ \\hline\n\n";
 	my %map = ();
 
-	($map{Outcome} = "$outcome) ".$Common::config{macros}{"outcome$outcome"}) =~ s/\\xspace//g;
+	if( defined($Common::config{macros}{"outcome$outcome"}))
+	{	($map{Outcome} = "$outcome) ".$Common::config{macros}{"outcome$outcome"}) =~ s/\\xspace//g;	}
+	else
+	{	$map{Outcome} = "$outcome) ";	}
 	my $this_outcome = "";
 	my $first_time   = 1;
 	foreach my $number  ( sort  {$Common::config{specificoutcome}{$lang}{$outcome}{$a}{priority} <=> $Common::config{specificoutcome}{$lang}{$outcome}{$b}{priority}}

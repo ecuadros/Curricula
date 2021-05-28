@@ -66,13 +66,6 @@ sub print_soft_error($)
 	print "\x1b[41m$msg\x1b[0m\n";
 }
 
-# ok # https://pypi.python.org/pypi/colorama
-sub print_color($)
-{
-	my ($msg) = (@_);
-	print "\x1b[43m\x1b[30m$msg\x1b[0m\n";
-}
-
 # https://pypi.python.org/pypi/colorama
 sub print_warning($)
 {
@@ -93,6 +86,11 @@ sub color($$$)
 	return "$pre$msg$post";
 }
 
+sub yellow($)
+{	my ($msg) = (@_);
+	return color("\x1b[43m\x1b[30m", $msg, "\x1b[0m");
+}
+
 sub red($)
 {	my ($msg) = (@_);
 	return color("\x1b[41m", $msg, "\x1b[0m");
@@ -101,6 +99,13 @@ sub red($)
 sub green($)
 {	my ($msg) = (@_);
 	return color("\x1b[42m\x1b[30m", $msg, "\x1b[0m");
+}
+
+# ok # https://pypi.python.org/pypi/colorama
+sub print_color($)
+{
+	my ($msg) = (@_);
+	print yellow($msg);
 }
 
 #  ok

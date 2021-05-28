@@ -1,7 +1,7 @@
 You can add this to the ~/.bashrc to make it always available when you log-in.
 Ubuntu: export PERL5LIB=/home/ecuadros/Articles/Curricula/Curricula.Master/scripts
 Mac   :
-export PERL5LIB=/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
+export PERL5LIB=/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1:/System/Library/Perl/Extras/5.30/darwin-thread-multi-2level:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
 export TEXINPUTS=::/usr/local/Cellar/latex2html/2021/texinputs
 source ~/.zshrc
 
@@ -113,8 +113,8 @@ cpan install Switch
 --- Install Perlbrew ---
 \curl -L https://install.perlbrew.pl | bash
 --- Download perl in Perlbrew
-perlbrew -v install perl-5.30.2 --notest -Dcc=gcc
-perlbrew switch perl-5.30.2
+perlbrew -v install perl-5.32.1 --notest -Dcc=gcc
+perlbrew switch perl-5.32.1
 --- Install perl-blead ---
 perlbrew install perl-blead
 perlbrew use perl-blead
