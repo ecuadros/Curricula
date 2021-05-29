@@ -1577,7 +1577,10 @@ sub generate_outcomes_by_course($$$$$$$$)
 		#print "unit_name=$unit_name ...\n";
 		$current_row = $row_text; 
 		my $new_txt = "";
-		my $outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};
+		my $outcome_label = "";
+		# ! Pending
+		if( defined($Common::config{macros}{$lang}{"outcome$outcome"."Short"}) )
+		{	$outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};	}	
 		if($background_flag == 1 && $Common::config{graph_version}>= 2)
 									   #$Common::config{macros}{$lang}}{keys %outcomes_macros}
 		{	$new_txt = "$outcome) & ". $outcome_label;		}

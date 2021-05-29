@@ -357,15 +357,6 @@ sub get_small_icon($$)
     return $pdflink;
 }
 
-sub format_semester_label($)
-{
-      my ($semester) = (@_);
-      if($semester)
-      {		return "$semester\$^{$config{dictionary}{ordinal_postfix}{$semester}}\$";	}
-      else{	Util::halt("");		}
-      return "";
-}
-
 sub get_course_link($$)
 {
 	my ($codcour, $lang) = (@_);
@@ -578,6 +569,16 @@ sub read_pagerefs()
     Util::check_point("read_pagerefs");
 }
 
+# ! Pending: duplicates functions?
+sub format_semester_label($)
+{
+      my ($semester) = (@_);
+      if($semester)
+      {		return "$semester\$^{$config{dictionary}{ordinal_postfix}{$semester}}\$";	}
+      else{	Util::halt("");		}
+      return "";
+}
+
 sub format_semester($$)
 {
 	my ($semester, $lang) = (@_);
@@ -587,9 +588,9 @@ sub format_semester($$)
 # ok
 sub sem_label($$)
 {
-	my ($sem, $lang) = (@_);
-	my $rpta  = "\"".format_semester($sem, $lang)." ";
-	$rpta    .= "($config{credits_this_semester}{$sem} $config{dictionaries}{$lang}{cr})\"";
+	my ($semester, $lang) = (@_);
+	my $rpta  = "\"".format_semester($semester, $lang)." ";
+	$rpta    .= "($config{credits_this_semester}{$semester} $config{dictionaries}{$lang}{cr})\"";
 	return  $rpta;
 }
 
@@ -4309,13 +4310,16 @@ sub change_number_by_text($)
 sub generate_course_info_in_dot($$$)
 {
 	my ($codcour, $this_item, $lang) = (@_);
-	#print "$codcour ...\n";
+	# ! Pasa muchas veces por aqui !
+	#print "$codcour ... ($lang)";
 	#if($codcour eq "60Cr") {assert(0);}
 	my %map = ();
 
 	$map{CODE}	= $codcour;
-	my $codcour_name = $course_info{$codcour}{$lang}{course_name};
-	my ($newlabel,$nlines) = wrap_label("$codcour. $codcour_name");
+	if( not defined($course_info{$codcour}{$lang}{course_name}))
+	{	Util::print_error("Quien está llamando con este curso?");	}
+	my $course_name = $course_info{$codcour}{$lang}{course_name};
+	my ($newlabel,$nlines) = wrap_label("$codcour. $course_name");
 	my @height = (0, 0, 0.6, 0.9, 1.2, 1.5);
 # 	my $height = 0.3*$nlines+0.1*($nlines-1) + 0.3*$config{extralevels}+0.05*($config{extralevels}-1);
 	$map{FULLNAME}	= $newlabel;
@@ -5610,17 +5614,18 @@ sub dump_course_errors()
 	my $output_txt = "";
 	foreach my $codcour (sort {$a cmp $b} keys %{$Common::error{courses}})
 	{
-		$output_txt .= "Course=$codcour\n";
+		$output_txt .= Util::yellow("Course=$codcour")."\n";
 		#$output_txt .= "\tfile=$Common::error{courses}{$codcour}{file}\n";
 		if( defined($Common::error{courses}{$codcour}{lang}) )
 		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}})
 			{	
-				$output_txt .= "\t$lang ($course_info{$codcour}{$lang}{course_name})\n";
+				$output_txt .= "\t".Util::yellow($lang)." ($course_info{$codcour}{$lang}{course_name}) file: $Common::error{courses}{$codcour}{lang}{$lang}{file}\n";
 				if( defined($Common::error{courses}{$codcour}{lang}{$lang}) )
 				{
 					foreach my $env (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}{$lang}})
 					{
-						$output_txt .= ("\t"x2)."$env=$Common::error{courses}{$codcour}{lang}{$lang}{$env}\n";
+						if(not $env eq "file")
+						{	$output_txt .= ("\t"x2)."$env=$Common::error{courses}{$codcour}{lang}{$lang}{$env}\n";	}
 					}
 				}
 			}
@@ -5633,13 +5638,13 @@ sub dump_course_errors()
 			}
 		}
 		# TODO Check
-		if( defined($Common::error{courses}{$codcour}{competencies}) )
-		{	$output_txt .= "\tCompetencies\n";
-			foreach my $key (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{competencies}})
-			{	
-				$output_txt .= ("\t"x2)."$key=$Common::error{courses}{$codcour}{competencies}{$key}\n";
-			}
-		}
+		#if( defined($Common::error{courses}{$codcour}{competencies}) )
+		#{	$output_txt .= "\tCompetencies\n";
+		#	foreach my $key (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{competencies}})
+		#	{	
+		#		$output_txt .= ("\t"x2)."$key=$Common::error{courses}{$codcour}{competencies}{$key}\n";
+		#	}
+		#}
 		$output_txt .= "\n";
 	}
 	return $output_txt;
