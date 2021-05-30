@@ -96,6 +96,11 @@ sub red($)
 	return color("\x1b[41m", $msg, "\x1b[0m");
 }
 
+sub blue($)
+{	my ($msg) = (@_);
+	return color("\x1b[44m", $msg, "\x1b[0m");
+}
+
 sub green($)
 {	my ($msg) = (@_);
 	return color("\x1b[42m\x1b[30m", $msg, "\x1b[0m");

@@ -1284,7 +1284,10 @@ sub generate_list_of_courses_by_outcome($)
 		#Util::print_message("ABC outcome=$outcome ($counter)...");
 		if($counter > 0)
 		{
-			$output_txt .= "\\subsection{Outcome: $outcome) ".$Common::config{macros}{"outcome$outcome"}."}\n";
+			my $outcome  = "";
+			if( defined($Common::config{macros}{"outcome$outcome"}) )
+			{	$outcome = "(Outcome not defined!)";	}
+			$output_txt .= "\\subsection{Outcome: $outcome) $outcome}\n";
 			$output_txt .= "\\begin{itemize}\n";
 			$output_txt .= "$Common::nolistsep\n";
 			$output_txt .= $this_outcome_txt;
@@ -1349,6 +1352,8 @@ sub generate_list_of_courses_by_specific_outcome($)
 		$output_txt .= "\\section{$outcome) ";
 		if( defined($Common::config{macros}{"outcome$outcome"}) )
 		{	$output_txt .= $Common::config{macros}{"outcome$outcome"};	}
+		else
+		{	$output_txt .= "Outcome not defined (generate_list_of_courses_by_specific_outcome)";	}
 		$output_txt .= "}\n";
 		$output_txt .= $this_outcome;
 	}
@@ -1381,7 +1386,7 @@ sub generate_table_of_courses_for_one_outcome($$)
 	if( defined($Common::config{macros}{"outcome$outcome"}))
 	{	($map{Outcome} = "$outcome) ".$Common::config{macros}{"outcome$outcome"}) =~ s/\\xspace//g;	}
 	else
-	{	$map{Outcome} = "$outcome) ";	}
+	{	$map{Outcome} = "$outcome) Not defined (generate_table_of_courses_for_one_outcome)";	}
 	my $this_outcome = "";
 	my $first_time   = 1;
 	foreach my $number  ( sort  {$Common::config{specificoutcome}{$lang}{$outcome}{$a}{priority} <=> $Common::config{specificoutcome}{$lang}{$outcome}{$b}{priority}}
@@ -1578,9 +1583,10 @@ sub generate_outcomes_by_course($$$$$$$$)
 		$current_row = $row_text; 
 		my $new_txt = "";
 		my $outcome_label = "";
-		# ! Pending
 		if( defined($Common::config{macros}{$lang}{"outcome$outcome"."Short"}) )
-		{	$outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};	}	
+		{	$outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};		}
+		else
+		{	$outcome_label = "outcome$outcome Not defined (generate_outcomes_by_course)";	}	
 		if($background_flag == 1 && $Common::config{graph_version}>= 2)
 									   #$Common::config{macros}{$lang}}{keys %outcomes_macros}
 		{	$new_txt = "$outcome) & ". $outcome_label;		}

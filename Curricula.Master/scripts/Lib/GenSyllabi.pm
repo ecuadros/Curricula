@@ -195,20 +195,13 @@ my %macro_for_env = ("outcomes"           => "ShowOutcome",
 sub parse_environments_in_header($$$$)
 {
 	my ($codcour, $lang, $syllabus_in, $fullname)   = (@_);
-	#$syllabus_in =~ s/\\ExpandOutcome\{/\\ShowOutcome\{/g;
-	#$syllabus_in =~ s/\\Competence\{/\\ShowCompetence\{/g;
-	#$syllabus_in =~ s/\{unitgoals\}/\{learningoutcomes\}/g;
 	my $version = $Common::config{OutcomesVersion};
 	#Util::print_message("parse_environments_in_header($fullname ...) !");
 	foreach my $env (@versioned_environments)
-	{
+	{	# ! Pending de revisar
 		$Common::course_info{$codcour}{$lang}{$env}{$version}{txt} 	= $1;
 		$Common::course_info{$codcour}{$lang}{$env}{$version}{count} = 0;
 		$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}	= "";
-		#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{txt}=\n$body");
-		#print Dumper(\%{$Common::course_info{$codcour}{outcomes}});
-		#my $copy_syllabus_in = $syllabus_in;
-		#my $version = $Common::config{OutcomesVersion};
 		if( $syllabus_in =~ m/\\begin\{$env\}\{$version\}\s*\n((?:.|\n)*?)\\end\{$env\}/g)
 		{
 			#Util::print_message("\\begin{$env}{$version} detected !");
@@ -222,23 +215,31 @@ sub parse_environments_in_header($$$$)
 					($tail) = ($1);
 					my @params = $tail =~ m/\{(.*?)\}/g;
 					switch($env)
-					{	case ["outcomes", "competences"]
+					{	case ["outcomes", "competences"] 
 						{ 	#print $env;
-							$Common::course_info{$codcour}{$lang}{$env}{$version}{$params[0]} = $params[1];
+							my ($key, $value) = ($params[0], $params[1]);
+							# \item \ShowOutcome{a}{2}
+							# \item \ShowCompetence{C1}{a}
+							$Common::course_info{$codcour}{$lang}{$env}{$version}{$key} = $value;
 							$Common::config{course_by_outcome}{$params[0]}{$codcour} = "";
-							#Util::print_message("Common::config{course_by_outcome}{$params[0]}{$codcour}=$Common::config{course_by_outcome}{$params[0]}{$codcour}");
-							#exit;
+							# ! Pending we have to verify this outcome, competences is defined
+							              # $Common::config{macros}{outcomes}{$lang}{outcomem}
+							if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
+							{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);		}
 						}	#\% ($codcour, $semester, $lang)
 						case "specificoutcomes"  
 						{	# Save the specific outcome
-							my $specificoutcome = "$params[0]$params[1]";
-							$Common::course_info{$codcour}{$lang}{$env}{$version}{$specificoutcome} = $params[2];
-							$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$specificoutcome} = $params[2];
+							my $key = "$params[0]$params[1]";
+							$Common::course_info{$codcour}{$lang}{$env}{$version}{$key} = $params[2];
+							# \item \ShowSpecificOutcome{a}{3}{}
+							$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$key} = $params[2];
 							$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
-							#$config{specificoutcome}{$code}{$number}{label}    = $2;
-							#$config{specificoutcome}{$code}{$number}{priority} 
+							# ! Pending we have to verify this specificoutcome is defined
+							if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
+							{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
 						}
 					}
+					
 					$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}  	.= "\\item \\".$macro_for_env{$env};
 					foreach my $param (@params)
 					{	$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized} .= "{$param}";		}
@@ -255,9 +256,17 @@ sub parse_environments_in_header($$$$)
 		else
 		{
 			$Common::error{courses}{$codcour}{lang}{$lang}{file}     = $fullname;
-			$Common::error{courses}{$codcour}{lang}{$lang}{missing} .= "$env"."{$version}, ";
+			$Common::error{courses}{$codcour}{lang}{$lang}{missing} .= Util::yellow("$env")."{$version}, ";
+			#if($codcour eq "CS111")
+			#{	#Util::print_message(Util::yellow("$codcour")."=>".Util::yellow($CommonTexFile)."\n$CommonTxt".Util::yellow("*************"));		
+			#	Util::print_message("I did not find: ".Util::yellow($env)." in $fullname");
+			#}
 		}
 	}
+	#if($codcour eq "CS111")
+	#{	print Dumper(\%{$Common::error{courses}{$codcour}{lang}{$lang}});
+	#	exit;	
+	#}
 }
 
 sub get_professors_info($$)
@@ -352,7 +361,8 @@ sub get_formatted_skills($$$$$)
 	#Util::print_message("Common::course_info{$codcour}{$lang}{$env}{$version}{count}=$Common::course_info{$codcour}{$lang}{$env}{$version}{count}"); exit;
 	if( defined($Common::course_info{$codcour}{$lang}{$env}{$version}) )
 	{	$map{FULL_SPECIFIC}	= "\\begin{$EnvforOutcomes}\n$Common::course_info{$codcour}{$lang}{$env}{$version}{itemized}\\end{$EnvforOutcomes}";	}
-	else{	Util::print_warning("There is no $env ($version) defined for $codcour ($fullname)"); 	}
+	else{	#Util::print_warning("There is no $env ($version) defined for $codcour ($fullname)"); 	
+	}
 	$map{SPECIFIC_ITEMS}	= $Common::course_info{$codcour}{$lang}{$env}{$version}{itemized};
 	return ($map{FULL_SPECIFIC}, $map{SPECIFIC_ITEMS});
 }
@@ -388,7 +398,7 @@ sub get_filtered_common_file($$)
 	}
 	# print Dumper(\%{$Common::error{courses}{$codcour}{competencies}});
 	# Util::print_message("get_filtered_common_file($codcour):\n$output_txt");
-	return $CommonTexFile;
+	return $output_txt;
 }
 
 # ok
@@ -406,6 +416,10 @@ sub read_syllabus_info($$$)
 	{
 		my $CommonTxt =  get_filtered_common_file($codcour, $CommonTexFile);
 		$syllabus_in  =~ s/--COMMON-CONTENT--/$CommonTxt/g;
+		#if($codcour eq "CS111")
+		#{	Util::print_message(Util::yellow("$codcour")."=>".Util::yellow($CommonTexFile)."\n$CommonTxt".Util::yellow("*************"));		
+		#	Util::print_message($syllabus_in); exit;
+		#}
 	}
 
 	#Util::print_message("CommonTexFile=$CommonTexFile ..."); exit;
@@ -451,7 +465,13 @@ sub read_syllabus_info($$$)
 	# 1st: Get general information from this syllabus
 	#Util::print_soft_error("Syllabus before ($fullname)");
 	#Util::print_warning($syllabus_in);
+
+	#if($codcour eq "CS111")
+	#{	#Util::print_message(Util::yellow("$codcour")."=>".Util::yellow($CommonTexFile)."\n$CommonTxt".Util::yellow("*************"));		
+	#	Util::print_message($syllabus_in); exit;
+	#}
 	parse_environments_in_header($codcour, $lang, $syllabus_in, $fullname);
+
 	#exit;
 	#Aqui begin
 	$map{COURSE_CODE} 	= $codcour;

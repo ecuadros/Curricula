@@ -542,20 +542,20 @@ sub read_dot_template($$)
 
 sub read_outcomes_labels()
 {
-        my $filename     = Common::get_template("file_for_page_numbers");
-        $config{outcomes_map} = ();
+	my $filename     	 = Common::get_template("file_for_page_numbers");
+	$config{outcomes_map}= ();
 
 	if(-e $filename)
-        {
-	    my $file_txt     = Util::read_file($filename);
-	    while($file_txt =~ m/\\newlabel\{out:Outcome(.*?)\}\{\{(.*?)\}/g)
-	    {
-		    my ($outcome, $letter) = ($1, $2);
-		    if($outcome eq "\\IeC {\\~n}"){	$outcome = "ñ";		}
-		    $config{outcomes_map}{$outcome} = $letter;
-		    if( $letter =~ m/\\.n/)
-		    {       $config{outcomes_map}{$outcome} = "ñ";          }
-	    }
+	{
+		my $file_txt     = Util::read_file($filename);
+		while($file_txt  =~ m/\\newlabel\{out:Outcome(.*?)\}\{\{(.*?)\}/g)
+		{
+			my ($outcome, $letter) = ($1, $2);
+			if($outcome eq "\\IeC {\\~n}"){	$outcome = "ñ";		}
+			$config{outcomes_map}{$outcome} = $letter;
+			if( $letter =~ m/\\.n/)
+			{       $config{outcomes_map}{$outcome} = "ñ";          }
+		}
 	}
 }
 
@@ -1327,6 +1327,10 @@ sub read_outcomes($$)
 	#Util::print_message("file_name=$file_name ...");
 	#print Dumper(\%macros); exit;
     my $count = 0;
+	#\DefineOutcome{a}{Aplicar conocimientos ... \xspace}
+	#\DefineOutcome{aShort}{Aplicar ...\xspace}
+	#\DefineSpecificOutcome{a}{1}{a1}{Aplicar \xspace}
+	#\DefineSpecificOutcome{a}{2}{a2}{Usar de \xspace}
     while($txt =~ m/\\Define(.*?)\{(.*?)\}\{/g)
     {
 		my ($cmd, $code)  = (lc $1, $2);
@@ -1348,6 +1352,9 @@ sub read_outcomes($$)
 			$cPar-- if($1 eq "}");
 			$body      .= $1 if($cPar > 0);
 		}
+		#$macros{"outcomeg"} = $body;
+		#$macros{"competenceC2"} = $body;
+		#$macros{"specificoutcomec3"} = $body;
 		$macros{"$cmd$code"} = $body;
 		if( $cmd eq "specificoutcome")
 		{	$config{specificoutcome}{$lang}{$outcome}{$number}{txt} = $body;
@@ -2267,15 +2274,21 @@ sub set_initial_configuration($)
 	}
 	#Util::print_message("Common::config{macros}{LearningOutcomesTxtEsFamiliarity}=$Common::config{macros}{LearningOutcomesTxtEsFamiliarity}");
 	#exit;
-
 	foreach my $lang (@{$config{SyllabusLangsList}})
 	{	
 		#my $lang_prefix = $config{dictionaries}{$lang}{lang_prefix};
 		my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
 		Util::print_message("Reading outcomes ($outcomes_macros_file)");
+
 		my %outcomes_macros = read_outcomes($outcomes_macros_file, $lang);
+		# ! Pending to review
+		#$outcomes_macros{"outcomeg"} 			= $body;
+		#$outcomes_macros{"competenceC2"} 		= $body;
+		#$outcomes_macros{"specificoutcomec3"} 	= $body;
+		#print Dumper (\%outcomes_macros); exit;  $outcomes_macros{outcomem} = "ABC DEF";
 		foreach my $key (keys %outcomes_macros)
-		{	$Common::config{macros}{outcomes}{$lang}{$key} = $outcomes_macros{$key};
+		{	# $Common::config{macros}{outcomes}{$lang}{outcomem}
+			$Common::config{macros}{outcomes}{$lang}{$key} = $outcomes_macros{$key};
 			$Common::config{outcomes_keys}{$key} = "";	
 		}
 		@{$Common::config{macros}{$lang}}{keys %outcomes_macros} = values %outcomes_macros;
@@ -5588,10 +5601,12 @@ sub dump_outcomes_errors()
 	#foreach my $key (keys %outcomes_macros)
 	#	{	$Common::config{outcomes_keys}{$key} = "";	}
 	#	@{$Common::config{macros}{$lang}}{keys %outcomes_macros} = values %outcomes_macros;
-	my $output_txt = "Outcomes (Missing keys)\n";
+	my $output_txt 			= "";
 	foreach my $lang (@{$config{SyllabusLangsList}})
 	{
+		my $program_info_file   = Common::get_expanded_template("this-program-info-file", $lang);
 		my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
+		$output_txt .= "Outcomes (Missing keys) cited in $program_info_file (\\OutcomesList)\n";
 		$output_txt .= "$lang ($outcomes_macros_file)\n";
 		my $count = 0;
 		foreach my $key (sort {$a cmp $b} keys %{$Common::config{outcomes_keys}})
@@ -5606,20 +5621,41 @@ sub dump_outcomes_errors()
 		{	$output_txt .= "\tThis language is complete !\n";	}
 	}
 	$output_txt .= "\n";
+
+	$output_txt .= "Outcomes, Competencies, Specificoutcomes cited in courses ".Util::yellow("but not defined !")."\n";
+	foreach my $lang (@{$config{SyllabusLangsList}})
+	{	$output_txt .= sprintf("%-10s\n", Util::yellow($lang));
+		#if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
+		#{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
+		foreach my $env (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}})
+		{	$output_txt .= "\t".Util::yellow($env)."\n";
+			foreach  my $key (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}{$env}})
+			{	# $output_txt .= sprintf("\t%-15s: (%s)\n", $env, join(", ", @{$Common::error{outcomes_and_competencies}{$lang}{$env}})) ;
+				$output_txt .= sprintf("\t\t%-5s: ", Util::yellow($key));
+				my ($list_of_courses, $sep) = ("", "");
+				foreach  my $codcour ( @{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}})
+				{	$list_of_courses .= "$sep$codcour";		$sep = ",";
+				}
+				$output_txt .= "$list_of_courses\n";
+			}
+		}
+	}
+	
+	$output_txt .= "\n";
 	return $output_txt;
 }
 
 sub dump_course_errors()
 {
 	my $output_txt = "";
-	foreach my $codcour (sort {$a cmp $b} keys %{$Common::error{courses}})
+	foreach my $codcour (@codcour_list_sorted)
 	{
 		$output_txt .= Util::yellow("Course=$codcour")."\n";
 		#$output_txt .= "\tfile=$Common::error{courses}{$codcour}{file}\n";
 		if( defined($Common::error{courses}{$codcour}{lang}) )
 		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}})
 			{	
-				$output_txt .= "\t".Util::yellow($lang)." ($course_info{$codcour}{$lang}{course_name}) file: $Common::error{courses}{$codcour}{lang}{$lang}{file}\n";
+				$output_txt .= "\t".Util::blue($lang)." ($course_info{$codcour}{$lang}{course_name}) file: $Common::error{courses}{$codcour}{lang}{$lang}{file}\n";
 				if( defined($Common::error{courses}{$codcour}{lang}{$lang}) )
 				{
 					foreach my $env (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}{$lang}})
@@ -5645,7 +5681,7 @@ sub dump_course_errors()
 		#		$output_txt .= ("\t"x2)."$key=$Common::error{courses}{$codcour}{competencies}{$key}\n";
 		#	}
 		#}
-		$output_txt .= "\n";
+		# $output_txt .= "\n";
 	}
 	return $output_txt;
 }
