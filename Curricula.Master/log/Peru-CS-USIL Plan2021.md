@@ -346,10 +346,10 @@ English
 
 ## Errors detected in Outcomes
 Outcomes (Missing keys) cited in ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex (\OutcomesList)
-Espanol (../Curricula.in/lang/Espanol/Disciplines/Computing/CS.tex/outcomes-macros.tex)
-	This language is complete !
+- Espanol (../Curricula.in/lang/Espanol/Disciplines/Computing/CS.tex/outcomes-macros.tex)
+** This language is complete !** 
 Outcomes (Missing keys) cited in ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex (\OutcomesList)
-English (../Curricula.in/lang/English/Disciplines/Computing/CS.tex/outcomes-macros.tex)
+- English (../Curricula.in/lang/English/Disciplines/Computing/CS.tex/outcomes-macros.tex)
 	outcomeUSILCG1 
 	outcomeUSILCG1Short
 	outcomeUSILCG2 
@@ -361,7 +361,7 @@ English (../Curricula.in/lang/English/Disciplines/Computing/CS.tex/outcomes-macr
 	outcomeUSILCG5 
 	outcomeUSILCG5Short
 
-Outcomes, Competencies, Specificoutcomes cited in courses **but not defined !**
+### Outcomes, Competencies, Specificoutcomes cited in courses **but not defined !**
 - Espanol   
   - outcomes
     - 1    (12): CS111,CS1D1,CO111,CS1D2,CS210,CS2701,CS272,CS312,CS393,ET201,ET301,ET302
