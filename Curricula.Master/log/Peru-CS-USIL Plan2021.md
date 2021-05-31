@@ -1,410 +1,410 @@
 ## Errors detected in courses
 - Course=CS111
-  - English (Computing Foundations) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
+  - English (Computing Foundations) [Link to file for CS111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Introducción a la Ciencia de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
+  - Espanol (Introducción a la Ciencia de la Computación) [Link to file for CS111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS1D1
-  - English (Discrete Structures I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
+  - English (Discrete Structures I) [Link to file for CS1D1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Estructuras Discretas I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
+  - Espanol (Estructuras Discretas I) [Link to file for CS1D1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB111
-  - English (Pre Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
+  - English (Pre Calculus) [Link to file for CB111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Fundamentos de Cálculo) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
+  - Espanol (Fundamentos de Cálculo) [Link to file for CB111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID101
-  - English (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
+  - English (English I) [Link to file for ID101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
+  - Espanol (English I) [Link to file for ID101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CO111
-  - English (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
+  - English (Language and Communication) [Link to file for CO111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Lenguaje y Comunicación I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
+  - Espanol (Lenguaje y Comunicación I) [Link to file for CO111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS112
-  - English (Objects oriented programming I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
+  - English (Objects oriented programming I) [Link to file for CS112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Programación Orientada a Objetos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
+  - Espanol (Programación Orientada a Objetos I) [Link to file for CS112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS1D2
-  - English (Discrete Structures II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
+  - English (Discrete Structures II) [Link to file for CS1D2 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Estructuras Discretas II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
+  - Espanol (Estructuras Discretas II) [Link to file for CS1D2 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB211
-  - English (Single Variable Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
+  - English (Single Variable Calculus) [Link to file for CB211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Cálculo de una Variable) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
+  - Espanol (Cálculo de una Variable) [Link to file for CB211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID102
-  - English (Technical and professional English II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
+  - English (Technical and professional English II) [Link to file for ID102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Inglés II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
+  - Espanol (Inglés II) [Link to file for ID102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CO112
-  - English (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
+  - English (Language and Communication) [Link to file for CO112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Lenguaje y Comunicación II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
+  - Espanol (Lenguaje y Comunicación II) [Link to file for CO112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS113
-  - English (Objects oriented programming II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
+  - English (Objects oriented programming II) [Link to file for CS113 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Programación Orientada a Objetos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
+  - Espanol (Programación Orientada a Objetos II) [Link to file for CS113 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS221
-  - English (Computer Systems Architecture) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
+  - English (Computer Systems Architecture) [Link to file for CS221 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Arquitectura de Computadores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
+  - Espanol (Arquitectura de Computadores) [Link to file for CS221 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS2B1
-  - English (Platform Based Development) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
+  - English (Platform Based Development) [Link to file for CS2B1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Desarrollo Basado en Plataformas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
+  - Espanol (Desarrollo Basado en Plataformas) [Link to file for CS2B1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB212
-  - English (Multiple Variable Calculation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
+  - English (Multiple Variable Calculation) [Link to file for CB212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Cálculo en varias Variables) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
+  - Espanol (Cálculo en varias Variables) [Link to file for CB212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID201
-  - English (Technical and professional English III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
+  - English (Technical and professional English III) [Link to file for ID201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Inglés III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
+  - Espanol (Inglés III) [Link to file for ID201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE101
-  - English (Business Administration) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
+  - English (Business Administration) [Link to file for CE101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Administración para los negocios) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
+  - Espanol (Administración para los negocios) [Link to file for CE101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS210
-  - English (Algorithms and Data Structures) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
+  - English (Algorithms and Data Structures) [Link to file for CS210 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Algoritmos y Estructuras de Datos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
+  - Espanol (Algoritmos y Estructuras de Datos) [Link to file for CS210 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS211
-  - English (Theory of Computation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
+  - English (Theory of Computation) [Link to file for CS211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Teoría de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
+  - Espanol (Teoría de la Computación) [Link to file for CS211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS2701
-  - English (Data Management) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
+  - English (Data Management) [Link to file for CS2701 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Gerenciamiento de Datos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
+  - Espanol (Gerenciamiento de Datos I) [Link to file for CS2701 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS2S1
-  - English (Operating systems ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
+  - English (Operating systems ) [Link to file for CS2S1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Sistemas Operativos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
+  - Espanol (Sistemas Operativos) [Link to file for CS2S1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID202
-  - English (English  IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
+  - English (English  IV) [Link to file for ID202 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Inglés IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
+  - Espanol (Inglés IV) [Link to file for ID202 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CA211
-  - English (Descriptive and Inferential Statistics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
+  - English (Descriptive and Inferential Statistics) [Link to file for CA211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Estadística Descriptiva e Inferencial) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
+  - Espanol (Estadística Descriptiva e Inferencial) [Link to file for CA211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS212
-  - English (Analysis and Design of Algorithms) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
+  - English (Analysis and Design of Algorithms) [Link to file for CS212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Análisis y Diseño de Algoritmos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
+  - Espanol (Análisis y Diseño de Algoritmos) [Link to file for CS212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS272
-  - English (Data Management II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
+  - English (Data Management II) [Link to file for CS272 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Gerenciamiento de Datos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
+  - Espanol (Gerenciamiento de Datos II) [Link to file for CS272 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS291
-  - English (Software Engineering I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
+  - English (Software Engineering I) [Link to file for CS291 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Ingeniería de Software I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
+  - Espanol (Ingeniería de Software I) [Link to file for CS291 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS342
-  - English (Compilers) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
+  - English (Compilers) [Link to file for CS342 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Compiladores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
+  - Espanol (Compiladores) [Link to file for CS342 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB121
-  - English (General Physics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
+  - English (General Physics) [Link to file for CB121 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Física General) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
+  - Espanol (Física General) [Link to file for CB121 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID203
-  - English (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
+  - English (Technical and professional English V) [Link to file for ID203 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Inglés V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
+  - Espanol (Inglés V) [Link to file for ID203 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE142
-  - English (Cost Accounting) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
+  - English (Cost Accounting) [Link to file for CE142 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Contabilidad de Costos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
+  - Espanol (Contabilidad de Costos) [Link to file for CE142 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS261
-  - English (Intelligent Systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
+  - English (Intelligent Systems) [Link to file for CS261 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Sistemas Inteligentes) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
+  - Espanol (Sistemas Inteligentes) [Link to file for CS261 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS292
-  - English (Software Engineering II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
+  - English (Software Engineering II) [Link to file for CS292 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Ingeniería de Software II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
+  - Espanol (Ingeniería de Software II) [Link to file for CS292 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS311
-  - English (Competitive Programming) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
+  - English (Competitive Programming) [Link to file for CS311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Programación Competitiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
+  - Espanol (Programación Competitiva) [Link to file for CS311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS312
-  - English (Advanced Data Structures ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
+  - English (Advanced Data Structures ) [Link to file for CS312 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Estructuras de Datos Avanzadas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
+  - Espanol (Estructuras de Datos Avanzadas) [Link to file for CS312 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS393
-  - English (Information systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
+  - English (Information systems) [Link to file for CS393 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Sistemas de Infomación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
+  - Espanol (Sistemas de Infomación) [Link to file for CS393 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB311
-  - English (Mathematics applied to computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
+  - English (Mathematics applied to computing ) [Link to file for CB311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Matemática aplicada a la computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
+  - Espanol (Matemática aplicada a la computación) [Link to file for CB311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ID204
-  - English (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
+  - English (Technical and professional English V) [Link to file for ID204 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Inglés VI) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
+  - Espanol (Inglés VI) [Link to file for ID204 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE131
-  - English (Business Finance) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
+  - English (Business Finance) [Link to file for CE131 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Finanzas Empresariales) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
+  - Espanol (Finanzas Empresariales) [Link to file for CE131 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS231
-  - English (Networking and Telecommunication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
+  - English (Networking and Telecommunication) [Link to file for CS231 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Redes y Telecomunicaciones) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
+  - Espanol (Redes y Telecomunicaciones) [Link to file for CS231 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS2H1
-  - English (User Experience (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
+  - English (User Experience (UX)) [Link to file for CS2H1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Experiencia de Usuario (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
+  - Espanol (Experiencia de Usuario (UX)) [Link to file for CS2H1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS391
-  - English (Software Engineering III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
+  - English (Software Engineering III) [Link to file for CS391 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Ingeniería de Software III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
+  - Espanol (Ingeniería de Software III) [Link to file for CS391 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS401
-  - English (Methodology of Computation Research ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
+  - English (Methodology of Computation Research ) [Link to file for CS401 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Metodología de la Investigación en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
+  - Espanol (Metodología de la Investigación en Computación) [Link to file for CS401 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS251
-  - English (Computer graphics ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
+  - English (Computer graphics ) [Link to file for CS251 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
+  - Espanol (Computación Gráfica) [Link to file for CS251 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS262
-  - English (Machine learning) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
+  - English (Machine learning) [Link to file for CS262 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Aprendizaje Automático) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
+  - Espanol (Aprendizaje Automático) [Link to file for CS262 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB141
-  - English (Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
+  - English (Biology) [Link to file for CB141 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Biología) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
+  - Espanol (Biología) [Link to file for CB141 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP201
-  - English (Business Opportunities) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
+  - English (Business Opportunities) [Link to file for FP201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Oportunidades de Negocio) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
+  - Espanol (Oportunidades de Negocio) [Link to file for FP201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE111
-  - English (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
+  - English (Marketing) [Link to file for CE111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
+  - Espanol (Marketing) [Link to file for CE111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS281
-  - English (Computing in Society) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
+  - English (Computing in Society) [Link to file for CS281 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Computación en la Sociedad) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
+  - Espanol (Computación en la Sociedad) [Link to file for CS281 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS3I1
-  - English (Computer Security) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
+  - English (Computer Security) [Link to file for CS3I1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Seguridad en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
+  - Espanol (Seguridad en Computación) [Link to file for CS3I1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS3P1
-  - English (Parallel and Distributed Computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
+  - English (Parallel and Distributed Computing ) [Link to file for CS3P1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Computación Paralela y Distribuída) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
+  - Espanol (Computación Paralela y Distribuída) [Link to file for CS3P1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS402
-  - English (Capstone Project I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
+  - English (Capstone Project I) [Link to file for CS402 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Proyecto de Final de Carrera I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
+  - Espanol (Proyecto de Final de Carrera I) [Link to file for CS402 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS2T1
-  - English (Computational Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
+  - English (Computational Biology) [Link to file for CS2T1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Biología Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
+  - Espanol (Biología Computacional) [Link to file for CS2T1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS361
-  - English (Computational Vision) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
+  - English (Computational Vision) [Link to file for CS361 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Visión Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
+  - Espanol (Visión Computacional) [Link to file for CS361 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ET201
-  - English (Entrerpreneurship I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
+  - English (Entrerpreneurship I) [Link to file for ET201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Formación de Empresas de Base Tecnológica I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
+  - Espanol (Formación de Empresas de Base Tecnológica I) [Link to file for ET201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS370
-  - English (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
+  - English (Big Data) [Link to file for CS370 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
+  - Espanol (Big Data) [Link to file for CS370 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS403
-  - English (Final Project II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
+  - English (Final Project II) [Link to file for CS403 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Proyecto de Final de Carrera II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
+  - Espanol (Proyecto de Final de Carrera II) [Link to file for CS403 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS351
-  - English (Topics in Computer Graphics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
+  - English (Topics in Computer Graphics) [Link to file for CS351 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Tópicos en Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
+  - Espanol (Tópicos en Computación Gráfica) [Link to file for CS351 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS366
-  - English (Robotics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
+  - English (Robotics) [Link to file for CS366 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Robótica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
+  - Espanol (Robótica) [Link to file for CS366 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS392
-  - English (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
+  - English (Tópicos en Ingeniería de Software) [Link to file for CS392 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
+  - Espanol (Tópicos en Ingeniería de Software) [Link to file for CS392 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB309
-  - English (Bioinformatics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
+  - English (Bioinformatics) [Link to file for CB309 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Bioinformática) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
+  - Espanol (Bioinformática) [Link to file for CB309 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ET301
-  - English (Entrerpreneurship II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
+  - English (Entrerpreneurship II) [Link to file for ET301 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Formación de Empresas de Base Tecnológica II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
+  - Espanol (Formación de Empresas de Base Tecnológica II) [Link to file for ET301 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP211
-  - English (Scientific Research Methodology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
+  - English (Scientific Research Methodology) [Link to file for FP211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Metodología de la Investigación Científica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
+  - Espanol (Metodología de la Investigación Científica) [Link to file for FP211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS365
-  - English (Evolutionary Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
+  - English (Evolutionary Computing) [Link to file for CS365 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Computación Evolutiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
+  - Espanol (Computación Evolutiva) [Link to file for CS365 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS3P2
-  - English (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
+  - English (Cloud Computing) [Link to file for CS3P2 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
+  - Espanol (Cloud Computing) [Link to file for CS3P2 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS3P3
-  - English (Internet of Things) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
+  - English (Internet of Things) [Link to file for CS3P3 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Internet de las Cosas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
+  - Espanol (Internet de las Cosas) [Link to file for CS3P3 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CS404
-  - English (Final Project III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
+  - English (Final Project III) [Link to file for CS404 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Proyecto de Final de Carrera III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
+  - Espanol (Proyecto de Final de Carrera III) [Link to file for CS404 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=ET302
-  - English (Entrerpreneurship III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
+  - English (Entrerpreneurship III) [Link to file for ET302 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Formación de Empresas de Base Tecnológica III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
+  - Espanol (Formación de Empresas de Base Tecnológica III) [Link to file for ET302 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex)
     missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP311
-  - English (National Reality and Globalization) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
+  - English (National Reality and Globalization) [Link to file for FP311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Realidad Nacional y Globalización) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
+  - Espanol (Realidad Nacional y Globalización) [Link to file for FP311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=HM102
-  - English (Ethics and Citizens) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
+  - English (Ethics and Citizens) [Link to file for HM102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
-  - Espanol (Ética y Ciudadanía) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
+  - Espanol (Ética y Ciudadanía) [Link to file for HM102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex)
     missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 Dictionaries (Missing keys)
