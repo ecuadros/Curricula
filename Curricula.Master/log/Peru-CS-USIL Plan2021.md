@@ -1,343 +1,412 @@
-[43m[30mCourse=CS111[0m
-	[44mEnglish[0m (Computing Foundations) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Introducción a la Ciencia de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS1D1[0m
-	[44mEnglish[0m (Discrete Structures I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Estructuras Discretas I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB111[0m
-	[44mEnglish[0m (Pre Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Fundamentos de Cálculo) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID101[0m
-	[44mEnglish[0m (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CO111[0m
-	[44mEnglish[0m (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Lenguaje y Comunicación I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS112[0m
-	[44mEnglish[0m (Objects oriented programming I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Programación Orientada a Objetos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS1D2[0m
-	[44mEnglish[0m (Discrete Structures II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Estructuras Discretas II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB211[0m
-	[44mEnglish[0m (Single Variable Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Cálculo de una Variable) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID102[0m
-	[44mEnglish[0m (Technical and professional English II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Inglés II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CO112[0m
-	[44mEnglish[0m (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Lenguaje y Comunicación II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS113[0m
-	[44mEnglish[0m (Objects oriented programming II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Programación Orientada a Objetos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS221[0m
-	[44mEnglish[0m (Computer Systems Architecture) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Arquitectura de Computadores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS2B1[0m
-	[44mEnglish[0m (Platform Based Development) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Desarrollo Basado en Plataformas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB212[0m
-	[44mEnglish[0m (Multiple Variable Calculation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Cálculo en varias Variables) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID201[0m
-	[44mEnglish[0m (Technical and professional English III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Inglés III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CE101[0m
-	[44mEnglish[0m (Business Administration) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Administración para los negocios) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS210[0m
-	[44mEnglish[0m (Algorithms and Data Structures) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Algoritmos y Estructuras de Datos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS211[0m
-	[44mEnglish[0m (Theory of Computation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Teoría de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS2701[0m
-	[44mEnglish[0m (Data Management) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Gerenciamiento de Datos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS2S1[0m
-	[44mEnglish[0m (Operating systems ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Sistemas Operativos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID202[0m
-	[44mEnglish[0m (English  IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Inglés IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CA211[0m
-	[44mEnglish[0m (Descriptive and Inferential Statistics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Estadística Descriptiva e Inferencial) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS212[0m
-	[44mEnglish[0m (Analysis and Design of Algorithms) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Análisis y Diseño de Algoritmos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS272[0m
-	[44mEnglish[0m (Data Management II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Gerenciamiento de Datos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS291[0m
-	[44mEnglish[0m (Software Engineering I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Ingeniería de Software I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS342[0m
-	[44mEnglish[0m (Compilers) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Compiladores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB121[0m
-	[44mEnglish[0m (General Physics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Física General) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID203[0m
-	[44mEnglish[0m (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Inglés V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CE142[0m
-	[44mEnglish[0m (Cost Accounting) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Contabilidad de Costos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS261[0m
-	[44mEnglish[0m (Intelligent Systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Sistemas Inteligentes) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS292[0m
-	[44mEnglish[0m (Software Engineering II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Ingeniería de Software II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS311[0m
-	[44mEnglish[0m (Competitive Programming) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Programación Competitiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS312[0m
-	[44mEnglish[0m (Advanced Data Structures ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Estructuras de Datos Avanzadas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS393[0m
-	[44mEnglish[0m (Information systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Sistemas de Infomación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB311[0m
-	[44mEnglish[0m (Mathematics applied to computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Matemática aplicada a la computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ID204[0m
-	[44mEnglish[0m (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Inglés VI) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CE131[0m
-	[44mEnglish[0m (Business Finance) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Finanzas Empresariales) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS231[0m
-	[44mEnglish[0m (Networking and Telecommunication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Redes y Telecomunicaciones) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS2H1[0m
-	[44mEnglish[0m (User Experience (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Experiencia de Usuario (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS391[0m
-	[44mEnglish[0m (Software Engineering III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Ingeniería de Software III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS401[0m
-	[44mEnglish[0m (Methodology of Computation Research ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Metodología de la Investigación en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS251[0m
-	[44mEnglish[0m (Computer graphics ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS262[0m
-	[44mEnglish[0m (Machine learning) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Aprendizaje Automático) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB141[0m
-	[44mEnglish[0m (Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Biología) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=FP201[0m
-	[44mEnglish[0m (Business Opportunities) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Oportunidades de Negocio) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CE111[0m
-	[44mEnglish[0m (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS281[0m
-	[44mEnglish[0m (Computing in Society) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Computación en la Sociedad) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS3I1[0m
-	[44mEnglish[0m (Computer Security) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Seguridad en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS3P1[0m
-	[44mEnglish[0m (Parallel and Distributed Computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Computación Paralela y Distribuída) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS402[0m
-	[44mEnglish[0m (Capstone Project I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Proyecto de Final de Carrera I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS2T1[0m
-	[44mEnglish[0m (Computational Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Biología Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS361[0m
-	[44mEnglish[0m (Computational Vision) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Visión Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ET201[0m
-	[44mEnglish[0m (Entrerpreneurship I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Formación de Empresas de Base Tecnológica I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS370[0m
-	[44mEnglish[0m (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS403[0m
-	[44mEnglish[0m (Final Project II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Proyecto de Final de Carrera II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS351[0m
-	[44mEnglish[0m (Topics in Computer Graphics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Tópicos en Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS366[0m
-	[44mEnglish[0m (Robotics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Robótica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS392[0m
-	[44mEnglish[0m (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CB309[0m
-	[44mEnglish[0m (Bioinformatics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Bioinformática) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ET301[0m
-	[44mEnglish[0m (Entrerpreneurship II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Formación de Empresas de Base Tecnológica II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=FP211[0m
-	[44mEnglish[0m (Scientific Research Methodology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Metodología de la Investigación Científica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS365[0m
-	[44mEnglish[0m (Evolutionary Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Computación Evolutiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS3P2[0m
-	[44mEnglish[0m (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS3P3[0m
-	[44mEnglish[0m (Internet of Things) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Internet de las Cosas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=CS404[0m
-	[44mEnglish[0m (Final Project III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Proyecto de Final de Carrera III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=ET302[0m
-	[44mEnglish[0m (Entrerpreneurship III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Formación de Empresas de Base Tecnológica III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
-		missing=[43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=FP311[0m
-	[44mEnglish[0m (National Reality and Globalization) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Realidad Nacional y Globalización) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-[43m[30mCourse=HM102[0m
-	[44mEnglish[0m (Ethics and Citizens) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
-	[44mEspanol[0m (Ética y Ciudadanía) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
-		missing=[43m[30moutcomes[0m{USIL21}, [43m[30mspecificoutcomes[0m{USIL21}, [43m[30mcompetences[0m{USIL21}, 
+## Errors detected in courses
+- Course=CS111
+  - English (Computing Foundations) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Introducción a la Ciencia de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS1D1
+  - English (Discrete Structures I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Estructuras Discretas I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB111
+  - English (Pre Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Fundamentos de Cálculo) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID101
+  - English (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (English I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CO111
+  - English (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Lenguaje y Comunicación I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS112
+  - English (Objects oriented programming I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Programación Orientada a Objetos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS1D2
+  - English (Discrete Structures II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Estructuras Discretas II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB211
+  - English (Single Variable Calculus) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Cálculo de una Variable) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID102
+  - English (Technical and professional English II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Inglés II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CO112
+  - English (Language and Communication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Lenguaje y Comunicación II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS113
+  - English (Objects oriented programming II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Programación Orientada a Objetos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS221
+  - English (Computer Systems Architecture) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Arquitectura de Computadores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS2B1
+  - English (Platform Based Development) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Desarrollo Basado en Plataformas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB212
+  - English (Multiple Variable Calculation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Cálculo en varias Variables) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID201
+  - English (Technical and professional English III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Inglés III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CE101
+  - English (Business Administration) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Administración para los negocios) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS210
+  - English (Algorithms and Data Structures) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Algoritmos y Estructuras de Datos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS211
+  - English (Theory of Computation) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Teoría de la Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS2701
+  - English (Data Management) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Gerenciamiento de Datos I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS2S1
+  - English (Operating systems ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Sistemas Operativos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID202
+  - English (English  IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Inglés IV) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CA211
+  - English (Descriptive and Inferential Statistics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Estadística Descriptiva e Inferencial) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS212
+  - English (Analysis and Design of Algorithms) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Análisis y Diseño de Algoritmos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS272
+  - English (Data Management II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Gerenciamiento de Datos II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS291
+  - English (Software Engineering I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Ingeniería de Software I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS342
+  - English (Compilers) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Compiladores) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB121
+  - English (General Physics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Física General) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID203
+  - English (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Inglés V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CE142
+  - English (Cost Accounting) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Contabilidad de Costos) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS261
+  - English (Intelligent Systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Sistemas Inteligentes) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS292
+  - English (Software Engineering II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Ingeniería de Software II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS311
+  - English (Competitive Programming) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Programación Competitiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS312
+  - English (Advanced Data Structures ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Estructuras de Datos Avanzadas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS393
+  - English (Information systems) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Sistemas de Infomación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB311
+  - English (Mathematics applied to computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Matemática aplicada a la computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ID204
+  - English (Technical and professional English V) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Inglés VI) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CE131
+  - English (Business Finance) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Finanzas Empresariales) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS231
+  - English (Networking and Telecommunication) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Redes y Telecomunicaciones) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS2H1
+  - English (User Experience (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Experiencia de Usuario (UX)) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS391
+  - English (Software Engineering III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Ingeniería de Software III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS401
+  - English (Methodology of Computation Research ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Metodología de la Investigación en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS251
+  - English (Computer graphics ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS262
+  - English (Machine learning) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Aprendizaje Automático) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB141
+  - English (Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Biología) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=FP201
+  - English (Business Opportunities) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Oportunidades de Negocio) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CE111
+  - English (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Marketing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS281
+  - English (Computing in Society) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Computación en la Sociedad) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS3I1
+  - English (Computer Security) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Seguridad en Computación) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS3P1
+  - English (Parallel and Distributed Computing ) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Computación Paralela y Distribuída) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS402
+  - English (Capstone Project I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Proyecto de Final de Carrera I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS2T1
+  - English (Computational Biology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Biología Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS361
+  - English (Computational Vision) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Visión Computacional) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ET201
+  - English (Entrerpreneurship I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Formación de Empresas de Base Tecnológica I) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS370
+  - English (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Big Data) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS403
+  - English (Final Project II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Proyecto de Final de Carrera II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS351
+  - English (Topics in Computer Graphics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Tópicos en Computación Gráfica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS366
+  - English (Robotics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Robótica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS392
+  - English (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Tópicos en Ingeniería de Software) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CB309
+  - English (Bioinformatics) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Bioinformática) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ET301
+  - English (Entrerpreneurship II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Formación de Empresas de Base Tecnológica II) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=FP211
+  - English (Scientific Research Methodology) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Metodología de la Investigación Científica) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS365
+  - English (Evolutionary Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Computación Evolutiva) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS3P2
+  - English (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Cloud Computing) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS3P3
+  - English (Internet of Things) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Internet de las Cosas) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=CS404
+  - English (Final Project III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Proyecto de Final de Carrera III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=ET302
+  - English (Entrerpreneurship III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Formación de Empresas de Base Tecnológica III) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex
+    missing=specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=FP311
+  - English (National Reality and Globalization) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Realidad Nacional y Globalización) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
+- Course=HM102
+  - English (Ethics and Citizens) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - Espanol (Ética y Ciudadanía) file: ../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex
+    missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
 Dictionaries (Missing keys)
 Espanol
 	This language is complete !
