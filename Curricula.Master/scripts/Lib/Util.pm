@@ -110,7 +110,7 @@ sub green($)
 sub print_color($)
 {
 	my ($msg) = (@_);
-	print yellow($msg);
+	print yellow($msg)."\n";
 }
 
 #  ok

@@ -256,7 +256,7 @@ sub parse_environments_in_header($$$$)
 		else
 		{
 			$Common::error{courses}{$codcour}{lang}{$lang}{file}     = $fullname;
-			$Common::error{courses}{$codcour}{lang}{$lang}{missing} .= Util::yellow("$env")."{$version}, ";
+			$Common::error{courses}{$codcour}{lang}{$lang}{missing} .= "$env"."{$version}, ";
 			#if($codcour eq "CS111")
 			#{	#Util::print_message(Util::yellow("$codcour")."=>".Util::yellow($CommonTexFile)."\n$CommonTxt".Util::yellow("*************"));		
 			#	Util::print_message("I did not find: ".Util::yellow($env)." in $fullname");
@@ -405,6 +405,7 @@ sub get_filtered_common_file($$)
 sub read_syllabus_info($$$)
 {
 	my ($codcour, $semester, $lang)   = (@_);
+	#Util::print_message("xyz read_syllabus_info($codcour, $semester, $lang)");
 	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
 	Util::print_message(sprintf("\t%-10s:%s ...","Reading", $fullname));
 	my $syllabus_in	= Util::read_file($fullname);
@@ -693,22 +694,28 @@ sub generate_tex_syllabi_files()
 			foreach my $lang (@{$Common::config{SyllabusLangsList}})
 			{
 				my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
-				Util::print_message(Util::yellow(">>>>>>> genenerate_tex_syllabus_file: $codcour"). "-> $output_file ...");
+				Util::print_message(Util::yellow(">> genenerate_tex_syllabus_file: $codcour"). "-> $output_file ...");
+				# Util::print_message(Util::green("read_syllabus_info($codcour, $semester, $lang);"));
 				my %map = read_syllabus_info($codcour, $semester, $lang);
 				$map{AREA}			= $Common::config{area};
+				#Util::print_message("xyz 10");
 				genenerate_tex_syllabus_file($codcour_label, $Common::config{syllabus_template}, "UNITS_SYLLABUS", $output_file, $lang, %map);
-
+				#Util::print_message("xyz 50");
 				# Copy bib files
-				my $syllabus_bib = Common::get_template("InSyllabiContainerDir")."/$map{IN_BIBFILE}.bib";
+				my $syllabus_bib = Common::get_expanded_template("InSyllabiContainerDir", $lang)."/$map{IN_BIBFILE}.bib";
 				#Util::print_message("cp $syllabus_bib $OutputTexDir");
 				eval { system("cp $syllabus_bib $OutputTexDir"); }
 
 				#eval { system("cp $syllabus_bib $OutputTexDir"); }
 				#warn $@ if $@;
 			}
+			# ! Pending exit here
+			#if( $codcour eq "CS111" )
+			#{	exit;	}
 # 			genenerate_tex_syllabus_file($codcour, $Common::config{sumilla_template} , "UNITS_SUMILLA" , "$OutputTexDir/$codcour-sumilla.tex", %map);
 		}
 	}
+
 	#system("chgrp curricula $OutputTexDir/*");
 	my $firstpage_file = Common::get_template("in-syllabus-first-page-file");
 	my $command = "cp $firstpage_file $OutputTexDir/.";
@@ -1076,9 +1083,6 @@ sub generate_syllabi_include()
 			my $lang_prefix	= $Common::config{dictionaries}{$lang}{lang_prefix};
 			my $course_fullpath = Common::get_syllabus_full_path($codcour, $semester, $lang);
 			generate_formatted_syllabus($codcour, $course_fullpath, "$OutputTexDir/$codcour-orig-$lang_prefix.tex", $lang);
-			#if($codcour =~ m/CS2H/g)
-			#	{	Util::print_message("GenSyllabi::generate_formatted_syllabus $codcour ...");  exit; }
-
 			$course_fullpath =~ s/(.*)\.tex/$1/g;
 			$output_tex .= "$newpage\\input{$OutputTexDir/$codcour-orig-$lang_prefix}";
 			$output_tex .= "% $codcour $Common::course_info{$codcour}{$lang}{course_name}\n";

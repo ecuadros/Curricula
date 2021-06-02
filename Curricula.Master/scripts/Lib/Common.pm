@@ -615,7 +615,8 @@ sub set_version($)
 sub set_global_variables()
 {
 	$config{bibstyle}   = "apalike";
-	$config{InScriptsDir}	= "$config{in}/scripts";
+	$config{InScriptsDir}	 = "$config{in}/scripts";
+	$config{GithubMasterDir} = "https://github.com/ecuadros/Curricula/edit/master/Curricula.Master";
 
 	system("mkdir -p $config{OutputInstDir}");
 
@@ -705,7 +706,7 @@ sub set_initial_paths()
 	$path_map{InStyDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.sty";
 	$path_map{InStyAllDir}				= $path_map{InDir}."/All.sty";
 	$path_map{InFigsDir}				= $path_map{InDir}."/figs";
-	$path_map{InSyllabiContainerDir}	= $path_map{InLangDefaultDir}."/cycle/$config{Semester}/Syllabi";
+	$path_map{InSyllabiContainerDir}	= $path_map{InLangDir}."/cycle/$config{Semester}/Syllabi";
 	$path_map{InEmptySyllabiDir}		= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/<LANG-EXTENDED>"; 
 	$path_map{InEmptySyllabiCommonDir}	= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/Common"; 
 
@@ -957,6 +958,7 @@ sub set_initial_paths()
 
 	$path_map{"OutputDisciplinesList-file"}			= $path_map{OutHtmlBase}."/disciplines.html";
 	$path_map{"output-errors-file"}					= $path_map{OutputLogDir}."/$config{country_without_accents}-$config{area}-$config{institution} $config{Plan}.txt";
+	$path_map{"output-errors-markdown-file"}		= $path_map{OutputLogDir}."/$config{country_without_accents}-$config{area}-$config{institution} $config{Plan}.md";
 	Util::check_point("set_initial_paths");
 }
 
@@ -965,8 +967,9 @@ sub get_file_name($)
 	my ($tpl) = (@_);
 	return get_template($tpl);
 }
-sub get_list_of_dirs($);  # it is just a prototype to avoid a warning into the for
-sub get_list_of_dirs($)
+
+sub get_list_of_dirs_from_root($);  # it is just a prototype to avoid a warning into the for
+sub get_list_of_dirs_from_root($)
 {
 	my ($root) = (@_);
 	#Util::print_message("root=$root");
@@ -975,14 +978,22 @@ sub get_list_of_dirs($)
 	{
 		push(@list, "$root/$dir");
 		if( -d "$root/$dir" )
-		{	push(@list, get_list_of_dirs("$root/$dir"));	}
+		{	push(@list, get_list_of_dirs_from_root("$root/$dir"));	}
 	}
 	return @list;
+}
+
+sub get_list_of_dirs_by_lang($)
+{
+	my ($lang) = (@_);
+	my $root = get_expanded_template("InSyllabiContainerDir", $lang);
+	return get_list_of_dirs_from_root($root);
 }
 
 # ok
 sub read_discipline_config()
 {
+	#my ($lang) = (@_);
 	my $DisciplineConfigFile = get_template("discipline-config");
 	my %discipline_cfg	= read_config_file($DisciplineConfigFile);
 	push(@{$config{config_file}}, $DisciplineConfigFile);
@@ -993,8 +1004,7 @@ sub read_discipline_config()
 # 		print "country-info: key=$key, value=$value\n";
 		$config{$key} = $value;
 	}
-	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
-	@{$config{SyllabiDirs}} = get_list_of_dirs($syllabus_base_dir);
+	# my $syllabus_base_dir = get_extended_template("InSyllabiContainerDir", $lang);
 	%{$config{sub_areas_priority}} = ();
 	my $count = 0;
 	foreach my $axe (split(",", $config{SpiderChartAxes}))
@@ -1004,22 +1014,21 @@ sub read_discipline_config()
 
 sub get_list_of_dirs_to_find_syllabi($)
 {
-	my ($codcour) = (@_);
-	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	my ($codcour, $lang) = (@_);
 	my $coursefile = $course_info{$codcour}{coursefile};
 	my $dirlist = "";
-	foreach my $dir (@{$config{SyllabiDirs}})
+	foreach my $dir (@{$config{SyllabiDirs}{$lang}})
 	{	$dirlist .= "$dir/$coursefile.tex\n";		}
 	return $dirlist;
 }
 
 # ok
-sub get_syllabus_dir($)
+sub get_syllabus_dir($$)
 {
-	my ($codcour) = (@_);
-	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	my ($codcour, $lang) = (@_);
 	my $coursefile = $course_info{$codcour}{coursefile};
-	foreach my $dir (@{$config{SyllabiDirs}})
+	my $syllabus_base_dir = get_expanded_template("InSyllabiContainerDir", $lang);
+	foreach my $dir (@{$config{SyllabiDirs}{$lang}})
 	{
 		my $file = "$syllabus_base_dir/$dir/$coursefile";
 		if(-e $file.".tex" or -e $file.".bib")
@@ -1053,12 +1062,16 @@ sub create_common_file($$)
 sub get_syllabus_full_path($$$)
 {
 	my ($codcour, $semester, $lang) = (@_);
+	Util::print_message("get_syllabus_full_path($codcour, $semester, $lang)");
 	my $codcourfile = $course_info{$codcour}{coursefile};
-	foreach my $dir (@{$config{SyllabiDirs}})
+	#print Dumper(\@{$config{SyllabiDirs}{$lang}});
+	foreach my $dir (@{$config{SyllabiDirs}{$lang}})
 	{
 		my $file = "$dir/$codcourfile";
-		if(-e $file.".tex")
-		{	return $file.".tex";	}
+		if(-e "$file.tex")
+		{	#Util::print_message("xyz 4 $file.tex");
+			return $file.".tex";	
+		}
 		#if(-e $file.".bib")
 		#{	return $file.".bib";	}
 	}
@@ -1071,13 +1084,14 @@ sub get_syllabus_full_path($$$)
 		$Common::error{courses}{$codcour}{others}{"AtEmpty$lang"} = $msg;
 		return $new_file;	
 	}
-	my $syllabus_base_dir = get_template("InSyllabiContainerDir");
+	my $syllabus_base_dir = get_expanded_template("InSyllabiContainerDir", $lang);
 	my $course_name = $course_info{$codcour}{$lang}{course_name};
 	my $course_type = $course_info{$codcour}{course_type};
 	my $msg = "$course_name, ".format_semester($semester, $lang);
+
 	Util::print_color("I could not find course $codcour ($msg) ...\n".
 					"I was looking for that file at: $syllabus_base_dir");
-	print("Do you want to create an empty syllabi? [y]/n: ");
+	print("Do you want to create ".Util::yellow($new_file)."? [y]/n: ");
 	my $key = <STDIN>;
 	chomp $key;
 	$key = uc($key);
@@ -2174,7 +2188,6 @@ sub set_initial_configuration($)
 
 	# Read configuration for this discipline
 	read_discipline_config();
-# 	print Dumper(\@{$config{SyllabiDirs}}); exit;
 
 	read_config(get_template("all-config"));
 
@@ -2233,6 +2246,7 @@ sub set_initial_configuration($)
 		foreach my $key (keys %{$config{dictionaries}{$lang}})
 		{	$config{dictionaries}{terms}{$key} = "";	}
 		#print Dumper(\%{$config{dictionaries}{terms}});
+		@{$config{SyllabiDirs}{$lang}} = get_list_of_dirs_by_lang($lang);
 	}
 	#dump_dictionary_errors();
 
@@ -2974,10 +2988,11 @@ sub replace_accents_in_file($)
 # ok
 # sub replace_special_characters_in_syllabi()
 # {
-# 	my $base_syllabi = get_template("InSyllabiContainerDir");
+# =====>	my $base_syllabi = get_expanded_template("InSyllabiContainerDir", $lang);
 #
 # # 	foreach my $codcour (@codcour_list_sorted)
-# 	foreach my $localdir (@{$config{SyllabiDirs}})
+# =======> ? @{$config{SyllabiDirs}{$lang}} = get_list_of_dirs($lang);
+# 	foreach my $localdir (@{$config{SyllabiDirs}{$lang}})
 # 	{
 # 		my $dir = "$base_syllabi/$localdir";
 # 		my @filelist = ();
@@ -4175,10 +4190,11 @@ sub sort_courses()
 	Util::check_point("sort_courses");
 }
 
-sub get_list_of_bib_files()
+sub get_list_of_bib_files($)
 {
+	my ($lang) = (@_);
     Util::precondition("gen_syllabi");
-    my $syllabus_container_dir 	= Common::get_template("InSyllabiContainerDir");
+    my $syllabus_container_dir 	= Common::get_expanded_template("InSyllabiContainerDir", $lang);
     for(my $semester = 1; $semester <= $Common::config{n_semesters}; $semester++)
     {
 	foreach my $codcour (@{$Common::courses_by_semester{$semester}})
@@ -5596,7 +5612,7 @@ sub dump_dictionary_errors()
 	return $output_txt;
 }
 
-sub dump_outcomes_errors()
+sub dump_outcomes_errors_log()
 {
 	#foreach my $key (keys %outcomes_macros)
 	#	{	$Common::config{outcomes_keys}{$key} = "";	}
@@ -5631,12 +5647,60 @@ sub dump_outcomes_errors()
 		{	$output_txt .= "\t".Util::yellow($env)."\n";
 			foreach  my $key (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}{$env}})
 			{	# $output_txt .= sprintf("\t%-15s: (%s)\n", $env, join(", ", @{$Common::error{outcomes_and_competencies}{$lang}{$env}})) ;
-				$output_txt .= sprintf("\t\t%-5s: ", Util::yellow($key));
-				my ($list_of_courses, $sep) = ("", "");
+				my ($list_of_courses, $sep, $count) = ("", "", 0);
 				foreach  my $codcour ( @{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}})
-				{	$list_of_courses .= "$sep$codcour";		$sep = ",";
+				{	$list_of_courses .= "$sep$codcour";		$sep = ","; 	$count++;
 				}
-				$output_txt .= "$list_of_courses\n";
+				$output_txt .= sprintf("\t\t%-5s(%d): %s\n", Util::yellow($key), $count,$list_of_courses);
+			}
+		}
+	}
+	
+	$output_txt .= "\n";
+	return $output_txt;
+}
+
+sub dump_outcomes_errors_markdown()
+{
+	#foreach my $key (keys %outcomes_macros)
+	#	{	$Common::config{outcomes_keys}{$key} = "";	}
+	#	@{$Common::config{macros}{$lang}}{keys %outcomes_macros} = values %outcomes_macros;
+	my $output_txt 			= "## Errors detected in Outcomes\n";
+	foreach my $lang (@{$config{SyllabusLangsList}})
+	{
+		my $program_info_file   = Common::get_expanded_template("this-program-info-file", $lang);
+		my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
+		$output_txt .= "Outcomes (Missing keys) cited in $program_info_file (\\OutcomesList)\n";
+		$output_txt .= "- $lang ($outcomes_macros_file)\n";
+		my $count = 0;
+		foreach my $key (sort {$a cmp $b} keys %{$Common::config{outcomes_keys}})
+		{
+			if( not defined($Common::config{macros}{outcomes}{$lang}{$key}) )
+			{
+				$output_txt .= sprintf("  - %-15s\n", $key);
+				$count++;
+			}
+		}
+		if( $count == 0 )
+		{	$output_txt .= "    - ** This language is complete !**";	}
+		$output_txt .= "\n\n";
+	}
+	$output_txt .= "\n";
+
+	$output_txt .= "### Outcomes, Competencies, Specificoutcomes cited in courses **but not defined !**\n";
+	foreach my $lang (@{$config{SyllabusLangsList}})
+	{	$output_txt .= sprintf("- %-10s\n", $lang);
+		#if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
+		#{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
+		foreach my $env (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}})
+		{	$output_txt .= "  - $env\n";
+			foreach  my $key (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}{$env}})
+			{	# $output_txt .= sprintf("\t%-15s: (%s)\n", $env, join(", ", @{$Common::error{outcomes_and_competencies}{$lang}{$env}})) ;
+				my ($list_of_courses, $sep, $count) = ("", "", 0);
+				foreach  my $codcour ( @{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}})
+				{	$list_of_courses .= "$sep$codcour";		$sep = ","; 	$count++;
+				}
+				$output_txt .= sprintf("    - %-5s(%d): %s\n", $key, $count, $list_of_courses);
 			}
 		}
 	}
@@ -5647,21 +5711,21 @@ sub dump_outcomes_errors()
 
 sub dump_course_errors()
 {
-	my $output_txt = "";
+	my $output_txt = "## Errors detected in courses\n";
 	foreach my $codcour (@codcour_list_sorted)
 	{
-		$output_txt .= Util::yellow("Course=$codcour")."\n";
+		$output_txt .= "- Course=$codcour\n";
 		#$output_txt .= "\tfile=$Common::error{courses}{$codcour}{file}\n";
 		if( defined($Common::error{courses}{$codcour}{lang}) )
 		{	foreach my $lang (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}})
 			{	
-				$output_txt .= "\t".Util::blue($lang)." ($course_info{$codcour}{$lang}{course_name}) file: $Common::error{courses}{$codcour}{lang}{$lang}{file}\n";
+				$output_txt .= "  - $lang ($course_info{$codcour}{$lang}{course_name}) [Link to file for $codcour here]($config{GithubMasterDir}/$Common::error{courses}{$codcour}{lang}{$lang}{file})\n";
 				if( defined($Common::error{courses}{$codcour}{lang}{$lang}) )
 				{
 					foreach my $env (sort {$a cmp $b} keys %{$Common::error{courses}{$codcour}{lang}{$lang}})
 					{
 						if(not $env eq "file")
-						{	$output_txt .= ("\t"x2)."$env=$Common::error{courses}{$codcour}{lang}{$lang}{$env}\n";	}
+						{	$output_txt .= ("  "x2)."- $env=$Common::error{courses}{$codcour}{lang}{$lang}{$env}\n";	}
 					}
 				}
 			}
@@ -5681,7 +5745,7 @@ sub dump_course_errors()
 		#		$output_txt .= ("\t"x2)."$key=$Common::error{courses}{$codcour}{competencies}{$key}\n";
 		#	}
 		#}
-		# $output_txt .= "\n";
+		$output_txt .= "\n";
 	}
 	return $output_txt;
 }
@@ -5717,9 +5781,9 @@ sub dump_errors()
 	my $output_txt = "";
 	$output_txt .= dump_course_errors();
 	$output_txt .= dump_dictionary_errors();
-	$output_txt .= dump_outcomes_errors();
+	$output_txt .= dump_outcomes_errors_markdown();
 	$output_txt .= dump_general_errors();
-	my $output_errors_file = get_template("output-errors-file");
+	my $output_errors_file = get_template("output-errors-markdown-file");
 	Util::write_file($output_errors_file, $output_txt);
 	Util::print_message("Dumped errors ! ".Util::green($output_errors_file));
 }
