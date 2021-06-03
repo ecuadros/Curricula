@@ -702,15 +702,15 @@ sub set_initial_paths()
 	$path_map{InLangDefaultDir}			= $config{InLangDefaultDir};
 	$path_map{InLangDir}				= $path_map{InDir}."/lang/<LANG-EXTENDED>";
 	$path_map{InAllTexDir}				= $path_map{InDir}."/All.tex";
-	$path_map{InTexDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.tex";
-	$path_map{InStyDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}.sty";
+	$path_map{InTexDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}/tex";
+	$path_map{InStyDir}					= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}/sty";
+	$path_map{InOthersDir}				= $path_map{InDir}."/lang/<LANG-EXTENDED>/$Disciplines/$config{discipline}/$config{area}/others";
 	$path_map{InStyAllDir}				= $path_map{InDir}."/All.sty";
 	$path_map{InFigsDir}				= $path_map{InDir}."/figs";
 	$path_map{InSyllabiContainerDir}	= $path_map{InLangDir}."/cycle/$config{Semester}/Syllabi";
 	$path_map{InEmptySyllabiDir}		= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/<LANG-EXTENDED>"; 
 	$path_map{InEmptySyllabiCommonDir}	= "$path_map{InSyllabiContainerDir}/EmptySyllabi/<COUNTRY>/<INST>/<AREA>/Common"; 
 
-	$path_map{InOthersDir}				= $path_map{InLangDefaultDir}."/$config{area}.others";
 	$path_map{InHtmlDir}				= $path_map{InLangDefaultDir}."/All.html";
 	$path_map{InTexAllDir}				= $path_map{InLangDefaultDir}."/All.tex";
 	$path_map{InDisciplinesBaseDir}		= $path_map{InDir}."/$Disciplines";
