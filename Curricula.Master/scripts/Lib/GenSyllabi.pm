@@ -10,6 +10,9 @@ use Switch;
 use Lib::Common;
 use strict;
 my @versioned_environments = ("outcomes", "specificoutcomes", "competences");
+my %prefix_environments    = ("outcomes"         => "outcome", 
+						      "specificoutcomes" => "specificoutcome", 
+						      "competences"      => "competence");
 
 sub get_environment($$$)
 {
@@ -215,17 +218,20 @@ sub parse_environments_in_header($$$$)
 					($tail) = ($1);
 					my @params = $tail =~ m/\{(.*?)\}/g;
 					switch($env)
-					{	case ["outcomes", "competences"] 
+					{	my $prefix = $prefix_environments{$env};
+						case ["outcomes", "competences"] 
 						{ 	#print $env;
 							my ($key, $value) = ($params[0], $params[1]);
 							# \item \ShowOutcome{a}{2}
 							# \item \ShowCompetence{C1}{a}
 							$Common::course_info{$codcour}{$lang}{$env}{$version}{$key} = $value;
 							$Common::config{course_by_outcome}{$params[0]}{$codcour} = "";
-							# ! Pending we have to verify this outcome, competences is defined
-							              # $Common::config{macros}{outcomes}{$lang}{outcomem}
-							if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
-							{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);		}
+							if( not defined($Common::config{macros}{outcomes}{$lang}{"$prefix$key"}) )
+							{	
+								Util::print_message("Common::config{macros}{outcomes}{$lang}{$prefix$key}=".$Common::config{macros}{outcomes}{$lang}{"$prefix$key"});
+								#print Dumper(\%{$Common::config{macros}{outcomes}{$lang}});
+								push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);		
+							}
 						}	#\% ($codcour, $semester, $lang)
 						case "specificoutcomes"  
 						{	# Save the specific outcome
@@ -234,9 +240,12 @@ sub parse_environments_in_header($$$$)
 							# \item \ShowSpecificOutcome{a}{3}{}
 							$Common::course_info{$codcour}{$lang}{outcomes}{$version}{specificoutcomes}{$key} = $params[2];
 							$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";
-							# ! Pending we have to verify this specificoutcome is defined
-							if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
-							{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
+							if( not defined($Common::config{macros}{outcomes}{$lang}{"$prefix$key"}) )
+							{	
+								Util::print_message("Common::config{macros}{outcomes}{$lang}{$prefix$key}=".$Common::config{macros}{outcomes}{$lang}{"$prefix$key"});
+								#print Dumper(\%{$Common::config{macros}{outcomes}{$lang}});
+								push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);		
+							}
 						}
 					}
 					

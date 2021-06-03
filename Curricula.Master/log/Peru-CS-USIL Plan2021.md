@@ -24,8 +24,8 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CO111
-  - English (Language and Communication) [Link to file for CO111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CO111.tex)
-    - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - English (Language and Communication) [Link to file for CO111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/Communication/CO111.tex)
+    - missing=specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Lenguaje y Comunicación I) [Link to file for CO111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
@@ -54,7 +54,7 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CO112
-  - English (Language and Communication) [Link to file for CO112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CO112.tex)
+  - English (Language and Communication) [Link to file for CO112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/Communication/CO112.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Lenguaje y Comunicación II) [Link to file for CO112 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -73,12 +73,12 @@
 
 - Course=CS2B1
   - English (Platform Based Development) [Link to file for CS2B1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex)
-    - missing=specificoutcomes{USIL21}, competences{USIL21}, 
+    - missing=competences{USIL21}, 
   - Espanol (Desarrollo Basado en Plataformas) [Link to file for CS2B1 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex)
-    - missing=specificoutcomes{USIL21}, competences{USIL21}, 
+    - missing=competences{USIL21}, 
 
 - Course=CB212
-  - English (Multiple Variable Calculation) [Link to file for CB212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CB212.tex)
+  - English (Multiple Variable Calculation) [Link to file for CB212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB212.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Cálculo en varias Variables) [Link to file for CB212 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB212.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -90,7 +90,7 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE101
-  - English (Business Administration) [Link to file for CE101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CE101.tex)
+  - English (Business Administration) [Link to file for CE101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Administración para los negocios) [Link to file for CE101 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -126,7 +126,7 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CA211
-  - English (Descriptive and Inferential Statistics) [Link to file for CA211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CA211.tex)
+  - English (Descriptive and Inferential Statistics) [Link to file for CA211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CA211.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Estadística Descriptiva e Inferencial) [Link to file for CA211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CA211.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -168,7 +168,7 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE142
-  - English (Cost Accounting) [Link to file for CE142 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CE142.tex)
+  - English (Cost Accounting) [Link to file for CE142 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Contabilidad de Costos) [Link to file for CE142 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE142.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -204,8 +204,8 @@
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB311
-  - English (Mathematics applied to computing ) [Link to file for CB311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CB311.tex)
-    - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+  - English (Mathematics applied to computing ) [Link to file for CB311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB311.tex)
+    - missing=specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Matemática aplicada a la computación) [Link to file for CB311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
@@ -216,7 +216,7 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE131
-  - English (Business Finance) [Link to file for CE131 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CE131.tex)
+  - English (Business Finance) [Link to file for CE131 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Finanzas Empresariales) [Link to file for CE131 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -258,19 +258,19 @@
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CB141
-  - English (Biology) [Link to file for CB141 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CB141.tex)
+  - English (Biology) [Link to file for CB141 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB141.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Biología) [Link to file for CB141 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB141.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP201
-  - English (Business Opportunities) [Link to file for FP201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/FP201.tex)
+  - English (Business Opportunities) [Link to file for FP201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/USILPilars/FP201.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Oportunidades de Negocio) [Link to file for FP201 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP201.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=CE111
-  - English (Marketing) [Link to file for CE111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/CE111.tex)
+  - English (Marketing) [Link to file for CE111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Marketing) [Link to file for CE111 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -360,7 +360,7 @@
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP211
-  - English (Scientific Research Methodology) [Link to file for FP211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/FP211.tex)
+  - English (Scientific Research Methodology) [Link to file for FP211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/USILPilars/FP211.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Metodología de la Investigación Científica) [Link to file for FP211 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP211.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -396,13 +396,13 @@
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=FP311
-  - English (National Reality and Globalization) [Link to file for FP311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/FP311.tex)
+  - English (National Reality and Globalization) [Link to file for FP311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/USILPilars/FP311.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Realidad Nacional y Globalización) [Link to file for FP311 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/FP311.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
 
 - Course=HM102
-  - English (Ethics and Citizens) [Link to file for HM102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/English/HM102.tex)
+  - English (Ethics and Citizens) [Link to file for HM102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/English/cycle/2021-II/Syllabi/Humanities/HM102.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
   - Espanol (Ética y Ciudadanía) [Link to file for HM102 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex)
     - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
@@ -420,41 +420,14 @@ Outcomes (Missing keys) cited in ../Curricula.in/country/Peru/institutions/USIL/
 
 Outcomes (Missing keys) cited in ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex (\OutcomesList)
 - English (../Curricula.in/lang/English/Disciplines/Computing/CS.tex/outcomes-macros.tex)
-  - outcomeUSILCG1 
-  - outcomeUSILCG1Short
-  - outcomeUSILCG2 
-  - outcomeUSILCG2Short
-  - outcomeUSILCG3 
-  - outcomeUSILCG3Short
-  - outcomeUSILCG4 
-  - outcomeUSILCG4Short
-  - outcomeUSILCG5 
-  - outcomeUSILCG5Short
-
+    - ** This language is complete !**
 
 
 ### Outcomes, Competencies, Specificoutcomes cited in courses **but not defined !**
 - Espanol   
-  - outcomes
-    - 1    (12): CS111,CS1D1,CO111,CS1D2,CS210,CS2701,CS272,CS312,CS393,ET201,ET301,ET302
-    - 2    (21): CS1D1,CS112,CS1D2,CS113,CS2B1,CS210,CS211,CS2S1,CS212,CS261,CS312,CB311,CS231,CS2H1,CS401,CS281,CS3P1,CS402,CS403,CB309,CS404
-    - 3    (25): CS111,CO111,CS221,CS2B1,CS211,CS2701,CS272,CS291,CS342,CS292,CS311,CS393,CS231,CS391,CS401,CS3I1,CS402,ET201,CS370,CS403,ET301,CS3P2,CS3P3,CS404,ET302
-    - 4    (22): CS112,CS113,CS2B1,CS2701,CS2S1,CS272,CS311,CS393,CB311,CS231,CS281,CS3P1,CS402,ET201,CS370,CS403,CB309,ET301,CS3P2,CS3P3,CS404,ET302
-    - 5    (11): CS111,CS261,CS231,CS2H1,CS401,CS281,CS3I1,CS3P1,CS402,CS403,CS404
-    - USILCG1(34): CS111,CS1D1,CS112,CS1D2,CS113,CS221,CS2B1,CS210,CS2701,CS2S1,CS212,CS272,CS291,CS342,CS261,CS292,CS311,CS312,CS393,CS231,CS2H1,CS391,CS281,CS3I1,CS3P1,CS402,ET201,CS370,CS403,ET301,CS3P2,CS3P3,CS404,ET302
-    - USILCG2(1): CO111
-    - USILCG3(11): CS211,CS212,CS261,CB311,CS2H1,CS401,CS3I1,CS370,CB309,CS3P2,CS3P3
-    - USILCG4(1): CB309
+  - Everything is well defined
 - English   
-  - outcomes
-    - 1    (11): CS111,CS1D1,CS1D2,CS210,CS2701,CS272,CS312,CS393,ET201,ET301,ET302
-    - 2    (20): CS1D1,CS112,CS1D2,CS113,CS2B1,CS210,CS211,CS2S1,CS212,CS261,CS312,CS231,CS2H1,CS401,CS281,CS3P1,CS402,CS403,CB309,CS404
-    - 3    (24): CS111,CS221,CS2B1,CS211,CS2701,CS272,CS291,CS342,CS292,CS311,CS393,CS231,CS391,CS401,CS3I1,CS402,ET201,CS370,CS403,ET301,CS3P2,CS3P3,CS404,ET302
-    - 4    (21): CS112,CS113,CS2B1,CS2701,CS2S1,CS272,CS311,CS393,CS231,CS281,CS3P1,CS402,ET201,CS370,CS403,CB309,ET301,CS3P2,CS3P3,CS404,ET302
-    - 5    (11): CS111,CS261,CS231,CS2H1,CS401,CS281,CS3I1,CS3P1,CS402,CS403,CS404
-    - USILCG1(34): CS111,CS1D1,CS112,CS1D2,CS113,CS221,CS2B1,CS210,CS2701,CS2S1,CS212,CS272,CS291,CS342,CS261,CS292,CS311,CS312,CS393,CS231,CS2H1,CS391,CS281,CS3I1,CS3P1,CS402,ET201,CS370,CS403,ET301,CS3P2,CS3P3,CS404,ET302
-    - USILCG3(10): CS211,CS212,CS261,CS2H1,CS401,CS3I1,CS370,CB309,CS3P2,CS3P3
-    - USILCG4(1): CB309
+  - Everything is well defined
 
 General errors ...
 (process_institution_info): there is not :[41m\equivalences[0m in: 

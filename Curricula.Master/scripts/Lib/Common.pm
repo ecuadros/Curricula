@@ -2293,7 +2293,6 @@ sub set_initial_configuration($)
 		#my $lang_prefix = $config{dictionaries}{$lang}{lang_prefix};
 		my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
 		Util::print_message("Reading outcomes ($outcomes_macros_file)");
-
 		my %outcomes_macros = read_outcomes($outcomes_macros_file, $lang);
 		# ! Pending to review
 		#$outcomes_macros{"outcomeg"} 			= $body;
@@ -2302,7 +2301,7 @@ sub set_initial_configuration($)
 		#print Dumper (\%outcomes_macros); exit;  $outcomes_macros{outcomem} = "ABC DEF";
 		foreach my $key (keys %outcomes_macros)
 		{	# $Common::config{macros}{outcomes}{$lang}{outcomem}
-			$Common::config{macros}{outcomes}{$lang}{$key} = $outcomes_macros{$key};
+			$Common::config{macros}{outcomes}{$lang}{$key} = $outcomes_macros{$key}; # ECV
 			$Common::config{outcomes_keys}{$key} = "";	
 		}
 		@{$Common::config{macros}{$lang}}{keys %outcomes_macros} = values %outcomes_macros;
@@ -5640,7 +5639,8 @@ sub dump_outcomes_errors_log()
 
 	$output_txt .= "Outcomes, Competencies, Specificoutcomes cited in courses ".Util::yellow("but not defined !")."\n";
 	foreach my $lang (@{$config{SyllabusLangsList}})
-	{	$output_txt .= sprintf("%-10s\n", Util::yellow($lang));
+	{	my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
+		$output_txt .= sprintf("%-10s (%s)\n", Util::yellow($lang), $outcomes_macros_file);
 		#if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
 		#{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
 		foreach my $env (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}})
@@ -5651,7 +5651,7 @@ sub dump_outcomes_errors_log()
 				foreach  my $codcour ( @{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}})
 				{	$list_of_courses .= "$sep$codcour";		$sep = ","; 	$count++;
 				}
-				$output_txt .= sprintf("\t\t%-5s(%d): %s\n", Util::yellow($key), $count,$list_of_courses);
+				$output_txt .= sprintf("\t\t%-5s(%d %s): %s\n", Util::yellow($key), $count, $config{dictionaries}{$lang}{Courses}, $list_of_courses);
 			}
 		}
 	}
@@ -5692,19 +5692,23 @@ sub dump_outcomes_errors_markdown()
 	{	$output_txt .= sprintf("- %-10s\n", $lang);
 		#if( not defined($Common::config{macros}{$env}{$lang}{"$env$key"}) )
 		#{	push(@{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}}, $codcour);	}
+		my $count = 0;
 		foreach my $env (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}})
 		{	$output_txt .= "  - $env\n";
 			foreach  my $key (sort {$a cmp $b} keys %{$Common::error{outcomes_and_competencies}{$lang}{$env}})
 			{	# $output_txt .= sprintf("\t%-15s: (%s)\n", $env, join(", ", @{$Common::error{outcomes_and_competencies}{$lang}{$env}})) ;
-				my ($list_of_courses, $sep, $count) = ("", "", 0);
+				my ($list_of_courses, $sep, $courses_count) = ("", "", 0);
 				foreach  my $codcour ( @{$Common::error{outcomes_and_competencies}{$lang}{$env}{$key}})
-				{	$list_of_courses .= "$sep$codcour";		$sep = ","; 	$count++;
+				{	$list_of_courses .= "$sep$codcour";		$sep = ","; 	$courses_count++;
 				}
-				$output_txt .= sprintf("    - %-5s(%d): %s\n", $key, $count, $list_of_courses);
+				my $Courses = ($courses_count == 1 ? $config{dictionaries}{$lang}{Course} : $config{dictionaries}{$lang}{Courses});
+				$output_txt .= sprintf("    - %-5s(%d %s): %s\n", $key, $courses_count, $Courses, $list_of_courses);
+				$count += $courses_count;
 			}
 		}
+		if( $count == 0 )
+		{	$output_txt .= sprintf("  - Everything is well defined\n");	}
 	}
-	
 	$output_txt .= "\n";
 	return $output_txt;
 }
