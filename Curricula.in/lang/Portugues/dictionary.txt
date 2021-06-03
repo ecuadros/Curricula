@@ -4,6 +4,7 @@ Curricula   = Curriculo
 SCHOOL      = ESCOLA/DEPARTAMENTO
 COURSE      = DISCIPLINA
 Course      = Disciplina
+Courses     = Disciplinas
 DEPARTMENT  = DEPARTAMENTO
 SEMESTER    = SEMESTRE
 TYPEOFCOURSE=TIPO DE CURSO
