@@ -945,8 +945,8 @@ sub set_initial_paths()
 	$path_map{"institution-color"}					= "$path_map{InInstitutionConfigDir}/colors.config";
 
 	$path_map{"discipline-config"}		   			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/config/$config{discipline}.config";
-	$path_map{"in-area-all-config-file"}			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}.config/All.config";
-	$path_map{"in-area-config-file"}				= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}.config/Area.config";
+	$path_map{"in-area-all-config-file"}			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}/config/All.config";
+	$path_map{"in-area-config-file"}				= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}/config/Area.config";
 	$path_map{"in-acronyms-base-file"}				= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/tex/$config{discipline}-acronyms.tex";
 
 	$path_map{"in-country-config-file"}				= GetInCountryBaseDir($config{country_without_accents})."/country.config";
@@ -2193,7 +2193,7 @@ sub set_initial_configuration($)
 
 	$path_map{"crossed-reference-file"}		= $config{main_file}.".aux";
 	my $ConfigFile = get_template("in-area-all-config-file");
-	read_config($ConfigFile); 		# i.e. CS-All.config 
+	read_config($ConfigFile); 		# i.e. All.config 
 	push(@{$config{config_file}}, $ConfigFile);
 
 	$ConfigFile = get_template("in-area-config-file");

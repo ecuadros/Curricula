@@ -2535,6 +2535,20 @@ sub generate_professor_by_course($)
 	Util::write_file($out_file, $output_txt); 
 }
 
+sub generate_main()
+{
+	my $lang = $Common::config{language_without_accents};
+	Util::print_message("Generating main ...");
+	my @MainDirs = [Common::get_expanded_template("InCountryTexDir", $lang),
+					Common::get_expanded_template("InDisciplineTexDir", $lang),
+					Common::get_expanded_template("InAreaTexDir", $lang),
+					Common::get_expanded_template("InInstTexDir", $lang),
+					];
+	my $output_tex = "";
+
+	Util::print_message("Main.tex generated ...");
+}
+
 # sub generate_tables_for_advance()
 # {
 # 	$Common::advances_dir = "$Common::html/$Common::area-$Common::institution-advances";
