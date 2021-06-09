@@ -3673,6 +3673,13 @@ sub parse_courses()
 				my ($group, $track)												= ($21, $22);
 				my ($axes, $inst_wildcard)			      		               	= ($23, $24);
 				my $coursefile = $codcour;
+		# 		Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ...");
+				if($codcour_alias eq "") {	$codcour_alias = $codcour; 	}
+				else
+				{   $codcour = $codcour_alias;
+					$antialias_info{$codcour_alias} 	= $codcour;
+				}
+		  		Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ..."); # exit;
 
 				#if( $codcour eq "CS211" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
 				$inst_wildcard =~ s/\n//g; 	$inst_wildcard =~ s/\r//g;
@@ -3704,14 +3711,6 @@ sub parse_courses()
 					#Util::print_warning("\\course$course_params ignored! (filter:$inst_list{$institution}{filter})");
 					next;
 				}
-
-	# 		  	Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ...");
-				if($codcour_alias eq "") {	$codcour_alias = $codcour; 	}
-				else
-				{   $codcour = $codcour_alias;
-					$antialias_info{$codcour_alias} 	= $codcour;
-				}
-		#  		  Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ..."); exit;
 
 		# 		  if( $flag == 1 )	{	Util::print_warning("codcour = $codcour");
 		#  						print Dumper(\%{$course_info{$codcour}});	exit;
@@ -3859,6 +3858,7 @@ sub parse_courses()
 	my $file = Common::get_template("out-nsemesters-file");
 	#Util::print_message("3312 Creating $file ...");
     Util::write_file($file, "$config{n_semesters}\\xspace");
+	# exit; # Er
 }
 
 # ok
@@ -4022,8 +4022,9 @@ sub filter_courses($)
 			}
 			else
 			{
-				#Util::print_message("codcour=$codcour,codreq=$codreq");
 				my $prereq_label = get_label($codreq);
+				# Pending Er
+				Util::print_message("codcour=$codcour, codreq=$codreq, prereq_label=$prereq_label");
 				if($prereq_label eq "")
 				{	Util::print_error("codcour=$codcour,sem=$semester ($course_info{$codcour}{English}{course_name})\n codreq=$codreq Did you forget to activate that prereq ($codreq) See: $input_file");	}
 				$codreq = $prereq_label;
