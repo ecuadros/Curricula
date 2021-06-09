@@ -726,8 +726,9 @@ sub set_initial_paths()
 	$path_map{InCountryTexDir}			= GetInCountryBaseDir($path_map{country_without_accents})."/$config{discipline}/$config{area}/$config{area}.tex";
 	
 	$path_map{InInstUCSPDir}			= GetProgramInDir("Peru", "Computing", "CS", "UCSP");
-	$path_map{InInstitutionsBaseDir}	= "$path_map{InDir}/country/$path_map{country_without_accents}/institutions";
-	$path_map{InInstitutionConfigDir}	= "$path_map{InInstitutionsBaseDir}/$config{institution}";
+	$path_map{InInstitutionsByCountryBaseDir} = "$path_map{InDir}/country/$path_map{country_without_accents}/institutions";
+	$path_map{InInstitutionBaseDir}		= "$path_map{InInstitutionsByCountryBaseDir}/$config{institution}";
+	$path_map{InInstitutionConfigDir}	= "$path_map{InInstitutionsByCountryBaseDir}/$config{institution}";
 	$path_map{InProgramTexDir}			= GetProgramInDir($path_map{country_without_accents}, $config{discipline}, $config{area}, $config{institution});
 	
 	$path_map{InEquivDir}				= $path_map{InProgramDir}."/equivalences";
@@ -959,6 +960,9 @@ sub set_initial_paths()
 	$path_map{"OutputDisciplinesList-file"}			= $path_map{OutHtmlBase}."/disciplines.html";
 	$path_map{"output-errors-file"}					= $path_map{OutputLogDir}."/$config{country_without_accents}-$config{area}-$config{institution} $config{Plan}.txt";
 	$path_map{"output-errors-markdown-file"}		= $path_map{OutputLogDir}."/$config{country_without_accents}-$config{area}-$config{institution} $config{Plan}.md";
+	
+	$path_map{InInstitutionMainFile}				= "$path_map{InInstitutionBaseDir}/Main.tex";
+	$path_map{"out-main-tex-file"}					= $path_map{OutputTexDir}."/Main.tex";
 	Util::check_point("set_initial_paths");
 }
 

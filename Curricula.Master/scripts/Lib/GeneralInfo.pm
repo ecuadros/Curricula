@@ -2539,14 +2539,65 @@ sub generate_main()
 {
 	my $lang = $Common::config{language_without_accents};
 	Util::print_message("Generating main ...");
-	my @MainDirs = [Common::get_expanded_template("InCountryTexDir", $lang),
-					Common::get_expanded_template("InDisciplineTexDir", $lang),
-					Common::get_expanded_template("InAreaTexDir", $lang),
-					Common::get_expanded_template("InInstTexDir", $lang),
-					];
+	my @MainsDirs = ("InCountryTexDir",
+					 "InProgramDir",
+					);
+	my @MainsDirsExpanded;
 	my $output_tex = "";
+	# print Dumper(\@MainsDirs);
 
-	Util::print_message("Main.tex generated ...");
+	# First: detect the last existing Main.tex
+	my ($number_of_mains_detected, $last_active, $nDirs, $i) = (0, -1, 0, 0);
+	foreach my $item (@MainsDirs)
+	{
+		my $dir = Common::get_expanded_template($item, $lang);
+		push(@MainsDirsExpanded, $dir);
+		my $file = "$dir/Main";
+		if( -e "$file.tex" )
+		{	Util::print_message("$file.tex ".Util::green("Exists!"));
+			$number_of_mains_detected++;
+			$last_active = $nDirs;	
+		}
+		else
+		{	Util::print_message("$file.tex ".Util::red("Doesn't exist!"));	}
+		$nDirs++;
+	}
+	if( $number_of_mains_detected == 0 ) # No Main.tex detected !!! error !!!
+	{	Util::print_message(Util::red("I didn't find a Main.tex for this institution look at:"));	
+		print Dumper(\@MainsDirs);
+		exit;
+	}
+	assert(scalar(@MainsDirsExpanded) == scalar(@MainsDirs));
+	my $output_tex = "";
+	my $i = 0; 
+	#Util::print_color("last_active=$last_active");
+	foreach my $item (@MainsDirsExpanded)
+	{
+		my $file = "$item/Main";
+		if($i < $last_active)
+		{	if( -e "$file.tex" )
+			{	$output_tex .= "% EXISTS but ignored ...\n% $MainsDirsExpanded[$i]/Main.tex\n";
+				$output_tex .= "% \\input{\\$MainsDirs[$i]/Main}\n";	}
+			else
+			{	$output_tex .= "% % It doesn't exist ...\n";
+				$output_tex .= "\\input{\\$MainsDirs[$i]/Main} \n";
+			}
+		}
+		elsif($i == $last_active)
+		{	assert( -e "$file.tex" );
+			$output_tex .= "% $MainsDirsExpanded[$i]/Main.tex\n";
+			$output_tex .= "\\input{\\$MainsDirs[$i]/Main}\n";
+		}
+		else
+		{	$output_tex .=	"% It doesn't exist ...\n";
+			$output_tex .=	"% \\input{\\$MainsDirs[$i]/Main}\n";
+		}
+		$output_tex .=	"\n";
+		$i++;
+	}
+	my $output_main_file = Common::get_template("out-main-tex-file");
+	Util::write_file($output_main_file, $output_tex);
+	Util::print_message("$output_main_file generated ok! ...");
 }
 
 # sub generate_tables_for_advance()

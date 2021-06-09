@@ -89,7 +89,6 @@ sub generate_general_info()
 # 	generate_tables_for_advance();
 # 	generate_courses_for_advance();
 	Common::write_files_to_be_changed();
-
 	GeneralInfo::generate_main();
 }
 
@@ -129,7 +128,6 @@ sub main()
 	    GenSyllabi::generate_team_file($lang);
 	}
 	generate_general_info();
-	generate_main();
     #copy_basic_files();
 #   Util::generate_batch_to_gen_figs(Common::get_template("out-batch-to-gen-figs-file"));
 # 	
