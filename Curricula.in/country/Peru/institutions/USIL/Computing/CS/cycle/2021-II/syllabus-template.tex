@@ -14,8 +14,8 @@
 \setcounter{tocdepth}{2}
 
 \input{\InDir/All.tex/outcomes-macros-def}
-\input{\InLangBaseDir/<LANG-EXTENDED>/<AREA>.tex/outcomes-macros}
-\usepackage{\InLangBaseDir/<LANG-EXTENDED>/<AREA>.sty/bok-macros} 				% Macros for the Body of Knowledge: /Curricula.in/lang/English/CS.sty
+\input{\InTexDir/outcomes-macros}
+\usepackage{\InStyDir/bok-macros} 				% Macros for the Body of Knowledge: /Curricula.in/lang/English/CS.sty
 % \usepackage{\InStyDir/bok-macros} 							% Macros for the Body of Knowledge: /Curricula.in/lang/English/CS.sty
 
 \usepackage{enumitem} 
@@ -79,10 +79,11 @@
     \indent \textbf{\arabic{SyllabiSectionCount}.1 <<Credits>>}             & : & --CREDITS-- \\
     \indent \textbf{\arabic{SyllabiSectionCount}.2 <<TheoryHours>>}         & : & --THEORY_HOURS-- \\
     \indent \textbf{\arabic{SyllabiSectionCount}.3 <<LabHours>>}            & : & --LAB_HOURS-- \\
-    \indent \textbf{\arabic{SyllabiSectionCount}.4 <<Durationoftheperiod>>} & : & 16 <<weeks>> \\
-    \indent \textbf{\arabic{SyllabiSectionCount}.5 <<Condition>>}           & : & --COURSE_TYPE--  \\
-    \indent \textbf{\arabic{SyllabiSectionCount}.6 <<Modality>>}            & : & <<FaceToFace>>  \\
-    \indent \textbf{\arabic{SyllabiSectionCount}.7 <<Prerequisites>>}       & : & 
+    \indent \textbf{\arabic{SyllabiSectionCount}.4 <<AutonomousHours>>}     & : & --AUTONOMOUS_HOURS-- \\
+    \indent \textbf{\arabic{SyllabiSectionCount}.5 <<Durationoftheperiod>>} & : & 16 <<weeks>> \\
+    \indent \textbf{\arabic{SyllabiSectionCount}.6 <<Condition>>}           & : & --COURSE_TYPE--  \\
+    \indent \textbf{\arabic{SyllabiSectionCount}.7 <<Modality>>}            & : & <<FaceToFace>>  \\
+    \indent \textbf{\arabic{SyllabiSectionCount}.8 <<Prerequisites>>}       & : & 
         \begin{minipage}{0.95\textwidth}
             --PREREQUISITES--
         \end{minipage} \\

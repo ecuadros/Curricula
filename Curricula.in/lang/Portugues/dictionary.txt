@@ -37,6 +37,7 @@ Practice  = Prática
 LABORATORY= HL
 Laboratory= Laboratório
 LabHours  = Horas de prática
+AutonomousHours=Horas autônomas
 CREDITS   = CRÉDITOS
 Credits   = Créditos
 cr        = cr

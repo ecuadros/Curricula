@@ -46,9 +46,9 @@ sub process_syllabus_units($$$$)
 			{
 				my ($p1, $p2, $p3, $p4) 	= ($1, $2, $3, $4);
 				my ($pm1, $pm2, $pm3, $pm4) = (Common::replace_special_chars($p1), Common::replace_special_chars($p2), Common::replace_special_chars($p3), Common::replace_special_chars($p4));
-				Util::print_warning("codcour=$codcour\n\\begin\{unit\}$params wrong number of parameters?"),
+				print("codcour=$codcour\n\\begin\{unit\}$params wrong number of parameters?"),
 				$syllabus_in =~ s/\\begin\{unit\}\{$pm1\}\{$pm2\}\{$pm3\}\{$pm4\}/\\begin\{unit\}\{$p1\}\{\}\{$p2\}\{$p3\}\{$p4\}/g;
-				Util::print_color("Changed to:\n$line\n");
+				Util::print_message("Changed to: \\begin\{unit\}\{$p1\}".Util::green("\{\}")."\{$p2\}\{$p3\}\{$p4\}");
 			}
 			else
 			{
@@ -169,7 +169,7 @@ sub get_common_file($$$)
 		my $output_file = "$InLangCommonDir/$1/$coursefile.tex";
 		#Util::print_message(sprintf("\t%-10s:%s ...", "SearchingC", $output_file));
 		if( -e $output_file )
-		{	Util::print_message(sprintf("\t%-10s:%s ... %s", "File", $output_file, Util::green("found !")));
+		{	sprintf("\t%-10s:%s ... %s", "File", $output_file, Util::green("found !"));
 			return $output_file;
 		}	
 	}
@@ -416,7 +416,7 @@ sub read_syllabus_info($$$)
 	my ($codcour, $semester, $lang)   = (@_);
 	#Util::print_message("xyz read_syllabus_info($codcour, $semester, $lang)");
 	my $fullname 	= Common::get_syllabus_full_path($codcour, $semester, $lang);
-	Util::print_message(sprintf("\t%-10s:%s ...","Reading", $fullname));
+	sprintf("\t%-10s:%s ...","Reading", $fullname);
 	my $syllabus_in	= Util::read_file($fullname);
 	init_course_units_vars($codcour);
 	my $version = $Common::config{OutcomesVersion};
@@ -518,7 +518,7 @@ sub read_syllabus_info($$$)
 	$horastxt 			.= "$Common::course_info{$codcour}{ph} HP; " if($Common::course_info{$codcour}{ph} > 0);
 	$horastxt 			.= "$Common::course_info{$codcour}{lh} HL; " if($Common::course_info{$codcour}{lh} > 0);
 	$map{HOURS}			 = $horastxt;
-	($map{THEORY_HOURS}, $map{PRACTICE_HOURS}, $map{LAB_HOURS})	= ("-", "-", "-");
+	($map{THEORY_HOURS}, $map{PRACTICE_HOURS}, $map{LAB_HOURS}, $map{AUTONOMOUS_HOURS})	= ("-", "-", "-", "-");
 
 	if($Common::course_info{$codcour}{th} > 0)
 	{   $map{THEORY_HOURS} = "$Common::course_info{$codcour}{th} (<<Weekly>>)";	}
@@ -528,6 +528,9 @@ sub read_syllabus_info($$$)
 
 	if($Common::course_info{$codcour}{lh} > 0)
 	{   $map{LAB_HOURS} = "$Common::course_info{$codcour}{lh} (<<Weekly>>)";	}
+
+	if($Common::course_info{$codcour}{ti} > 0)
+	{	$map{AUTONOMOUS_HOURS} = "$Common::course_info{$codcour}{ti} (<<hours>>)";	}
 
 	($map{PREREQUISITES_JUST_CODES}, $map{PREREQUISITES}) = get_prerrequisites_info($codcour, $lang);
 	
@@ -676,7 +679,7 @@ sub process_syllabi()
 	generate_tex_syllabi_files();
 	generate_syllabi_include();
 	
- 	gen_batch_to_compile_syllabi();
+ 	gen_batch_to_compile_syllabi($Common::config{language_without_accents});
 	foreach my $lang (@{$Common::config{SyllabusLangsList}})
 	{
 	    gen_book("Syllabi", "../syllabi/", "", $lang);
@@ -699,7 +702,7 @@ sub generate_tex_syllabi_files()
 	{
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
-			my $codcour_label = Common::get_label($codcour);
+			my $codcour_label = Common::unmask_codcour($codcour);
 			foreach my $lang (@{$Common::config{SyllabusLangsList}})
 			{
 				my $output_file = "$OutputTexDir/$codcour_label-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
@@ -734,8 +737,9 @@ sub generate_tex_syllabi_files()
 }
 
 # ok
-sub gen_batch_to_compile_syllabi()
+sub gen_batch_to_compile_syllabi($)
 {
+	my ($lang) = (@_);
 	Util::precondition("set_global_variables");
 # 	Util::print_message("gen_batch_to_compile_syllabi starting ...");
 	my $out_gen_syllabi = Common::get_template("out-gen-syllabi.sh-file");
@@ -779,7 +783,7 @@ sub gen_batch_to_compile_syllabi()
 	my $OutputSyllabiDir	= Common::get_template("OutputSyllabiDir");
 	my $OutputFullSyllabiDir= Common::get_template("OutputFullSyllabiDir");
 
-	my $syllabus_container_dir 	= Common::get_template("InSyllabiContainerDir");
+	my $syllabus_container_dir 	= Common::get_expanded_template("InSyllabiContainerDir", $lang);
 	my $count_courses 		= 0;
 	my ($parallel_sep)   = ("");
         $parallel_sep = "&" if($Common::config{parallel} == 1);
@@ -889,7 +893,7 @@ sub gen_book($$$$)
 		$output_tex .= get_hidden_chapter_info($semester, $lang);
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
-		    my $codcour_label = Common::get_label($codcour);
+		    my $codcour_label = Common::unmask_codcour($codcour);
 		    #-$Common::config{dictionaries}{$lang}{lang_prefix}.tex";
 		    $output_tex .= "\\includepdf[pages=-,addtotoc={1,section,1,{$codcour. $Common::course_info{$codcour}{$lang}{course_name}},$codcour-$Common::config{dictionaries}{$lang}{lang_prefix}}]";
 		    $output_tex .= "{$prefix$codcour-$Common::config{dictionaries}{$lang}{lang_prefix}$postfix}\n";
@@ -947,7 +951,7 @@ sub gen_book_of_descriptions($)
 	      foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 	      {
 		      #Util::print_message("codcour = $codcour    ");
-		      #my $codcour_label = Common::get_label($codcour);
+		      #my $codcour_label = Common::unmask_codcour($codcour);
 		      my $sec_title = "$codcour. $Common::course_info{$codcour}{$lang}{course_name}";
   # 			$sec_title 	.= "($semester$Common::config{dictionary}{ordinal_postfix}{$semester} ";
   # 			$sec_title 	.= "$Common::config{dictionary}{Semester})";
@@ -987,7 +991,7 @@ sub generate_team_file($)
 # 		$output_tex .= get_hidden_chapter_info($semester);
 # 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 # 		{
-# 			#my $codcour_label 	= Common::get_label($codcour);
+# 			#my $codcour_label 	= Common::unmask_codcour($codcour);
 # 			my $i = 0;
 # 			my $sec_title = "$codcour. $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}";
 #  			#$sec_title 	.= "($semester$Common::config{dictionary}{ordinal_postfix}{$semester} ";
@@ -1087,7 +1091,7 @@ sub generate_syllabi_include()
 		$output_tex .= "$Common::config{dictionary}{Semester}}\n";
 		foreach my $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			my $lang 		= Common::get_template("language_without_accents");
 			my $lang_prefix	= $Common::config{dictionaries}{$lang}{lang_prefix};
 			my $course_fullpath = Common::get_syllabus_full_path($codcour, $semester, $lang);
@@ -1118,7 +1122,7 @@ sub gen_course_general_info($)
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
 			my $normal_header   = "\\begin{itemize}\n";
-			my $codcour_label = Common::get_label($codcour);
+			my $codcour_label = Common::unmask_codcour($codcour);
 			# Semester: 5th Sem.
 			$normal_header .= "\\item \\textbf{$Common::config{dictionary}{Semester}}: ";
 			$normal_header .= "$semester\$^{$Common::config{dictionary}{ordinal_postfix}{$semester}}\$ ";
@@ -1246,7 +1250,7 @@ sub get_course_dot_map($$$)
 		my $sem_label = Common::sem_label($sem_count, $lang);
 		my $this_sem = "\t{ rank = same; $sem_label; ";
 		foreach my $one_cour (@{$local_list_of_courses_by_semester{$sem_count}})
-		{	$this_sem .= "\"".Common::get_label($one_cour)."\"; ";		}
+		{	$this_sem .= "\"".Common::unmask_codcour($one_cour)."\"; ";		}
 		$same_rank .= "$this_sem }\n";
 		$sem_col .= "$sep$sem_label";
 # 				,fillcolor=black,style=filled,fontcolor=white

@@ -1,0 +1,1674 @@
+[44m***********************************************************************[49m
+[44m**                     Curricula generator                           **[49m
+[44m***********************************************************************[49m
+read_inst_list (69)
+config{Plan}=Plan2021
+read_copyrights (../Curricula.in/copyrights.tex) ... OK !
+set_initial_configuration: Reading ../Curricula.in/country/Peru/institutions/USIL/USIL.tex ... 
+set_initial_configuration: Reading ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex ... 
+ntokens=173
+count=0, ntokens=173 ...
+Reading macros ( ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/Plan2021-Sem2021-II.config.tex ) ...
+ntokens=12
+count=0, ntokens=12 ...
+Semester=2021-II ...
+YYYY=2021, this_inst_info{Plan}=Plan2021
+Range:1-10,SemMin=1, SemMax=10 ...
+CurriculaVersion=2021 ...
+Common::config{macros}{CurriculaVersion} = 2021 ...
+Common::config{macros}{Range} = 1-10 ...
+Common::config{macros}{YYYY} = 2021 ...
+Common::config{macros}{Semester} = 2021-II ...
+this_inst_info{outcomes_list}{V1} = a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p
+this_inst_info{outcomes_list}{V2} = 1,2,3,4,5,6,7,8,9,10
+this_inst_info{outcomes_list}{USIL21} = 1,2,3,4,5,USILCG1,USILCG2,USILCG3,USILCG4,USILCG5,USILCG6
+(process_institution_info): there is not :[41m\equivalences[0m in: 
+[42m[30m"../Curricula.in/country/Peru/institutions/USIL/USIL.tex
+../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex"[0m
+institution_info (../Curricula.in/country/Peru/institutions/USIL/USIL.tex
+../Curricula.in/country/Peru/institutions/USIL/Computing/CS/program-info.tex) ... OK !
+Reading config file: "../Curricula.in/lang/Espanol/Disciplines/Computing/config/Computing.config"
+Reading config file: "../Curricula.in/config/all.config"
+Reading config file: "../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config"
+Reading config file: "../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/Area.config"
+Reading config file: "../Curricula.in/country/Peru/institutions/USIL/USIL.config"
+Reading config file: "../Curricula.in/config/colors.config"
+Reading config file: "../Curricula.in/country/Peru/institutions/USIL/colors.config"
+Reading config file: "../Curricula.in/lang/Espanol/dictionary.txt"
+Reading config file: "../Curricula.in/lang/Espanol/dictionary.txt"
+Reading config file: "../Curricula.in/lang/English/dictionary.txt"
+Reading config file: "../Curricula.in/country/Peru/country.config"
+Reading config file: "../Curricula.in/country/Peru/institutions/USIL/USIL.config"
+***** Ignoring config{temp_colors}{colors_per_level}
+Reading outcomes (../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/outcomes-macros.tex)
+read_outcomes (../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/outcomes-macros.tex, Espanol) 431 macros processed ... OK!
+[43m[30mconfig{specificoutcome}{Espanol}[0m
+Reading macros ( ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/outcomes-macros.tex ) ...
+ntokens=1908
+count=0, ntokens=1908 ...
+Reading outcomes (../Curricula.in/lang/English/Disciplines/Computing/CS/tex/outcomes-macros.tex)
+read_outcomes (../Curricula.in/lang/English/Disciplines/Computing/CS/tex/outcomes-macros.tex, English) 433 macros processed ... OK!
+[43m[30mconfig{specificoutcome}{English}[0m
+Reading macros ( ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/outcomes-macros.tex ) ...
+ntokens=1908
+count=0, ntokens=1908 ...
+Reading macros ( ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/current-institution.tex ) ...
+ntokens=105
+count=0, ntokens=105 ...
+[44m[30m ** WARNING ** : I did not find read_replacements(Espanol) : ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/sty/replacements.txt just ignoring this process ... [0m
+Reading courses (../Curricula.in/Disciplines/Computing/CS/CS2021-dependencies.tex) ...
+
+[43m[30m1: [0m
+Color is not configured for [41mSFW52099[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52099 Introducción a la Ciencia de la Computación (prereq: )
+Color is not configured for [41mSFW52098[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52098 Estructuras Discretas I (prereq: )
+Color is not configured for [41mMAC41010[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* MAC41010 Fundamentos de Cálculo (prereq: )
+Color is not configured for [41mCOM42008[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* COM42008 Lenguaje (prereq: )
+Color is not configured for [41mENG42003[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42003 English I (prereq: )
+
+[43m[30m2: [0m
+Color is not configured for [41mSFW52097[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52097 Programación Orientada a Objetos I (prereq: SFW52099)
+Color is not configured for [41mSFW52096[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52096 Estructuras Discretas II (prereq: SFW52098)
+Color is not configured for [41mMAC41001[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* MAC41001 Cálculo de una Variable (prereq: MAC41010)
+Color is not configured for [41mCOM42009[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* COM42009 Lenguaje II (prereq: COM42008)
+Color is not configured for [41mENG42005[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42005 Inglés II (prereq: ID101)
+
+[43m[30m3: [0m
+Color is not configured for [41mSFW52095[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52095 Programación Orientada a Objetos II (prereq: CS112)
+Color is not configured for [41mMAC41002[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* MAC41002 Cálculo en varias Variables (prereq: CB211)
+Color is not configured for [41mSFW52094[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52094 Desarrollo Basado en Plataformas (prereq: CS112)
+Color is not configured for [41mEGI61009[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* EGI61009 Arquitectura de Computadores (prereq: CS1D2,ENG42005)
+Color is not configured for [41mGES51001[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* GES51001 Administración para los negocios (prereq: )
+Color is not configured for [41mENG42007[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42007 English III (prereq: ID102)
+
+[43m[30m4: [0m
+Color is not configured for [41mSFW52093[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52093 Algoritmos y Estructuras de Datos (prereq: CS113)
+Color is not configured for [41mEST41005[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* EST41005 Estadística Descriptiva y Probabilidades (prereq: CB111)
+Color is not configured for [41mENG42009[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42009 English IV (prereq: ID103)
+Color is not configured for [41mIIS52024[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* IIS52024 Sistemas Operativos (prereq: CS221)
+Color is not configured for [41mSFW52092[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52092 Teoría de la Computación (prereq: CS1D2,ID102)
+Color is not configured for [41mSFW52091[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52091 Gerenciamiento de Datos I (prereq: CS112,CS1D2)
+Color is not configured for [41mECO51002[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ECO51002 Economía General (prereq: )
+
+[43m[30m5: [0m
+Color is not configured for [41mSFW52090[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52090 Gerenciamiento de Datos II (prereq: CS271)
+Color is not configured for [41mSFW52089[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52089 Análisis y Diseño de Algoritmos (prereq: CS210,CS211)
+Color is not configured for [41mSFW52088[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52088 Ingeniería de Software I (prereq: CS113,CS271)
+Color is not configured for [41mSFW52087[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52087 Compiladores (prereq: CS211)
+Color is not configured for [41mFIS41001[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* FIS41001 Física General (prereq: CB111)
+Color is not configured for [41mENG42012[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42012 Inglés V (prereq: ID104)
+Color is not configured for [41mMAR52008[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* MAR52008 Marketing (prereq: USIL=40cr)
+
+[43m[30m6: [0m
+Color is not configured for [41mSFW52086[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52086 Ingeniería de Software II (prereq: CS291)
+Color is not configured for [41mSFW52085[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52085 Programación Competitiva (prereq: CS212)
+Color is not configured for [41mSFW52084[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52084 Estructuras de Datos Avanzadas (prereq: CS212)
+Color is not configured for [41mSFW52083[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52083 Sistemas de Infomación (prereq: CS291)
+Color is not configured for [41mSFW52082[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52082 Sistemas Inteligentes (prereq: EST41005)
+Color is not configured for [41mENG42032[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ENG42032 English VI: RREL (prereq: ID105)
+Color is not configured for [41mFIN52004[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* FIN52004 Finanzas Empresariales (prereq: )
+
+[43m[30m7: [0m
+Color is not configured for [41mMAC41014[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* MAC41014 Álgebra Lineal  (prereq: CB211)
+Color is not configured for [41mIIS53004[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* IIS53004 Redes y Telecomunicaciones (prereq: CS2S1)
+Color is not configured for [41mSFW52081[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52081 Metodología de la Investigación en Computación (prereq: CS211)
+Color is not configured for [41mSFW52080[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52080 Computación Gráfica (prereq: CS312)
+Color is not configured for [41mSFW52079[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52079 Aprendizaje Automático (prereq: CS261)
+Color is not configured for [41mBSC51001[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* BSC51001 Biología (prereq: )
+Color is not configured for [41mSFW52078[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52078 Experiencia de Usuario (UX) (prereq: CS393)
+Color is not configured for [41mSFW52077[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW52077 Ingeniería de Software III (prereq: CS292)
+
+[43m[30m8: [0m
+Color is not configured for [41mSFW62076[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62076 Biología Computacional (prereq: CS212,BSC51001)
+Color is not configured for [41mSFW62075[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62075 Matemática aplicada a la computación (prereq: MAC41002)
+Color is not configured for [41mSFW62074[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62074 Proyecto de Final de Carrera I (prereq: CS401)
+Color is not configured for [41mSFW62073[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62073 Seguridad en Computación (prereq: CS231,ID106)
+Color is not configured for [41mSFW62072[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62072 Visión Computacional (prereq: CS262)
+Color is not configured for [41mSFW62071[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62071 Computación Paralela y Distribuída (prereq: CS312,CS221)
+Color is not configured for [41mSFW62070[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62070 Computación en la Sociedad (prereq: )
+Color is not configured for [41mSFW62069[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62069 Formación de Empresas de Base Tecnológica I (prereq: ID106)
+
+[43m[30m9: [0m
+Color is not configured for [41mSFW62068[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62068 Formación de Empresas de Base Tecnológica II (prereq: ET201)
+Color is not configured for [41mSFW62067[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62067 Tópicos en Computación Gráfica (prereq: CS251)
+Color is not configured for [41mSFW62066[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62066 Tópicos en Ingeniería de Software (prereq: CS391)
+Color is not configured for [41mIIS64000[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* IIS64000 Big Data y Analitica de Datos (prereq: CS272,CS3P1)
+Color is not configured for [41mSFW62065[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62065 Bioinformática (prereq: BSC51001)
+Color is not configured for [41mSFW62064[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62064 Proyecto de Final de Carrera II (prereq: CS402)
+
+[43m[30m10: [0m
+Color is not configured for [41mIIS64016[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* IIS64016 Robótica (prereq: CS361)
+Color is not configured for [41mSFW62062[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62062 Internet de las Cosas (prereq: CS3P1)
+Color is not configured for [41mSFW62061[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62061 Cloud Computing (prereq: CS370)
+Color is not configured for [41mSFW62060[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62060 Formación de Empresas de Base Tecnológica III (prereq: ET301)
+Color is not configured for [41mSFW62059[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62059 Computación Evolutiva (prereq: CS262)
+Color is not configured for [41mSFW62058[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* SFW62058 Proyecto de Final de Carrera III (prereq: CS403)
+Color is not configured for [41mETM41007[0m ... Verify files: [41m../Curricula.in/config/colors.config[0m and [42m[30m../Curricula.in/country/Peru/institutions/USIL/colors.config[0m ...
+* ETM41007 Ética y Ciudadanía (prereq: )
+config{SemMin} = 1, config{SemMax} = 10
+Read courses = 66 (10 semesters)
+Filtering courses ...
+Read courses = 66 (10 semesters)
+Generating BOK in Espanol ...
+Processing ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/sty/bok-macros-V0.sty ...
+counts{LO} = 1108 ...
+counts{KU} = 163 ...
+counts{KUDescription} = 164 ...
+counts{KADescription} = 18 ...
+counts{KUItem} = 1111 ...
+counts{KA} = 18 ...
+Creating BOK index file (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BodyOfKnowledge-Index-ES.tex) ...
+Creating BOK file (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BodyOfKnowledge-Body-ES.tex) ...
+Creating BOK macros file (../Curricula.in/lang/Espanol/Disciplines/Computing/CS/sty/bok-macros.sty) ...
+Reading BOK in Espanol ...
+read_bok(Espanol) ... Reading ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/sty/bok-macros.sty
+Reading macros ( ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/sty/bok-macros.sty ) ...
+ntokens=12042
+count=0, ntokens=12042 ...
+Generating BOK in English ...
+Processing ../Curricula.in/lang/English/Disciplines/Computing/CS/sty/bok-macros-V0.sty ...
+counts{LO} = 1108 ...
+counts{KUDescription} = 164 ...
+counts{KU} = 163 ...
+counts{KADescription} = 18 ...
+counts{KUItem} = 1111 ...
+counts{KA} = 18 ...
+Creating BOK index file (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BodyOfKnowledge-Index-EN.tex) ...
+Creating BOK file (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BodyOfKnowledge-Body-EN.tex) ...
+Creating BOK macros file (../Curricula.in/lang/English/Disciplines/Computing/CS/sty/bok-macros.sty) ...
+Reading BOK in English ...
+read_bok(English) ... Reading ../Curricula.in/lang/English/Disciplines/Computing/CS/sty/bok-macros.sty
+Reading macros ( ../Curricula.in/lang/English/Disciplines/Computing/CS/sty/bok-macros.sty ) ...
+ntokens=12039
+count=0, ntokens=12039 ...
+gen_only_macros (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/macros-only.tex) OK!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[43m[30mdetect_critical_path Ok![0m
+[44m[30m ** WARNING ** : There is no file for distribution: ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/faculty.txt[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52098) (1 sem) Estructuras Discretas I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52099) (1 sem) Introducción a la Ciencia de la Computación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (MAC41010) (1 sem) Fundamentos de Cálculo ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (COM42008) (1 sem) Lenguaje ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42003) (1 sem) English I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52096) (2 sem) Estructuras Discretas II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52097) (2 sem) Programación Orientada a Objetos I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (MAC41001) (2 sem) Cálculo de una Variable ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (COM42009) (2 sem) Lenguaje II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42005) (2 sem) Inglés II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52094) (3 sem) Desarrollo Basado en Plataformas ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52095) (3 sem) Programación Orientada a Objetos II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (MAC41002) (3 sem) Cálculo en varias Variables ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42007) (3 sem) English III ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (EGI61009) (3 sem) Arquitectura de Computadores ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (GES51001) (3 sem) Administración para los negocios ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52091) (4 sem) Gerenciamiento de Datos I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52092) (4 sem) Teoría de la Computación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52093) (4 sem) Algoritmos y Estructuras de Datos ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42009) (4 sem) English IV ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (EST41005) (4 sem) Estadística Descriptiva y Probabilidades ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (IIS52024) (4 sem) Sistemas Operativos ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ECO51002) (4 sem) Economía General ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52087) (5 sem) Compiladores ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52088) (5 sem) Ingeniería de Software I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52089) (5 sem) Análisis y Diseño de Algoritmos ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52090) (5 sem) Gerenciamiento de Datos II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42012) (5 sem) Inglés V ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (FIS41001) (5 sem) Física General ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (MAR52008) (5 sem) Marketing ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52082) (6 sem) Sistemas Inteligentes ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52083) (6 sem) Sistemas de Infomación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52084) (6 sem) Estructuras de Datos Avanzadas ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52085) (6 sem) Programación Competitiva ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52086) (6 sem) Ingeniería de Software II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ENG42032) (6 sem) English VI: RREL ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (FIN52004) (6 sem) Finanzas Empresariales ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52077) (7 sem) Ingeniería de Software III ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52078) (7 sem) Experiencia de Usuario (UX) ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52081) (7 sem) Metodología de la Investigación en Computación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52079) (7 sem) Aprendizaje Automático ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW52080) (7 sem) Computación Gráfica ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (MAC41014) (7 sem) Álgebra Lineal  ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (IIS53004) (7 sem) Redes y Telecomunicaciones ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (BSC51001) (7 sem) Biología ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62069) (8 sem) Formación de Empresas de Base Tecnológica I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62070) (8 sem) Computación en la Sociedad ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62071) (8 sem) Computación Paralela y Distribuída ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62073) (8 sem) Seguridad en Computación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62074) (8 sem) Proyecto de Final de Carrera I ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62075) (8 sem) Matemática aplicada a la computación ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62072) (8 sem) Visión Computacional ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62076) (8 sem) Biología Computacional ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62064) (9 sem) Proyecto de Final de Carrera II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62065) (9 sem) Bioinformática ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62068) (9 sem) Formación de Empresas de Base Tecnológica II ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62066) (9 sem) Tópicos en Ingeniería de Software ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62067) (9 sem) Tópicos en Computación Gráfica ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (IIS64000) (9 sem) Big Data y Analitica de Datos ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62058) (10 sem) Proyecto de Final de Carrera III ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62059) (10 sem) Computación Evolutiva ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62060) (10 sem) Formación de Empresas de Base Tecnológica III ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62061) (10 sem) Cloud Computing ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (SFW62062) (10 sem) Internet de las Cosas ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (IIS64016) (10 sem) Robótica ...[0m
+[44m[30m ** WARNING ** : I do not find professor for course  (ETM41007) (10 sem) Ética y Ciudadanía ...[0m
+read_distribution(../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/Plan2021/distribution.txt) OK!
+Reading ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/Plan2021/additional-info.txt ...
+[44m[30m ** WARNING ** : It seems that you forgot the syllabus program template file ... "../Curricula.in/country/Peru/institutions/USIL/Computing/CS/syllabus-template.tex"[0m
+Reading ... "../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/syllabus-template.tex"
+File General Evaluation detected ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52098-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52099-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/MAC41010-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/COM42008-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42003-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52096-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52097-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/MAC41001-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/COM42009-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42005-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52094-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52095-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/MAC41002-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42007-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/EGI61009-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/GES51001-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52091-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52092-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52093-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42009-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/EST41005-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/IIS52024-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ECO51002-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52087-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52088-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52089-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52090-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42012-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/FIS41001-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/MAR52008-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52082-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52083-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52084-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52085-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52086-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ENG42032-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/FIN52004-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52077-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52078-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52081-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52079-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW52080-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/MAC41014-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/IIS53004-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/BSC51001-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62069-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62070-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62071-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62073-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62074-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62075-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62072-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62076-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62064-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62065-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62068-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62066-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62067-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/IIS64000-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62058-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62059-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62060-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62061-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/SFW62062-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/IIS64016-html.tex ok!
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prereq/ETM41007-html.tex ok!
+template_file=../Curricula.in/country/Peru/dot/big-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+Reading ../Curricula.in/country/Peru/dot/big-graph-item2.dot ... (generate_dot_maps_for_all_courses)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52098.dot ok! (1er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52099.dot ok! (1er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/MAC41010.dot ok! (1er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/COM42008.dot ok! (1er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42003.dot ok! (1er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52096.dot ok! (2do Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52097.dot ok! (2do Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/MAC41001.dot ok! (2do Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/COM42009.dot ok! (2do Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42005.dot ok! (2do Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52094.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52095.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/MAC41002.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42007.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/EGI61009.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/GES51001.dot ok! (3er Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52091.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52092.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52093.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42009.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/EST41005.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/IIS52024.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ECO51002.dot ok! (4to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52087.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52088.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52089.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52090.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42012.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/FIS41001.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/MAR52008.dot ok! (5to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52082.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52083.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52084.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52085.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52086.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ENG42032.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/FIN52004.dot ok! (6to Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52077.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52078.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52081.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52079.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW52080.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/MAC41014.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/IIS53004.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/BSC51001.dot ok! (7mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62069.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62070.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62071.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62073.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62074.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62075.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62072.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62076.dot ok! (8vo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62064.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62065.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62068.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62066.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62067.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/IIS64000.dot ok! (9no Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62058.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62059.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62060.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62061.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/SFW62062.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/IIS64016.dot ok! (10mo Sem) ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/ETM41007.dot ok! (10mo Sem) ...
+[44m[30m ** WARNING ** : No specific evaluation file (../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/Plan2021/Specific-Evaluation.tex) ... you may create one to specify criteria for each course ...[0m
+Reading specific evaluation file (../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/Plan2021/Specific-Evaluation.tex) ok !...
+[43m[30m>> genenerate_tex_syllabus_file: SFW52098[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52098-ES.tex ...
+get_syllabus_full_path(SFW52098, 1, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52098 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52098[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52098-EN.tex ...
+get_syllabus_full_path(SFW52098, 1, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52098 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52099[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52099-ES.tex ...
+get_syllabus_full_path(SFW52099, 1, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52099 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52099[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52099-EN.tex ...
+get_syllabus_full_path(SFW52099, 1, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52099 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41010[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41010-ES.tex ...
+get_syllabus_full_path(MAC41010, 1, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to MAC41010 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41010[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41010-EN.tex ...
+get_syllabus_full_path(MAC41010, 1, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to MAC41010 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: COM42008[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42008-ES.tex ...
+get_syllabus_full_path(COM42008, 1, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Communication/CO111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to COM42008 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: COM42008[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42008-EN.tex ...
+get_syllabus_full_path(COM42008, 1, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Communication/CO111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Communication/CO111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to COM42008 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42003[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42003-ES.tex ...
+get_syllabus_full_path(ENG42003, 1, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42003 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42003[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42003-EN.tex ...
+get_syllabus_full_path(ENG42003, 1, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42003 (Sem #1)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52096[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52096-ES.tex ...
+get_syllabus_full_path(SFW52096, 2, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52096 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52096[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52096-EN.tex ...
+get_syllabus_full_path(SFW52096, 2, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52096 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52097[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52097-ES.tex ...
+get_syllabus_full_path(SFW52097, 2, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS112.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52097 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52097[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52097-EN.tex ...
+get_syllabus_full_path(SFW52097, 2, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS112.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS112.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52097 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41001-ES.tex ...
+get_syllabus_full_path(MAC41001, 2, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB211.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to MAC41001 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41001-EN.tex ...
+get_syllabus_full_path(MAC41001, 2, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB211.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB211.tex ... [42m[30mfound ![0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Programación no lineal}{Taha2004,Hillier2006}{12}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Programación no lineal}{Taha2004,Hillier2006}{12}{1}
+[0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Toma de decisiones bajo incertidumbre}{Wayne2005,Hillier2002IO}{12}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Toma de decisiones bajo incertidumbre}{Wayne2005,Hillier2002IO}{12}{1}
+[0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Teoría de juegos}{Taha2004,Hillier2006}{12}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Teoría de juegos}{Taha2004,Hillier2006}{12}{1}
+[0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Cadenas de Markov}{Wayne2005,Hillier2002IO}{12}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Cadenas de Markov}{Wayne2005,Hillier2002IO}{12}{1}
+[0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Teoría de colas}{Taha2004,Hillier2006}{12}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Teoría de colas}{Taha2004,Hillier2006}{12}{1}
+[0m
+[44m[30m ** WARNING ** : codcour=MAC41001
+\begin{unit}{Simulación}{Taha2004,Hillier2006}{10}{1} wrong number of parameters?[0m
+[43m[30mChanged to:
+\begin{unit}{Simulación}{Taha2004,Hillier2006}{10}{1}
+[0m
+[43m[30mSyllabus adjusted (new units format)... see old file at: ../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB211.tex.bak[0m
+[41mThere is no professor assigned to MAC41001 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: COM42009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42009-ES.tex ...
+get_syllabus_full_path(COM42009, 2, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Communication/CO112.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to COM42009 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: COM42009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42009-EN.tex ...
+get_syllabus_full_path(COM42009, 2, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Communication/CO112.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Communication/CO112.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to COM42009 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42005[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42005-ES.tex ...
+get_syllabus_full_path(ENG42005, 2, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42005 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42005[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42005-EN.tex ...
+get_syllabus_full_path(ENG42005, 2, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42005 (Sem #2)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52094[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52094-ES.tex ...
+get_syllabus_full_path(SFW52094, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52094 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52094[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52094-EN.tex ...
+get_syllabus_full_path(SFW52094, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52094 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52095[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52095-ES.tex ...
+get_syllabus_full_path(SFW52095, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS113.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52095 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52095[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52095-EN.tex ...
+get_syllabus_full_path(SFW52095, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS113.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS113.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52095 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41002[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41002-ES.tex ...
+get_syllabus_full_path(MAC41002, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...
+	File      :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to MAC41002 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41002[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41002-EN.tex ...
+get_syllabus_full_path(MAC41002, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...
+	File      :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to MAC41002 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42007[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42007-ES.tex ...
+get_syllabus_full_path(ENG42007, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42007 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42007[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42007-EN.tex ...
+get_syllabus_full_path(ENG42007, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42007 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: EGI61009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EGI61009-ES.tex ...
+get_syllabus_full_path(EGI61009, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS221.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to EGI61009 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: EGI61009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EGI61009-EN.tex ...
+get_syllabus_full_path(EGI61009, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS221.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS221.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to EGI61009 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: GES51001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/GES51001-ES.tex ...
+get_syllabus_full_path(GES51001, 3, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to GES51001 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: GES51001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/GES51001-EN.tex ...
+get_syllabus_full_path(GES51001, 3, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to GES51001 (Sem #3)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52091[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52091-ES.tex ...
+get_syllabus_full_path(SFW52091, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS271.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52091 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52091[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52091-EN.tex ...
+get_syllabus_full_path(SFW52091, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS271.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS271.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52091 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52092[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52092-ES.tex ...
+get_syllabus_full_path(SFW52092, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS211.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52092 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52092[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52092-EN.tex ...
+get_syllabus_full_path(SFW52092, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS211.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS211.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52092 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52093[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52093-ES.tex ...
+get_syllabus_full_path(SFW52093, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52093 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52093[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52093-EN.tex ...
+get_syllabus_full_path(SFW52093, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52093 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42009-ES.tex ...
+get_syllabus_full_path(ENG42009, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42009 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42009[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42009-EN.tex ...
+get_syllabus_full_path(ENG42009, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42009 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: EST41005[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EST41005-ES.tex ...
+get_syllabus_full_path(EST41005, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to EST41005 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: EST41005[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EST41005-EN.tex ...
+get_syllabus_full_path(EST41005, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS210.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to EST41005 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS52024[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS52024-ES.tex ...
+get_syllabus_full_path(IIS52024, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS52024 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS52024[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS52024-EN.tex ...
+get_syllabus_full_path(IIS52024, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS52024 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ECO51002[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ECO51002-ES.tex ...
+get_syllabus_full_path(ECO51002, 4, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/GH1014.tex ...
+	File      :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/GH1014.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to ECO51002 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ECO51002[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ECO51002-EN.tex ...
+get_syllabus_full_path(ECO51002, 4, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/GH1014.tex ...
+	File      :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/GH1014.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to ECO51002 (Sem #4)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52087[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52087-ES.tex ...
+get_syllabus_full_path(SFW52087, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS342.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52087 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52087[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52087-EN.tex ...
+get_syllabus_full_path(SFW52087, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS342.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS342.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52087 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52088[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52088-ES.tex ...
+get_syllabus_full_path(SFW52088, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS291.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52088 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52088[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52088-EN.tex ...
+get_syllabus_full_path(SFW52088, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS291.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS291.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52088 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52089[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52089-ES.tex ...
+get_syllabus_full_path(SFW52089, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS212.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52089 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52089[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52089-EN.tex ...
+get_syllabus_full_path(SFW52089, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS212.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS212.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52089 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52090[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52090-ES.tex ...
+get_syllabus_full_path(SFW52090, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS272.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52090 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52090[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52090-EN.tex ...
+get_syllabus_full_path(SFW52090, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS272.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS272.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52090 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42012[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42012-ES.tex ...
+get_syllabus_full_path(ENG42012, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42012 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42012[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42012-EN.tex ...
+get_syllabus_full_path(ENG42012, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42012 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: FIS41001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIS41001-ES.tex ...
+get_syllabus_full_path(FIS41001, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB121.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to FIS41001 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: FIS41001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIS41001-EN.tex ...
+get_syllabus_full_path(FIS41001, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB121.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB121.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to FIS41001 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAR52008[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAR52008-ES.tex ...
+get_syllabus_full_path(MAR52008, 5, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to MAR52008 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAR52008[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAR52008-EN.tex ...
+get_syllabus_full_path(MAR52008, 5, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to MAR52008 (Sem #5)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52082[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52082-ES.tex ...
+get_syllabus_full_path(SFW52082, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS261.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52082 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52082[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52082-EN.tex ...
+get_syllabus_full_path(SFW52082, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS261.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS261.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52082 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52083[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52083-ES.tex ...
+get_syllabus_full_path(SFW52083, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS393.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52083 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52083[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52083-EN.tex ...
+get_syllabus_full_path(SFW52083, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS393.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS393.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52083 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52084[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52084-ES.tex ...
+get_syllabus_full_path(SFW52084, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS312.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52084 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52084[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52084-EN.tex ...
+get_syllabus_full_path(SFW52084, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS312.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS312.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52084 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52085[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52085-ES.tex ...
+get_syllabus_full_path(SFW52085, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS311.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52085 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52085[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52085-EN.tex ...
+get_syllabus_full_path(SFW52085, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS311.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS311.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52085 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52086[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52086-ES.tex ...
+get_syllabus_full_path(SFW52086, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS292.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52086 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52086[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52086-EN.tex ...
+get_syllabus_full_path(SFW52086, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS292.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS292.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52086 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42032[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42032-ES.tex ...
+get_syllabus_full_path(ENG42032, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42032 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ENG42032[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42032-EN.tex ...
+get_syllabus_full_path(ENG42032, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ENG42032 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: FIN52004[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIN52004-ES.tex ...
+get_syllabus_full_path(FIN52004, 6, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to FIN52004 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: FIN52004[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIN52004-EN.tex ...
+get_syllabus_full_path(FIN52004, 6, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to FIN52004 (Sem #6)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52077[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52077-ES.tex ...
+get_syllabus_full_path(SFW52077, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS391.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52077 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52077[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52077-EN.tex ...
+get_syllabus_full_path(SFW52077, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS391.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS391.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52077 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52078[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52078-ES.tex ...
+get_syllabus_full_path(SFW52078, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52078 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52078[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52078-EN.tex ...
+get_syllabus_full_path(SFW52078, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52078 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52081[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52081-ES.tex ...
+get_syllabus_full_path(SFW52081, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS401.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52081 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52081[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52081-EN.tex ...
+get_syllabus_full_path(SFW52081, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS401.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS401.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52081 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52079[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52079-ES.tex ...
+get_syllabus_full_path(SFW52079, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS262.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52079 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52079[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52079-EN.tex ...
+get_syllabus_full_path(SFW52079, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS262.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS262.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52079 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52080[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52080-ES.tex ...
+get_syllabus_full_path(SFW52080, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS251.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52080 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW52080[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52080-EN.tex ...
+get_syllabus_full_path(SFW52080, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS251.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS251.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW52080 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41014[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41014-ES.tex ...
+get_syllabus_full_path(MAC41014, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...
+	File      :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to MAC41014 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: MAC41014[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41014-EN.tex ...
+get_syllabus_full_path(MAC41014, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...
+	File      :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to MAC41014 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS53004[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS53004-ES.tex ...
+get_syllabus_full_path(IIS53004, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS231.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS53004 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS53004[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS53004-EN.tex ...
+get_syllabus_full_path(IIS53004, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS231.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS231.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS53004 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: BSC51001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BSC51001-ES.tex ...
+get_syllabus_full_path(BSC51001, 7, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Espanol/BSC51001.tex ...
+	File      :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/BSC51001.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to BSC51001 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: BSC51001[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BSC51001-EN.tex ...
+get_syllabus_full_path(BSC51001, 7, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/BSC51001.tex ...
+	File      :../Curricula.in/lang/English/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/BSC51001.tex ...[42m[30mfound ! (@wrong place)[0m
+[41mThere is no professor assigned to BSC51001 (Sem #7)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62069[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62069-ES.tex ...
+get_syllabus_full_path(SFW62069, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62069 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62069[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62069-EN.tex ...
+get_syllabus_full_path(SFW62069, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62069 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62070[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62070-ES.tex ...
+get_syllabus_full_path(SFW62070, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS281.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62070 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62070[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62070-EN.tex ...
+get_syllabus_full_path(SFW62070, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS281.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS281.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62070 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62071[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62071-ES.tex ...
+get_syllabus_full_path(SFW62071, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62071 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62071[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62071-EN.tex ...
+get_syllabus_full_path(SFW62071, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62071 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62073[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62073-ES.tex ...
+get_syllabus_full_path(SFW62073, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62073 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62073[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62073-EN.tex ...
+get_syllabus_full_path(SFW62073, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62073 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62074[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62074-ES.tex ...
+get_syllabus_full_path(SFW62074, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS402.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62074 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62074[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62074-EN.tex ...
+get_syllabus_full_path(SFW62074, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS402.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS402.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62074 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62075[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62075-ES.tex ...
+get_syllabus_full_path(SFW62075, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB311.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62075 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62075[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62075-EN.tex ...
+get_syllabus_full_path(SFW62075, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB311.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB311.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62075 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62072[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62072-ES.tex ...
+get_syllabus_full_path(SFW62072, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS361.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62072 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62072[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62072-EN.tex ...
+get_syllabus_full_path(SFW62072, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS361.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS361.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62072 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62076[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62076-ES.tex ...
+get_syllabus_full_path(SFW62076, 8, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62076 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62076[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62076-EN.tex ...
+get_syllabus_full_path(SFW62076, 8, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62076 (Sem #8)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62064[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62064-ES.tex ...
+get_syllabus_full_path(SFW62064, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS403.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62064 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62064[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62064-EN.tex ...
+get_syllabus_full_path(SFW62064, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS403.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS403.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62064 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62065[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62065-ES.tex ...
+get_syllabus_full_path(SFW62065, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB309.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62065 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62065[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62065-EN.tex ...
+get_syllabus_full_path(SFW62065, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/BasicSciences/CB309.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/BasicSciences/CB309.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62065 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62068[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62068-ES.tex ...
+get_syllabus_full_path(SFW62068, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62068 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62068[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62068-EN.tex ...
+get_syllabus_full_path(SFW62068, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62068 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62066[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62066-ES.tex ...
+get_syllabus_full_path(SFW62066, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS392.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62066 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62066[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62066-EN.tex ...
+get_syllabus_full_path(SFW62066, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS392.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS392.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62066 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62067[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62067-ES.tex ...
+get_syllabus_full_path(SFW62067, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS351.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62067 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62067[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62067-EN.tex ...
+get_syllabus_full_path(SFW62067, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS351.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS351.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62067 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS64000[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64000-ES.tex ...
+get_syllabus_full_path(IIS64000, 9, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS370.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS64000 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS64000[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64000-EN.tex ...
+get_syllabus_full_path(IIS64000, 9, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS370.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS370.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS64000 (Sem #9)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62058[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62058-ES.tex ...
+get_syllabus_full_path(SFW62058, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS404.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62058 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62058[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62058-EN.tex ...
+get_syllabus_full_path(SFW62058, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS404.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS404.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62058 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62059[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62059-ES.tex ...
+get_syllabus_full_path(SFW62059, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS365.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62059 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62059[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62059-EN.tex ...
+get_syllabus_full_path(SFW62059, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS365.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS365.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62059 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62060[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62060-ES.tex ...
+get_syllabus_full_path(SFW62060, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62060 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62060[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62060-EN.tex ...
+get_syllabus_full_path(SFW62060, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62060 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62061[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62061-ES.tex ...
+get_syllabus_full_path(SFW62061, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62061 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62061[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62061-EN.tex ...
+get_syllabus_full_path(SFW62061, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62061 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62062[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62062-ES.tex ...
+get_syllabus_full_path(SFW62062, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62062 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: SFW62062[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62062-EN.tex ...
+get_syllabus_full_path(SFW62062, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to SFW62062 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS64016[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64016-ES.tex ...
+get_syllabus_full_path(IIS64016, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS366.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS64016 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: IIS64016[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64016-EN.tex ...
+get_syllabus_full_path(IIS64016, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Computing/CS/CS366.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Computing/CS/CS366.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to IIS64016 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ETM41007[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ETM41007-ES.tex ...
+get_syllabus_full_path(ETM41007, 10, Espanol)
+	Reading   :../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Humanities/HM102.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ETM41007 (Sem #10)[0m
+[43m[30m>> genenerate_tex_syllabus_file: ETM41007[0m-> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ETM41007-EN.tex ...
+get_syllabus_full_path(ETM41007, 10, English)
+	Reading   :../Curricula.in/lang/English/cycle/2021-II/Syllabi/Humanities/HM102.tex ...
+	File      :../Curricula.in/lang/Common/cycle/2021-II/Syllabi/Humanities/HM102.tex ... [42m[30mfound ![0m
+[41mThere is no professor assigned to ETM41007 (Sem #10)[0m
+cp ../Curricula.in/country/Peru/institutions/USIL/Computing/CS/cycle/2021-II/syllabus-Page* ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/.
+get_syllabus_full_path(SFW52098, 1, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52098-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52099, 1, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS111.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52099-orig-ES.tex (OK)
+get_syllabus_full_path(MAC41010, 1, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB111.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41010-orig-ES.tex (OK)
+get_syllabus_full_path(COM42008, 1, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO111.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42008-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42003, 1, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42003-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52096, 2, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52096-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52097, 2, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS112.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52097-orig-ES.tex (OK)
+get_syllabus_full_path(MAC41001, 2, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB211.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41001-orig-ES.tex (OK)
+get_syllabus_full_path(COM42009, 2, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Communication/CO112.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/COM42009-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42005, 2, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID102.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42005-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52094, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2B1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52094-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52095, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS113.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52095-orig-ES.tex (OK)
+get_syllabus_full_path(MAC41002, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41002-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42007, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID103.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42007-orig-ES.tex (OK)
+get_syllabus_full_path(EGI61009, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS221.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EGI61009-orig-ES.tex (OK)
+get_syllabus_full_path(GES51001, 3, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE101.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/GES51001-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52091, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS271.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52091-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52092, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS211.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52092-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52093, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52093-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42009, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID104.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42009-orig-ES.tex (OK)
+get_syllabus_full_path(EST41005, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS210.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/EST41005-orig-ES.tex (OK)
+get_syllabus_full_path(IIS52024, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2S1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS52024-orig-ES.tex (OK)
+get_syllabus_full_path(ECO51002, 4, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/GH1014.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ECO51002-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52087, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS342.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52087-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52088, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS291.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52088-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52089, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS212.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52089-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52090, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS272.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52090-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42012, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID105.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42012-orig-ES.tex (OK)
+get_syllabus_full_path(FIS41001, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB121.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIS41001-orig-ES.tex (OK)
+get_syllabus_full_path(MAR52008, 5, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE111.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAR52008-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52082, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS261.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52082-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52083, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS393.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52083-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52084, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS312.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52084-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52085, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS311.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52085-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52086, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS292.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52086-orig-ES.tex (OK)
+get_syllabus_full_path(ENG42032, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID106.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ENG42032-orig-ES.tex (OK)
+get_syllabus_full_path(FIN52004, 6, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BusinessAndManagement/CE131.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/FIN52004-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52077, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS391.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52077-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52078, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2H1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52078-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52081, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS401.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52081-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52079, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS262.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52079-orig-ES.tex (OK)
+get_syllabus_full_path(SFW52080, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS251.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW52080-orig-ES.tex (OK)
+get_syllabus_full_path(MAC41014, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Common/MA102.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/MAC41014-orig-ES.tex (OK)
+get_syllabus_full_path(IIS53004, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS231.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS53004-orig-ES.tex (OK)
+get_syllabus_full_path(BSC51001, 7, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/EmptySyllabi/Peru/USIL/CS/Espanol/BSC51001.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BSC51001-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62069, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET201.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62069-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62070, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS281.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62070-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62071, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62071-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62073, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3I1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62073-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62074, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS402.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62074-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62075, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB311.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62075-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62072, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS361.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62072-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62076, 8, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS2T1.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62076-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62064, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS403.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62064-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62065, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/BasicSciences/CB309.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62065-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62068, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET301.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62068-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62066, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS392.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62066-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62067, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS351.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62067-orig-ES.tex (OK)
+get_syllabus_full_path(IIS64000, 9, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64000-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62058, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62058-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62059, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS365.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62059-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62060, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Enterpreneurship/ET302.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62060-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62061, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P2.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62061-orig-ES.tex (OK)
+get_syllabus_full_path(SFW62062, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS3P3.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/SFW62062-orig-ES.tex (OK)
+get_syllabus_full_path(IIS64016, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS366.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/IIS64016-orig-ES.tex (OK)
+get_syllabus_full_path(ETM41007, 10, Espanol)
+../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Humanities/HM102.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/ETM41007-orig-ES.tex (OK)
+generate_syllabi_include() OK!
+gen_batch_to_compile_syllabi USIL (66 courses) OK!
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfSyllabi-ES.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pdf-syllabi-includelist-ES.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-ES.sty ...
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfSyllabi-EN.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pdf-syllabi-includelist-EN.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-EN.sty ...
+[43m[30mGenerating books in Espanol ...[0m
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfDescriptions-ES.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/short-descriptions-ES.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-ES.sty ...
+gen_book_of_descriptions (66 courses) OK!
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfBibliography-ES.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/bibliography-list-ES.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-ES.sty ...
+gen_book_of_bibliography (66 courses) OK!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/team-ES.tex ok ...
+[43m[30mGenerating books in English ...[0m
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfDescriptions-EN.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/short-descriptions-EN.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-EN.sty ...
+gen_book_of_descriptions (66 courses) OK!
+
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/BookOfBibliography-EN.tex ok! (write_book_files)
+Copied ../Curricula.in/All.tex/Book-Face.tex to../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex... ok!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/bibliography-list-EN.tex ok! (write_book_files)
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/config-hdr-foot-EN.sty ...
+gen_book_of_bibliography (66 courses) OK!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/team-EN.tex ok ...
+read_min_max: reading ../Curricula.in/Disciplines/Computing/SpiderChartInfo/CS-MinMax.tex
+read_min_max: reading ../Curricula.in/Disciplines/Computing/SpiderChartInfo/CE-MinMax.tex
+read_min_max: reading ../Curricula.in/Disciplines/Computing/SpiderChartInfo/IS-MinMax.tex
+read_min_max: reading ../Curricula.in/Disciplines/Computing/SpiderChartInfo/IT-MinMax.tex
+read_min_max: reading ../Curricula.in/Disciplines/Computing/SpiderChartInfo/SE-MinMax.tex
+read_all_min_max() OK!
+Reading ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...
+[41mNo area description for SFW ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for MAC ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for COM ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ENG ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for EGI ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for GES ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for EST ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for IIS ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ECO ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for FIS ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for MAR ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for FIN ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for BSC ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ETM ... See ../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+generation_foreach_area (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prefix-description-ES.tex): ... OK!
+Reading ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...
+[41mNo area description for SFW ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for MAC ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for COM ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ENG ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for EGI ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for GES ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for EST ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for IIS ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ECO ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for FIS ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for MAR ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for FIN ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for BSC ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+[41mNo area description for ETM ... See ../Curricula.in/lang/English/Disciplines/Computing/CS/tex/description-foreach-prefix.tex ...[0m
+generation_foreach_area (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/prefix-description-EN.tex): ... OK!
+generate_course_tables (Espanol) (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/tables-by-semester-ES.tex) OK!
+generate_laboratories OK!
+generate_distribution_area_by_semester (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/distribution-credits-by-area-by-semester.tex) ... OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-credits.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-credits-main.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-hours.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-hours-main.tex OK!
+[44m[30m ** WARNING ** : * Course SFW52098, (Sem 1) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52099, (Sem 1) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52096, (Sem 2) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52097, (Sem 2) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52094, (Sem 3) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52095, (Sem 3) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course EGI61009, (Sem 3) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course GES51001, (Sem 3) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52091, (Sem 4) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52092, (Sem 4) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52093, (Sem 4) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course IIS52024, (Sem 4) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course ECO51002, (Sem 4) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52087, (Sem 5) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52088, (Sem 5) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52089, (Sem 5) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52090, (Sem 5) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course MAR52008, (Sem 5) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52082, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52083, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52084, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52085, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52086, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course FIN52004, (Sem 6) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52077, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52078, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52081, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52079, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW52080, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course IIS53004, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course BSC51001, (Sem 7) has a level (5) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62069, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62070, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62071, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62073, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62074, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62075, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62072, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62076, (Sem 8) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62064, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62065, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62068, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62066, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62067, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course IIS64000, (Sem 9) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62058, (Sem 10) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62059, (Sem 10) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62060, (Sem 10) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62061, (Sem 10) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course SFW62062, (Sem 10) has a level (6) out of range ... assuming 4[0m
+[44m[30m ** WARNING ** : * Course IIS64016, (Sem 10) has a level (6) out of range ... assuming 4[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-by-levels.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/pie-by-levels-main.tex OK!
+generate_pie_by_levels() ... OK!
+[43m[30mGenerating Posters in Espanol ...[0m
+template_file=../Curricula.in/country/Peru/dot/small-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/small-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/small-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/small-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/small-graph-curricula-ES.dot, <<course_tpl>>, Espanol) OK!
+Copying and expanding to Espanol: ../Curricula.in/lang/Espanol/All.tex/small-graph-curricula.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/small-graph-curricula-ES.tex
+template_file=../Curricula.in/country/Peru/dot/big-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/big-graph-curricula-ES.dot, <<course_tpl>>, Espanol) OK!
+template_file=../Curricula.in/country/Peru/dot/big-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-1-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-2-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-3-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-4-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-5-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG1-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG2-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG3-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG4-big-map-ES.dot, <<course_tpl>>, Espanol) OK!
+generate_poster(Espanol) OK! ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/Computing-poster-ES.tex
+[43m[30mCommon::config{meta_tags}{IN_TEX_DIR}=../Curricula.in/lang/Espanol/Disciplines/Computing/CS/tex[0m
+[43m[30mCommon::config{meta_tags}{OUTPUT_TEX_DIR}=../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex[0m
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-ES-1.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-ES-3.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-ES-5.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-ES-7.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-ES-9.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/all-outcomes-by-course-poster-ES.tex ... ok!
+generate_all_outcomes_by_course(ES) OK!
+[43m[30mGenerating Posters in English ...[0m
+template_file=../Curricula.in/country/Peru/dot/small-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/small-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/small-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/small-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/small-graph-curricula-EN.dot, <<course_tpl>>, English) OK!
+Copying and expanding to English: ../Curricula.in/lang/Espanol/All.tex/small-graph-curricula.tex -> ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/small-graph-curricula-EN.tex
+template_file=../Curricula.in/country/Peru/dot/big-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/big-graph-curricula-EN.dot, <<course_tpl>>, English) OK!
+template_file=../Curricula.in/country/Peru/dot/big-graph-item2.dot exists !
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/Disciplines/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+[44m[30m ** WARNING ** : template_file=../Curricula.in/country/Peru/institutions/USIL/Computing/CS/dot/big-graph-item2.dot does not exist ! no problem[0m
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-1-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-2-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-3-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-4-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-5-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG1-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG2-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG3-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_curricula_in_dot_internal(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/dot/outcome-USILCG4-big-map-EN.dot, <<course_tpl>>, English) OK!
+generate_poster(English) OK! ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/Computing-poster-EN.tex
+[43m[30mCommon::config{meta_tags}{IN_TEX_DIR}=../Curricula.in/lang/English/Disciplines/Computing/CS/tex[0m
+[43m[30mCommon::config{meta_tags}{OUTPUT_TEX_DIR}=../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex[0m
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-EN-1.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-EN-3.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-EN-5.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-EN-7.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/outcomes-by-course-EN-9.tex ... ok!
+Writing ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/all-outcomes-by-course-poster-EN.tex ... ok!
+generate_all_outcomes_by_course(EN) OK!
+generate_table_topics_by_course(1, 2, 24,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-1.tex,90,book) OK!
+generate_table_topics_by_course(3, 2, 26,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-3.tex,90,book) OK!
+generate_table_topics_by_course(5, 2, 26,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-5.tex,90,book) OK!
+generate_table_topics_by_course(7, 2, 26,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-7.tex,90,book) OK!
+generate_table_topics_by_course(9, 2, 26,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-9.tex,90,book) OK!
+generate_table_topics_by_course(1, 2, 500,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-1-web.tex,0,book) OK!
+generate_table_topics_by_course(3, 2, 500,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-3-web.tex,0,book) OK!
+generate_table_topics_by_course(5, 2, 500,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-5-web.tex,0,book) OK!
+generate_table_topics_by_course(7, 2, 500,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-7-web.tex,0,book) OK!
+generate_table_topics_by_course(9, 2, 500,../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-9-web.tex,0,book) OK!
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/topics-by-course-web.tex OK
+generate_all_topics_by_course() OK!
+generate_list_of_outcomes OK! (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/list-of-outcomes.tex)
+Generating list_of_courses_by_outcome ok (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/courses-by-outcome-ES.tex)
+Generating list_of_courses_by_specific_outcome ok (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/list-of-courses-by-specific-outcome-ES.tex, Espanol)
+Generating table_of_courses_by_specific_outcome ok (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/table-of-courses-by-specific-outcome-ES.tex, Espanol)
+generate_list_of_courses_by_area(Espanol) OK!
+[43m[30mGenerating curves-CS-with-CS-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-ES-main.tex OK!
+generate_curves_with_one_standard(CS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-ES.tex
+[43m[30mGenerating spider-CS-with-CS-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-ES-main.tex OK!
+generate_spider_with_one_standard(CS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-ES.tex
+[43m[30mGenerating curves-CS-with-CE-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-ES-main.tex OK!
+generate_curves_with_one_standard(CE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-ES.tex
+[43m[30mGenerating spider-CS-with-CE-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-ES-main.tex OK!
+generate_spider_with_one_standard(CE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-ES.tex
+[43m[30mGenerating curves-CS-with-IS-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-ES-main.tex OK!
+generate_curves_with_one_standard(IS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-ES.tex
+[43m[30mGenerating spider-CS-with-IS-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-ES-main.tex OK!
+generate_spider_with_one_standard(IS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-ES.tex
+[43m[30mGenerating curves-CS-with-IT-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-ES-main.tex OK!
+generate_curves_with_one_standard(IT) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-ES.tex
+[43m[30mGenerating spider-CS-with-IT-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-ES-main.tex OK!
+generate_spider_with_one_standard(IT) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-ES.tex
+[43m[30mGenerating curves-CS-with-SE-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-ES-main.tex OK!
+generate_curves_with_one_standard(SE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-ES.tex
+[43m[30mGenerating spider-CS-with-SE-ES ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-ES.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-ES-main.tex OK!
+generate_spider_with_one_standard(SE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-ES.tex
+generate_compatibility_with_standards(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/comparing-with-standards-ES.tex) OK!
+generate_courses_by_professor: Generating (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/courses-by-professor-ES.tex) OK
+generate_professor_by_course: Generating (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/professor-by-course-ES.tex) OK
+[43m[30mGenerating curves-CS-with-CS-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-EN-main.tex OK!
+generate_curves_with_one_standard(CS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CS-EN.tex
+[43m[30mGenerating spider-CS-with-CS-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-EN-main.tex OK!
+generate_spider_with_one_standard(CS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CS-EN.tex
+[43m[30mGenerating curves-CS-with-CE-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-EN-main.tex OK!
+generate_curves_with_one_standard(CE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-CE-EN.tex
+[43m[30mGenerating spider-CS-with-CE-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-EN-main.tex OK!
+generate_spider_with_one_standard(CE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-CE-EN.tex
+[43m[30mGenerating curves-CS-with-IS-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-EN-main.tex OK!
+generate_curves_with_one_standard(IS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IS-EN.tex
+[43m[30mGenerating spider-CS-with-IS-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-EN-main.tex OK!
+generate_spider_with_one_standard(IS) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IS-EN.tex
+[43m[30mGenerating curves-CS-with-IT-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-EN-main.tex OK!
+generate_curves_with_one_standard(IT) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-IT-EN.tex
+[43m[30mGenerating spider-CS-with-IT-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-EN-main.tex OK!
+generate_spider_with_one_standard(IT) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-IT-EN.tex
+[43m[30mGenerating curves-CS-with-SE-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-EN-main.tex OK!
+generate_curves_with_one_standard(SE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/curves-CS-with-SE-EN.tex
+[43m[30mGenerating spider-CS-with-SE-EN ...[0m
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-EN.tex OK!
+writing file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-EN-main.tex OK!
+generate_spider_with_one_standard(SE) OK!  ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/spider-CS-with-SE-EN.tex
+generate_compatibility_with_standards(../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/comparing-with-standards-EN.tex) OK!
+generate_courses_by_professor: Generating (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/courses-by-professor-EN.tex) OK
+generate_professor_by_course: Generating (../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/professor-by-course-EN.tex) OK
+Generating equivalences: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/equivalences.tex OK!
+Generating file: ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/files-to-be-changed.txt ...
+Generating main ...
+../Curricula.in/country/Peru/Computing/CS/CS.tex/Main.tex [42m[30mExists![0m
+../Curricula.in/country/Peru/institutions/USIL/Computing/CS/Main.tex [42m[30mExists![0m
+../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/tex/Main.tex generated ok! ...
+Generating ../Curricula.out/Peru/CS-USIL/cycle/2021-II/Plan2021/scripts/gen-dot-maps.sh at save_batch_to_generate_dot_maps
+Dumped errors ! [42m[30m./log/Peru-CS-USIL Plan2021.md[0m
+[44m***********************************************************************[49m
+[44m**                     Finishing                                     **[49m
+[44m***********************************************************************[49m
+Time elapsed: 4 seconds ...

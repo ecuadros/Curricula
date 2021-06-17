@@ -55,21 +55,13 @@ sub generate_course_tables($)
 		{
             #print "{$semester}{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{$Common::course_info{$codcour}{cr}}{$codcour}% $Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}, $Common::course_info{$codcour}{cr}\n";
 			my %this_course_info 	= ();
-			#my $codcour_label 	= Common::get_label($codcour);
+			#my $codcour_label 	= Common::unmask_codcour($codcour);
 			$this_line		= $Common::config{dictionary}{course_fields};
 			my $prefix		= $Common::course_info{$codcour}{prefix};
 			my $pdflink 	= "";
 			# my $pdflink 	= Common::get_pdf_link($codcour);
 			if(not defined($Common::course_info{$codcour}{bgcolor}))
 			{
-				Util::print_message("Color is not configured for ".Util::red($codcour)." ...");
-				Util::print_message("Verify files: ".Util::red(Common::get_template("colors")));
-				my $whichdoesnotexists = "";
-				my $InstitutionColorsFile = Common::get_template("institution-color");
-				if( -e $InstitutionColorsFile )
-				{	Util::print_message("and ".Util::green($InstitutionColorsFile)." ...");	}
-				else
-				{	Util::print_message("OR ".Util::red("create: $InstitutionColorsFile ..."));	}
 				assert(0);
 				exit;
 			}
@@ -86,7 +78,7 @@ sub generate_course_tables($)
 #				foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
 #				{
 ## 					print "$rec(A)\n";
-#					$rec = Common::get_label($rec);
+#					$rec = Common::unmask_codcour($rec);
 #					my $semester_rec = $Common::course_info{$rec}{semester};
 #					$rec_courses .= "$sep\\htmlref{$rec $Common::course_info{$rec}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
 #					$rec_courses .= "($semester_rec";
@@ -550,16 +542,24 @@ sub initialize_critical_path()
 		}
 }
 
-sub process_critical_path_for_one_course($)
+sub process_critical_path_for_one_course($$$$);
+sub process_critical_path_for_one_course($$$$)
 {
-	my ($codcour) = (@_);
+	my ($codcour, $pathId, $lang, $tab) = (@_);
+	#Util::print_message($tab.Util::yellow("$codcour")."(".Common::format_semester($Common::course_info{$codcour}{semester}, $lang).")->");
+	if( $Common::course_info{$codcour}{pathId} == $pathId )
+	{
+		#Util::print_error("There is a cycle ($codcour)!");
+		#exit;
+	}
 	my ($distance) = (0);
 	my %paths = ();
+	$Common::course_info{$codcour}{pathId} = $pathId;
 	#Util::print_message("Processing $codcour");
-	foreach my $codpost (@{$Common::course_info{$codcour}{courses_after_this_course}})
+	foreach my $codpost (@{$Common::course_info{$codcour}{courses_after_this_course}} )
 	{
 		#Util::print_message("\t$codpost");
-		my ($distance_child, @path_child) = process_critical_path_for_one_course($codpost);
+		my ($distance_child, @path_child) = process_critical_path_for_one_course($codpost, $pathId, $lang, "$tab\t");
 		$distance_child++;
 		#unshift(@path_child, $codcour);
 		my $new_path_pos = 0;
@@ -603,20 +603,23 @@ sub load_critical_path(@)
 	}
 }
 
-sub detect_critical_path()
+sub detect_critical_path($)
 {
+	my ($lang) = (@_);
 	initialize_critical_path();
 	my $max_distance = 0;
+	my $pathId = rand(100);
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
 	{
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
-			my ($distance_for_this_course, @path) = process_critical_path_for_one_course($codcour);
+			my ($distance_for_this_course, @path) = process_critical_path_for_one_course($codcour, $pathId, $lang, "");
 			if( $distance_for_this_course >= $max_distance )
 			{	
 				$max_distance = $distance_for_this_course;
 				push(@{$critical_path{$distance_for_this_course}}, @path);
 			}
+			# print("\n");
 		}
 	}
 	load_critical_path(@{$critical_path{$max_distance}});
@@ -709,7 +712,7 @@ sub generate_curricula_in_dot_internal($$$$$)
 		            $clusters_info{$track}{$group}{dot} .= $this_course_dot;
 					push( @{$clusters_info{$track}{$group}{courses}}, $codcour);
 		    }
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			$sem_rank .= " \"$codcour\";";
 			$ncourses++;
 		}
@@ -774,7 +777,7 @@ sub generate_curricula_in_dot_internal($$$$$)
 				}
 				else
 				{
-					my ($source, $target) = (Common::get_label($req), $codcour);
+					my ($source, $target) = (Common::unmask_codcour($req), $codcour);
 					if($source eq "")
 					{
 						Util::print_message("Something wrong here ! codcour=$codcour (Sem: $Common::course_info{$codcour}{semester}), req=$req");
@@ -794,9 +797,9 @@ sub generate_curricula_in_dot_internal($$$$$)
 			if( $Common::config{recommended_prereq_flag} == 1 )
 			{	foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
 				{
-					$output_txt .= Common::get_label($rec);
+					$output_txt .= Common::unmask_codcour($rec);
 					$output_txt .= "->";
-					$output_txt .= Common::get_label($codcour);
+					$output_txt .= Common::unmask_codcour($codcour);
 					$output_txt .= " [$Common::config{CoRequisiteStyle}];\n";
 				}
 			}
@@ -805,9 +808,9 @@ sub generate_curricula_in_dot_internal($$$$$)
 				foreach my $coreq (split(",", $Common::course_info{$codcour}{corequisites}))
 				{
 					#print "codigo = $codcour (sem=$Common::course_info{$codcour}{semester}), coreq = $coreq\n";
-					$output_txt .= Common::get_label($coreq);
+					$output_txt .= Common::unmask_codcour($coreq);
 					$output_txt .= "->";
-					$output_txt .= Common::get_label($codcour);
+					$output_txt .= Common::unmask_codcour($codcour);
 					$output_txt .= "[$Common::config{RecommendedRequisiteStyle}];\n";
 				}
 			}
@@ -1017,7 +1020,7 @@ sub generate_table_topics_by_course($$$$$$$)
 		$sem_per_course{$semester} = 0;
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			my $codcour_label = $codcour;
 			$extra_header = "";
  			$extra_header = "$Common::config{column2}" if($flag == 1 && $Common::config{graph_version}>= 2);
@@ -1503,7 +1506,7 @@ sub generate_outcomes_by_course($$$$$$$$)
 		$sem_per_course{$semester} = 0;
 		foreach my $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			my $codcour_label = $codcour;
 			$extra_header = "";
  			$extra_header = "$Common::config{column2}" if($flag == 1 && $Common::config{graph_version}>= 2);
@@ -1698,7 +1701,7 @@ sub generate_list_of_courses_by_area($)
 		foreach my $codcour (@{$Common::list_of_courses_per_area{$axe}})
 		{
 			$i++;
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			my $codcour_label = $codcour;
 
 # 			print "$codcour -> $codcour_label\n";
@@ -2091,32 +2094,29 @@ sub generate_pie_by_levels()
 		foreach my $codcour ( @{$Common::courses_by_semester{$semester}} )
 		{
 			#print "$semester: $codcour;  ";
-			if($codcour =~ m/..(.).*/)
+			my $level = Common::get_level($codcour);
+			if( not defined($Common::config{colors}{colors_per_level}{$level}) )
 			{
-				my $level = $1;
-				if( not defined($Common::config{colors}{colors_per_level}{$level}) )
-				{
-				      my $wrong_level = $level;
-				      if( $level < $Common::config{course_min_level} ) {	$level = $Common::config{course_min_level};	}
-				      if( $level > $Common::config{course_max_level} ) {	$level = $Common::config{course_max_level};	}
-				      Util::print_warning("Course $codcour, (Sem $Common::course_info{$codcour}{semester}) has a level ($wrong_level) out of range ... assuming $level");
-				}
-				if(not defined($Common::data{credits_per_level}{$level}))
-				{	$Common::data{credits_per_level}{$level} = 0;		}
-
-				if( $Common::course_info{$codcour}{course_type} eq "Elective" )
-				{	$maxE   = $Common::course_info{$codcour}{cr} if($Common::course_info{$codcour}{cr} > $maxE);
-					$levelE = $level;
-				}
-				else
-				{	$Common::data{credits_per_level}{$level} += $Common::course_info{$codcour}{cr};
-					$total_credits 		      				 += $Common::course_info{$codcour}{cr};
-				}
-				#if( $semester == 8 )
-				#{	my $cr = $Common::course_info{$codcour}{cr};
-				#	print "Sem=$semester, $codcour($cr), creditos=$total_credits\n";
-				#}
+					my $wrong_level = $level;
+					if( $level < $Common::config{course_min_level} ) {	$level = $Common::config{course_min_level};	}
+					if( $level > $Common::config{course_max_level} ) {	$level = $Common::config{course_max_level};	}
+					Util::print_warning("* Course $codcour, (Sem $Common::course_info{$codcour}{semester}) has a level ($wrong_level) out of range ... assuming $level");
 			}
+			if(not defined($Common::data{credits_per_level}{$level}))
+			{	$Common::data{credits_per_level}{$level} = 0;		}
+
+			if( $Common::course_info{$codcour}{course_type} eq "Elective" )
+			{	$maxE   = $Common::course_info{$codcour}{cr} if($Common::course_info{$codcour}{cr} > $maxE);
+				$levelE = $level;
+			}
+			else
+			{	$Common::data{credits_per_level}{$level} += $Common::course_info{$codcour}{cr};
+				$total_credits 		      				 += $Common::course_info{$codcour}{cr};
+			}
+			#if( $semester == 8 )
+			#{	my $cr = $Common::course_info{$codcour}{cr};
+			#	print "Sem=$semester, $codcour($cr), creditos=$total_credits\n";
+			#}
 		}
 		$Common::data{credits_per_level}{$levelE} += $maxE;
 		$total_credits 		    += $maxE;
@@ -2217,7 +2217,7 @@ sub generate_equivalence_old2new($)
 			my $old_course_cr = $Common::general_info{equivalences}{$old_curricula}{$semester}{$old_course_codcour}{old_course_cr};
 
 			my $codcour 	= $Common::general_info{equivalences}{$old_curricula}{$semester}{$old_course_codcour}{codcour};
-			#my $codcour_label = Common::get_label($codcour);
+			#my $codcour_label = Common::unmask_codcour($codcour);
 			my $codcour_label = $codcour;
 
 			if($Common::course_info{$codcour}{bgcolor})
@@ -2543,7 +2543,6 @@ sub generate_main()
 					 "InProgramDir",
 					);
 	my @MainsDirsExpanded;
-	my $output_tex = "";
 	# print Dumper(\@MainsDirs);
 
 	# First: detect the last existing Main.tex
@@ -2569,7 +2568,7 @@ sub generate_main()
 	}
 	assert(scalar(@MainsDirsExpanded) == scalar(@MainsDirs));
 	my $output_tex = "";
-	my $i = 0; 
+	$i = 0; 
 	#Util::print_color("last_active=$last_active");
 	foreach my $item (@MainsDirsExpanded)
 	{

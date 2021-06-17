@@ -56,31 +56,31 @@ sub generate_institution($)
 	$output_txt .= "\n";
 
 	$output_txt .= "\\newcommand{\\basedir}{".getcwd()."}\n";
-	$output_txt .= "\\newcommand{\\InDir}{\\basedir/".Common::get_template("InDir")."}\n";
-	$output_txt .= "\\newcommand{\\InLangBaseDir}{\\basedir/".Common::get_template("InLangBaseDir")."}\n";
-	$output_txt .= "\\newcommand{\\InLangDefaultDir}{\\basedir/".Common::get_template("InLangDefaultDir")."}\n";
-	$output_txt .= "\\newcommand{\\InAllTexDir}{\\basedir/".Common::get_template("InAllTexDir")."}\n";
+	$output_txt .= "\\newcommand{\\InDir}{\\basedir/".Common::get_expanded_template("InDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InLangBaseDir}{\\basedir/".Common::get_expanded_template("InLangBaseDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InLangDefaultDir}{\\basedir/".Common::get_expanded_template("InLangDefaultDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InAllTexDir}{\\basedir/".Common::get_expanded_template("InAllTexDir", $lang)."}\n";
 	$output_txt .= "\\newcommand{\\InTexDir}{\\basedir/".Common::get_expanded_template("InTexDir", $lang)."}\n";
-	$output_txt .= "\\newcommand{\\InStyDir}{\\basedir/".Common::get_template("InStyDir")."}\n";
-	$output_txt .= "\\newcommand{\\InTexAllDir}{\\basedir/".Common::get_template("InTexAllDir")."}\n";
-    $output_txt .= "\\newcommand{\\InStyAllDir}{\\basedir/".Common::get_template("InStyAllDir")."}\n";
+	$output_txt .= "\\newcommand{\\InStyDir}{\\basedir/".Common::get_expanded_template("InStyDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InTexAllDir}{\\basedir/".Common::get_expanded_template("InTexAllDir", $lang)."}\n";
+    $output_txt .= "\\newcommand{\\InStyAllDir}{\\basedir/".Common::get_expanded_template("InStyAllDir", $lang)."}\n";
 
-	$output_txt .= "\\newcommand{\\InCountryDir}{\\basedir/".Common::get_template("InCountryDir")."}\n";
-	$output_txt .= "\\newcommand{\\InInstConfigDir}{\\basedir/".Common::get_template("InInstitutionConfigDir")."}\n";
+	$output_txt .= "\\newcommand{\\InCountryDir}{\\basedir/".Common::get_expanded_template("InCountryDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InInstConfigDir}{\\basedir/".Common::get_expanded_template("InInstitutionConfigDir", $lang)."}\n";
 	
-	$output_txt .= "\\newcommand{\\InCountryTexDir}{\\basedir/".Common::get_template("InCountryTexDir")."}\n";
-	$output_txt .= "\\newcommand{\\InProgramTexDir}{\\basedir/".Common::get_template("InProgramTexDir")."}\n";
+	$output_txt .= "\\newcommand{\\InCountryTexDir}{\\basedir/".Common::get_expanded_template("InCountryTexDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InProgramTexDir}{\\basedir/".Common::get_expanded_template("InProgramTexDir", $lang)."}\n";
 	
-	$output_txt .= "\\newcommand{\\InSPCDir}{\\basedir/".Common::get_template("InCountryDir")."/$Common::config{discipline}/$Common::config{area}/SPC}\n";
- 	$output_txt .= "\\newcommand{\\InProgramDir}{\\basedir/".Common::get_template("InProgramDir")."}\n";
-	$output_txt .= "\\newcommand{\\InLogosDir}{\\basedir/".Common::get_template("InLogosDir")."}\n";
+	$output_txt .= "\\newcommand{\\InSPCDir}{\\basedir/".Common::get_expanded_template("InCountryDir", $lang)."/$Common::config{discipline}/$Common::config{area}/SPC}\n";
+ 	$output_txt .= "\\newcommand{\\InProgramDir}{\\basedir/".Common::get_expanded_template("InProgramDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\InLogosDir}{\\basedir/".Common::get_expanded_template("InLogosDir", $lang)."}\n";
 
-	$output_txt .= "\\newcommand{\\OutputTexDir}{\\basedir/".Common::get_template("OutputTexDir")."}\n";
-	$output_txt .= "\\newcommand{\\OutputCompetencesDir}{\\basedir/".Common::get_template("OutputCompetencesDir")."}\n";
+	$output_txt .= "\\newcommand{\\OutputTexDir}{\\basedir/".Common::get_expanded_template("OutputTexDir", $lang)."}\n";
+	$output_txt .= "\\newcommand{\\OutputCompetencesDir}{\\basedir/".Common::get_expanded_template("OutputCompetencesDir", $lang)."}\n";
 	
- 	$output_txt .= "\\newcommand{\\OutputFigsDir}{\\basedir/".Common::get_template("OutputFigsDir")."}\n";
- 	$output_txt .= "\\newcommand{\\InSyllabiBaseDir}{\\basedir/".Common::get_template("InSyllabiContainerDir")."}\n";
- 	$output_txt .= "\\newcommand{\\OutputPrereqDir}{\\basedir/".Common::get_template("OutputPrereqDir")."}\n";
+ 	$output_txt .= "\\newcommand{\\OutputFigsDir}{\\basedir/".Common::get_expanded_template("OutputFigsDir", $lang)."}\n";
+ 	$output_txt .= "\\newcommand{\\InSyllabiBaseDir}{\\basedir/".Common::get_expanded_template("InSyllabiContainerDir", $lang)."}\n";
+ 	$output_txt .= "\\newcommand{\\OutputPrereqDir}{\\basedir/".Common::get_expanded_template("OutputPrereqDir", $lang)."}\n";
  	$output_txt .= "\n";
 
 	$output_txt .= "\\newcommand{\\TeamTitle}{$Common::config{dictionary}{TeamTitle}}\n";
@@ -96,7 +96,7 @@ sub generate_institution($)
 		$output_txt .= "\\newcommand{\\Language$lang"."Prefix}{$Common::config{dictionaries}{$lang}{lang_prefix}}\n";
 	}
 	Util::write_file($current_inst_file, $output_txt);
-	my $output_current_institution = Common::get_template("OutDir")."/tex/current-institution.tex";
+	my $output_current_institution = Common::get_expanded_template("OutDir", $lang)."/tex/current-institution.tex";
 
 	Util::print_message("Creating: $output_current_institution ...");
 	Util::write_file($output_current_institution, $output_txt);

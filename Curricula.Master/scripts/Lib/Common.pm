@@ -240,28 +240,17 @@ sub get_alias($)
 	else{	return "";	}
 }
 
-sub detect_codcour($)
-{
-	my ($cc) = (@_);
-	my $codcour = $cc;
-	if(defined($antialias_info{$cc}))
-	{	$codcour = $antialias_info{$cc}		}
-	if( not defined($course_info{$codcour}) )
-	{     Util::print_error("codcour \"$codcour\" does not exist ... ");		}
-	return $codcour;
-}
-
-# ok
-sub get_label($)
+# Verify if it is just an alias for a real course or directly the codcour
+sub unmask_codcour($)
 {
 	my ($codcour) = (@_);
-    if( defined($config{map_file_to_course}{$codcour}) )
-    {   $codcour = $config{map_file_to_course}{$codcour};   }
-
-    if(defined($antialias_info{$codcour})) #ok
-	{	$codcour = $antialias_info{$codcour};		}
-	$codcour = get_alias($codcour); # ok
-	return $codcour; #ok
+	my $temp = $codcour;
+	if( defined($course_info{$codcour}) )
+	{     return $codcour;		}
+	if( defined($antialias_info{$codcour}) )
+	{	return $antialias_info{$codcour};		}
+	Util::print_error("codcour \"$temp($codcour)\" does not exist ... ");
+	return $codcour;
 }
 
 # ok
@@ -269,9 +258,17 @@ sub get_prefix($)
 {
 	my ($codcour) = (@_);
 # 	print "x$codcour, alias=$course_info{$codcour}{alias}\n";
-	$codcour = $course_info{$codcour}{alias};
-	if($codcour =~ m/(..).*/)
+	# $codcour = $course_info{$codcour}{alias};
+	if($codcour =~ m/(\D*)(.)/) # \D non-digit character
 	{	return $1;	}
+	return "";
+}
+
+sub get_level($)
+{
+	my ($codcour) = (@_);
+	if($codcour =~ m/([A-Z]*)(.)/) # \D non-digit character
+	{	return $2;	}
 	return "";
 }
 
@@ -444,7 +441,7 @@ sub GetCourseNameWithLink($$$$)
 		my ($rec_courses, $sep) = ("", "");
 		foreach my $rec (split(",", $Common::course_info{$codcour}{recommended}))
 		{
-			$rec = Common::get_label($rec);
+			$rec = Common::unmask_codcour($rec);
 			my $semester_rec = $Common::course_info{$rec}{semester};
 			$rec_courses .= "$sep\\htmlref{$rec $Common::course_info{$rec}{$lang}{course_name}}{sec:$codcour}";
 			$rec_courses .= "($semester_rec\$^{$Common::config{dictionary}{ordinal_postfix}{$semester_rec}}\$)";
@@ -1459,7 +1456,7 @@ sub replace_old_macros($)
 sub process_config_vars()
 {
 #  	print "config{macros_file} = \"$config{macros_file}\"\n";
-        my $InStyDir = get_template("InStyDir");
+    my $InStyDir = get_template("InStyDir");
 	my $InLangDefaultDir = get_template("InLangDefaultDir");
 	foreach my $file (split(",", $config{macros_file}))
 	{
@@ -1467,16 +1464,16 @@ sub process_config_vars()
 		$file =~ s/<LANG-AREA>/$InLangDefaultDir/g;
 	}
 
-# 	PrefixPriority=CS,IS,SE,HW,IT,MC,OG,CB,CF,CM,CQ,HU,ET,ID
-	my $count = 0;
+# 	PrefixPriority=CS,IS,SE,HW,IT,MC,OG,CB,CF,CM,CQ,HU,ET,ID # Pending Er
+	$config{PrefixPriorityCount} = 0;
 	$config{PrefixPriority} =~ s/ //g;
-	foreach my $prefix (split(",",$config{PrefixPriority}))
-	{	$config{prefix_priority}{$prefix} = ++$count;		}
+	foreach my $prefix (split(",", $config{PrefixPriority}))
+	{	$config{prefix_priority}{$prefix} = ++$config{PrefixPriorityCount};		}
 
 # 	AreaPriority=AF,AE,AB,AC
-	$count = 0;
+	$config{AreaPriorityCount} = 0;
 	foreach my $area (split(",", $config{AreaPriority}))
-	{	$config{area_priority}{$area} = ++$count;		}
+	{	$config{area_priority}{$area} = ++$config{AreaPriorityCount};		}
 
 	%{$config{colors}{colors_per_level}}   = %{$config{temp_colors}{colors_per_level}};
 	undef(%{$config{temp_colors}{colors_per_level}});
@@ -2030,7 +2027,7 @@ sub read_specific_evaluacion_info()
 	      while($specific_evaluation =~ m/\\begin\{evaluation\}\{(.*?)\}((?:.|\n)*?)\\end\{evaluation\}/g)
 	      {
 		      my ($cc, $this_evaluation_body) = ($1, $2);
-		      my $codcour = detect_codcour($cc);
+		      my $codcour = unmask_codcour($cc);
 		      #Util::print_message("this_evaluation_body=\n$this_evaluation_body");
 		      if ( $this_evaluation_body  =~ m/\{(.*?)\}\{(.*?)\}\s*\n((?:.|\n)*)/g)
 		      {
@@ -2375,42 +2372,42 @@ sub gen_only_macros()
 	foreach my $country (keys %{$config{list_of_countries}})
 	{
 		$country =~ s/ //g;
-                $output_txt .= "\\newcommand{\\Only$country}[1]{";
-                if($country eq $config{country_without_accents})
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n";
-                $output_txt .= "\\newcommand{\\Not$country}[1]{";
-                if(not $country eq $config{country_without_accents})
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n\n";
-        }
+		$output_txt .= "\\newcommand{\\Only$country}[1]{";
+		if($country eq $config{country_without_accents})
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n";
+		$output_txt .= "\\newcommand{\\Not$country}[1]{";
+		if(not $country eq $config{country_without_accents})
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n\n";
+    }
 
-        $output_txt .= "% 2st by areas ...\n";
+    $output_txt .= "% 2st by areas ...\n";
 	foreach my $onearea (keys %list_of_areas)
-        {
-                $output_txt .= "\\newcommand{\\Only$onearea}[1]{";
-                if($onearea eq $area)
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n";
+	{
+		$output_txt .= "\\newcommand{\\Only$onearea}[1]{";
+		if($onearea eq $area)
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n";
 
-                $output_txt .= "\\newcommand{\\Not$onearea}[1]{";
-                if(not $onearea eq $area)
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n\n";
-        }
+		$output_txt .= "\\newcommand{\\Not$onearea}[1]{";
+		if(not $onearea eq $area)
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n\n";
+	}
 
 	$output_txt .= "% And now by institutions ...\n";
 	foreach my $inst (keys %inst_list)
-        {
-                $output_txt .= "\\newcommand{\\Only$inst}[1]{";
-                if($inst eq $institution)
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n";
-                $output_txt .= "\\newcommand{\\Not$inst}[1]{";
-                if(not $inst eq $institution)
-                {       $output_txt .= "\#1";   }
-                $output_txt .= "\\xspace}\n\n";
-        }
+	{
+		$output_txt .= "\\newcommand{\\Only$inst}[1]{";
+		if($inst eq $institution)
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n";
+		$output_txt .= "\\newcommand{\\Not$inst}[1]{";
+		if(not $inst eq $institution)
+		{       $output_txt .= "\#1";   }
+		$output_txt .= "\\xspace}\n\n";
+	}
 	my $only_macros_file = get_template("out-only-macros-file");
 	Util::write_file($only_macros_file, $output_txt);
 	Util::print_message("gen_only_macros ($only_macros_file) OK!");
@@ -2658,12 +2655,6 @@ sub read_faculty()
 		{	$Common::config{faculty}{$email}{fields}{courses_i_could_teach}{$codcour} = "";
 			$Common::config{courses_i_could_teach}{$codcour}{$email} = "";
 		}
-# 		{
-# 		      $onecodcour = get_label($onecodcour);
-# 		      Util::print_message("get_label($onecodcour)=".get_label($onecodcour));
-# 		      $config{faculty}{$email}{fields}{courses_i_could_teach}{$onecodcour} = "";
-# 		}
-		#Util::print_message("$config{faculty}{$email}{fields}{shortcv}");
 	}
 										
 	#Util::print_message("$copy_input");
@@ -2689,7 +2680,6 @@ sub read_distribution()
 	    Util::print_error("read_distribution: I can not open \"$distribution_file\"");
 	    exit;
 	}
-
 	my $count   = 0;
 	my $line_number = 0;
 	my $codcour = "";
@@ -2707,7 +2697,7 @@ sub read_distribution()
 			$codcour =~ s/\s//g;
 			$emails  =~ s/\s//g;
 			$codcour_alias = $codcour;
-			$codcour = get_label($codcour);
+			$codcour = unmask_codcour($codcour);
 			if( not defined($course_info{$codcour}) )
 			{
 			      Util::print_error("codcour \"$codcour\" assigned in \"$distribution_file\" does not exist (line: $line_number) ... ");
@@ -2715,7 +2705,7 @@ sub read_distribution()
 			$codcour = get_alias($codcour);
 			if( $codcour eq "" )
 			{
-			      Util::print_error("$codcour_alias is empty ! codcour=$codcour, $course_info{$codcour}{name}=$course_info{$codcour}{alias}");
+			      Util::print_error("$codcour_alias ($codcour) is empty ! codcour=$codcour, $course_info{$codcour}{name}=$course_info{$codcour}{alias}");
 			}
 #
 			if(not defined($config{distribution}{$codcour}))
@@ -2736,7 +2726,7 @@ sub read_distribution()
 				}
 				else{
 				      $professor_email = $one_professor_assignment;
-				      Util::print_soft_error("distribution error($distribution_file) ... $codcour($codcour_alias):$one_professor_assignment ... no role assigned?");
+				      Util::print_soft_error("distribution error($distribution_file) ... $codcour_alias($codcour):$one_professor_assignment ... no role assigned?");
 				}
  				if( defined($config{faculty}{$professor_email}) )
 				{
@@ -2750,7 +2740,7 @@ sub read_distribution()
         		}
 				else
 				{
-				    Util::print_warning("No professor information for email:\"$professor_email\" $codcour($codcour_alias) ... just commenting it");
+				    Util::print_warning("No professor information for email:\"$professor_email\" $codcour_alias($codcour) ... just commenting it");
                     $ignored_email{$codcour}  = "" if(not defined($ignored_email{$codcour}));
                     $ignored_email{$codcour} .= ",$professor_email";
 				}
@@ -2781,7 +2771,7 @@ sub read_distribution()
 			$codcour = get_alias($codcour);
 			if( not defined($config{distribution}{$codcour}) )
 			{
-				Util::print_warning("I do not find professor for course $codcour ($codcour_alias) ($semester sem) $course_info{$codcour}{$config{language_without_accents}}{course_name} ...");
+				Util::print_warning("I do not find professor for course $codcour_alias ($codcour) ($semester sem) $course_info{$codcour}{$config{language_without_accents}}{course_name} ...");
 			}
 			else
 			{	my $sep = "";
@@ -3660,12 +3650,12 @@ sub parse_courses()
 	{
 		if($onecourse =~ m/\\course(.*)/)
 		{
-			my ($course_params) = ($1);
-			$course_params =~ s/\n//g; $course_params =~ s/\r//g;
+			my ($course_line) = ($1);
+			$course_line =~ s/\n//g; $course_line =~ s/\r//g;
 			#                       {sem}{course_type}{area_country}{area_pie}{dpto}{cod}{alias}{name} {cr}{th}  {ph}  {lh} {ti}{Tot} {labtype}  {req} {rec} {corq}{grp} {axe} %filter
-			if($course_params =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
+			if($course_line =~ m/\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}\{(.*?)\}%(.*)/g)
 			{
-				#Util::print_color("\\course$course_params");
+				#Util::print_color("\\course$course_line");
 				my ($semester, $course_type, $area, $area_pie, $department)     = ($1, $2, $3, $4, $5);
 				my ($codcour, $codcour_alias, $course_name_es, $course_name_en) = ($6, $7, $8, $9);
 				my ($credits, $ht, $hp, $hl, $ti, $tot, $labtype)   		    = ($10, $11, $12, $13, $14, $15, $16);
@@ -3673,23 +3663,14 @@ sub parse_courses()
 				my ($group, $track)												= ($21, $22);
 				my ($axes, $inst_wildcard)			      		               	= ($23, $24);
 				my $coursefile = $codcour;
-		# 		Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ...");
-				if($codcour_alias eq "") {	$codcour_alias = $codcour; 	}
-				else
-				{   $codcour = $codcour_alias;
-					$antialias_info{$codcour_alias} 	= $codcour;
-				}
-		  		Util::print_warning("codcour=$codcour, codcour_alias=$codcour_alias ..."); # exit;
-
-				#if( $codcour eq "CS211" )	{	$flag = 1; 	Util::print_warning("codcour = $codcour");	}
 				$inst_wildcard =~ s/\n//g; 	$inst_wildcard =~ s/\r//g;
 	# 		  	Util::print_message("$axes");
 	# 		  	Util::print_message("Labtype: $labtype");
 	# 		  	Util::print_message("Wilcard: $inst_wildcard ");
 
-				my @inst_array        = split(",", $inst_wildcard);
-				my $count             = 0;
-				my $priority 		= 0;
+				my @inst_array			= split(",", $inst_wildcard);
+				my $count				= 0;
+				my $priority 			= 0;
 				if( $active_semester != $semester )
 				{
 					$active_semester = $semester;
@@ -3707,32 +3688,41 @@ sub parse_courses()
 					}
 					#else{	#Util::print_message("$inst does not match ...");	}
 				}
-				if( $count == 0 ){	 #Util::print_warning("$codcour ignored $inst_wildcard");
-					#Util::print_warning("\\course$course_params ignored! (filter:$inst_list{$institution}{filter})");
+				if( $count == 0 )
+				{	# Util::print_message(Util::red("$codcour ignored $inst_wildcard"));
+					#Util::print_message(Util::yellow("Ignoring")." \\course$course_line "." ".Util::yellow("filter:$inst_list{$institution}{filter})"));
 					next;
 				}
-
+				if($codcour_alias eq "")
+				{	$codcour_alias = $codcour; 	}
+				else
+				{   my $prev_codcour = $codcour;                     # A -> xyz
+					$codcour = $codcour_alias;                       # $codcour = "xyz"
+					$antialias_info{$prev_codcour} = $codcour_alias; # $antialias_info{xyz} = "A";
+				}
+				$Common::course_info{$codcour}{pathId} = -1;
 		# 		  if( $flag == 1 )	{	Util::print_warning("codcour = $codcour");
 		#  						print Dumper(\%{$course_info{$codcour}});	exit;
 		# 					}
-
 		# 		  my $codcour_alias = get_alias($codcour);
 				if( $course_info{$codcour} ) # This course already exist, then verify if the new course has a higher priority
 				{
-					Util::print_message("priority = $priority");
-					Util::print_message("course_info{$codcour}{priority} = $course_info{$codcour}{priority}");
-					#if( defined($course_info{$codcour}{priority}) )
-					#{
+					# 
+					if( defined($course_info{$codcour}{priority}) )
+					{	# Util::print_message("course_info{$codcour}{priority} = $course_info{$codcour}{priority}, priority = $priority");
 						if( $priority < $course_info{$codcour}{priority} )
 						{
 							print "\n";
 							Util::print_warning("Course $codcour (Sem #$course_info{$codcour}{semester},\"$course_info{$codcour}{inst_list}\"), has higher priority than $codcour (Sem #$semester, \"$inst_wildcard\")  ... ignoring the last one !!!");
 							exit;
 						}
-					#}
+					}
+					else
+					{
+						#$course_info{$codcour}{priority}	= $priority;
+					}
 				}
 				$config{n_semesters} = $semester if($semester > $config{n_semesters});
-
 				$course_info{$codcour}{coursefile}	= $coursefile;
 				$course_info{$codcour}{common_file} = "";
 				if($axes eq "")
@@ -3749,36 +3739,49 @@ sub parse_courses()
 				$coreq	       =~ s/ //g;
 
 				$course_info{$codcour}{priority}	= $priority;
-				$course_info{$codcour}{semester}      = $semester;
-				$course_info{$codcour}{course_type}   = $course_type; # $config{dictionary}{$course_type};
-				$course_info{$codcour}{short_type}    = $config{dictionary}{MandatoryShort};
+				$course_info{$codcour}{semester}    = $semester;
+				$course_info{$codcour}{course_type} = $course_type; # $config{dictionary}{$course_type};
+				$course_info{$codcour}{short_type}  = $config{dictionary}{MandatoryShort};
 				$course_info{$codcour}{short_type}	= $config{dictionary}{ElectiveShort} if($course_info{$codcour}{course_type} eq $Common::config{dictionary}{Elective});
 				$course_info{$codcour}{alias}		= $codcour_alias;
-
-		# 			print ".";
-		# 		  print "*" if($courses_count % 10 == 0);
-
-				$course_info{$codcour}{axes}           	= $axes;
+				$course_info{$codcour}{axes}        = $axes;
 				$course_info{$codcour}{naxes}		= 0;
-
 				my $prefix = get_prefix($codcour);
 				$course_info{$codcour}{prefix}		= $prefix;
 
-				# print "coursecode= $codcour, area= $course_info{$codcour}{axe}\n";
-		# 			$area_priority{$codcour}		= $axes;
-				$course_info{$codcour}{textcolor}	= $config{colors}{$prefix}{textcolor};
-				$course_info{$codcour}{bgcolor}		= $config{colors}{$prefix}{bgcolor};
+				if( not defined($config{prefix_priority}{$prefix}) ) # Pending Er
+				{	$config{prefix_priority}{$prefix} = ++$config{PrefixPriorityCount};
+					my $config_file = get_template("in-area-all-config-file");
+					my $ErrorMsg = "There is no priority defined for ".Util::red($prefix)." See: ".Util::red($config_file);
+					push(@{$Common::error{general}}, $ErrorMsg);
+				}
+		# 		print "coursecode= $codcour, area= $course_info{$codcour}{axe}\n";
+		# 		$area_priority{$codcour}		= $axes;
+				if( defined($Common::course_info{$codcour}{bgcolor}) )
+				{	$course_info{$codcour}{textcolor}	= $config{colors}{$prefix}{textcolor};
+					$course_info{$codcour}{bgcolor}		= $config{colors}{$prefix}{bgcolor};
+				}
+				else
+				{	print("Color is not configured for ".Util::red($codcour)." ... Verify files: ".Util::red(Common::get_template("colors")));
+					my $whichdoesnotexists = "";
+					my $InstitutionColorsFile = Common::get_template("institution-color");
+					if( -e $InstitutionColorsFile )
+					{	Util::print_message(" and ".Util::red($InstitutionColorsFile)." ...");	}
+					else
+					{	Util::print_message(" OR ".Util::green("create: $InstitutionColorsFile ..."));	}
+					$course_info{$codcour}{textcolor}	= "black";
+					$course_info{$codcour}{bgcolor}		= "white";
+				}
 				$course_info{$codcour}{Espanol}{course_name} = $course_name_es;
 				$course_info{$codcour}{English}{course_name} = $course_name_en;
-				$course_info{$codcour}{area}		= $area;
-				$course_info{$codcour}{area_pie}	= $area_pie;
-				$course_info{$codcour}{department}	= $department;
-
-				$course_info{$codcour}{cr}             	= $credits;
+				$course_info{$codcour}{area}				 = $area;
+				$course_info{$codcour}{area_pie}			 = $area_pie;
+				$course_info{$codcour}{department}			 = $department;
+				$course_info{$codcour}{cr}             		 = $credits;
 				($course_info{$codcour}{th}, $course_info{$codcour}{ph}, $course_info{$codcour}{lh})		= (0, 0, 0);
-				$course_info{$codcour}{th}             	= $ht if(not $ht eq "");
-				$course_info{$codcour}{ph}             	= $hp if(not $hp eq "");
-				$course_info{$codcour}{lh}             	= $hl if(not $hl eq "");
+				$course_info{$codcour}{th}             		 = $ht if(not $ht eq "");
+				$course_info{$codcour}{ph}             		 = $hp if(not $hp eq "");
+				$course_info{$codcour}{lh}             		 = $hl if(not $hl eq "");
 
 				($course_info{$codcour}{ti}, $course_info{$codcour}{tot})            = (0, 0);
 				$course_info{$codcour}{ti}                  = $ti  if(not $ti eq "");
@@ -3798,12 +3801,6 @@ sub parse_courses()
 				{	$course_info{$codcour}{prereq_invis}{$prereq_invis} = "";
 				}
 				($course_info{$codcour}{prerequisites} = $prerequisites) =~ s/\(H\)//g;
-				# if( $codcour eq "CS364" ) Pending
-				# {
-				# 	print "$course_info{$codcour}{prerequisites}\n";
-				# 	print Dumper(\%{$course_info{$codcour}{prereq_invis}});
-				# 	exit;
-				# }
 				foreach my $lang ( @{$config{SyllabusLangsList}} )
 				{
 					$course_info{$codcour}{$lang}{full_prerequisites} = []; # # CS101F. Name1 (1st Sem, $Common::config{dictionary}{Pag} 56), CS101O. Name2 (2nd Sem, Pag 87), ...
@@ -3815,32 +3812,35 @@ sub parse_courses()
 				$course_info{$codcour}{prerequisites_for_this_course}	= [];
 				$course_info{$codcour}{courses_after_this_course} 	= [];
 				$course_info{$codcour}{short_prerequisites}	= ""; # CS101F (1st Sem), CS101O (2nd Sem), ...
-		# 		  Util::print_warning("codcour=$codcour, $recommended");
-				$course_info{$codcour}{recommended}   		= get_label($recommended);
+	 		  	# Util::print_warning("codcour=$codcour, $recommended");
+				$course_info{$codcour}{recommended}   		= "";
+				if( not $recommended eq "" )
+				{	$course_info{$codcour}{recommended}   		= unmask_codcour($recommended);	}
 		# 		  Util::print_warning("course_info{$codcour}{recommended}=$course_info{$codcour}{recommended}"); exit;
-				$course_info{$codcour}{corequisites}		= get_label($coreq);
+				$course_info{$codcour}{corequisites}		= "";
+				if( not $coreq eq "" )
+				{	$course_info{$codcour}{corequisites}		= unmask_codcour($coreq);		}
 				$course_info{$codcour}{group}          		= $group;
 				$course_info{$codcour}{track}          		= $track;
 
 				$course_info{$codcour}{inst_list}      		= $inst_wildcard;
 				$course_info{$codcour}{equivalence}			= "";
-				$course_info{$codcour}{specific_evaluation}		= "";
+				$course_info{$codcour}{specific_evaluation}	= "";
 
-				if(not $codcour_alias eq $codcour)
+				if($codcour_alias eq $codcour)
+				{	Util::print_message("* $codcour $course_info{$codcour}{Espanol}{course_name} (prereq: $course_info{$codcour}{prerequisites})");	
+				}
+				else
 				{	print "$codcour_alias($codcour) ";	}
-				else{	Util::print_message("$codcour $course_info{$codcour}{Espanol}{course_name} ($course_info{$codcour}{prerequisites})");	}
 				push(@codcour_list_sorted, $codcour);
 			}
 			else
-			{
-				Util::print_warning("course: \"\\course$course_params\" does not contain the right # of parameters ...");
+			{	Util::print_warning("course: \"\\course$course_line\" does not contain the right # of parameters ...");
 			}
 			#$flag = 0;
 		}
 	}
-
 # 	close(IN);
-
 	if(not defined($config{SemMin}) and not defined($config{SemMax}) )
 	{
 	    $config{SemMin} = 1;
@@ -3858,7 +3858,11 @@ sub parse_courses()
 	my $file = Common::get_template("out-nsemesters-file");
 	#Util::print_message("3312 Creating $file ...");
     Util::write_file($file, "$config{n_semesters}\\xspace");
-	# exit; # Er
+	# exit;
+	#print Dumper( \%antialias_info );
+	#print "$antialias_info{MAC41010}\n";
+	#print "Pending ABC";
+	#exit;
 }
 
 # ok
@@ -3922,7 +3926,7 @@ sub filter_courses($)
 
 		#print_message("Processing coursecode=$codcour ...");
 		my $prefix = get_prefix($codcour);
-		if(not defined($config{used_prefix}{$prefix}))   # YES HERE
+		if(not defined($config{used_prefix}{$prefix})) 
 		{
 			$config{used_prefix}{$prefix} = "";
 			$config{number_of_used_prefix}++;
@@ -4021,12 +4025,12 @@ sub filter_courses($)
 				}
 			}
 			else
-			{
-				my $prereq_label = get_label($codreq);
+			{	#print("codcour=$codcour (".format_semester($course_info{$codcour}{semester}, $lang).")" );
+				my $prereq_label = unmask_codcour($codreq);
 				# Pending Er
-				Util::print_message("codcour=$codcour, codreq=$codreq, prereq_label=$prereq_label");
-				if($prereq_label eq "")
-				{	Util::print_error("codcour=$codcour,sem=$semester ($course_info{$codcour}{English}{course_name})\n codreq=$codreq Did you forget to activate that prereq ($codreq) See: $input_file");	}
+				#Util::print_message(", codreq=$codreq, prereq_label=$prereq_label");
+				#if($prereq_label eq "")
+				#{	Util::print_error("codcour=$codcour,sem=$semester ($course_info{$codcour}{English}{course_name})\n codreq=$codreq Did you forget to activate that prereq ($codreq) See: $input_file");	}
 				$codreq = $prereq_label;
 				#Util::print_message("codcour=$codcour,codreq=$codreq");
 				$new_prerequisites .= "$sep$codreq";
@@ -4064,16 +4068,6 @@ sub filter_courses($)
 			$sep = ",";
 		}
 		$course_info{$codcour}{prerequisites} = $new_prerequisites;
-		#if( $codcour eq "FG601" )
-		#{		Util::print_message("course_info{$codcour}{prerequisites}=$course_info{$codcour}{prerequisites}, new=$new_prerequisites");
-		#		exit;
-		#}
-#                 print Dumper( \%{$Common::course_info{$codcour}} );
-#                 Util::print_message("Common::course_info{$codcour}{n_prereq} = $Common::course_info{$codcour}{n_prereq}");
-#                 #print Dumper( \%{$config{map_file_to_course}} );
-#                 Util::print_message("parse_courses(): prerequisites=$course_info{$codcour}{prerequisites},label=". get_label($course_info{$codcour}{prerequisites}));
-#                 exit;
-
 		if($course_info{$codcour}{n_prereq} == 0)
 		{	    foreach my $lang ( @{$config{SyllabusLangsList}} )
                 {   $course_info{$codcour}{$lang}{full_prerequisites} = $config{dictionary}{None};	}
@@ -4167,11 +4161,12 @@ sub filter_courses($)
 #     print Dumper( \%{$config{map_file_to_course}} );
 #     exit;
 	#Util::print_message("$course_info{CS221}{prerequisites_just_codes} abc");
-	#exit;
+	#exit; # Pending Er
 }
 
 sub sort_courses()
 {
+	# Pending Er
 	@codcour_list_sorted = sort {$Common::course_info{$a}{semester} <=> $Common::course_info{$b}{semester} ||
 								 $Common::config{prefix_priority}{$Common::course_info{$a}{prefix}} <=> $Common::config{prefix_priority}{$Common::course_info{$b}{prefix}} ||
 								 $Common::course_info{$b}{course_type} cmp $Common::course_info{$a}{course_type} ||

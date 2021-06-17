@@ -115,7 +115,7 @@ sub main()
 		#Common::parse_bok($lang);
 	} 
 	Common::gen_only_macros();
-    GeneralInfo::detect_critical_path(); 
+    GeneralInfo::detect_critical_path($Common::config{language_without_accents}); 
 	
 	GenSyllabi::process_syllabi();
 	
@@ -136,5 +136,7 @@ sub main()
 	Util::print_time_elapsed();
 }
 
+#my $prefix = Common::get_prefix("CSXR102");
+#print("Prefix=$prefix\n"); exit;
 main();
 
