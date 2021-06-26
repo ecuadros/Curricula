@@ -95,12 +95,13 @@ E-mail				                  = Correo Electrónico
 Corequisites                          = Co-Requisitos
 HoursOfAttentionOfTheInstructorOrCoordinatorOfTheCourse = Horas de Atención del Instructor o coordinador del curso
 
-DPTO	  = Dpto
-TOTALHOURS= Horas Totales 
-Syllabus  = Sílabo
-SyllabusOf= Silabus de
-Syllabi   = Sílabos
-Descriptions=Sumillas
+DPTO	        = Dpto
+TOTALHOURS      = Horas totales 
+hours           = horas
+Syllabus        = Sílabo
+SyllabusOf      = Silabus de
+Syllabi         = Sílabos
+Descriptions    =Sumillas
 Bibliography=Bibliografía
 BasicBibliography=Bibliografía básica
 Plan	  = Plan
@@ -125,6 +126,7 @@ hour		        = hora
 HoursOfThisCourse   = Horas del curso
 weeks               =semanas
 Weekly              =Semanal
+Week                =Semana
 Total		        = Total
 Pag                 = Pág
 Pages               =Páginas
@@ -288,6 +290,7 @@ ThereIsNoProfessorSkilledForThisCourse=--
 
 %%%Spanish
 Exam=Examen
+Finalexam=Examen final
 ExamAcronym=E
 ContinuousAssessment=Evaluación Continua
 ContinuousAssessmentAcronym=C
@@ -298,6 +301,11 @@ PracticalTestAcronym=PC
 LabExperiments=Laboratorio
 LabExperimentsAcronym=L
 FG=NF 
+Remarks=Observaciones
+Finalmakeup=Rezagable
+AutonomousLearning=Aprendizaje autónomo
+Developmentofpracticalexercises=Desarrollo de ejercicios prácticos
+
 
 CompetencesForEngineering=Competencias para Ingeniería
 CompetencesForCS=Competencias para Ciencia de la Computación

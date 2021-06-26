@@ -97,7 +97,8 @@ Corequisites                           = Co-Requisites.
 HoursOfAttentionOfTheInstructorOrCoordinatorOfTheCourse  = Hours Of Attention Of The Instructor Or Coordinator Of The Course .
 
 DPTO	            = Department
-TOTALHOURS          = Total Hours 
+TOTALHOURS          = Total hours 
+hours               = horas
 Syllabus            = Sillabus
 SyllabusOf          = Sillabus de
 Syllabi             = Syllabi
@@ -125,6 +126,7 @@ hrs		            =hr(s)
 hour		        =hour
 weeks               =weeks
 Weekly              =Weekly
+Week                =Week
 HoursOfThisCourse   =Hour of this course
 Total		        =Total
 Pag                 =Pg.
@@ -287,6 +289,7 @@ ThereIsNoProfessorSkilledForThisCourse=--
 
 %%%%En ingles
 Exam=Exam
+Finalexam=Final exam
 ExamAcronym=E
 ContinuousAssessment=Continuous Assessment
 ContinuousAssessmentAcronym=C
@@ -297,6 +300,10 @@ PracticalTestAcronym=PT
 LabExperiments=Lab experiments
 LabExperimentsAcronym=L
 FG=FG
+Remarks=Remarks
+Finalmakeup=Final Makeup
+AutonomousLearning=Autonomous learning
+Developmentofpracticalexercises=Development of practical exercises
 
 CompetencesForEngineering=Competences for Engineering
 CompetencesForCS=Competences for Computer Science
