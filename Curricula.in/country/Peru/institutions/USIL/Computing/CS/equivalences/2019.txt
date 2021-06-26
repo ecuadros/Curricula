@@ -1,0 +1,95 @@
+{1}{ENG42003}{English I}{4}{ID101}% English I, 4
+{3}{IIS51003}{Estructuras Discretas}{4}{CS1D1}% Estructuras Discretas I, 4
+{1}{MAC41010}{Fundamentos de Cálculo}{4}{CB111}% Fundamentos de Cálculo, 4
+{1}{SFW52000}{Introducción a la Ciencia de la Computación}{3}{CS111}% Introducción a la Ciencia de la Computación, 3
+{1}{COM42008}{Lenguaje I}{4}{CO111}% Lenguaje I, 4
+
+
+
+{2}{MAC41001}{Cálculo de una Variable}{4}{CB211}% Cálculo de una Variable, 4
+{2}{ENG42005}{English II}{4}{ID102}% English II, 4
+{2}{}{}{}{CS1D2}% Estructuras Discretas II, 4
+{2}{COM42009}{Lenguaje II}{4}{CO112}% Lenguaje II, 4
+{6}{SFW51001}{Proyecto de Software I}{2}{CS112}% Programación Orientada a Objetos I, 4
+
+
+
+
+{5}{GES51001}{Administración para los Negocios}{4}{CE101}% Administración para los Negocios, 4
+{5}{}{}{}{CS221}% Arquitectura de Computadoras, 4
+{3}{MAC41002}{Cálculo de Varias Variables}{4}{MAC41002}% Cálculo de Varias Variables, 4
+{3}{}{}{}{CS2B1}% Desarrollo Basado en Plataformas, 3
+{3}{ENG42007}{English III}{4}{ID103}% English III, 4
+{7}{SFW51003}{Proyecto de Software II}{2}{CS113}% Programación Orientada a Objetos II, 4
+
+
+
+
+
+{}{}{}{}{CS210}% Algoritmos y Estructuras de Datos, 2
+{4}{ENG42009}{English IV}{4}{ID104}% English IV, 4
+{2}{EST41005}{Estadística Descriptiva y Probabilidades}{4}{EST41005}% Estadística Descriptiva y Probabilidades, 4
+{9}{ECO51002}{Economía General}{4}{}% , 
+{5}{SFW51002}{Ingeniería de Datos}{2}{CS271}% Gerenciamiento  de Datos I, 2
+{4}{}{}{}{CS2S1}% Sistemas Operativos, 4
+{4}{}{}{}{CS211}% Teoría de Computación, 3
+
+
+
+
+{5}{}{}{}{CS272}% Gerenciamiento de Datos II, 2
+{4}{EGI51004}{Algoritmos y Estructuras de Programación}{3}{CS212}% Análisis y Diseño de Algoritmos, 2
+{5}{SFW51004}{Ingeniería de Software}{2}{CS291}% Ingeniería de Software I, 3
+{8}{SFW51013}{Arquitectura de Software}{4}{CS342}% Compiladores, 2
+{3}{FIS41001}{Física General}{4}{CB121}% Física General, 4
+{5}{MAR52008}{Marketing}{4}{}% , 
+{5}{ENG42012}{English V}{4}{ID105}% English V, 4
+
+
+
+{8}{SFW51005}{Diseño de Software}{4}{CS292}% Ingeniería de Software II, 3
+{6}{}{}{}{CS311}% Programación Competitiva, 2
+{6}{}{}{}{CS312}% Estructura de Datos Avanzada, 4
+{8}{FIN52004}{Finanzas Empresariales}{4}{CE131}% Finanzas Empresariales, 4
+{6}{GSI61009}{Inteligencia de Negocios}{4}{CS393}% Sistemas de Información, 3
+{6}{}{}{}{CS261}% Sistemas Inteligentes, 2
+{6}{ENG42032}{English VI: RREL}{3}{ENG42032}% English VI: RREL, 3
+
+
+
+
+{9}{SFW51006}{User Experience}{2}{CS2H1}% Experiencia de Usuario (UX), 2
+{9}{SFW51008}{Implementación de Software}{4}{CS391}% Ingeniería de Software III, 3
+{7}{}{}{}{CS401}% Metodología de la Investigación en Computación, 3
+{7}{}{}{}{BSC51001}% Biología, 4
+{7}{IIS53004}{Redes y Telecomunicaciones}{4}{CS231}% Redes y Telecomunicaciones, 4
+{4}{MAC41014}{Álgebra Lineal}{4}{}% , 
+
+
+
+
+{8}{}{}{}{CS3P1}% Computación Paralela y Distribuida, 4
+{8}{}{}{}{CS281}% Computación en la Sociedad, 2
+{10}{EGI61005}{Negocios y Modelos Digitales}{4}{ET201}% Formación de Empresas de Base Tecnológica I, 2
+{8}{}{}{}{CB311}% Matemática Aplicada a la Computación, 2
+{10}{GES67079}{Capstone Project en Ingeniería de Software}{4}{CS402}% Proyecto de Final de Carrera I, 3
+{9}{IIS64020}{Ciberseguridad}{4}{CS3I1}% Seguridad en Computación, 3
+
+
+
+
+{9}{}{}{}{ET301}% Formación de Empresas de Base Tecnológica II, 3
+{9}{IIS64017}{Big Data}{4}{CS370}% Big Data y Analítica de Datos, 4
+{9}{}{}{}{CB309}% Bioinformática, 4
+{9}{}{}{}{CS403}% Proyecto de Final de Carrera II, 3
+{6}{INV51055}{Fundamentos del Método Científico}{2}{}% , 
+
+
+
+
+{10}{}{}{4}{CS3P3}% Internet de las Cosas, 2
+{10}{}{}{}{CS3P2}% Cloud Computing, 2
+{10}{}{}{3}{ET302}% Formación de Empresas de Base Tecnológica III, 3
+{10}{INV61059}{Seminario de Tesis para Ingeniería}{4}{CS404}% Proyecto de Final de Carrera III, 3
+{4}{ETM41007}{Ética y Ciudadanía}{3}{HM102}% Etica y Ciudadanía, 3
+{8}{IIS64016}{Robótica}{4}{CS366}% Robótica, 4
