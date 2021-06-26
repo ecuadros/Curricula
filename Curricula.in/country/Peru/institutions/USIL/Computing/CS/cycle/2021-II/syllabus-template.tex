@@ -111,10 +111,10 @@
 \addsectiontoidx{<<Competences>>}
 --FULL_OUTCOMES--
 
-\vspace{2mm}
-\addtocounter{SyllabiSectionCount}{1}
-\addsectiontoidx{<<SpecificCompetences>>}
---FULL_SPECIFIC_OUTCOMES--
+%\vspace{2mm}
+%\addtocounter{SyllabiSectionCount}{1}
+%\addsectiontoidx{<SpecificCompetences>>}
+%FULL_SPECIFIC_OUTCOMES--
 
 \vspace{2mm}
 \addtocounter{SyllabiSectionCount}{1}
@@ -125,12 +125,21 @@
 \addtocounter{SyllabiUnitCount}{1}
 \begin{center}
 \begin{tabularx}{\textwidth}{|X|X|}                 \hline
-\multicolumn{2}{|l|}{\textbf{<<Unit>> \arabic{SyllabiUnitCount}: --UNIT_TITLE-- (--HOURS--) }} \\ \hline
-\multicolumn{2}{|l|}{\textbf{<<CompetencesExpected>>: --LEVEL_OF_COMPETENCE--}} \\ \hline
+\multicolumn{2}{|l|}{\textbf{<<Unit>> \arabic{SyllabiUnitCount}: --UNIT_TITLE-- (--HOURS-- <<hours>>) }} \\ \hline
+\multicolumn{2}{|l|}{\textbf{<<CompetencesExpected>>:} --LEVEL_OF_COMPETENCE--} \\ \hline
 \textbf{<<Topics>>}  &  \textbf{<<LearningOutcomes>>} \\ \hline
 --UNIT_CONTENT-- 
 & 
 --UNIT_GOAL--
+\\ \hline
+\multicolumn{2}{|l|}
+{\begin{minipage}{0.95\textwidth}
+  \textbf{<<AutonomousLearning>>}
+  \begin{itemize}
+    \item <<Developmentofpracticalexercises>>
+  \end{itemize}
+\end{minipage}
+}
 \\ \hline
 \multicolumn{2}{|l|}
 {\begin{minipage}{0.95\textwidth}
@@ -169,8 +178,26 @@
 
 \addtocounter{SyllabiSectionCount}{1}
 \addsectiontoidx{<<EVALUATION-SYSTEM>>}
+\vspace{0.2cm}
 \begin{evaluation}
-    \colorbox{yellow}{\textcolor{red}{********* EVALUATION MISSING ********}}
+    \begin{tabularx}{\textwidth}{|X|c|X|c|c|} \hline
+        % \multicolumn{5}{|c|}{\textbf{<<EVALUATION-SYSTEM>>}} \\ \hline
+        \multicolumn{5}{|c|}{
+        \begin{minipage}{0.96\textwidth}
+            Cada uno de los rubros del esquema de evaluación y la nota final del curso son redondeados a números enteros. La nota final del curso es el promedio ponderado de los rubros correspondientes: evaluación permanente, examen parcial y examen final.
+            
+            Los promedios calculados componentes del rubro 'Evaluación Permanente' mantendrán su cálculo con 2 decimales.
+        \end{minipage}%
+        } \\ \hline
+        & \textbf{\%} & \textbf{<<Remarks>>} & \textbf{<<Week>>} & \textbf{<<Finalmakeup>>} \\ \hline
+        \textbf{<<ContinuousAssessment>>} & 70\% & & & \\ \hline
+        ~~\textbf{<<PracticalTest>>}  & 70\% & & & \\ \hline
+        ~~~~<<PracticalTest>>$_1$ & & Se elimina la práctica con la menor nota & 4 & No \\ \hline
+        ~~~~<<PracticalTest>>$_2$ & & Se elimina la práctica con la menor nota & 8 & No \\ \hline
+        ~~~~<<PracticalTest>>$_3$ & & Se elimina la práctica con la menor nota & 12 & No \\ \hline
+        ~~\textbf{<<Project>>} & 30\% & & 15 & \\ \hline
+        \textbf{<<Finalexam>>} & 30\% & & & \\ \hline
+    \end{tabularx}
 \end{evaluation}
 
 \vspace{2mm}

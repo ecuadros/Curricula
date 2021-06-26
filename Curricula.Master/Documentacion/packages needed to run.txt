@@ -1,6 +1,7 @@
 You can add this to the ~/.bashrc to make it always available when you log-in.
 Ubuntu: export PERL5LIB=/home/ecuadros/Articles/Curricula/Curricula.Master/scripts
 Mac   :
+/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1/
 export PERL5LIB=/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1:/System/Library/Perl/Extras/5.30/darwin-thread-multi-2level:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
 export TEXINPUTS=::/usr/local/Cellar/latex2html/2021/texinputs
 source ~/.zshrc
