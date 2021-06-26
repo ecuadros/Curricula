@@ -84,7 +84,7 @@ sub generate_general_info()
 		GeneralInfo::generate_courses_by_professor($lang);
 		GeneralInfo::generate_professor_by_course($lang);
 	}
- 	GeneralInfo::process_equivalences();
+ 	GeneralInfo::process_equivalences($lang); 
 # 	generate_sql_for_new_courses();
 # 	generate_tables_for_advance();
 # 	generate_courses_for_advance();
@@ -136,7 +136,9 @@ sub main()
 	Util::print_time_elapsed();
 }
 
-#my $prefix = Common::get_prefix("CSXR102");
-#print("Prefix=$prefix\n"); exit;
+# my $prefix = Common::get_prefix("CSXR102");
+# print("Prefix=$prefix\n"); 
+# print Util::intersection("g,h, i, k, a", "b, h, i, p, a");
+# exit;
 main();
 

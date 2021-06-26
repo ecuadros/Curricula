@@ -203,10 +203,11 @@ sub GetProgramInDir($$$$)
 	return GetInCountryBaseDir($country)."/institutions/$inst/$discipline/$area";
 }
 
-sub GetInstitutionInfo($$)
+sub GetInstitutionInfo($)
 {
-	my ($country, $inst) = (@_);
-	return GetInCountryBaseDir($country)."/institutions/$inst.tex";
+	my ($inst)  = (@_);
+	my $country = $Common::inst_list{$inst}{country};
+	return GetInCountryBaseDir($country)."/institutions/$inst/$inst.tex";
 }
 
 sub save_courses_by_competence($$$)
@@ -419,7 +420,7 @@ sub generate_invisible_connection_between_two_courses($$)
 	my ($source, $target) = (@_);
 	my ($output_txt, $comment) = ("", "");
 	
-	if( defined($course_info{$target}{prereq_invis}{$source}) ) # Pending
+	if( defined($course_info{$target}{prereq_invis}{$source}) )
 	{	my $style   = "style=dotted, penwidth=1";
 		my $comment = "Invisible link ... just to arrange nodes ...";
 		return format_connection_beetween_two_nodes($source, $target, $style, $comment);
@@ -566,27 +567,17 @@ sub read_pagerefs()
     Util::check_point("read_pagerefs");
 }
 
-# ! Pending: duplicates functions?
-sub format_semester_label($)
-{
-      my ($semester) = (@_);
-      if($semester)
-      {		return "$semester\$^{$config{dictionary}{ordinal_postfix}{$semester}}\$";	}
-      else{	Util::halt("");		}
-      return "";
-}
-
-sub format_semester($$)
+sub format_semester_label($$)
 {
 	my ($semester, $lang) = (@_);
-	return "$semester$config{dictionaries}{$lang}{ordinal_postfix}{$semester} $config{dictionaries}{$lang}{Sem}";
+	return "$semester\$^{$config{dictionaries}{$lang}{ordinal_postfix}{$semester}}\$ $config{dictionaries}{$lang}{Sem}";
 }
 
 # ok
 sub sem_label($$)
 {
 	my ($semester, $lang) = (@_);
-	my $rpta  = "\"".format_semester($semester, $lang)." ";
+	my $rpta  = "\"".format_semester_label($semester, $lang)." ";
 	$rpta    .= "($config{credits_this_semester}{$semester} $config{dictionaries}{$lang}{cr})\"";
 	return  $rpta;
 }
@@ -1063,7 +1054,7 @@ sub create_common_file($$)
 sub get_syllabus_full_path($$$)
 {
 	my ($codcour, $semester, $lang) = (@_);
-	Util::print_message("get_syllabus_full_path($codcour, $semester, $lang)");
+	#Util::print_message("get_syllabus_full_path($codcour, $semester, $lang)");
 	my $codcourfile = $course_info{$codcour}{coursefile};
 	#print Dumper(\@{$config{SyllabiDirs}{$lang}});
 	foreach my $dir (@{$config{SyllabiDirs}{$lang}})
@@ -1088,7 +1079,7 @@ sub get_syllabus_full_path($$$)
 	my $syllabus_base_dir = get_expanded_template("InSyllabiContainerDir", $lang);
 	my $course_name = $course_info{$codcour}{$lang}{course_name};
 	my $course_type = $course_info{$codcour}{course_type};
-	my $msg = "$course_name, ".format_semester($semester, $lang);
+	my $msg = "$course_name, ".format_semester_label($semester, $lang);
 
 	Util::print_color("I could not find course $codcour ($msg) ...\n".
 					"I was looking for that file at: $syllabus_base_dir");
@@ -1108,13 +1099,13 @@ sub get_syllabus_full_path($$$)
 		$empty_syllabus_in_tex      =~ s/<CODE>/$codcour/g;
 		$empty_syllabus_in_tex      =~ s/<NAME>/$course_name/g;
 		$empty_syllabus_in_tex      =~ s/<COURSE_TYPE>/$config{dictionaries}{$lang}{$course_type}/g;
+		# $empty_syllabus_in_tex      =~ s/<COURSE_TYPE>/$config{dictionaries}{$lang}{$course_type}/g;
 		Util::write_file("$new_file.tex", $empty_syllabus_in_tex);
 
 		# Create the bib file
 		Util::print_message("Creating file $InEmptySyllabiDir/".Util::red("$codcourfile.bib"));
 		my $empty_syllabus_bib 	= Util::read_file(get_template("in-empty-syllabus-bib-file"));
 		Util::write_file("$new_file.bib", $empty_syllabus_bib);
-
 		# Create the common file
 		create_common_file($codcour, $lang);
 		return "$new_file.tex";
@@ -2063,7 +2054,8 @@ sub read_specific_evaluacion_info()
 		      }
 	      }
 	}
-	Util::print_message("Reading specific evaluation file ($specific_evaluation_file) ok !...");
+	#Util::print_message("Reading specific evaluation file ($specific_evaluation_file) ok !...");
+	#exit;
 }
 
 # ok
@@ -4025,9 +4017,8 @@ sub filter_courses($)
 				}
 			}
 			else
-			{	#print("codcour=$codcour (".format_semester($course_info{$codcour}{semester}, $lang).")" );
+			{	#print("codcour=$codcour (".format_semester_label($course_info{$codcour}{semester}, $lang).")" );
 				my $prereq_label = unmask_codcour($codreq);
-				# Pending Er
 				#Util::print_message(", codreq=$codreq, prereq_label=$prereq_label");
 				#if($prereq_label eq "")
 				#{	Util::print_error("codcour=$codcour,sem=$semester ($course_info{$codcour}{English}{course_name})\n codreq=$codreq Did you forget to activate that prereq ($codreq) See: $input_file");	}
@@ -4114,7 +4105,7 @@ sub filter_courses($)
 			{
 					if( not $course_info{$codcour}{group} eq "")
 					{
-						Util::print_error("Course: $codcour (".$course_info{$codcour}{$lang}{course_name}.", ".format_semester($semester, $lang).") is $course_info{$codcour}{course_type} ... its group MUST be empty ... ");
+						Util::print_error("Course: $codcour (".$course_info{$codcour}{$lang}{course_name}.", ".format_semester_label($semester, $lang).") is $course_info{$codcour}{course_type} ... its group MUST be empty ... ");
 					}
 					$Common::config{credits_this_semester}{$semester} += $course_info{$codcour}{cr};
 					#Util::print_message("Sem=$semester,acu=$Common::config{credits_this_semester}{$semester}, course_info{$codcour}{cr}=$course_info{$codcour}{cr}");
@@ -4161,7 +4152,6 @@ sub filter_courses($)
 #     print Dumper( \%{$config{map_file_to_course}} );
 #     exit;
 	#Util::print_message("$course_info{CS221}{prerequisites_just_codes} abc");
-	#exit; # Pending Er
 }
 
 sub sort_courses()
@@ -5773,7 +5763,7 @@ sub dump_general_errors()
 sub save_batch_to_generate_dot_maps()
 {
 	my $batch_txt 	 = "#!/bin/csh\n\n";
-	$batch_txt 		.= $Common::config{"dots_to_be_generated"};
+	# $batch_txt 		.= $Common::config{"dots_to_be_generated"};
 	my $batch_map_for_course_file = Common::get_template("out-dot-maps-batch");
 	Util::print_message("Generating $batch_map_for_course_file at save_batch_to_generate_dot_maps");
 	Util::write_file($batch_map_for_course_file, $batch_txt);
@@ -5792,6 +5782,7 @@ sub dump_errors()
 	Util::print_message("Dumped errors ! ".Util::green($output_errors_file));
 }
 
+# ! Pending Er (deprecated?)
 sub save_logs()
 {
 	save_batch_to_generate_dot_maps();

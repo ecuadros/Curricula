@@ -2,6 +2,7 @@ package Util;
 use strict;
 use Carp::Assert;
 use Text::Balanced qw<extract_bracketed>;
+use Array::Utils qw(:all);
 
 # use Term::ANSIColor; # http://pueblo.sourceforge.net/doc/manual/ansi_color_codes.html
 # use POSIX;
@@ -37,10 +38,20 @@ sub uncheck_point($)
 
 sub is_checked_point($)
 {
-        my ($key) = (@_);
-        if(defined($control{$key}) and $control{$key} == 1)
-        {    return 1;          }
-        return 0;
+	my ($key) = (@_);
+	if(defined($control{$key}) and $control{$key} == 1)
+	{    return 1;          }
+	return 0;
+}
+
+sub intersection($$)
+{
+	my ($list1, $list2) = (@_);
+	$list1 =~ s/ //g;	$list2 =~ s/ //g;
+	my @a1 = sort { lc($a) cmp lc($b) } split(",", $list1);
+	my @a2 = sort { lc($a) cmp lc($b) } split(",", $list2);
+	my @isect = sort { lc($a) cmp lc($b) } intersect(@a1, @a2);
+	return join(",", @isect);
 }
 
 # ok

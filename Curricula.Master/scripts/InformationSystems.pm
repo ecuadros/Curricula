@@ -219,7 +219,6 @@ sub gen_IS_BOK($$)
 	Util::print_message("gen_IS_BOK OK!");
 }
 
-# pending
 sub generate_IS_BOK_macros($$)
 {
 	my ($in_file, $out_file) = (@_);
