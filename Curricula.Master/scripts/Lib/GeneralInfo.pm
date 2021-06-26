@@ -510,6 +510,7 @@ sub generate_description($$)
 	}
 	#print Dumper(\%description); exit;
 	my ($output, $list_of_areas) = ("", "");
+	my $MissingAreasCount = 0;
 	$output .= "\\begin{enumerate}\n";
 # 	foreach my $area (sort {$Common::config{prefix_priority}{$a} cmp $Common::config{prefix_priority}{$b}} keys %{$Common::config{used_areas}})
  	foreach my $key (sort {$Common::config{$keyforhash}{$a}      cmp $Common::config{$keyforhash}{$b}}     
@@ -521,9 +522,17 @@ sub generate_description($$)
 			$list_of_areas	.= "$key ";
 		}
 		else
-		{	Util::print_soft_error("No area description for $key ... See $in_file ...");	}
+		{	my $ErrorMsg = "No area description for $key ...";
+			Util::print_soft_error($ErrorMsg);
+			$output .= "\\item \\textbf{$key} \\colorbox{red}{$ErrorMsg}\n";
+			push(@{$Common::error{general}}, $ErrorMsg);
+			$MissingAreasCount++;	
+		}
  	}
 	$output .= "\\end{enumerate}\n";
+	if( $MissingAreasCount > 0 )
+	{	$output .= "\n\\colorbox{red}{Error: $MissingAreasCount areas with no description ... See $in_file ...}\n";
+	}
 	Util::write_file($out_file, $output);
 	Util::print_message("generation_foreach_area ($out_file): $list_of_areas... OK!");
 }
@@ -546,7 +555,7 @@ sub process_critical_path_for_one_course($$$$);
 sub process_critical_path_for_one_course($$$$)
 {
 	my ($codcour, $pathId, $lang, $tab) = (@_);
-	#Util::print_message($tab.Util::yellow("$codcour")."(".Common::format_semester($Common::course_info{$codcour}{semester}, $lang).")->");
+	#Util::print_message($tab.Util::yellow("$codcour")."(".Common::format_semester_label($Common::course_info{$codcour}{semester}, $lang).")->");
 	if( $Common::course_info{$codcour}{pathId} == $pathId )
 	{
 		#Util::print_error("There is a cycle ($codcour)!");
@@ -1495,12 +1504,13 @@ sub generate_outcomes_by_course($$$$$$$$)
 
 	my $first_backgroud_flag = $Common::config{first_backgroud_flag};
 	my $background_flag 	 = 1;
-	my $part_count 		 = 1;
+	my $part_count 		 	= 1;
 	my $semester;
-	my $ncourses 		 = 0;
-	my $extra_header	 = "";
-	my $flag		 = 1;
-	
+	my $ncourses 		 	= 0;
+	my $extra_header	 	= "";
+	my $flag		 		= 1;
+	my $outcomes_macros_file = Common::get_expanded_template("in-outcomes-macros-file", $lang);
+
 	for($semester=$init_sem; $semester < $init_sem+$sem_per_page && $semester <= $Common::config{n_semesters}; $semester++)
 	{
 		$sem_per_course{$semester} = 0;
@@ -1589,12 +1599,15 @@ sub generate_outcomes_by_course($$$$$$$$)
 		if( defined($Common::config{macros}{$lang}{"outcome$outcome"."Short"}) )
 		{	$outcome_label = $Common::config{macros}{$lang}{"outcome$outcome"."Short"};		}
 		else
-		{	$outcome_label = "outcome$outcome Not defined (generate_outcomes_by_course)";	}	
+		{	Util::print_error("outcome $outcome Not defined (generate_outcomes_by_course) see $outcomes_macros_file");
+			$outcome_label  = "outcome $outcome Not defined (generate\\_outcomes\\_by\\_course)";	
+		}	
 		if($background_flag == 1 && $Common::config{graph_version}>= 2)
-									   #$Common::config{macros}{$lang}}{keys %outcomes_macros}
+				#$Common::config{macros}{$lang}}{keys %outcomes_macros}
 		{	$new_txt = "$outcome) & ". $outcome_label;		}
 		#{	$new_txt = "$outcome) & ". $Common::config{macros}{$lang}{outcomes}{"outcome$outcome"."Short"};		}
-		else{	$new_txt = "$Common::config{cell} $outcome) & $Common::config{cell} ". $outcome_label;		}
+		else
+		{	$new_txt = "$Common::config{cell} $outcome) & $Common::config{cell} ". $outcome_label;		}
 
 		$current_row =~ s/--outcome--/$new_txt/g;
 		my $sum_row = 1;
@@ -2147,9 +2160,9 @@ sub generate_pie_by_levels()
 
 }
 
-sub generate_equivalence_old2new($)
+sub generate_equivalence_old2new($$)
 {
-	my ($old_curricula) = (@_);
+	my ($old_curricula, $lang) = (@_);
 	my $new_curricula = $Common::config{Plan};
 
 	my $infile      	= Common::get_template("InEquivDir")    ."/$old_curricula.txt";
@@ -2171,19 +2184,20 @@ sub generate_equivalence_old2new($)
 	while($in_txt =~ m/\{(.*)\}\{(.*)\}\{(.*)\}\{(.*)\}\{(.*)\}(.*)/g)
 	{
 		my ($semester, $old_course_codcour, $old_course_name, $old_course_cr, $codcour) = ($1, $2, $3, $4, $5);
+		if( not $codcour eq "" )
+		{	$codcour = Common::unmask_codcour($codcour);	}
 
-		#print "$semester -- $old_course_codcour -- $old_course_name -- $old_course_cr -- $codcour \n";
-
+		# print "$semester -- $old_course_codcour -- $old_course_name -- $old_course_cr -- $codcour \n";
 		$Common::general_info{equivalences}{$old_curricula}{$semester}{$old_course_codcour}{old_course_name} 	= $old_course_name;
 		$Common::general_info{equivalences}{$old_curricula}{$semester}{$old_course_codcour}{old_course_cr} 	= $old_course_cr;
 		$Common::general_info{equivalences}{$old_curricula}{$semester}{$old_course_codcour}{codcour} 		= $codcour; # into the new curricula
 
 		if( $semester eq "" )
 		{
-		    Util::print_message("Wrong equivalence format? {$semester}{$old_course_codcour}{$old_course_name}{$old_course_cr}{$codcour}");
+		    Util::print_color("Wrong equivalence format? {$semester}{$old_course_codcour}{$old_course_name}{$old_course_cr}{$codcour}");
 		}
 		else
-		{   my $old_course_semester_label = Common::format_semester_label($semester);
+		{   my $old_course_semester_label = Common::format_semester_label($semester, $lang);
 		    if( $old_course_semester_label eq "" )
 		    {	$Common::course_info{$codcour}{equivalences}{$old_curricula}     = "{}{}{}{}";		}
 		    else{   $Common::course_info{$codcour}{equivalences}{$old_curricula} = "{$semester}{$old_course_codcour}{$old_course_name}{$old_course_cr}";		}
@@ -2224,7 +2238,7 @@ sub generate_equivalence_old2new($)
 			{
 				$tags{COURSE_CODE} = "\\htmlref{\\colorbox{$Common::course_info{$codcour}{bgcolor}}{$codcour_label}}{sec:$codcour}";
 				$tags{COURSE_NAME} = "\\htmlref{$Common::course_info{$codcour}{$Common::config{language_without_accents}}{course_name}}{sec:$codcour}";
-				my $semester_label 	= Common::format_semester_label($Common::course_info{$codcour}{semester});
+				my $semester_label 	= Common::format_semester_label($Common::course_info{$codcour}{semester}, $lang);
 				if($semester != $Common::course_info{$codcour}{semester})
 				{	$semester_label = "\\colorbox{honeydew3}{\\textcolor{black}{$semester_label}}";		}
 				$tags{COURSE_SEM}	= $semester_label;
@@ -2257,9 +2271,9 @@ sub generate_equivalence_old2new($)
 	return $outfile_short;
 }
 
-sub generate_equivalence_new2old($)
+sub generate_equivalence_new2old($$)
 {
-	my ($old_curricula) = (@_);
+	my ($old_curricula, $lang) = (@_);
 	my $new_curricula = $Common::config{Plan};
 
 	Util::precondition("generate_equivalence_old2new $old_curricula->$new_curricula");
@@ -2297,31 +2311,34 @@ sub generate_equivalence_new2old($)
 			#$Common::course_info{$codcour}{equivalences}{$old_curricula} = "{$semester}{$old_course_codcour}{$old_course_name}{$old_course_cr}
 			if( not $Common::course_info{$codcour}{equivalences}{$old_curricula} )
 			{	$Common::course_info{$codcour}{equivalences}{$old_curricula} = "{}{}{}{}";
-				Util::print_warning("Course: $codcour (Sem $semester) does not contain equivalence ... assuming empty ...");
+				Util::print_warning("Course: $codcour (".Common::format_semester_label($semester, $lang).") does not contain equivalence ... assuming empty ...");
 			}
-			my ($old_semester, $old_course_codcour, $old_course_name, $old_course_cr) = ("", "", "", "");
+			my ($old_semester, $old_course_codcour, $old_course_name, $old_course_cr) = (0, "", "", "");
 			if( $Common::course_info{$codcour}{equivalences}{$old_curricula} =~ m/\{(.*)\}\{(.*)\}\{(.*)\}\{(.*)\}/ )
 			{     ($old_semester, $old_course_codcour, $old_course_name, $old_course_cr)  = ($1, $2, $3, $4);		}
 			else{	Util::halt("This line must never be reached ... ********************************* ($codcour, $Common::course_info{$codcour}{equivalences}{$old_curricula})");	}
 
-			  #Util::print_message("old_course_codcour= $old_course_codcour, old_course_cr=$old_course_cr, new_cr = $Common::course_info{$codcour}{cr} ");
+			#Util::print_message("old_course_codcour= $old_course_codcour, old_course_cr=$old_course_cr, new_cr = $Common::course_info{$codcour}{cr} ");
 			if( not $old_course_cr eq "" and not $old_course_cr eq $Common::course_info{$codcour}{cr} )
 			{	$tags{OLD_COURSE_CREDITS}	= "\\colorbox{honeydew3}{\\textcolor{black}{$old_course_cr}}";
 				$tags{COURSE_CREDITS} 		= "\\colorbox{honeydew3}{\\textcolor{black}{$Common::course_info{$codcour}{cr}}}";
 			}
-			else{	$tags{COURSE_CREDITS} 		= "$Common::course_info{$codcour}{cr}";
+			else
+			{	$tags{COURSE_CREDITS} 		= "$Common::course_info{$codcour}{cr}";
 				$tags{OLD_COURSE_CREDITS}	=  $old_course_cr;
 			}
+			$tags{OLD_COURSE_CODE} 			= $old_course_codcour;
+			$tags{OLD_COURSE_NAME} 			= $old_course_name;
+			my $old_semester_label 			= "";
+			if($old_semester eq "")
+			{	Util::print_message( Util::red("codcour=$codcour ... old_semester is empty ... error?") );	}
+			else{	$old_semester_label = Common::format_semester_label($old_semester, $lang);	}
 
-			$tags{OLD_COURSE_CODE} 		= $old_course_codcour;
-			$tags{OLD_COURSE_NAME} 		= $old_course_name;
-			my $old_semester_label 	= Common::format_semester_label($old_semester);
-			if($Common::course_info{$codcour}{semester} != $old_semester)
+			# Util::print_message("675 Common::course_info{$codcour}{semester}=$Common::course_info{$codcour}{semester}, old_semester=$old_semester");
+			if(not $Common::course_info{$codcour}{semester} eq $old_semester)
 			{	$old_semester_label = "\\colorbox{honeydew3}{\\textcolor{black}{$old_semester_label}}";		}
-			$tags{OLD_COURSE_SEM}		= $old_semester_label;
-
+			$tags{OLD_COURSE_SEM}	= $old_semester_label;
 			$output_txt .= Common::replace_tags_from_hash($line_tpl, "<", ">", %tags);
-
 		}
 # 		foreach my $old_course (@{$Common::config{equivalences}{$old_curricula}{empty_equivalences}{$semester}})
 # 		{
@@ -2335,28 +2352,27 @@ sub generate_equivalence_new2old($)
 	}
 
 	Util::write_file($outfile, $output_txt);
-        Util::check_point("generate_equivalence_new2old $new_curricula->$old_curricula");
-	Util::print_message("generate_equivalence_new2old $new_curricula->$old_curricula OK!");
+    Util::check_point("generate_equivalence_new2old $new_curricula->$old_curricula");
+	Util::print_message("generate_equivalence_new2old $new_curricula->$old_curricula ($outfile) OK!");
 	return $outfile_short;
-
 }
 
-sub process_equivalences()
+sub process_equivalences($)
 {
+	my ($lang) = (@_);
 	my $equivalences_file_txt = "";
 	my $OutputTexDir = Common::get_template("OutputTexDir");
 	my $newpage = "";
 	foreach my $equiv (split(",", $Common::config{equivalences}))
 	{
-	      my $outfile_short = generate_equivalence_old2new($equiv);
-	      $equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $equiv al Plan $Common::config{Plan}}\n";
-	      $equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short}\n\n";
-	      $newpage = "\\newpage";
+		my $outfile_short = generate_equivalence_old2new($equiv, $lang);
+		$equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $equiv al Plan $Common::config{Plan}}\n";
+		$equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short}\n\n";
+		$newpage = "\\newpage";
 
- 	      $outfile_short	= generate_equivalence_new2old($equiv);
-	      $equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $Common::config{Plan} al Plan $equiv}\n";
-	      $equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short} \n\n";
-
+		$outfile_short	= generate_equivalence_new2old($equiv, $lang);
+		$equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $Common::config{Plan} al Plan $equiv}\n";
+		$equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short} \n\n";
 	}
 	my $output_equivalences_file = Common::get_template("out-equivalences-file");
 	Util::write_file($output_equivalences_file, $equivalences_file_txt);
