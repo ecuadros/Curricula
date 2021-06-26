@@ -107,12 +107,11 @@ mkdir -p "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>";
 mutool convert -o <OUTPUT_HTML_DIR>/<AREA>-<INST>-P%d.png <AREA>-<INST>.pdf 1-1;
 cp <AREA>-<INST>.pdf "<OUTPUT_DIR>/pdfs/<AREA>-<INST>/<PLAN>/<AREA>-<INST> <PLAN>.pdf";
 
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfSyllabi-ES  	 pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfSyllabi-ES (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfSyllabi-EN  	 pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfSyllabi-EN (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfBibliography-ES  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfBibliography-ES (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfBibliography-EN  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfBibliography-EN (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfDescriptions-ES  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfDescriptions-ES (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
-<OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfDescriptions-EN  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfDescriptions-EN (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
+foreach lang (<LIST_OF_LANGS>)
+    <OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfSyllabi-$lang  	    pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfSyllabi-$lang (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
+    <OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfBibliography-$lang  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfBibliography-$lang (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
+    <OUTPUT_SCRIPTS_DIR>/gen-book.sh  BookOfDescriptions-$lang  pdflatex "<AREA>-<INST> <SEM_ACAD> BookOfDescriptions-$lang (<PLAN>) <FIRST_SEM>-<LAST_SEM>";
+end
 
 if($html == 1) then
     rm <UNIFIED_MAIN_FILE>* ;
@@ -155,9 +154,6 @@ cp <OUTPUT_FIGS_DIR>/*.svg <OUTPUT_HTML_FIGS_DIR>/.;
 mkdir -p <OUTPUT_HTML_DIR>/figs;
 foreach lang (<LIST_OF_LANGS>)
     <OUTPUT_SCRIPTS_DIR>/gen-graph.sh big $lang;
-end
-
-foreach lang (<LIST_OF_LANGS>)
     <OUTPUT_SCRIPTS_DIR>/compile-simple-latex.sh small-graph-curricula-$lang <AREA>-<INST>-small-graph-curricula <OUTPUT_TEX_DIR>;
     <OUTPUT_SCRIPTS_DIR>/gen-poster.sh $lang;
 end
