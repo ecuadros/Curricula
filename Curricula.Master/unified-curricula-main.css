@@ -1,0 +1,295 @@
+/* Century Schoolbook font is very similar to Computer Modern Math: cmmi */
+.MATH    { font-family: "Century Schoolbook", serif; }
+.MATH I  { font-family: "Century Schoolbook", serif; font-style: italic }
+.BOLDMATH { font-family: "Century Schoolbook", serif; font-weight: bold }
+
+/* implement both fixed-size and relative sizes */
+SMALL.XTINY		{ font-size : xx-small }
+SMALL.TINY		{ font-size : x-small  }
+SMALL.SCRIPTSIZE	{ font-size : smaller  }
+SMALL.FOOTNOTESIZE	{ font-size : small    }
+SMALL.SMALL		{  }
+BIG.LARGE		{  }
+BIG.XLARGE		{ font-size : large    }
+BIG.XXLARGE		{ font-size : x-large  }
+BIG.HUGE		{ font-size : larger   }
+BIG.XHUGE		{ font-size : xx-large }
+
+/* heading styles */
+H1		{  }
+H2		{  }
+H3		{  }
+H4		{  }
+H5		{  }
+
+DT { float; left }
+
+/* mathematics styles */
+DIV.displaymath		{ }	/* math displays */
+TD.eqno			{ }	/* equation-number cells */
+
+
+/* document-specific styles come next */
+DIV.Large		{   }
+DIV.huge		{   }
+DIV.quote		{   }
+DIV.center		{   }
+SPAN.it		{   }
+DIV.navigation		{   }
+SPAN.bf		{   }
+SPAN.textbf		{ font-weight: bold  }
+SPAN.arabic		{   }
+SPAN.textit		{ font-style: italic  }
+#cbox11199		{ background-color: #6495ed;  }
+#cbox11206		{ background-color: #6495ed;  }
+#cbox11213		{ background-color: #c1cdc1;  }
+#cbox11220		{ background-color: #66cd00;  }
+#cbox11227		{ background-color: #66cd00;  }
+#cbox11234		{ background-color: #66cd00;  }
+#cbox11265		{ background-color: #6495ed;  }
+#cbox11274		{ background-color: #6495ed;  }
+#cbox11283		{ background-color: #b0e2ff;  }
+#cbox11290		{ background-color: #66cd00;  }
+#cbox11299		{ background-color: #66cd00;  }
+#cbox11306		{ background-color: #66cd00;  }
+#cbox11339		{ background-color: #6495ed;  }
+#cbox11348		{ background-color: #6495ed;  }
+#cbox11357		{ background-color: #6495ed;  }
+#cbox11366		{ background-color: #b0e2ff;  }
+#cbox11375		{ background-color: #66cd00;  }
+#cbox11384		{ background-color: #66cd00;  }
+#cbox11393		{ background-color: #66cd00;  }
+#cbox11426		{ background-color: #6495ed;  }
+#cbox11435		{ background-color: #6495ed;  }
+#cbox11444		{ background-color: #6495ed;  }
+#cbox11455		{ background-color: #c1cdc1;  }
+#cbox11464		{ background-color: #66cd00;  }
+#cbox11473		{ background-color: #66cd00;  }
+#cbox11482		{ background-color: #66cd00;  }
+#cbox11491		{ background-color: #66cd00;  }
+#cbox11524		{ background-color: #6495ed;  }
+#cbox11535		{ background-color: #6495ed;  }
+#cbox11544		{ background-color: #6495ed;  }
+#cbox11553		{ background-color: #6495ed;  }
+#cbox11562		{ background-color: #66cd00;  }
+#cbox11571		{ background-color: #66cd00;  }
+#cbox11580		{ background-color: #66cd00;  }
+#cbox11589		{ background-color: #66cd00;  }
+#cbox11622		{ background-color: #6495ed;  }
+#cbox11631		{ background-color: #6495ed;  }
+#cbox11640		{ background-color: #6495ed;  }
+#cbox11649		{ background-color: #6495ed;  }
+#cbox11658		{ background-color: #66cd00;  }
+#cbox11667		{ background-color: #66cd00;  }
+#cbox11678		{ background-color: #66cd00;  }
+#cbox11711		{ background-color: #6495ed;  }
+#cbox11720		{ background-color: #6495ed;  }
+#cbox11729		{ background-color: #6495ed;  }
+#cbox11738		{ background-color: #6495ed;  }
+#cbox11747		{ background-color: #c1cdc1;  }
+#cbox11756		{ background-color: #66cd00;  }
+#cbox11765		{ background-color: #66cd00;  }
+#cbox11798		{ background-color: #6495ed;  }
+#cbox11807		{ background-color: #6495ed;  }
+#cbox11816		{ background-color: #6495ed;  }
+#cbox11827		{ background-color: #6495ed;  }
+#cbox11836		{ background-color: #66cd00;  }
+#cbox11869		{ background-color: #6495ed;  }
+#cbox11880		{ background-color: #6495ed;  }
+#cbox11889		{ background-color: #6495ed;  }
+#cbox11898		{ background-color: #6495ed;  }
+#cbox11907		{ background-color: #6495ed;  }
+#cbox11916		{ background-color: #c1cdc1;  }
+#cbox11925		{ background-color: #66cd00;  }
+#cbox11960		{ background-color: #6495ed;  }
+#cbox11969		{ background-color: #6495ed;  }
+#cbox11978		{ background-color: #6495ed;  }
+#cbox11987		{ background-color: #66cd00;  }
+#cbox11994		{ background-color: #66cd00;  }
+#cbox12001		{ background-color: #66cd00;  }
+#cbox12008		{ background-color: #66cd00;  }
+#cbox22651		{ background-color: #6495ed;  }
+#cbox22652		{ background-color: #6495ed;  }
+#cbox22653		{ background-color: #c1cdc1;  }
+#cbox22654		{ background-color: #66cd00;  }
+#cbox22655		{ background-color: #66cd00;  }
+#cbox22656		{ background-color: #66cd00;  }
+#cbox22657		{ background-color: #6495ed;  }
+#cbox22658		{ background-color: #6495ed;  }
+#cbox22659		{ background-color: #b0e2ff;  }
+#cbox22660		{ background-color: #66cd00;  }
+#cbox22661		{ background-color: #66cd00;  }
+#cbox22662		{ background-color: #66cd00;  }
+#cbox22664		{ background-color: #6495ed;  }
+#cbox22665		{ background-color: #6495ed;  }
+#cbox22666		{ background-color: #6495ed;  }
+#cbox22667		{ background-color: #b0e2ff;  }
+#cbox22668		{ background-color: #66cd00;  }
+#cbox22669		{ background-color: #66cd00;  }
+#cbox22670		{ background-color: #66cd00;  }
+#cbox22671		{ background-color: #6495ed;  }
+#cbox22672		{ background-color: #6495ed;  }
+#cbox22673		{ background-color: #6495ed;  }
+#cbox22674		{ background-color: #c1cdc1;  }
+#cbox22675		{ background-color: #66cd00;  }
+#cbox22676		{ background-color: #66cd00;  }
+#cbox22677		{ background-color: #66cd00;  }
+#cbox22678		{ background-color: #66cd00;  }
+#cbox22680		{ background-color: #6495ed;  }
+#cbox22681		{ background-color: #6495ed;  }
+#cbox22682		{ background-color: #6495ed;  }
+#cbox22683		{ background-color: #b0e2ff;  }
+#cbox22684		{ background-color: #66cd00;  }
+#cbox22685		{ background-color: #66cd00;  }
+#cbox22686		{ background-color: #66cd00;  }
+#cbox22687		{ background-color: #6495ed;  }
+#cbox22688		{ background-color: #6495ed;  }
+#cbox22689		{ background-color: #6495ed;  }
+#cbox22690		{ background-color: #c1cdc1;  }
+#cbox22691		{ background-color: #66cd00;  }
+#cbox22692		{ background-color: #66cd00;  }
+#cbox22693		{ background-color: #66cd00;  }
+#cbox22694		{ background-color: #66cd00;  }
+#cbox22696		{ background-color: #6495ed;  }
+#cbox22697		{ background-color: #6495ed;  }
+#cbox22698		{ background-color: #6495ed;  }
+#cbox22699		{ background-color: #6495ed;  }
+#cbox22700		{ background-color: #66cd00;  }
+#cbox22701		{ background-color: #66cd00;  }
+#cbox22702		{ background-color: #66cd00;  }
+#cbox22703		{ background-color: #66cd00;  }
+#cbox22704		{ background-color: #6495ed;  }
+#cbox22705		{ background-color: #6495ed;  }
+#cbox22706		{ background-color: #6495ed;  }
+#cbox22707		{ background-color: #6495ed;  }
+#cbox22708		{ background-color: #66cd00;  }
+#cbox22709		{ background-color: #66cd00;  }
+#cbox22710		{ background-color: #66cd00;  }
+#cbox22713		{ background-color: #6495ed;  }
+#cbox22714		{ background-color: #6495ed;  }
+#cbox22715		{ background-color: #6495ed;  }
+#cbox22716		{ background-color: #6495ed;  }
+#cbox22717		{ background-color: #66cd00;  }
+#cbox22718		{ background-color: #66cd00;  }
+#cbox22719		{ background-color: #66cd00;  }
+#cbox22720		{ background-color: #66cd00;  }
+#cbox22721		{ background-color: #6495ed;  }
+#cbox22722		{ background-color: #6495ed;  }
+#cbox22723		{ background-color: #6495ed;  }
+#cbox22724		{ background-color: #6495ed;  }
+#cbox22725		{ background-color: #66cd00;  }
+#cbox22726		{ background-color: #66cd00;  }
+#cbox22727		{ background-color: #66cd00;  }
+#cbox22729		{ background-color: #6495ed;  }
+#cbox22730		{ background-color: #6495ed;  }
+#cbox22731		{ background-color: #6495ed;  }
+#cbox22732		{ background-color: #6495ed;  }
+#cbox22733		{ background-color: #c1cdc1;  }
+#cbox22734		{ background-color: #66cd00;  }
+#cbox22735		{ background-color: #66cd00;  }
+#cbox22736		{ background-color: #6495ed;  }
+#cbox22737		{ background-color: #6495ed;  }
+#cbox22738		{ background-color: #6495ed;  }
+#cbox22739		{ background-color: #6495ed;  }
+#cbox22740		{ background-color: #66cd00;  }
+#cbox22744		{ background-color: #6495ed;  }
+#cbox22745		{ background-color: #6495ed;  }
+#cbox22746		{ background-color: #6495ed;  }
+#cbox22747		{ background-color: #6495ed;  }
+#cbox22748		{ background-color: #c1cdc1;  }
+#cbox22749		{ background-color: #66cd00;  }
+#cbox22750		{ background-color: #66cd00;  }
+#cbox22751		{ background-color: #6495ed;  }
+#cbox22752		{ background-color: #6495ed;  }
+#cbox22753		{ background-color: #6495ed;  }
+#cbox22754		{ background-color: #6495ed;  }
+#cbox22755		{ background-color: #66cd00;  }
+#cbox22757		{ background-color: #6495ed;  }
+#cbox22758		{ background-color: #6495ed;  }
+#cbox22759		{ background-color: #6495ed;  }
+#cbox22760		{ background-color: #6495ed;  }
+#cbox22761		{ background-color: #6495ed;  }
+#cbox22762		{ background-color: #c1cdc1;  }
+#cbox22763		{ background-color: #66cd00;  }
+#cbox22764		{ background-color: #6495ed;  }
+#cbox22765		{ background-color: #6495ed;  }
+#cbox22766		{ background-color: #6495ed;  }
+#cbox22767		{ background-color: #66cd00;  }
+#cbox22768		{ background-color: #66cd00;  }
+#cbox22769		{ background-color: #66cd00;  }
+#cbox22770		{ background-color: #66cd00;  }
+#cbox22774		{ background-color: #6495ed;  }
+#cbox22775		{ background-color: #6495ed;  }
+#cbox22776		{ background-color: #c1cdc1;  }
+#cbox22777		{ background-color: #66cd00;  }
+#cbox22778		{ background-color: #66cd00;  }
+#cbox22779		{ background-color: #66cd00;  }
+#cbox22780		{ background-color: #6495ed;  }
+#cbox22781		{ background-color: #6495ed;  }
+#cbox22782		{ background-color: #b0e2ff;  }
+#cbox22783		{ background-color: #66cd00;  }
+#cbox22784		{ background-color: #66cd00;  }
+#cbox22785		{ background-color: #66cd00;  }
+#cbox22787		{ background-color: #6495ed;  }
+#cbox22788		{ background-color: #6495ed;  }
+#cbox22789		{ background-color: #6495ed;  }
+#cbox22790		{ background-color: #b0e2ff;  }
+#cbox22791		{ background-color: #66cd00;  }
+#cbox22792		{ background-color: #66cd00;  }
+#cbox22793		{ background-color: #66cd00;  }
+#cbox22794		{ background-color: #6495ed;  }
+#cbox22795		{ background-color: #6495ed;  }
+#cbox22796		{ background-color: #6495ed;  }
+#cbox22797		{ background-color: #c1cdc1;  }
+#cbox22798		{ background-color: #66cd00;  }
+#cbox22799		{ background-color: #66cd00;  }
+#cbox22800		{ background-color: #66cd00;  }
+#cbox22801		{ background-color: #66cd00;  }
+#cbox22803		{ background-color: #6495ed;  }
+#cbox22804		{ background-color: #6495ed;  }
+#cbox22805		{ background-color: #6495ed;  }
+#cbox22806		{ background-color: #6495ed;  }
+#cbox22807		{ background-color: #66cd00;  }
+#cbox22808		{ background-color: #66cd00;  }
+#cbox22809		{ background-color: #66cd00;  }
+#cbox22810		{ background-color: #66cd00;  }
+#cbox22811		{ background-color: #6495ed;  }
+#cbox22812		{ background-color: #6495ed;  }
+#cbox22813		{ background-color: #6495ed;  }
+#cbox22814		{ background-color: #6495ed;  }
+#cbox22815		{ background-color: #66cd00;  }
+#cbox22816		{ background-color: #66cd00;  }
+#cbox22817		{ background-color: #66cd00;  }
+#cbox22819		{ background-color: #6495ed;  }
+#cbox22820		{ background-color: #6495ed;  }
+#cbox22821		{ background-color: #6495ed;  }
+#cbox22822		{ background-color: #6495ed;  }
+#cbox22823		{ background-color: #c1cdc1;  }
+#cbox22824		{ background-color: #66cd00;  }
+#cbox22825		{ background-color: #66cd00;  }
+#cbox22826		{ background-color: #6495ed;  }
+#cbox22827		{ background-color: #6495ed;  }
+#cbox22828		{ background-color: #6495ed;  }
+#cbox22829		{ background-color: #6495ed;  }
+#cbox22830		{ background-color: #66cd00;  }
+#cbox22832		{ background-color: #6495ed;  }
+#cbox22833		{ background-color: #6495ed;  }
+#cbox22834		{ background-color: #6495ed;  }
+#cbox22835		{ background-color: #6495ed;  }
+#cbox22836		{ background-color: #6495ed;  }
+#cbox22837		{ background-color: #c1cdc1;  }
+#cbox22838		{ background-color: #66cd00;  }
+#cbox22839		{ background-color: #6495ed;  }
+#cbox22840		{ background-color: #6495ed;  }
+#cbox22841		{ background-color: #6495ed;  }
+#cbox22842		{ background-color: #66cd00;  }
+#cbox22843		{ background-color: #66cd00;  }
+#cbox22844		{ background-color: #66cd00;  }
+#cbox22845		{ background-color: #66cd00;  }
+#cbox22846		{ background-color: #6495ed;  }
+#cbox22847		{ background-color: #66cd00;  }
+#cbox22848		{ background-color: #66cd00;  }
+#cbox22849		{ background-color: #cd4f39;  }
+#txt22850		{ text-decoration: underline;  }
+#txt2462		{ text-decoration: underline;  }
+#txt2643		{ text-decoration: underline;  }

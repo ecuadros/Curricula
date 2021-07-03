@@ -1,8 +1,8 @@
 You can add this to the ~/.bashrc to make it always available when you log-in.
 Ubuntu: export PERL5LIB=/home/ecuadros/Articles/Curricula/Curricula.Master/scripts
 Mac   :
-/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1/
-export PERL5LIB=/usr/local/Cellar/perl/5.32.1/lib/perl5/site_perl/5.32.1:/System/Library/Perl/Extras/5.30/darwin-thread-multi-2level:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
+/usr/local/Cellar/perl/5.34.0/lib/perl5/site_perl/5.34.1/
+export PERL5LIB=/usr/local/Cellar/perl/5.34.0/lib/perl5/site_perl/5.34.0:/System/Library/Perl/Extras/5.30/darwin-thread-multi-2level:/Users/ecuadros/Articles/Curricula/Curricula.Master/scripts
 export TEXINPUTS=::/usr/local/Cellar/latex2html/2021/texinputs
 source ~/.zshrc
 
@@ -50,13 +50,9 @@ $PS2PDF = '/usr/local/bin/ps2pdf';	# ps to pdf converter
 $PDFCROP = '/Library/TeX/texbin/pdfcrop';	# pdfcrop
 $GS = '/usr/local/opt/ghostscript/bin/gs';	# GhostScript
 
-
 #  give these too, to use the  -ldump  feature
-#
 $TEX = "/Library/TeX/texbin/TeX"; 			# TeX
 $INILATEX = " \"&latex\"";	# initex+latex
-
-
 
 brew tap homebrew/cask
 brew cask install inkscape
@@ -92,7 +88,6 @@ brew reinstall dpkg
 brew install ps2eps;
 * apt-get install dot2tex;
 brew install graphviz;
-brew install latex2html; brew upgrade latex2html
 apt-get install ps2pdf; (ya viene); xxxxxx
 brew install gv;
 brew install Caskroom/cask/inkscape;
@@ -103,12 +98,16 @@ brew install perl
 brew cask install mactex;
 brew install caskroom/cask/meld
 
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+brew install latex2html
+
 brew install cpanm
-cpan install Text::Levenshtein::XS
-cpanm Carp::Assert
-cpan install Carp::Assert
-cpan install Number::Bytes::Human
-cpan install CAM::PDF
+sudo cpan install Text::Levenshtein::XS
+sudo cpan install PDF::API2
+sudo cpan install Carp::Assert
+sudo cpan install Array::Utils
+sudo cpan install Number::Bytes::Human
+
 cpan install Switch
 
 --- Install Perlbrew ---
