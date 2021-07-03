@@ -308,10 +308,10 @@ sub main()
 	my $macros_changed	= 0;
 	my $environments_count	= 0;
 	my $laps		= 0;
-	
+	Util::print_message(Util::yellow("Replacing and expandiong macros ..."));
 	while(($changes+$macros_changed+$environments_count) > 0)
 	{
-		Util::print_message("Laps = ".++$laps) 	   if( $Common::config{verbose} == 1 );
+		Util::print_message(Util::yellow("Lap #".++$laps)) 	   if( $Common::config{verbose} == 1 );
 		($maintxt, $macros_changed) = Common::expand_macros   ($main_file, $maintxt);
 		($maintxt, $changes)        = Common::expand_sub_files($maintxt);
 		($maintxt, $environments_count) = replace_environments($maintxt);
@@ -321,7 +321,9 @@ sub main()
 		Util::print_message("$Common::institution: Environments = $environments_count");
 # 		Util::write_file($output_file, $maintxt);
 	}
+	Util::print_message(Util::yellow("Expansion ended"));
 
+	Util::print_message(Util::yellow("Replacing competences ..."));
 	while( $maintxt =~ m/\\Competence\{(.*?)\}/g )
 	{   my ($competence) = ($1);
 	    if( not defined($Common::config{Competence}{$1}) )
@@ -336,6 +338,7 @@ sub main()
 	$maintxt =~ s/\\ShowCompetence\{(.*?)\}\{(.*?)\}/[$1)] $Common::config{Competence}{$1} \$\\Rightarrow\$ \\textbf\{Outcome: $2\}/g;
 	$maintxt =~ s/\\ShowOutcomeText\{(.*?)\}/$Common::config{Outcome}{$1}/g;
 
+	Util::print_message(Util::yellow("Replacing ShowShortOutcome ..."));
 	while( $maintxt =~ m/\\ShowShortOutcome\{(.*?)\}/g )
 	{	my $outcome = $1; my $OutcomeShort = $outcome."Short";
 # 		Util::print_message("Using short outcome: $OutcomeShort");
@@ -344,7 +347,9 @@ sub main()
 		else{	Util::print_message("Not defined: Common::config{Outcome}{$OutcomeShort} ... See $outcomes_macros_file !");	}
 	}
 	$maintxt =~ s/\\xspace/ /g;
+	Util::print_message(Util::yellow("Expanding macros ... "));
 	($maintxt, $macros_changed) = Common::expand_macros($main_file, $maintxt);
+	Util::print_message(Util::yellow(sprintf("%d macros changed ...:", $macros_changed)));
 	foreach my $learningoutcome ("Familiarity", "Usage", "Assessment")
 	{	
 		#Util::print_message("Common::config{macros}{$learningoutcome}=$Common::config{dictionary}{$learningoutcome}");
@@ -354,7 +359,8 @@ sub main()
 #   		$maintxt =~ s/\(\\$learningoutcome\s*?\)/\(\\textbf\{$Common::config{macros}{$learningoutcome}}\)/g;
 		#$maintxt =~ s/\($Common::config{macros}{$learningoutcome}\s*?\)/\(\\textbf\{$Common::config{macros}{$learningoutcome}}\)/g;	
 	}
-	
+
+	Util::print_message("Replacing book links ...");
 	my $books_html	= Common::generate_books_links();
 	$maintxt =~ s/<BOOKS>/$books_html/g;
 	my $pdf_name = "$Common::config{area}-$Common::config{institution} $Common::config{Plan}";
@@ -369,7 +375,7 @@ sub main()
 	$maintxt = replace_special_cases($maintxt);
 #   $maintxt = replace_outcomes_sequence($maintxt);
         
-	my $all_bib_items = Common::get_list_of_bib_files();
+	my $all_bib_items = Common::get_list_of_bib_files($lang);
     #$maintxt =~ s/\\xspace}/}/g;
 	$maintxt =~ s/\\end\{document\}/\\bibliography\{$all_bib_items\}\n\\end\{document\}/g;
 	while ($maintxt =~ m/\n\n\n/){	$maintxt =~ s/\n\n\n/\n\n/g;	}
@@ -380,7 +386,7 @@ sub main()
 	$maintxt =~ s/\\setlist\{.*?\}//g;
 	Util::write_file($output_file, $maintxt);
 	Util::print_message("File $output_file generated OK!");
-	Util::print_message("Finishing gen-html-main.pl ... ");
+	Common::print_closing_message();
 }
 
 main();

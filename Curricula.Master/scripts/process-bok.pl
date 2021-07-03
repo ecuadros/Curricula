@@ -1,8 +1,8 @@
 #!/usr/bin/perl -w
 use strict;
 use Data::Dumper;
-use scripts::Lib::Common;
-use Cwd;
+use Lib::Common;
+# use Cwd;
 
 $Common::command = shift or Util::halt("There is no command to process (i.e. AREA-INST)");
 

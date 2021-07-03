@@ -3,7 +3,7 @@ use Math::Trig;
 use Carp::Assert;
 use Lib::Common;
 use Data::Dumper;
-use Cwd;
+# use Cwd;
 use List::Util qw(max);
 use strict;
 
@@ -862,15 +862,14 @@ sub generate_map_of_courses_by_outcome($$)
 	my $OutputFigsDir	= Common::get_template("OutputFigsDir");
 	my $course_tpl 		= Util::read_file(Common::read_dot_template($size, $lang));
 	foreach my $outcome (split(",", $Common::config{outcomes_list}{$version}))
-	{	
-		my $courses_counter = keys %{ $Common::config{course_by_outcome}{$outcome} };
+	{	my $courses_counter = keys %{ $Common::config{course_by_outcome}{$outcome} };
 		if($courses_counter > 0)
 		{
 			my $filename 		= get_outcome_map_name($outcome, $size, $lang);
 			my $output_dot_file = "$OutputDotDir/$filename.dot";
 			generate_curricula_in_dot_internal($output_dot_file, $course_tpl, $lang, $outcome, \&highlight_outcome);
 			$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$filename.svg ...\";\n";
-			#$Common::config{"dots_to_be_generated"}	.= "dot -Tps  $output_dot_file -o $OutputFigsDir/$filename.ps; \n";
+			#$Common::config{"dots_to_be_generated"}.= "dot -Tps  $output_dot_file -o $OutputFigsDir/$filename.ps; \n";
 			$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$filename.svg; \n\n";
 		}
 	}
@@ -917,7 +916,7 @@ sub generate_poster($)
 	system("cp ".Common::get_template("in-a0poster-sty-file")." ".Common::get_template("OutputTexDir")); ;
 	system("cp ".Common::get_template("in-poster-macros-sty-file")." ".Common::get_template("OutputTexDir")); ;
 
-    my $cwd = getcwd();
+    #my $cwd = getcwd();
     #chdir(Common::get_template("OutputFigsDir"));
     #system("rm Bloom.eps");
     #system("ln -s $cwd/".Common::get_template("InFigsDir")."/Bloom.eps");

@@ -146,18 +146,21 @@ if($html == 1) then
     ./scripts/update-analytic-info.pl <AREA>-<INST>;
 endif
 
+foreach lang (<LIST_OF_LANGS>)
+    <OUTPUT_SCRIPTS_DIR>/gen-graph.sh big $lang;
+end
+
 ./scripts/post-processing.pl <AREA>-<INST>;
 <OUTPUT_SCRIPTS_DIR>/gen-dot-maps.sh;
 ./scripts/update-cvs-files.pl <AREA>-<INST>;
 cp <OUTPUT_FIGS_DIR>/*.svg <OUTPUT_HTML_FIGS_DIR>/.;
 
-mkdir -p <OUTPUT_HTML_DIR>/figs;
 foreach lang (<LIST_OF_LANGS>)
-    <OUTPUT_SCRIPTS_DIR>/gen-graph.sh big $lang;
     <OUTPUT_SCRIPTS_DIR>/compile-simple-latex.sh small-graph-curricula-$lang <AREA>-<INST>-small-graph-curricula <OUTPUT_TEX_DIR>;
     <OUTPUT_SCRIPTS_DIR>/gen-poster.sh $lang;
 end
 
+mkdir -p <OUTPUT_HTML_DIR>/figs;
 mkdir -p <OUTPUT_HTML_DIR>/syllabi;
 mkdir -p <OUTPUT_HTML_DOCS_DIR>;
 cp <OUTPUT_INST_DIR>/syllabi/* <OUTPUT_HTML_DIR>/syllabi/.;

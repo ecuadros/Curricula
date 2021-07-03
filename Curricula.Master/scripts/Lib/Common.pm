@@ -8,11 +8,11 @@ use Carp::Assert;
 use Data::Dumper;
 #use Clone 'clone';
 use Lib::Util;
-use Cwd;
+# use Cwd;
 use strict;
 use Scalar::Util qw(looks_like_number);
 use Number::Bytes::Human qw(format_bytes);
-use CAM::PDF;
+use PDF::API2;
 use Lib::HotKey;
 use File::Slurp qw(read_dir);
 
@@ -290,9 +290,14 @@ sub getPDFnPages($)
 {
 	my ($file) = (@_);
 	if(-e $file )
-	{	my $pdf 	= CAM::PDF->new($file) or Util::print_color("Error trying to find: $file");
-		my $nPages	= $pdf->numPages();
-		Util::print_message("PDF: $file -> $nPages Pages detected ...");
+	{	
+		#my $pdf 	= PDF->new($file) or Util::print_color("Error trying to find: $file");
+		#my $nPages	= $pdf->numPages();
+		#Util::print_message("PDF: $file -> $nPages Pages detected ...");
+		#return $nPages;
+		my $pdf = PDF::API2->open($file);
+    	my $nPages = $pdf->pages;
+		# Util::print_message("PDF: $file -> $nPages Pages detected ..."); exit;
 		return $nPages;
 	}
 	else
@@ -620,8 +625,8 @@ sub set_global_variables()
 	$config{OutputHtmlDocsDir} = "$config{OutputHtmlDir}/$config{OutputDocsDirRelativePath}";
     system("mkdir -p $config{OutputHtmlDocsDir}");
 
-	my $cwd = getcwd();
-	my $cmd = "ln -f -s $cwd/$config{OutputHtmlDir} $config{OutputInstDir}/html";
+	#my $cwd = getcwd();
+	my $cmd = "ln -f -s ./$config{OutputHtmlDir} $config{OutputInstDir}/html";
 # 	Util::print_message($cmd);
     system($cmd);
 
@@ -3511,35 +3516,24 @@ sub expand_macros($$)
 {
 	my ($file, $text) = (@_);
 	my $macros_changed = 0;
-
-# 	Util::print_message("**************************************************");
 	Util::precondition("sort_macros");
-	#print "siglas = $config{macros}{siglas} x5";
+
 	if(not defined($config{macros}{siglas}))
 	{	Util::halt("\$config{macros}{siglas} does not exit !!!!\n");		}
-
 	my $changes = "";
 	my $ctemp = 1;
 	while($ctemp > 0)
-	{
-		$ctemp = 0;
+	{	$ctemp = 0;
 		foreach my $key (sort {length($b) <=> length($a)} keys %{$config{macros}})
-		{
-# 			$text     =~ s/\\$key/$config{macros}{$key}/g;
+		{	# $text     =~ s/\\$key/$config{macros}{$key}/g;
 			if($text =~ m/\\$key/)
-			{
-				$text     =~ s/\\$key/$config{macros}{$key}/g;
+			{	$text     =~ s/\\$key/$config{macros}{$key}/g;
 				$changes .= "\\$key:$config{macros}{$key}\n";
 				$macros_changed++;
 				$ctemp++;
 			}
 		}
 	}
-# 	print ".";
-# 	Util::print_message("expand_macros ($file: $macros_changed) saliendo ...");
-#  	if($macros_changed < 3)
-#  	{	Util::print_message("Macros changed ($macros_changed): \n$changes");	}
-	#print "siglas = $config{macros}{siglas} ... x7\n";
 	return ($text, $macros_changed);
 }
 
@@ -5119,9 +5113,8 @@ sub detect_link_for_courses()
 		Util::print_message("Sem: $semester");
 		foreach my $codcour (@{$Common::courses_by_semester{$semester}})
 		{
-			if(defined($Common::antialias_info{$codcour}))
-			{	$codcour = $Common::antialias_info{$codcour}	}
-			my $courselabel = Common::get_alias($codcour);
+			$codcour = unmask_codcour($codcour);
+			my $courselabel = $codcour;
 			my $link = "";
 			#   <A NAME="tex2html315" HREF="4_1_CS105_Estructuras_Discr.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> CS105. Estructuras Discretas I (Obligatorio)</A>
 
@@ -5228,8 +5221,6 @@ sub update_svg_links($)
 		my $output_svg_file = "$OutputHtmlFigsDir/$size-graph-curricula-$lang_prefix.svg";
 		my ($width, $height) = update_svg($input_svg_file, $output_svg_file);
 	}
-
-	exit;
 }
 
 my %LU_info = ();
@@ -5763,7 +5754,7 @@ sub dump_general_errors()
 sub save_batch_to_generate_dot_maps()
 {
 	my $batch_txt 	 = "#!/bin/csh\n\n";
-	# $batch_txt 		.= $Common::config{"dots_to_be_generated"};
+	$batch_txt 		.= $Common::config{"dots_to_be_generated"};
 	my $batch_map_for_course_file = Common::get_template("out-dot-maps-batch");
 	Util::print_message("Generating $batch_map_for_course_file at save_batch_to_generate_dot_maps");
 	Util::write_file($batch_map_for_course_file, $batch_txt);
@@ -5780,12 +5771,6 @@ sub dump_errors()
 	my $output_errors_file = get_template("output-errors-markdown-file");
 	Util::write_file($output_errors_file, $output_txt);
 	Util::print_message("Dumped errors ! ".Util::green($output_errors_file));
-}
-
-# ! Pending Er (deprecated?)
-sub save_logs()
-{
-	save_batch_to_generate_dot_maps();
 }
 
 sub process_courses()
@@ -5811,13 +5796,17 @@ sub setup()
 	$Common::config{parallel} 	= 0;
 }
 
-sub shutdown()
+sub print_closing_message()
 {
-	save_logs();
-	dump_errors();
 	print "\x1b[44m***********************************************************************\x1b[49m\n";
 	print "\x1b[44m**                     Finishing                                     **\x1b[49m\n";
 	print "\x1b[44m***********************************************************************\x1b[49m\n";
+}
+
+sub shutdown()
+{
+	dump_errors();
+	print_closing_message();
 	#my $output_errors_file = get_template("output-errors-file");
 	#system("cat \"$output_errors_file\"");
 	

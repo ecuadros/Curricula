@@ -5,7 +5,7 @@ use Lib::Common;
 package Common;
 use Carp::Assert;
 use Data::Dumper;
-use Clone 'clone';
+# use Clone 'clone';
 use Lib::Util;
 use Cwd;
 use strict;

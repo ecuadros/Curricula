@@ -59,6 +59,7 @@ sub generate_general_info()
 		Util::print_color("Common::config{meta_tags}{OUTPUT_TEX_DIR}=$Common::config{meta_tags}{OUTPUT_TEX_DIR}");
 		GeneralInfo::generate_all_outcomes_by_course($lang);
 	}
+	Common::save_batch_to_generate_dot_maps();
 	#foreach my $lang (@{$Common::config{SyllabusLangsList}})
 	#{
 	#	Util::print_color("Generating Posters in $lang ...");
