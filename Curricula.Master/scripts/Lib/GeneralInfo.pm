@@ -2208,15 +2208,15 @@ sub generate_equivalence_old2new($$)
 	foreach my $semester (sort {$a <=> $b} keys %{$Common::general_info{equivalences}{$old_curricula}}	)
 	{
 		my $begintable  	= "";
-		$begintable .= "\\begin{tabularx}{23cm}{|p{1.3cm}|X|p{0.6cm}||p{1.3cm}|X|p{0.7cm}|p{0.6cm}|}\\hline\n";
-		$begintable .= "\\multicolumn{3}{|c||}{\\textbf{$Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester}} -- \\textbf{$Common::config{dictionary}{Plan} $old_curricula}} & \\multicolumn{4}{|c|}{\\textbf{$Common::config{dictionary}{Plan} $new_curricula}} \\\\ \\hline\n";
+		$begintable .= "\\begin{tabularx}{23cm}{|p{1.3cm}|X|p{0.6cm}||p{1.3cm}|X|p{1.5cm}|p{0.6cm}|}\\hline\n";
+		$begintable .= "\\multicolumn{3}{|c||}{\\textbf{$Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester}} -- \\textbf{$Common::config{dictionary}{Plan} $old_curricula}} & \\multicolumn{4}{|c|}{\\textbf{$new_curricula}} \\\\ \\hline\n";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSECODE}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSENAME}} & ";
-		$begintable .= "\\textbf{$Common::config{dictionary}{CREDITS}}    & ";
+		$begintable .= "\\textbf{$Common::config{dictionary}{Cr}}         & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSECODE}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSENAME}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{Sem}}        & ";
-		$begintable .= "\\textbf{$Common::config{dictionary}{CREDITS}} ";
+		$begintable .= "\\textbf{$Common::config{dictionary}{Cr}} ";
 		$begintable .= "\\\\ \\hline\n";
 		$output_txt .= $begintable;
 		my $line_tpl = "<OLD_COURSE_CODE> & <OLD_COURSE_NAME> & <OLD_COURSE_CREDITS> & <COURSE_CODE> & <COURSE_NAME> & <COURSE_SEM> & <COURSE_CREDITS> \\\\ \\hline\n";
@@ -2265,7 +2265,7 @@ sub generate_equivalence_old2new($$)
 	}
 #  	exit;
 	Util::write_file($outfile, $output_txt);
-        Util::check_point("generate_equivalence_old2new $old_curricula->$new_curricula");
+    Util::check_point("generate_equivalence_old2new $old_curricula->$new_curricula");
 	Util::print_message("generate_equivalence_old2new $old_curricula->$new_curricula OK!");
 	return $outfile_short;
 }
@@ -2286,16 +2286,16 @@ sub generate_equivalence_new2old($$)
 	for(my $semester = $Common::config{SemMin}; $semester <= $Common::config{SemMax} ; $semester++)
 	{
 		my $begintable  	= "";
-		$begintable .= "\\begin{tabularx}{23cm}{|p{1.3cm}|X|p{0.7cm}|p{1.3cm}|X|p{0.6cm}|p{0.6cm}|}\\hline\n";
-		$begintable .= "\\multicolumn{3}{|c||}{\\textbf{$Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester} -- $Common::config{dictionary}{Plan} $new_curricula}} & \\multicolumn{4}{|c|}{\\textbf{$Common::config{dictionary}{Plan} $old_curricula}} \\\\ \\hline\n";
+		$begintable .= "\\begin{tabularx}{23cm}{|p{1.5cm}|X|p{1cm}|p{1.3cm}|X|p{1.5cm}|p{0.6cm}|}\\hline\n";
+		$begintable .= "\\multicolumn{3}{|c||}{\\textbf{$Common::config{dictionary}{semester_ordinal}{$semester} $Common::config{dictionary}{Semester} -- $new_curricula}} & \\multicolumn{4}{|c|}{\\textbf{$Common::config{dictionary}{Plan} $old_curricula}} \\\\ \\hline\n";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSECODE}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSENAME}} & ";
-		$begintable .= "\\textbf{$Common::config{dictionary}{CREDITS}}    & ";
+		$begintable .= "\\textbf{$Common::config{dictionary}{Cr}}    & ";
 
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSECODE}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{COURSENAME}} & ";
 		$begintable .= "\\textbf{$Common::config{dictionary}{Sem}}        & ";
-		$begintable .= "\\textbf{$Common::config{dictionary}{CREDITS}} ";
+		$begintable .= "\\textbf{$Common::config{dictionary}{Cr}} ";
 		$begintable .= "\\\\ \\hline\n";
 		$output_txt .= $begintable;
 		my $endtable    = "\\end{tabularx}\n";
@@ -2365,12 +2365,12 @@ sub process_equivalences($)
 	foreach my $equiv (split(",", $Common::config{equivalences}))
 	{
 		my $outfile_short = generate_equivalence_old2new($equiv, $lang);
-		$equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $equiv al Plan $Common::config{Plan}}\n";
+		$equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $equiv al $Common::config{Plan}}\n";
 		$equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short}\n\n";
 		$newpage = "\\newpage";
 
 		$outfile_short	= generate_equivalence_new2old($equiv, $lang);
-		$equivalences_file_txt .= "$newpage\\section{Equivalencia del Plan $Common::config{Plan} al Plan $equiv}\n";
+		$equivalences_file_txt .= "$newpage\\section{Equivalencia del $Common::config{Plan} al Plan $equiv}\n";
 		$equivalences_file_txt .= "\\input{$OutputTexDir/$outfile_short} \n\n";
 	}
 	my $output_equivalences_file = Common::get_template("out-equivalences-file");
