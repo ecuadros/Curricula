@@ -47,3 +47,5 @@ Curricula.Master/gen-eps-files.sh
 Curricula.Master/gen-graph.sh
 Curricula.Master/gen-html-1institution.sh
 Curricula.Master/compileall
+Curricula.Master/log/*errors-bib.txt
+Curricula.Master/log/*-time.txt
