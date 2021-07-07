@@ -19,6 +19,10 @@
   - Espanol (English I) [Link to file for ENG42003 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/ForeignLanguages/ID101.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
+- Course=PSI53001
+  - Espanol (Desarrollo Humano) [Link to file for PSI53001 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/GeneralEducation/FG103.tex)
+    - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
 - Course=SFW52096
   - Espanol (Estructuras Discretas II) [Link to file for SFW52096 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS1D2.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
@@ -235,6 +239,10 @@
   - Espanol (Big Data y Analitica de Datos) [Link to file for IIS64000 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS370.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
 
+- Course=INV51055
+  - Espanol (Fundamentos del Metodo Científico) [Link to file for INV51055 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/USILPilars/INV51055.tex)
+    - missing=outcomes{USIL21}, specificoutcomes{USIL21}, competences{USIL21}, 
+
 - Course=SFW62058
   - Espanol (Proyecto de Final de Carrera III) [Link to file for SFW62058 here](https://github.com/ecuadros/Curricula/edit/master/Curricula.Master/../Curricula.in/lang/Espanol/cycle/2021-II/Syllabi/Computing/CS/CS404.tex)
     - missing=specificoutcomes{USIL21}, competences{USIL21}, 
@@ -282,6 +290,7 @@ There is no priority defined for [41mSFW[0m See: [41m../Curricula.in/lang/Esp
 There is no priority defined for [41mMAC[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mCOM[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mENG[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
+There is no priority defined for [41mPSI[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mEGI[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mGES[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mEST[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
@@ -291,11 +300,13 @@ There is no priority defined for [41mFIS[0m See: [41m../Curricula.in/lang/Esp
 There is no priority defined for [41mMAR[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mFIN[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mBSC[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
+There is no priority defined for [41mINV[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 There is no priority defined for [41mETM[0m See: [41m../Curricula.in/lang/Espanol/Disciplines/Computing/CS/config/All.config[0m
 No area description for SFW ...
 No area description for MAC ...
 No area description for COM ...
 No area description for ENG ...
+No area description for PSI ...
 No area description for EGI ...
 No area description for GES ...
 No area description for EST ...
@@ -305,5 +316,6 @@ No area description for FIS ...
 No area description for MAR ...
 No area description for FIN ...
 No area description for BSC ...
+No area description for INV ...
 No area description for ETM ...
 
