@@ -3,7 +3,7 @@
 {1}{MAC41010}{Fundamentos de Cálculo}{4}{CB111}% Fundamentos de Cálculo, 4
 {1}{SFW41001}{Introducción a la Ingeniería De Software}{3}{CS111}% Introducción a la Ciencia de la Computación, 3
 {1}{COM42008}{Lenguaje I}{4}{CO111}% Lenguaje I, 4
-{1}{PSI53001}{Desarrollo Humano}{4}{PSI53001}% Desarrollo Humano, 4
+{1}{PSI53001}{Desarrollo Humano}{4}{FG103}% Desarrollo Humano, 4
 
 
 
@@ -112,7 +112,6 @@
 {}{}{}{}{ET302}% Formación de Empresas de Base Tecnológica III, 3
 {10}{INV61059}{Seminario de Tesis para Ingeniería}{4}{CS404}% Proyecto de Final de Carrera III, 3
 {4}{ETM41007}{Ética y Ciudadanía}{3}{HM102}% Etica y Ciudadanía, 3
-{10}{INV61059}{Seminario de Tesis para Ingeniería}{4}{INV61059}% Seminario de Tesis para Ingeniería, 4
 {8}{IIS64016}{Robótica}{4}{CS366}% Robótica, 4
 {}{}{}{}{CS365}% Computacion Evolutiva, 4
 {10}{SFW61001}{Software Factory}{4}{}% , 
