@@ -846,7 +846,7 @@ sub generate_curricula_in_dot($$)
 	#$Common::config{"dots_to_be_generated"}	.= "dot -Tsvg $output_dot_file -o $OutputFigsDir/$filename.svg; \n\n";
 }
 
-sub get_outcome_map_name($$$)
+sub get_outcome_map_filename($$$)
 {
 	my ($outcome, $size, $lang) = (@_);
 	my $lang_prefix = $Common::config{dictionaries}{$lang}{lang_prefix};
@@ -865,7 +865,7 @@ sub generate_map_of_courses_by_outcome($$)
 	{	my $courses_counter = keys %{ $Common::config{course_by_outcome}{$outcome} };
 		if($courses_counter > 0)
 		{
-			my $filename 		= get_outcome_map_name($outcome, $size, $lang);
+			my $filename 		= get_outcome_map_filename($outcome, $size, $lang);
 			my $output_dot_file = "$OutputDotDir/$filename.dot";
 			generate_curricula_in_dot_internal($output_dot_file, $course_tpl, $lang, $outcome, \&highlight_outcome);
 			$Common::config{"dots_to_be_generated"}	.= "echo \"Generating $OutputFigsDir/$filename.svg ...\";\n";
@@ -1292,31 +1292,36 @@ sub generate_list_of_courses_by_outcome($)
 			$counter++;
 			$this_outcome_txt .= "\t\\item ". Common::get_course_link($codcour, $lang)."\n";
 		}
-		#Util::print_message("ABC outcome=$outcome ($counter)...");
+		# Util::print_message("ABC outcome=$outcome ($counter)...");
 		if($counter > 0)
 		{
-			my $outcome  = "";
-			if( defined($Common::config{macros}{"outcome$outcome"}) )
-			{	$outcome = "(Outcome not defined!)";	}
-			$output_txt .= "\\subsection{Outcome: $outcome) $outcome}\n";
-			$output_txt .= "\\begin{itemize}\n";
-			$output_txt .= "$Common::nolistsep\n";
-			$output_txt .= $this_outcome_txt;
-			$output_txt .= "\\end{itemize}\n";
-			my $filename = get_outcome_map_name($outcome, "big", $lang);
-			#Util::print_message("($outcome, big, $lang) => $filename");
-			my $courses_by_outcome = $Common::svg_in_html;
-			$courses_by_outcome =~ s/<filename>/$filename/g;
-			$courses_by_outcome =~ s/<WIDTH>/1341pt/g;   # 70% de 1916
-			$courses_by_outcome =~ s/"<HEIGHT>"/853pt/g; #70% de 1218
-			$output_txt .= $courses_by_outcome; # size is 50%
+			if( defined($Common::config{macros}{outcomes}{$lang}{"outcome$outcome"."Short"}) )
+			{
+				my $outcome_label = $Common::config{macros}{outcomes}{$lang}{"outcome$outcome"."Short"};
+				$output_txt .= "\\subsection{Outcome: $outcome) $outcome_label}\n";
+				$output_txt .= "\\begin{itemize}\n";
+				$output_txt .= "$Common::nolistsep\n";
+				$output_txt .= $this_outcome_txt;
+				$output_txt .= "\\end{itemize}\n";
+				my $filename = get_outcome_map_filename($outcome, "big", $lang);
+				Util::print_message("($outcome, big, $lang) => $filename"); 
+				my $courses_by_outcome = $Common::svg_in_html;
+				$courses_by_outcome =~ s/<filename>/$filename/g;
+				$courses_by_outcome =~ s/<WIDTH>/1341pt/g;   # 70% de 1916
+				$courses_by_outcome =~ s/"<HEIGHT>"/853pt/g; #70% de 1218
+				$output_txt .= $courses_by_outcome; # size is 50%
+			}
+			else
+			{	Util::print_error("I couldnt find definition for outcome: $outcome ...");
+				# print Dumper(\%{$Common::config{macros}{outcomes}});
+				# exit;
+			}
 		}
 		$output_txt .= "\n";
 	}
 	my $output_file = Common::get_expanded_template("list-of-courses-by-outcome", $lang);
 	Util::print_message("Generating list_of_courses_by_outcome ok ($output_file)");
 	Util::write_file($output_file, $output_txt);
-	#exit;
 }
 
 #$Common::config{course_by_specificoutcome}{$params[0]}{$params[1]}{$codcour} = "";

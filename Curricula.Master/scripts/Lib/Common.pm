@@ -57,9 +57,9 @@ our %list_of_courses_per_axe	= ();
 my %Numbers2Text = (0 => "OH",   1 => "ONE", 2 => "TWO", 3 => "THREE", 4 => "FOUR",
 				   5 => "FIVE", 6 => "SIX", 7 => "SEVEN", 8 => "EIGHT", 9 => "NINE"
 				  );
-our %template_files = (	"Syllabus" 		=> "in-syllabus-template-file"
+# our %template_files = (	"Syllabus" 		=> "in-syllabus-template-file"
 # 						"DeliveryControl" 	=> "in-syllabus-delivery-control-file",
-						);
+#						);
 our %professor_role_order = ("C" => 0, "T" => 1, "L" => 2, "-" => 3);
 our %position_ranking   = ("Director" => 1, "Professor" => 2);
 our %dedication_ranking = ("TC"       => 1, "TP"        => 2);
@@ -843,15 +843,15 @@ sub set_initial_paths()
 
 	$path_map{InLangBaseDir} 						= $path_map{InLangBaseDir};
 	$path_map{"in-sumilla-template-file"}			= $path_map{InProgramDir}."/sumilla-template.tex";
-	$path_map{"in-syllabus-template-file"}			= $path_map{InProgramDir}."/syllabus-template.tex";
+	$path_map{"in-syllabus-template-by-program-file"}			= $path_map{InProgramDir}."/syllabus-template.tex";
 	$path_map{"in-empty-syllabus-tex-file"}			= $path_map{InLangBaseDir}."/empty-syllabus.tex";
 	$path_map{"in-empty-syllabus-bib-file"}			= $path_map{InLangBaseDir}."/empty-syllabus.bib";
 	$path_map{"in-empty-common-file"}				= $path_map{InLangBaseDir}."/empty-common.tex";
-
-	$path_map{"in-institution-dictionary"}			= $path_map{InProgramDir}."/lang/<LANG-EXTENDED>.txt";
-	$path_map{"in-syllabus-program-template-file"}	= $path_map{InProgramDir}."/cycle/$config{Semester}/syllabus-template.tex";
+	$path_map{"in-syllabus-template-by-program-by-cycle-file"}	= $path_map{InProgramDir}."/cycle/$config{Semester}/syllabus-template.tex";
 	$path_map{"in-syllabus-first-page-file"}		= $path_map{InProgramDir}."/cycle/$config{Semester}/syllabus-Page*";
 
+	$path_map{"in-institution-dictionary"}			= $path_map{InProgramDir}."/lang/<LANG-EXTENDED>.txt";
+	
 	$path_map{"in-syllabus-delivery-control-file"}	= $path_map{InProgramDir}."/syllabus-delivery-control.tex";
 	$path_map{"in-additional-institution-info-file"}= $path_map{InProgramDir}."/cycle/$config{Semester}/$config{Plan}/additional-info.txt";
 	$path_map{"in-distribution-dir"}				= $path_map{InProgramDir}."/cycle/$config{Semester}/$config{Plan}";
@@ -936,7 +936,7 @@ sub set_initial_paths()
 	# Config files
 	$path_map{"all-config"}							= $path_map{InDir}."/config/all.config";
 	$path_map{"colors"}								= $path_map{InDir}."/config/colors.config";
-	$path_map{"institution-color"}					= "$path_map{InInstitutionConfigDir}/colors.config";
+	$path_map{"institution-colors"}					= "$path_map{InInstitutionConfigDir}/colors.config";
 
 	$path_map{"discipline-config"}		   			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/config/$config{discipline}.config";
 	$path_map{"in-area-all-config-file"}			= "$path_map{InLangDefaultDir}/$Disciplines/$config{discipline}/$config{area}/config/All.config";
@@ -1492,6 +1492,9 @@ sub process_config_vars()
 	}
 	$config{colors}{change_highlight_background} = "honeydew3";
 	$config{colors}{change_highlight_text}       = "black";
+
+	#print Dumper(\%{$config{colors}});
+	#exit;
 }
 
 # ok
@@ -2093,17 +2096,17 @@ sub process_filters()
 
 sub verify_dependencies($)
 {
-	my ($lang) = (@_);
-	my $lang_prefix = $config{dictionaries}{$lang}{lang_prefix};
-    my @files_to_verify = (Common::get_expanded_template("InTexDir", $lang)."/abstract-$lang_prefix.tex");
-    foreach my $flag (keys %template_files)
-    {
-		my $file = get_template($template_files{$flag});
-		if(-e $file)
-		{	$config{flags}{$flag} = 1;	}
-		else
-		{	$config{flags}{$flag} = 0;	}
-    }
+	#my ($lang) = (@_);
+	#my $lang_prefix = $config{dictionaries}{$lang}{lang_prefix};
+    #my @files_to_verify = (Common::get_expanded_template("InTexDir", $lang)."/abstract-$lang_prefix.tex");
+    #foreach my $flag (keys %template_files)
+    #{
+	#	my $file = get_template($template_files{$flag});
+	#	if(-e $file)
+	#	{	$config{flags}{$flag} = 1;	}
+	#	else
+	#	{	$config{flags}{$flag} = 0;	}
+    #}
 }
 
 # First Parameter is something such as CS-SPC
@@ -2204,7 +2207,7 @@ sub set_initial_configuration($)
 
 	#Util::print_message("CS=$config{dictionary}{AreaDescription}{CS}"); exit;
 	%{$config{temp_colors}} = read_config_file(get_template("colors"));
-	my $InstitutionColorsFile = get_template("institution-color");
+	my $InstitutionColorsFile = get_template("institution-colors");
 	if( -e $InstitutionColorsFile )
 	{	my %inst_colors = read_config_file($InstitutionColorsFile);
 		my ($key, $value) = ("", "");
@@ -3743,20 +3746,21 @@ sub parse_courses()
 				}
 		# 		print "coursecode= $codcour, area= $course_info{$codcour}{axe}\n";
 		# 		$area_priority{$codcour}		= $axes;
-				if( defined($Common::course_info{$codcour}{bgcolor}) )
+				if( defined($config{colors}{$prefix}{bgcolor}) )
 				{	$course_info{$codcour}{textcolor}	= $config{colors}{$prefix}{textcolor};
 					$course_info{$codcour}{bgcolor}		= $config{colors}{$prefix}{bgcolor};
 				}
 				else
 				{	print("Color is not configured for ".Util::red($codcour)." ... Verify files: ".Util::red(Common::get_template("colors")));
 					my $whichdoesnotexists = "";
-					my $InstitutionColorsFile = Common::get_template("institution-color");
+					my $InstitutionColorsFile = Common::get_template("institution-colors");
 					if( -e $InstitutionColorsFile )
 					{	Util::print_message(" and ".Util::red($InstitutionColorsFile)." ...");	}
 					else
 					{	Util::print_message(" OR ".Util::green("create: $InstitutionColorsFile ..."));	}
 					$course_info{$codcour}{textcolor}	= "black";
 					$course_info{$codcour}{bgcolor}		= "white";
+					# exit;
 				}
 				$course_info{$codcour}{Espanol}{course_name} = $course_name_es;
 				$course_info{$codcour}{English}{course_name} = $course_name_en;

@@ -617,7 +617,7 @@ sub genenerate_tex_syllabus_file($$$$$%)
 sub read_sumilla_template()
 {
 	return;
-	my $syllabus_file = Common::get_template("in-syllabus-template-file");
+	my $syllabus_file = Common::get_template("in-syllabus-template-by-program-file");
 	$Common::config{sumilla_template} = "";
 	if(-e $syllabus_file)
 	{	Util::print_message("Reading ... \"$syllabus_file\"");
@@ -626,7 +626,7 @@ sub read_sumilla_template()
 	else
 	{	Util::print_warning("It seems that you forgot the syllabus program template file ... \"$syllabus_file\"");}
 
-	$syllabus_file = Common::get_template("in-syllabus-program-template-file");
+	$syllabus_file = Common::get_template("in-syllabus-template-by-program-by-cycle-file");
 	if(-e $syllabus_file)
 	{	Util::print_message("Reading ... \"$syllabus_file\"");
 		$Common::config{sumilla_template} = Util::read_file($syllabus_file);
@@ -640,25 +640,30 @@ sub read_sumilla_template()
 
 sub read_syllabus_template()
 {
-	my $syllabus_file = Common::get_template("in-syllabus-template-file");
 	$Common::config{syllabus_template} = "";
+	my $syllabus_file = "";
+
+	# First try to fond syllabus for this institution
+
+	# Second try to fiond syllabus for this institution in this area
+	$syllabus_file = Common::get_template("in-syllabus-template-by-program-file");
 	if(-e $syllabus_file)
 	{	Util::print_message("Reading ... \"$syllabus_file\"");
 	    $Common::config{syllabus_template} = Util::read_file($syllabus_file);
 	}
 	else
-	{	Util::print_warning("It seems that you forgot the syllabus program template file ... \"$syllabus_file\"");}
+	{	Util::print_message("#2 It seems that you forgot the syllabus template file ".Util::yellow("for this program")." ... \"\n\t$syllabus_file\"");}
 
-	$syllabus_file = Common::get_template("in-syllabus-program-template-file");
+	$syllabus_file = Common::get_template("in-syllabus-template-by-program-by-cycle-file");
 	if(-e $syllabus_file)
 	{	Util::print_message("Reading ... \"$syllabus_file\"");
 		$Common::config{syllabus_template} = Util::read_file($syllabus_file);
 	}
 	else
-	{	Util::print_warning("It seems that you forgot the syllabus program template for this cycle ... \"$syllabus_file\"");}
+	{	Util::print_message("#3 It seems that you forgot the syllabus program template ".Util::yellow("for this program in this cycle: ". $Common::config{Semester})." ... \"\n\t$syllabus_file\"");}
 
 	if($Common::config{syllabus_template} eq "")
-	{		Util::print_error("It seems that you forgot the template sumilla file ... \"$syllabus_file\"");   }
+	{		Util::print_error("#4 It seems that you forgot the template for syllabus file ... \"$syllabus_file\"");   }
 
 	if( $Common::config{syllabus_template} =~ m/\\begin\{evaluation\}\s*\n((?:.|\n)*?)\n\\end\{evaluation\}/g )
 	{
@@ -670,6 +675,7 @@ sub read_syllabus_template()
 	{
 	      Util::print_error("It seems you did not write General Evaluation Criteria on your Syllabus template (See file: $syllabus_file) ...");
 	}
+	exit;
 }
 
 # ok, Here we generate syllabi, prerequisitite files
